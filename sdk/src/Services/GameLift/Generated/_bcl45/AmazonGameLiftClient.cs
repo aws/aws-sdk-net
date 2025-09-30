@@ -408,7 +408,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
         public virtual AcceptMatchResponse AcceptMatch(AcceptMatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptMatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptMatchResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">REST API Reference for AcceptMatch Operation</seealso>
         public virtual Task<AcceptMatchResponse> AcceptMatchAsync(AcceptMatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptMatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptMatchResponseUnmarshaller.Instance;
             
@@ -593,7 +593,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">REST API Reference for ClaimGameServer Operation</seealso>
         public virtual ClaimGameServerResponse ClaimGameServer(ClaimGameServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimGameServerResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">REST API Reference for ClaimGameServer Operation</seealso>
         public virtual Task<ClaimGameServerResponse> ClaimGameServerAsync(ClaimGameServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimGameServerResponseUnmarshaller.Instance;
             
@@ -765,7 +765,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
             
@@ -933,7 +933,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         public virtual CreateBuildResponse CreateBuild(CreateBuildRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBuildResponseUnmarshaller.Instance;
 
@@ -1029,7 +1029,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         public virtual Task<CreateBuildResponse> CreateBuildAsync(CreateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBuildResponseUnmarshaller.Instance;
             
@@ -1176,7 +1176,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">REST API Reference for CreateContainerFleet Operation</seealso>
         public virtual CreateContainerFleetResponse CreateContainerFleet(CreateContainerFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerFleetResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">REST API Reference for CreateContainerFleet Operation</seealso>
         public virtual Task<CreateContainerFleetResponse> CreateContainerFleetAsync(CreateContainerFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerFleetResponseUnmarshaller.Instance;
             
@@ -1529,7 +1529,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerGroupDefinition">REST API Reference for CreateContainerGroupDefinition Operation</seealso>
         public virtual CreateContainerGroupDefinitionResponse CreateContainerGroupDefinition(CreateContainerGroupDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerGroupDefinitionResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerGroupDefinition">REST API Reference for CreateContainerGroupDefinition Operation</seealso>
         public virtual Task<CreateContainerGroupDefinitionResponse> CreateContainerGroupDefinitionAsync(CreateContainerGroupDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerGroupDefinitionResponseUnmarshaller.Instance;
             
@@ -1903,7 +1903,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
             
@@ -2167,7 +2167,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetLocations">REST API Reference for CreateFleetLocations Operation</seealso>
         public virtual CreateFleetLocationsResponse CreateFleetLocations(CreateFleetLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetLocationsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetLocations">REST API Reference for CreateFleetLocations Operation</seealso>
         public virtual Task<CreateFleetLocationsResponse> CreateFleetLocationsAsync(CreateFleetLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetLocationsResponseUnmarshaller.Instance;
             
@@ -2361,7 +2361,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameServerGroup">REST API Reference for CreateGameServerGroup Operation</seealso>
         public virtual CreateGameServerGroupResponse CreateGameServerGroup(CreateGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameServerGroupResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameServerGroup">REST API Reference for CreateGameServerGroup Operation</seealso>
         public virtual Task<CreateGameServerGroupResponse> CreateGameServerGroupAsync(CreateGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameServerGroupResponseUnmarshaller.Instance;
             
@@ -2587,7 +2587,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         public virtual CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
 
@@ -2715,7 +2715,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         public virtual Task<CreateGameSessionResponse> CreateGameSessionAsync(CreateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameSessionResponseUnmarshaller.Instance;
             
@@ -2876,7 +2876,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         public virtual CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
 
@@ -3036,7 +3036,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
         public virtual Task<CreateGameSessionQueueResponse> CreateGameSessionQueueAsync(CreateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGameSessionQueueResponseUnmarshaller.Instance;
             
@@ -3080,7 +3080,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateLocation">REST API Reference for CreateLocation Operation</seealso>
         public virtual CreateLocationResponse CreateLocation(CreateLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationResponseUnmarshaller.Instance;
 
@@ -3123,7 +3123,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateLocation">REST API Reference for CreateLocation Operation</seealso>
         public virtual Task<CreateLocationResponse> CreateLocationAsync(CreateLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocationResponseUnmarshaller.Instance;
             
@@ -3203,7 +3203,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
         public virtual CreateMatchmakingConfigurationResponse CreateMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
@@ -3282,7 +3282,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">REST API Reference for CreateMatchmakingConfiguration Operation</seealso>
         public virtual Task<CreateMatchmakingConfigurationResponse> CreateMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchmakingConfigurationResponseUnmarshaller.Instance;
             
@@ -3357,7 +3357,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
         public virtual CreateMatchmakingRuleSetResponse CreateMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
@@ -3431,7 +3431,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">REST API Reference for CreateMatchmakingRuleSet Operation</seealso>
         public virtual Task<CreateMatchmakingRuleSetResponse> CreateMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchmakingRuleSetResponseUnmarshaller.Instance;
             
@@ -3591,7 +3591,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         public virtual CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlayerSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
 
@@ -3753,7 +3753,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         public virtual Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(CreatePlayerSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlayerSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlayerSessionResponseUnmarshaller.Instance;
             
@@ -3913,7 +3913,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         public virtual CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlayerSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
 
@@ -4075,7 +4075,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         public virtual Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(CreatePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlayerSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlayerSessionsResponseUnmarshaller.Instance;
             
@@ -4168,7 +4168,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateScript">REST API Reference for CreateScript Operation</seealso>
         public virtual CreateScriptResponse CreateScript(CreateScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
 
@@ -4260,7 +4260,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateScript">REST API Reference for CreateScript Operation</seealso>
         public virtual Task<CreateScriptResponse> CreateScriptAsync(CreateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
             
@@ -4341,7 +4341,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
         public virtual CreateVpcPeeringAuthorizationResponse CreateVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
@@ -4421,7 +4421,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringAuthorization">REST API Reference for CreateVpcPeeringAuthorization Operation</seealso>
         public virtual Task<CreateVpcPeeringAuthorizationResponse> CreateVpcPeeringAuthorizationAsync(CreateVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringAuthorizationResponseUnmarshaller.Instance;
             
@@ -4495,7 +4495,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -4568,7 +4568,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
             
@@ -4666,7 +4666,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -4766,7 +4766,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
             
@@ -4882,7 +4882,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         public virtual DeleteBuildResponse DeleteBuild(DeleteBuildRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBuildResponseUnmarshaller.Instance;
 
@@ -5000,7 +5000,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         public virtual Task<DeleteBuildResponse> DeleteBuildAsync(DeleteBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBuildResponseUnmarshaller.Instance;
             
@@ -5060,7 +5060,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">REST API Reference for DeleteContainerFleet Operation</seealso>
         public virtual DeleteContainerFleetResponse DeleteContainerFleet(DeleteContainerFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerFleetResponseUnmarshaller.Instance;
 
@@ -5119,7 +5119,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">REST API Reference for DeleteContainerFleet Operation</seealso>
         public virtual Task<DeleteContainerFleetResponse> DeleteContainerFleetAsync(DeleteContainerFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerFleetResponseUnmarshaller.Instance;
             
@@ -5216,7 +5216,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerGroupDefinition">REST API Reference for DeleteContainerGroupDefinition Operation</seealso>
         public virtual DeleteContainerGroupDefinitionResponse DeleteContainerGroupDefinition(DeleteContainerGroupDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerGroupDefinitionResponseUnmarshaller.Instance;
 
@@ -5312,7 +5312,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerGroupDefinition">REST API Reference for DeleteContainerGroupDefinition Operation</seealso>
         public virtual Task<DeleteContainerGroupDefinitionResponse> DeleteContainerGroupDefinitionAsync(DeleteContainerGroupDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerGroupDefinitionResponseUnmarshaller.Instance;
             
@@ -5440,7 +5440,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -5570,7 +5570,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
             
@@ -5632,7 +5632,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleetLocations">REST API Reference for DeleteFleetLocations Operation</seealso>
         public virtual DeleteFleetLocationsResponse DeleteFleetLocations(DeleteFleetLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetLocationsResponseUnmarshaller.Instance;
 
@@ -5693,7 +5693,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleetLocations">REST API Reference for DeleteFleetLocations Operation</seealso>
         public virtual Task<DeleteFleetLocationsResponse> DeleteFleetLocationsAsync(DeleteFleetLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetLocationsResponseUnmarshaller.Instance;
             
@@ -5778,7 +5778,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameServerGroup">REST API Reference for DeleteGameServerGroup Operation</seealso>
         public virtual DeleteGameServerGroupResponse DeleteGameServerGroup(DeleteGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGameServerGroupResponseUnmarshaller.Instance;
 
@@ -5862,7 +5862,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameServerGroup">REST API Reference for DeleteGameServerGroup Operation</seealso>
         public virtual Task<DeleteGameServerGroupResponse> DeleteGameServerGroupAsync(DeleteGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGameServerGroupResponseUnmarshaller.Instance;
             
@@ -5905,7 +5905,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         public virtual DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
 
@@ -5947,7 +5947,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
         public virtual Task<DeleteGameSessionQueueResponse> DeleteGameSessionQueueAsync(DeleteGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGameSessionQueueResponseUnmarshaller.Instance;
             
@@ -5989,7 +5989,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual DeleteLocationResponse DeleteLocation(DeleteLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
 
@@ -6030,7 +6030,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         public virtual Task<DeleteLocationResponse> DeleteLocationAsync(DeleteLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocationResponseUnmarshaller.Instance;
             
@@ -6072,7 +6072,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
         public virtual DeleteMatchmakingConfigurationResponse DeleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
 
@@ -6113,7 +6113,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">REST API Reference for DeleteMatchmakingConfiguration Operation</seealso>
         public virtual Task<DeleteMatchmakingConfigurationResponse> DeleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchmakingConfigurationResponseUnmarshaller.Instance;
             
@@ -6166,7 +6166,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">REST API Reference for DeleteMatchmakingRuleSet Operation</seealso>
         public virtual DeleteMatchmakingRuleSetResponse DeleteMatchmakingRuleSet(DeleteMatchmakingRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchmakingRuleSetResponseUnmarshaller.Instance;
 
@@ -6218,7 +6218,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">REST API Reference for DeleteMatchmakingRuleSet Operation</seealso>
         public virtual Task<DeleteMatchmakingRuleSetResponse> DeleteMatchmakingRuleSetAsync(DeleteMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchmakingRuleSetResponseUnmarshaller.Instance;
             
@@ -6265,7 +6265,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public virtual DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
 
@@ -6311,7 +6311,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public virtual Task<DeleteScalingPolicyResponse> DeleteScalingPolicyAsync(DeleteScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScalingPolicyResponseUnmarshaller.Instance;
             
@@ -6379,7 +6379,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScript">REST API Reference for DeleteScript Operation</seealso>
         public virtual DeleteScriptResponse DeleteScript(DeleteScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScriptResponseUnmarshaller.Instance;
 
@@ -6446,7 +6446,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScript">REST API Reference for DeleteScript Operation</seealso>
         public virtual Task<DeleteScriptResponse> DeleteScriptAsync(DeleteScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScriptResponseUnmarshaller.Instance;
             
@@ -6493,7 +6493,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
         public virtual DeleteVpcPeeringAuthorizationResponse DeleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
 
@@ -6539,7 +6539,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringAuthorization">REST API Reference for DeleteVpcPeeringAuthorization Operation</seealso>
         public virtual Task<DeleteVpcPeeringAuthorizationResponse> DeleteVpcPeeringAuthorizationAsync(DeleteVpcPeeringAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringAuthorizationResponseUnmarshaller.Instance;
             
@@ -6593,7 +6593,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -6646,7 +6646,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
             
@@ -6691,7 +6691,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">REST API Reference for DeregisterCompute Operation</seealso>
         public virtual DeregisterComputeResponse DeregisterCompute(DeregisterComputeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterComputeResponseUnmarshaller.Instance;
 
@@ -6735,7 +6735,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">REST API Reference for DeregisterCompute Operation</seealso>
         public virtual Task<DeregisterComputeResponse> DeregisterComputeAsync(DeregisterComputeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterComputeResponseUnmarshaller.Instance;
             
@@ -6794,7 +6794,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterGameServer">REST API Reference for DeregisterGameServer Operation</seealso>
         public virtual DeregisterGameServerResponse DeregisterGameServer(DeregisterGameServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGameServerResponseUnmarshaller.Instance;
 
@@ -6852,7 +6852,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterGameServer">REST API Reference for DeregisterGameServer Operation</seealso>
         public virtual Task<DeregisterGameServerResponse> DeregisterGameServerAsync(DeregisterGameServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGameServerResponseUnmarshaller.Instance;
             
@@ -6950,7 +6950,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         public virtual DescribeAliasResponse DescribeAlias(DescribeAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAliasResponseUnmarshaller.Instance;
 
@@ -7050,7 +7050,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         public virtual Task<DescribeAliasResponse> DescribeAliasAsync(DescribeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAliasResponseUnmarshaller.Instance;
             
@@ -7148,7 +7148,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         public virtual DescribeBuildResponse DescribeBuild(DescribeBuildRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBuildResponseUnmarshaller.Instance;
 
@@ -7248,7 +7248,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         public virtual Task<DescribeBuildResponse> DescribeBuildAsync(DescribeBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBuildResponseUnmarshaller.Instance;
             
@@ -7334,7 +7334,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeCompute">REST API Reference for DescribeCompute Operation</seealso>
         public virtual DescribeComputeResponse DescribeCompute(DescribeComputeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputeResponseUnmarshaller.Instance;
 
@@ -7419,7 +7419,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeCompute">REST API Reference for DescribeCompute Operation</seealso>
         public virtual Task<DescribeComputeResponse> DescribeComputeAsync(DescribeComputeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputeResponseUnmarshaller.Instance;
             
@@ -7486,7 +7486,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">REST API Reference for DescribeContainerFleet Operation</seealso>
         public virtual DescribeContainerFleetResponse DescribeContainerFleet(DescribeContainerFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerFleetResponseUnmarshaller.Instance;
 
@@ -7552,7 +7552,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">REST API Reference for DescribeContainerFleet Operation</seealso>
         public virtual Task<DescribeContainerFleetResponse> DescribeContainerFleetAsync(DescribeContainerFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerFleetResponseUnmarshaller.Instance;
             
@@ -7626,7 +7626,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerGroupDefinition">REST API Reference for DescribeContainerGroupDefinition Operation</seealso>
         public virtual DescribeContainerGroupDefinitionResponse DescribeContainerGroupDefinition(DescribeContainerGroupDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerGroupDefinitionResponseUnmarshaller.Instance;
 
@@ -7699,7 +7699,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerGroupDefinition">REST API Reference for DescribeContainerGroupDefinition Operation</seealso>
         public virtual Task<DescribeContainerGroupDefinitionResponse> DescribeContainerGroupDefinitionAsync(DescribeContainerGroupDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerGroupDefinitionResponseUnmarshaller.Instance;
             
@@ -7897,7 +7897,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         public virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEC2InstanceLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
 
@@ -8097,7 +8097,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         public virtual Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(DescribeEC2InstanceLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEC2InstanceLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEC2InstanceLimitsResponseUnmarshaller.Instance;
             
@@ -8173,7 +8173,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         public virtual DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
 
@@ -8248,7 +8248,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         public virtual Task<DescribeFleetAttributesResponse> DescribeFleetAttributesAsync(DescribeFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAttributesResponseUnmarshaller.Instance;
             
@@ -8339,7 +8339,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         public virtual DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
 
@@ -8429,7 +8429,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         public virtual Task<DescribeFleetCapacityResponse> DescribeFleetCapacityAsync(DescribeFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetCapacityResponseUnmarshaller.Instance;
             
@@ -8491,7 +8491,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">REST API Reference for DescribeFleetDeployment Operation</seealso>
         public virtual DescribeFleetDeploymentResponse DescribeFleetDeployment(DescribeFleetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetDeploymentResponseUnmarshaller.Instance;
 
@@ -8552,7 +8552,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">REST API Reference for DescribeFleetDeployment Operation</seealso>
         public virtual Task<DescribeFleetDeploymentResponse> DescribeFleetDeploymentAsync(DescribeFleetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetDeploymentResponseUnmarshaller.Instance;
             
@@ -8613,7 +8613,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         public virtual DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
 
@@ -8673,7 +8673,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         public virtual Task<DescribeFleetEventsResponse> DescribeFleetEventsAsync(DescribeFleetEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetEventsResponseUnmarshaller.Instance;
             
@@ -8754,7 +8754,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationAttributes">REST API Reference for DescribeFleetLocationAttributes Operation</seealso>
         public virtual DescribeFleetLocationAttributesResponse DescribeFleetLocationAttributes(DescribeFleetLocationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationAttributesResponseUnmarshaller.Instance;
 
@@ -8834,7 +8834,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationAttributes">REST API Reference for DescribeFleetLocationAttributes Operation</seealso>
         public virtual Task<DescribeFleetLocationAttributesResponse> DescribeFleetLocationAttributesAsync(DescribeFleetLocationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationAttributesResponseUnmarshaller.Instance;
             
@@ -8910,7 +8910,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationCapacity">REST API Reference for DescribeFleetLocationCapacity Operation</seealso>
         public virtual DescribeFleetLocationCapacityResponse DescribeFleetLocationCapacity(DescribeFleetLocationCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationCapacityResponseUnmarshaller.Instance;
 
@@ -8985,7 +8985,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationCapacity">REST API Reference for DescribeFleetLocationCapacity Operation</seealso>
         public virtual Task<DescribeFleetLocationCapacityResponse> DescribeFleetLocationCapacityAsync(DescribeFleetLocationCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationCapacityResponseUnmarshaller.Instance;
             
@@ -9056,7 +9056,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationUtilization">REST API Reference for DescribeFleetLocationUtilization Operation</seealso>
         public virtual DescribeFleetLocationUtilizationResponse DescribeFleetLocationUtilization(DescribeFleetLocationUtilizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationUtilizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationUtilizationResponseUnmarshaller.Instance;
 
@@ -9126,7 +9126,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationUtilization">REST API Reference for DescribeFleetLocationUtilization Operation</seealso>
         public virtual Task<DescribeFleetLocationUtilizationResponse> DescribeFleetLocationUtilizationAsync(DescribeFleetLocationUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetLocationUtilizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetLocationUtilizationResponseUnmarshaller.Instance;
             
@@ -9266,7 +9266,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         public virtual DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetPortSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
 
@@ -9408,7 +9408,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         public virtual Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(DescribeFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetPortSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetPortSettingsResponseUnmarshaller.Instance;
             
@@ -9494,7 +9494,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         public virtual DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetUtilizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
 
@@ -9579,7 +9579,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         public virtual Task<DescribeFleetUtilizationResponse> DescribeFleetUtilizationAsync(DescribeFleetUtilizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetUtilizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetUtilizationResponseUnmarshaller.Instance;
             
@@ -9636,7 +9636,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServer">REST API Reference for DescribeGameServer Operation</seealso>
         public virtual DescribeGameServerResponse DescribeGameServer(DescribeGameServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerResponseUnmarshaller.Instance;
 
@@ -9692,7 +9692,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServer">REST API Reference for DescribeGameServer Operation</seealso>
         public virtual Task<DescribeGameServerResponse> DescribeGameServerAsync(DescribeGameServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerResponseUnmarshaller.Instance;
             
@@ -9751,7 +9751,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerGroup">REST API Reference for DescribeGameServerGroup Operation</seealso>
         public virtual DescribeGameServerGroupResponse DescribeGameServerGroup(DescribeGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerGroupResponseUnmarshaller.Instance;
 
@@ -9809,7 +9809,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerGroup">REST API Reference for DescribeGameServerGroup Operation</seealso>
         public virtual Task<DescribeGameServerGroupResponse> DescribeGameServerGroupAsync(DescribeGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerGroupResponseUnmarshaller.Instance;
             
@@ -9877,7 +9877,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerInstances">REST API Reference for DescribeGameServerInstances Operation</seealso>
         public virtual DescribeGameServerInstancesResponse DescribeGameServerInstances(DescribeGameServerInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerInstancesResponseUnmarshaller.Instance;
 
@@ -9944,7 +9944,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerInstances">REST API Reference for DescribeGameServerInstances Operation</seealso>
         public virtual Task<DescribeGameServerInstancesResponse> DescribeGameServerInstancesAsync(DescribeGameServerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameServerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameServerInstancesResponseUnmarshaller.Instance;
             
@@ -10037,7 +10037,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         public virtual DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
 
@@ -10129,7 +10129,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         public virtual Task<DescribeGameSessionDetailsResponse> DescribeGameSessionDetailsAsync(DescribeGameSessionDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionDetailsResponseUnmarshaller.Instance;
             
@@ -10179,7 +10179,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
         public virtual DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
 
@@ -10228,7 +10228,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
         public virtual Task<DescribeGameSessionPlacementResponse> DescribeGameSessionPlacementAsync(DescribeGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionPlacementResponseUnmarshaller.Instance;
             
@@ -10277,7 +10277,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
         public virtual DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
 
@@ -10325,7 +10325,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
         public virtual Task<DescribeGameSessionQueuesResponse> DescribeGameSessionQueuesAsync(DescribeGameSessionQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionQueuesResponseUnmarshaller.Instance;
             
@@ -10429,7 +10429,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         public virtual DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
 
@@ -10532,7 +10532,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         public virtual Task<DescribeGameSessionsResponse> DescribeGameSessionsAsync(DescribeGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGameSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGameSessionsResponseUnmarshaller.Instance;
             
@@ -10628,7 +10628,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
@@ -10723,7 +10723,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
             
@@ -10784,7 +10784,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
         public virtual DescribeMatchmakingResponse DescribeMatchmaking(DescribeMatchmakingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
 
@@ -10844,7 +10844,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">REST API Reference for DescribeMatchmaking Operation</seealso>
         public virtual Task<DescribeMatchmakingResponse> DescribeMatchmakingAsync(DescribeMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingResponseUnmarshaller.Instance;
             
@@ -10898,7 +10898,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
         public virtual DescribeMatchmakingConfigurationsResponse DescribeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
 
@@ -10951,7 +10951,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">REST API Reference for DescribeMatchmakingConfigurations Operation</seealso>
         public virtual Task<DescribeMatchmakingConfigurationsResponse> DescribeMatchmakingConfigurationsAsync(DescribeMatchmakingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingConfigurationsResponseUnmarshaller.Instance;
             
@@ -11001,7 +11001,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
         public virtual DescribeMatchmakingRuleSetsResponse DescribeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
 
@@ -11050,7 +11050,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">REST API Reference for DescribeMatchmakingRuleSets Operation</seealso>
         public virtual Task<DescribeMatchmakingRuleSetsResponse> DescribeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMatchmakingRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMatchmakingRuleSetsResponseUnmarshaller.Instance;
             
@@ -11125,7 +11125,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         public virtual DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlayerSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
 
@@ -11199,7 +11199,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         public virtual Task<DescribePlayerSessionsResponse> DescribePlayerSessionsAsync(DescribePlayerSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlayerSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlayerSessionsResponseUnmarshaller.Instance;
             
@@ -11262,7 +11262,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         public virtual DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
 
@@ -11324,7 +11324,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         public virtual Task<DescribeRuntimeConfigurationResponse> DescribeRuntimeConfigurationAsync(DescribeRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuntimeConfigurationResponseUnmarshaller.Instance;
             
@@ -11376,7 +11376,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public virtual DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
 
@@ -11427,7 +11427,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public virtual Task<DescribeScalingPoliciesResponse> DescribeScalingPoliciesAsync(DescribeScalingPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingPoliciesResponseUnmarshaller.Instance;
             
@@ -11487,7 +11487,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScript">REST API Reference for DescribeScript Operation</seealso>
         public virtual DescribeScriptResponse DescribeScript(DescribeScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScriptResponseUnmarshaller.Instance;
 
@@ -11546,7 +11546,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScript">REST API Reference for DescribeScript Operation</seealso>
         public virtual Task<DescribeScriptResponse> DescribeScriptAsync(DescribeScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScriptResponseUnmarshaller.Instance;
             
@@ -11590,7 +11590,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
         public virtual DescribeVpcPeeringAuthorizationsResponse DescribeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
 
@@ -11633,7 +11633,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringAuthorizations">REST API Reference for DescribeVpcPeeringAuthorizations Operation</seealso>
         public virtual Task<DescribeVpcPeeringAuthorizationsResponse> DescribeVpcPeeringAuthorizationsAsync(DescribeVpcPeeringAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringAuthorizationsResponseUnmarshaller.Instance;
             
@@ -11688,7 +11688,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -11742,7 +11742,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
             
@@ -11821,7 +11821,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">REST API Reference for GetComputeAccess Operation</seealso>
         public virtual GetComputeAccessResponse GetComputeAccess(GetComputeAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeAccessResponseUnmarshaller.Instance;
 
@@ -11899,7 +11899,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">REST API Reference for GetComputeAccess Operation</seealso>
         public virtual Task<GetComputeAccessResponse> GetComputeAccessAsync(GetComputeAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeAccessResponseUnmarshaller.Instance;
             
@@ -11981,7 +11981,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAuthToken">REST API Reference for GetComputeAuthToken Operation</seealso>
         public virtual GetComputeAuthTokenResponse GetComputeAuthToken(GetComputeAuthTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeAuthTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeAuthTokenResponseUnmarshaller.Instance;
 
@@ -12062,7 +12062,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAuthToken">REST API Reference for GetComputeAuthToken Operation</seealso>
         public virtual Task<GetComputeAuthTokenResponse> GetComputeAuthTokenAsync(GetComputeAuthTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeAuthTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeAuthTokenResponseUnmarshaller.Instance;
             
@@ -12158,7 +12158,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         public virtual GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGameSessionLogUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
 
@@ -12256,7 +12256,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         public virtual Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(GetGameSessionLogUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGameSessionLogUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGameSessionLogUrlResponseUnmarshaller.Instance;
             
@@ -12343,7 +12343,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         public virtual GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
 
@@ -12429,7 +12429,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         public virtual Task<GetInstanceAccessResponse> GetInstanceAccessAsync(GetInstanceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceAccessResponseUnmarshaller.Instance;
             
@@ -12477,7 +12477,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -12524,7 +12524,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
             
@@ -12578,7 +12578,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBuildsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBuildsResponseUnmarshaller.Instance;
 
@@ -12631,7 +12631,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public virtual Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBuildsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBuildsResponseUnmarshaller.Instance;
             
@@ -12702,7 +12702,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListCompute">REST API Reference for ListCompute Operation</seealso>
         public virtual ListComputeResponse ListCompute(ListComputeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeResponseUnmarshaller.Instance;
 
@@ -12772,7 +12772,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListCompute">REST API Reference for ListCompute Operation</seealso>
         public virtual Task<ListComputeResponse> ListComputeAsync(ListComputeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeResponseUnmarshaller.Instance;
             
@@ -12844,7 +12844,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">REST API Reference for ListContainerFleets Operation</seealso>
         public virtual ListContainerFleetsResponse ListContainerFleets(ListContainerFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerFleetsResponseUnmarshaller.Instance;
 
@@ -12915,7 +12915,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">REST API Reference for ListContainerFleets Operation</seealso>
         public virtual Task<ListContainerFleetsResponse> ListContainerFleetsAsync(ListContainerFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerFleetsResponseUnmarshaller.Instance;
             
@@ -12986,7 +12986,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitions">REST API Reference for ListContainerGroupDefinitions Operation</seealso>
         public virtual ListContainerGroupDefinitionsResponse ListContainerGroupDefinitions(ListContainerGroupDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerGroupDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerGroupDefinitionsResponseUnmarshaller.Instance;
 
@@ -13056,7 +13056,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitions">REST API Reference for ListContainerGroupDefinitions Operation</seealso>
         public virtual Task<ListContainerGroupDefinitionsResponse> ListContainerGroupDefinitionsAsync(ListContainerGroupDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerGroupDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerGroupDefinitionsResponseUnmarshaller.Instance;
             
@@ -13130,7 +13130,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">REST API Reference for ListContainerGroupDefinitionVersions Operation</seealso>
         public virtual ListContainerGroupDefinitionVersionsResponse ListContainerGroupDefinitionVersions(ListContainerGroupDefinitionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerGroupDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerGroupDefinitionVersionsResponseUnmarshaller.Instance;
 
@@ -13203,7 +13203,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">REST API Reference for ListContainerGroupDefinitionVersions Operation</seealso>
         public virtual Task<ListContainerGroupDefinitionVersionsResponse> ListContainerGroupDefinitionVersionsAsync(ListContainerGroupDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerGroupDefinitionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerGroupDefinitionVersionsResponseUnmarshaller.Instance;
             
@@ -13271,7 +13271,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">REST API Reference for ListFleetDeployments Operation</seealso>
         public virtual ListFleetDeploymentsResponse ListFleetDeployments(ListFleetDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetDeploymentsResponseUnmarshaller.Instance;
 
@@ -13338,7 +13338,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">REST API Reference for ListFleetDeployments Operation</seealso>
         public virtual Task<ListFleetDeploymentsResponse> ListFleetDeploymentsAsync(ListFleetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetDeploymentsResponseUnmarshaller.Instance;
             
@@ -13410,7 +13410,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -13481,7 +13481,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
             
@@ -13513,7 +13513,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">REST API Reference for ListGameServerGroups Operation</seealso>
         public virtual ListGameServerGroupsResponse ListGameServerGroups(ListGameServerGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGameServerGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGameServerGroupsResponseUnmarshaller.Instance;
 
@@ -13544,7 +13544,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">REST API Reference for ListGameServerGroups Operation</seealso>
         public virtual Task<ListGameServerGroupsResponse> ListGameServerGroupsAsync(ListGameServerGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGameServerGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGameServerGroupsResponseUnmarshaller.Instance;
             
@@ -13593,7 +13593,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServers">REST API Reference for ListGameServers Operation</seealso>
         public virtual ListGameServersResponse ListGameServers(ListGameServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGameServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGameServersResponseUnmarshaller.Instance;
 
@@ -13641,7 +13641,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServers">REST API Reference for ListGameServers Operation</seealso>
         public virtual Task<ListGameServersResponse> ListGameServersAsync(ListGameServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGameServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGameServersResponseUnmarshaller.Instance;
             
@@ -13696,7 +13696,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual ListLocationsResponse ListLocations(ListLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
 
@@ -13750,7 +13750,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListLocations">REST API Reference for ListLocations Operation</seealso>
         public virtual Task<ListLocationsResponse> ListLocationsAsync(ListLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLocationsResponseUnmarshaller.Instance;
             
@@ -13802,7 +13802,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListScripts">REST API Reference for ListScripts Operation</seealso>
         public virtual ListScriptsResponse ListScripts(ListScriptsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScriptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScriptsResponseUnmarshaller.Instance;
 
@@ -13853,7 +13853,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListScripts">REST API Reference for ListScripts Operation</seealso>
         public virtual Task<ListScriptsResponse> ListScriptsAsync(ListScriptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScriptsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScriptsResponseUnmarshaller.Instance;
             
@@ -13925,7 +13925,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -13996,7 +13996,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -14129,7 +14129,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
@@ -14261,7 +14261,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual Task<PutScalingPolicyResponse> PutScalingPolicyAsync(PutScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
             
@@ -14354,7 +14354,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterCompute">REST API Reference for RegisterCompute Operation</seealso>
         public virtual RegisterComputeResponse RegisterCompute(RegisterComputeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeResponseUnmarshaller.Instance;
 
@@ -14446,7 +14446,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterCompute">REST API Reference for RegisterCompute Operation</seealso>
         public virtual Task<RegisterComputeResponse> RegisterComputeAsync(RegisterComputeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeResponseUnmarshaller.Instance;
             
@@ -14519,7 +14519,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterGameServer">REST API Reference for RegisterGameServer Operation</seealso>
         public virtual RegisterGameServerResponse RegisterGameServer(RegisterGameServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterGameServerResponseUnmarshaller.Instance;
 
@@ -14591,7 +14591,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterGameServer">REST API Reference for RegisterGameServer Operation</seealso>
         public virtual Task<RegisterGameServerResponse> RegisterGameServerAsync(RegisterGameServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterGameServerResponseUnmarshaller.Instance;
             
@@ -14703,7 +14703,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         public virtual RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestUploadCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
 
@@ -14817,7 +14817,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         public virtual Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(RequestUploadCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestUploadCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestUploadCredentialsResponseUnmarshaller.Instance;
             
@@ -14927,7 +14927,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         public virtual ResolveAliasResponse ResolveAlias(ResolveAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveAliasResponseUnmarshaller.Instance;
 
@@ -15039,7 +15039,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         public virtual Task<ResolveAliasResponse> ResolveAliasAsync(ResolveAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveAliasResponseUnmarshaller.Instance;
             
@@ -15101,7 +15101,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResumeGameServerGroup">REST API Reference for ResumeGameServerGroup Operation</seealso>
         public virtual ResumeGameServerGroupResponse ResumeGameServerGroup(ResumeGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeGameServerGroupResponseUnmarshaller.Instance;
 
@@ -15162,7 +15162,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResumeGameServerGroup">REST API Reference for ResumeGameServerGroup Operation</seealso>
         public virtual Task<ResumeGameServerGroupResponse> ResumeGameServerGroupAsync(ResumeGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeGameServerGroupResponseUnmarshaller.Instance;
             
@@ -15315,7 +15315,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         public virtual SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGameSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
 
@@ -15467,7 +15467,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         public virtual Task<SearchGameSessionsResponse> SearchGameSessionsAsync(SearchGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGameSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
             
@@ -15538,7 +15538,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
         public virtual StartFleetActionsResponse StartFleetActions(StartFleetActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFleetActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
 
@@ -15608,7 +15608,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">REST API Reference for StartFleetActions Operation</seealso>
         public virtual Task<StartFleetActionsResponse> StartFleetActionsAsync(StartFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFleetActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFleetActionsResponseUnmarshaller.Instance;
             
@@ -15759,7 +15759,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         public virtual StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
 
@@ -15909,7 +15909,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
         public virtual Task<StartGameSessionPlacementResponse> StartGameSessionPlacementAsync(StartGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGameSessionPlacementResponseUnmarshaller.Instance;
             
@@ -16000,7 +16000,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
         public virtual StartMatchBackfillResponse StartMatchBackfill(StartMatchBackfillRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchBackfillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchBackfillResponseUnmarshaller.Instance;
 
@@ -16090,7 +16090,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">REST API Reference for StartMatchBackfill Operation</seealso>
         public virtual Task<StartMatchBackfillResponse> StartMatchBackfillAsync(StartMatchBackfillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchBackfillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchBackfillResponseUnmarshaller.Instance;
             
@@ -16167,7 +16167,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
         public virtual StartMatchmakingResponse StartMatchmaking(StartMatchmakingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
 
@@ -16243,7 +16243,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">REST API Reference for StartMatchmaking Operation</seealso>
         public virtual Task<StartMatchmakingResponse> StartMatchmakingAsync(StartMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchmakingResponseUnmarshaller.Instance;
             
@@ -16321,7 +16321,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
         public virtual StopFleetActionsResponse StopFleetActions(StopFleetActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFleetActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
 
@@ -16398,7 +16398,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">REST API Reference for StopFleetActions Operation</seealso>
         public virtual Task<StopFleetActionsResponse> StopFleetActionsAsync(StopFleetActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFleetActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFleetActionsResponseUnmarshaller.Instance;
             
@@ -16451,7 +16451,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         public virtual StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
 
@@ -16503,7 +16503,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
         public virtual Task<StopGameSessionPlacementResponse> StopGameSessionPlacementAsync(StopGameSessionPlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGameSessionPlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGameSessionPlacementResponseUnmarshaller.Instance;
             
@@ -16563,7 +16563,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
         public virtual StopMatchmakingResponse StopMatchmaking(StopMatchmakingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
 
@@ -16622,7 +16622,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">REST API Reference for StopMatchmaking Operation</seealso>
         public virtual Task<StopMatchmakingResponse> StopMatchmakingAsync(StopMatchmakingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMatchmakingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMatchmakingResponseUnmarshaller.Instance;
             
@@ -16691,7 +16691,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SuspendGameServerGroup">REST API Reference for SuspendGameServerGroup Operation</seealso>
         public virtual SuspendGameServerGroupResponse SuspendGameServerGroup(SuspendGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendGameServerGroupResponseUnmarshaller.Instance;
 
@@ -16759,7 +16759,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SuspendGameServerGroup">REST API Reference for SuspendGameServerGroup Operation</seealso>
         public virtual Task<SuspendGameServerGroupResponse> SuspendGameServerGroupAsync(SuspendGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendGameServerGroupResponseUnmarshaller.Instance;
             
@@ -16834,7 +16834,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -16908,7 +16908,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -17017,7 +17017,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
         public virtual TerminateGameSessionResponse TerminateGameSession(TerminateGameSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateGameSessionResponseUnmarshaller.Instance;
 
@@ -17125,7 +17125,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TerminateGameSession">REST API Reference for TerminateGameSession Operation</seealso>
         public virtual Task<TerminateGameSessionResponse> TerminateGameSessionAsync(TerminateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateGameSessionResponseUnmarshaller.Instance;
             
@@ -17199,7 +17199,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -17272,7 +17272,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -17320,7 +17320,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -17367,7 +17367,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
             
@@ -17420,7 +17420,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         public virtual UpdateBuildResponse UpdateBuild(UpdateBuildRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBuildResponseUnmarshaller.Instance;
 
@@ -17472,7 +17472,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         public virtual Task<UpdateBuildResponse> UpdateBuildAsync(UpdateBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBuildRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBuildResponseUnmarshaller.Instance;
             
@@ -17589,7 +17589,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">REST API Reference for UpdateContainerFleet Operation</seealso>
         public virtual UpdateContainerFleetResponse UpdateContainerFleet(UpdateContainerFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerFleetResponseUnmarshaller.Instance;
 
@@ -17705,7 +17705,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">REST API Reference for UpdateContainerFleet Operation</seealso>
         public virtual Task<UpdateContainerFleetResponse> UpdateContainerFleetAsync(UpdateContainerFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerFleetResponseUnmarshaller.Instance;
             
@@ -17803,7 +17803,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">REST API Reference for UpdateContainerGroupDefinition Operation</seealso>
         public virtual UpdateContainerGroupDefinitionResponse UpdateContainerGroupDefinition(UpdateContainerGroupDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerGroupDefinitionResponseUnmarshaller.Instance;
 
@@ -17900,7 +17900,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">REST API Reference for UpdateContainerGroupDefinition Operation</seealso>
         public virtual Task<UpdateContainerGroupDefinitionResponse> UpdateContainerGroupDefinitionAsync(UpdateContainerGroupDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerGroupDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerGroupDefinitionResponseUnmarshaller.Instance;
             
@@ -17965,7 +17965,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         public virtual UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
 
@@ -18029,7 +18029,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         public virtual Task<UpdateFleetAttributesResponse> UpdateFleetAttributesAsync(UpdateFleetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetAttributesResponseUnmarshaller.Instance;
             
@@ -18136,7 +18136,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         public virtual UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
 
@@ -18242,7 +18242,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         public virtual Task<UpdateFleetCapacityResponse> UpdateFleetCapacityAsync(UpdateFleetCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetCapacityResponseUnmarshaller.Instance;
             
@@ -18315,7 +18315,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         public virtual UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetPortSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
 
@@ -18387,7 +18387,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         public virtual Task<UpdateFleetPortSettingsResponse> UpdateFleetPortSettingsAsync(UpdateFleetPortSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetPortSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetPortSettingsResponseUnmarshaller.Instance;
             
@@ -18470,7 +18470,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">REST API Reference for UpdateGameServer Operation</seealso>
         public virtual UpdateGameServerResponse UpdateGameServer(UpdateGameServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameServerResponseUnmarshaller.Instance;
 
@@ -18552,7 +18552,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">REST API Reference for UpdateGameServer Operation</seealso>
         public virtual Task<UpdateGameServerResponse> UpdateGameServerAsync(UpdateGameServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameServerResponseUnmarshaller.Instance;
             
@@ -18613,7 +18613,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">REST API Reference for UpdateGameServerGroup Operation</seealso>
         public virtual UpdateGameServerGroupResponse UpdateGameServerGroup(UpdateGameServerGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameServerGroupResponseUnmarshaller.Instance;
 
@@ -18673,7 +18673,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">REST API Reference for UpdateGameServerGroup Operation</seealso>
         public virtual Task<UpdateGameServerGroupResponse> UpdateGameServerGroupAsync(UpdateGameServerGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameServerGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameServerGroupResponseUnmarshaller.Instance;
             
@@ -18733,7 +18733,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         public virtual UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
 
@@ -18792,7 +18792,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         public virtual Task<UpdateGameSessionResponse> UpdateGameSessionAsync(UpdateGameSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameSessionResponseUnmarshaller.Instance;
             
@@ -18841,7 +18841,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
         public virtual UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
 
@@ -18889,7 +18889,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
         public virtual Task<UpdateGameSessionQueueResponse> UpdateGameSessionQueueAsync(UpdateGameSessionQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGameSessionQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGameSessionQueueResponseUnmarshaller.Instance;
             
@@ -18937,7 +18937,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
         public virtual UpdateMatchmakingConfigurationResponse UpdateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
 
@@ -18984,7 +18984,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">REST API Reference for UpdateMatchmakingConfiguration Operation</seealso>
         public virtual Task<UpdateMatchmakingConfigurationResponse> UpdateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchmakingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchmakingConfigurationResponseUnmarshaller.Instance;
             
@@ -19054,7 +19054,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         public virtual UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
 
@@ -19123,7 +19123,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         public virtual Task<UpdateRuntimeConfigurationResponse> UpdateRuntimeConfigurationAsync(UpdateRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuntimeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuntimeConfigurationResponseUnmarshaller.Instance;
             
@@ -19197,7 +19197,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateScript">REST API Reference for UpdateScript Operation</seealso>
         public virtual UpdateScriptResponse UpdateScript(UpdateScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScriptResponseUnmarshaller.Instance;
 
@@ -19270,7 +19270,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateScript">REST API Reference for UpdateScript Operation</seealso>
         public virtual Task<UpdateScriptResponse> UpdateScriptAsync(UpdateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScriptResponseUnmarshaller.Instance;
             
@@ -19315,7 +19315,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
         public virtual ValidateMatchmakingRuleSetResponse ValidateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
 
@@ -19359,7 +19359,7 @@ namespace Amazon.GameLift
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">REST API Reference for ValidateMatchmakingRuleSet Operation</seealso>
         public virtual Task<ValidateMatchmakingRuleSetResponse> ValidateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateMatchmakingRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateMatchmakingRuleSetResponseUnmarshaller.Instance;
             

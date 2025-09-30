@@ -275,7 +275,7 @@ namespace Amazon.MQ
 
         internal virtual CreateBrokerResponse CreateBroker(CreateBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrokerResponseUnmarshaller.Instance;
 
@@ -381,7 +381,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">REST API Reference for CreateBroker Operation</seealso>
         public virtual Task<CreateBrokerResponse> CreateBrokerAsync(CreateBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrokerResponseUnmarshaller.Instance;
 
@@ -394,7 +394,7 @@ namespace Amazon.MQ
 
         internal virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.MQ
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.MQ
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.MQ
 
         internal virtual DeleteBrokerResponse DeleteBroker(DeleteBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrokerResponseUnmarshaller.Instance;
 
@@ -578,7 +578,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">REST API Reference for DeleteBroker Operation</seealso>
         public virtual Task<DeleteBrokerResponse> DeleteBrokerAsync(DeleteBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrokerResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.MQ
 
         internal virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -627,7 +627,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.MQ
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.MQ
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeBrokerResponse DescribeBroker(DescribeBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">REST API Reference for DescribeBroker Operation</seealso>
         public virtual Task<DescribeBrokerResponse> DescribeBrokerAsync(DescribeBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeBrokerEngineTypesResponse DescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
         public virtual Task<DescribeBrokerEngineTypesResponse> DescribeBrokerEngineTypesAsync(DescribeBrokerEngineTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeBrokerInstanceOptionsResponse DescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
         public virtual Task<DescribeBrokerInstanceOptionsResponse> DescribeBrokerInstanceOptionsAsync(DescribeBrokerInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -864,7 +864,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeConfigurationResponse DescribeConfiguration(DescribeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual Task<DescribeConfigurationResponse> DescribeConfigurationAsync(DescribeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeConfigurationRevisionResponse DescribeConfigurationRevision(DescribeConfigurationRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual Task<DescribeConfigurationRevisionResponse> DescribeConfigurationRevisionAsync(DescribeConfigurationRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -956,7 +956,7 @@ namespace Amazon.MQ
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.MQ
 
         internal virtual ListBrokersResponse ListBrokers(ListBrokersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrokersResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">REST API Reference for ListBrokers Operation</seealso>
         public virtual Task<ListBrokersResponse> ListBrokersAsync(ListBrokersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrokersResponseUnmarshaller.Instance;
 
@@ -1045,7 +1045,7 @@ namespace Amazon.MQ
 
         internal virtual ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual Task<ListConfigurationRevisionsResponse> ListConfigurationRevisionsAsync(ListConfigurationRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.MQ
 
         internal virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.MQ
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1180,7 +1180,7 @@ namespace Amazon.MQ
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1226,7 +1226,7 @@ namespace Amazon.MQ
 
         internal virtual PromoteResponse Promote(PromoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
         public virtual Task<PromoteResponse> PromoteAsync(PromoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.MQ
 
         internal virtual RebootBrokerResponse RebootBroker(RebootBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual Task<RebootBrokerResponse> RebootBrokerAsync(RebootBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.MQ
 
         internal virtual UpdateBrokerResponse UpdateBroker(UpdateBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">REST API Reference for UpdateBroker Operation</seealso>
         public virtual Task<UpdateBrokerResponse> UpdateBrokerAsync(UpdateBrokerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.MQ
 
         internal virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -1416,7 +1416,7 @@ namespace Amazon.MQ
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

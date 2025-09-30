@@ -251,7 +251,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
         public virtual MemberRefOpResponse MemberRefOp(MemberRefOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
 
@@ -271,7 +271,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
         public virtual Task<MemberRefOpResponse> MemberRefOpAsync(MemberRefOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
             
@@ -292,7 +292,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/StaticOp">REST API Reference for StaticOp Operation</seealso>
         public virtual StaticOpResponse StaticOp(StaticOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
 
@@ -312,7 +312,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/StaticOp">REST API Reference for StaticOp Operation</seealso>
         public virtual Task<StaticOpResponse> StaticOpAsync(StaticOpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
             
@@ -333,7 +333,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/TestOperation">REST API Reference for TestOperation Operation</seealso>
         public virtual TestOperationResponse TestOperation(TestOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestOperationResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.RestXMLTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/test-2014-01-01/TestOperation">REST API Reference for TestOperation Operation</seealso>
         public virtual Task<TestOperationResponse> TestOperationAsync(TestOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestOperationResponseUnmarshaller.Instance;
             

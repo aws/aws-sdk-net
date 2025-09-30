@@ -254,7 +254,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -275,7 +275,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -308,7 +308,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
         public virtual MemberRefOpResponse MemberRefOp(MemberRefOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/MemberRefOp">REST API Reference for MemberRefOp Operation</seealso>
         public virtual IAsyncResult BeginMemberRefOp(MemberRefOpRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MemberRefOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MemberRefOpResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/StaticOp">REST API Reference for StaticOp Operation</seealso>
         public virtual StaticOpResponse StaticOp(StaticOpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.QueryCompatible
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/aws-query-compatible-2012-11-05/StaticOp">REST API Reference for StaticOp Operation</seealso>
         public virtual IAsyncResult BeginStaticOp(StaticOpRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StaticOpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StaticOpResponseUnmarshaller.Instance;
 

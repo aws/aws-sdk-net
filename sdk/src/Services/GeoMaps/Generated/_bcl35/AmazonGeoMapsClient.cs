@@ -291,7 +291,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetGlyphs">REST API Reference for GetGlyphs Operation</seealso>
         public virtual GetGlyphsResponse GetGlyphs(GetGlyphsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlyphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlyphsResponseUnmarshaller.Instance;
 
@@ -312,7 +312,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetGlyphs">REST API Reference for GetGlyphs Operation</seealso>
         public virtual IAsyncResult BeginGetGlyphs(GetGlyphsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlyphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlyphsResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetSprites">REST API Reference for GetSprites Operation</seealso>
         public virtual GetSpritesResponse GetSprites(GetSpritesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpritesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpritesResponseUnmarshaller.Instance;
 
@@ -366,7 +366,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetSprites">REST API Reference for GetSprites Operation</seealso>
         public virtual IAsyncResult BeginGetSprites(GetSpritesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpritesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpritesResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStaticMap">REST API Reference for GetStaticMap Operation</seealso>
         public virtual GetStaticMapResponse GetStaticMap(GetStaticMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticMapResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStaticMap">REST API Reference for GetStaticMap Operation</seealso>
         public virtual IAsyncResult BeginGetStaticMap(GetStaticMapRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStaticMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStaticMapResponseUnmarshaller.Instance;
 
@@ -468,7 +468,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStyleDescriptor">REST API Reference for GetStyleDescriptor Operation</seealso>
         public virtual GetStyleDescriptorResponse GetStyleDescriptor(GetStyleDescriptorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStyleDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStyleDescriptorResponseUnmarshaller.Instance;
 
@@ -489,7 +489,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetStyleDescriptor">REST API Reference for GetStyleDescriptor Operation</seealso>
         public virtual IAsyncResult BeginGetStyleDescriptor(GetStyleDescriptorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStyleDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStyleDescriptorResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetTile">REST API Reference for GetTile Operation</seealso>
         public virtual GetTileResponse GetTile(GetTileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTileResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.GeoMaps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-maps-2020-11-19/GetTile">REST API Reference for GetTile Operation</seealso>
         public virtual IAsyncResult BeginGetTile(GetTileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTileResponseUnmarshaller.Instance;
 

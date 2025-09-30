@@ -395,7 +395,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">REST API Reference for BatchGetSecretValue Operation</seealso>
         public virtual BatchGetSecretValueResponse BatchGetSecretValue(BatchGetSecretValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSecretValueResponseUnmarshaller.Instance;
 
@@ -416,7 +416,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/BatchGetSecretValue">REST API Reference for BatchGetSecretValue Operation</seealso>
         public virtual IAsyncResult BeginBatchGetSecretValue(BatchGetSecretValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetSecretValueResponseUnmarshaller.Instance;
 
@@ -513,7 +513,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual CancelRotateSecretResponse CancelRotateSecret(CancelRotateSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelRotateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret">REST API Reference for CancelRotateSecret Operation</seealso>
         public virtual IAsyncResult BeginCancelRotateSecret(CancelRotateSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelRotateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelRotateSecretResponseUnmarshaller.Instance;
 
@@ -697,7 +697,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual CreateSecretResponse CreateSecret(CreateSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecretResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret">REST API Reference for CreateSecret Operation</seealso>
         public virtual IAsyncResult BeginCreateSecret(CreateSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecretResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual DeleteSecretResponse DeleteSecret(DeleteSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecretResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteSecret">REST API Reference for DeleteSecret Operation</seealso>
         public virtual IAsyncResult BeginDeleteSecret(DeleteSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecretResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual DescribeSecretResponse DescribeSecret(DescribeSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecretResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DescribeSecret">REST API Reference for DescribeSecret Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecret(DescribeSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecretResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual GetRandomPasswordResponse GetRandomPassword(GetRandomPasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRandomPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
         public virtual IAsyncResult BeginGetRandomPassword(GetRandomPasswordRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRandomPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRandomPasswordResponseUnmarshaller.Instance;
 
@@ -1225,7 +1225,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1348,7 +1348,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual GetSecretValueResponse GetSecretValue(GetSecretValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecretValueResponseUnmarshaller.Instance;
 
@@ -1369,7 +1369,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetSecretValue">REST API Reference for GetSecretValue Operation</seealso>
         public virtual IAsyncResult BeginGetSecretValue(GetSecretValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecretValueResponseUnmarshaller.Instance;
 
@@ -1471,7 +1471,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual ListSecretsResponse ListSecrets(ListSecretsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecretsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecretsResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecrets">REST API Reference for ListSecrets Operation</seealso>
         public virtual IAsyncResult BeginListSecrets(ListSecretsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecretsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecretsResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual ListSecretVersionIdsResponse ListSecretVersionIds(ListSecretVersionIdsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecretVersionIdsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListSecretVersionIds">REST API Reference for ListSecretVersionIds Operation</seealso>
         public virtual IAsyncResult BeginListSecretVersionIds(ListSecretVersionIdsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecretVersionIdsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecretVersionIdsResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1829,7 +1829,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual PutSecretValueResponse PutSecretValue(PutSecretValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSecretValueResponseUnmarshaller.Instance;
 
@@ -1850,7 +1850,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutSecretValue">REST API Reference for PutSecretValue Operation</seealso>
         public virtual IAsyncResult BeginPutSecretValue(PutSecretValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSecretValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSecretValueResponseUnmarshaller.Instance;
 
@@ -1932,7 +1932,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">REST API Reference for RemoveRegionsFromReplication Operation</seealso>
         public virtual RemoveRegionsFromReplicationResponse RemoveRegionsFromReplication(RemoveRegionsFromReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRegionsFromReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRegionsFromReplicationResponseUnmarshaller.Instance;
 
@@ -1953,7 +1953,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RemoveRegionsFromReplication">REST API Reference for RemoveRegionsFromReplication Operation</seealso>
         public virtual IAsyncResult BeginRemoveRegionsFromReplication(RemoveRegionsFromReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRegionsFromReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRegionsFromReplicationResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">REST API Reference for ReplicateSecretToRegions Operation</seealso>
         public virtual ReplicateSecretToRegionsResponse ReplicateSecretToRegions(ReplicateSecretToRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateSecretToRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateSecretToRegionsResponseUnmarshaller.Instance;
 
@@ -2059,7 +2059,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicateSecretToRegions">REST API Reference for ReplicateSecretToRegions Operation</seealso>
         public virtual IAsyncResult BeginReplicateSecretToRegions(ReplicateSecretToRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplicateSecretToRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplicateSecretToRegionsResponseUnmarshaller.Instance;
 
@@ -2141,7 +2141,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual RestoreSecretResponse RestoreSecret(RestoreSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSecretResponseUnmarshaller.Instance;
 
@@ -2162,7 +2162,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RestoreSecret">REST API Reference for RestoreSecret Operation</seealso>
         public virtual IAsyncResult BeginRestoreSecret(RestoreSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSecretResponseUnmarshaller.Instance;
 
@@ -2261,7 +2261,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual RotateSecretResponse RotateSecret(RotateSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateSecretResponseUnmarshaller.Instance;
 
@@ -2282,7 +2282,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret">REST API Reference for RotateSecret Operation</seealso>
         public virtual IAsyncResult BeginRotateSecret(RotateSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateSecretResponseUnmarshaller.Instance;
 
@@ -2369,7 +2369,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">REST API Reference for StopReplicationToReplica Operation</seealso>
         public virtual StopReplicationToReplicaResponse StopReplicationToReplica(StopReplicationToReplicaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationToReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationToReplicaResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/StopReplicationToReplica">REST API Reference for StopReplicationToReplica Operation</seealso>
         public virtual IAsyncResult BeginStopReplicationToReplica(StopReplicationToReplicaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationToReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationToReplicaResponseUnmarshaller.Instance;
 
@@ -2485,7 +2485,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2506,7 +2506,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2599,7 +2599,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2770,7 +2770,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual UpdateSecretResponse UpdateSecret(UpdateSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecretResponseUnmarshaller.Instance;
 
@@ -2791,7 +2791,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret">REST API Reference for UpdateSecret Operation</seealso>
         public virtual IAsyncResult BeginUpdateSecret(UpdateSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecretResponseUnmarshaller.Instance;
 
@@ -2901,7 +2901,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual UpdateSecretVersionStageResponse UpdateSecretVersionStage(UpdateSecretVersionStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecretVersionStage">REST API Reference for UpdateSecretVersionStage Operation</seealso>
         public virtual IAsyncResult BeginUpdateSecretVersionStage(UpdateSecretVersionStageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecretVersionStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecretVersionStageResponseUnmarshaller.Instance;
 
@@ -3025,7 +3025,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">REST API Reference for ValidateResourcePolicy Operation</seealso>
         public virtual ValidateResourcePolicyResponse ValidateResourcePolicy(ValidateResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3046,7 +3046,7 @@ namespace Amazon.SecretsManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ValidateResourcePolicy">REST API Reference for ValidateResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginValidateResourcePolicy(ValidateResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateResourcePolicyResponseUnmarshaller.Instance;
 

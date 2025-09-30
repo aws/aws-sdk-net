@@ -359,7 +359,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedAccountsForOrganization">REST API Reference for DescribeAffectedAccountsForOrganization Operation</seealso>
         public virtual DescribeAffectedAccountsForOrganizationResponse DescribeAffectedAccountsForOrganization(DescribeAffectedAccountsForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedAccountsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedAccountsForOrganizationResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedAccountsForOrganization">REST API Reference for DescribeAffectedAccountsForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeAffectedAccountsForOrganization(DescribeAffectedAccountsForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedAccountsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedAccountsForOrganizationResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public virtual IAsyncResult BeginDescribeAffectedEntities(DescribeAffectedEntitiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedEntitiesResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntitiesForOrganization">REST API Reference for DescribeAffectedEntitiesForOrganization Operation</seealso>
         public virtual DescribeAffectedEntitiesForOrganizationResponse DescribeAffectedEntitiesForOrganization(DescribeAffectedEntitiesForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedEntitiesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedEntitiesForOrganizationResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntitiesForOrganization">REST API Reference for DescribeAffectedEntitiesForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeAffectedEntitiesForOrganization(DescribeAffectedEntitiesForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAffectedEntitiesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAffectedEntitiesForOrganizationResponseUnmarshaller.Instance;
 
@@ -580,7 +580,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public virtual IAsyncResult BeginDescribeEntityAggregates(DescribeEntityAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityAggregatesResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">REST API Reference for DescribeEntityAggregatesForOrganization Operation</seealso>
         public virtual DescribeEntityAggregatesForOrganizationResponse DescribeEntityAggregatesForOrganization(DescribeEntityAggregatesForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityAggregatesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityAggregatesForOrganizationResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">REST API Reference for DescribeEntityAggregatesForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeEntityAggregatesForOrganization(DescribeEntityAggregatesForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityAggregatesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityAggregatesForOrganizationResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventAggregates(DescribeEventAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventAggregatesResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventDetails(DescribeEventDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventDetailsResponseUnmarshaller.Instance;
 
@@ -876,7 +876,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetailsForOrganization">REST API Reference for DescribeEventDetailsForOrganization Operation</seealso>
         public virtual DescribeEventDetailsForOrganizationResponse DescribeEventDetailsForOrganization(DescribeEventDetailsForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventDetailsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventDetailsForOrganizationResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetailsForOrganization">REST API Reference for DescribeEventDetailsForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventDetailsForOrganization(DescribeEventDetailsForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventDetailsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventDetailsForOrganizationResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -1065,7 +1065,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventsForOrganization">REST API Reference for DescribeEventsForOrganization Operation</seealso>
         public virtual DescribeEventsForOrganizationResponse DescribeEventsForOrganization(DescribeEventsForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsForOrganizationResponseUnmarshaller.Instance;
 
@@ -1086,7 +1086,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventsForOrganization">REST API Reference for DescribeEventsForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventsForOrganization(DescribeEventsForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsForOrganizationResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventTypes(DescribeEventTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTypesResponseUnmarshaller.Instance;
 
@@ -1197,7 +1197,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization">REST API Reference for DescribeHealthServiceStatusForOrganization Operation</seealso>
         public virtual DescribeHealthServiceStatusForOrganizationResponse DescribeHealthServiceStatusForOrganization(DescribeHealthServiceStatusForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHealthServiceStatusForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHealthServiceStatusForOrganizationResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization">REST API Reference for DescribeHealthServiceStatusForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeHealthServiceStatusForOrganization(DescribeHealthServiceStatusForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHealthServiceStatusForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHealthServiceStatusForOrganizationResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization">REST API Reference for DisableHealthServiceAccessForOrganization Operation</seealso>
         public virtual DisableHealthServiceAccessForOrganizationResponse DisableHealthServiceAccessForOrganization(DisableHealthServiceAccessForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHealthServiceAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHealthServiceAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1297,7 +1297,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization">REST API Reference for DisableHealthServiceAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDisableHealthServiceAccessForOrganization(DisableHealthServiceAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHealthServiceAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHealthServiceAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">REST API Reference for EnableHealthServiceAccessForOrganization Operation</seealso>
         public virtual EnableHealthServiceAccessForOrganizationResponse EnableHealthServiceAccessForOrganization(EnableHealthServiceAccessForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHealthServiceAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHealthServiceAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.AWSHealth
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">REST API Reference for EnableHealthServiceAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginEnableHealthServiceAccessForOrganization(EnableHealthServiceAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHealthServiceAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHealthServiceAccessForOrganizationResponseUnmarshaller.Instance;
 

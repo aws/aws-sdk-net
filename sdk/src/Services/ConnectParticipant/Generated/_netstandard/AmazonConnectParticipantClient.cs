@@ -296,7 +296,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual CancelParticipantAuthenticationResponse CancelParticipantAuthentication(CancelParticipantAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelParticipantAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelParticipantAuthenticationResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CancelParticipantAuthentication">REST API Reference for CancelParticipantAuthentication Operation</seealso>
         public virtual Task<CancelParticipantAuthenticationResponse> CancelParticipantAuthenticationAsync(CancelParticipantAuthenticationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelParticipantAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelParticipantAuthenticationResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual CompleteAttachmentUploadResponse CompleteAttachmentUpload(CompleteAttachmentUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
         public virtual Task<CompleteAttachmentUploadResponse> CompleteAttachmentUploadAsync(CompleteAttachmentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual CreateParticipantConnectionResponse CreateParticipantConnection(CreateParticipantConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantConnectionResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CreateParticipantConnection">REST API Reference for CreateParticipantConnection Operation</seealso>
         public virtual Task<CreateParticipantConnectionResponse> CreateParticipantConnectionAsync(CreateParticipantConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParticipantConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParticipantConnectionResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual DescribeViewResponse DescribeView(DescribeViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView">REST API Reference for DescribeView Operation</seealso>
         public virtual Task<DescribeViewResponse> DescribeViewAsync(DescribeViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeViewResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual DisconnectParticipantResponse DisconnectParticipant(DisconnectParticipantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectParticipantResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DisconnectParticipant">REST API Reference for DisconnectParticipant Operation</seealso>
         public virtual Task<DisconnectParticipantResponse> DisconnectParticipantAsync(DisconnectParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectParticipantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectParticipantResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual GetAttachmentResponse GetAttachment(GetAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttachmentResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">REST API Reference for GetAttachment Operation</seealso>
         public virtual Task<GetAttachmentResponse> GetAttachmentAsync(GetAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttachmentResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual GetAuthenticationUrlResponse GetAuthenticationUrl(GetAuthenticationUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthenticationUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthenticationUrlResponseUnmarshaller.Instance;
 
@@ -819,7 +819,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAuthenticationUrl">REST API Reference for GetAuthenticationUrl Operation</seealso>
         public virtual Task<GetAuthenticationUrlResponse> GetAuthenticationUrlAsync(GetAuthenticationUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthenticationUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthenticationUrlResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual GetTranscriptResponse GetTranscript(GetTranscriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTranscriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTranscriptResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetTranscript">REST API Reference for GetTranscript Operation</seealso>
         public virtual Task<GetTranscriptResponse> GetTranscriptAsync(GetTranscriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTranscriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTranscriptResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual SendEventResponse SendEvent(SendEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent">REST API Reference for SendEvent Operation</seealso>
         public virtual Task<SendEventResponse> SendEventAsync(SendEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEventResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.ConnectParticipant
 
         internal virtual StartAttachmentUploadResponse StartAttachmentUpload(StartAttachmentUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAttachmentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAttachmentUploadResponseUnmarshaller.Instance;
 
@@ -1115,7 +1115,7 @@ namespace Amazon.ConnectParticipant
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">REST API Reference for StartAttachmentUpload Operation</seealso>
         public virtual Task<StartAttachmentUploadResponse> StartAttachmentUploadAsync(StartAttachmentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAttachmentUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAttachmentUploadResponseUnmarshaller.Instance;
 

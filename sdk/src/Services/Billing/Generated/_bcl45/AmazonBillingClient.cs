@@ -314,7 +314,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
         public virtual AssociateSourceViewsResponse AssociateSourceViews(AssociateSourceViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/AssociateSourceViews">REST API Reference for AssociateSourceViews Operation</seealso>
         public virtual Task<AssociateSourceViewsResponse> AssociateSourceViewsAsync(AssociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceViewsResponseUnmarshaller.Instance;
             
@@ -410,7 +410,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">REST API Reference for CreateBillingView Operation</seealso>
         public virtual CreateBillingViewResponse CreateBillingView(CreateBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/CreateBillingView">REST API Reference for CreateBillingView Operation</seealso>
         public virtual Task<CreateBillingViewResponse> CreateBillingViewAsync(CreateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBillingViewResponseUnmarshaller.Instance;
             
@@ -494,7 +494,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         public virtual DeleteBillingViewResponse DeleteBillingView(DeleteBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DeleteBillingView">REST API Reference for DeleteBillingView Operation</seealso>
         public virtual Task<DeleteBillingViewResponse> DeleteBillingViewAsync(DeleteBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBillingViewResponseUnmarshaller.Instance;
             
@@ -575,7 +575,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
         public virtual DisassociateSourceViewsResponse DisassociateSourceViews(DisassociateSourceViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/DisassociateSourceViews">REST API Reference for DisassociateSourceViews Operation</seealso>
         public virtual Task<DisassociateSourceViewsResponse> DisassociateSourceViewsAsync(DisassociateSourceViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceViewsResponseUnmarshaller.Instance;
             
@@ -655,7 +655,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
         public virtual GetBillingViewResponse GetBillingView(GetBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
 
@@ -690,7 +690,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetBillingView">REST API Reference for GetBillingView Operation</seealso>
         public virtual Task<GetBillingViewResponse> GetBillingViewAsync(GetBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBillingViewResponseUnmarshaller.Instance;
             
@@ -727,7 +727,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -804,7 +804,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViews">REST API Reference for ListBillingViews Operation</seealso>
         public virtual ListBillingViewsResponse ListBillingViews(ListBillingViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
 
@@ -844,7 +844,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViews">REST API Reference for ListBillingViews Operation</seealso>
         public virtual Task<ListBillingViewsResponse> ListBillingViewsAsync(ListBillingViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBillingViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
             
@@ -881,7 +881,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListSourceViewsForBillingView">REST API Reference for ListSourceViewsForBillingView Operation</seealso>
         public virtual ListSourceViewsForBillingViewResponse ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListSourceViewsForBillingView">REST API Reference for ListSourceViewsForBillingView Operation</seealso>
         public virtual Task<ListSourceViewsForBillingViewResponse> ListSourceViewsForBillingViewAsync(ListSourceViewsForBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceViewsForBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceViewsForBillingViewResponseUnmarshaller.Instance;
             
@@ -953,7 +953,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1024,7 +1024,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1096,7 +1096,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1180,7 +1180,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingView">REST API Reference for UpdateBillingView Operation</seealso>
         public virtual UpdateBillingViewResponse UpdateBillingView(UpdateBillingViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.Billing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/UpdateBillingView">REST API Reference for UpdateBillingView Operation</seealso>
         public virtual Task<UpdateBillingViewResponse> UpdateBillingViewAsync(UpdateBillingViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBillingViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBillingViewResponseUnmarshaller.Instance;
             

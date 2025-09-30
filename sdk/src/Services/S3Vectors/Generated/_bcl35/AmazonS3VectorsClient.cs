@@ -324,7 +324,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual IAsyncResult BeginCreateIndex(CreateIndexRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateVectorBucket">REST API Reference for CreateVectorBucket Operation</seealso>
         public virtual CreateVectorBucketResponse CreateVectorBucket(CreateVectorBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVectorBucketResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/CreateVectorBucket">REST API Reference for CreateVectorBucket Operation</seealso>
         public virtual IAsyncResult BeginCreateVectorBucket(CreateVectorBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVectorBucketResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual IAsyncResult BeginDeleteIndex(DeleteIndexRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucket">REST API Reference for DeleteVectorBucket Operation</seealso>
         public virtual DeleteVectorBucketResponse DeleteVectorBucket(DeleteVectorBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorBucketResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucket">REST API Reference for DeleteVectorBucket Operation</seealso>
         public virtual IAsyncResult BeginDeleteVectorBucket(DeleteVectorBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorBucketResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucketPolicy">REST API Reference for DeleteVectorBucketPolicy Operation</seealso>
         public virtual DeleteVectorBucketPolicyResponse DeleteVectorBucketPolicy(DeleteVectorBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -713,7 +713,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectorBucketPolicy">REST API Reference for DeleteVectorBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteVectorBucketPolicy(DeleteVectorBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectors">REST API Reference for DeleteVectors Operation</seealso>
         public virtual DeleteVectorsResponse DeleteVectors(DeleteVectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorsResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/DeleteVectors">REST API Reference for DeleteVectors Operation</seealso>
         public virtual IAsyncResult BeginDeleteVectors(DeleteVectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorsResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetIndex">REST API Reference for GetIndex Operation</seealso>
         public virtual GetIndexResponse GetIndex(GetIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetIndex">REST API Reference for GetIndex Operation</seealso>
         public virtual IAsyncResult BeginGetIndex(GetIndexRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucket">REST API Reference for GetVectorBucket Operation</seealso>
         public virtual GetVectorBucketResponse GetVectorBucket(GetVectorBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorBucketResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucket">REST API Reference for GetVectorBucket Operation</seealso>
         public virtual IAsyncResult BeginGetVectorBucket(GetVectorBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorBucketResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucketPolicy">REST API Reference for GetVectorBucketPolicy Operation</seealso>
         public virtual GetVectorBucketPolicyResponse GetVectorBucketPolicy(GetVectorBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectorBucketPolicy">REST API Reference for GetVectorBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetVectorBucketPolicy(GetVectorBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectors">REST API Reference for GetVectors Operation</seealso>
         public virtual GetVectorsResponse GetVectors(GetVectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorsResponseUnmarshaller.Instance;
 
@@ -1235,7 +1235,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/GetVectors">REST API Reference for GetVectors Operation</seealso>
         public virtual IAsyncResult BeginGetVectors(GetVectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorsResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListIndexes">REST API Reference for ListIndexes Operation</seealso>
         public virtual ListIndexesResponse ListIndexes(ListIndexesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesResponseUnmarshaller.Instance;
 
@@ -1326,7 +1326,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListIndexes">REST API Reference for ListIndexes Operation</seealso>
         public virtual IAsyncResult BeginListIndexes(ListIndexesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectorBuckets">REST API Reference for ListVectorBuckets Operation</seealso>
         public virtual ListVectorBucketsResponse ListVectorBuckets(ListVectorBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorBucketsResponseUnmarshaller.Instance;
 
@@ -1414,7 +1414,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectorBuckets">REST API Reference for ListVectorBuckets Operation</seealso>
         public virtual IAsyncResult BeginListVectorBuckets(ListVectorBucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorBucketsResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectors">REST API Reference for ListVectors Operation</seealso>
         public virtual ListVectorsResponse ListVectors(ListVectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorsResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/ListVectors">REST API Reference for ListVectors Operation</seealso>
         public virtual IAsyncResult BeginListVectors(ListVectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorsResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketPolicy">REST API Reference for PutVectorBucketPolicy Operation</seealso>
         public virtual PutVectorBucketPolicyResponse PutVectorBucketPolicy(PutVectorBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1616,7 +1616,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketPolicy">REST API Reference for PutVectorBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutVectorBucketPolicy(PutVectorBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVectorBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVectorBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectors">REST API Reference for PutVectors Operation</seealso>
         public virtual PutVectorsResponse PutVectors(PutVectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVectorsResponseUnmarshaller.Instance;
 
@@ -1756,7 +1756,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectors">REST API Reference for PutVectors Operation</seealso>
         public virtual IAsyncResult BeginPutVectors(PutVectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVectorsResponseUnmarshaller.Instance;
 
@@ -1881,7 +1881,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/QueryVectors">REST API Reference for QueryVectors Operation</seealso>
         public virtual QueryVectorsResponse QueryVectors(QueryVectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryVectorsResponseUnmarshaller.Instance;
 
@@ -1902,7 +1902,7 @@ namespace Amazon.S3Vectors
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/QueryVectors">REST API Reference for QueryVectors Operation</seealso>
         public virtual IAsyncResult BeginQueryVectors(QueryVectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryVectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryVectorsResponseUnmarshaller.Instance;
 

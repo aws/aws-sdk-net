@@ -363,7 +363,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">REST API Reference for CreateBroker Operation</seealso>
         public virtual CreateBrokerResponse CreateBroker(CreateBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrokerResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateBroker">REST API Reference for CreateBroker Operation</seealso>
         public virtual IAsyncResult BeginCreateBroker(CreateBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrokerResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateConfiguration(CreateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">REST API Reference for DeleteBroker Operation</seealso>
         public virtual DeleteBrokerResponse DeleteBroker(DeleteBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrokerResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteBroker">REST API Reference for DeleteBroker Operation</seealso>
         public virtual IAsyncResult BeginDeleteBroker(DeleteBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrokerResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfiguration(DeleteConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">REST API Reference for DescribeBroker Operation</seealso>
         public virtual DescribeBrokerResponse DescribeBroker(DescribeBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker">REST API Reference for DescribeBroker Operation</seealso>
         public virtual IAsyncResult BeginDescribeBroker(DescribeBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
         public virtual DescribeBrokerEngineTypesResponse DescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
 
@@ -991,7 +991,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes">REST API Reference for DescribeBrokerEngineTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerEngineTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerEngineTypesResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
         public virtual DescribeBrokerInstanceOptionsResponse DescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions">REST API Reference for DescribeBrokerInstanceOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrokerInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrokerInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -1099,7 +1099,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual DescribeConfigurationResponse DescribeConfiguration(DescribeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -1120,7 +1120,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfiguration(DescribeConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -1165,7 +1165,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual DescribeConfigurationRevisionResponse DescribeConfigurationRevision(DescribeConfigurationRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRevision(DescribeConfigurationRevisionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual IAsyncResult BeginDescribeUser(DescribeUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1294,7 +1294,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">REST API Reference for ListBrokers Operation</seealso>
         public virtual ListBrokersResponse ListBrokers(ListBrokersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrokersResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListBrokers">REST API Reference for ListBrokers Operation</seealso>
         public virtual IAsyncResult BeginListBrokers(ListBrokersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrokersResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationRevisions(ListConfigurationRevisionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -1444,7 +1444,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1555,7 +1555,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
         public virtual PromoteResponse Promote(PromoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteResponseUnmarshaller.Instance;
 
@@ -1642,7 +1642,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
         public virtual IAsyncResult BeginPromote(PromoteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual RebootBrokerResponse RebootBroker(RebootBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual IAsyncResult BeginRebootBroker(RebootBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -1756,7 +1756,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">REST API Reference for UpdateBroker Operation</seealso>
         public virtual UpdateBrokerResponse UpdateBroker(UpdateBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker">REST API Reference for UpdateBroker Operation</seealso>
         public virtual IAsyncResult BeginUpdateBroker(UpdateBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -1846,7 +1846,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfiguration(UpdateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.MQ
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

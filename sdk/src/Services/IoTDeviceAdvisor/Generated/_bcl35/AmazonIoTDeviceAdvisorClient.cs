@@ -296,7 +296,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">REST API Reference for CreateSuiteDefinition Operation</seealso>
         public virtual CreateSuiteDefinitionResponse CreateSuiteDefinition(CreateSuiteDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/CreateSuiteDefinition">REST API Reference for CreateSuiteDefinition Operation</seealso>
         public virtual IAsyncResult BeginCreateSuiteDefinition(CreateSuiteDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">REST API Reference for DeleteSuiteDefinition Operation</seealso>
         public virtual DeleteSuiteDefinitionResponse DeleteSuiteDefinition(DeleteSuiteDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeleteSuiteDefinition">REST API Reference for DeleteSuiteDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeleteSuiteDefinition(DeleteSuiteDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         public virtual GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetEndpoint">REST API Reference for GetEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetEndpoint(GetEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">REST API Reference for GetSuiteDefinition Operation</seealso>
         public virtual GetSuiteDefinitionResponse GetSuiteDefinition(GetSuiteDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteDefinition">REST API Reference for GetSuiteDefinition Operation</seealso>
         public virtual IAsyncResult BeginGetSuiteDefinition(GetSuiteDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">REST API Reference for GetSuiteRun Operation</seealso>
         public virtual GetSuiteRunResponse GetSuiteRun(GetSuiteRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteRunResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRun">REST API Reference for GetSuiteRun Operation</seealso>
         public virtual IAsyncResult BeginGetSuiteRun(GetSuiteRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteRunResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">REST API Reference for GetSuiteRunReport Operation</seealso>
         public virtual GetSuiteRunReportResponse GetSuiteRunReport(GetSuiteRunReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRunReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteRunReportResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GetSuiteRunReport">REST API Reference for GetSuiteRunReport Operation</seealso>
         public virtual IAsyncResult BeginGetSuiteRunReport(GetSuiteRunReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRunReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteRunReportResponseUnmarshaller.Instance;
 
@@ -699,7 +699,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">REST API Reference for ListSuiteDefinitions Operation</seealso>
         public virtual ListSuiteDefinitionsResponse ListSuiteDefinitions(ListSuiteDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuiteDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuiteDefinitionsResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteDefinitions">REST API Reference for ListSuiteDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListSuiteDefinitions(ListSuiteDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuiteDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuiteDefinitionsResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">REST API Reference for ListSuiteRuns Operation</seealso>
         public virtual ListSuiteRunsResponse ListSuiteRuns(ListSuiteRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuiteRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuiteRunsResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListSuiteRuns">REST API Reference for ListSuiteRuns Operation</seealso>
         public virtual IAsyncResult BeginListSuiteRuns(ListSuiteRunsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuiteRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuiteRunsResponseUnmarshaller.Instance;
 
@@ -835,7 +835,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">REST API Reference for StartSuiteRun Operation</seealso>
         public virtual StartSuiteRunResponse StartSuiteRun(StartSuiteRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSuiteRunResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">REST API Reference for StartSuiteRun Operation</seealso>
         public virtual IAsyncResult BeginStartSuiteRun(StartSuiteRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSuiteRunResponseUnmarshaller.Instance;
 
@@ -973,7 +973,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
         public virtual StopSuiteRunResponse StopSuiteRun(StopSuiteRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">REST API Reference for StopSuiteRun Operation</seealso>
         public virtual IAsyncResult BeginStopSuiteRun(StopSuiteRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSuiteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSuiteRunResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">REST API Reference for UpdateSuiteDefinition Operation</seealso>
         public virtual UpdateSuiteDefinitionResponse UpdateSuiteDefinition(UpdateSuiteDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSuiteDefinitionResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/UpdateSuiteDefinition">REST API Reference for UpdateSuiteDefinition Operation</seealso>
         public virtual IAsyncResult BeginUpdateSuiteDefinition(UpdateSuiteDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSuiteDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSuiteDefinitionResponseUnmarshaller.Instance;
 

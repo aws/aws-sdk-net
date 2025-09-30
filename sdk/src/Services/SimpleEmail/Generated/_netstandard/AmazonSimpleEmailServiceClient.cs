@@ -309,7 +309,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CloneReceiptRuleSetResponse CloneReceiptRuleSet(CloneReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet">REST API Reference for CloneReceiptRuleSet Operation</seealso>
         public virtual Task<CloneReceiptRuleSetResponse> CloneReceiptRuleSetAsync(CloneReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloneReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloneReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -366,7 +366,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateConfigurationSetTrackingOptionsResponse CreateConfigurationSetTrackingOptions(CreateConfigurationSetTrackingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions">REST API Reference for CreateConfigurationSetTrackingOptions Operation</seealso>
         public virtual Task<CreateConfigurationSetTrackingOptionsResponse> CreateConfigurationSetTrackingOptionsAsync(CreateConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateCustomVerificationEmailTemplateResponse CreateCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateCustomVerificationEmailTemplate">REST API Reference for CreateCustomVerificationEmailTemplate Operation</seealso>
         public virtual Task<CreateCustomVerificationEmailTemplateResponse> CreateCustomVerificationEmailTemplateAsync(CreateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilter">REST API Reference for CreateReceiptFilter Operation</seealso>
         public virtual Task<CreateReceiptFilterResponse> CreateReceiptFilterAsync(CreateReceiptFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptFilterResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateReceiptRuleResponse CreateReceiptRule(CreateReceiptRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRule">REST API Reference for CreateReceiptRule Operation</seealso>
         public virtual Task<CreateReceiptRuleResponse> CreateReceiptRuleAsync(CreateReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptRuleResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptRuleSet">REST API Reference for CreateReceiptRuleSet Operation</seealso>
         public virtual Task<CreateReceiptRuleSetResponse> CreateReceiptRuleSetAsync(CreateReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -801,7 +801,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -933,7 +933,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteConfigurationSetTrackingOptionsResponse DeleteConfigurationSetTrackingOptions(DeleteConfigurationSetTrackingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions">REST API Reference for DeleteConfigurationSetTrackingOptions Operation</seealso>
         public virtual Task<DeleteConfigurationSetTrackingOptionsResponse> DeleteConfigurationSetTrackingOptionsAsync(DeleteConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteCustomVerificationEmailTemplateResponse DeleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteCustomVerificationEmailTemplate">REST API Reference for DeleteCustomVerificationEmailTemplate Operation</seealso>
         public virtual Task<DeleteCustomVerificationEmailTemplateResponse> DeleteCustomVerificationEmailTemplateAsync(DeleteCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -1045,7 +1045,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentity">REST API Reference for DeleteIdentity Operation</seealso>
         public virtual Task<DeleteIdentityResponse> DeleteIdentityAsync(DeleteIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteIdentityPolicyResponse DeleteIdentityPolicy(DeleteIdentityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteIdentityPolicy">REST API Reference for DeleteIdentityPolicy Operation</seealso>
         public virtual Task<DeleteIdentityPolicyResponse> DeleteIdentityPolicyAsync(DeleteIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityPolicyResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteReceiptFilterResponse DeleteReceiptFilter(DeleteReceiptFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptFilter">REST API Reference for DeleteReceiptFilter Operation</seealso>
         public virtual Task<DeleteReceiptFilterResponse> DeleteReceiptFilterAsync(DeleteReceiptFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptFilterResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteReceiptRuleResponse DeleteReceiptRule(DeleteReceiptRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRule">REST API Reference for DeleteReceiptRule Operation</seealso>
         public virtual Task<DeleteReceiptRuleResponse> DeleteReceiptRuleAsync(DeleteReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptRuleResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteReceiptRuleSetResponse DeleteReceiptRuleSet(DeleteReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1267,7 +1267,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleSet">REST API Reference for DeleteReceiptRuleSet Operation</seealso>
         public virtual Task<DeleteReceiptRuleSetResponse> DeleteReceiptRuleSetAsync(DeleteReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteVerifiedEmailAddress">REST API Reference for DeleteVerifiedEmailAddress Operation</seealso>
         public virtual Task<DeleteVerifiedEmailAddressResponse> DeleteVerifiedEmailAddressAsync(DeleteVerifiedEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedEmailAddressResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DescribeActiveReceiptRuleSetResponse DescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1386,7 +1386,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSet">REST API Reference for DescribeActiveReceiptRuleSet Operation</seealso>
         public virtual Task<DescribeActiveReceiptRuleSetResponse> DescribeActiveReceiptRuleSetAsync(DescribeActiveReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActiveReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DescribeConfigurationSetResponse DescribeConfigurationSet(DescribeConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSet">REST API Reference for DescribeConfigurationSet Operation</seealso>
         public virtual Task<DescribeConfigurationSetResponse> DescribeConfigurationSetAsync(DescribeConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DescribeReceiptRuleResponse DescribeReceiptRule(DescribeReceiptRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRule">REST API Reference for DescribeReceiptRule Operation</seealso>
         public virtual Task<DescribeReceiptRuleResponse> DescribeReceiptRuleAsync(DescribeReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReceiptRuleResponseUnmarshaller.Instance;
 
@@ -1493,7 +1493,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual DescribeReceiptRuleSetResponse DescribeReceiptRuleSet(DescribeReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeReceiptRuleSet">REST API Reference for DescribeReceiptRuleSet Operation</seealso>
         public virtual Task<DescribeReceiptRuleSetResponse> DescribeReceiptRuleSetAsync(DescribeReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetAccountSendingEnabledResponse GetAccountSendingEnabled(GetAccountSendingEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled">REST API Reference for GetAccountSendingEnabled Operation</seealso>
         public virtual Task<GetAccountSendingEnabledResponse> GetAccountSendingEnabledAsync(GetAccountSendingEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSendingEnabledResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetCustomVerificationEmailTemplateResponse GetCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -1614,7 +1614,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetCustomVerificationEmailTemplate">REST API Reference for GetCustomVerificationEmailTemplate Operation</seealso>
         public virtual Task<GetCustomVerificationEmailTemplateResponse> GetCustomVerificationEmailTemplateAsync(GetCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -1627,7 +1627,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
 
@@ -1680,7 +1680,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributes">REST API Reference for GetIdentityDkimAttributes Operation</seealso>
         public virtual Task<GetIdentityDkimAttributesResponse> GetIdentityDkimAttributesAsync(GetIdentityDkimAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityDkimAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityDkimAttributesResponseUnmarshaller.Instance;
 
@@ -1693,7 +1693,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetIdentityMailFromDomainAttributesResponse GetIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributes">REST API Reference for GetIdentityMailFromDomainAttributes Operation</seealso>
         public virtual Task<GetIdentityMailFromDomainAttributesResponse> GetIdentityMailFromDomainAttributesAsync(GetIdentityMailFromDomainAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityMailFromDomainAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityMailFromDomainAttributesResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -1767,7 +1767,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributes">REST API Reference for GetIdentityNotificationAttributes Operation</seealso>
         public virtual Task<GetIdentityNotificationAttributesResponse> GetIdentityNotificationAttributesAsync(GetIdentityNotificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -1780,7 +1780,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetIdentityPoliciesResponse GetIdentityPolicies(GetIdentityPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityPolicies">REST API Reference for GetIdentityPolicies Operation</seealso>
         public virtual Task<GetIdentityPoliciesResponse> GetIdentityPoliciesAsync(GetIdentityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityPoliciesResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityVerificationAttributes">REST API Reference for GetIdentityVerificationAttributes Operation</seealso>
         public virtual Task<GetIdentityVerificationAttributesResponse> GetIdentityVerificationAttributesAsync(GetIdentityVerificationAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityVerificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityVerificationAttributesResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.SimpleEmail
         }
         internal virtual GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSendQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
 
@@ -1942,7 +1942,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuota">REST API Reference for GetSendQuota Operation</seealso>
         public virtual Task<GetSendQuotaResponse> GetSendQuotaAsync(GetSendQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSendQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSendQuotaResponseUnmarshaller.Instance;
 
@@ -1959,7 +1959,7 @@ namespace Amazon.SimpleEmail
         }
         internal virtual GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSendStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
 
@@ -2009,7 +2009,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendStatistics">REST API Reference for GetSendStatistics Operation</seealso>
         public virtual Task<GetSendStatisticsResponse> GetSendStatisticsAsync(GetSendStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSendStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
 
@@ -2022,7 +2022,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -2113,7 +2113,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListCustomVerificationEmailTemplatesResponse ListCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates">REST API Reference for ListCustomVerificationEmailTemplates Operation</seealso>
         public virtual Task<ListCustomVerificationEmailTemplatesResponse> ListCustomVerificationEmailTemplatesAsync(ListCustomVerificationEmailTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomVerificationEmailTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomVerificationEmailTemplatesResponseUnmarshaller.Instance;
 
@@ -2162,7 +2162,7 @@ namespace Amazon.SimpleEmail
         }
         internal virtual ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
@@ -2234,7 +2234,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public virtual Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitiesResponseUnmarshaller.Instance;
 
@@ -2247,7 +2247,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListIdentityPoliciesResponse ListIdentityPolicies(ListIdentityPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
 
@@ -2287,7 +2287,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListIdentityPolicies">REST API Reference for ListIdentityPolicies Operation</seealso>
         public virtual Task<ListIdentityPoliciesResponse> ListIdentityPoliciesAsync(ListIdentityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityPoliciesResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListReceiptFiltersResponse ListReceiptFilters(ListReceiptFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceiptFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptFilters">REST API Reference for ListReceiptFilters Operation</seealso>
         public virtual Task<ListReceiptFiltersResponse> ListReceiptFiltersAsync(ListReceiptFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceiptFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceiptFiltersResponseUnmarshaller.Instance;
 
@@ -2345,7 +2345,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListReceiptRuleSetsResponse ListReceiptRuleSets(ListReceiptRuleSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListReceiptRuleSets">REST API Reference for ListReceiptRuleSets Operation</seealso>
         public virtual Task<ListReceiptRuleSetsResponse> ListReceiptRuleSetsAsync(ListReceiptRuleSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReceiptRuleSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReceiptRuleSetsResponseUnmarshaller.Instance;
 
@@ -2392,7 +2392,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -2419,7 +2419,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -2436,7 +2436,7 @@ namespace Amazon.SimpleEmail
         }
         internal virtual ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
 
@@ -2474,7 +2474,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddresses">REST API Reference for ListVerifiedEmailAddresses Operation</seealso>
         public virtual Task<ListVerifiedEmailAddressesResponse> ListVerifiedEmailAddressesAsync(ListVerifiedEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVerifiedEmailAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVerifiedEmailAddressesResponseUnmarshaller.Instance;
 
@@ -2487,7 +2487,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         public virtual Task<PutConfigurationSetDeliveryOptionsResponse> PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
@@ -2527,7 +2527,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual PutIdentityPolicyResponse PutIdentityPolicy(PutIdentityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIdentityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
 
@@ -2570,7 +2570,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicy">REST API Reference for PutIdentityPolicy Operation</seealso>
         public virtual Task<PutIdentityPolicyResponse> PutIdentityPolicyAsync(PutIdentityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIdentityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIdentityPolicyResponseUnmarshaller.Instance;
 
@@ -2583,7 +2583,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual ReorderReceiptRuleSetResponse ReorderReceiptRuleSet(ReorderReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReorderReceiptRuleSet">REST API Reference for ReorderReceiptRuleSet Operation</seealso>
         public virtual Task<ReorderReceiptRuleSetResponse> ReorderReceiptRuleSetAsync(ReorderReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReorderReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReorderReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -2638,7 +2638,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendBounceResponse SendBounce(SendBounceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendBounceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendBounceResponseUnmarshaller.Instance;
 
@@ -2680,7 +2680,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBounce">REST API Reference for SendBounce Operation</seealso>
         public virtual Task<SendBounceResponse> SendBounceAsync(SendBounceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendBounceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendBounceResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendBulkTemplatedEmailResponse SendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail">REST API Reference for SendBulkTemplatedEmail Operation</seealso>
         public virtual Task<SendBulkTemplatedEmailResponse> SendBulkTemplatedEmailAsync(SendBulkTemplatedEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendBulkTemplatedEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendBulkTemplatedEmailResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendCustomVerificationEmailResponse SendCustomVerificationEmail(SendCustomVerificationEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
 
@@ -2860,7 +2860,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmail">REST API Reference for SendCustomVerificationEmail Operation</seealso>
         public virtual Task<SendCustomVerificationEmailResponse> SendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendCustomVerificationEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendCustomVerificationEmailResponseUnmarshaller.Instance;
 
@@ -2873,7 +2873,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
@@ -2966,7 +2966,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public virtual Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
@@ -2979,7 +2979,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendRawEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
@@ -3143,7 +3143,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail">REST API Reference for SendRawEmail Operation</seealso>
         public virtual Task<SendRawEmailResponse> SendRawEmailAsync(SendRawEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendRawEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendRawEmailResponseUnmarshaller.Instance;
 
@@ -3156,7 +3156,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SendTemplatedEmailResponse SendTemplatedEmail(SendTemplatedEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendTemplatedEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
 
@@ -3266,7 +3266,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail">REST API Reference for SendTemplatedEmail Operation</seealso>
         public virtual Task<SendTemplatedEmailResponse> SendTemplatedEmailAsync(SendTemplatedEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendTemplatedEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendTemplatedEmailResponseUnmarshaller.Instance;
 
@@ -3279,7 +3279,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetActiveReceiptRuleSetResponse SetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -3318,7 +3318,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetActiveReceiptRuleSet">REST API Reference for SetActiveReceiptRuleSet Operation</seealso>
         public virtual Task<SetActiveReceiptRuleSetResponse> SetActiveReceiptRuleSetAsync(SetActiveReceiptRuleSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetActiveReceiptRuleSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
@@ -3331,7 +3331,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
 
@@ -3376,7 +3376,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityDkimEnabled">REST API Reference for SetIdentityDkimEnabled Operation</seealso>
         public virtual Task<SetIdentityDkimEnabledResponse> SetIdentityDkimEnabledAsync(SetIdentityDkimEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityDkimEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityDkimEnabledResponseUnmarshaller.Instance;
 
@@ -3389,7 +3389,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabled">REST API Reference for SetIdentityFeedbackForwardingEnabled Operation</seealso>
         public virtual Task<SetIdentityFeedbackForwardingEnabledResponse> SetIdentityFeedbackForwardingEnabledAsync(SetIdentityFeedbackForwardingEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityFeedbackForwardingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityFeedbackForwardingEnabledResponseUnmarshaller.Instance;
 
@@ -3441,7 +3441,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetIdentityHeadersInNotificationsEnabledResponse SetIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
 
@@ -3474,7 +3474,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled">REST API Reference for SetIdentityHeadersInNotificationsEnabled Operation</seealso>
         public virtual Task<SetIdentityHeadersInNotificationsEnabledResponse> SetIdentityHeadersInNotificationsEnabledAsync(SetIdentityHeadersInNotificationsEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityHeadersInNotificationsEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityHeadersInNotificationsEnabledResponseUnmarshaller.Instance;
 
@@ -3487,7 +3487,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetIdentityMailFromDomainResponse SetIdentityMailFromDomain(SetIdentityMailFromDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
 
@@ -3522,7 +3522,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain">REST API Reference for SetIdentityMailFromDomain Operation</seealso>
         public virtual Task<SetIdentityMailFromDomainResponse> SetIdentityMailFromDomainAsync(SetIdentityMailFromDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityMailFromDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityMailFromDomainResponseUnmarshaller.Instance;
 
@@ -3535,7 +3535,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
 
@@ -3571,7 +3571,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic">REST API Reference for SetIdentityNotificationTopic Operation</seealso>
         public virtual Task<SetIdentityNotificationTopicResponse> SetIdentityNotificationTopicAsync(SetIdentityNotificationTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIdentityNotificationTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIdentityNotificationTopicResponseUnmarshaller.Instance;
 
@@ -3584,7 +3584,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual SetReceiptRulePositionResponse SetReceiptRulePosition(SetReceiptRulePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetReceiptRulePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
 
@@ -3621,7 +3621,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePosition">REST API Reference for SetReceiptRulePosition Operation</seealso>
         public virtual Task<SetReceiptRulePositionResponse> SetReceiptRulePositionAsync(SetReceiptRulePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetReceiptRulePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
 
@@ -3634,7 +3634,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual TestRenderTemplateResponse TestRenderTemplate(TestRenderTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRenderTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
 
@@ -3674,7 +3674,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate">REST API Reference for TestRenderTemplate Operation</seealso>
         public virtual Task<TestRenderTemplateResponse> TestRenderTemplateAsync(TestRenderTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRenderTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRenderTemplateResponseUnmarshaller.Instance;
 
@@ -3687,7 +3687,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateAccountSendingEnabledResponse UpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
 
@@ -3717,7 +3717,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled">REST API Reference for UpdateAccountSendingEnabled Operation</seealso>
         public virtual Task<UpdateAccountSendingEnabledResponse> UpdateAccountSendingEnabledAsync(UpdateAccountSendingEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSendingEnabledResponseUnmarshaller.Instance;
 
@@ -3730,7 +3730,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -3784,7 +3784,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -3797,7 +3797,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateConfigurationSetReputationMetricsEnabledResponse UpdateConfigurationSetReputationMetricsEnabled(UpdateConfigurationSetReputationMetricsEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
 
@@ -3829,7 +3829,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled">REST API Reference for UpdateConfigurationSetReputationMetricsEnabled Operation</seealso>
         public virtual Task<UpdateConfigurationSetReputationMetricsEnabledResponse> UpdateConfigurationSetReputationMetricsEnabledAsync(UpdateConfigurationSetReputationMetricsEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetReputationMetricsEnabledResponseUnmarshaller.Instance;
 
@@ -3842,7 +3842,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateConfigurationSetSendingEnabledResponse UpdateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
 
@@ -3875,7 +3875,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled">REST API Reference for UpdateConfigurationSetSendingEnabled Operation</seealso>
         public virtual Task<UpdateConfigurationSetSendingEnabledResponse> UpdateConfigurationSetSendingEnabledAsync(UpdateConfigurationSetSendingEnabledRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetSendingEnabledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetSendingEnabledResponseUnmarshaller.Instance;
 
@@ -3888,7 +3888,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateConfigurationSetTrackingOptionsResponse UpdateConfigurationSetTrackingOptions(UpdateConfigurationSetTrackingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -3938,7 +3938,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions">REST API Reference for UpdateConfigurationSetTrackingOptions Operation</seealso>
         public virtual Task<UpdateConfigurationSetTrackingOptionsResponse> UpdateConfigurationSetTrackingOptionsAsync(UpdateConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateCustomVerificationEmailTemplateResponse UpdateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -3993,7 +3993,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateCustomVerificationEmailTemplate">REST API Reference for UpdateCustomVerificationEmailTemplate Operation</seealso>
         public virtual Task<UpdateCustomVerificationEmailTemplateResponse> UpdateCustomVerificationEmailTemplateAsync(UpdateCustomVerificationEmailTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomVerificationEmailTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomVerificationEmailTemplateResponseUnmarshaller.Instance;
 
@@ -4006,7 +4006,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateReceiptRuleResponse UpdateReceiptRule(UpdateReceiptRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
 
@@ -4066,7 +4066,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateReceiptRule">REST API Reference for UpdateReceiptRule Operation</seealso>
         public virtual Task<UpdateReceiptRuleResponse> UpdateReceiptRuleAsync(UpdateReceiptRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReceiptRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReceiptRuleResponseUnmarshaller.Instance;
 
@@ -4079,7 +4079,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -4115,7 +4115,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -4128,7 +4128,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDomainDkimRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
 
@@ -4195,7 +4195,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkim">REST API Reference for VerifyDomainDkim Operation</seealso>
         public virtual Task<VerifyDomainDkimResponse> VerifyDomainDkimAsync(VerifyDomainDkimRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDomainDkimRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDomainDkimResponseUnmarshaller.Instance;
 
@@ -4208,7 +4208,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDomainIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
 
@@ -4237,7 +4237,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainIdentity">REST API Reference for VerifyDomainIdentity Operation</seealso>
         public virtual Task<VerifyDomainIdentityResponse> VerifyDomainIdentityAsync(VerifyDomainIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDomainIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDomainIdentityResponseUnmarshaller.Instance;
 
@@ -4250,7 +4250,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
 
@@ -4271,7 +4271,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailAddress">REST API Reference for VerifyEmailAddress Operation</seealso>
         public virtual Task<VerifyEmailAddressResponse> VerifyEmailAddressAsync(VerifyEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyEmailAddressResponseUnmarshaller.Instance;
 
@@ -4284,7 +4284,7 @@ namespace Amazon.SimpleEmail
 
         internal virtual VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
 
@@ -4312,7 +4312,7 @@ namespace Amazon.SimpleEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyEmailIdentity">REST API Reference for VerifyEmailIdentity Operation</seealso>
         public virtual Task<VerifyEmailIdentityResponse> VerifyEmailIdentityAsync(VerifyEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyEmailIdentityResponseUnmarshaller.Instance;
 

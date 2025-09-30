@@ -273,7 +273,7 @@ namespace Amazon.KendraRanking
 
         internal virtual CreateRescoreExecutionPlanResponse CreateRescoreExecutionPlan(CreateRescoreExecutionPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/CreateRescoreExecutionPlan">REST API Reference for CreateRescoreExecutionPlan Operation</seealso>
         public virtual Task<CreateRescoreExecutionPlanResponse> CreateRescoreExecutionPlanAsync(CreateRescoreExecutionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.KendraRanking
 
         internal virtual DeleteRescoreExecutionPlanResponse DeleteRescoreExecutionPlan(DeleteRescoreExecutionPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/DeleteRescoreExecutionPlan">REST API Reference for DeleteRescoreExecutionPlan Operation</seealso>
         public virtual Task<DeleteRescoreExecutionPlanResponse> DeleteRescoreExecutionPlanAsync(DeleteRescoreExecutionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.KendraRanking
 
         internal virtual DescribeRescoreExecutionPlanResponse DescribeRescoreExecutionPlan(DescribeRescoreExecutionPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -447,7 +447,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/DescribeRescoreExecutionPlan">REST API Reference for DescribeRescoreExecutionPlan Operation</seealso>
         public virtual Task<DescribeRescoreExecutionPlanResponse> DescribeRescoreExecutionPlanAsync(DescribeRescoreExecutionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.KendraRanking
 
         internal virtual ListRescoreExecutionPlansResponse ListRescoreExecutionPlans(ListRescoreExecutionPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRescoreExecutionPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRescoreExecutionPlansResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/ListRescoreExecutionPlans">REST API Reference for ListRescoreExecutionPlans Operation</seealso>
         public virtual Task<ListRescoreExecutionPlansResponse> ListRescoreExecutionPlansAsync(ListRescoreExecutionPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRescoreExecutionPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRescoreExecutionPlansResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.KendraRanking
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.KendraRanking
 
         internal virtual RescoreResponse Rescore(RescoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RescoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RescoreResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/Rescore">REST API Reference for Rescore Operation</seealso>
         public virtual Task<RescoreResponse> RescoreAsync(RescoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RescoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RescoreResponseUnmarshaller.Instance;
 
@@ -629,7 +629,7 @@ namespace Amazon.KendraRanking
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.KendraRanking
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.KendraRanking
 
         internal virtual UpdateRescoreExecutionPlanResponse UpdateRescoreExecutionPlan(UpdateRescoreExecutionPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRescoreExecutionPlanResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.KendraRanking
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/UpdateRescoreExecutionPlan">REST API Reference for UpdateRescoreExecutionPlan Operation</seealso>
         public virtual Task<UpdateRescoreExecutionPlanResponse> UpdateRescoreExecutionPlanAsync(UpdateRescoreExecutionPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRescoreExecutionPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRescoreExecutionPlanResponseUnmarshaller.Instance;
 

@@ -315,7 +315,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual CreateDedicatedIpPoolResponse CreateDedicatedIpPool(CreateDedicatedIpPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
 
@@ -469,7 +469,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDedicatedIpPool">REST API Reference for CreateDedicatedIpPool Operation</seealso>
         public virtual Task<CreateDedicatedIpPoolResponse> CreateDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDedicatedIpPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDedicatedIpPoolResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">REST API Reference for CreateDeliverabilityTestReport Operation</seealso>
         public virtual Task<CreateDeliverabilityTestReportResponse> CreateDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual CreateEmailIdentityResponse CreateEmailIdentity(CreateEmailIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateEmailIdentity">REST API Reference for CreateEmailIdentity Operation</seealso>
         public virtual Task<CreateEmailIdentityResponse> CreateEmailIdentityAsync(CreateEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailIdentityResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual DeleteDedicatedIpPoolResponse DeleteDedicatedIpPool(DeleteDedicatedIpPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPool">REST API Reference for DeleteDedicatedIpPool Operation</seealso>
         public virtual Task<DeleteDedicatedIpPoolResponse> DeleteDedicatedIpPoolAsync(DeleteDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDedicatedIpPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDedicatedIpPoolResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual DeleteEmailIdentityResponse DeleteEmailIdentity(DeleteEmailIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentity">REST API Reference for DeleteEmailIdentity Operation</seealso>
         public virtual Task<DeleteEmailIdentityResponse> DeleteEmailIdentityAsync(DeleteEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailIdentityResponseUnmarshaller.Instance;
 
@@ -815,7 +815,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual Task<GetAccountResponse> GetAccountAsync(GetAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
 
@@ -886,7 +886,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">REST API Reference for GetBlacklistReports Operation</seealso>
         public virtual Task<GetBlacklistReportsResponse> GetBlacklistReportsAsync(GetBlacklistReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlacklistReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetConfigurationSetResponse GetConfigurationSet(GetConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSet">REST API Reference for GetConfigurationSet Operation</seealso>
         public virtual Task<GetConfigurationSetResponse> GetConfigurationSetAsync(GetConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         public virtual Task<GetConfigurationSetEventDestinationsResponse> GetConfigurationSetEventDestinationsAsync(GetConfigurationSetEventDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDedicatedIpResponse GetDedicatedIp(GetDedicatedIpRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         public virtual Task<GetDedicatedIpResponse> GetDedicatedIpAsync(GetDedicatedIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDedicatedIpRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDedicatedIpResponseUnmarshaller.Instance;
 
@@ -1048,7 +1048,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDedicatedIpsResponse GetDedicatedIps(GetDedicatedIpsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDedicatedIps">REST API Reference for GetDedicatedIps Operation</seealso>
         public virtual Task<GetDedicatedIpsResponse> GetDedicatedIpsAsync(GetDedicatedIpsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDedicatedIpsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDedicatedIpsResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">REST API Reference for GetDeliverabilityDashboardOptions Operation</seealso>
         public virtual Task<GetDeliverabilityDashboardOptionsResponse> GetDeliverabilityDashboardOptionsAsync(GetDeliverabilityDashboardOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">REST API Reference for GetDeliverabilityTestReport Operation</seealso>
         public virtual Task<GetDeliverabilityTestReportResponse> GetDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDomainDeliverabilityCampaignResponse GetDomainDeliverabilityCampaign(GetDomainDeliverabilityCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainDeliverabilityCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainDeliverabilityCampaignResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainDeliverabilityCampaign">REST API Reference for GetDomainDeliverabilityCampaign Operation</seealso>
         public virtual Task<GetDomainDeliverabilityCampaignResponse> GetDomainDeliverabilityCampaignAsync(GetDomainDeliverabilityCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainDeliverabilityCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainDeliverabilityCampaignResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
 
@@ -1265,7 +1265,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">REST API Reference for GetDomainStatisticsReport Operation</seealso>
         public virtual Task<GetDomainStatisticsReportResponse> GetDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
@@ -1310,7 +1310,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetEmailIdentity">REST API Reference for GetEmailIdentity Operation</seealso>
         public virtual Task<GetEmailIdentityResponse> GetEmailIdentityAsync(GetEmailIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailIdentityResponseUnmarshaller.Instance;
 
@@ -1323,7 +1323,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -1372,7 +1372,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListDedicatedIpPoolsResponse ListDedicatedIpPools(ListDedicatedIpPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPools">REST API Reference for ListDedicatedIpPools Operation</seealso>
         public virtual Task<ListDedicatedIpPoolsResponse> ListDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDedicatedIpPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">REST API Reference for ListDeliverabilityTestReports Operation</seealso>
         public virtual Task<ListDeliverabilityTestReportsResponse> ListDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListDomainDeliverabilityCampaignsResponse ListDomainDeliverabilityCampaigns(ListDomainDeliverabilityCampaignsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainDeliverabilityCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainDeliverabilityCampaignsResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaigns">REST API Reference for ListDomainDeliverabilityCampaigns Operation</seealso>
         public virtual Task<ListDomainDeliverabilityCampaignsResponse> ListDomainDeliverabilityCampaignsAsync(ListDomainDeliverabilityCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainDeliverabilityCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainDeliverabilityCampaignsResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListEmailIdentitiesResponse ListEmailIdentities(ListEmailIdentitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
 
@@ -1533,7 +1533,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListEmailIdentities">REST API Reference for ListEmailIdentities Operation</seealso>
         public virtual Task<ListEmailIdentitiesResponse> ListEmailIdentitiesAsync(ListEmailIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEmailIdentitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEmailIdentitiesResponseUnmarshaller.Instance;
 
@@ -1546,7 +1546,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutAccountDedicatedIpWarmupAttributesResponse PutAccountDedicatedIpWarmupAttributes(PutAccountDedicatedIpWarmupAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountDedicatedIpWarmupAttributes">REST API Reference for PutAccountDedicatedIpWarmupAttributes Operation</seealso>
         public virtual Task<PutAccountDedicatedIpWarmupAttributesResponse> PutAccountDedicatedIpWarmupAttributesAsync(PutAccountDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountDedicatedIpWarmupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutAccountSendingAttributesResponse PutAccountSendingAttributes(PutAccountSendingAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
 
@@ -1661,7 +1661,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributes">REST API Reference for PutAccountSendingAttributes Operation</seealso>
         public virtual Task<PutAccountSendingAttributesResponse> PutAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSendingAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSendingAttributesResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
@@ -1705,7 +1705,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetDeliveryOptions">REST API Reference for PutConfigurationSetDeliveryOptions Operation</seealso>
         public virtual Task<PutConfigurationSetDeliveryOptionsResponse> PutConfigurationSetDeliveryOptionsAsync(PutConfigurationSetDeliveryOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetDeliveryOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetDeliveryOptionsResponseUnmarshaller.Instance;
 
@@ -1718,7 +1718,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutConfigurationSetReputationOptionsResponse PutConfigurationSetReputationOptions(PutConfigurationSetReputationOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
 
@@ -1749,7 +1749,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetReputationOptions">REST API Reference for PutConfigurationSetReputationOptions Operation</seealso>
         public virtual Task<PutConfigurationSetReputationOptionsResponse> PutConfigurationSetReputationOptionsAsync(PutConfigurationSetReputationOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetReputationOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetReputationOptionsResponseUnmarshaller.Instance;
 
@@ -1762,7 +1762,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutConfigurationSetSendingOptionsResponse PutConfigurationSetSendingOptions(PutConfigurationSetSendingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetSendingOptions">REST API Reference for PutConfigurationSetSendingOptions Operation</seealso>
         public virtual Task<PutConfigurationSetSendingOptionsResponse> PutConfigurationSetSendingOptionsAsync(PutConfigurationSetSendingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetSendingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetSendingOptionsResponseUnmarshaller.Instance;
 
@@ -1806,7 +1806,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutConfigurationSetTrackingOptionsResponse PutConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         public virtual Task<PutConfigurationSetTrackingOptionsResponse> PutConfigurationSetTrackingOptionsAsync(PutConfigurationSetTrackingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationSetTrackingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
@@ -1850,7 +1850,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutDedicatedIpInPoolResponse PutDedicatedIpInPool(PutDedicatedIpInPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPool">REST API Reference for PutDedicatedIpInPool Operation</seealso>
         public virtual Task<PutDedicatedIpInPoolResponse> PutDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDedicatedIpInPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDedicatedIpInPoolResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutDedicatedIpWarmupAttributesResponse PutDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
@@ -1935,7 +1935,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpWarmupAttributes">REST API Reference for PutDedicatedIpWarmupAttributes Operation</seealso>
         public virtual Task<PutDedicatedIpWarmupAttributesResponse> PutDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDedicatedIpWarmupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
 
@@ -1995,7 +1995,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">REST API Reference for PutDeliverabilityDashboardOption Operation</seealso>
         public virtual Task<PutDeliverabilityDashboardOptionResponse> PutDeliverabilityDashboardOptionAsync(PutDeliverabilityDashboardOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutEmailIdentityDkimAttributesResponse PutEmailIdentityDkimAttributes(PutEmailIdentityDkimAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">REST API Reference for PutEmailIdentityDkimAttributes Operation</seealso>
         public virtual Task<PutEmailIdentityDkimAttributesResponse> PutEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityDkimAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityDkimAttributesResponseUnmarshaller.Instance;
 
@@ -2051,7 +2051,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutEmailIdentityFeedbackAttributesResponse PutEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
 
@@ -2098,7 +2098,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributes">REST API Reference for PutEmailIdentityFeedbackAttributes Operation</seealso>
         public virtual Task<PutEmailIdentityFeedbackAttributesResponse> PutEmailIdentityFeedbackAttributesAsync(PutEmailIdentityFeedbackAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityFeedbackAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityFeedbackAttributesResponseUnmarshaller.Instance;
 
@@ -2111,7 +2111,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual PutEmailIdentityMailFromAttributesResponse PutEmailIdentityMailFromAttributes(PutEmailIdentityMailFromAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
 
@@ -2141,7 +2141,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityMailFromAttributes">REST API Reference for PutEmailIdentityMailFromAttributes Operation</seealso>
         public virtual Task<PutEmailIdentityMailFromAttributesResponse> PutEmailIdentityMailFromAttributesAsync(PutEmailIdentityMailFromAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailIdentityMailFromAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailIdentityMailFromAttributesResponseUnmarshaller.Instance;
 
@@ -2154,7 +2154,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual SendEmailResponse SendEmail(SendEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
@@ -2217,7 +2217,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendEmail">REST API Reference for SendEmail Operation</seealso>
         public virtual Task<SendEmailResponse> SendEmailAsync(SendEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendEmailResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2273,7 +2273,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2319,7 +2319,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.PinpointEmail
 
         internal virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -2371,7 +2371,7 @@ namespace Amazon.PinpointEmail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 

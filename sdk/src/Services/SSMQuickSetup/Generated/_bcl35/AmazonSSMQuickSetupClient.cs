@@ -296,7 +296,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/CreateConfigurationManager">REST API Reference for CreateConfigurationManager Operation</seealso>
         public virtual CreateConfigurationManagerResponse CreateConfigurationManager(CreateConfigurationManagerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/CreateConfigurationManager">REST API Reference for CreateConfigurationManager Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationManager(CreateConfigurationManagerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/DeleteConfigurationManager">REST API Reference for DeleteConfigurationManager Operation</seealso>
         public virtual DeleteConfigurationManagerResponse DeleteConfigurationManager(DeleteConfigurationManagerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/DeleteConfigurationManager">REST API Reference for DeleteConfigurationManager Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationManager(DeleteConfigurationManagerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetConfiguration(GetConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfigurationManager">REST API Reference for GetConfigurationManager Operation</seealso>
         public virtual GetConfigurationManagerResponse GetConfigurationManager(GetConfigurationManagerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfigurationManager">REST API Reference for GetConfigurationManager Operation</seealso>
         public virtual IAsyncResult BeginGetConfigurationManager(GetConfigurationManagerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetServiceSettings">REST API Reference for GetServiceSettings Operation</seealso>
         public virtual GetServiceSettingsResponse GetServiceSettings(GetServiceSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetServiceSettings">REST API Reference for GetServiceSettings Operation</seealso>
         public virtual IAsyncResult BeginGetServiceSettings(GetServiceSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurationManagers">REST API Reference for ListConfigurationManagers Operation</seealso>
         public virtual ListConfigurationManagersResponse ListConfigurationManagers(ListConfigurationManagersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationManagersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationManagersResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurationManagers">REST API Reference for ListConfigurationManagers Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationManagers(ListConfigurationManagersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationManagersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationManagersResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListQuickSetupTypes">REST API Reference for ListQuickSetupTypes Operation</seealso>
         public virtual ListQuickSetupTypesResponse ListQuickSetupTypes(ListQuickSetupTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickSetupTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickSetupTypesResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListQuickSetupTypes">REST API Reference for ListQuickSetupTypes Operation</seealso>
         public virtual IAsyncResult BeginListQuickSetupTypes(ListQuickSetupTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQuickSetupTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQuickSetupTypesResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1018,7 +1018,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateConfigurationDefinition">REST API Reference for UpdateConfigurationDefinition Operation</seealso>
         public virtual UpdateConfigurationDefinitionResponse UpdateConfigurationDefinition(UpdateConfigurationDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationDefinitionResponseUnmarshaller.Instance;
 
@@ -1113,7 +1113,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateConfigurationDefinition">REST API Reference for UpdateConfigurationDefinition Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationDefinition(UpdateConfigurationDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationDefinitionResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateConfigurationManager">REST API Reference for UpdateConfigurationManager Operation</seealso>
         public virtual UpdateConfigurationManagerResponse UpdateConfigurationManager(UpdateConfigurationManagerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -1187,7 +1187,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateConfigurationManager">REST API Reference for UpdateConfigurationManager Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationManager(UpdateConfigurationManagerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationManagerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationManagerResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual UpdateServiceSettingsResponse UpdateServiceSettings(UpdateServiceSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 
@@ -1258,7 +1258,7 @@ namespace Amazon.SSMQuickSetup
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceSettings(UpdateServiceSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 

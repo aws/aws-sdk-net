@@ -312,7 +312,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         public virtual BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         public virtual IAsyncResult BeginBatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCheckLayerAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCheckLayerAvailabilityResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         public virtual BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteImage(BatchDeleteImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteImageResponseUnmarshaller.Instance;
 
@@ -469,7 +469,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         public virtual BatchGetImageResponse BatchGetImage(BatchGetImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetImageResponseUnmarshaller.Instance;
 
@@ -490,7 +490,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         public virtual IAsyncResult BeginBatchGetImage(BatchGetImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetImageResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
         public virtual BatchGetRepositoryScanningConfigurationResponse BatchGetRepositoryScanningConfiguration(BatchGetRepositoryScanningConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRepositoryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRepositoryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetRepositoryScanningConfiguration">REST API Reference for BatchGetRepositoryScanningConfiguration Operation</seealso>
         public virtual IAsyncResult BeginBatchGetRepositoryScanningConfiguration(BatchGetRepositoryScanningConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRepositoryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRepositoryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteLayerUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         public virtual IAsyncResult BeginCompleteLayerUpload(CompleteLayerUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteLayerUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteLayerUploadResponseUnmarshaller.Instance;
 
@@ -723,7 +723,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
         public virtual CreatePullThroughCacheRuleResponse CreatePullThroughCacheRule(CreatePullThroughCacheRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule">REST API Reference for CreatePullThroughCacheRule Operation</seealso>
         public virtual IAsyncResult BeginCreatePullThroughCacheRule(CreatePullThroughCacheRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -803,7 +803,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -878,7 +878,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
         public virtual CreateRepositoryCreationTemplateResponse CreateRepositoryCreationTemplate(CreateRepositoryCreationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepositoryCreationTemplate">REST API Reference for CreateRepositoryCreationTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateRepositoryCreationTemplate(CreateRepositoryCreationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
         public virtual DeletePullThroughCacheRuleResponse DeletePullThroughCacheRule(DeletePullThroughCacheRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -1036,7 +1036,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeletePullThroughCacheRule">REST API Reference for DeletePullThroughCacheRule Operation</seealso>
         public virtual IAsyncResult BeginDeletePullThroughCacheRule(DeletePullThroughCacheRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
         public virtual DeleteRegistryPolicyResponse DeleteRegistryPolicy(DeleteRegistryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegistryPolicy(DeleteRegistryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -1154,7 +1154,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1175,7 +1175,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
         public virtual DeleteRepositoryCreationTemplateResponse DeleteRepositoryCreationTemplate(DeleteRepositoryCreationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryCreationTemplate">REST API Reference for DeleteRepositoryCreationTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepositoryCreationTemplate(DeleteRepositoryCreationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -1289,7 +1289,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         public virtual DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -1310,7 +1310,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageReplicationStatus">REST API Reference for DescribeImageReplicationStatus Operation</seealso>
         public virtual DescribeImageReplicationStatusResponse DescribeImageReplicationStatus(DescribeImageReplicationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReplicationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReplicationStatusResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageReplicationStatus">REST API Reference for DescribeImageReplicationStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageReplicationStatus(DescribeImageReplicationStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReplicationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReplicationStatusResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -1517,7 +1517,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         public virtual DescribeImageScanFindingsResponse DescribeImageScanFindings(DescribeImageScanFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageScanFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
 
@@ -1538,7 +1538,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageScanFindings(DescribeImageScanFindingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageScanFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
         public virtual DescribePullThroughCacheRulesResponse DescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePullThroughCacheRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePullThroughCacheRulesResponseUnmarshaller.Instance;
 
@@ -1605,7 +1605,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribePullThroughCacheRules">REST API Reference for DescribePullThroughCacheRules Operation</seealso>
         public virtual IAsyncResult BeginDescribePullThroughCacheRules(DescribePullThroughCacheRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePullThroughCacheRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePullThroughCacheRulesResponseUnmarshaller.Instance;
 
@@ -1648,7 +1648,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual DescribeRegistryResponse DescribeRegistry(DescribeRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual IAsyncResult BeginDescribeRegistry(DescribeRegistryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         public virtual DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
 
@@ -1733,7 +1733,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         public virtual IAsyncResult BeginDescribeRepositories(DescribeRepositoriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoriesResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
         public virtual DescribeRepositoryCreationTemplatesResponse DescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryCreationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryCreationTemplatesResponseUnmarshaller.Instance;
 
@@ -1798,7 +1798,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositoryCreationTemplates">REST API Reference for DescribeRepositoryCreationTemplates Operation</seealso>
         public virtual IAsyncResult BeginDescribeRepositoryCreationTemplates(DescribeRepositoryCreationTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryCreationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryCreationTemplatesResponseUnmarshaller.Instance;
 
@@ -1840,7 +1840,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
         public virtual GetAccountSettingResponse GetAccountSetting(GetAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">REST API Reference for GetAccountSetting Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSetting(GetAccountSettingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingResponseUnmarshaller.Instance;
 
@@ -1911,7 +1911,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
@@ -1932,7 +1932,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizationToken(GetAuthorizationTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
@@ -2000,7 +2000,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         public virtual GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         public virtual IAsyncResult BeginGetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDownloadUrlForLayerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDownloadUrlForLayerResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -2091,7 +2091,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetLifecyclePolicy(GetLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -2140,7 +2140,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
         public virtual GetLifecyclePolicyPreviewResponse GetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
@@ -2161,7 +2161,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
         public virtual IAsyncResult BeginGetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
@@ -2206,7 +2206,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
         public virtual GetRegistryPolicyResponse GetRegistryPolicy(GetRegistryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -2227,7 +2227,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetRegistryPolicy(GetRegistryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
         public virtual GetRegistryScanningConfigurationResponse GetRegistryScanningConfiguration(GetRegistryScanningConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -2290,7 +2290,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryScanningConfiguration">REST API Reference for GetRegistryScanningConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetRegistryScanningConfiguration(GetRegistryScanningConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -2337,7 +2337,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         public virtual GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetRepositoryPolicy(GetRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -2418,7 +2418,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         public virtual InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateLayerUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
 
@@ -2439,7 +2439,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateLayerUpload(InitiateLayerUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateLayerUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateLayerUploadResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         public virtual ListImagesResponse ListImages(ListImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
 
@@ -2512,7 +2512,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         public virtual IAsyncResult BeginListImages(ListImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
 
@@ -2555,7 +2555,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2576,7 +2576,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2623,7 +2623,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
 
@@ -2644,7 +2644,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual IAsyncResult BeginPutAccountSetting(PutAccountSettingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
 
@@ -2728,7 +2728,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         public virtual PutImageResponse PutImage(PutImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageResponseUnmarshaller.Instance;
 
@@ -2749,7 +2749,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         public virtual IAsyncResult BeginPutImage(PutImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageResponseUnmarshaller.Instance;
 
@@ -2804,7 +2804,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
         public virtual PutImageScanningConfigurationResponse PutImageScanningConfiguration(PutImageScanningConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">REST API Reference for PutImageScanningConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutImageScanningConfiguration(PutImageScanningConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -2870,7 +2870,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">REST API Reference for PutImageTagMutability Operation</seealso>
         public virtual PutImageTagMutabilityResponse PutImageTagMutability(PutImageTagMutabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageTagMutabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageTagMutabilityResponseUnmarshaller.Instance;
 
@@ -2891,7 +2891,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability">REST API Reference for PutImageTagMutability Operation</seealso>
         public virtual IAsyncResult BeginPutImageTagMutability(PutImageTagMutabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutImageTagMutabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutImageTagMutabilityResponseUnmarshaller.Instance;
 
@@ -2939,7 +2939,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         public virtual PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -2960,7 +2960,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutLifecyclePolicy(PutLifecyclePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -3010,7 +3010,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
         public virtual PutRegistryPolicyResponse PutRegistryPolicy(PutRegistryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -3031,7 +3031,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutRegistryPolicy(PutRegistryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistryPolicyResponseUnmarshaller.Instance;
 
@@ -3073,7 +3073,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
         public virtual PutRegistryScanningConfigurationResponse PutRegistryScanningConfiguration(PutRegistryScanningConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -3094,7 +3094,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryScanningConfiguration">REST API Reference for PutRegistryScanningConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutRegistryScanningConfiguration(PutRegistryScanningConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRegistryScanningConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRegistryScanningConfigurationResponseUnmarshaller.Instance;
 
@@ -3151,7 +3151,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
         public virtual PutReplicationConfigurationResponse PutReplicationConfiguration(PutReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3172,7 +3172,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutReplicationConfiguration(PutReplicationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3217,7 +3217,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         public virtual SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -3238,7 +3238,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         public virtual IAsyncResult BeginSetRepositoryPolicy(SetRepositoryPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetRepositoryPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetRepositoryPolicyResponseUnmarshaller.Instance;
 
@@ -3304,7 +3304,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         public virtual StartImageScanResponse StartImageScan(StartImageScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImageScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImageScanResponseUnmarshaller.Instance;
 
@@ -3325,7 +3325,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartImageScan">REST API Reference for StartImageScan Operation</seealso>
         public virtual IAsyncResult BeginStartImageScan(StartImageScanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImageScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImageScanResponseUnmarshaller.Instance;
 
@@ -3378,7 +3378,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
         public virtual StartLifecyclePolicyPreviewResponse StartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
@@ -3399,7 +3399,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">REST API Reference for StartLifecyclePolicyPreview Operation</seealso>
         public virtual IAsyncResult BeginStartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLifecyclePolicyPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLifecyclePolicyPreviewResponseUnmarshaller.Instance;
 
@@ -3451,7 +3451,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3472,7 +3472,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3523,7 +3523,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3544,7 +3544,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3602,7 +3602,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule">REST API Reference for UpdatePullThroughCacheRule Operation</seealso>
         public virtual UpdatePullThroughCacheRuleResponse UpdatePullThroughCacheRule(UpdatePullThroughCacheRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -3623,7 +3623,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule">REST API Reference for UpdatePullThroughCacheRule Operation</seealso>
         public virtual IAsyncResult BeginUpdatePullThroughCacheRule(UpdatePullThroughCacheRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -3669,7 +3669,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
         public virtual UpdateRepositoryCreationTemplateResponse UpdateRepositoryCreationTemplate(UpdateRepositoryCreationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -3690,7 +3690,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateRepositoryCreationTemplate">REST API Reference for UpdateRepositoryCreationTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateRepositoryCreationTemplate(UpdateRepositoryCreationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryCreationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryCreationTemplateResponseUnmarshaller.Instance;
 
@@ -3762,7 +3762,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadLayerPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
 
@@ -3783,7 +3783,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         public virtual IAsyncResult BeginUploadLayerPart(UploadLayerPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadLayerPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadLayerPartResponseUnmarshaller.Instance;
 
@@ -3832,7 +3832,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule">REST API Reference for ValidatePullThroughCacheRule Operation</seealso>
         public virtual ValidatePullThroughCacheRuleResponse ValidatePullThroughCacheRule(ValidatePullThroughCacheRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePullThroughCacheRuleResponseUnmarshaller.Instance;
 
@@ -3853,7 +3853,7 @@ namespace Amazon.ECR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule">REST API Reference for ValidatePullThroughCacheRule Operation</seealso>
         public virtual IAsyncResult BeginValidatePullThroughCacheRule(ValidatePullThroughCacheRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePullThroughCacheRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePullThroughCacheRuleResponseUnmarshaller.Instance;
 

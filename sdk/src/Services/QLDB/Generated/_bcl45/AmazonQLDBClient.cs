@@ -293,7 +293,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
         public virtual CancelJournalKinesisStreamResponse CancelJournalKinesisStream(CancelJournalKinesisStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJournalKinesisStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJournalKinesisStreamResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">REST API Reference for CancelJournalKinesisStream Operation</seealso>
         public virtual Task<CancelJournalKinesisStreamResponse> CancelJournalKinesisStreamAsync(CancelJournalKinesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJournalKinesisStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJournalKinesisStreamResponseUnmarshaller.Instance;
             
@@ -363,7 +363,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">REST API Reference for CreateLedger Operation</seealso>
         public virtual CreateLedgerResponse CreateLedger(CreateLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLedgerResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">REST API Reference for CreateLedger Operation</seealso>
         public virtual Task<CreateLedgerResponse> CreateLedgerAsync(CreateLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLedgerResponseUnmarshaller.Instance;
             
@@ -435,7 +435,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">REST API Reference for DeleteLedger Operation</seealso>
         public virtual DeleteLedgerResponse DeleteLedger(DeleteLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLedgerResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">REST API Reference for DeleteLedger Operation</seealso>
         public virtual Task<DeleteLedgerResponse> DeleteLedgerAsync(DeleteLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLedgerResponseUnmarshaller.Instance;
             
@@ -513,7 +513,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
         public virtual DescribeJournalKinesisStreamResponse DescribeJournalKinesisStream(DescribeJournalKinesisStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJournalKinesisStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJournalKinesisStreamResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">REST API Reference for DescribeJournalKinesisStream Operation</seealso>
         public virtual Task<DescribeJournalKinesisStreamResponse> DescribeJournalKinesisStreamAsync(DescribeJournalKinesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJournalKinesisStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJournalKinesisStreamResponseUnmarshaller.Instance;
             
@@ -592,7 +592,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">REST API Reference for DescribeJournalS3Export Operation</seealso>
         public virtual DescribeJournalS3ExportResponse DescribeJournalS3Export(DescribeJournalS3ExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJournalS3ExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJournalS3ExportResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">REST API Reference for DescribeJournalS3Export Operation</seealso>
         public virtual Task<DescribeJournalS3ExportResponse> DescribeJournalS3ExportAsync(DescribeJournalS3ExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJournalS3ExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJournalS3ExportResponseUnmarshaller.Instance;
             
@@ -660,7 +660,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">REST API Reference for DescribeLedger Operation</seealso>
         public virtual DescribeLedgerResponse DescribeLedger(DescribeLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLedgerResponseUnmarshaller.Instance;
 
@@ -687,7 +687,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">REST API Reference for DescribeLedger Operation</seealso>
         public virtual Task<DescribeLedgerResponse> DescribeLedgerAsync(DescribeLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLedgerResponseUnmarshaller.Instance;
             
@@ -732,7 +732,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3">REST API Reference for ExportJournalToS3 Operation</seealso>
         public virtual ExportJournalToS3Response ExportJournalToS3(ExportJournalToS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportJournalToS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportJournalToS3ResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3">REST API Reference for ExportJournalToS3 Operation</seealso>
         public virtual Task<ExportJournalToS3Response> ExportJournalToS3Async(ExportJournalToS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportJournalToS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportJournalToS3ResponseUnmarshaller.Instance;
             
@@ -826,7 +826,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock">REST API Reference for GetBlock Operation</seealso>
         public virtual GetBlockResponse GetBlock(GetBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlockResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock">REST API Reference for GetBlock Operation</seealso>
         public virtual Task<GetBlockResponse> GetBlockAsync(GetBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlockResponseUnmarshaller.Instance;
             
@@ -906,7 +906,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest">REST API Reference for GetDigest Operation</seealso>
         public virtual GetDigestResponse GetDigest(GetDigestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDigestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDigestResponseUnmarshaller.Instance;
 
@@ -936,7 +936,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest">REST API Reference for GetDigest Operation</seealso>
         public virtual Task<GetDigestResponse> GetDigestAsync(GetDigestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDigestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDigestResponseUnmarshaller.Instance;
             
@@ -968,7 +968,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision">REST API Reference for GetRevision Operation</seealso>
         public virtual GetRevisionResponse GetRevision(GetRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevisionResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision">REST API Reference for GetRevision Operation</seealso>
         public virtual Task<GetRevisionResponse> GetRevisionAsync(GetRevisionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRevisionResponseUnmarshaller.Instance;
             
@@ -1042,7 +1042,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
         public virtual ListJournalKinesisStreamsForLedgerResponse ListJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalKinesisStreamsForLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalKinesisStreamsForLedgerResponseUnmarshaller.Instance;
 
@@ -1084,7 +1084,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">REST API Reference for ListJournalKinesisStreamsForLedger Operation</seealso>
         public virtual Task<ListJournalKinesisStreamsForLedgerResponse> ListJournalKinesisStreamsForLedgerAsync(ListJournalKinesisStreamsForLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalKinesisStreamsForLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalKinesisStreamsForLedgerResponseUnmarshaller.Instance;
             
@@ -1118,7 +1118,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">REST API Reference for ListJournalS3Exports Operation</seealso>
         public virtual ListJournalS3ExportsResponse ListJournalS3Exports(ListJournalS3ExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalS3ExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalS3ExportsResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">REST API Reference for ListJournalS3Exports Operation</seealso>
         public virtual Task<ListJournalS3ExportsResponse> ListJournalS3ExportsAsync(ListJournalS3ExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalS3ExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalS3ExportsResponseUnmarshaller.Instance;
             
@@ -1185,7 +1185,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">REST API Reference for ListJournalS3ExportsForLedger Operation</seealso>
         public virtual ListJournalS3ExportsForLedgerResponse ListJournalS3ExportsForLedger(ListJournalS3ExportsForLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalS3ExportsForLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalS3ExportsForLedgerResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">REST API Reference for ListJournalS3ExportsForLedger Operation</seealso>
         public virtual Task<ListJournalS3ExportsForLedgerResponse> ListJournalS3ExportsForLedgerAsync(ListJournalS3ExportsForLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJournalS3ExportsForLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJournalS3ExportsForLedgerResponseUnmarshaller.Instance;
             
@@ -1246,7 +1246,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">REST API Reference for ListLedgers Operation</seealso>
         public virtual ListLedgersResponse ListLedgers(ListLedgersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLedgersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLedgersResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">REST API Reference for ListLedgers Operation</seealso>
         public virtual Task<ListLedgersResponse> ListLedgersAsync(ListLedgersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLedgersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLedgersResponseUnmarshaller.Instance;
             
@@ -1300,7 +1300,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1326,7 +1326,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1358,7 +1358,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
         public virtual StreamJournalToKinesisResponse StreamJournalToKinesis(StreamJournalToKinesisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StreamJournalToKinesisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StreamJournalToKinesisResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">REST API Reference for StreamJournalToKinesis Operation</seealso>
         public virtual Task<StreamJournalToKinesisResponse> StreamJournalToKinesisAsync(StreamJournalToKinesisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StreamJournalToKinesisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StreamJournalToKinesisResponseUnmarshaller.Instance;
             
@@ -1422,7 +1422,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1454,7 +1454,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1482,7 +1482,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1536,7 +1536,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger">REST API Reference for UpdateLedger Operation</seealso>
         public virtual UpdateLedgerResponse UpdateLedger(UpdateLedgerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLedgerResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger">REST API Reference for UpdateLedger Operation</seealso>
         public virtual Task<UpdateLedgerResponse> UpdateLedgerAsync(UpdateLedgerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLedgerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLedgerResponseUnmarshaller.Instance;
             
@@ -1598,7 +1598,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">REST API Reference for UpdateLedgerPermissionsMode Operation</seealso>
         public virtual UpdateLedgerPermissionsModeResponse UpdateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLedgerPermissionsModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLedgerPermissionsModeResponseUnmarshaller.Instance;
 
@@ -1633,7 +1633,7 @@ namespace Amazon.QLDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">REST API Reference for UpdateLedgerPermissionsMode Operation</seealso>
         public virtual Task<UpdateLedgerPermissionsModeResponse> UpdateLedgerPermissionsModeAsync(UpdateLedgerPermissionsModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLedgerPermissionsModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLedgerPermissionsModeResponseUnmarshaller.Instance;
             

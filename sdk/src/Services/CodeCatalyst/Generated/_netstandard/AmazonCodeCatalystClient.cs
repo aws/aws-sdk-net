@@ -471,7 +471,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual CreateAccessTokenResponse CreateAccessToken(CreateAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessTokenResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateAccessToken">REST API Reference for CreateAccessToken Operation</seealso>
         public virtual Task<CreateAccessTokenResponse> CreateAccessTokenAsync(CreateAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessTokenResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual CreateDevEnvironmentResponse CreateDevEnvironment(CreateDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateDevEnvironment">REST API Reference for CreateDevEnvironment Operation</seealso>
         public virtual Task<CreateDevEnvironmentResponse> CreateDevEnvironmentAsync(CreateDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual CreateSourceRepositoryResponse CreateSourceRepository(CreateSourceRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateSourceRepository">REST API Reference for CreateSourceRepository Operation</seealso>
         public virtual Task<CreateSourceRepositoryResponse> CreateSourceRepositoryAsync(CreateSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -728,7 +728,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual CreateSourceRepositoryBranchResponse CreateSourceRepositoryBranch(CreateSourceRepositoryBranchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceRepositoryBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceRepositoryBranchResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateSourceRepositoryBranch">REST API Reference for CreateSourceRepositoryBranch Operation</seealso>
         public virtual Task<CreateSourceRepositoryBranchResponse> CreateSourceRepositoryBranchAsync(CreateSourceRepositoryBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceRepositoryBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceRepositoryBranchResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual DeleteAccessTokenResponse DeleteAccessToken(DeleteAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessTokenResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteAccessToken">REST API Reference for DeleteAccessToken Operation</seealso>
         public virtual Task<DeleteAccessTokenResponse> DeleteAccessTokenAsync(DeleteAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessTokenResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual DeleteDevEnvironmentResponse DeleteDevEnvironment(DeleteDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -903,7 +903,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteDevEnvironment">REST API Reference for DeleteDevEnvironment Operation</seealso>
         public virtual Task<DeleteDevEnvironmentResponse> DeleteDevEnvironmentAsync(DeleteDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual DeleteSourceRepositoryResponse DeleteSourceRepository(DeleteSourceRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -1024,7 +1024,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSourceRepository">REST API Reference for DeleteSourceRepository Operation</seealso>
         public virtual Task<DeleteSourceRepositoryResponse> DeleteSourceRepositoryAsync(DeleteSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
         public virtual Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetDevEnvironmentResponse GetDevEnvironment(GetDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -1152,7 +1152,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetDevEnvironment">REST API Reference for GetDevEnvironment Operation</seealso>
         public virtual Task<GetDevEnvironmentResponse> GetDevEnvironmentAsync(GetDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -1165,7 +1165,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -1212,7 +1212,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -1225,7 +1225,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetSourceRepositoryResponse GetSourceRepository(GetSourceRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSourceRepository">REST API Reference for GetSourceRepository Operation</seealso>
         public virtual Task<GetSourceRepositoryResponse> GetSourceRepositoryAsync(GetSourceRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSourceRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSourceRepositoryResponseUnmarshaller.Instance;
 
@@ -1285,7 +1285,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetSourceRepositoryCloneUrlsResponse GetSourceRepositoryCloneUrls(GetSourceRepositoryCloneUrlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSourceRepositoryCloneUrlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSourceRepositoryCloneUrlsResponseUnmarshaller.Instance;
 
@@ -1333,7 +1333,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSourceRepositoryCloneUrls">REST API Reference for GetSourceRepositoryCloneUrls Operation</seealso>
         public virtual Task<GetSourceRepositoryCloneUrlsResponse> GetSourceRepositoryCloneUrlsAsync(GetSourceRepositoryCloneUrlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSourceRepositoryCloneUrlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSourceRepositoryCloneUrlsResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetSpaceResponse GetSpace(GetSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpaceResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSpace">REST API Reference for GetSpace Operation</seealso>
         public virtual Task<GetSpaceResponse> GetSpaceAsync(GetSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpaceResponseUnmarshaller.Instance;
 
@@ -1406,7 +1406,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetSubscriptionResponse GetSubscription(GetSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionResponseUnmarshaller.Instance;
 
@@ -1454,7 +1454,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSubscription">REST API Reference for GetSubscription Operation</seealso>
         public virtual Task<GetSubscriptionResponse> GetSubscriptionAsync(GetSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetUserDetailsResponse GetUserDetails(GetUserDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDetailsResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetUserDetails">REST API Reference for GetUserDetails Operation</seealso>
         public virtual Task<GetUserDetailsResponse> GetUserDetailsAsync(GetUserDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDetailsResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -1574,7 +1574,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -1587,7 +1587,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
         public virtual Task<GetWorkflowRunResponse> GetWorkflowRunAsync(GetWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListAccessTokensResponse ListAccessTokens(ListAccessTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessTokensResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListAccessTokens">REST API Reference for ListAccessTokens Operation</seealso>
         public virtual Task<ListAccessTokensResponse> ListAccessTokensAsync(ListAccessTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessTokensResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListDevEnvironmentsResponse ListDevEnvironments(ListDevEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEnvironmentsResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironments">REST API Reference for ListDevEnvironments Operation</seealso>
         public virtual Task<ListDevEnvironmentsResponse> ListDevEnvironmentsAsync(ListDevEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEnvironmentsResponseUnmarshaller.Instance;
 
@@ -1768,7 +1768,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListDevEnvironmentSessionsResponse ListDevEnvironmentSessions(ListDevEnvironmentSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEnvironmentSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEnvironmentSessionsResponseUnmarshaller.Instance;
 
@@ -1815,7 +1815,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">REST API Reference for ListDevEnvironmentSessions Operation</seealso>
         public virtual Task<ListDevEnvironmentSessionsResponse> ListDevEnvironmentSessionsAsync(ListDevEnvironmentSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEnvironmentSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEnvironmentSessionsResponseUnmarshaller.Instance;
 
@@ -1828,7 +1828,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListEventLogsResponse ListEventLogs(ListEventLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventLogsResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListEventLogs">REST API Reference for ListEventLogs Operation</seealso>
         public virtual Task<ListEventLogsResponse> ListEventLogsAsync(ListEventLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventLogsResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1963,7 +1963,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListSourceRepositoriesResponse ListSourceRepositories(ListSourceRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceRepositoriesResponseUnmarshaller.Instance;
 
@@ -2010,7 +2010,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListSourceRepositories">REST API Reference for ListSourceRepositories Operation</seealso>
         public virtual Task<ListSourceRepositoriesResponse> ListSourceRepositoriesAsync(ListSourceRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceRepositoriesResponseUnmarshaller.Instance;
 
@@ -2023,7 +2023,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListSourceRepositoryBranchesResponse ListSourceRepositoryBranches(ListSourceRepositoryBranchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceRepositoryBranchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceRepositoryBranchesResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListSourceRepositoryBranches">REST API Reference for ListSourceRepositoryBranches Operation</seealso>
         public virtual Task<ListSourceRepositoryBranchesResponse> ListSourceRepositoryBranchesAsync(ListSourceRepositoryBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceRepositoryBranchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceRepositoryBranchesResponseUnmarshaller.Instance;
 
@@ -2083,7 +2083,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListSpacesResponse ListSpaces(ListSpacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
 
@@ -2130,7 +2130,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
         public virtual Task<ListSpacesResponse> ListSpacesAsync(ListSpacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
 
@@ -2143,7 +2143,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListWorkflowRunsResponse ListWorkflowRuns(ListWorkflowRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowRunsResponseUnmarshaller.Instance;
 
@@ -2190,7 +2190,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflowRuns">REST API Reference for ListWorkflowRuns Operation</seealso>
         public virtual Task<ListWorkflowRunsResponse> ListWorkflowRunsAsync(ListWorkflowRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowRunsResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -2250,7 +2250,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual StartDevEnvironmentResponse StartDevEnvironment(StartDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartDevEnvironment">REST API Reference for StartDevEnvironment Operation</seealso>
         public virtual Task<StartDevEnvironmentResponse> StartDevEnvironmentAsync(StartDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2323,7 +2323,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual StartDevEnvironmentSessionResponse StartDevEnvironmentSession(StartDevEnvironmentSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDevEnvironmentSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDevEnvironmentSessionResponseUnmarshaller.Instance;
 
@@ -2370,7 +2370,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartDevEnvironmentSession">REST API Reference for StartDevEnvironmentSession Operation</seealso>
         public virtual Task<StartDevEnvironmentSessionResponse> StartDevEnvironmentSessionAsync(StartDevEnvironmentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDevEnvironmentSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDevEnvironmentSessionResponseUnmarshaller.Instance;
 
@@ -2383,7 +2383,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
 
@@ -2430,7 +2430,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
         public virtual Task<StartWorkflowRunResponse> StartWorkflowRunAsync(StartWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
 
@@ -2443,7 +2443,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual StopDevEnvironmentResponse StopDevEnvironment(StopDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironment">REST API Reference for StopDevEnvironment Operation</seealso>
         public virtual Task<StopDevEnvironmentResponse> StopDevEnvironmentAsync(StopDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2504,7 +2504,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual StopDevEnvironmentSessionResponse StopDevEnvironmentSession(StopDevEnvironmentSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
 
@@ -2551,7 +2551,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
         public virtual Task<StopDevEnvironmentSessionResponse> StopDevEnvironmentSessionAsync(StopDevEnvironmentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDevEnvironmentSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDevEnvironmentSessionResponseUnmarshaller.Instance;
 
@@ -2564,7 +2564,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual UpdateDevEnvironmentResponse UpdateDevEnvironment(UpdateDevEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2612,7 +2612,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateDevEnvironment">REST API Reference for UpdateDevEnvironment Operation</seealso>
         public virtual Task<UpdateDevEnvironmentResponse> UpdateDevEnvironmentAsync(UpdateDevEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevEnvironmentResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -2672,7 +2672,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -2685,7 +2685,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
         public virtual Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.CodeCatalyst
 
         internal virtual VerifySessionResponse VerifySession(VerifySessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifySessionResponseUnmarshaller.Instance;
 
@@ -2793,7 +2793,7 @@ namespace Amazon.CodeCatalyst
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/VerifySession">REST API Reference for VerifySession Operation</seealso>
         public virtual Task<VerifySessionResponse> VerifySessionAsync(VerifySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifySessionResponseUnmarshaller.Instance;
 

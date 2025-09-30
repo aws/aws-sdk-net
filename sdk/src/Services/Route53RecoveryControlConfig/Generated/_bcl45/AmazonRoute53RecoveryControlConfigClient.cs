@@ -306,7 +306,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
             
@@ -405,7 +405,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">REST API Reference for CreateControlPanel Operation</seealso>
         public virtual CreateControlPanelResponse CreateControlPanel(CreateControlPanelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateControlPanelResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateControlPanel">REST API Reference for CreateControlPanel Operation</seealso>
         public virtual Task<CreateControlPanelResponse> CreateControlPanelAsync(CreateControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateControlPanelResponseUnmarshaller.Instance;
             
@@ -512,7 +512,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateRoutingControl">REST API Reference for CreateRoutingControl Operation</seealso>
         public virtual CreateRoutingControlResponse CreateRoutingControl(CreateRoutingControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingControlResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateRoutingControl">REST API Reference for CreateRoutingControl Operation</seealso>
         public virtual Task<CreateRoutingControlResponse> CreateRoutingControlAsync(CreateRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingControlResponseUnmarshaller.Instance;
             
@@ -624,7 +624,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">REST API Reference for CreateSafetyRule Operation</seealso>
         public virtual CreateSafetyRuleResponse CreateSafetyRule(CreateSafetyRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSafetyRuleResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/CreateSafetyRule">REST API Reference for CreateSafetyRule Operation</seealso>
         public virtual Task<CreateSafetyRuleResponse> CreateSafetyRuleAsync(CreateSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSafetyRuleResponseUnmarshaller.Instance;
             
@@ -720,7 +720,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
             
@@ -803,7 +803,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteControlPanel">REST API Reference for DeleteControlPanel Operation</seealso>
         public virtual DeleteControlPanelResponse DeleteControlPanel(DeleteControlPanelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteControlPanelResponseUnmarshaller.Instance;
 
@@ -844,7 +844,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteControlPanel">REST API Reference for DeleteControlPanel Operation</seealso>
         public virtual Task<DeleteControlPanelResponse> DeleteControlPanelAsync(DeleteControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteControlPanelResponseUnmarshaller.Instance;
             
@@ -886,7 +886,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteRoutingControl">REST API Reference for DeleteRoutingControl Operation</seealso>
         public virtual DeleteRoutingControlResponse DeleteRoutingControl(DeleteRoutingControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingControlResponseUnmarshaller.Instance;
 
@@ -927,7 +927,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteRoutingControl">REST API Reference for DeleteRoutingControl Operation</seealso>
         public virtual Task<DeleteRoutingControlResponse> DeleteRoutingControlAsync(DeleteRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingControlResponseUnmarshaller.Instance;
             
@@ -962,7 +962,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteSafetyRule">REST API Reference for DeleteSafetyRule Operation</seealso>
         public virtual DeleteSafetyRuleResponse DeleteSafetyRule(DeleteSafetyRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSafetyRuleResponseUnmarshaller.Instance;
 
@@ -996,7 +996,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DeleteSafetyRule">REST API Reference for DeleteSafetyRule Operation</seealso>
         public virtual Task<DeleteSafetyRuleResponse> DeleteSafetyRuleAsync(DeleteSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSafetyRuleResponseUnmarshaller.Instance;
             
@@ -1039,7 +1039,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
             
@@ -1123,7 +1123,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeControlPanel">REST API Reference for DescribeControlPanel Operation</seealso>
         public virtual DescribeControlPanelResponse DescribeControlPanel(DescribeControlPanelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeControlPanelResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeControlPanel">REST API Reference for DescribeControlPanel Operation</seealso>
         public virtual Task<DescribeControlPanelResponse> DescribeControlPanelAsync(DescribeControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeControlPanelResponseUnmarshaller.Instance;
             
@@ -1214,7 +1214,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeRoutingControl">REST API Reference for DescribeRoutingControl Operation</seealso>
         public virtual DescribeRoutingControlResponse DescribeRoutingControl(DescribeRoutingControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoutingControlResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeRoutingControl">REST API Reference for DescribeRoutingControl Operation</seealso>
         public virtual Task<DescribeRoutingControlResponse> DescribeRoutingControlAsync(DescribeRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoutingControlResponseUnmarshaller.Instance;
             
@@ -1293,7 +1293,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">REST API Reference for DescribeSafetyRule Operation</seealso>
         public virtual DescribeSafetyRuleResponse DescribeSafetyRule(DescribeSafetyRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSafetyRuleResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/DescribeSafetyRule">REST API Reference for DescribeSafetyRule Operation</seealso>
         public virtual Task<DescribeSafetyRuleResponse> DescribeSafetyRuleAsync(DescribeSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSafetyRuleResponseUnmarshaller.Instance;
             
@@ -1350,7 +1350,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1411,7 +1411,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListAssociatedRoute53HealthChecks">REST API Reference for ListAssociatedRoute53HealthChecks Operation</seealso>
         public virtual ListAssociatedRoute53HealthChecksResponse ListAssociatedRoute53HealthChecks(ListAssociatedRoute53HealthChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedRoute53HealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedRoute53HealthChecksResponseUnmarshaller.Instance;
 
@@ -1444,7 +1444,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListAssociatedRoute53HealthChecks">REST API Reference for ListAssociatedRoute53HealthChecks Operation</seealso>
         public virtual Task<ListAssociatedRoute53HealthChecksResponse> ListAssociatedRoute53HealthChecksAsync(ListAssociatedRoute53HealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedRoute53HealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedRoute53HealthChecksResponseUnmarshaller.Instance;
             
@@ -1483,7 +1483,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
             
@@ -1560,7 +1560,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">REST API Reference for ListControlPanels Operation</seealso>
         public virtual ListControlPanelsResponse ListControlPanels(ListControlPanelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlPanelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlPanelsResponseUnmarshaller.Instance;
 
@@ -1598,7 +1598,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels">REST API Reference for ListControlPanels Operation</seealso>
         public virtual Task<ListControlPanelsResponse> ListControlPanelsAsync(ListControlPanelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlPanelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlPanelsResponseUnmarshaller.Instance;
             
@@ -1640,7 +1640,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListRoutingControls">REST API Reference for ListRoutingControls Operation</seealso>
         public virtual ListRoutingControlsResponse ListRoutingControls(ListRoutingControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingControlsResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListRoutingControls">REST API Reference for ListRoutingControls Operation</seealso>
         public virtual Task<ListRoutingControlsResponse> ListRoutingControlsAsync(ListRoutingControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingControlsResponseUnmarshaller.Instance;
             
@@ -1721,7 +1721,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListSafetyRules">REST API Reference for ListSafetyRules Operation</seealso>
         public virtual ListSafetyRulesResponse ListSafetyRules(ListSafetyRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSafetyRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSafetyRulesResponseUnmarshaller.Instance;
 
@@ -1760,7 +1760,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListSafetyRules">REST API Reference for ListSafetyRules Operation</seealso>
         public virtual Task<ListSafetyRulesResponse> ListSafetyRulesAsync(ListSafetyRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSafetyRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSafetyRulesResponseUnmarshaller.Instance;
             
@@ -1793,7 +1793,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1858,7 +1858,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1923,7 +1923,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1955,7 +1955,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1997,7 +1997,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
             
@@ -2081,7 +2081,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateControlPanel">REST API Reference for UpdateControlPanel Operation</seealso>
         public virtual UpdateControlPanelResponse UpdateControlPanel(UpdateControlPanelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateControlPanelResponseUnmarshaller.Instance;
 
@@ -2123,7 +2123,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateControlPanel">REST API Reference for UpdateControlPanel Operation</seealso>
         public virtual Task<UpdateControlPanelResponse> UpdateControlPanelAsync(UpdateControlPanelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateControlPanelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateControlPanelResponseUnmarshaller.Instance;
             
@@ -2167,7 +2167,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateRoutingControl">REST API Reference for UpdateRoutingControl Operation</seealso>
         public virtual UpdateRoutingControlResponse UpdateRoutingControl(UpdateRoutingControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingControlResponseUnmarshaller.Instance;
 
@@ -2210,7 +2210,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateRoutingControl">REST API Reference for UpdateRoutingControl Operation</seealso>
         public virtual Task<UpdateRoutingControlResponse> UpdateRoutingControlAsync(UpdateRoutingControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoutingControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoutingControlResponseUnmarshaller.Instance;
             
@@ -2245,7 +2245,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">REST API Reference for UpdateSafetyRule Operation</seealso>
         public virtual UpdateSafetyRuleResponse UpdateSafetyRule(UpdateSafetyRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSafetyRuleResponseUnmarshaller.Instance;
 
@@ -2279,7 +2279,7 @@ namespace Amazon.Route53RecoveryControlConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/UpdateSafetyRule">REST API Reference for UpdateSafetyRule Operation</seealso>
         public virtual Task<UpdateSafetyRuleResponse> UpdateSafetyRuleAsync(UpdateSafetyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSafetyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSafetyRuleResponseUnmarshaller.Instance;
             

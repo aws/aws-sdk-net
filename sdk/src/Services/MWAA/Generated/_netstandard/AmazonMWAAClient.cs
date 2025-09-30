@@ -357,7 +357,7 @@ namespace Amazon.MWAA
 
         internal virtual CreateCliTokenResponse CreateCliToken(CreateCliTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCliTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCliTokenResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateCliToken">REST API Reference for CreateCliToken Operation</seealso>
         public virtual Task<CreateCliTokenResponse> CreateCliTokenAsync(CreateCliTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCliTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCliTokenResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.MWAA
 
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.MWAA
 
         internal virtual CreateWebLoginTokenResponse CreateWebLoginToken(CreateWebLoginTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebLoginTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebLoginTokenResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateWebLoginToken">REST API Reference for CreateWebLoginToken Operation</seealso>
         public virtual Task<CreateWebLoginTokenResponse> CreateWebLoginTokenAsync(CreateWebLoginTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebLoginTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebLoginTokenResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.MWAA
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.MWAA
 
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.MWAA
 
         internal virtual InvokeRestApiResponse InvokeRestApi(InvokeRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeRestApiResponseUnmarshaller.Instance;
 
@@ -615,7 +615,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">REST API Reference for InvokeRestApi Operation</seealso>
         public virtual Task<InvokeRestApiResponse> InvokeRestApiAsync(InvokeRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeRestApiResponseUnmarshaller.Instance;
 
@@ -628,7 +628,7 @@ namespace Amazon.MWAA
 
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -668,7 +668,7 @@ namespace Amazon.MWAA
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -699,7 +699,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -713,7 +713,7 @@ namespace Amazon.MWAA
         [Obsolete("This API is for internal use and not meant for public use, and is no longer available.")]
         internal virtual PublishMetricsResponse PublishMetrics(PublishMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishMetricsResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.MWAA
         [Obsolete("This API is for internal use and not meant for public use, and is no longer available.")]
         public virtual Task<PublishMetricsResponse> PublishMetricsAsync(PublishMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishMetricsResponseUnmarshaller.Instance;
 
@@ -754,7 +754,7 @@ namespace Amazon.MWAA
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.MWAA
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.MWAA
 
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.MWAA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 

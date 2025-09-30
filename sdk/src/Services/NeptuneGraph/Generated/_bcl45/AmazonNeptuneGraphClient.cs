@@ -294,7 +294,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
             
@@ -365,7 +365,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public virtual CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public virtual Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
             
@@ -436,7 +436,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
         public virtual CancelQueryResponse CancelQuery(CancelQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
         public virtual Task<CancelQueryResponse> CancelQueryAsync(CancelQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
             
@@ -507,7 +507,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         public virtual CreateGraphResponse CreateGraph(CreateGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphResponseUnmarshaller.Instance;
 
@@ -542,7 +542,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         public virtual Task<CreateGraphResponse> CreateGraphAsync(CreateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphResponseUnmarshaller.Instance;
             
@@ -581,7 +581,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphSnapshot">REST API Reference for CreateGraphSnapshot Operation</seealso>
         public virtual CreateGraphSnapshotResponse CreateGraphSnapshot(CreateGraphSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphSnapshotResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphSnapshot">REST API Reference for CreateGraphSnapshot Operation</seealso>
         public virtual Task<CreateGraphSnapshotResponse> CreateGraphSnapshotAsync(CreateGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphSnapshotResponseUnmarshaller.Instance;
             
@@ -663,7 +663,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphUsingImportTask">REST API Reference for CreateGraphUsingImportTask Operation</seealso>
         public virtual CreateGraphUsingImportTaskResponse CreateGraphUsingImportTask(CreateGraphUsingImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphUsingImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphUsingImportTaskResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreateGraphUsingImportTask">REST API Reference for CreateGraphUsingImportTask Operation</seealso>
         public virtual Task<CreateGraphUsingImportTaskResponse> CreateGraphUsingImportTaskAsync(CreateGraphUsingImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphUsingImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphUsingImportTaskResponseUnmarshaller.Instance;
             
@@ -752,7 +752,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreatePrivateGraphEndpoint">REST API Reference for CreatePrivateGraphEndpoint Operation</seealso>
         public virtual CreatePrivateGraphEndpointResponse CreatePrivateGraphEndpoint(CreatePrivateGraphEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivateGraphEndpointResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/CreatePrivateGraphEndpoint">REST API Reference for CreatePrivateGraphEndpoint Operation</seealso>
         public virtual Task<CreatePrivateGraphEndpointResponse> CreatePrivateGraphEndpointAsync(CreatePrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivateGraphEndpointResponseUnmarshaller.Instance;
             
@@ -833,7 +833,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraph">REST API Reference for DeleteGraph Operation</seealso>
         public virtual DeleteGraphResponse DeleteGraph(DeleteGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphResponseUnmarshaller.Instance;
 
@@ -868,7 +868,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraph">REST API Reference for DeleteGraph Operation</seealso>
         public virtual Task<DeleteGraphResponse> DeleteGraphAsync(DeleteGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphResponseUnmarshaller.Instance;
             
@@ -904,7 +904,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraphSnapshot">REST API Reference for DeleteGraphSnapshot Operation</seealso>
         public virtual DeleteGraphSnapshotResponse DeleteGraphSnapshot(DeleteGraphSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphSnapshotResponseUnmarshaller.Instance;
 
@@ -939,7 +939,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeleteGraphSnapshot">REST API Reference for DeleteGraphSnapshot Operation</seealso>
         public virtual Task<DeleteGraphSnapshotResponse> DeleteGraphSnapshotAsync(DeleteGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphSnapshotResponseUnmarshaller.Instance;
             
@@ -975,7 +975,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeletePrivateGraphEndpoint">REST API Reference for DeletePrivateGraphEndpoint Operation</seealso>
         public virtual DeletePrivateGraphEndpointResponse DeletePrivateGraphEndpoint(DeletePrivateGraphEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrivateGraphEndpointResponseUnmarshaller.Instance;
 
@@ -1010,7 +1010,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/DeletePrivateGraphEndpoint">REST API Reference for DeletePrivateGraphEndpoint Operation</seealso>
         public virtual Task<DeletePrivateGraphEndpointResponse> DeletePrivateGraphEndpointAsync(DeletePrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrivateGraphEndpointResponseUnmarshaller.Instance;
             
@@ -1069,7 +1069,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
             
@@ -1160,7 +1160,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetExportTask">REST API Reference for GetExportTask Operation</seealso>
         public virtual GetExportTaskResponse GetExportTask(GetExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportTaskResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetExportTask">REST API Reference for GetExportTask Operation</seealso>
         public virtual Task<GetExportTaskResponse> GetExportTaskAsync(GetExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportTaskResponseUnmarshaller.Instance;
             
@@ -1225,7 +1225,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraph">REST API Reference for GetGraph Operation</seealso>
         public virtual GetGraphResponse GetGraph(GetGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphResponseUnmarshaller.Instance;
 
@@ -1257,7 +1257,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraph">REST API Reference for GetGraph Operation</seealso>
         public virtual Task<GetGraphResponse> GetGraphAsync(GetGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphResponseUnmarshaller.Instance;
             
@@ -1290,7 +1290,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSnapshot">REST API Reference for GetGraphSnapshot Operation</seealso>
         public virtual GetGraphSnapshotResponse GetGraphSnapshot(GetGraphSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphSnapshotResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSnapshot">REST API Reference for GetGraphSnapshot Operation</seealso>
         public virtual Task<GetGraphSnapshotResponse> GetGraphSnapshotAsync(GetGraphSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphSnapshotResponseUnmarshaller.Instance;
             
@@ -1358,7 +1358,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSummary">REST API Reference for GetGraphSummary Operation</seealso>
         public virtual GetGraphSummaryResponse GetGraphSummary(GetGraphSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphSummaryResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetGraphSummary">REST API Reference for GetGraphSummary Operation</seealso>
         public virtual Task<GetGraphSummaryResponse> GetGraphSummaryAsync(GetGraphSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGraphSummaryResponseUnmarshaller.Instance;
             
@@ -1426,7 +1426,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetImportTask">REST API Reference for GetImportTask Operation</seealso>
         public virtual GetImportTaskResponse GetImportTask(GetImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportTaskResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetImportTask">REST API Reference for GetImportTask Operation</seealso>
         public virtual Task<GetImportTaskResponse> GetImportTaskAsync(GetImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportTaskResponseUnmarshaller.Instance;
             
@@ -1491,7 +1491,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetPrivateGraphEndpoint">REST API Reference for GetPrivateGraphEndpoint Operation</seealso>
         public virtual GetPrivateGraphEndpointResponse GetPrivateGraphEndpoint(GetPrivateGraphEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrivateGraphEndpointResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetPrivateGraphEndpoint">REST API Reference for GetPrivateGraphEndpoint Operation</seealso>
         public virtual Task<GetPrivateGraphEndpointResponse> GetPrivateGraphEndpointAsync(GetPrivateGraphEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrivateGraphEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrivateGraphEndpointResponseUnmarshaller.Instance;
             
@@ -1567,7 +1567,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetQuery">REST API Reference for GetQuery Operation</seealso>
         public virtual GetQueryResponse GetQuery(GetQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/GetQuery">REST API Reference for GetQuery Operation</seealso>
         public virtual Task<GetQueryResponse> GetQueryAsync(GetQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResponseUnmarshaller.Instance;
             
@@ -1643,7 +1643,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListExportTasks">REST API Reference for ListExportTasks Operation</seealso>
         public virtual ListExportTasksResponse ListExportTasks(ListExportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportTasksResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListExportTasks">REST API Reference for ListExportTasks Operation</seealso>
         public virtual Task<ListExportTasksResponse> ListExportTasksAsync(ListExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportTasksResponseUnmarshaller.Instance;
             
@@ -1705,7 +1705,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListGraphs">REST API Reference for ListGraphs Operation</seealso>
         public virtual ListGraphsResponse ListGraphs(ListGraphsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphsResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListGraphs">REST API Reference for ListGraphs Operation</seealso>
         public virtual Task<ListGraphsResponse> ListGraphsAsync(ListGraphsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphsResponseUnmarshaller.Instance;
             
@@ -1767,7 +1767,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListGraphSnapshots">REST API Reference for ListGraphSnapshots Operation</seealso>
         public virtual ListGraphSnapshotsResponse ListGraphSnapshots(ListGraphSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphSnapshotsResponseUnmarshaller.Instance;
 
@@ -1799,7 +1799,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListGraphSnapshots">REST API Reference for ListGraphSnapshots Operation</seealso>
         public virtual Task<ListGraphSnapshotsResponse> ListGraphSnapshotsAsync(ListGraphSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphSnapshotsResponseUnmarshaller.Instance;
             
@@ -1832,7 +1832,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListImportTasks">REST API Reference for ListImportTasks Operation</seealso>
         public virtual ListImportTasksResponse ListImportTasks(ListImportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportTasksResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListImportTasks">REST API Reference for ListImportTasks Operation</seealso>
         public virtual Task<ListImportTasksResponse> ListImportTasksAsync(ListImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportTasksResponseUnmarshaller.Instance;
             
@@ -1897,7 +1897,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListPrivateGraphEndpoints">REST API Reference for ListPrivateGraphEndpoints Operation</seealso>
         public virtual ListPrivateGraphEndpointsResponse ListPrivateGraphEndpoints(ListPrivateGraphEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivateGraphEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivateGraphEndpointsResponseUnmarshaller.Instance;
 
@@ -1929,7 +1929,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListPrivateGraphEndpoints">REST API Reference for ListPrivateGraphEndpoints Operation</seealso>
         public virtual Task<ListPrivateGraphEndpointsResponse> ListPrivateGraphEndpointsAsync(ListPrivateGraphEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrivateGraphEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrivateGraphEndpointsResponseUnmarshaller.Instance;
             
@@ -1962,7 +1962,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListQueries">REST API Reference for ListQueries Operation</seealso>
         public virtual ListQueriesResponse ListQueries(ListQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueriesResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListQueries">REST API Reference for ListQueries Operation</seealso>
         public virtual Task<ListQueriesResponse> ListQueriesAsync(ListQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueriesResponseUnmarshaller.Instance;
             
@@ -2027,7 +2027,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2059,7 +2059,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2095,7 +2095,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ResetGraph">REST API Reference for ResetGraph Operation</seealso>
         public virtual ResetGraphResponse ResetGraph(ResetGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetGraphResponseUnmarshaller.Instance;
 
@@ -2130,7 +2130,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/ResetGraph">REST API Reference for ResetGraph Operation</seealso>
         public virtual Task<ResetGraphResponse> ResetGraphAsync(ResetGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetGraphResponseUnmarshaller.Instance;
             
@@ -2169,7 +2169,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/RestoreGraphFromSnapshot">REST API Reference for RestoreGraphFromSnapshot Operation</seealso>
         public virtual RestoreGraphFromSnapshotResponse RestoreGraphFromSnapshot(RestoreGraphFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreGraphFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreGraphFromSnapshotResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/RestoreGraphFromSnapshot">REST API Reference for RestoreGraphFromSnapshot Operation</seealso>
         public virtual Task<RestoreGraphFromSnapshotResponse> RestoreGraphFromSnapshotAsync(RestoreGraphFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreGraphFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreGraphFromSnapshotResponseUnmarshaller.Instance;
             
@@ -2244,7 +2244,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
@@ -2280,7 +2280,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
             
@@ -2316,7 +2316,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
         public virtual StartGraphResponse StartGraph(StartGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGraphResponseUnmarshaller.Instance;
 
@@ -2351,7 +2351,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartGraph">REST API Reference for StartGraph Operation</seealso>
         public virtual Task<StartGraphResponse> StartGraphAsync(StartGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartGraphResponseUnmarshaller.Instance;
             
@@ -2388,7 +2388,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
         public virtual StartImportTaskResponse StartImportTask(StartImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
 
@@ -2424,7 +2424,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">REST API Reference for StartImportTask Operation</seealso>
         public virtual Task<StartImportTaskResponse> StartImportTaskAsync(StartImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportTaskResponseUnmarshaller.Instance;
             
@@ -2460,7 +2460,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
         public virtual StopGraphResponse StopGraph(StopGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGraphResponseUnmarshaller.Instance;
 
@@ -2495,7 +2495,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StopGraph">REST API Reference for StopGraph Operation</seealso>
         public virtual Task<StopGraphResponse> StopGraphAsync(StopGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopGraphResponseUnmarshaller.Instance;
             
@@ -2528,7 +2528,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2560,7 +2560,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2593,7 +2593,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2661,7 +2661,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UpdateGraph">REST API Reference for UpdateGraph Operation</seealso>
         public virtual UpdateGraphResponse UpdateGraph(UpdateGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGraphResponseUnmarshaller.Instance;
 
@@ -2696,7 +2696,7 @@ namespace Amazon.NeptuneGraph
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/UpdateGraph">REST API Reference for UpdateGraph Operation</seealso>
         public virtual Task<UpdateGraphResponse> UpdateGraphAsync(UpdateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGraphResponseUnmarshaller.Instance;
             

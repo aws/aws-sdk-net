@@ -306,7 +306,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">REST API Reference for BatchGetIncidentFindings Operation</seealso>
         public virtual BatchGetIncidentFindingsResponse BatchGetIncidentFindings(BatchGetIncidentFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetIncidentFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetIncidentFindingsResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings">REST API Reference for BatchGetIncidentFindings Operation</seealso>
         public virtual Task<BatchGetIncidentFindingsResponse> BatchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetIncidentFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetIncidentFindingsResponseUnmarshaller.Instance;
             
@@ -384,7 +384,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateReplicationSet">REST API Reference for CreateReplicationSet Operation</seealso>
         public virtual CreateReplicationSetResponse CreateReplicationSet(CreateReplicationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationSetResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateReplicationSet">REST API Reference for CreateReplicationSet Operation</seealso>
         public virtual Task<CreateReplicationSetResponse> CreateReplicationSetAsync(CreateReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationSetResponseUnmarshaller.Instance;
             
@@ -464,7 +464,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateResponsePlan">REST API Reference for CreateResponsePlan Operation</seealso>
         public virtual CreateResponsePlanResponse CreateResponsePlan(CreateResponsePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResponsePlanResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateResponsePlan">REST API Reference for CreateResponsePlan Operation</seealso>
         public virtual Task<CreateResponsePlanResponse> CreateResponsePlanAsync(CreateResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResponsePlanResponseUnmarshaller.Instance;
             
@@ -546,7 +546,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateTimelineEvent">REST API Reference for CreateTimelineEvent Operation</seealso>
         public virtual CreateTimelineEventResponse CreateTimelineEvent(CreateTimelineEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTimelineEventResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateTimelineEvent">REST API Reference for CreateTimelineEvent Operation</seealso>
         public virtual Task<CreateTimelineEventResponse> CreateTimelineEventAsync(CreateTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTimelineEventResponseUnmarshaller.Instance;
             
@@ -620,7 +620,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteIncidentRecord">REST API Reference for DeleteIncidentRecord Operation</seealso>
         public virtual DeleteIncidentRecordResponse DeleteIncidentRecord(DeleteIncidentRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIncidentRecordResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteIncidentRecord">REST API Reference for DeleteIncidentRecord Operation</seealso>
         public virtual Task<DeleteIncidentRecordResponse> DeleteIncidentRecordAsync(DeleteIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIncidentRecordResponseUnmarshaller.Instance;
             
@@ -689,7 +689,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteReplicationSet">REST API Reference for DeleteReplicationSet Operation</seealso>
         public virtual DeleteReplicationSetResponse DeleteReplicationSet(DeleteReplicationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationSetResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteReplicationSet">REST API Reference for DeleteReplicationSet Operation</seealso>
         public virtual Task<DeleteReplicationSetResponse> DeleteReplicationSetAsync(DeleteReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationSetResponseUnmarshaller.Instance;
             
@@ -762,7 +762,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             
@@ -832,7 +832,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResponsePlan">REST API Reference for DeleteResponsePlan Operation</seealso>
         public virtual DeleteResponsePlanResponse DeleteResponsePlan(DeleteResponsePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResponsePlanResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteResponsePlan">REST API Reference for DeleteResponsePlan Operation</seealso>
         public virtual Task<DeleteResponsePlanResponse> DeleteResponsePlanAsync(DeleteResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResponsePlanResponseUnmarshaller.Instance;
             
@@ -898,7 +898,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteTimelineEvent">REST API Reference for DeleteTimelineEvent Operation</seealso>
         public virtual DeleteTimelineEventResponse DeleteTimelineEvent(DeleteTimelineEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimelineEventResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteTimelineEvent">REST API Reference for DeleteTimelineEvent Operation</seealso>
         public virtual Task<DeleteTimelineEventResponse> DeleteTimelineEventAsync(DeleteTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimelineEventResponseUnmarshaller.Instance;
             
@@ -966,7 +966,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">REST API Reference for GetIncidentRecord Operation</seealso>
         public virtual GetIncidentRecordResponse GetIncidentRecord(GetIncidentRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIncidentRecordResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetIncidentRecord">REST API Reference for GetIncidentRecord Operation</seealso>
         public virtual Task<GetIncidentRecordResponse> GetIncidentRecordAsync(GetIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIncidentRecordResponseUnmarshaller.Instance;
             
@@ -1037,7 +1037,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetReplicationSet">REST API Reference for GetReplicationSet Operation</seealso>
         public virtual GetReplicationSetResponse GetReplicationSet(GetReplicationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationSetResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetReplicationSet">REST API Reference for GetReplicationSet Operation</seealso>
         public virtual Task<GetReplicationSetResponse> GetReplicationSetAsync(GetReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationSetResponseUnmarshaller.Instance;
             
@@ -1108,7 +1108,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
             
@@ -1179,7 +1179,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResponsePlan">REST API Reference for GetResponsePlan Operation</seealso>
         public virtual GetResponsePlanResponse GetResponsePlan(GetResponsePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponsePlanResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetResponsePlan">REST API Reference for GetResponsePlan Operation</seealso>
         public virtual Task<GetResponsePlanResponse> GetResponsePlanAsync(GetResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResponsePlanResponseUnmarshaller.Instance;
             
@@ -1250,7 +1250,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetTimelineEvent">REST API Reference for GetTimelineEvent Operation</seealso>
         public virtual GetTimelineEventResponse GetTimelineEvent(GetTimelineEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimelineEventResponseUnmarshaller.Instance;
 
@@ -1285,7 +1285,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/GetTimelineEvent">REST API Reference for GetTimelineEvent Operation</seealso>
         public virtual Task<GetTimelineEventResponse> GetTimelineEventAsync(GetTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimelineEventResponseUnmarshaller.Instance;
             
@@ -1324,7 +1324,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">REST API Reference for ListIncidentFindings Operation</seealso>
         public virtual ListIncidentFindingsResponse ListIncidentFindings(ListIncidentFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIncidentFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIncidentFindingsResponseUnmarshaller.Instance;
 
@@ -1362,7 +1362,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings">REST API Reference for ListIncidentFindings Operation</seealso>
         public virtual Task<ListIncidentFindingsResponse> ListIncidentFindingsAsync(ListIncidentFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIncidentFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIncidentFindingsResponseUnmarshaller.Instance;
             
@@ -1396,7 +1396,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentRecords">REST API Reference for ListIncidentRecords Operation</seealso>
         public virtual ListIncidentRecordsResponse ListIncidentRecords(ListIncidentRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIncidentRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIncidentRecordsResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentRecords">REST API Reference for ListIncidentRecords Operation</seealso>
         public virtual Task<ListIncidentRecordsResponse> ListIncidentRecordsAsync(ListIncidentRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIncidentRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIncidentRecordsResponseUnmarshaller.Instance;
             
@@ -1462,7 +1462,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListRelatedItems">REST API Reference for ListRelatedItems Operation</seealso>
         public virtual ListRelatedItemsResponse ListRelatedItems(ListRelatedItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRelatedItemsResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListRelatedItems">REST API Reference for ListRelatedItems Operation</seealso>
         public virtual Task<ListRelatedItemsResponse> ListRelatedItemsAsync(ListRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRelatedItemsResponseUnmarshaller.Instance;
             
@@ -1527,7 +1527,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListReplicationSets">REST API Reference for ListReplicationSets Operation</seealso>
         public virtual ListReplicationSetsResponse ListReplicationSets(ListReplicationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplicationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplicationSetsResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListReplicationSets">REST API Reference for ListReplicationSets Operation</seealso>
         public virtual Task<ListReplicationSetsResponse> ListReplicationSetsAsync(ListReplicationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplicationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplicationSetsResponseUnmarshaller.Instance;
             
@@ -1592,7 +1592,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListResponsePlans">REST API Reference for ListResponsePlans Operation</seealso>
         public virtual ListResponsePlansResponse ListResponsePlans(ListResponsePlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResponsePlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResponsePlansResponseUnmarshaller.Instance;
 
@@ -1624,7 +1624,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListResponsePlans">REST API Reference for ListResponsePlans Operation</seealso>
         public virtual Task<ListResponsePlansResponse> ListResponsePlansAsync(ListResponsePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResponsePlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResponsePlansResponseUnmarshaller.Instance;
             
@@ -1660,7 +1660,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1728,7 +1728,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">REST API Reference for ListTimelineEvents Operation</seealso>
         public virtual ListTimelineEventsResponse ListTimelineEvents(ListTimelineEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimelineEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimelineEventsResponseUnmarshaller.Instance;
 
@@ -1760,7 +1760,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListTimelineEvents">REST API Reference for ListTimelineEvents Operation</seealso>
         public virtual Task<ListTimelineEventsResponse> ListTimelineEventsAsync(ListTimelineEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimelineEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimelineEventsResponseUnmarshaller.Instance;
             
@@ -1799,7 +1799,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1876,7 +1876,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/StartIncident">REST API Reference for StartIncident Operation</seealso>
         public virtual StartIncidentResponse StartIncident(StartIncidentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIncidentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIncidentResponseUnmarshaller.Instance;
 
@@ -1914,7 +1914,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/StartIncident">REST API Reference for StartIncident Operation</seealso>
         public virtual Task<StartIncidentResponse> StartIncidentAsync(StartIncidentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIncidentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIncidentResponseUnmarshaller.Instance;
             
@@ -1956,7 +1956,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1997,7 +1997,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2036,7 +2036,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2074,7 +2074,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2111,7 +2111,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateDeletionProtection">REST API Reference for UpdateDeletionProtection Operation</seealso>
         public virtual UpdateDeletionProtectionResponse UpdateDeletionProtection(UpdateDeletionProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeletionProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeletionProtectionResponseUnmarshaller.Instance;
 
@@ -2147,7 +2147,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateDeletionProtection">REST API Reference for UpdateDeletionProtection Operation</seealso>
         public virtual Task<UpdateDeletionProtectionResponse> UpdateDeletionProtectionAsync(UpdateDeletionProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeletionProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeletionProtectionResponseUnmarshaller.Instance;
             
@@ -2189,7 +2189,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">REST API Reference for UpdateIncidentRecord Operation</seealso>
         public virtual UpdateIncidentRecordResponse UpdateIncidentRecord(UpdateIncidentRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIncidentRecordResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateIncidentRecord">REST API Reference for UpdateIncidentRecord Operation</seealso>
         public virtual Task<UpdateIncidentRecordResponse> UpdateIncidentRecordAsync(UpdateIncidentRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIncidentRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIncidentRecordResponseUnmarshaller.Instance;
             
@@ -2269,7 +2269,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateRelatedItems">REST API Reference for UpdateRelatedItems Operation</seealso>
         public virtual UpdateRelatedItemsResponse UpdateRelatedItems(UpdateRelatedItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelatedItemsResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateRelatedItems">REST API Reference for UpdateRelatedItems Operation</seealso>
         public virtual Task<UpdateRelatedItemsResponse> UpdateRelatedItemsAsync(UpdateRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRelatedItemsResponseUnmarshaller.Instance;
             
@@ -2346,7 +2346,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateReplicationSet">REST API Reference for UpdateReplicationSet Operation</seealso>
         public virtual UpdateReplicationSetResponse UpdateReplicationSet(UpdateReplicationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationSetResponseUnmarshaller.Instance;
 
@@ -2384,7 +2384,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateReplicationSet">REST API Reference for UpdateReplicationSet Operation</seealso>
         public virtual Task<UpdateReplicationSetResponse> UpdateReplicationSetAsync(UpdateReplicationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationSetResponseUnmarshaller.Instance;
             
@@ -2423,7 +2423,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateResponsePlan">REST API Reference for UpdateResponsePlan Operation</seealso>
         public virtual UpdateResponsePlanResponse UpdateResponsePlan(UpdateResponsePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResponsePlanResponseUnmarshaller.Instance;
 
@@ -2461,7 +2461,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateResponsePlan">REST API Reference for UpdateResponsePlan Operation</seealso>
         public virtual Task<UpdateResponsePlanResponse> UpdateResponsePlanAsync(UpdateResponsePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResponsePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResponsePlanResponseUnmarshaller.Instance;
             
@@ -2500,7 +2500,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateTimelineEvent">REST API Reference for UpdateTimelineEvent Operation</seealso>
         public virtual UpdateTimelineEventResponse UpdateTimelineEvent(UpdateTimelineEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTimelineEventResponseUnmarshaller.Instance;
 
@@ -2538,7 +2538,7 @@ namespace Amazon.SSMIncidents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateTimelineEvent">REST API Reference for UpdateTimelineEvent Operation</seealso>
         public virtual Task<UpdateTimelineEventResponse> UpdateTimelineEventAsync(UpdateTimelineEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTimelineEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTimelineEventResponseUnmarshaller.Instance;
             

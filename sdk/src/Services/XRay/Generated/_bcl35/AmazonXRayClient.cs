@@ -292,7 +292,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         public virtual BatchGetTracesResponse BatchGetTraces(BatchGetTracesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTracesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BatchGetTraces">REST API Reference for BatchGetTraces Operation</seealso>
         public virtual IAsyncResult BeginBatchGetTraces(BatchGetTracesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTracesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTracesResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CancelTraceRetrieval">REST API Reference for CancelTraceRetrieval Operation</seealso>
         public virtual CancelTraceRetrievalResponse CancelTraceRetrieval(CancelTraceRetrievalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTraceRetrievalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTraceRetrievalResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CancelTraceRetrieval">REST API Reference for CancelTraceRetrieval Operation</seealso>
         public virtual IAsyncResult BeginCancelTraceRetrieval(CancelTraceRetrievalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTraceRetrievalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTraceRetrievalResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         public virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule">REST API Reference for CreateSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginCreateSamplingRule(CreateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -612,7 +612,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         public virtual DeleteSamplingRuleResponse DeleteSamplingRule(DeleteSamplingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule">REST API Reference for DeleteSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteSamplingRule(DeleteSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSamplingRuleResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         public virtual GetEncryptionConfigResponse GetEncryptionConfig(GetEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig">REST API Reference for GetEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetEncryptionConfig(GetEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -852,7 +852,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         public virtual GetGroupsResponse GetGroups(GetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsResponseUnmarshaller.Instance;
 
@@ -873,7 +873,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">REST API Reference for GetGroups Operation</seealso>
         public virtual IAsyncResult BeginGetGroups(GetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsResponseUnmarshaller.Instance;
 
@@ -920,7 +920,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetIndexingRules">REST API Reference for GetIndexingRules Operation</seealso>
         public virtual GetIndexingRulesResponse GetIndexingRules(GetIndexingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexingRulesResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetIndexingRules">REST API Reference for GetIndexingRules Operation</seealso>
         public virtual IAsyncResult BeginGetIndexingRules(GetIndexingRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexingRulesResponseUnmarshaller.Instance;
 
@@ -982,7 +982,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
         public virtual GetInsightResponse GetInsight(GetInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
         public virtual IAsyncResult BeginGetInsight(GetInsightRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
         public virtual GetInsightEventsResponse GetInsightEvents(GetInsightEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
 
@@ -1065,7 +1065,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
         public virtual IAsyncResult BeginGetInsightEvents(GetInsightEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
         public virtual GetInsightImpactGraphResponse GetInsightImpactGraph(GetInsightImpactGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
         public virtual IAsyncResult BeginGetInsightImpactGraph(GetInsightImpactGraphRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
         public virtual GetInsightSummariesResponse GetInsightSummaries(GetInsightSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetInsightSummaries(GetInsightSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
 
@@ -1257,7 +1257,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetRetrievedTracesGraph">REST API Reference for GetRetrievedTracesGraph Operation</seealso>
         public virtual GetRetrievedTracesGraphResponse GetRetrievedTracesGraph(GetRetrievedTracesGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetrievedTracesGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetrievedTracesGraphResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetRetrievedTracesGraph">REST API Reference for GetRetrievedTracesGraph Operation</seealso>
         public virtual IAsyncResult BeginGetRetrievedTracesGraph(GetRetrievedTracesGraphRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetrievedTracesGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetrievedTracesGraphResponseUnmarshaller.Instance;
 
@@ -1317,7 +1317,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         public virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
 
@@ -1338,7 +1338,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules">REST API Reference for GetSamplingRules Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingRules(GetSamplingRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingRulesResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         public virtual GetSamplingStatisticSummariesResponse GetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries">REST API Reference for GetSamplingStatisticSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingStatisticSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingStatisticSummariesResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         public virtual GetSamplingTargetsResponse GetSamplingTargets(GetSamplingTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets">REST API Reference for GetSamplingTargets Operation</seealso>
         public virtual IAsyncResult BeginGetSamplingTargets(GetSamplingTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSamplingTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSamplingTargetsResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         public virtual GetServiceGraphResponse GetServiceGraph(GetServiceGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
@@ -1522,7 +1522,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetServiceGraph">REST API Reference for GetServiceGraph Operation</seealso>
         public virtual IAsyncResult BeginGetServiceGraph(GetServiceGraphRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceGraphResponseUnmarshaller.Instance;
 
@@ -1561,7 +1561,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         public virtual GetTimeSeriesServiceStatisticsResponse GetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
 
@@ -1582,7 +1582,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTimeSeriesServiceStatistics">REST API Reference for GetTimeSeriesServiceStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTimeSeriesServiceStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTimeSeriesServiceStatisticsResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         public virtual GetTraceGraphResponse GetTraceGraph(GetTraceGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
@@ -1642,7 +1642,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceGraph">REST API Reference for GetTraceGraph Operation</seealso>
         public virtual IAsyncResult BeginGetTraceGraph(GetTraceGraphRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceGraphResponseUnmarshaller.Instance;
 
@@ -1684,7 +1684,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSegmentDestination">REST API Reference for GetTraceSegmentDestination Operation</seealso>
         public virtual GetTraceSegmentDestinationResponse GetTraceSegmentDestination(GetTraceSegmentDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceSegmentDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceSegmentDestinationResponseUnmarshaller.Instance;
 
@@ -1705,7 +1705,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSegmentDestination">REST API Reference for GetTraceSegmentDestination Operation</seealso>
         public virtual IAsyncResult BeginGetTraceSegmentDestination(GetTraceSegmentDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceSegmentDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceSegmentDestinationResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         public virtual GetTraceSummariesResponse GetTraceSummaries(GetTraceSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
@@ -1792,7 +1792,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">REST API Reference for GetTraceSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetTraceSummaries(GetTraceSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTraceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTraceSummariesResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
         public virtual ListResourcePoliciesResponse ListResourcePolicies(ListResourcePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
         public virtual IAsyncResult BeginListResourcePolicies(ListResourcePoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -1922,7 +1922,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListRetrievedTraces">REST API Reference for ListRetrievedTraces Operation</seealso>
         public virtual ListRetrievedTracesResponse ListRetrievedTraces(ListRetrievedTracesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrievedTracesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrievedTracesResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListRetrievedTraces">REST API Reference for ListRetrievedTraces Operation</seealso>
         public virtual IAsyncResult BeginListRetrievedTraces(ListRetrievedTracesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrievedTracesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrievedTracesResponseUnmarshaller.Instance;
 
@@ -1987,7 +1987,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2047,7 +2047,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         public virtual PutEncryptionConfigResponse PutEncryptionConfig(PutEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         public virtual IAsyncResult BeginPutEncryptionConfig(PutEncryptionConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2187,7 +2187,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         public virtual PutTelemetryRecordsResponse PutTelemetryRecords(PutTelemetryRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
@@ -2208,7 +2208,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTelemetryRecords">REST API Reference for PutTelemetryRecords Operation</seealso>
         public virtual IAsyncResult BeginPutTelemetryRecords(PutTelemetryRecordsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTelemetryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTelemetryRecordsResponseUnmarshaller.Instance;
 
@@ -2327,7 +2327,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         public virtual PutTraceSegmentsResponse PutTraceSegments(PutTraceSegmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTraceSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
@@ -2348,7 +2348,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutTraceSegments">REST API Reference for PutTraceSegments Operation</seealso>
         public virtual IAsyncResult BeginPutTraceSegments(PutTraceSegmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTraceSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
@@ -2413,7 +2413,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/StartTraceRetrieval">REST API Reference for StartTraceRetrieval Operation</seealso>
         public virtual StartTraceRetrievalResponse StartTraceRetrieval(StartTraceRetrievalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTraceRetrievalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTraceRetrievalResponseUnmarshaller.Instance;
 
@@ -2434,7 +2434,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/StartTraceRetrieval">REST API Reference for StartTraceRetrieval Operation</seealso>
         public virtual IAsyncResult BeginStartTraceRetrieval(StartTraceRetrievalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTraceRetrievalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTraceRetrievalResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2501,7 +2501,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2545,7 +2545,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2566,7 +2566,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2605,7 +2605,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -2626,7 +2626,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -2676,7 +2676,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateIndexingRule">REST API Reference for UpdateIndexingRule Operation</seealso>
         public virtual UpdateIndexingRuleResponse UpdateIndexingRule(UpdateIndexingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexingRuleResponseUnmarshaller.Instance;
 
@@ -2697,7 +2697,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateIndexingRule">REST API Reference for UpdateIndexingRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateIndexingRule(UpdateIndexingRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexingRuleResponseUnmarshaller.Instance;
 
@@ -2736,7 +2736,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         public virtual UpdateSamplingRuleResponse UpdateSamplingRule(UpdateSamplingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">REST API Reference for UpdateSamplingRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateSamplingRule(UpdateSamplingRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSamplingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSamplingRuleResponseUnmarshaller.Instance;
 
@@ -2799,7 +2799,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateTraceSegmentDestination">REST API Reference for UpdateTraceSegmentDestination Operation</seealso>
         public virtual UpdateTraceSegmentDestinationResponse UpdateTraceSegmentDestination(UpdateTraceSegmentDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTraceSegmentDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTraceSegmentDestinationResponseUnmarshaller.Instance;
 
@@ -2820,7 +2820,7 @@ namespace Amazon.XRay
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateTraceSegmentDestination">REST API Reference for UpdateTraceSegmentDestination Operation</seealso>
         public virtual IAsyncResult BeginUpdateTraceSegmentDestination(UpdateTraceSegmentDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTraceSegmentDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTraceSegmentDestinationResponseUnmarshaller.Instance;
 

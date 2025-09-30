@@ -306,7 +306,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/BatchGetUserAccessTasks">REST API Reference for BatchGetUserAccessTasks Operation</seealso>
         public virtual BatchGetUserAccessTasksResponse BatchGetUserAccessTasks(BatchGetUserAccessTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetUserAccessTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetUserAccessTasksResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/BatchGetUserAccessTasks">REST API Reference for BatchGetUserAccessTasks Operation</seealso>
         public virtual IAsyncResult BeginBatchGetUserAccessTasks(BatchGetUserAccessTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetUserAccessTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetUserAccessTasksResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ConnectAppAuthorization">REST API Reference for ConnectAppAuthorization Operation</seealso>
         public virtual ConnectAppAuthorizationResponse ConnectAppAuthorization(ConnectAppAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ConnectAppAuthorization">REST API Reference for ConnectAppAuthorization Operation</seealso>
         public virtual IAsyncResult BeginConnectAppAuthorization(ConnectAppAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateAppAuthorization">REST API Reference for CreateAppAuthorization Operation</seealso>
         public virtual CreateAppAuthorizationResponse CreateAppAuthorization(CreateAppAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateAppAuthorization">REST API Reference for CreateAppAuthorization Operation</seealso>
         public virtual IAsyncResult BeginCreateAppAuthorization(CreateAppAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateAppBundle">REST API Reference for CreateAppBundle Operation</seealso>
         public virtual CreateAppBundleResponse CreateAppBundle(CreateAppBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppBundleResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateAppBundle">REST API Reference for CreateAppBundle Operation</seealso>
         public virtual IAsyncResult BeginCreateAppBundle(CreateAppBundleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppBundleResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateIngestion">REST API Reference for CreateIngestion Operation</seealso>
         public virtual CreateIngestionResponse CreateIngestion(CreateIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateIngestion">REST API Reference for CreateIngestion Operation</seealso>
         public virtual IAsyncResult BeginCreateIngestion(CreateIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateIngestionDestination">REST API Reference for CreateIngestionDestination Operation</seealso>
         public virtual CreateIngestionDestinationResponse CreateIngestionDestination(CreateIngestionDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/CreateIngestionDestination">REST API Reference for CreateIngestionDestination Operation</seealso>
         public virtual IAsyncResult BeginCreateIngestionDestination(CreateIngestionDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteAppAuthorization">REST API Reference for DeleteAppAuthorization Operation</seealso>
         public virtual DeleteAppAuthorizationResponse DeleteAppAuthorization(DeleteAppAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteAppAuthorization">REST API Reference for DeleteAppAuthorization Operation</seealso>
         public virtual IAsyncResult BeginDeleteAppAuthorization(DeleteAppAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteAppBundle">REST API Reference for DeleteAppBundle Operation</seealso>
         public virtual DeleteAppBundleResponse DeleteAppBundle(DeleteAppBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppBundleResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteAppBundle">REST API Reference for DeleteAppBundle Operation</seealso>
         public virtual IAsyncResult BeginDeleteAppBundle(DeleteAppBundleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppBundleResponseUnmarshaller.Instance;
 
@@ -887,7 +887,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteIngestion">REST API Reference for DeleteIngestion Operation</seealso>
         public virtual DeleteIngestionResponse DeleteIngestion(DeleteIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestionResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteIngestion">REST API Reference for DeleteIngestion Operation</seealso>
         public virtual IAsyncResult BeginDeleteIngestion(DeleteIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestionResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteIngestionDestination">REST API Reference for DeleteIngestionDestination Operation</seealso>
         public virtual DeleteIngestionDestinationResponse DeleteIngestionDestination(DeleteIngestionDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/DeleteIngestionDestination">REST API Reference for DeleteIngestionDestination Operation</seealso>
         public virtual IAsyncResult BeginDeleteIngestionDestination(DeleteIngestionDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetAppAuthorization">REST API Reference for GetAppAuthorization Operation</seealso>
         public virtual GetAppAuthorizationResponse GetAppAuthorization(GetAppAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetAppAuthorization">REST API Reference for GetAppAuthorization Operation</seealso>
         public virtual IAsyncResult BeginGetAppAuthorization(GetAppAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetAppBundle">REST API Reference for GetAppBundle Operation</seealso>
         public virtual GetAppBundleResponse GetAppBundle(GetAppBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppBundleResponseUnmarshaller.Instance;
 
@@ -1126,7 +1126,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetAppBundle">REST API Reference for GetAppBundle Operation</seealso>
         public virtual IAsyncResult BeginGetAppBundle(GetAppBundleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppBundleResponseUnmarshaller.Instance;
 
@@ -1175,7 +1175,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetIngestion">REST API Reference for GetIngestion Operation</seealso>
         public virtual GetIngestionResponse GetIngestion(GetIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestionResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetIngestion">REST API Reference for GetIngestion Operation</seealso>
         public virtual IAsyncResult BeginGetIngestion(GetIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestionResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetIngestionDestination">REST API Reference for GetIngestionDestination Operation</seealso>
         public virtual GetIngestionDestinationResponse GetIngestionDestination(GetIngestionDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -1266,7 +1266,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/GetIngestionDestination">REST API Reference for GetIngestionDestination Operation</seealso>
         public virtual IAsyncResult BeginGetIngestionDestination(GetIngestionDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListAppAuthorizations">REST API Reference for ListAppAuthorizations Operation</seealso>
         public virtual ListAppAuthorizationsResponse ListAppAuthorizations(ListAppAuthorizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAuthorizationsResponseUnmarshaller.Instance;
 
@@ -1336,7 +1336,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListAppAuthorizations">REST API Reference for ListAppAuthorizations Operation</seealso>
         public virtual IAsyncResult BeginListAppAuthorizations(ListAppAuthorizationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppAuthorizationsResponseUnmarshaller.Instance;
 
@@ -1382,7 +1382,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListAppBundles">REST API Reference for ListAppBundles Operation</seealso>
         public virtual ListAppBundlesResponse ListAppBundles(ListAppBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppBundlesResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListAppBundles">REST API Reference for ListAppBundles Operation</seealso>
         public virtual IAsyncResult BeginListAppBundles(ListAppBundlesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppBundlesResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListIngestionDestinations">REST API Reference for ListIngestionDestinations Operation</seealso>
         public virtual ListIngestionDestinationsResponse ListIngestionDestinations(ListIngestionDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionDestinationsResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListIngestionDestinations">REST API Reference for ListIngestionDestinations Operation</seealso>
         public virtual IAsyncResult BeginListIngestionDestinations(ListIngestionDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionDestinationsResponseUnmarshaller.Instance;
 
@@ -1522,7 +1522,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListIngestions">REST API Reference for ListIngestions Operation</seealso>
         public virtual ListIngestionsResponse ListIngestions(ListIngestionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionsResponseUnmarshaller.Instance;
 
@@ -1543,7 +1543,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListIngestions">REST API Reference for ListIngestions Operation</seealso>
         public virtual IAsyncResult BeginListIngestions(ListIngestionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionsResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1665,7 +1665,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StartIngestion">REST API Reference for StartIngestion Operation</seealso>
         public virtual StartIngestionResponse StartIngestion(StartIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIngestionResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StartIngestion">REST API Reference for StartIngestion Operation</seealso>
         public virtual IAsyncResult BeginStartIngestion(StartIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIngestionResponseUnmarshaller.Instance;
 
@@ -1741,7 +1741,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StartUserAccessTasks">REST API Reference for StartUserAccessTasks Operation</seealso>
         public virtual StartUserAccessTasksResponse StartUserAccessTasks(StartUserAccessTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUserAccessTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUserAccessTasksResponseUnmarshaller.Instance;
 
@@ -1762,7 +1762,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StartUserAccessTasks">REST API Reference for StartUserAccessTasks Operation</seealso>
         public virtual IAsyncResult BeginStartUserAccessTasks(StartUserAccessTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUserAccessTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUserAccessTasksResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StopIngestion">REST API Reference for StopIngestion Operation</seealso>
         public virtual StopIngestionResponse StopIngestion(StopIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopIngestionResponseUnmarshaller.Instance;
 
@@ -1835,7 +1835,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/StopIngestion">REST API Reference for StopIngestion Operation</seealso>
         public virtual IAsyncResult BeginStopIngestion(StopIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopIngestionResponseUnmarshaller.Instance;
 
@@ -1884,7 +1884,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1954,7 +1954,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1975,7 +1975,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2031,7 +2031,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UpdateAppAuthorization">REST API Reference for UpdateAppAuthorization Operation</seealso>
         public virtual UpdateAppAuthorizationResponse UpdateAppAuthorization(UpdateAppAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -2052,7 +2052,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UpdateAppAuthorization">REST API Reference for UpdateAppAuthorization Operation</seealso>
         public virtual IAsyncResult BeginUpdateAppAuthorization(UpdateAppAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppAuthorizationResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UpdateIngestionDestination">REST API Reference for UpdateIngestionDestination Operation</seealso>
         public virtual UpdateIngestionDestinationResponse UpdateIngestionDestination(UpdateIngestionDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIngestionDestinationResponseUnmarshaller.Instance;
 
@@ -2129,7 +2129,7 @@ namespace Amazon.AppFabric
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appfabric-2023-05-19/UpdateIngestionDestination">REST API Reference for UpdateIngestionDestination Operation</seealso>
         public virtual IAsyncResult BeginUpdateIngestionDestination(UpdateIngestionDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIngestionDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIngestionDestinationResponseUnmarshaller.Instance;
 

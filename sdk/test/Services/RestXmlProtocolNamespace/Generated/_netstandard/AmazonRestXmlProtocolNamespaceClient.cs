@@ -256,7 +256,7 @@ namespace Amazon.RestXmlProtocolNamespace
 
         internal virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -277,7 +277,7 @@ namespace Amazon.RestXmlProtocolNamespace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-namespace-2019-12-16/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 

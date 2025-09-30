@@ -697,7 +697,7 @@ namespace Amazon.ControlTower
 
         internal virtual CreateLandingZoneResponse CreateLandingZone(CreateLandingZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLandingZoneResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/CreateLandingZone">REST API Reference for CreateLandingZone Operation</seealso>
         public virtual Task<CreateLandingZoneResponse> CreateLandingZoneAsync(CreateLandingZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLandingZoneResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.ControlTower
 
         internal virtual DeleteLandingZoneResponse DeleteLandingZone(DeleteLandingZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLandingZoneResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DeleteLandingZone">REST API Reference for DeleteLandingZone Operation</seealso>
         public virtual Task<DeleteLandingZoneResponse> DeleteLandingZoneAsync(DeleteLandingZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLandingZoneResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.ControlTower
 
         internal virtual DisableBaselineResponse DisableBaseline(DisableBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableBaselineResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableBaseline">REST API Reference for DisableBaseline Operation</seealso>
         public virtual Task<DisableBaselineResponse> DisableBaselineAsync(DisableBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableBaselineResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.ControlTower
 
         internal virtual DisableControlResponse DisableControl(DisableControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableControlResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/DisableControl">REST API Reference for DisableControl Operation</seealso>
         public virtual Task<DisableControlResponse> DisableControlAsync(DisableControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableControlResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.ControlTower
 
         internal virtual EnableBaselineResponse EnableBaseline(EnableBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableBaselineResponseUnmarshaller.Instance;
 
@@ -968,7 +968,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableBaseline">REST API Reference for EnableBaseline Operation</seealso>
         public virtual Task<EnableBaselineResponse> EnableBaselineAsync(EnableBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableBaselineResponseUnmarshaller.Instance;
 
@@ -981,7 +981,7 @@ namespace Amazon.ControlTower
 
         internal virtual EnableControlResponse EnableControl(EnableControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableControlResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnableControl">REST API Reference for EnableControl Operation</seealso>
         public virtual Task<EnableControlResponse> EnableControlAsync(EnableControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableControlResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetBaselineResponse GetBaseline(GetBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaselineResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaseline">REST API Reference for GetBaseline Operation</seealso>
         public virtual Task<GetBaselineResponse> GetBaselineAsync(GetBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaselineResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetBaselineOperationResponse GetBaselineOperation(GetBaselineOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaselineOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaselineOperationResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetBaselineOperation">REST API Reference for GetBaselineOperation Operation</seealso>
         public virtual Task<GetBaselineOperationResponse> GetBaselineOperationAsync(GetBaselineOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBaselineOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBaselineOperationResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetControlOperationResponse GetControlOperation(GetControlOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlOperationResponseUnmarshaller.Instance;
 
@@ -1184,7 +1184,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetControlOperation">REST API Reference for GetControlOperation Operation</seealso>
         public virtual Task<GetControlOperationResponse> GetControlOperationAsync(GetControlOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlOperationResponseUnmarshaller.Instance;
 
@@ -1197,7 +1197,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetEnabledBaselineResponse GetEnabledBaseline(GetEnabledBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledBaseline">REST API Reference for GetEnabledBaseline Operation</seealso>
         public virtual Task<GetEnabledBaselineResponse> GetEnabledBaselineAsync(GetEnabledBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetEnabledControlResponse GetEnabledControl(GetEnabledControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnabledControlResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetEnabledControl">REST API Reference for GetEnabledControl Operation</seealso>
         public virtual Task<GetEnabledControlResponse> GetEnabledControlAsync(GetEnabledControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnabledControlResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetLandingZoneResponse GetLandingZone(GetLandingZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLandingZoneResponseUnmarshaller.Instance;
 
@@ -1332,7 +1332,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZone">REST API Reference for GetLandingZone Operation</seealso>
         public virtual Task<GetLandingZoneResponse> GetLandingZoneAsync(GetLandingZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLandingZoneResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.ControlTower
 
         internal virtual GetLandingZoneOperationResponse GetLandingZoneOperation(GetLandingZoneOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLandingZoneOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLandingZoneOperationResponseUnmarshaller.Instance;
 
@@ -1382,7 +1382,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/GetLandingZoneOperation">REST API Reference for GetLandingZoneOperation Operation</seealso>
         public virtual Task<GetLandingZoneOperationResponse> GetLandingZoneOperationAsync(GetLandingZoneOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLandingZoneOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLandingZoneOperationResponseUnmarshaller.Instance;
 
@@ -1395,7 +1395,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListBaselinesResponse ListBaselines(ListBaselinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBaselinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBaselinesResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListBaselines">REST API Reference for ListBaselines Operation</seealso>
         public virtual Task<ListBaselinesResponse> ListBaselinesAsync(ListBaselinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBaselinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBaselinesResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListControlOperationsResponse ListControlOperations(ListControlOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlOperationsResponseUnmarshaller.Instance;
 
@@ -1476,7 +1476,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListControlOperations">REST API Reference for ListControlOperations Operation</seealso>
         public virtual Task<ListControlOperationsResponse> ListControlOperationsAsync(ListControlOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlOperationsResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListEnabledBaselinesResponse ListEnabledBaselines(ListEnabledBaselinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnabledBaselinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnabledBaselinesResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledBaselines">REST API Reference for ListEnabledBaselines Operation</seealso>
         public virtual Task<ListEnabledBaselinesResponse> ListEnabledBaselinesAsync(ListEnabledBaselinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnabledBaselinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnabledBaselinesResponseUnmarshaller.Instance;
 
@@ -1538,7 +1538,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListEnabledControlsResponse ListEnabledControls(ListEnabledControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnabledControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnabledControlsResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListEnabledControls">REST API Reference for ListEnabledControls Operation</seealso>
         public virtual Task<ListEnabledControlsResponse> ListEnabledControlsAsync(ListEnabledControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnabledControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnabledControlsResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListLandingZoneOperationsResponse ListLandingZoneOperations(ListLandingZoneOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLandingZoneOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLandingZoneOperationsResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZoneOperations">REST API Reference for ListLandingZoneOperations Operation</seealso>
         public virtual Task<ListLandingZoneOperationsResponse> ListLandingZoneOperationsAsync(ListLandingZoneOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLandingZoneOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLandingZoneOperationsResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListLandingZonesResponse ListLandingZones(ListLandingZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLandingZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLandingZonesResponseUnmarshaller.Instance;
 
@@ -1676,7 +1676,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListLandingZones">REST API Reference for ListLandingZones Operation</seealso>
         public virtual Task<ListLandingZonesResponse> ListLandingZonesAsync(ListLandingZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLandingZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLandingZonesResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.ControlTower
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.ControlTower
 
         internal virtual ResetEnabledBaselineResponse ResetEnabledBaseline(ResetEnabledBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -1780,7 +1780,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledBaseline">REST API Reference for ResetEnabledBaseline Operation</seealso>
         public virtual Task<ResetEnabledBaselineResponse> ResetEnabledBaselineAsync(ResetEnabledBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.ControlTower
 
         internal virtual ResetEnabledControlResponse ResetEnabledControl(ResetEnabledControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEnabledControlResponseUnmarshaller.Instance;
 
@@ -1836,7 +1836,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">REST API Reference for ResetEnabledControl Operation</seealso>
         public virtual Task<ResetEnabledControlResponse> ResetEnabledControlAsync(ResetEnabledControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEnabledControlResponseUnmarshaller.Instance;
 
@@ -1849,7 +1849,7 @@ namespace Amazon.ControlTower
 
         internal virtual ResetLandingZoneResponse ResetLandingZone(ResetLandingZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetLandingZoneResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetLandingZone">REST API Reference for ResetLandingZone Operation</seealso>
         public virtual Task<ResetLandingZoneResponse> ResetLandingZoneAsync(ResetLandingZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetLandingZoneResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.ControlTower
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1936,7 +1936,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.ControlTower
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.ControlTower
 
         internal virtual UpdateEnabledBaselineResponse UpdateEnabledBaseline(UpdateEnabledBaselineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledBaseline">REST API Reference for UpdateEnabledBaseline Operation</seealso>
         public virtual Task<UpdateEnabledBaselineResponse> UpdateEnabledBaselineAsync(UpdateEnabledBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnabledBaselineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnabledBaselineResponseUnmarshaller.Instance;
 
@@ -2051,7 +2051,7 @@ namespace Amazon.ControlTower
 
         internal virtual UpdateEnabledControlResponse UpdateEnabledControl(UpdateEnabledControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnabledControlResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">REST API Reference for UpdateEnabledControl Operation</seealso>
         public virtual Task<UpdateEnabledControlResponse> UpdateEnabledControlAsync(UpdateEnabledControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnabledControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnabledControlResponseUnmarshaller.Instance;
 
@@ -2128,7 +2128,7 @@ namespace Amazon.ControlTower
 
         internal virtual UpdateLandingZoneResponse UpdateLandingZone(UpdateLandingZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLandingZoneResponseUnmarshaller.Instance;
 
@@ -2169,7 +2169,7 @@ namespace Amazon.ControlTower
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateLandingZone">REST API Reference for UpdateLandingZone Operation</seealso>
         public virtual Task<UpdateLandingZoneResponse> UpdateLandingZoneAsync(UpdateLandingZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLandingZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLandingZoneResponseUnmarshaller.Instance;
 

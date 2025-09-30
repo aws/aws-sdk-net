@@ -321,7 +321,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">REST API Reference for AssociateAssets Operation</seealso>
         public virtual AssociateAssetsResponse AssociateAssets(AssociateAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssetsResponseUnmarshaller.Instance;
 
@@ -342,7 +342,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateAssets">REST API Reference for AssociateAssets Operation</seealso>
         public virtual IAsyncResult BeginAssociateAssets(AssociateAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssetsResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
         public virtual AssociateTimeSeriesToAssetPropertyResponse AssociateTimeSeriesToAssetProperty(AssociateTimeSeriesToAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssociateTimeSeriesToAssetProperty">REST API Reference for AssociateTimeSeriesToAssetProperty Operation</seealso>
         public virtual IAsyncResult BeginAssociateTimeSeriesToAssetProperty(AssociateTimeSeriesToAssetPropertyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTimeSeriesToAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTimeSeriesToAssetPropertyResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">REST API Reference for BatchAssociateProjectAssets Operation</seealso>
         public virtual BatchAssociateProjectAssetsResponse BatchAssociateProjectAssets(BatchAssociateProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchAssociateProjectAssets">REST API Reference for BatchAssociateProjectAssets Operation</seealso>
         public virtual IAsyncResult BeginBatchAssociateProjectAssets(BatchAssociateProjectAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">REST API Reference for BatchDisassociateProjectAssets Operation</seealso>
         public virtual BatchDisassociateProjectAssetsResponse BatchDisassociateProjectAssets(BatchDisassociateProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchDisassociateProjectAssets">REST API Reference for BatchDisassociateProjectAssets Operation</seealso>
         public virtual IAsyncResult BeginBatchDisassociateProjectAssets(BatchDisassociateProjectAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateProjectAssetsResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
         public virtual BatchGetAssetPropertyAggregatesResponse BatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyAggregates">REST API Reference for BatchGetAssetPropertyAggregates Operation</seealso>
         public virtual IAsyncResult BeginBatchGetAssetPropertyAggregates(BatchGetAssetPropertyAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
         public virtual BatchGetAssetPropertyValueResponse BatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValue">REST API Reference for BatchGetAssetPropertyValue Operation</seealso>
         public virtual IAsyncResult BeginBatchGetAssetPropertyValue(BatchGetAssetPropertyValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
         public virtual BatchGetAssetPropertyValueHistoryResponse BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistory">REST API Reference for BatchGetAssetPropertyValueHistory Operation</seealso>
         public virtual IAsyncResult BeginBatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -920,7 +920,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">REST API Reference for BatchPutAssetPropertyValue Operation</seealso>
         public virtual BatchPutAssetPropertyValueResponse BatchPutAssetPropertyValue(BatchPutAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchPutAssetPropertyValue">REST API Reference for BatchPutAssetPropertyValue Operation</seealso>
         public virtual IAsyncResult BeginBatchPutAssetPropertyValue(BatchPutAssetPropertyValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual CreateAccessPolicyResponse CreateAccessPolicy(CreateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1036,7 +1036,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessPolicy(CreateAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1109,7 +1109,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual CreateAssetResponse CreateAsset(CreateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAsset">REST API Reference for CreateAsset Operation</seealso>
         public virtual IAsyncResult BeginCreateAsset(CreateAssetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">REST API Reference for CreateAssetModel Operation</seealso>
         public virtual CreateAssetModelResponse CreateAssetModel(CreateAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModel">REST API Reference for CreateAssetModel Operation</seealso>
         public virtual IAsyncResult BeginCreateAssetModel(CreateAssetModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
         public virtual CreateAssetModelCompositeModelResponse CreateAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel">REST API Reference for CreateAssetModelCompositeModel Operation</seealso>
         public virtual IAsyncResult BeginCreateAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
         public virtual CreateBulkImportJobResponse CreateBulkImportJob(CreateBulkImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
         public virtual IAsyncResult BeginCreateBulkImportJob(CreateBulkImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBulkImportJobResponseUnmarshaller.Instance;
 
@@ -1567,7 +1567,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
         public virtual CreateComputationModelResponse CreateComputationModel(CreateComputationModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputationModelResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateComputationModel">REST API Reference for CreateComputationModel Operation</seealso>
         public virtual IAsyncResult BeginCreateComputationModel(CreateComputationModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputationModelResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual CreateDashboardResponse CreateDashboard(CreateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual IAsyncResult BeginCreateDashboard(CreateDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -1746,7 +1746,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1767,7 +1767,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1834,7 +1834,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -1855,7 +1855,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateGateway(CreateGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -1929,7 +1929,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
         public virtual CreatePortalResponse CreatePortal(CreatePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
         public virtual IAsyncResult BeginCreatePortal(CreatePortalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -2098,7 +2098,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual DeleteAccessPolicyResponse DeleteAccessPolicy(DeleteAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2119,7 +2119,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPolicy(DeleteAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2185,7 +2185,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual DeleteAssetResponse DeleteAsset(DeleteAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -2206,7 +2206,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAsset">REST API Reference for DeleteAsset Operation</seealso>
         public virtual IAsyncResult BeginDeleteAsset(DeleteAssetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetResponseUnmarshaller.Instance;
 
@@ -2271,7 +2271,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">REST API Reference for DeleteAssetModel Operation</seealso>
         public virtual DeleteAssetModelResponse DeleteAssetModel(DeleteAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelResponseUnmarshaller.Instance;
 
@@ -2292,7 +2292,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModel">REST API Reference for DeleteAssetModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssetModel(DeleteAssetModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
         public virtual DeleteAssetModelCompositeModelResponse DeleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel">REST API Reference for DeleteAssetModelCompositeModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">REST API Reference for DeleteAssetModelInterfaceRelationship Operation</seealso>
         public virtual DeleteAssetModelInterfaceRelationshipResponse DeleteAssetModelInterfaceRelationship(DeleteAssetModelInterfaceRelationshipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelInterfaceRelationship">REST API Reference for DeleteAssetModelInterfaceRelationship Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssetModelInterfaceRelationship(DeleteAssetModelInterfaceRelationshipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -2516,7 +2516,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
         public virtual DeleteComputationModelResponse DeleteComputationModel(DeleteComputationModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputationModelResponseUnmarshaller.Instance;
 
@@ -2537,7 +2537,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteComputationModel">REST API Reference for DeleteComputationModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteComputationModel(DeleteComputationModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputationModelResponseUnmarshaller.Instance;
 
@@ -2591,7 +2591,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -2612,7 +2612,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual IAsyncResult BeginDeleteDashboard(DeleteDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -2670,7 +2670,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2691,7 +2691,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2750,7 +2750,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -2771,7 +2771,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteGateway(DeleteGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -2829,7 +2829,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
         public virtual DeletePortalResponse DeletePortal(DeletePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
 
@@ -2850,7 +2850,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
         public virtual IAsyncResult BeginDeletePortal(DeletePortalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
 
@@ -2904,7 +2904,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -2925,7 +2925,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -3009,7 +3009,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
         public virtual DeleteTimeSeriesResponse DeleteTimeSeries(DeleteTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
 
@@ -3030,7 +3030,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteTimeSeries">REST API Reference for DeleteTimeSeries Operation</seealso>
         public virtual IAsyncResult BeginDeleteTimeSeries(DeleteTimeSeriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTimeSeriesResponseUnmarshaller.Instance;
 
@@ -3085,7 +3085,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">REST API Reference for DescribeAccessPolicy Operation</seealso>
         public virtual DescribeAccessPolicyResponse DescribeAccessPolicy(DescribeAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3106,7 +3106,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAccessPolicy">REST API Reference for DescribeAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccessPolicy(DescribeAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3160,7 +3160,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual DescribeActionResponse DescribeAction(DescribeActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
 
@@ -3181,7 +3181,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
         public virtual IAsyncResult BeginDescribeAction(DescribeActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
 
@@ -3235,7 +3235,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual DescribeAssetResponse DescribeAsset(DescribeAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
 
@@ -3256,7 +3256,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAsset">REST API Reference for DescribeAsset Operation</seealso>
         public virtual IAsyncResult BeginDescribeAsset(DescribeAssetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetResponseUnmarshaller.Instance;
 
@@ -3312,7 +3312,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
         public virtual DescribeAssetCompositeModelResponse DescribeAssetCompositeModel(DescribeAssetCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
 
@@ -3333,7 +3333,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel">REST API Reference for DescribeAssetCompositeModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssetCompositeModel(DescribeAssetCompositeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetCompositeModelResponseUnmarshaller.Instance;
 
@@ -3389,7 +3389,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">REST API Reference for DescribeAssetModel Operation</seealso>
         public virtual DescribeAssetModelResponse DescribeAssetModel(DescribeAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelResponseUnmarshaller.Instance;
 
@@ -3410,7 +3410,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModel">REST API Reference for DescribeAssetModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssetModel(DescribeAssetModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelResponseUnmarshaller.Instance;
 
@@ -3466,7 +3466,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
         public virtual DescribeAssetModelCompositeModelResponse DescribeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -3487,7 +3487,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel">REST API Reference for DescribeAssetModelCompositeModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -3542,7 +3542,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">REST API Reference for DescribeAssetModelInterfaceRelationship Operation</seealso>
         public virtual DescribeAssetModelInterfaceRelationshipResponse DescribeAssetModelInterfaceRelationship(DescribeAssetModelInterfaceRelationshipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -3563,7 +3563,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelInterfaceRelationship">REST API Reference for DescribeAssetModelInterfaceRelationship Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssetModelInterfaceRelationship(DescribeAssetModelInterfaceRelationshipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -3629,7 +3629,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">REST API Reference for DescribeAssetProperty Operation</seealso>
         public virtual DescribeAssetPropertyResponse DescribeAssetProperty(DescribeAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetPropertyResponseUnmarshaller.Instance;
 
@@ -3650,7 +3650,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">REST API Reference for DescribeAssetProperty Operation</seealso>
         public virtual IAsyncResult BeginDescribeAssetProperty(DescribeAssetPropertyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetPropertyResponseUnmarshaller.Instance;
 
@@ -3706,7 +3706,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
         public virtual DescribeBulkImportJobResponse DescribeBulkImportJob(DescribeBulkImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
 
@@ -3727,7 +3727,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeBulkImportJob(DescribeBulkImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBulkImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBulkImportJobResponseUnmarshaller.Instance;
 
@@ -3781,7 +3781,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
         public virtual DescribeComputationModelResponse DescribeComputationModel(DescribeComputationModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputationModelResponseUnmarshaller.Instance;
 
@@ -3802,7 +3802,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModel">REST API Reference for DescribeComputationModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeComputationModel(DescribeComputationModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputationModelResponseUnmarshaller.Instance;
 
@@ -3856,7 +3856,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
         public virtual DescribeComputationModelExecutionSummaryResponse DescribeComputationModelExecutionSummary(DescribeComputationModelExecutionSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputationModelExecutionSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputationModelExecutionSummaryResponseUnmarshaller.Instance;
 
@@ -3877,7 +3877,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeComputationModelExecutionSummary">REST API Reference for DescribeComputationModelExecutionSummary Operation</seealso>
         public virtual IAsyncResult BeginDescribeComputationModelExecutionSummary(DescribeComputationModelExecutionSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComputationModelExecutionSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComputationModelExecutionSummaryResponseUnmarshaller.Instance;
 
@@ -3931,7 +3931,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         public virtual DescribeDashboardResponse DescribeDashboard(DescribeDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
 
@@ -3952,7 +3952,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         public virtual IAsyncResult BeginDescribeDashboard(DescribeDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
 
@@ -4006,7 +4006,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -4027,7 +4027,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -4081,7 +4081,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
         public virtual DescribeDefaultEncryptionConfigurationResponse DescribeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -4102,7 +4102,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -4156,7 +4156,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public virtual DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -4177,7 +4177,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public virtual IAsyncResult BeginDescribeExecution(DescribeExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExecutionResponseUnmarshaller.Instance;
 
@@ -4231,7 +4231,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -4252,7 +4252,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual IAsyncResult BeginDescribeGateway(DescribeGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -4336,7 +4336,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGatewayCapabilityConfiguration">REST API Reference for DescribeGatewayCapabilityConfiguration Operation</seealso>
         public virtual DescribeGatewayCapabilityConfigurationResponse DescribeGatewayCapabilityConfiguration(DescribeGatewayCapabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -4357,7 +4357,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeGatewayCapabilityConfiguration">REST API Reference for DescribeGatewayCapabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeGatewayCapabilityConfiguration(DescribeGatewayCapabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -4411,7 +4411,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual DescribeLoggingOptionsResponse DescribeLoggingOptions(DescribeLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -4432,7 +4432,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoggingOptions(DescribeLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -4486,7 +4486,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribePortal">REST API Reference for DescribePortal Operation</seealso>
         public virtual DescribePortalResponse DescribePortal(DescribePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePortalResponseUnmarshaller.Instance;
 
@@ -4507,7 +4507,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribePortal">REST API Reference for DescribePortal Operation</seealso>
         public virtual IAsyncResult BeginDescribePortal(DescribePortalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePortalResponseUnmarshaller.Instance;
 
@@ -4561,7 +4561,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
@@ -4582,7 +4582,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual IAsyncResult BeginDescribeProject(DescribeProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
@@ -4651,7 +4651,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">REST API Reference for DescribeStorageConfiguration Operation</seealso>
         public virtual DescribeStorageConfigurationResponse DescribeStorageConfiguration(DescribeStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -4672,7 +4672,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeStorageConfiguration">REST API Reference for DescribeStorageConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeStorageConfiguration(DescribeStorageConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -4750,7 +4750,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
         public virtual DescribeTimeSeriesResponse DescribeTimeSeries(DescribeTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
 
@@ -4771,7 +4771,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeTimeSeries">REST API Reference for DescribeTimeSeries Operation</seealso>
         public virtual IAsyncResult BeginDescribeTimeSeries(DescribeTimeSeriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeSeriesResponseUnmarshaller.Instance;
 
@@ -4830,7 +4830,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">REST API Reference for DisassociateAssets Operation</seealso>
         public virtual DisassociateAssetsResponse DisassociateAssets(DisassociateAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssetsResponseUnmarshaller.Instance;
 
@@ -4851,7 +4851,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateAssets">REST API Reference for DisassociateAssets Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAssets(DisassociateAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssetsResponseUnmarshaller.Instance;
 
@@ -4909,7 +4909,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
         public virtual DisassociateTimeSeriesFromAssetPropertyResponse DisassociateTimeSeriesFromAssetProperty(DisassociateTimeSeriesFromAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
 
@@ -4930,7 +4930,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DisassociateTimeSeriesFromAssetProperty">REST API Reference for DisassociateTimeSeriesFromAssetProperty Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTimeSeriesFromAssetProperty(DisassociateTimeSeriesFromAssetPropertyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTimeSeriesFromAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTimeSeriesFromAssetPropertyResponseUnmarshaller.Instance;
 
@@ -4999,7 +4999,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
         public virtual ExecuteActionResponse ExecuteAction(ExecuteActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
 
@@ -5020,7 +5020,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction">REST API Reference for ExecuteAction Operation</seealso>
         public virtual IAsyncResult BeginExecuteAction(ExecuteActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteActionResponseUnmarshaller.Instance;
 
@@ -5084,7 +5084,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -5105,7 +5105,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual IAsyncResult BeginExecuteQuery(ExecuteQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -5178,7 +5178,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">REST API Reference for GetAssetPropertyAggregates Operation</seealso>
         public virtual GetAssetPropertyAggregatesResponse GetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -5199,7 +5199,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyAggregates">REST API Reference for GetAssetPropertyAggregates Operation</seealso>
         public virtual IAsyncResult BeginGetAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyAggregatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyAggregatesResponseUnmarshaller.Instance;
 
@@ -5272,7 +5272,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">REST API Reference for GetAssetPropertyValue Operation</seealso>
         public virtual GetAssetPropertyValueResponse GetAssetPropertyValue(GetAssetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -5293,7 +5293,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValue">REST API Reference for GetAssetPropertyValue Operation</seealso>
         public virtual IAsyncResult BeginGetAssetPropertyValue(GetAssetPropertyValueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueResponseUnmarshaller.Instance;
 
@@ -5366,7 +5366,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">REST API Reference for GetAssetPropertyValueHistory Operation</seealso>
         public virtual GetAssetPropertyValueHistoryResponse GetAssetPropertyValueHistory(GetAssetPropertyValueHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -5387,7 +5387,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetAssetPropertyValueHistory">REST API Reference for GetAssetPropertyValueHistory Operation</seealso>
         public virtual IAsyncResult BeginGetAssetPropertyValueHistory(GetAssetPropertyValueHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -5466,7 +5466,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">REST API Reference for GetInterpolatedAssetPropertyValues Operation</seealso>
         public virtual GetInterpolatedAssetPropertyValuesResponse GetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInterpolatedAssetPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInterpolatedAssetPropertyValuesResponseUnmarshaller.Instance;
 
@@ -5487,7 +5487,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">REST API Reference for GetInterpolatedAssetPropertyValues Operation</seealso>
         public virtual IAsyncResult BeginGetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInterpolatedAssetPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInterpolatedAssetPropertyValuesResponseUnmarshaller.Instance;
 
@@ -5559,7 +5559,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InvokeAssistant">REST API Reference for InvokeAssistant Operation</seealso>
         public virtual InvokeAssistantResponse InvokeAssistant(InvokeAssistantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAssistantResponseUnmarshaller.Instance;
 
@@ -5580,7 +5580,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InvokeAssistant">REST API Reference for InvokeAssistant Operation</seealso>
         public virtual IAsyncResult BeginInvokeAssistant(InvokeAssistantRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAssistantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAssistantResponseUnmarshaller.Instance;
 
@@ -5633,7 +5633,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual ListAccessPoliciesResponse ListAccessPolicies(ListAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -5654,7 +5654,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual IAsyncResult BeginListAccessPolicies(ListAccessPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -5708,7 +5708,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual ListActionsResponse ListActions(ListActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
 
@@ -5729,7 +5729,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual IAsyncResult BeginListActions(ListActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
 
@@ -5783,7 +5783,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
         public virtual ListAssetModelCompositeModelsResponse ListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
 
@@ -5804,7 +5804,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels">REST API Reference for ListAssetModelCompositeModels Operation</seealso>
         public virtual IAsyncResult BeginListAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelCompositeModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelCompositeModelsResponseUnmarshaller.Instance;
 
@@ -5860,7 +5860,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
         public virtual ListAssetModelPropertiesResponse ListAssetModelProperties(ListAssetModelPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
 
@@ -5881,7 +5881,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">REST API Reference for ListAssetModelProperties Operation</seealso>
         public virtual IAsyncResult BeginListAssetModelProperties(ListAssetModelPropertiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelPropertiesResponseUnmarshaller.Instance;
 
@@ -5932,7 +5932,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels">REST API Reference for ListAssetModels Operation</seealso>
         public virtual ListAssetModelsResponse ListAssetModels(ListAssetModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelsResponseUnmarshaller.Instance;
 
@@ -5953,7 +5953,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels">REST API Reference for ListAssetModels Operation</seealso>
         public virtual IAsyncResult BeginListAssetModels(ListAssetModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetModelsResponseUnmarshaller.Instance;
 
@@ -6009,7 +6009,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
         public virtual ListAssetPropertiesResponse ListAssetProperties(ListAssetPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
 
@@ -6030,7 +6030,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">REST API Reference for ListAssetProperties Operation</seealso>
         public virtual IAsyncResult BeginListAssetProperties(ListAssetPropertiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetPropertiesResponseUnmarshaller.Instance;
 
@@ -6086,7 +6086,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
         public virtual ListAssetRelationshipsResponse ListAssetRelationships(ListAssetRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRelationshipsResponseUnmarshaller.Instance;
 
@@ -6107,7 +6107,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
         public virtual IAsyncResult BeginListAssetRelationships(ListAssetRelationshipsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetRelationshipsResponseUnmarshaller.Instance;
 
@@ -6181,7 +6181,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual ListAssetsResponse ListAssets(ListAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
 
@@ -6202,7 +6202,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">REST API Reference for ListAssets Operation</seealso>
         public virtual IAsyncResult BeginListAssets(ListAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetsResponseUnmarshaller.Instance;
 
@@ -6270,7 +6270,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">REST API Reference for ListAssociatedAssets Operation</seealso>
         public virtual ListAssociatedAssetsResponse ListAssociatedAssets(ListAssociatedAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAssetsResponseUnmarshaller.Instance;
 
@@ -6291,7 +6291,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">REST API Reference for ListAssociatedAssets Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedAssets(ListAssociatedAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAssetsResponseUnmarshaller.Instance;
 
@@ -6347,7 +6347,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
         public virtual ListBulkImportJobsResponse ListBulkImportJobs(ListBulkImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
 
@@ -6368,7 +6368,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
         public virtual IAsyncResult BeginListBulkImportJobs(ListBulkImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBulkImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBulkImportJobsResponseUnmarshaller.Instance;
 
@@ -6423,7 +6423,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
         public virtual ListCompositionRelationshipsResponse ListCompositionRelationships(ListCompositionRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
 
@@ -6444,7 +6444,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships">REST API Reference for ListCompositionRelationships Operation</seealso>
         public virtual IAsyncResult BeginListCompositionRelationships(ListCompositionRelationshipsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCompositionRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCompositionRelationshipsResponseUnmarshaller.Instance;
 
@@ -6497,7 +6497,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
         public virtual ListComputationModelDataBindingUsagesResponse ListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelDataBindingUsagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelDataBindingUsagesResponseUnmarshaller.Instance;
 
@@ -6518,7 +6518,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelDataBindingUsages">REST API Reference for ListComputationModelDataBindingUsages Operation</seealso>
         public virtual IAsyncResult BeginListComputationModelDataBindingUsages(ListComputationModelDataBindingUsagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelDataBindingUsagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelDataBindingUsagesResponseUnmarshaller.Instance;
 
@@ -6573,7 +6573,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
         public virtual ListComputationModelResolveToResourcesResponse ListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelResolveToResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelResolveToResourcesResponseUnmarshaller.Instance;
 
@@ -6594,7 +6594,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModelResolveToResources">REST API Reference for ListComputationModelResolveToResources Operation</seealso>
         public virtual IAsyncResult BeginListComputationModelResolveToResources(ListComputationModelResolveToResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelResolveToResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelResolveToResourcesResponseUnmarshaller.Instance;
 
@@ -6645,7 +6645,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
         public virtual ListComputationModelsResponse ListComputationModels(ListComputationModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelsResponseUnmarshaller.Instance;
 
@@ -6666,7 +6666,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListComputationModels">REST API Reference for ListComputationModels Operation</seealso>
         public virtual IAsyncResult BeginListComputationModels(ListComputationModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputationModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputationModelsResponseUnmarshaller.Instance;
 
@@ -6717,7 +6717,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -6738,7 +6738,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual IAsyncResult BeginListDashboards(ListDashboardsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -6789,7 +6789,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -6810,7 +6810,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -6864,7 +6864,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -6885,7 +6885,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public virtual IAsyncResult BeginListExecutions(ListExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutionsResponseUnmarshaller.Instance;
 
@@ -6936,7 +6936,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -6957,7 +6957,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual IAsyncResult BeginListGateways(ListGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -7012,7 +7012,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">REST API Reference for ListInterfaceRelationships Operation</seealso>
         public virtual ListInterfaceRelationshipsResponse ListInterfaceRelationships(ListInterfaceRelationshipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInterfaceRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInterfaceRelationshipsResponseUnmarshaller.Instance;
 
@@ -7033,7 +7033,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListInterfaceRelationships">REST API Reference for ListInterfaceRelationships Operation</seealso>
         public virtual IAsyncResult BeginListInterfaceRelationships(ListInterfaceRelationshipsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInterfaceRelationshipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInterfaceRelationshipsResponseUnmarshaller.Instance;
 
@@ -7084,7 +7084,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">REST API Reference for ListPortals Operation</seealso>
         public virtual ListPortalsResponse ListPortals(ListPortalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
 
@@ -7105,7 +7105,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListPortals">REST API Reference for ListPortals Operation</seealso>
         public virtual IAsyncResult BeginListPortals(ListPortalsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
 
@@ -7156,7 +7156,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">REST API Reference for ListProjectAssets Operation</seealso>
         public virtual ListProjectAssetsResponse ListProjectAssets(ListProjectAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectAssetsResponseUnmarshaller.Instance;
 
@@ -7177,7 +7177,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjectAssets">REST API Reference for ListProjectAssets Operation</seealso>
         public virtual IAsyncResult BeginListProjectAssets(ListProjectAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectAssetsResponseUnmarshaller.Instance;
 
@@ -7228,7 +7228,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -7249,7 +7249,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -7321,7 +7321,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7342,7 +7342,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7396,7 +7396,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
         public virtual ListTimeSeriesResponse ListTimeSeries(ListTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
 
@@ -7417,7 +7417,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTimeSeries">REST API Reference for ListTimeSeries Operation</seealso>
         public virtual IAsyncResult BeginListTimeSeries(ListTimeSeriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTimeSeriesResponseUnmarshaller.Instance;
 
@@ -7487,7 +7487,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">REST API Reference for PutAssetModelInterfaceRelationship Operation</seealso>
         public virtual PutAssetModelInterfaceRelationshipResponse PutAssetModelInterfaceRelationship(PutAssetModelInterfaceRelationshipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -7508,7 +7508,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetModelInterfaceRelationship">REST API Reference for PutAssetModelInterfaceRelationship Operation</seealso>
         public virtual IAsyncResult BeginPutAssetModelInterfaceRelationship(PutAssetModelInterfaceRelationshipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAssetModelInterfaceRelationshipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAssetModelInterfaceRelationshipResponseUnmarshaller.Instance;
 
@@ -7576,7 +7576,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
         public virtual PutDefaultEncryptionConfigurationResponse PutDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -7597,7 +7597,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDefaultEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDefaultEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -7655,7 +7655,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -7676,7 +7676,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual IAsyncResult BeginPutLoggingOptions(PutLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -7748,7 +7748,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">REST API Reference for PutStorageConfiguration Operation</seealso>
         public virtual PutStorageConfigurationResponse PutStorageConfiguration(PutStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -7769,7 +7769,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutStorageConfiguration">REST API Reference for PutStorageConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutStorageConfiguration(PutStorageConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -7847,7 +7847,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7868,7 +7868,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7940,7 +7940,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7961,7 +7961,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8016,7 +8016,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual UpdateAccessPolicyResponse UpdateAccessPolicy(UpdateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -8037,7 +8037,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccessPolicy(UpdateAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -8099,7 +8099,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual UpdateAssetResponse UpdateAsset(UpdateAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
 
@@ -8120,7 +8120,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAsset">REST API Reference for UpdateAsset Operation</seealso>
         public virtual IAsyncResult BeginUpdateAsset(UpdateAssetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetResponseUnmarshaller.Instance;
 
@@ -8220,7 +8220,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">REST API Reference for UpdateAssetModel Operation</seealso>
         public virtual UpdateAssetModelResponse UpdateAssetModel(UpdateAssetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelResponseUnmarshaller.Instance;
 
@@ -8241,7 +8241,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModel">REST API Reference for UpdateAssetModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssetModel(UpdateAssetModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelResponseUnmarshaller.Instance;
 
@@ -8342,7 +8342,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
         public virtual UpdateAssetModelCompositeModelResponse UpdateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -8363,7 +8363,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel">REST API Reference for UpdateAssetModelCompositeModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetModelCompositeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetModelCompositeModelResponseUnmarshaller.Instance;
 
@@ -8429,7 +8429,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">REST API Reference for UpdateAssetProperty Operation</seealso>
         public virtual UpdateAssetPropertyResponse UpdateAssetProperty(UpdateAssetPropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetPropertyResponseUnmarshaller.Instance;
 
@@ -8450,7 +8450,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">REST API Reference for UpdateAssetProperty Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssetProperty(UpdateAssetPropertyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssetPropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssetPropertyResponseUnmarshaller.Instance;
 
@@ -8522,7 +8522,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
         public virtual UpdateComputationModelResponse UpdateComputationModel(UpdateComputationModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputationModelResponseUnmarshaller.Instance;
 
@@ -8543,7 +8543,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateComputationModel">REST API Reference for UpdateComputationModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateComputationModel(UpdateComputationModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputationModelResponseUnmarshaller.Instance;
 
@@ -8597,7 +8597,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -8618,7 +8618,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual IAsyncResult BeginUpdateDashboard(UpdateDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -8687,7 +8687,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -8708,7 +8708,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataset(UpdateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -8766,7 +8766,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
         public virtual UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
 
@@ -8787,7 +8787,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
         public virtual IAsyncResult BeginUpdateGateway(UpdateGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseUnmarshaller.Instance;
 
@@ -8895,7 +8895,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGatewayCapabilityConfiguration">REST API Reference for UpdateGatewayCapabilityConfiguration Operation</seealso>
         public virtual UpdateGatewayCapabilityConfigurationResponse UpdateGatewayCapabilityConfiguration(UpdateGatewayCapabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -8916,7 +8916,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateGatewayCapabilityConfiguration">REST API Reference for UpdateGatewayCapabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateGatewayCapabilityConfiguration(UpdateGatewayCapabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayCapabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayCapabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -8974,7 +8974,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
         public virtual UpdatePortalResponse UpdatePortal(UpdatePortalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
 
@@ -8995,7 +8995,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
         public virtual IAsyncResult BeginUpdatePortal(UpdatePortalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
 
@@ -9049,7 +9049,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -9070,7 +9070,7 @@ namespace Amazon.IoTSiteWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 

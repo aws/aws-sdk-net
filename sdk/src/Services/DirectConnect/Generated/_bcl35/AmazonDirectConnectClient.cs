@@ -271,7 +271,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal">REST API Reference for AcceptDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual AcceptDirectConnectGatewayAssociationProposalResponse AcceptDirectConnectGatewayAssociationProposal(AcceptDirectConnectGatewayAssociationProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -292,7 +292,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AcceptDirectConnectGatewayAssociationProposal">REST API Reference for AcceptDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual IAsyncResult BeginAcceptDirectConnectGatewayAssociationProposal(AcceptDirectConnectGatewayAssociationProposalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public virtual AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public virtual IAsyncResult BeginAllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateConnectionOnInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateConnectionOnInterconnectResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
         public virtual AllocateHostedConnectionResponse AllocateHostedConnection(AllocateHostedConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostedConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
 
@@ -452,7 +452,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateHostedConnection">REST API Reference for AllocateHostedConnection Operation</seealso>
         public virtual IAsyncResult BeginAllocateHostedConnection(AllocateHostedConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostedConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostedConnectionResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
         public virtual AllocatePrivateVirtualInterfaceResponse AllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePrivateVirtualInterface">REST API Reference for AllocatePrivateVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginAllocatePrivateVirtualInterface(AllocatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocatePrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         public virtual AllocatePublicVirtualInterfaceResponse AllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -611,7 +611,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocatePublicVirtualInterface">REST API Reference for AllocatePublicVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginAllocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocatePublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -671,7 +671,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
         public virtual AllocateTransitVirtualInterfaceResponse AllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateTransitVirtualInterface">REST API Reference for AllocateTransitVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginAllocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
 
@@ -771,7 +771,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual IAsyncResult BeginAssociateConnectionWithLag(AssociateConnectionWithLagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectionWithLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectionWithLagResponseUnmarshaller.Instance;
 
@@ -820,7 +820,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
         public virtual AssociateHostedConnectionResponse AssociateHostedConnection(AssociateHostedConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateHostedConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnection">REST API Reference for AssociateHostedConnection Operation</seealso>
         public virtual IAsyncResult BeginAssociateHostedConnection(AssociateHostedConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateHostedConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateHostedConnectionResponseUnmarshaller.Instance;
 
@@ -892,7 +892,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">REST API Reference for AssociateMacSecKey Operation</seealso>
         public virtual AssociateMacSecKeyResponse AssociateMacSecKey(AssociateMacSecKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMacSecKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMacSecKeyResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey">REST API Reference for AssociateMacSecKey Operation</seealso>
         public virtual IAsyncResult BeginAssociateMacSecKey(AssociateMacSecKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMacSecKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMacSecKeyResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
         public virtual AssociateVirtualInterfaceResponse AssociateVirtualInterface(AssociateVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateVirtualInterface">REST API Reference for AssociateVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginAssociateVirtualInterface(AssociateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
         public virtual ConfirmConnectionResponse ConfirmConnection(ConfirmConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnection">REST API Reference for ConfirmConnection Operation</seealso>
         public virtual IAsyncResult BeginConfirmConnection(ConfirmConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmConnectionResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">REST API Reference for ConfirmCustomerAgreement Operation</seealso>
         public virtual ConfirmCustomerAgreementResponse ConfirmCustomerAgreement(ConfirmCustomerAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmCustomerAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmCustomerAgreementResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmCustomerAgreement">REST API Reference for ConfirmCustomerAgreement Operation</seealso>
         public virtual IAsyncResult BeginConfirmCustomerAgreement(ConfirmCustomerAgreementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmCustomerAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmCustomerAgreementResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
         public virtual ConfirmPrivateVirtualInterfaceResponse ConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterface">REST API Reference for ConfirmPrivateVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginConfirmPrivateVirtualInterface(ConfirmPrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmPrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmPrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
         public virtual ConfirmPublicVirtualInterfaceResponse ConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPublicVirtualInterface">REST API Reference for ConfirmPublicVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginConfirmPublicVirtualInterface(ConfirmPublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmPublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmPublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1298,7 +1298,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
         public virtual ConfirmTransitVirtualInterfaceResponse ConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmTransitVirtualInterface">REST API Reference for ConfirmTransitVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginConfirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1390,7 +1390,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
         public virtual CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBGPPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeer">REST API Reference for CreateBGPPeer Operation</seealso>
         public virtual IAsyncResult BeginCreateBGPPeer(CreateBGPPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBGPPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
         public virtual CreateDirectConnectGatewayResponse CreateDirectConnectGateway(CreateDirectConnectGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -1561,7 +1561,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway">REST API Reference for CreateDirectConnectGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectConnectGateway(CreateDirectConnectGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
         public virtual CreateDirectConnectGatewayAssociationResponse CreateDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation">REST API Reference for CreateDirectConnectGatewayAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">REST API Reference for CreateDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual CreateDirectConnectGatewayAssociationProposalResponse CreateDirectConnectGatewayAssociationProposal(CreateDirectConnectGatewayAssociationProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationProposal">REST API Reference for CreateDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectConnectGatewayAssociationProposal(CreateDirectConnectGatewayAssociationProposalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
         public virtual CreateInterconnectResponse CreateInterconnect(CreateInterconnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
 
@@ -1786,7 +1786,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect">REST API Reference for CreateInterconnect Operation</seealso>
         public virtual IAsyncResult BeginCreateInterconnect(CreateInterconnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInterconnectResponseUnmarshaller.Instance;
 
@@ -1862,7 +1862,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
         public virtual CreateLagResponse CreateLag(CreateLagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLagResponseUnmarshaller.Instance;
 
@@ -1883,7 +1883,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag">REST API Reference for CreateLag Operation</seealso>
         public virtual IAsyncResult BeginCreateLag(CreateLagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLagResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
         public virtual CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -1964,7 +1964,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePrivateVirtualInterface">REST API Reference for CreatePrivateVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginCreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrivateVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrivateVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2018,7 +2018,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         public virtual CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2039,7 +2039,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreatePublicVirtualInterface">REST API Reference for CreatePublicVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginCreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2105,7 +2105,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
         public virtual CreateTransitVirtualInterfaceResponse CreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2126,7 +2126,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateTransitVirtualInterface">REST API Reference for CreateTransitVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2171,7 +2171,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
         public virtual DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBGPPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
 
@@ -2192,7 +2192,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer">REST API Reference for DeleteBGPPeer Operation</seealso>
         public virtual IAsyncResult BeginDeleteBGPPeer(DeleteBGPPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBGPPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
 
@@ -2238,7 +2238,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -2259,7 +2259,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
         public virtual DeleteDirectConnectGatewayResponse DeleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -2321,7 +2321,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway">REST API Reference for DeleteDirectConnectGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -2369,7 +2369,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
         public virtual DeleteDirectConnectGatewayAssociationResponse DeleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation">REST API Reference for DeleteDirectConnectGatewayAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -2430,7 +2430,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal">REST API Reference for DeleteDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual DeleteDirectConnectGatewayAssociationProposalResponse DeleteDirectConnectGatewayAssociationProposal(DeleteDirectConnectGatewayAssociationProposalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -2451,7 +2451,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationProposal">REST API Reference for DeleteDirectConnectGatewayAssociationProposal Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectConnectGatewayAssociationProposal(DeleteDirectConnectGatewayAssociationProposalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectConnectGatewayAssociationProposalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectConnectGatewayAssociationProposalResponseUnmarshaller.Instance;
 
@@ -2496,7 +2496,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
         public virtual DeleteInterconnectResponse DeleteInterconnect(DeleteInterconnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
 
@@ -2517,7 +2517,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteInterconnect">REST API Reference for DeleteInterconnect Operation</seealso>
         public virtual IAsyncResult BeginDeleteInterconnect(DeleteInterconnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInterconnectResponseUnmarshaller.Instance;
 
@@ -2557,7 +2557,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
         public virtual DeleteLagResponse DeleteLag(DeleteLagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLagResponseUnmarshaller.Instance;
 
@@ -2578,7 +2578,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLag">REST API Reference for DeleteLag Operation</seealso>
         public virtual IAsyncResult BeginDeleteLag(DeleteLagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLagResponseUnmarshaller.Instance;
 
@@ -2617,7 +2617,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
         public virtual DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2638,7 +2638,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteVirtualInterface">REST API Reference for DeleteVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginDeleteVirtualInterface(DeleteVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
 
@@ -2714,7 +2714,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionLoaResponseUnmarshaller.Instance;
 
@@ -2771,7 +2771,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
@@ -2792,7 +2792,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnections(DescribeConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
@@ -2844,7 +2844,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public virtual DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
@@ -2866,7 +2866,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public virtual IAsyncResult BeginDescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsOnInterconnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsOnInterconnectResponseUnmarshaller.Instance;
 
@@ -2907,7 +2907,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">REST API Reference for DescribeCustomerMetadata Operation</seealso>
         public virtual DescribeCustomerMetadataResponse DescribeCustomerMetadata(DescribeCustomerMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerMetadataResponseUnmarshaller.Instance;
 
@@ -2928,7 +2928,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">REST API Reference for DescribeCustomerMetadata Operation</seealso>
         public virtual IAsyncResult BeginDescribeCustomerMetadata(DescribeCustomerMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerMetadataResponseUnmarshaller.Instance;
 
@@ -2968,7 +2968,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals">REST API Reference for DescribeDirectConnectGatewayAssociationProposals Operation</seealso>
         public virtual DescribeDirectConnectGatewayAssociationProposalsResponse DescribeDirectConnectGatewayAssociationProposals(DescribeDirectConnectGatewayAssociationProposalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance;
 
@@ -2989,7 +2989,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociationProposals">REST API Reference for DescribeDirectConnectGatewayAssociationProposals Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectConnectGatewayAssociationProposals(DescribeDirectConnectGatewayAssociationProposalsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAssociationProposalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationProposalsResponseUnmarshaller.Instance;
 
@@ -3092,7 +3092,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
         public virtual DescribeDirectConnectGatewayAssociationsResponse DescribeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
 
@@ -3113,7 +3113,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations">REST API Reference for DescribeDirectConnectGatewayAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAssociationsResponseUnmarshaller.Instance;
 
@@ -3158,7 +3158,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
         public virtual DescribeDirectConnectGatewayAttachmentsResponse DescribeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -3179,7 +3179,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments">REST API Reference for DescribeDirectConnectGatewayAttachments Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -3219,7 +3219,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
         public virtual DescribeDirectConnectGatewaysResponse DescribeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
 
@@ -3240,7 +3240,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways">REST API Reference for DescribeDirectConnectGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectConnectGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectConnectGatewaysResponseUnmarshaller.Instance;
 
@@ -3286,7 +3286,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
         public virtual DescribeHostedConnectionsResponse DescribeHostedConnections(DescribeHostedConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections">REST API Reference for DescribeHostedConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeHostedConnections(DescribeHostedConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostedConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostedConnectionsResponseUnmarshaller.Instance;
 
@@ -3361,7 +3361,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
 
@@ -3383,7 +3383,7 @@ namespace Amazon.DirectConnect
         [Obsolete("Deprecated in favor of DescribeLoa.")]
         public virtual IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInterconnectLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInterconnectLoaResponseUnmarshaller.Instance;
 
@@ -3442,7 +3442,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
         public virtual DescribeInterconnectsResponse DescribeInterconnects(DescribeInterconnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInterconnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
 
@@ -3463,7 +3463,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnects">REST API Reference for DescribeInterconnects Operation</seealso>
         public virtual IAsyncResult BeginDescribeInterconnects(DescribeInterconnectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInterconnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInterconnectsResponseUnmarshaller.Instance;
 
@@ -3502,7 +3502,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
         public virtual DescribeLagsResponse DescribeLags(DescribeLagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLagsResponseUnmarshaller.Instance;
 
@@ -3523,7 +3523,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLags">REST API Reference for DescribeLags Operation</seealso>
         public virtual IAsyncResult BeginDescribeLags(DescribeLagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLagsResponseUnmarshaller.Instance;
 
@@ -3570,7 +3570,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
         public virtual DescribeLoaResponse DescribeLoa(DescribeLoaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoaResponseUnmarshaller.Instance;
 
@@ -3591,7 +3591,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">REST API Reference for DescribeLoa Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoa(DescribeLoaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoaResponseUnmarshaller.Instance;
 
@@ -3649,7 +3649,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
         public virtual DescribeLocationsResponse DescribeLocations(DescribeLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
 
@@ -3670,7 +3670,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">REST API Reference for DescribeLocations Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocations(DescribeLocationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocationsResponseUnmarshaller.Instance;
 
@@ -3709,7 +3709,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">REST API Reference for DescribeRouterConfiguration Operation</seealso>
         public virtual DescribeRouterConfigurationResponse DescribeRouterConfiguration(DescribeRouterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouterConfigurationResponseUnmarshaller.Instance;
 
@@ -3730,7 +3730,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">REST API Reference for DescribeRouterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeRouterConfiguration(DescribeRouterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouterConfigurationResponseUnmarshaller.Instance;
 
@@ -3769,7 +3769,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -3790,7 +3790,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -3872,7 +3872,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
         public virtual DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
 
@@ -3893,7 +3893,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">REST API Reference for DescribeVirtualGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeVirtualGateways(DescribeVirtualGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualGatewaysResponseUnmarshaller.Instance;
 
@@ -3993,7 +3993,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
         public virtual DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -4014,7 +4014,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfaces">REST API Reference for DescribeVirtualInterfaces Operation</seealso>
         public virtual IAsyncResult BeginDescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -4066,7 +4066,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
         public virtual DisassociateConnectionFromLagResponse DisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
 
@@ -4087,7 +4087,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionFromLag">REST API Reference for DisassociateConnectionFromLag Operation</seealso>
         public virtual IAsyncResult BeginDisassociateConnectionFromLag(DisassociateConnectionFromLagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectionFromLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectionFromLagResponseUnmarshaller.Instance;
 
@@ -4127,7 +4127,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">REST API Reference for DisassociateMacSecKey Operation</seealso>
         public virtual DisassociateMacSecKeyResponse DisassociateMacSecKey(DisassociateMacSecKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMacSecKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMacSecKeyResponseUnmarshaller.Instance;
 
@@ -4148,7 +4148,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey">REST API Reference for DisassociateMacSecKey Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMacSecKey(DisassociateMacSecKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMacSecKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMacSecKeyResponseUnmarshaller.Instance;
 
@@ -4187,7 +4187,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
         public virtual ListVirtualInterfaceTestHistoryResponse ListVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
 
@@ -4208,7 +4208,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory">REST API Reference for ListVirtualInterfaceTestHistory Operation</seealso>
         public virtual IAsyncResult BeginListVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualInterfaceTestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualInterfaceTestHistoryResponseUnmarshaller.Instance;
 
@@ -4263,7 +4263,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
         public virtual StartBgpFailoverTestResponse StartBgpFailoverTest(StartBgpFailoverTestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
 
@@ -4284,7 +4284,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest">REST API Reference for StartBgpFailoverTest Operation</seealso>
         public virtual IAsyncResult BeginStartBgpFailoverTest(StartBgpFailoverTestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBgpFailoverTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBgpFailoverTestResponseUnmarshaller.Instance;
 
@@ -4323,7 +4323,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
         public virtual StopBgpFailoverTestResponse StopBgpFailoverTest(StopBgpFailoverTestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
 
@@ -4344,7 +4344,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest">REST API Reference for StopBgpFailoverTest Operation</seealso>
         public virtual IAsyncResult BeginStopBgpFailoverTest(StopBgpFailoverTestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBgpFailoverTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBgpFailoverTestResponseUnmarshaller.Instance;
 
@@ -4396,7 +4396,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4417,7 +4417,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4456,7 +4456,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4477,7 +4477,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4530,7 +4530,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -4551,7 +4551,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -4590,7 +4590,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">REST API Reference for UpdateDirectConnectGateway Operation</seealso>
         public virtual UpdateDirectConnectGatewayResponse UpdateDirectConnectGateway(UpdateDirectConnectGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -4611,7 +4611,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGateway">REST API Reference for UpdateDirectConnectGateway Operation</seealso>
         public virtual IAsyncResult BeginUpdateDirectConnectGateway(UpdateDirectConnectGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayResponseUnmarshaller.Instance;
 
@@ -4655,7 +4655,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation">REST API Reference for UpdateDirectConnectGatewayAssociation Operation</seealso>
         public virtual UpdateDirectConnectGatewayAssociationResponse UpdateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -4676,7 +4676,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateDirectConnectGatewayAssociation">REST API Reference for UpdateDirectConnectGatewayAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectConnectGatewayAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectConnectGatewayAssociationResponseUnmarshaller.Instance;
 
@@ -4748,7 +4748,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
         public virtual UpdateLagResponse UpdateLag(UpdateLagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLagResponseUnmarshaller.Instance;
 
@@ -4769,7 +4769,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLag">REST API Reference for UpdateLag Operation</seealso>
         public virtual IAsyncResult BeginUpdateLag(UpdateLagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLagResponseUnmarshaller.Instance;
 
@@ -4818,7 +4818,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">REST API Reference for UpdateVirtualInterfaceAttributes Operation</seealso>
         public virtual UpdateVirtualInterfaceAttributesResponse UpdateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
 
@@ -4839,7 +4839,7 @@ namespace Amazon.DirectConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">REST API Reference for UpdateVirtualInterfaceAttributes Operation</seealso>
         public virtual IAsyncResult BeginUpdateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualInterfaceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualInterfaceAttributesResponseUnmarshaller.Instance;
 

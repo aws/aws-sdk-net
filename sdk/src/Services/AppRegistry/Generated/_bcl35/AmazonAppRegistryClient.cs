@@ -296,7 +296,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
         public virtual AssociateAttributeGroupResponse AssociateAttributeGroup(AssociateAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">REST API Reference for AssociateAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginAssociateAttributeGroup(AssociateAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual AssociateResourceResponse AssociateResource(AssociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
 
@@ -434,7 +434,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateResource(AssociateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
         public virtual CreateAttributeGroupResponse CreateAttributeGroup(CreateAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">REST API Reference for CreateAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateAttributeGroup(CreateAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
         public virtual DeleteAttributeGroupResponse DeleteAttributeGroup(DeleteAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributeGroupResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">REST API Reference for DeleteAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteAttributeGroup(DeleteAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributeGroupResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
         public virtual DisassociateAttributeGroupResponse DisassociateAttributeGroup(DisassociateAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">REST API Reference for DisassociateAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAttributeGroup(DisassociateAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -858,7 +858,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual DisassociateResourceResponse DisassociateResource(DisassociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateResource(DisassociateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual IAsyncResult BeginGetApplication(GetApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">REST API Reference for GetAssociatedResource Operation</seealso>
         public virtual GetAssociatedResourceResponse GetAssociatedResource(GetAssociatedResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedResourceResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">REST API Reference for GetAssociatedResource Operation</seealso>
         public virtual IAsyncResult BeginGetAssociatedResource(GetAssociatedResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedResourceResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
         public virtual GetAttributeGroupResponse GetAttributeGroup(GetAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributeGroupResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">REST API Reference for GetAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginGetAttributeGroup(GetAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributeGroupResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetConfiguration(GetConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
         public virtual ListAssociatedAttributeGroupsResponse ListAssociatedAttributeGroups(ListAssociatedAttributeGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAttributeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAttributeGroupsResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">REST API Reference for ListAssociatedAttributeGroups Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedAttributeGroups(ListAssociatedAttributeGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAttributeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAttributeGroupsResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
         public virtual ListAssociatedResourcesResponse ListAssociatedResources(ListAssociatedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedResourcesResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">REST API Reference for ListAssociatedResources Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedResources(ListAssociatedResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedResourcesResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
         public virtual ListAttributeGroupsResponse ListAttributeGroups(ListAttributeGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributeGroupsResponseUnmarshaller.Instance;
 
@@ -1394,7 +1394,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">REST API Reference for ListAttributeGroups Operation</seealso>
         public virtual IAsyncResult BeginListAttributeGroups(ListAttributeGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributeGroupsResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication">REST API Reference for ListAttributeGroupsForApplication Operation</seealso>
         public virtual ListAttributeGroupsForApplicationResponse ListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributeGroupsForApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributeGroupsForApplicationResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication">REST API Reference for ListAttributeGroupsForApplication Operation</seealso>
         public virtual IAsyncResult BeginListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributeGroupsForApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributeGroupsForApplicationResponseUnmarshaller.Instance;
 
@@ -1500,7 +1500,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1564,7 +1564,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration">REST API Reference for PutConfiguration Operation</seealso>
         public virtual PutConfigurationResponse PutConfiguration(PutConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationResponseUnmarshaller.Instance;
 
@@ -1585,7 +1585,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration">REST API Reference for PutConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutConfiguration(PutConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConfigurationResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">REST API Reference for SyncResource Operation</seealso>
         public virtual SyncResourceResponse SyncResource(SyncResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SyncResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SyncResourceResponseUnmarshaller.Instance;
 
@@ -1662,7 +1662,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">REST API Reference for SyncResource Operation</seealso>
         public virtual IAsyncResult BeginSyncResource(SyncResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SyncResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SyncResourceResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -1873,7 +1873,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
         public virtual UpdateAttributeGroupResponse UpdateAttributeGroup(UpdateAttributeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttributeGroupResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.AppRegistry
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">REST API Reference for UpdateAttributeGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateAttributeGroup(UpdateAttributeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttributeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttributeGroupResponseUnmarshaller.Instance;
 

@@ -277,7 +277,7 @@ namespace Amazon.Pipes
 
         internal virtual CreatePipeResponse CreatePipe(CreatePipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipeResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/CreatePipe">REST API Reference for CreatePipe Operation</seealso>
         public virtual Task<CreatePipeResponse> CreatePipeAsync(CreatePipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipeResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.Pipes
 
         internal virtual DeletePipeResponse DeletePipe(DeletePipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipeResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/DeletePipe">REST API Reference for DeletePipe Operation</seealso>
         public virtual Task<DeletePipeResponse> DeletePipeAsync(DeletePipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipeResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.Pipes
 
         internal virtual DescribePipeResponse DescribePipe(DescribePipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePipeResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/DescribePipe">REST API Reference for DescribePipe Operation</seealso>
         public virtual Task<DescribePipeResponse> DescribePipeAsync(DescribePipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePipeResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.Pipes
 
         internal virtual ListPipesResponse ListPipes(ListPipesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipesResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/ListPipes">REST API Reference for ListPipes Operation</seealso>
         public virtual Task<ListPipesResponse> ListPipesAsync(ListPipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipesResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.Pipes
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.Pipes
 
         internal virtual StartPipeResponse StartPipe(StartPipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPipeResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/StartPipe">REST API Reference for StartPipe Operation</seealso>
         public virtual Task<StartPipeResponse> StartPipeAsync(StartPipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPipeResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.Pipes
 
         internal virtual StopPipeResponse StopPipe(StopPipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPipeResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/StopPipe">REST API Reference for StopPipe Operation</seealso>
         public virtual Task<StopPipeResponse> StopPipeAsync(StopPipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPipeResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.Pipes
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.Pipes
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -707,7 +707,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.Pipes
 
         internal virtual UpdatePipeResponse UpdatePipe(UpdatePipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipeResponseUnmarshaller.Instance;
 
@@ -769,7 +769,7 @@ namespace Amazon.Pipes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipe">REST API Reference for UpdatePipe Operation</seealso>
         public virtual Task<UpdatePipeResponse> UpdatePipeAsync(UpdatePipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipeResponseUnmarshaller.Instance;
 

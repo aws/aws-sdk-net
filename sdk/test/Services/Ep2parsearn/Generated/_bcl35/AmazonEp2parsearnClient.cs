@@ -257,7 +257,7 @@ namespace Amazon.Ep2parsearn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-parse-arn-2022-08-24/MyOperation">REST API Reference for MyOperation Operation</seealso>
         public virtual MyOperationResponse MyOperation(MyOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MyOperationResponseUnmarshaller.Instance;
 
@@ -278,7 +278,7 @@ namespace Amazon.Ep2parsearn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ep2-parse-arn-2022-08-24/MyOperation">REST API Reference for MyOperation Operation</seealso>
         public virtual IAsyncResult BeginMyOperation(MyOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MyOperationResponseUnmarshaller.Instance;
 

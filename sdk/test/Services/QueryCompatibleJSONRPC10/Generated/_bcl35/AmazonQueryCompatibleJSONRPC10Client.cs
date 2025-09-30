@@ -254,7 +254,7 @@ namespace Amazon.QueryCompatibleJSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-compatible-json-rpc-10-2020-07-14/QueryCompatibleOperation">REST API Reference for QueryCompatibleOperation Operation</seealso>
         public virtual QueryCompatibleOperationResponse QueryCompatibleOperation(QueryCompatibleOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryCompatibleOperationResponseUnmarshaller.Instance;
 
@@ -275,7 +275,7 @@ namespace Amazon.QueryCompatibleJSONRPC10
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-compatible-json-rpc-10-2020-07-14/QueryCompatibleOperation">REST API Reference for QueryCompatibleOperation Operation</seealso>
         public virtual IAsyncResult BeginQueryCompatibleOperation(QueryCompatibleOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryCompatibleOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryCompatibleOperationResponseUnmarshaller.Instance;
 

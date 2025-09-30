@@ -373,7 +373,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">REST API Reference for CancelFlowExecutions Operation</seealso>
         public virtual CancelFlowExecutionsResponse CancelFlowExecutions(CancelFlowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelFlowExecutionsResponseUnmarshaller.Instance;
 
@@ -394,7 +394,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">REST API Reference for CancelFlowExecutions Operation</seealso>
         public virtual IAsyncResult BeginCancelFlowExecutions(CancelFlowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelFlowExecutionsResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateConnectorProfile">REST API Reference for CreateConnectorProfile Operation</seealso>
         public virtual CreateConnectorProfileResponse CreateConnectorProfile(CreateConnectorProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorProfileResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateConnectorProfile">REST API Reference for CreateConnectorProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateConnectorProfile(CreateConnectorProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorProfileResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
         public virtual CreateFlowResponse CreateFlow(CreateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
         public virtual IAsyncResult BeginCreateFlow(CreateFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DeleteConnectorProfile">REST API Reference for DeleteConnectorProfile Operation</seealso>
         public virtual DeleteConnectorProfileResponse DeleteConnectorProfile(DeleteConnectorProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorProfileResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DeleteConnectorProfile">REST API Reference for DeleteConnectorProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnectorProfile(DeleteConnectorProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorProfileResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
         public virtual DeleteFlowResponse DeleteFlow(DeleteFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
         public virtual IAsyncResult BeginDeleteFlow(DeleteFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -739,7 +739,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
         public virtual DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnector(DescribeConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorEntity">REST API Reference for DescribeConnectorEntity Operation</seealso>
         public virtual DescribeConnectorEntityResponse DescribeConnectorEntity(DescribeConnectorEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorEntityResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorEntity">REST API Reference for DescribeConnectorEntity Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnectorEntity(DescribeConnectorEntityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorEntityResponseUnmarshaller.Instance;
 
@@ -880,7 +880,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorProfiles">REST API Reference for DescribeConnectorProfiles Operation</seealso>
         public virtual DescribeConnectorProfilesResponse DescribeConnectorProfiles(DescribeConnectorProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorProfilesResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorProfiles">REST API Reference for DescribeConnectorProfiles Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnectorProfiles(DescribeConnectorProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorProfilesResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectors">REST API Reference for DescribeConnectors Operation</seealso>
         public virtual DescribeConnectorsResponse DescribeConnectors(DescribeConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorsResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectors">REST API Reference for DescribeConnectors Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnectors(DescribeConnectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorsResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeFlow">REST API Reference for DescribeFlow Operation</seealso>
         public virtual DescribeFlowResponse DescribeFlow(DescribeFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeFlow">REST API Reference for DescribeFlow Operation</seealso>
         public virtual IAsyncResult BeginDescribeFlow(DescribeFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeFlowExecutionRecords">REST API Reference for DescribeFlowExecutionRecords Operation</seealso>
         public virtual DescribeFlowExecutionRecordsResponse DescribeFlowExecutionRecords(DescribeFlowExecutionRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowExecutionRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowExecutionRecordsResponseUnmarshaller.Instance;
 
@@ -1093,7 +1093,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeFlowExecutionRecords">REST API Reference for DescribeFlowExecutionRecords Operation</seealso>
         public virtual IAsyncResult BeginDescribeFlowExecutionRecords(DescribeFlowExecutionRecordsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowExecutionRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowExecutionRecordsResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectorEntities">REST API Reference for ListConnectorEntities Operation</seealso>
         public virtual ListConnectorEntitiesResponse ListConnectorEntities(ListConnectorEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorEntitiesResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectorEntities">REST API Reference for ListConnectorEntities Operation</seealso>
         public virtual IAsyncResult BeginListConnectorEntities(ListConnectorEntitiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorEntitiesResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual IAsyncResult BeginListConnectors(ListConnectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -1269,7 +1269,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListFlows">REST API Reference for ListFlows Operation</seealso>
         public virtual ListFlowsResponse ListFlows(ListFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1290,7 +1290,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListFlows">REST API Reference for ListFlows Operation</seealso>
         public virtual IAsyncResult BeginListFlows(ListFlowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1355,7 +1355,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
         public virtual RegisterConnectorResponse RegisterConnector(RegisterConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterConnectorResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RegisterConnector">REST API Reference for RegisterConnector Operation</seealso>
         public virtual IAsyncResult BeginRegisterConnector(RegisterConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterConnectorResponseUnmarshaller.Instance;
 
@@ -1502,7 +1502,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache">REST API Reference for ResetConnectorMetadataCache Operation</seealso>
         public virtual ResetConnectorMetadataCacheResponse ResetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetConnectorMetadataCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetConnectorMetadataCacheResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache">REST API Reference for ResetConnectorMetadataCache Operation</seealso>
         public virtual IAsyncResult BeginResetConnectorMetadataCache(ResetConnectorMetadataCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetConnectorMetadataCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetConnectorMetadataCacheResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/StartFlow">REST API Reference for StartFlow Operation</seealso>
         public virtual StartFlowResponse StartFlow(StartFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/StartFlow">REST API Reference for StartFlow Operation</seealso>
         public virtual IAsyncResult BeginStartFlow(StartFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -1645,7 +1645,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/StopFlow">REST API Reference for StopFlow Operation</seealso>
         public virtual StopFlowResponse StopFlow(StopFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -1666,7 +1666,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/StopFlow">REST API Reference for StopFlow Operation</seealso>
         public virtual IAsyncResult BeginStopFlow(StopFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1778,7 +1778,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
         public virtual UnregisterConnectorResponse UnregisterConnector(UnregisterConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnregisterConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnregisterConnectorResponseUnmarshaller.Instance;
 
@@ -1799,7 +1799,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UnregisterConnector">REST API Reference for UnregisterConnector Operation</seealso>
         public virtual IAsyncResult BeginUnregisterConnector(UnregisterConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnregisterConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnregisterConnectorResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1916,7 +1916,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorProfile">REST API Reference for UpdateConnectorProfile Operation</seealso>
         public virtual UpdateConnectorProfileResponse UpdateConnectorProfile(UpdateConnectorProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorProfileResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorProfile">REST API Reference for UpdateConnectorProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateConnectorProfile(UpdateConnectorProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorProfileResponseUnmarshaller.Instance;
 
@@ -2012,7 +2012,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration">REST API Reference for UpdateConnectorRegistration Operation</seealso>
         public virtual UpdateConnectorRegistrationResponse UpdateConnectorRegistration(UpdateConnectorRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorRegistrationResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration">REST API Reference for UpdateConnectorRegistration Operation</seealso>
         public virtual IAsyncResult BeginUpdateConnectorRegistration(UpdateConnectorRegistrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorRegistrationResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
         public virtual UpdateFlowResponse UpdateFlow(UpdateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.Appflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
         public virtual IAsyncResult BeginUpdateFlow(UpdateFlowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 

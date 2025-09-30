@@ -340,7 +340,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">REST API Reference for DescribeReportCreation Operation</seealso>
         public virtual DescribeReportCreationResponse DescribeReportCreation(DescribeReportCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportCreationResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/DescribeReportCreation">REST API Reference for DescribeReportCreation Operation</seealso>
         public virtual IAsyncResult BeginDescribeReportCreation(DescribeReportCreationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportCreationResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">REST API Reference for GetComplianceSummary Operation</seealso>
         public virtual GetComplianceSummaryResponse GetComplianceSummary(GetComplianceSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetComplianceSummary">REST API Reference for GetComplianceSummary Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceSummary(GetComplianceSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceSummaryResponseUnmarshaller.Instance;
 
@@ -593,7 +593,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -697,7 +697,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
         public virtual GetTagKeysResponse GetTagKeys(GetTagKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagKeys">REST API Reference for GetTagKeys Operation</seealso>
         public virtual IAsyncResult BeginGetTagKeys(GetTagKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagKeysResponseUnmarshaller.Instance;
 
@@ -801,7 +801,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
         public virtual GetTagValuesResponse GetTagValues(GetTagValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
 
@@ -822,7 +822,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/GetTagValues">REST API Reference for GetTagValues Operation</seealso>
         public virtual IAsyncResult BeginGetTagValues(GetTagValuesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagValuesResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">REST API Reference for StartReportCreation Operation</seealso>
         public virtual StartReportCreationResponse StartReportCreation(StartReportCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportCreationResponseUnmarshaller.Instance;
 
@@ -956,7 +956,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/StartReportCreation">REST API Reference for StartReportCreation Operation</seealso>
         public virtual IAsyncResult BeginStartReportCreation(StartReportCreationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReportCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReportCreationResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
         public virtual TagResourcesResponse TagResources(TagResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
 
@@ -1097,7 +1097,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/TagResources">REST API Reference for TagResources Operation</seealso>
         public virtual IAsyncResult BeginTagResources(TagResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourcesResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
         public virtual UntagResourcesResponse UntagResources(UntagResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/UntagResources">REST API Reference for UntagResources Operation</seealso>
         public virtual IAsyncResult BeginUntagResources(UntagResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourcesResponseUnmarshaller.Instance;
 

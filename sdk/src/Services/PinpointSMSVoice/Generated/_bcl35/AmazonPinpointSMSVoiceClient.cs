@@ -275,7 +275,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -296,7 +296,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet">REST API Reference for CreateConfigurationSet Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestination">REST API Reference for CreateConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSet">REST API Reference for DeleteConfigurationSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestination">REST API Reference for DeleteConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         public virtual GetConfigurationSetEventDestinationsResponse GetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/GetConfigurationSetEventDestinations">REST API Reference for GetConfigurationSetEventDestinations Operation</seealso>
         public virtual IAsyncResult BeginGetConfigurationSetEventDestinations(GetConfigurationSetEventDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationSetEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationSetEventDestinationsResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">REST API Reference for ListConfigurationSets Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         public virtual SendVoiceMessageResponse SendVoiceMessage(SendVoiceMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">REST API Reference for SendVoiceMessage Operation</seealso>
         public virtual IAsyncResult BeginSendVoiceMessage(SendVoiceMessageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendVoiceMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendVoiceMessageResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.PinpointSMSVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/UpdateConfigurationSetEventDestination">REST API Reference for UpdateConfigurationSetEventDestination Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationSetEventDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
 

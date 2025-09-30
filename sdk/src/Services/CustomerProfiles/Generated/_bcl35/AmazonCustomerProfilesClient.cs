@@ -318,7 +318,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey">REST API Reference for AddProfileKey Operation</seealso>
         public virtual AddProfileKeyResponse AddProfileKey(AddProfileKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddProfileKeyResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey">REST API Reference for AddProfileKey Operation</seealso>
         public virtual IAsyncResult BeginAddProfileKey(AddProfileKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddProfileKeyResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
         public virtual BatchGetCalculatedAttributeForProfileResponse BatchGetCalculatedAttributeForProfile(BatchGetCalculatedAttributeForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetCalculatedAttributeForProfile">REST API Reference for BatchGetCalculatedAttributeForProfile Operation</seealso>
         public virtual IAsyncResult BeginBatchGetCalculatedAttributeForProfile(BatchGetCalculatedAttributeForProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -456,7 +456,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
         public virtual BatchGetProfileResponse BatchGetProfile(BatchGetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchGetProfile">REST API Reference for BatchGetProfile Operation</seealso>
         public virtual IAsyncResult BeginBatchGetProfile(BatchGetProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetProfileResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
         public virtual CreateCalculatedAttributeDefinitionResponse CreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
         public virtual IAsyncResult BeginCreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -702,7 +702,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
         public virtual CreateDomainLayoutResponse CreateDomainLayout(CreateDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -723,7 +723,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomainLayout">REST API Reference for CreateDomainLayout Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainLayout(CreateDomainLayoutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
         public virtual CreateEventStreamResponse CreateEventStream(CreateEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
         public virtual IAsyncResult BeginCreateEventStream(CreateEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
         public virtual CreateEventTriggerResponse CreateEventTrigger(CreateEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
         public virtual IAsyncResult BeginCreateEventTrigger(CreateEventTriggerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow">REST API Reference for CreateIntegrationWorkflow Operation</seealso>
         public virtual CreateIntegrationWorkflowResponse CreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow">REST API Reference for CreateIntegrationWorkflow Operation</seealso>
         public virtual IAsyncResult BeginCreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationWorkflowResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -1069,7 +1069,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
         public virtual CreateSegmentDefinitionResponse CreateSegmentDefinition(CreateSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentDefinition">REST API Reference for CreateSegmentDefinition Operation</seealso>
         public virtual IAsyncResult BeginCreateSegmentDefinition(CreateSegmentDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
         public virtual CreateSegmentEstimateResponse CreateSegmentEstimate(CreateSegmentEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -1159,7 +1159,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentEstimate">REST API Reference for CreateSegmentEstimate Operation</seealso>
         public virtual IAsyncResult BeginCreateSegmentEstimate(CreateSegmentEstimateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -1207,7 +1207,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
         public virtual CreateSegmentSnapshotResponse CreateSegmentSnapshot(CreateSegmentSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateSegmentSnapshot">REST API Reference for CreateSegmentSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateSegmentSnapshot(CreateSegmentSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">REST API Reference for CreateUploadJob Operation</seealso>
         public virtual CreateUploadJobResponse CreateUploadJob(CreateUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
 
@@ -1298,7 +1298,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateUploadJob">REST API Reference for CreateUploadJob Operation</seealso>
         public virtual IAsyncResult BeginCreateUploadJob(CreateUploadJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadJobResponseUnmarshaller.Instance;
 
@@ -1349,7 +1349,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
         public virtual DeleteCalculatedAttributeDefinitionResponse DeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -1419,7 +1419,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1440,7 +1440,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
         public virtual DeleteDomainLayoutResponse DeleteDomainLayout(DeleteDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainLayout">REST API Reference for DeleteDomainLayout Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainLayout(DeleteDomainLayoutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         public virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
@@ -1633,7 +1633,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
         public virtual DeleteEventTriggerResponse DeleteEventTrigger(DeleteEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventTrigger(DeleteEventTriggerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -1723,7 +1723,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1792,7 +1792,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1840,7 +1840,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileKey">REST API Reference for DeleteProfileKey Operation</seealso>
         public virtual DeleteProfileKeyResponse DeleteProfileKey(DeleteProfileKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileKeyResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileKey">REST API Reference for DeleteProfileKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfileKey(DeleteProfileKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileKeyResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObject">REST API Reference for DeleteProfileObject Operation</seealso>
         public virtual DeleteProfileObjectResponse DeleteProfileObject(DeleteProfileObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectResponseUnmarshaller.Instance;
 
@@ -1930,7 +1930,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObject">REST API Reference for DeleteProfileObject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfileObject(DeleteProfileObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectResponseUnmarshaller.Instance;
 
@@ -1981,7 +1981,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObjectType">REST API Reference for DeleteProfileObjectType Operation</seealso>
         public virtual DeleteProfileObjectTypeResponse DeleteProfileObjectType(DeleteProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2002,7 +2002,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObjectType">REST API Reference for DeleteProfileObjectType Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfileObjectType(DeleteProfileObjectTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2050,7 +2050,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
         public virtual DeleteSegmentDefinitionResponse DeleteSegmentDefinition(DeleteSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -2071,7 +2071,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentDefinition">REST API Reference for DeleteSegmentDefinition Operation</seealso>
         public virtual IAsyncResult BeginDeleteSegmentDefinition(DeleteSegmentDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -2141,7 +2141,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkflow(DeleteWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -2189,7 +2189,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">REST API Reference for DetectProfileObjectType Operation</seealso>
         public virtual DetectProfileObjectTypeResponse DetectProfileObjectType(DetectProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2210,7 +2210,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">REST API Reference for DetectProfileObjectType Operation</seealso>
         public virtual IAsyncResult BeginDetectProfileObjectType(DetectProfileObjectTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -2277,7 +2277,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
         public virtual GetAutoMergingPreviewResponse GetAutoMergingPreview(GetAutoMergingPreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoMergingPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoMergingPreviewResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
         public virtual IAsyncResult BeginGetAutoMergingPreview(GetAutoMergingPreviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoMergingPreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoMergingPreviewResponseUnmarshaller.Instance;
 
@@ -2346,7 +2346,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
         public virtual GetCalculatedAttributeDefinitionResponse GetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -2367,7 +2367,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
         public virtual IAsyncResult BeginGetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -2415,7 +2415,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
         public virtual GetCalculatedAttributeForProfileResponse GetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -2436,7 +2436,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
         public virtual IAsyncResult BeginGetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
 
@@ -2484,7 +2484,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -2505,7 +2505,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual IAsyncResult BeginGetDomain(GetDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -2554,7 +2554,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
         public virtual GetDomainLayoutResponse GetDomainLayout(GetDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
 
@@ -2575,7 +2575,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainLayout">REST API Reference for GetDomainLayout Operation</seealso>
         public virtual IAsyncResult BeginGetDomainLayout(GetDomainLayoutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainLayoutResponseUnmarshaller.Instance;
 
@@ -2623,7 +2623,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         public virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
@@ -2644,7 +2644,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
         public virtual IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
         public virtual GetEventTriggerResponse GetEventTrigger(GetEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
 
@@ -2713,7 +2713,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
         public virtual IAsyncResult BeginGetEventTrigger(GetEventTriggerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
 
@@ -2768,7 +2768,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">REST API Reference for GetIdentityResolutionJob Operation</seealso>
         public virtual GetIdentityResolutionJobResponse GetIdentityResolutionJob(GetIdentityResolutionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityResolutionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityResolutionJobResponseUnmarshaller.Instance;
 
@@ -2789,7 +2789,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob">REST API Reference for GetIdentityResolutionJob Operation</seealso>
         public virtual IAsyncResult BeginGetIdentityResolutionJob(GetIdentityResolutionJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentityResolutionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentityResolutionJobResponseUnmarshaller.Instance;
 
@@ -2837,7 +2837,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -2858,7 +2858,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -2972,7 +2972,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">REST API Reference for GetMatches Operation</seealso>
         public virtual GetMatchesResponse GetMatches(GetMatchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
 
@@ -2993,7 +2993,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">REST API Reference for GetMatches Operation</seealso>
         public virtual IAsyncResult BeginGetMatches(GetMatchesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchesResponseUnmarshaller.Instance;
 
@@ -3041,7 +3041,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType">REST API Reference for GetProfileObjectType Operation</seealso>
         public virtual GetProfileObjectTypeResponse GetProfileObjectType(GetProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -3062,7 +3062,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType">REST API Reference for GetProfileObjectType Operation</seealso>
         public virtual IAsyncResult BeginGetProfileObjectType(GetProfileObjectTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -3117,7 +3117,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectTypeTemplate">REST API Reference for GetProfileObjectTypeTemplate Operation</seealso>
         public virtual GetProfileObjectTypeTemplateResponse GetProfileObjectTypeTemplate(GetProfileObjectTypeTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
@@ -3138,7 +3138,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectTypeTemplate">REST API Reference for GetProfileObjectTypeTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetProfileObjectTypeTemplate(GetProfileObjectTypeTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileObjectTypeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
@@ -3186,7 +3186,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
         public virtual GetSegmentDefinitionResponse GetSegmentDefinition(GetSegmentDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -3207,7 +3207,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentDefinition">REST API Reference for GetSegmentDefinition Operation</seealso>
         public virtual IAsyncResult BeginGetSegmentDefinition(GetSegmentDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDefinitionResponseUnmarshaller.Instance;
 
@@ -3255,7 +3255,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
         public virtual GetSegmentEstimateResponse GetSegmentEstimate(GetSegmentEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -3276,7 +3276,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentEstimate">REST API Reference for GetSegmentEstimate Operation</seealso>
         public virtual IAsyncResult BeginGetSegmentEstimate(GetSegmentEstimateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentEstimateResponseUnmarshaller.Instance;
 
@@ -3324,7 +3324,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
         public virtual GetSegmentMembershipResponse GetSegmentMembership(GetSegmentMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
 
@@ -3345,7 +3345,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentMembership">REST API Reference for GetSegmentMembership Operation</seealso>
         public virtual IAsyncResult BeginGetSegmentMembership(GetSegmentMembershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentMembershipResponseUnmarshaller.Instance;
 
@@ -3393,7 +3393,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
         public virtual GetSegmentSnapshotResponse GetSegmentSnapshot(GetSegmentSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -3414,7 +3414,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSnapshot">REST API Reference for GetSegmentSnapshot Operation</seealso>
         public virtual IAsyncResult BeginGetSegmentSnapshot(GetSegmentSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentSnapshotResponseUnmarshaller.Instance;
 
@@ -3464,7 +3464,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
         public virtual GetSimilarProfilesResponse GetSimilarProfiles(GetSimilarProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
 
@@ -3485,7 +3485,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
         public virtual IAsyncResult BeginGetSimilarProfiles(GetSimilarProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSimilarProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSimilarProfilesResponseUnmarshaller.Instance;
 
@@ -3533,7 +3533,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">REST API Reference for GetUploadJob Operation</seealso>
         public virtual GetUploadJobResponse GetUploadJob(GetUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
 
@@ -3554,7 +3554,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJob">REST API Reference for GetUploadJob Operation</seealso>
         public virtual IAsyncResult BeginGetUploadJob(GetUploadJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobResponseUnmarshaller.Instance;
 
@@ -3603,7 +3603,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">REST API Reference for GetUploadJobPath Operation</seealso>
         public virtual GetUploadJobPathResponse GetUploadJobPath(GetUploadJobPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
 
@@ -3624,7 +3624,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetUploadJobPath">REST API Reference for GetUploadJobPath Operation</seealso>
         public virtual IAsyncResult BeginGetUploadJobPath(GetUploadJobPathRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadJobPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadJobPathResponseUnmarshaller.Instance;
 
@@ -3672,7 +3672,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -3693,7 +3693,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflow(GetWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -3741,7 +3741,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps">REST API Reference for GetWorkflowSteps Operation</seealso>
         public virtual GetWorkflowStepsResponse GetWorkflowSteps(GetWorkflowStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -3762,7 +3762,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps">REST API Reference for GetWorkflowSteps Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflowSteps(GetWorkflowStepsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -3810,7 +3810,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations">REST API Reference for ListAccountIntegrations Operation</seealso>
         public virtual ListAccountIntegrationsResponse ListAccountIntegrations(ListAccountIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountIntegrationsResponseUnmarshaller.Instance;
 
@@ -3831,7 +3831,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations">REST API Reference for ListAccountIntegrations Operation</seealso>
         public virtual IAsyncResult BeginListAccountIntegrations(ListAccountIntegrationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountIntegrationsResponseUnmarshaller.Instance;
 
@@ -3879,7 +3879,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
         public virtual ListCalculatedAttributeDefinitionsResponse ListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
 
@@ -3900,7 +3900,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
 
@@ -3948,7 +3948,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
         public virtual ListCalculatedAttributesForProfileResponse ListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
 
@@ -3969,7 +3969,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
         public virtual IAsyncResult BeginListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
 
@@ -4018,7 +4018,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
         public virtual ListDomainLayoutsResponse ListDomainLayouts(ListDomainLayoutsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
 
@@ -4039,7 +4039,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainLayouts">REST API Reference for ListDomainLayouts Operation</seealso>
         public virtual IAsyncResult BeginListDomainLayouts(ListDomainLayoutsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainLayoutsResponseUnmarshaller.Instance;
 
@@ -4087,7 +4087,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -4108,7 +4108,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -4156,7 +4156,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
         public virtual ListEventStreamsResponse ListEventStreams(ListEventStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
 
@@ -4177,7 +4177,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
         public virtual IAsyncResult BeginListEventStreams(ListEventStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
 
@@ -4225,7 +4225,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
         public virtual ListEventTriggersResponse ListEventTriggers(ListEventTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
 
@@ -4246,7 +4246,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
         public virtual IAsyncResult BeginListEventTriggers(ListEventTriggersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
 
@@ -4295,7 +4295,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">REST API Reference for ListIdentityResolutionJobs Operation</seealso>
         public virtual ListIdentityResolutionJobsResponse ListIdentityResolutionJobs(ListIdentityResolutionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityResolutionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityResolutionJobsResponseUnmarshaller.Instance;
 
@@ -4316,7 +4316,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs">REST API Reference for ListIdentityResolutionJobs Operation</seealso>
         public virtual IAsyncResult BeginListIdentityResolutionJobs(ListIdentityResolutionJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityResolutionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityResolutionJobsResponseUnmarshaller.Instance;
 
@@ -4364,7 +4364,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
         public virtual ListIntegrationsResponse ListIntegrations(ListIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
 
@@ -4385,7 +4385,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
         public virtual IAsyncResult BeginListIntegrations(ListIntegrationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
 
@@ -4433,7 +4433,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
         public virtual ListObjectTypeAttributesResponse ListObjectTypeAttributes(ListObjectTypeAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
 
@@ -4454,7 +4454,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributes">REST API Reference for ListObjectTypeAttributes Operation</seealso>
         public virtual IAsyncResult BeginListObjectTypeAttributes(ListObjectTypeAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectTypeAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectTypeAttributesResponseUnmarshaller.Instance;
 
@@ -4502,7 +4502,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
         public virtual ListProfileAttributeValuesResponse ListProfileAttributeValues(ListProfileAttributeValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
 
@@ -4523,7 +4523,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileAttributeValues">REST API Reference for ListProfileAttributeValues Operation</seealso>
         public virtual IAsyncResult BeginListProfileAttributeValues(ListProfileAttributeValuesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileAttributeValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileAttributeValuesResponseUnmarshaller.Instance;
 
@@ -4571,7 +4571,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjects">REST API Reference for ListProfileObjects Operation</seealso>
         public virtual ListProfileObjectsResponse ListProfileObjects(ListProfileObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectsResponseUnmarshaller.Instance;
 
@@ -4592,7 +4592,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjects">REST API Reference for ListProfileObjects Operation</seealso>
         public virtual IAsyncResult BeginListProfileObjects(ListProfileObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectsResponseUnmarshaller.Instance;
 
@@ -4640,7 +4640,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypes">REST API Reference for ListProfileObjectTypes Operation</seealso>
         public virtual ListProfileObjectTypesResponse ListProfileObjectTypes(ListProfileObjectTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypesResponseUnmarshaller.Instance;
 
@@ -4661,7 +4661,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypes">REST API Reference for ListProfileObjectTypes Operation</seealso>
         public virtual IAsyncResult BeginListProfileObjectTypes(ListProfileObjectTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypesResponseUnmarshaller.Instance;
 
@@ -4709,7 +4709,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates">REST API Reference for ListProfileObjectTypeTemplates Operation</seealso>
         public virtual ListProfileObjectTypeTemplatesResponse ListProfileObjectTypeTemplates(ListProfileObjectTypeTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypeTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
@@ -4730,7 +4730,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates">REST API Reference for ListProfileObjectTypeTemplates Operation</seealso>
         public virtual IAsyncResult BeginListProfileObjectTypeTemplates(ListProfileObjectTypeTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileObjectTypeTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
@@ -4778,7 +4778,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
         public virtual ListRuleBasedMatchesResponse ListRuleBasedMatches(ListRuleBasedMatchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
 
@@ -4799,7 +4799,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">REST API Reference for ListRuleBasedMatches Operation</seealso>
         public virtual IAsyncResult BeginListRuleBasedMatches(ListRuleBasedMatchesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleBasedMatchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleBasedMatchesResponseUnmarshaller.Instance;
 
@@ -4847,7 +4847,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
         public virtual ListSegmentDefinitionsResponse ListSegmentDefinitions(ListSegmentDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
 
@@ -4868,7 +4868,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentDefinitions">REST API Reference for ListSegmentDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListSegmentDefinitions(ListSegmentDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentDefinitionsResponseUnmarshaller.Instance;
 
@@ -4912,7 +4912,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4933,7 +4933,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4981,7 +4981,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">REST API Reference for ListUploadJobs Operation</seealso>
         public virtual ListUploadJobsResponse ListUploadJobs(ListUploadJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
 
@@ -5002,7 +5002,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListUploadJobs">REST API Reference for ListUploadJobs Operation</seealso>
         public virtual IAsyncResult BeginListUploadJobs(ListUploadJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadJobsResponseUnmarshaller.Instance;
 
@@ -5050,7 +5050,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -5071,7 +5071,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual IAsyncResult BeginListWorkflows(ListWorkflowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -5161,7 +5161,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">REST API Reference for MergeProfiles Operation</seealso>
         public virtual MergeProfilesResponse MergeProfiles(MergeProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
 
@@ -5182,7 +5182,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">REST API Reference for MergeProfiles Operation</seealso>
         public virtual IAsyncResult BeginMergeProfiles(MergeProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeProfilesResponseUnmarshaller.Instance;
 
@@ -5242,7 +5242,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -5263,7 +5263,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -5329,7 +5329,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject">REST API Reference for PutProfileObject Operation</seealso>
         public virtual PutProfileObjectResponse PutProfileObject(PutProfileObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectResponseUnmarshaller.Instance;
 
@@ -5350,7 +5350,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject">REST API Reference for PutProfileObject Operation</seealso>
         public virtual IAsyncResult BeginPutProfileObject(PutProfileObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectResponseUnmarshaller.Instance;
 
@@ -5404,7 +5404,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">REST API Reference for PutProfileObjectType Operation</seealso>
         public virtual PutProfileObjectTypeResponse PutProfileObjectType(PutProfileObjectTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -5425,7 +5425,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">REST API Reference for PutProfileObjectType Operation</seealso>
         public virtual IAsyncResult BeginPutProfileObjectType(PutProfileObjectTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileObjectTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileObjectTypeResponseUnmarshaller.Instance;
 
@@ -5482,7 +5482,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
         public virtual SearchProfilesResponse SearchProfiles(SearchProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchProfilesResponseUnmarshaller.Instance;
 
@@ -5503,7 +5503,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
         public virtual IAsyncResult BeginSearchProfiles(SearchProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchProfilesResponseUnmarshaller.Instance;
 
@@ -5551,7 +5551,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">REST API Reference for StartUploadJob Operation</seealso>
         public virtual StartUploadJobResponse StartUploadJob(StartUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
 
@@ -5572,7 +5572,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartUploadJob">REST API Reference for StartUploadJob Operation</seealso>
         public virtual IAsyncResult BeginStartUploadJob(StartUploadJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
 
@@ -5620,7 +5620,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">REST API Reference for StopUploadJob Operation</seealso>
         public virtual StopUploadJobResponse StopUploadJob(StopUploadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
 
@@ -5641,7 +5641,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopUploadJob">REST API Reference for StopUploadJob Operation</seealso>
         public virtual IAsyncResult BeginStopUploadJob(StopUploadJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopUploadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopUploadJobResponseUnmarshaller.Instance;
 
@@ -5704,7 +5704,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5725,7 +5725,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5769,7 +5769,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5790,7 +5790,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5840,7 +5840,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
         public virtual UpdateCalculatedAttributeDefinitionResponse UpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -5861,7 +5861,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
         public virtual IAsyncResult BeginUpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
 
@@ -5931,7 +5931,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -5952,7 +5952,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomain(UpdateDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -6001,7 +6001,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
         public virtual UpdateDomainLayoutResponse UpdateDomainLayout(UpdateDomainLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -6022,7 +6022,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomainLayout">REST API Reference for UpdateDomainLayout Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainLayout(UpdateDomainLayoutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainLayoutResponseUnmarshaller.Instance;
 
@@ -6070,7 +6070,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
         public virtual UpdateEventTriggerResponse UpdateEventTrigger(UpdateEventTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
 
@@ -6091,7 +6091,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventTrigger(UpdateEventTriggerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
 
@@ -6147,7 +6147,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -6168,7 +6168,7 @@ namespace Amazon.CustomerProfiles
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 

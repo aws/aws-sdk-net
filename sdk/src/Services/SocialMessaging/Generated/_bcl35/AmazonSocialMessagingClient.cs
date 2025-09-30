@@ -341,7 +341,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/AssociateWhatsAppBusinessAccount">REST API Reference for AssociateWhatsAppBusinessAccount Operation</seealso>
         public virtual AssociateWhatsAppBusinessAccountResponse AssociateWhatsAppBusinessAccount(AssociateWhatsAppBusinessAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/AssociateWhatsAppBusinessAccount">REST API Reference for AssociateWhatsAppBusinessAccount Operation</seealso>
         public virtual IAsyncResult BeginAssociateWhatsAppBusinessAccount(AssociateWhatsAppBusinessAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -416,7 +416,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplate">REST API Reference for CreateWhatsAppMessageTemplate Operation</seealso>
         public virtual CreateWhatsAppMessageTemplateResponse CreateWhatsAppMessageTemplate(CreateWhatsAppMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplate">REST API Reference for CreateWhatsAppMessageTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatsAppMessageTemplate(CreateWhatsAppMessageTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateFromLibrary">REST API Reference for CreateWhatsAppMessageTemplateFromLibrary Operation</seealso>
         public virtual CreateWhatsAppMessageTemplateFromLibraryResponse CreateWhatsAppMessageTemplateFromLibrary(CreateWhatsAppMessageTemplateFromLibraryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateFromLibraryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateFromLibraryResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateFromLibrary">REST API Reference for CreateWhatsAppMessageTemplateFromLibrary Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatsAppMessageTemplateFromLibrary(CreateWhatsAppMessageTemplateFromLibraryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateFromLibraryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateFromLibraryResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateMedia">REST API Reference for CreateWhatsAppMessageTemplateMedia Operation</seealso>
         public virtual CreateWhatsAppMessageTemplateMediaResponse CreateWhatsAppMessageTemplateMedia(CreateWhatsAppMessageTemplateMediaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateMediaResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppMessageTemplateMedia">REST API Reference for CreateWhatsAppMessageTemplateMedia Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatsAppMessageTemplateMedia(CreateWhatsAppMessageTemplateMediaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatsAppMessageTemplateMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatsAppMessageTemplateMediaResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageMedia">REST API Reference for DeleteWhatsAppMessageMedia Operation</seealso>
         public virtual DeleteWhatsAppMessageMediaResponse DeleteWhatsAppMessageMedia(DeleteWhatsAppMessageMediaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageMedia">REST API Reference for DeleteWhatsAppMessageMedia Operation</seealso>
         public virtual IAsyncResult BeginDeleteWhatsAppMessageMedia(DeleteWhatsAppMessageMediaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageTemplate">REST API Reference for DeleteWhatsAppMessageTemplate Operation</seealso>
         public virtual DeleteWhatsAppMessageTemplateResponse DeleteWhatsAppMessageTemplate(DeleteWhatsAppMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DeleteWhatsAppMessageTemplate">REST API Reference for DeleteWhatsAppMessageTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteWhatsAppMessageTemplate(DeleteWhatsAppMessageTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DisassociateWhatsAppBusinessAccount">REST API Reference for DisassociateWhatsAppBusinessAccount Operation</seealso>
         public virtual DisassociateWhatsAppBusinessAccountResponse DisassociateWhatsAppBusinessAccount(DisassociateWhatsAppBusinessAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/DisassociateWhatsAppBusinessAccount">REST API Reference for DisassociateWhatsAppBusinessAccount Operation</seealso>
         public virtual IAsyncResult BeginDisassociateWhatsAppBusinessAccount(DisassociateWhatsAppBusinessAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetLinkedWhatsAppBusinessAccount">REST API Reference for GetLinkedWhatsAppBusinessAccount Operation</seealso>
         public virtual GetLinkedWhatsAppBusinessAccountResponse GetLinkedWhatsAppBusinessAccount(GetLinkedWhatsAppBusinessAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkedWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkedWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetLinkedWhatsAppBusinessAccount">REST API Reference for GetLinkedWhatsAppBusinessAccount Operation</seealso>
         public virtual IAsyncResult BeginGetLinkedWhatsAppBusinessAccount(GetLinkedWhatsAppBusinessAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkedWhatsAppBusinessAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkedWhatsAppBusinessAccountResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetLinkedWhatsAppBusinessAccountPhoneNumber">REST API Reference for GetLinkedWhatsAppBusinessAccountPhoneNumber Operation</seealso>
         public virtual GetLinkedWhatsAppBusinessAccountPhoneNumberResponse GetLinkedWhatsAppBusinessAccountPhoneNumber(GetLinkedWhatsAppBusinessAccountPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkedWhatsAppBusinessAccountPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetLinkedWhatsAppBusinessAccountPhoneNumber">REST API Reference for GetLinkedWhatsAppBusinessAccountPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginGetLinkedWhatsAppBusinessAccountPhoneNumber(GetLinkedWhatsAppBusinessAccountPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLinkedWhatsAppBusinessAccountPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppMessageMedia">REST API Reference for GetWhatsAppMessageMedia Operation</seealso>
         public virtual GetWhatsAppMessageMediaResponse GetWhatsAppMessageMedia(GetWhatsAppMessageMediaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppMessageMedia">REST API Reference for GetWhatsAppMessageMedia Operation</seealso>
         public virtual IAsyncResult BeginGetWhatsAppMessageMedia(GetWhatsAppMessageMediaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppMessageTemplate">REST API Reference for GetWhatsAppMessageTemplate Operation</seealso>
         public virtual GetWhatsAppMessageTemplateResponse GetWhatsAppMessageTemplate(GetWhatsAppMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppMessageTemplate">REST API Reference for GetWhatsAppMessageTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetWhatsAppMessageTemplate(GetWhatsAppMessageTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1170,7 +1170,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListLinkedWhatsAppBusinessAccounts">REST API Reference for ListLinkedWhatsAppBusinessAccounts Operation</seealso>
         public virtual ListLinkedWhatsAppBusinessAccountsResponse ListLinkedWhatsAppBusinessAccounts(ListLinkedWhatsAppBusinessAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinkedWhatsAppBusinessAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinkedWhatsAppBusinessAccountsResponseUnmarshaller.Instance;
 
@@ -1191,7 +1191,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListLinkedWhatsAppBusinessAccounts">REST API Reference for ListLinkedWhatsAppBusinessAccounts Operation</seealso>
         public virtual IAsyncResult BeginListLinkedWhatsAppBusinessAccounts(ListLinkedWhatsAppBusinessAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinkedWhatsAppBusinessAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinkedWhatsAppBusinessAccountsResponseUnmarshaller.Instance;
 
@@ -1239,7 +1239,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppMessageTemplates">REST API Reference for ListWhatsAppMessageTemplates Operation</seealso>
         public virtual ListWhatsAppMessageTemplatesResponse ListWhatsAppMessageTemplates(ListWhatsAppMessageTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatsAppMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatsAppMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppMessageTemplates">REST API Reference for ListWhatsAppMessageTemplates Operation</seealso>
         public virtual IAsyncResult BeginListWhatsAppMessageTemplates(ListWhatsAppMessageTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatsAppMessageTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatsAppMessageTemplatesResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppTemplateLibrary">REST API Reference for ListWhatsAppTemplateLibrary Operation</seealso>
         public virtual ListWhatsAppTemplateLibraryResponse ListWhatsAppTemplateLibrary(ListWhatsAppTemplateLibraryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatsAppTemplateLibraryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatsAppTemplateLibraryResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/ListWhatsAppTemplateLibrary">REST API Reference for ListWhatsAppTemplateLibrary Operation</seealso>
         public virtual IAsyncResult BeginListWhatsAppTemplateLibrary(ListWhatsAppTemplateLibraryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatsAppTemplateLibraryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatsAppTemplateLibraryResponseUnmarshaller.Instance;
 
@@ -1470,7 +1470,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PostWhatsAppMessageMedia">REST API Reference for PostWhatsAppMessageMedia Operation</seealso>
         public virtual PostWhatsAppMessageMediaResponse PostWhatsAppMessageMedia(PostWhatsAppMessageMediaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PostWhatsAppMessageMedia">REST API Reference for PostWhatsAppMessageMedia Operation</seealso>
         public virtual IAsyncResult BeginPostWhatsAppMessageMedia(PostWhatsAppMessageMediaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostWhatsAppMessageMediaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostWhatsAppMessageMediaResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PutWhatsAppBusinessAccountEventDestinations">REST API Reference for PutWhatsAppBusinessAccountEventDestinations Operation</seealso>
         public virtual PutWhatsAppBusinessAccountEventDestinationsResponse PutWhatsAppBusinessAccountEventDestinations(PutWhatsAppBusinessAccountEventDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWhatsAppBusinessAccountEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWhatsAppBusinessAccountEventDestinationsResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/PutWhatsAppBusinessAccountEventDestinations">REST API Reference for PutWhatsAppBusinessAccountEventDestinations Operation</seealso>
         public virtual IAsyncResult BeginPutWhatsAppBusinessAccountEventDestinations(PutWhatsAppBusinessAccountEventDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWhatsAppBusinessAccountEventDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWhatsAppBusinessAccountEventDestinationsResponseUnmarshaller.Instance;
 
@@ -1619,7 +1619,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppMessage">REST API Reference for SendWhatsAppMessage Operation</seealso>
         public virtual SendWhatsAppMessageResponse SendWhatsAppMessage(SendWhatsAppMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWhatsAppMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWhatsAppMessageResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppMessage">REST API Reference for SendWhatsAppMessage Operation</seealso>
         public virtual IAsyncResult BeginSendWhatsAppMessage(SendWhatsAppMessageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendWhatsAppMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendWhatsAppMessageResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1758,7 +1758,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1779,7 +1779,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppMessageTemplate">REST API Reference for UpdateWhatsAppMessageTemplate Operation</seealso>
         public virtual UpdateWhatsAppMessageTemplateResponse UpdateWhatsAppMessageTemplate(UpdateWhatsAppMessageTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 
@@ -1854,7 +1854,7 @@ namespace Amazon.SocialMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateWhatsAppMessageTemplate">REST API Reference for UpdateWhatsAppMessageTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateWhatsAppMessageTemplate(UpdateWhatsAppMessageTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWhatsAppMessageTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWhatsAppMessageTemplateResponseUnmarshaller.Instance;
 

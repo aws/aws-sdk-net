@@ -645,7 +645,7 @@ namespace Amazon.Rekognition
 
         internal virtual AssociateFacesResponse AssociateFaces(AssociateFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFacesResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AssociateFaces">REST API Reference for AssociateFaces Operation</seealso>
         public virtual Task<AssociateFacesResponse> AssociateFacesAsync(AssociateFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFacesResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.Rekognition
 
         internal virtual CompareFacesResponse CompareFaces(CompareFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompareFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
@@ -887,7 +887,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         public virtual Task<CompareFacesResponse> CompareFacesAsync(CompareFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompareFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
@@ -900,7 +900,7 @@ namespace Amazon.Rekognition
 
         internal virtual CopyProjectVersionResponse CopyProjectVersion(CopyProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
         public virtual Task<CopyProjectVersionResponse> CopyProjectVersionAsync(CopyProjectVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
 
@@ -1014,7 +1014,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1205,7 +1205,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateFaceLivenessSessionResponse CreateFaceLivenessSession(CreateFaceLivenessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
         public virtual Task<CreateFaceLivenessSessionResponse> CreateFaceLivenessSessionAsync(CreateFaceLivenessSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -1338,7 +1338,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateProjectVersionResponse CreateProjectVersion(CreateProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
         public virtual Task<CreateProjectVersionResponse> CreateProjectVersionAsync(CreateProjectVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
 
@@ -1447,7 +1447,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateStreamProcessorResponse CreateStreamProcessor(CreateStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
         public virtual Task<CreateStreamProcessorResponse> CreateStreamProcessorAsync(CreateStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.Rekognition
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         public virtual Task<DeleteFacesResponse> DeleteFacesAsync(DeleteFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteProjectPolicyResponse DeleteProjectPolicy(DeleteProjectPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
 
@@ -1970,7 +1970,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
         public virtual Task<DeleteProjectPolicyResponse> DeleteProjectPolicyAsync(DeleteProjectPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
 
@@ -1983,7 +1983,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteProjectVersionResponse DeleteProjectVersion(DeleteProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectVersionResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">REST API Reference for DeleteProjectVersion Operation</seealso>
         public virtual Task<DeleteProjectVersionResponse> DeleteProjectVersionAsync(DeleteProjectVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectVersionResponseUnmarshaller.Instance;
 
@@ -2054,7 +2054,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteStreamProcessorResponse DeleteStreamProcessor(DeleteStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
         public virtual Task<DeleteStreamProcessorResponse> DeleteStreamProcessorAsync(DeleteStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2114,7 +2114,7 @@ namespace Amazon.Rekognition
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2167,7 +2167,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2180,7 +2180,7 @@ namespace Amazon.Rekognition
 
         internal virtual DescribeCollectionResponse DescribeCollection(DescribeCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
         public virtual Task<DescribeCollectionResponse> DescribeCollectionAsync(DescribeCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.Rekognition
 
         internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.Rekognition
 
         internal virtual DescribeProjectsResponse DescribeProjects(DescribeProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
         public virtual Task<DescribeProjectsResponse> DescribeProjectsAsync(DescribeProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
 
@@ -2370,7 +2370,7 @@ namespace Amazon.Rekognition
 
         internal virtual DescribeProjectVersionsResponse DescribeProjectVersions(DescribeProjectVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
 
@@ -2422,7 +2422,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
         public virtual Task<DescribeProjectVersionsResponse> DescribeProjectVersionsAsync(DescribeProjectVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
 
@@ -2435,7 +2435,7 @@ namespace Amazon.Rekognition
 
         internal virtual DescribeStreamProcessorResponse DescribeStreamProcessor(DescribeStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2478,7 +2478,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
         public virtual Task<DescribeStreamProcessorResponse> DescribeStreamProcessorAsync(DescribeStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectCustomLabelsResponse DetectCustomLabels(DetectCustomLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
 
@@ -2613,7 +2613,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
         public virtual Task<DetectCustomLabelsResponse> DetectCustomLabelsAsync(DetectCustomLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
 
@@ -2626,7 +2626,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectFacesResponse DetectFaces(DetectFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
@@ -2706,7 +2706,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         public virtual Task<DetectFacesResponse> DetectFacesAsync(DetectFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
@@ -2719,7 +2719,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
@@ -2935,7 +2935,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         public virtual Task<DetectLabelsResponse> DetectLabelsAsync(DetectLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
@@ -2948,7 +2948,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectModerationLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
@@ -3032,7 +3032,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         public virtual Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectModerationLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
@@ -3045,7 +3045,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectProtectiveEquipmentResponse DetectProtectiveEquipment(DetectProtectiveEquipmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProtectiveEquipmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProtectiveEquipmentResponseUnmarshaller.Instance;
 
@@ -3153,7 +3153,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
         public virtual Task<DetectProtectiveEquipmentResponse> DetectProtectiveEquipmentAsync(DetectProtectiveEquipmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProtectiveEquipmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProtectiveEquipmentResponseUnmarshaller.Instance;
 
@@ -3166,7 +3166,7 @@ namespace Amazon.Rekognition
 
         internal virtual DetectTextResponse DetectText(DetectTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectTextResponseUnmarshaller.Instance;
 
@@ -3258,7 +3258,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
         public virtual Task<DetectTextResponse> DetectTextAsync(DetectTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectTextResponseUnmarshaller.Instance;
 
@@ -3271,7 +3271,7 @@ namespace Amazon.Rekognition
 
         internal virtual DisassociateFacesResponse DisassociateFaces(DisassociateFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFacesResponseUnmarshaller.Instance;
 
@@ -3327,7 +3327,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DisassociateFaces">REST API Reference for DisassociateFaces Operation</seealso>
         public virtual Task<DisassociateFacesResponse> DisassociateFacesAsync(DisassociateFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFacesResponseUnmarshaller.Instance;
 
@@ -3340,7 +3340,7 @@ namespace Amazon.Rekognition
 
         internal virtual DistributeDatasetEntriesResponse DistributeDatasetEntries(DistributeDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -3414,7 +3414,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">REST API Reference for DistributeDatasetEntries Operation</seealso>
         public virtual Task<DistributeDatasetEntriesResponse> DistributeDatasetEntriesAsync(DistributeDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -3427,7 +3427,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
@@ -3481,7 +3481,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
         public virtual Task<GetCelebrityInfoResponse> GetCelebrityInfoAsync(GetCelebrityInfoRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
@@ -3494,7 +3494,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetCelebrityRecognitionResponse GetCelebrityRecognition(GetCelebrityRecognitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -3603,7 +3603,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
         public virtual Task<GetCelebrityRecognitionResponse> GetCelebrityRecognitionAsync(GetCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -3616,7 +3616,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetContentModerationResponse GetContentModeration(GetContentModerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
         public virtual Task<GetContentModerationResponse> GetContentModerationAsync(GetContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
@@ -3720,7 +3720,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetFaceDetectionResponse GetFaceDetection(GetFaceDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
@@ -3794,7 +3794,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
         public virtual Task<GetFaceDetectionResponse> GetFaceDetectionAsync(GetFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
@@ -3807,7 +3807,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetFaceLivenessSessionResultsResponse GetFaceLivenessSessionResults(GetFaceLivenessSessionResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
 
@@ -3859,7 +3859,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
         public virtual Task<GetFaceLivenessSessionResultsResponse> GetFaceLivenessSessionResultsAsync(GetFaceLivenessSessionResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
 
@@ -3872,7 +3872,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetFaceSearchResponse GetFaceSearch(GetFaceSearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
@@ -3956,7 +3956,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
         public virtual Task<GetFaceSearchResponse> GetFaceSearchAsync(GetFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
@@ -3969,7 +3969,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetLabelDetectionResponse GetLabelDetection(GetLabelDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
@@ -4112,7 +4112,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
         public virtual Task<GetLabelDetectionResponse> GetLabelDetectionAsync(GetLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
@@ -4125,7 +4125,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetMediaAnalysisJobResponse GetMediaAnalysisJob(GetMediaAnalysisJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -4167,7 +4167,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
         public virtual Task<GetMediaAnalysisJobResponse> GetMediaAnalysisJobAsync(GetMediaAnalysisJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -4180,7 +4180,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetPersonTrackingResponse GetPersonTracking(GetPersonTrackingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
@@ -4279,7 +4279,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
         public virtual Task<GetPersonTrackingResponse> GetPersonTrackingAsync(GetPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
@@ -4292,7 +4292,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetSegmentDetectionResponse GetSegmentDetection(GetSegmentDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -4377,7 +4377,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
         public virtual Task<GetSegmentDetectionResponse> GetSegmentDetectionAsync(GetSegmentDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -4390,7 +4390,7 @@ namespace Amazon.Rekognition
 
         internal virtual GetTextDetectionResponse GetTextDetection(GetTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTextDetectionResponseUnmarshaller.Instance;
 
@@ -4467,7 +4467,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">REST API Reference for GetTextDetection Operation</seealso>
         public virtual Task<GetTextDetectionResponse> GetTextDetectionAsync(GetTextDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTextDetectionResponseUnmarshaller.Instance;
 
@@ -4480,7 +4480,7 @@ namespace Amazon.Rekognition
 
         internal virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
@@ -4682,7 +4682,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         public virtual Task<IndexFacesResponse> IndexFacesAsync(IndexFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
@@ -4695,7 +4695,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
@@ -4751,7 +4751,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
@@ -4764,7 +4764,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListDatasetEntriesResponse ListDatasetEntries(ListDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -4842,7 +4842,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">REST API Reference for ListDatasetEntries Operation</seealso>
         public virtual Task<ListDatasetEntriesResponse> ListDatasetEntriesAsync(ListDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -4855,7 +4855,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListDatasetLabelsResponse ListDatasetLabels(ListDatasetLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
 
@@ -4921,7 +4921,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">REST API Reference for ListDatasetLabels Operation</seealso>
         public virtual Task<ListDatasetLabelsResponse> ListDatasetLabelsAsync(ListDatasetLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
 
@@ -4934,7 +4934,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListFacesResponse ListFaces(ListFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFacesResponseUnmarshaller.Instance;
 
@@ -4986,7 +4986,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         public virtual Task<ListFacesResponse> ListFacesAsync(ListFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFacesResponseUnmarshaller.Instance;
 
@@ -4999,7 +4999,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListMediaAnalysisJobsResponse ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaAnalysisJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaAnalysisJobsResponseUnmarshaller.Instance;
 
@@ -5041,7 +5041,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
         public virtual Task<ListMediaAnalysisJobsResponse> ListMediaAnalysisJobsAsync(ListMediaAnalysisJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaAnalysisJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaAnalysisJobsResponseUnmarshaller.Instance;
 
@@ -5054,7 +5054,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListProjectPoliciesResponse ListProjectPolicies(ListProjectPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
 
@@ -5115,7 +5115,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
         public virtual Task<ListProjectPoliciesResponse> ListProjectPoliciesAsync(ListProjectPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
 
@@ -5128,7 +5128,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListStreamProcessorsResponse ListStreamProcessors(ListStreamProcessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamProcessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
@@ -5169,7 +5169,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
         public virtual Task<ListStreamProcessorsResponse> ListStreamProcessorsAsync(ListStreamProcessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamProcessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
@@ -5182,7 +5182,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5230,7 +5230,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5243,7 +5243,7 @@ namespace Amazon.Rekognition
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -5291,7 +5291,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -5304,7 +5304,7 @@ namespace Amazon.Rekognition
 
         internal virtual PutProjectPolicyResponse PutProjectPolicy(PutProjectPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
 
@@ -5403,7 +5403,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
         public virtual Task<PutProjectPolicyResponse> PutProjectPolicyAsync(PutProjectPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
 
@@ -5416,7 +5416,7 @@ namespace Amazon.Rekognition
 
         internal virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
@@ -5506,7 +5506,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
         public virtual Task<RecognizeCelebritiesResponse> RecognizeCelebritiesAsync(RecognizeCelebritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
@@ -5519,7 +5519,7 @@ namespace Amazon.Rekognition
 
         internal virtual SearchFacesResponse SearchFaces(SearchFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
@@ -5587,7 +5587,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         public virtual Task<SearchFacesResponse> SearchFacesAsync(SearchFacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
@@ -5600,7 +5600,7 @@ namespace Amazon.Rekognition
 
         internal virtual SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
@@ -5712,7 +5712,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         public virtual Task<SearchFacesByImageResponse> SearchFacesByImageAsync(SearchFacesByImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
@@ -5725,7 +5725,7 @@ namespace Amazon.Rekognition
 
         internal virtual SearchUsersResponse SearchUsers(SearchUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -5770,7 +5770,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual Task<SearchUsersResponse> SearchUsersAsync(SearchUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -5783,7 +5783,7 @@ namespace Amazon.Rekognition
 
         internal virtual SearchUsersByImageResponse SearchUsersByImage(SearchUsersByImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersByImageResponseUnmarshaller.Instance;
 
@@ -5850,7 +5850,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsersByImage">REST API Reference for SearchUsersByImage Operation</seealso>
         public virtual Task<SearchUsersByImageResponse> SearchUsersByImageAsync(SearchUsersByImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersByImageResponseUnmarshaller.Instance;
 
@@ -5863,7 +5863,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartCelebrityRecognitionResponse StartCelebrityRecognition(StartCelebrityRecognitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -5937,7 +5937,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
         public virtual Task<StartCelebrityRecognitionResponse> StartCelebrityRecognitionAsync(StartCelebrityRecognitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -5950,7 +5950,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartContentModerationResponse StartContentModeration(StartContentModerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
@@ -6027,7 +6027,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
         public virtual Task<StartContentModerationResponse> StartContentModerationAsync(StartContentModerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
@@ -6040,7 +6040,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartFaceDetectionResponse StartFaceDetection(StartFaceDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
@@ -6112,7 +6112,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
         public virtual Task<StartFaceDetectionResponse> StartFaceDetectionAsync(StartFaceDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
@@ -6125,7 +6125,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartFaceSearchResponse StartFaceSearch(StartFaceSearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
@@ -6198,7 +6198,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
         public virtual Task<StartFaceSearchResponse> StartFaceSearchAsync(StartFaceSearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
@@ -6211,7 +6211,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartLabelDetectionResponse StartLabelDetection(StartLabelDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
@@ -6306,7 +6306,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         public virtual Task<StartLabelDetectionResponse> StartLabelDetectionAsync(StartLabelDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
@@ -6319,7 +6319,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartMediaAnalysisJobResponse StartMediaAnalysisJob(StartMediaAnalysisJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -6382,7 +6382,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
         public virtual Task<StartMediaAnalysisJobResponse> StartMediaAnalysisJobAsync(StartMediaAnalysisJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -6395,7 +6395,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartPersonTrackingResponse StartPersonTracking(StartPersonTrackingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
@@ -6476,7 +6476,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
         public virtual Task<StartPersonTrackingResponse> StartPersonTrackingAsync(StartPersonTrackingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
@@ -6489,7 +6489,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartProjectVersionResponse StartProjectVersion(StartProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
 
@@ -6561,7 +6561,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
         public virtual Task<StartProjectVersionResponse> StartProjectVersionAsync(StartProjectVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
 
@@ -6574,7 +6574,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartSegmentDetectionResponse StartSegmentDetection(StartSegmentDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -6658,7 +6658,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
         public virtual Task<StartSegmentDetectionResponse> StartSegmentDetectionAsync(StartSegmentDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -6671,7 +6671,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartStreamProcessorResponse StartStreamProcessor(StartStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
@@ -6724,7 +6724,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
         public virtual Task<StartStreamProcessorResponse> StartStreamProcessorAsync(StartStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
@@ -6737,7 +6737,7 @@ namespace Amazon.Rekognition
 
         internal virtual StartTextDetectionResponse StartTextDetection(StartTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextDetectionResponseUnmarshaller.Instance;
 
@@ -6808,7 +6808,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">REST API Reference for StartTextDetection Operation</seealso>
         public virtual Task<StartTextDetectionResponse> StartTextDetectionAsync(StartTextDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextDetectionResponseUnmarshaller.Instance;
 
@@ -6821,7 +6821,7 @@ namespace Amazon.Rekognition
 
         internal virtual StopProjectVersionResponse StopProjectVersion(StopProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
 
@@ -6879,7 +6879,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
         public virtual Task<StopProjectVersionResponse> StopProjectVersionAsync(StopProjectVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
 
@@ -6892,7 +6892,7 @@ namespace Amazon.Rekognition
 
         internal virtual StopStreamProcessorResponse StopStreamProcessor(StopStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
@@ -6936,7 +6936,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
         public virtual Task<StopStreamProcessorResponse> StopStreamProcessorAsync(StopStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
@@ -6949,7 +6949,7 @@ namespace Amazon.Rekognition
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7002,7 +7002,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7015,7 +7015,7 @@ namespace Amazon.Rekognition
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7063,7 +7063,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7076,7 +7076,7 @@ namespace Amazon.Rekognition
 
         internal virtual UpdateDatasetEntriesResponse UpdateDatasetEntries(UpdateDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -7171,7 +7171,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">REST API Reference for UpdateDatasetEntries Operation</seealso>
         public virtual Task<UpdateDatasetEntriesResponse> UpdateDatasetEntriesAsync(UpdateDatasetEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -7184,7 +7184,7 @@ namespace Amazon.Rekognition
 
         internal virtual UpdateStreamProcessorResponse UpdateStreamProcessor(UpdateStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -7229,7 +7229,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">REST API Reference for UpdateStreamProcessor Operation</seealso>
         public virtual Task<UpdateStreamProcessorResponse> UpdateStreamProcessorAsync(UpdateStreamProcessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamProcessorResponseUnmarshaller.Instance;
 

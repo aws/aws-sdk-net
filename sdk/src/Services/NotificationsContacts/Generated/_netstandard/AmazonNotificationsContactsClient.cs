@@ -275,7 +275,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual ActivateEmailContactResponse ActivateEmailContact(ActivateEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEmailContactResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/ActivateEmailContact">REST API Reference for ActivateEmailContact Operation</seealso>
         public virtual Task<ActivateEmailContactResponse> ActivateEmailContactAsync(ActivateEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEmailContactResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual CreateEmailContactResponse CreateEmailContact(CreateEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailContactResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/CreateEmailContact">REST API Reference for CreateEmailContact Operation</seealso>
         public virtual Task<CreateEmailContactResponse> CreateEmailContactAsync(CreateEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEmailContactResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual DeleteEmailContactResponse DeleteEmailContact(DeleteEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailContactResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/DeleteEmailContact">REST API Reference for DeleteEmailContact Operation</seealso>
         public virtual Task<DeleteEmailContactResponse> DeleteEmailContactAsync(DeleteEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailContactResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual GetEmailContactResponse GetEmailContact(GetEmailContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailContactResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/GetEmailContact">REST API Reference for GetEmailContact Operation</seealso>
         public virtual Task<GetEmailContactResponse> GetEmailContactAsync(GetEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEmailContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEmailContactResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual ListEmailContactsResponse ListEmailContacts(ListEmailContactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEmailContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEmailContactsResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/ListEmailContacts">REST API Reference for ListEmailContacts Operation</seealso>
         public virtual Task<ListEmailContactsResponse> ListEmailContactsAsync(ListEmailContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEmailContactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEmailContactsResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual SendActivationCodeResponse SendActivationCode(SendActivationCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendActivationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendActivationCodeResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/SendActivationCode">REST API Reference for SendActivationCode Operation</seealso>
         public virtual Task<SendActivationCodeResponse> SendActivationCodeAsync(SendActivationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendActivationCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendActivationCodeResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -680,7 +680,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.NotificationsContacts
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.NotificationsContacts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notificationscontacts-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

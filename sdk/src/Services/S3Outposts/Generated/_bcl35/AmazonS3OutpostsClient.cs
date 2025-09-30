@@ -317,7 +317,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -338,7 +338,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListEndpoints(ListEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
         public virtual ListOutpostsWithS3Response ListOutpostsWithS3(ListOutpostsWithS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3">REST API Reference for ListOutpostsWithS3 Operation</seealso>
         public virtual IAsyncResult BeginListOutpostsWithS3(ListOutpostsWithS3Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOutpostsWithS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOutpostsWithS3ResponseUnmarshaller.Instance;
 
@@ -649,7 +649,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
         public virtual ListSharedEndpointsResponse ListSharedEndpoints(ListSharedEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.S3Outposts
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints">REST API Reference for ListSharedEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListSharedEndpoints(ListSharedEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSharedEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSharedEndpointsResponseUnmarshaller.Instance;
 

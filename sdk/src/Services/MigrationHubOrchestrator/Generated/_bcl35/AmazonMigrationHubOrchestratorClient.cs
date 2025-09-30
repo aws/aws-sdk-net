@@ -295,7 +295,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateTemplate(CreateTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkflow(CreateWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflowStep">REST API Reference for CreateWorkflowStep Operation</seealso>
         public virtual CreateWorkflowStepResponse CreateWorkflowStep(CreateWorkflowStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowStepResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflowStep">REST API Reference for CreateWorkflowStep Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkflowStep(CreateWorkflowStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowStepResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflowStepGroup">REST API Reference for CreateWorkflowStepGroup Operation</seealso>
         public virtual CreateWorkflowStepGroupResponse CreateWorkflowStepGroup(CreateWorkflowStepGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateWorkflowStepGroup">REST API Reference for CreateWorkflowStepGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkflowStepGroup(CreateWorkflowStepGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteTemplate(DeleteTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkflow(DeleteWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflowStep">REST API Reference for DeleteWorkflowStep Operation</seealso>
         public virtual DeleteWorkflowStepResponse DeleteWorkflowStep(DeleteWorkflowStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowStepResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflowStep">REST API Reference for DeleteWorkflowStep Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkflowStep(DeleteWorkflowStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowStepResponseUnmarshaller.Instance;
 
@@ -770,7 +770,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflowStepGroup">REST API Reference for DeleteWorkflowStepGroup Operation</seealso>
         public virtual DeleteWorkflowStepGroupResponse DeleteWorkflowStepGroup(DeleteWorkflowStepGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteWorkflowStepGroup">REST API Reference for DeleteWorkflowStepGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkflowStepGroup(DeleteWorkflowStepGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetTemplate(GetTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplateStep">REST API Reference for GetTemplateStep Operation</seealso>
         public virtual GetTemplateStepResponse GetTemplateStep(GetTemplateStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateStepResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplateStep">REST API Reference for GetTemplateStep Operation</seealso>
         public virtual IAsyncResult BeginGetTemplateStep(GetTemplateStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateStepResponseUnmarshaller.Instance;
 
@@ -974,7 +974,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplateStepGroup">REST API Reference for GetTemplateStepGroup Operation</seealso>
         public virtual GetTemplateStepGroupResponse GetTemplateStepGroup(GetTemplateStepGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateStepGroupResponseUnmarshaller.Instance;
 
@@ -995,7 +995,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetTemplateStepGroup">REST API Reference for GetTemplateStepGroup Operation</seealso>
         public virtual IAsyncResult BeginGetTemplateStepGroup(GetTemplateStepGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateStepGroupResponseUnmarshaller.Instance;
 
@@ -1043,7 +1043,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflow(GetWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -1109,7 +1109,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflowStep">REST API Reference for GetWorkflowStep Operation</seealso>
         public virtual GetWorkflowStepResponse GetWorkflowStep(GetWorkflowStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflowStep">REST API Reference for GetWorkflowStep Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflowStep(GetWorkflowStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflowStepGroup">REST API Reference for GetWorkflowStepGroup Operation</seealso>
         public virtual GetWorkflowStepGroupResponse GetWorkflowStepGroup(GetWorkflowStepGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -1199,7 +1199,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/GetWorkflowStepGroup">REST API Reference for GetWorkflowStepGroup Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflowStepGroup(GetWorkflowStepGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListPlugins">REST API Reference for ListPlugins Operation</seealso>
         public virtual ListPluginsResponse ListPlugins(ListPluginsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginsResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListPlugins">REST API Reference for ListPlugins Operation</seealso>
         public virtual IAsyncResult BeginListPlugins(ListPluginsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPluginsResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1364,7 +1364,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual IAsyncResult BeginListTemplates(ListTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplateStepGroups">REST API Reference for ListTemplateStepGroups Operation</seealso>
         public virtual ListTemplateStepGroupsResponse ListTemplateStepGroups(ListTemplateStepGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateStepGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateStepGroupsResponseUnmarshaller.Instance;
 
@@ -1451,7 +1451,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplateStepGroups">REST API Reference for ListTemplateStepGroups Operation</seealso>
         public virtual IAsyncResult BeginListTemplateStepGroups(ListTemplateStepGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateStepGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateStepGroupsResponseUnmarshaller.Instance;
 
@@ -1499,7 +1499,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplateSteps">REST API Reference for ListTemplateSteps Operation</seealso>
         public virtual ListTemplateStepsResponse ListTemplateSteps(ListTemplateStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateStepsResponseUnmarshaller.Instance;
 
@@ -1520,7 +1520,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListTemplateSteps">REST API Reference for ListTemplateSteps Operation</seealso>
         public virtual IAsyncResult BeginListTemplateSteps(ListTemplateStepsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateStepsResponseUnmarshaller.Instance;
 
@@ -1568,7 +1568,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual IAsyncResult BeginListWorkflows(ListWorkflowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -1637,7 +1637,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflowStepGroups">REST API Reference for ListWorkflowStepGroups Operation</seealso>
         public virtual ListWorkflowStepGroupsResponse ListWorkflowStepGroups(ListWorkflowStepGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepGroupsResponseUnmarshaller.Instance;
 
@@ -1658,7 +1658,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflowStepGroups">REST API Reference for ListWorkflowStepGroups Operation</seealso>
         public virtual IAsyncResult BeginListWorkflowStepGroups(ListWorkflowStepGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepGroupsResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflowSteps">REST API Reference for ListWorkflowSteps Operation</seealso>
         public virtual ListWorkflowStepsResponse ListWorkflowSteps(ListWorkflowStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/ListWorkflowSteps">REST API Reference for ListWorkflowSteps Operation</seealso>
         public virtual IAsyncResult BeginListWorkflowSteps(ListWorkflowStepsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowStepsResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/RetryWorkflowStep">REST API Reference for RetryWorkflowStep Operation</seealso>
         public virtual RetryWorkflowStepResponse RetryWorkflowStep(RetryWorkflowStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryWorkflowStepResponseUnmarshaller.Instance;
 
@@ -1790,7 +1790,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/RetryWorkflowStep">REST API Reference for RetryWorkflowStep Operation</seealso>
         public virtual IAsyncResult BeginRetryWorkflowStep(RetryWorkflowStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryWorkflowStepResponseUnmarshaller.Instance;
 
@@ -1838,7 +1838,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StartWorkflow">REST API Reference for StartWorkflow Operation</seealso>
         public virtual StartWorkflowResponse StartWorkflow(StartWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowResponseUnmarshaller.Instance;
 
@@ -1859,7 +1859,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StartWorkflow">REST API Reference for StartWorkflow Operation</seealso>
         public virtual IAsyncResult BeginStartWorkflow(StartWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowResponseUnmarshaller.Instance;
 
@@ -1907,7 +1907,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StopWorkflow">REST API Reference for StopWorkflow Operation</seealso>
         public virtual StopWorkflowResponse StopWorkflow(StopWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkflowResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StopWorkflow">REST API Reference for StopWorkflow Operation</seealso>
         public virtual IAsyncResult BeginStopWorkflow(StopWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkflowResponseUnmarshaller.Instance;
 
@@ -1967,7 +1967,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2027,7 +2027,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2048,7 +2048,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2096,7 +2096,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -2117,7 +2117,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateTemplate(UpdateTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -2165,7 +2165,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkflow(UpdateWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflowStep">REST API Reference for UpdateWorkflowStep Operation</seealso>
         public virtual UpdateWorkflowStepResponse UpdateWorkflowStep(UpdateWorkflowStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowStepResponseUnmarshaller.Instance;
 
@@ -2252,7 +2252,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflowStep">REST API Reference for UpdateWorkflowStep Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkflowStep(UpdateWorkflowStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowStepResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflowStepGroup">REST API Reference for UpdateWorkflowStepGroup Operation</seealso>
         public virtual UpdateWorkflowStepGroupResponse UpdateWorkflowStepGroup(UpdateWorkflowStepGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowStepGroupResponseUnmarshaller.Instance;
 
@@ -2321,7 +2321,7 @@ namespace Amazon.MigrationHubOrchestrator
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateWorkflowStepGroup">REST API Reference for UpdateWorkflowStepGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkflowStepGroup(UpdateWorkflowStepGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowStepGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowStepGroupResponseUnmarshaller.Instance;
 

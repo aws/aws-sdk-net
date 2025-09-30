@@ -216,7 +216,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">REST API Reference for GetClip Operation</seealso>
         public virtual GetClipResponse GetClip(GetClipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClipResponseUnmarshaller.Instance;
 
@@ -237,7 +237,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">REST API Reference for GetClip Operation</seealso>
         public virtual IAsyncResult BeginGetClip(GetClipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClipResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetDASHStreamingSessionURL">REST API Reference for GetDASHStreamingSessionURL Operation</seealso>
         public virtual GetDASHStreamingSessionURLResponse GetDASHStreamingSessionURL(GetDASHStreamingSessionURLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDASHStreamingSessionURLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDASHStreamingSessionURLResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetDASHStreamingSessionURL">REST API Reference for GetDASHStreamingSessionURL Operation</seealso>
         public virtual IAsyncResult BeginGetDASHStreamingSessionURL(GetDASHStreamingSessionURLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDASHStreamingSessionURLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDASHStreamingSessionURLResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">REST API Reference for GetHLSStreamingSessionURL Operation</seealso>
         public virtual GetHLSStreamingSessionURLResponse GetHLSStreamingSessionURL(GetHLSStreamingSessionURLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHLSStreamingSessionURLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHLSStreamingSessionURLResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetHLSStreamingSessionURL">REST API Reference for GetHLSStreamingSessionURL Operation</seealso>
         public virtual IAsyncResult BeginGetHLSStreamingSessionURL(GetHLSStreamingSessionURLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHLSStreamingSessionURLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHLSStreamingSessionURLResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">REST API Reference for GetImages Operation</seealso>
         public virtual GetImagesResponse GetImages(GetImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagesResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetImages">REST API Reference for GetImages Operation</seealso>
         public virtual IAsyncResult BeginGetImages(GetImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImagesResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">REST API Reference for GetMediaForFragmentList Operation</seealso>
         public virtual GetMediaForFragmentListResponse GetMediaForFragmentList(GetMediaForFragmentListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaForFragmentListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaForFragmentListResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetMediaForFragmentList">REST API Reference for GetMediaForFragmentList Operation</seealso>
         public virtual IAsyncResult BeginGetMediaForFragmentList(GetMediaForFragmentListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaForFragmentListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaForFragmentListResponseUnmarshaller.Instance;
 
@@ -1118,7 +1118,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">REST API Reference for ListFragments Operation</seealso>
         public virtual ListFragmentsResponse ListFragments(ListFragmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFragmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFragmentsResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.KinesisVideoArchivedMedia
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments">REST API Reference for ListFragments Operation</seealso>
         public virtual IAsyncResult BeginListFragments(ListFragmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFragmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFragmentsResponseUnmarshaller.Instance;
 

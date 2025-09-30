@@ -387,7 +387,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">REST API Reference for CreateNotificationRule Operation</seealso>
         public virtual CreateNotificationRuleResponse CreateNotificationRule(CreateNotificationRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationRuleResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/CreateNotificationRule">REST API Reference for CreateNotificationRule Operation</seealso>
         public virtual Task<CreateNotificationRuleResponse> CreateNotificationRuleAsync(CreateNotificationRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationRuleResponseUnmarshaller.Instance;
             
@@ -465,7 +465,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteNotificationRule">REST API Reference for DeleteNotificationRule Operation</seealso>
         public virtual DeleteNotificationRuleResponse DeleteNotificationRule(DeleteNotificationRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationRuleResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteNotificationRule">REST API Reference for DeleteNotificationRule Operation</seealso>
         public virtual Task<DeleteNotificationRuleResponse> DeleteNotificationRuleAsync(DeleteNotificationRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationRuleResponseUnmarshaller.Instance;
             
@@ -521,7 +521,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteTarget">REST API Reference for DeleteTarget Operation</seealso>
         public virtual DeleteTargetResponse DeleteTarget(DeleteTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DeleteTarget">REST API Reference for DeleteTarget Operation</seealso>
         public virtual Task<DeleteTargetResponse> DeleteTargetAsync(DeleteTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetResponseUnmarshaller.Instance;
             
@@ -571,7 +571,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DescribeNotificationRule">REST API Reference for DescribeNotificationRule Operation</seealso>
         public virtual DescribeNotificationRuleResponse DescribeNotificationRule(DescribeNotificationRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationRuleResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/DescribeNotificationRule">REST API Reference for DescribeNotificationRule Operation</seealso>
         public virtual Task<DescribeNotificationRuleResponse> DescribeNotificationRuleAsync(DescribeNotificationRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationRuleResponseUnmarshaller.Instance;
             
@@ -625,7 +625,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListEventTypes">REST API Reference for ListEventTypes Operation</seealso>
         public virtual ListEventTypesResponse ListEventTypes(ListEventTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTypesResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListEventTypes">REST API Reference for ListEventTypes Operation</seealso>
         public virtual Task<ListEventTypesResponse> ListEventTypesAsync(ListEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTypesResponseUnmarshaller.Instance;
             
@@ -680,7 +680,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListNotificationRules">REST API Reference for ListNotificationRules Operation</seealso>
         public virtual ListNotificationRulesResponse ListNotificationRules(ListNotificationRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationRulesResponseUnmarshaller.Instance;
 
@@ -707,7 +707,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListNotificationRules">REST API Reference for ListNotificationRules Operation</seealso>
         public virtual Task<ListNotificationRulesResponse> ListNotificationRulesAsync(ListNotificationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationRulesResponseUnmarshaller.Instance;
             
@@ -734,7 +734,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -788,7 +788,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargets">REST API Reference for ListTargets Operation</seealso>
         public virtual ListTargetsResponse ListTargets(ListTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsResponseUnmarshaller.Instance;
 
@@ -815,7 +815,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargets">REST API Reference for ListTargets Operation</seealso>
         public virtual Task<ListTargetsResponse> ListTargetsAsync(ListTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsResponseUnmarshaller.Instance;
             
@@ -847,7 +847,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual SubscribeResponse Subscribe(SubscribeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
 
@@ -878,7 +878,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
             
@@ -914,7 +914,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -975,7 +975,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
             
@@ -1036,7 +1036,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1071,7 +1071,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1109,7 +1109,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">REST API Reference for UpdateNotificationRule Operation</seealso>
         public virtual UpdateNotificationRuleResponse UpdateNotificationRule(UpdateNotificationRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationRuleResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.CodeStarNotifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/UpdateNotificationRule">REST API Reference for UpdateNotificationRule Operation</seealso>
         public virtual Task<UpdateNotificationRuleResponse> UpdateNotificationRuleAsync(UpdateNotificationRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationRuleResponseUnmarshaller.Instance;
             

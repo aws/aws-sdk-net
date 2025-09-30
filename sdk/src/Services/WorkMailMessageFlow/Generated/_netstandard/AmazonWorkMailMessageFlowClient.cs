@@ -255,7 +255,7 @@ namespace Amazon.WorkMailMessageFlow
 
         internal virtual GetRawMessageContentResponse GetRawMessageContent(GetRawMessageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRawMessageContentResponseUnmarshaller.Instance;
 
@@ -279,7 +279,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/GetRawMessageContent">REST API Reference for GetRawMessageContent Operation</seealso>
         public virtual Task<GetRawMessageContentResponse> GetRawMessageContentAsync(GetRawMessageContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRawMessageContentResponseUnmarshaller.Instance;
 
@@ -292,7 +292,7 @@ namespace Amazon.WorkMailMessageFlow
 
         internal virtual PutRawMessageContentResponse PutRawMessageContent(PutRawMessageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRawMessageContentResponseUnmarshaller.Instance;
 
@@ -360,7 +360,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent">REST API Reference for PutRawMessageContent Operation</seealso>
         public virtual Task<PutRawMessageContentResponse> PutRawMessageContentAsync(PutRawMessageContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRawMessageContentResponseUnmarshaller.Instance;
 

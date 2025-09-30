@@ -271,7 +271,7 @@ namespace Amazon.SimpleDB
 
         internal virtual BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
 
@@ -300,7 +300,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchDeleteAttributes">REST API Reference for BatchDeleteAttributes Operation</seealso>
         public virtual Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteAttributesResponseUnmarshaller.Instance;
 
@@ -313,7 +313,7 @@ namespace Amazon.SimpleDB
 
         internal virtual BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/BatchPutAttributes">REST API Reference for BatchPutAttributes Operation</seealso>
         public virtual Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutAttributesResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.SimpleDB
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.SimpleDB
 
         internal virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.SimpleDB
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.SimpleDB
 
         internal virtual DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DomainMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DomainMetadataResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/DomainMetadata">REST API Reference for DomainMetadata Operation</seealso>
         public virtual Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DomainMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DomainMetadataResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.SimpleDB
 
         internal virtual GetAttributesResponse GetAttributes(GetAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributesResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/GetAttributes">REST API Reference for GetAttributes Operation</seealso>
         public virtual Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttributesResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.SimpleDB
         }
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.SimpleDB
 
         internal virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.SimpleDB
 
         internal virtual SelectResponse Select(SelectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.SimpleDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/Select">REST API Reference for Select Operation</seealso>
         public virtual Task<SelectResponse> SelectAsync(SelectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectResponseUnmarshaller.Instance;
 

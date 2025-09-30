@@ -326,7 +326,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateChannel">REST API Reference for AssociateChannel Operation</seealso>
         public virtual AssociateChannelResponse AssociateChannel(AssociateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateChannelResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateChannel">REST API Reference for AssociateChannel Operation</seealso>
         public virtual IAsyncResult BeginAssociateChannel(AssociateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateChannelResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAccountContact">REST API Reference for AssociateManagedNotificationAccountContact Operation</seealso>
         public virtual AssociateManagedNotificationAccountContactResponse AssociateManagedNotificationAccountContact(AssociateManagedNotificationAccountContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateManagedNotificationAccountContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAccountContact">REST API Reference for AssociateManagedNotificationAccountContact Operation</seealso>
         public virtual IAsyncResult BeginAssociateManagedNotificationAccountContact(AssociateManagedNotificationAccountContactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateManagedNotificationAccountContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
         public virtual AssociateManagedNotificationAdditionalChannelResponse AssociateManagedNotificationAdditionalChannel(AssociateManagedNotificationAdditionalChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateManagedNotificationAdditionalChannel">REST API Reference for AssociateManagedNotificationAdditionalChannel Operation</seealso>
         public virtual IAsyncResult BeginAssociateManagedNotificationAdditionalChannel(AssociateManagedNotificationAdditionalChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
         public virtual AssociateOrganizationalUnitResponse AssociateOrganizationalUnit(AssociateOrganizationalUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOrganizationalUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOrganizationalUnitResponseUnmarshaller.Instance;
 
@@ -578,7 +578,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/AssociateOrganizationalUnit">REST API Reference for AssociateOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginAssociateOrganizationalUnit(AssociateOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateOrganizationalUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateOrganizationalUnitResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateEventRule">REST API Reference for CreateEventRule Operation</seealso>
         public virtual CreateEventRuleResponse CreateEventRule(CreateEventRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventRuleResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateEventRule">REST API Reference for CreateEventRule Operation</seealso>
         public virtual IAsyncResult BeginCreateEventRule(CreateEventRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventRuleResponseUnmarshaller.Instance;
 
@@ -705,7 +705,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateNotificationConfiguration">REST API Reference for CreateNotificationConfiguration Operation</seealso>
         public virtual CreateNotificationConfigurationResponse CreateNotificationConfiguration(CreateNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -726,7 +726,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/CreateNotificationConfiguration">REST API Reference for CreateNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateNotificationConfiguration(CreateNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteEventRule">REST API Reference for DeleteEventRule Operation</seealso>
         public virtual DeleteEventRuleResponse DeleteEventRule(DeleteEventRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventRuleResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteEventRule">REST API Reference for DeleteEventRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventRule(DeleteEventRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventRuleResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public virtual DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeregisterNotificationHub">REST API Reference for DeregisterNotificationHub Operation</seealso>
         public virtual DeregisterNotificationHubResponse DeregisterNotificationHub(DeregisterNotificationHubRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterNotificationHubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterNotificationHubResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DeregisterNotificationHub">REST API Reference for DeregisterNotificationHub Operation</seealso>
         public virtual IAsyncResult BeginDeregisterNotificationHub(DeregisterNotificationHubRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterNotificationHubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterNotificationHubResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisableNotificationsAccessForOrganization">REST API Reference for DisableNotificationsAccessForOrganization Operation</seealso>
         public virtual DisableNotificationsAccessForOrganizationResponse DisableNotificationsAccessForOrganization(DisableNotificationsAccessForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1026,7 +1026,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisableNotificationsAccessForOrganization">REST API Reference for DisableNotificationsAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginDisableNotificationsAccessForOrganization(DisableNotificationsAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateChannel">REST API Reference for DisassociateChannel Operation</seealso>
         public virtual DisassociateChannelResponse DisassociateChannel(DisassociateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateChannelResponseUnmarshaller.Instance;
 
@@ -1097,7 +1097,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateChannel">REST API Reference for DisassociateChannel Operation</seealso>
         public virtual IAsyncResult BeginDisassociateChannel(DisassociateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateChannelResponseUnmarshaller.Instance;
 
@@ -1148,7 +1148,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAccountContact">REST API Reference for DisassociateManagedNotificationAccountContact Operation</seealso>
         public virtual DisassociateManagedNotificationAccountContactResponse DisassociateManagedNotificationAccountContact(DisassociateManagedNotificationAccountContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateManagedNotificationAccountContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAccountContact">REST API Reference for DisassociateManagedNotificationAccountContact Operation</seealso>
         public virtual IAsyncResult BeginDisassociateManagedNotificationAccountContact(DisassociateManagedNotificationAccountContactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateManagedNotificationAccountContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateManagedNotificationAccountContactResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
         public virtual DisassociateManagedNotificationAdditionalChannelResponse DisassociateManagedNotificationAdditionalChannel(DisassociateManagedNotificationAdditionalChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateManagedNotificationAdditionalChannel">REST API Reference for DisassociateManagedNotificationAdditionalChannel Operation</seealso>
         public virtual IAsyncResult BeginDisassociateManagedNotificationAdditionalChannel(DisassociateManagedNotificationAdditionalChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateManagedNotificationAdditionalChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateManagedNotificationAdditionalChannelResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
         public virtual DisassociateOrganizationalUnitResponse DisassociateOrganizationalUnit(DisassociateOrganizationalUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOrganizationalUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOrganizationalUnitResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/DisassociateOrganizationalUnit">REST API Reference for DisassociateOrganizationalUnit Operation</seealso>
         public virtual IAsyncResult BeginDisassociateOrganizationalUnit(DisassociateOrganizationalUnitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateOrganizationalUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateOrganizationalUnitResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EnableNotificationsAccessForOrganization">REST API Reference for EnableNotificationsAccessForOrganization Operation</seealso>
         public virtual EnableNotificationsAccessForOrganizationResponse EnableNotificationsAccessForOrganization(EnableNotificationsAccessForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/EnableNotificationsAccessForOrganization">REST API Reference for EnableNotificationsAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginEnableNotificationsAccessForOrganization(EnableNotificationsAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1436,7 +1436,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetEventRule">REST API Reference for GetEventRule Operation</seealso>
         public virtual GetEventRuleResponse GetEventRule(GetEventRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventRuleResponseUnmarshaller.Instance;
 
@@ -1457,7 +1457,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetEventRule">REST API Reference for GetEventRule Operation</seealso>
         public virtual IAsyncResult BeginGetEventRule(GetEventRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventRuleResponseUnmarshaller.Instance;
 
@@ -1505,7 +1505,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationChildEvent">REST API Reference for GetManagedNotificationChildEvent Operation</seealso>
         public virtual GetManagedNotificationChildEventResponse GetManagedNotificationChildEvent(GetManagedNotificationChildEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationChildEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationChildEventResponseUnmarshaller.Instance;
 
@@ -1526,7 +1526,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationChildEvent">REST API Reference for GetManagedNotificationChildEvent Operation</seealso>
         public virtual IAsyncResult BeginGetManagedNotificationChildEvent(GetManagedNotificationChildEventRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationChildEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationChildEventResponseUnmarshaller.Instance;
 
@@ -1574,7 +1574,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationConfiguration">REST API Reference for GetManagedNotificationConfiguration Operation</seealso>
         public virtual GetManagedNotificationConfigurationResponse GetManagedNotificationConfiguration(GetManagedNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationConfiguration">REST API Reference for GetManagedNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetManagedNotificationConfiguration(GetManagedNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1643,7 +1643,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationEvent">REST API Reference for GetManagedNotificationEvent Operation</seealso>
         public virtual GetManagedNotificationEventResponse GetManagedNotificationEvent(GetManagedNotificationEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationEventResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetManagedNotificationEvent">REST API Reference for GetManagedNotificationEvent Operation</seealso>
         public virtual IAsyncResult BeginGetManagedNotificationEvent(GetManagedNotificationEventRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedNotificationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedNotificationEventResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationConfiguration">REST API Reference for GetNotificationConfiguration Operation</seealso>
         public virtual GetNotificationConfigurationResponse GetNotificationConfiguration(GetNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1733,7 +1733,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationConfiguration">REST API Reference for GetNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetNotificationConfiguration(GetNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationEvent">REST API Reference for GetNotificationEvent Operation</seealso>
         public virtual GetNotificationEventResponse GetNotificationEvent(GetNotificationEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationEventResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationEvent">REST API Reference for GetNotificationEvent Operation</seealso>
         public virtual IAsyncResult BeginGetNotificationEvent(GetNotificationEventRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationEventResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationsAccessForOrganization">REST API Reference for GetNotificationsAccessForOrganization Operation</seealso>
         public virtual GetNotificationsAccessForOrganizationResponse GetNotificationsAccessForOrganization(GetNotificationsAccessForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1881,7 +1881,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/GetNotificationsAccessForOrganization">REST API Reference for GetNotificationsAccessForOrganization Operation</seealso>
         public virtual IAsyncResult BeginGetNotificationsAccessForOrganization(GetNotificationsAccessForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationsAccessForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationsAccessForOrganizationResponseUnmarshaller.Instance;
 
@@ -1929,7 +1929,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1999,7 +1999,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListEventRules">REST API Reference for ListEventRules Operation</seealso>
         public virtual ListEventRulesResponse ListEventRules(ListEventRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventRulesResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListEventRules">REST API Reference for ListEventRules Operation</seealso>
         public virtual IAsyncResult BeginListEventRules(ListEventRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventRulesResponseUnmarshaller.Instance;
 
@@ -2069,7 +2069,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChannelAssociations">REST API Reference for ListManagedNotificationChannelAssociations Operation</seealso>
         public virtual ListManagedNotificationChannelAssociationsResponse ListManagedNotificationChannelAssociations(ListManagedNotificationChannelAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationChannelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationChannelAssociationsResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChannelAssociations">REST API Reference for ListManagedNotificationChannelAssociations Operation</seealso>
         public virtual IAsyncResult BeginListManagedNotificationChannelAssociations(ListManagedNotificationChannelAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationChannelAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationChannelAssociationsResponseUnmarshaller.Instance;
 
@@ -2137,7 +2137,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChildEvents">REST API Reference for ListManagedNotificationChildEvents Operation</seealso>
         public virtual ListManagedNotificationChildEventsResponse ListManagedNotificationChildEvents(ListManagedNotificationChildEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationChildEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationChildEventsResponseUnmarshaller.Instance;
 
@@ -2158,7 +2158,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationChildEvents">REST API Reference for ListManagedNotificationChildEvents Operation</seealso>
         public virtual IAsyncResult BeginListManagedNotificationChildEvents(ListManagedNotificationChildEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationChildEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationChildEventsResponseUnmarshaller.Instance;
 
@@ -2204,7 +2204,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationConfigurations">REST API Reference for ListManagedNotificationConfigurations Operation</seealso>
         public virtual ListManagedNotificationConfigurationsResponse ListManagedNotificationConfigurations(ListManagedNotificationConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2225,7 +2225,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationConfigurations">REST API Reference for ListManagedNotificationConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListManagedNotificationConfigurations(ListManagedNotificationConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2271,7 +2271,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationEvents">REST API Reference for ListManagedNotificationEvents Operation</seealso>
         public virtual ListManagedNotificationEventsResponse ListManagedNotificationEvents(ListManagedNotificationEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationEventsResponseUnmarshaller.Instance;
 
@@ -2292,7 +2292,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListManagedNotificationEvents">REST API Reference for ListManagedNotificationEvents Operation</seealso>
         public virtual IAsyncResult BeginListManagedNotificationEvents(ListManagedNotificationEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedNotificationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedNotificationEventsResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
@@ -2407,7 +2407,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationConfigurations">REST API Reference for ListNotificationConfigurations Operation</seealso>
         public virtual ListNotificationConfigurationsResponse ListNotificationConfigurations(ListNotificationConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2428,7 +2428,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationConfigurations">REST API Reference for ListNotificationConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListNotificationConfigurations(ListNotificationConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2486,7 +2486,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationEvents">REST API Reference for ListNotificationEvents Operation</seealso>
         public virtual ListNotificationEventsResponse ListNotificationEvents(ListNotificationEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationEventsResponseUnmarshaller.Instance;
 
@@ -2507,7 +2507,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationEvents">REST API Reference for ListNotificationEvents Operation</seealso>
         public virtual IAsyncResult BeginListNotificationEvents(ListNotificationEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationEventsResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationHubs">REST API Reference for ListNotificationHubs Operation</seealso>
         public virtual ListNotificationHubsResponse ListNotificationHubs(ListNotificationHubsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationHubsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationHubsResponseUnmarshaller.Instance;
 
@@ -2573,7 +2573,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListNotificationHubs">REST API Reference for ListNotificationHubs Operation</seealso>
         public virtual IAsyncResult BeginListNotificationHubs(ListNotificationHubsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationHubsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationHubsResponseUnmarshaller.Instance;
 
@@ -2621,7 +2621,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
         public virtual ListOrganizationalUnitsResponse ListOrganizationalUnits(ListOrganizationalUnitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationalUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationalUnitsResponseUnmarshaller.Instance;
 
@@ -2642,7 +2642,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListOrganizationalUnits">REST API Reference for ListOrganizationalUnits Operation</seealso>
         public virtual IAsyncResult BeginListOrganizationalUnits(ListOrganizationalUnitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationalUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationalUnitsResponseUnmarshaller.Instance;
 
@@ -2702,7 +2702,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2780,7 +2780,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/RegisterNotificationHub">REST API Reference for RegisterNotificationHub Operation</seealso>
         public virtual RegisterNotificationHubResponse RegisterNotificationHub(RegisterNotificationHubRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterNotificationHubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterNotificationHubResponseUnmarshaller.Instance;
 
@@ -2801,7 +2801,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/RegisterNotificationHub">REST API Reference for RegisterNotificationHub Operation</seealso>
         public virtual IAsyncResult BeginRegisterNotificationHub(RegisterNotificationHubRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterNotificationHubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterNotificationHubResponseUnmarshaller.Instance;
 
@@ -2861,7 +2861,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2882,7 +2882,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2937,7 +2937,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2958,7 +2958,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3009,7 +3009,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateEventRule">REST API Reference for UpdateEventRule Operation</seealso>
         public virtual UpdateEventRuleResponse UpdateEventRule(UpdateEventRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventRuleResponseUnmarshaller.Instance;
 
@@ -3030,7 +3030,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateEventRule">REST API Reference for UpdateEventRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventRule(UpdateEventRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventRuleResponseUnmarshaller.Instance;
 
@@ -3081,7 +3081,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
         public virtual UpdateNotificationConfigurationResponse UpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -3102,7 +3102,7 @@ namespace Amazon.Notifications
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
 

@@ -306,7 +306,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AssociateLicense">REST API Reference for AssociateLicense Operation</seealso>
         public virtual AssociateLicenseResponse AssociateLicense(AssociateLicenseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLicenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLicenseResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AssociateLicense">REST API Reference for AssociateLicense Operation</seealso>
         public virtual IAsyncResult BeginAssociateLicense(AssociateLicenseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLicenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLicenseResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkspace(CreateWorkspaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">REST API Reference for CreateWorkspaceApiKey Operation</seealso>
         public virtual CreateWorkspaceApiKeyResponse CreateWorkspaceApiKey(CreateWorkspaceApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceApiKeyResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceApiKey">REST API Reference for CreateWorkspaceApiKey Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkspaceApiKey(CreateWorkspaceApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceApiKeyResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">REST API Reference for CreateWorkspaceServiceAccount Operation</seealso>
         public virtual CreateWorkspaceServiceAccountResponse CreateWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceServiceAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceServiceAccountResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">REST API Reference for CreateWorkspaceServiceAccount Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceServiceAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceServiceAccountResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken">REST API Reference for CreateWorkspaceServiceAccountToken Operation</seealso>
         public virtual CreateWorkspaceServiceAccountTokenResponse CreateWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceServiceAccountTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
 
@@ -681,7 +681,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken">REST API Reference for CreateWorkspaceServiceAccountToken Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceServiceAccountTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkspace(DeleteWorkspaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">REST API Reference for DeleteWorkspaceApiKey Operation</seealso>
         public virtual DeleteWorkspaceApiKeyResponse DeleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceApiKeyResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceApiKey">REST API Reference for DeleteWorkspaceApiKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceApiKeyResponseUnmarshaller.Instance;
 
@@ -894,7 +894,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount">REST API Reference for DeleteWorkspaceServiceAccount Operation</seealso>
         public virtual DeleteWorkspaceServiceAccountResponse DeleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceServiceAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountResponseUnmarshaller.Instance;
 
@@ -915,7 +915,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount">REST API Reference for DeleteWorkspaceServiceAccount Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceServiceAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountResponseUnmarshaller.Instance;
 
@@ -978,7 +978,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken">REST API Reference for DeleteWorkspaceServiceAccountToken Operation</seealso>
         public virtual DeleteWorkspaceServiceAccountTokenResponse DeleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceServiceAccountTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken">REST API Reference for DeleteWorkspaceServiceAccountToken Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceServiceAccountTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceServiceAccountTokenResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
         public virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
 
@@ -1068,7 +1068,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
         public virtual IAsyncResult BeginDescribeWorkspace(DescribeWorkspaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
 
@@ -1120,7 +1120,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceAuthentication">REST API Reference for DescribeWorkspaceAuthentication Operation</seealso>
         public virtual DescribeWorkspaceAuthenticationResponse DescribeWorkspaceAuthentication(DescribeWorkspaceAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceAuthenticationResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceAuthentication">REST API Reference for DescribeWorkspaceAuthentication Operation</seealso>
         public virtual IAsyncResult BeginDescribeWorkspaceAuthentication(DescribeWorkspaceAuthenticationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceAuthenticationResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
         public virtual DescribeWorkspaceConfigurationResponse DescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -1207,7 +1207,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DisassociateLicense">REST API Reference for DisassociateLicense Operation</seealso>
         public virtual DisassociateLicenseResponse DisassociateLicense(DisassociateLicenseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLicenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLicenseResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DisassociateLicense">REST API Reference for DisassociateLicense Operation</seealso>
         public virtual IAsyncResult BeginDisassociateLicense(DisassociateLicenseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLicenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLicenseResponseUnmarshaller.Instance;
 
@@ -1328,7 +1328,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
         public virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
 
@@ -1349,7 +1349,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
         public virtual IAsyncResult BeginListPermissions(ListPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1420,7 +1420,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1469,7 +1469,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -1533,7 +1533,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1554,7 +1554,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual IAsyncResult BeginListWorkspaces(ListWorkspacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1611,7 +1611,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts">REST API Reference for ListWorkspaceServiceAccounts Operation</seealso>
         public virtual ListWorkspaceServiceAccountsResponse ListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspaceServiceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspaceServiceAccountsResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts">REST API Reference for ListWorkspaceServiceAccounts Operation</seealso>
         public virtual IAsyncResult BeginListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspaceServiceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspaceServiceAccountsResponseUnmarshaller.Instance;
 
@@ -1694,7 +1694,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens">REST API Reference for ListWorkspaceServiceAccountTokens Operation</seealso>
         public virtual ListWorkspaceServiceAccountTokensResponse ListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspaceServiceAccountTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspaceServiceAccountTokensResponseUnmarshaller.Instance;
 
@@ -1715,7 +1715,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens">REST API Reference for ListWorkspaceServiceAccountTokens Operation</seealso>
         public virtual IAsyncResult BeginListWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspaceServiceAccountTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspaceServiceAccountTokensResponseUnmarshaller.Instance;
 
@@ -1772,7 +1772,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1912,7 +1912,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdatePermissions">REST API Reference for UpdatePermissions Operation</seealso>
         public virtual UpdatePermissionsResponse UpdatePermissions(UpdatePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionsResponseUnmarshaller.Instance;
 
@@ -1933,7 +1933,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdatePermissions">REST API Reference for UpdatePermissions Operation</seealso>
         public virtual IAsyncResult BeginUpdatePermissions(UpdatePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionsResponseUnmarshaller.Instance;
 
@@ -1996,7 +1996,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspace">REST API Reference for UpdateWorkspace Operation</seealso>
         public virtual UpdateWorkspaceResponse UpdateWorkspace(UpdateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspace">REST API Reference for UpdateWorkspace Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkspace(UpdateWorkspaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceAuthentication">REST API Reference for UpdateWorkspaceAuthentication Operation</seealso>
         public virtual UpdateWorkspaceAuthenticationResponse UpdateWorkspaceAuthentication(UpdateWorkspaceAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAuthenticationResponseUnmarshaller.Instance;
 
@@ -2099,7 +2099,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceAuthentication">REST API Reference for UpdateWorkspaceAuthentication Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkspaceAuthentication(UpdateWorkspaceAuthenticationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceAuthenticationResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
         public virtual UpdateWorkspaceConfigurationResponse UpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
 
@@ -2171,7 +2171,7 @@ namespace Amazon.ManagedGrafana
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
 

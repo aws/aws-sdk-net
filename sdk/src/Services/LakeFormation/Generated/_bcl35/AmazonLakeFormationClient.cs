@@ -296,7 +296,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource">REST API Reference for AddLFTagsToResource Operation</seealso>
         public virtual AddLFTagsToResourceResponse AddLFTagsToResource(AddLFTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLFTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLFTagsToResourceResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource">REST API Reference for AddLFTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddLFTagsToResource(AddLFTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLFTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLFTagsToResourceResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">REST API Reference for AssumeDecoratedRoleWithSAML Operation</seealso>
         public virtual AssumeDecoratedRoleWithSAMLResponse AssumeDecoratedRoleWithSAML(AssumeDecoratedRoleWithSAMLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeDecoratedRoleWithSAMLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AssumeDecoratedRoleWithSAML">REST API Reference for AssumeDecoratedRoleWithSAML Operation</seealso>
         public virtual IAsyncResult BeginAssumeDecoratedRoleWithSAML(AssumeDecoratedRoleWithSAMLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeDecoratedRoleWithSAMLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchGrantPermissions">REST API Reference for BatchGrantPermissions Operation</seealso>
         public virtual BatchGrantPermissionsResponse BatchGrantPermissions(BatchGrantPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGrantPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGrantPermissionsResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchGrantPermissions">REST API Reference for BatchGrantPermissions Operation</seealso>
         public virtual IAsyncResult BeginBatchGrantPermissions(BatchGrantPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGrantPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGrantPermissionsResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchRevokePermissions">REST API Reference for BatchRevokePermissions Operation</seealso>
         public virtual BatchRevokePermissionsResponse BatchRevokePermissions(BatchRevokePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRevokePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRevokePermissionsResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchRevokePermissions">REST API Reference for BatchRevokePermissions Operation</seealso>
         public virtual IAsyncResult BeginBatchRevokePermissions(BatchRevokePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRevokePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRevokePermissionsResponseUnmarshaller.Instance;
 
@@ -577,7 +577,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CancelTransaction">REST API Reference for CancelTransaction Operation</seealso>
         public virtual CancelTransactionResponse CancelTransaction(CancelTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTransactionResponseUnmarshaller.Instance;
 
@@ -598,7 +598,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CancelTransaction">REST API Reference for CancelTransaction Operation</seealso>
         public virtual IAsyncResult BeginCancelTransaction(CancelTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTransactionResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         public virtual CommitTransactionResponse CommitTransaction(CommitTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         public virtual IAsyncResult BeginCommitTransaction(CommitTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
 
@@ -727,7 +727,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateDataCellsFilter">REST API Reference for CreateDataCellsFilter Operation</seealso>
         public virtual CreateDataCellsFilterResponse CreateDataCellsFilter(CreateDataCellsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateDataCellsFilter">REST API Reference for CreateDataCellsFilter Operation</seealso>
         public virtual IAsyncResult BeginCreateDataCellsFilter(CreateDataCellsFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration">REST API Reference for CreateLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual CreateLakeFormationIdentityCenterConfigurationResponse CreateLakeFormationIdentityCenterConfiguration(CreateLakeFormationIdentityCenterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration">REST API Reference for CreateLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateLakeFormationIdentityCenterConfiguration(CreateLakeFormationIdentityCenterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
         public virtual CreateLakeFormationOptInResponse CreateLakeFormationOptIn(CreateLakeFormationOptInRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLakeFormationOptInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLakeFormationOptInResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">REST API Reference for CreateLakeFormationOptIn Operation</seealso>
         public virtual IAsyncResult BeginCreateLakeFormationOptIn(CreateLakeFormationOptInRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLakeFormationOptInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLakeFormationOptInResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag">REST API Reference for CreateLFTag Operation</seealso>
         public virtual CreateLFTagResponse CreateLFTag(CreateLFTagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLFTagResponseUnmarshaller.Instance;
 
@@ -968,7 +968,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag">REST API Reference for CreateLFTag Operation</seealso>
         public virtual IAsyncResult BeginCreateLFTag(CreateLFTagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLFTagResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
         public virtual CreateLFTagExpressionResponse CreateLFTagExpression(CreateLFTagExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
         public virtual IAsyncResult BeginCreateLFTagExpression(CreateLFTagExpressionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteDataCellsFilter">REST API Reference for DeleteDataCellsFilter Operation</seealso>
         public virtual DeleteDataCellsFilterResponse DeleteDataCellsFilter(DeleteDataCellsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteDataCellsFilter">REST API Reference for DeleteDataCellsFilter Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataCellsFilter(DeleteDataCellsFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration">REST API Reference for DeleteLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual DeleteLakeFormationIdentityCenterConfigurationResponse DeleteLakeFormationIdentityCenterConfiguration(DeleteLakeFormationIdentityCenterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -1194,7 +1194,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration">REST API Reference for DeleteLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteLakeFormationIdentityCenterConfiguration(DeleteLakeFormationIdentityCenterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">REST API Reference for DeleteLakeFormationOptIn Operation</seealso>
         public virtual DeleteLakeFormationOptInResponse DeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLakeFormationOptInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLakeFormationOptInResponseUnmarshaller.Instance;
 
@@ -1267,7 +1267,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">REST API Reference for DeleteLakeFormationOptIn Operation</seealso>
         public virtual IAsyncResult BeginDeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLakeFormationOptInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLakeFormationOptInResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">REST API Reference for DeleteLFTag Operation</seealso>
         public virtual DeleteLFTagResponse DeleteLFTag(DeleteLFTagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLFTagResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">REST API Reference for DeleteLFTag Operation</seealso>
         public virtual IAsyncResult BeginDeleteLFTag(DeleteLFTagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLFTagResponseUnmarshaller.Instance;
 
@@ -1390,7 +1390,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
         public virtual DeleteLFTagExpressionResponse DeleteLFTagExpression(DeleteLFTagExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
         public virtual IAsyncResult BeginDeleteLFTagExpression(DeleteLFTagExpressionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteObjectsOnCancel">REST API Reference for DeleteObjectsOnCancel Operation</seealso>
         public virtual DeleteObjectsOnCancelResponse DeleteObjectsOnCancel(DeleteObjectsOnCancelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsOnCancelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsOnCancelResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteObjectsOnCancel">REST API Reference for DeleteObjectsOnCancel Operation</seealso>
         public virtual IAsyncResult BeginDeleteObjectsOnCancel(DeleteObjectsOnCancelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsOnCancelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsOnCancelResponseUnmarshaller.Instance;
 
@@ -1552,7 +1552,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource">REST API Reference for DeregisterResource Operation</seealso>
         public virtual DeregisterResourceResponse DeregisterResource(DeregisterResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterResourceResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource">REST API Reference for DeregisterResource Operation</seealso>
         public virtual IAsyncResult BeginDeregisterResource(DeregisterResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterResourceResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration">REST API Reference for DescribeLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual DescribeLakeFormationIdentityCenterConfigurationResponse DescribeLakeFormationIdentityCenterConfiguration(DescribeLakeFormationIdentityCenterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -1642,7 +1642,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration">REST API Reference for DescribeLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeLakeFormationIdentityCenterConfiguration(DescribeLakeFormationIdentityCenterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual DescribeResourceResponse DescribeResource(DescribeResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual IAsyncResult BeginDescribeResource(DescribeResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
@@ -1753,7 +1753,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeTransaction">REST API Reference for DescribeTransaction Operation</seealso>
         public virtual DescribeTransactionResponse DescribeTransaction(DescribeTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransactionResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeTransaction">REST API Reference for DescribeTransaction Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransaction(DescribeTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransactionResponseUnmarshaller.Instance;
 
@@ -1836,7 +1836,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ExtendTransaction">REST API Reference for ExtendTransaction Operation</seealso>
         public virtual ExtendTransactionResponse ExtendTransaction(ExtendTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExtendTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExtendTransactionResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ExtendTransaction">REST API Reference for ExtendTransaction Operation</seealso>
         public virtual IAsyncResult BeginExtendTransaction(ExtendTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExtendTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExtendTransactionResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">REST API Reference for GetDataCellsFilter Operation</seealso>
         public virtual GetDataCellsFilterResponse GetDataCellsFilter(GetDataCellsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -1926,7 +1926,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter">REST API Reference for GetDataCellsFilter Operation</seealso>
         public virtual IAsyncResult BeginGetDataCellsFilter(GetDataCellsFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
         public virtual GetDataLakePrincipalResponse GetDataLakePrincipal(GetDataLakePrincipalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal">REST API Reference for GetDataLakePrincipal Operation</seealso>
         public virtual IAsyncResult BeginGetDataLakePrincipal(GetDataLakePrincipalRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakePrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakePrincipalResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">REST API Reference for GetDataLakeSettings Operation</seealso>
         public virtual GetDataLakeSettingsResponse GetDataLakeSettings(GetDataLakeSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeSettingsResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">REST API Reference for GetDataLakeSettings Operation</seealso>
         public virtual IAsyncResult BeginGetDataLakeSettings(GetDataLakeSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeSettingsResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">REST API Reference for GetEffectivePermissionsForPath Operation</seealso>
         public virtual GetEffectivePermissionsForPathResponse GetEffectivePermissionsForPath(GetEffectivePermissionsForPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectivePermissionsForPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectivePermissionsForPathResponseUnmarshaller.Instance;
 
@@ -2121,7 +2121,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">REST API Reference for GetEffectivePermissionsForPath Operation</seealso>
         public virtual IAsyncResult BeginGetEffectivePermissionsForPath(GetEffectivePermissionsForPathRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectivePermissionsForPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectivePermissionsForPathResponseUnmarshaller.Instance;
 
@@ -2169,7 +2169,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag">REST API Reference for GetLFTag Operation</seealso>
         public virtual GetLFTagResponse GetLFTag(GetLFTagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLFTagResponseUnmarshaller.Instance;
 
@@ -2190,7 +2190,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag">REST API Reference for GetLFTag Operation</seealso>
         public virtual IAsyncResult BeginGetLFTag(GetLFTagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLFTagResponseUnmarshaller.Instance;
 
@@ -2239,7 +2239,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
         public virtual GetLFTagExpressionResponse GetLFTagExpression(GetLFTagExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -2260,7 +2260,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
         public virtual IAsyncResult BeginGetLFTagExpression(GetLFTagExpressionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -2304,7 +2304,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetQueryState">REST API Reference for GetQueryState Operation</seealso>
         public virtual GetQueryStateResponse GetQueryState(GetQueryStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStateResponseUnmarshaller.Instance;
 
@@ -2325,7 +2325,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetQueryState">REST API Reference for GetQueryState Operation</seealso>
         public virtual IAsyncResult BeginGetQueryState(GetQueryStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStateResponseUnmarshaller.Instance;
 
@@ -2376,7 +2376,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetQueryStatistics">REST API Reference for GetQueryStatistics Operation</seealso>
         public virtual GetQueryStatisticsResponse GetQueryStatistics(GetQueryStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatisticsResponseUnmarshaller.Instance;
 
@@ -2397,7 +2397,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetQueryStatistics">REST API Reference for GetQueryStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetQueryStatistics(GetQueryStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatisticsResponseUnmarshaller.Instance;
 
@@ -2448,7 +2448,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags">REST API Reference for GetResourceLFTags Operation</seealso>
         public virtual GetResourceLFTagsResponse GetResourceLFTags(GetResourceLFTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceLFTagsResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags">REST API Reference for GetResourceLFTags Operation</seealso>
         public virtual IAsyncResult BeginGetResourceLFTags(GetResourceLFTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceLFTagsResponseUnmarshaller.Instance;
 
@@ -2525,7 +2525,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTableObjects">REST API Reference for GetTableObjects Operation</seealso>
         public virtual GetTableObjectsResponse GetTableObjects(GetTableObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableObjectsResponseUnmarshaller.Instance;
 
@@ -2546,7 +2546,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTableObjects">REST API Reference for GetTableObjects Operation</seealso>
         public virtual IAsyncResult BeginGetTableObjects(GetTableObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableObjectsResponseUnmarshaller.Instance;
 
@@ -2603,7 +2603,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
         public virtual GetTemporaryGluePartitionCredentialsResponse GetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemporaryGluePartitionCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemporaryGluePartitionCredentialsResponseUnmarshaller.Instance;
 
@@ -2624,7 +2624,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
         public virtual IAsyncResult BeginGetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemporaryGluePartitionCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemporaryGluePartitionCredentialsResponseUnmarshaller.Instance;
 
@@ -2687,7 +2687,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
         public virtual GetTemporaryGlueTableCredentialsResponse GetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemporaryGlueTableCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemporaryGlueTableCredentialsResponseUnmarshaller.Instance;
 
@@ -2708,7 +2708,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
         public virtual IAsyncResult BeginGetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemporaryGlueTableCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemporaryGlueTableCredentialsResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnitResults">REST API Reference for GetWorkUnitResults Operation</seealso>
         public virtual GetWorkUnitResultsResponse GetWorkUnitResults(GetWorkUnitResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkUnitResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkUnitResultsResponseUnmarshaller.Instance;
 
@@ -2778,7 +2778,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnitResults">REST API Reference for GetWorkUnitResults Operation</seealso>
         public virtual IAsyncResult BeginGetWorkUnitResults(GetWorkUnitResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkUnitResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkUnitResultsResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnits">REST API Reference for GetWorkUnits Operation</seealso>
         public virtual GetWorkUnitsResponse GetWorkUnits(GetWorkUnitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkUnitsResponseUnmarshaller.Instance;
 
@@ -2847,7 +2847,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnits">REST API Reference for GetWorkUnits Operation</seealso>
         public virtual IAsyncResult BeginGetWorkUnits(GetWorkUnitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkUnitsResponseUnmarshaller.Instance;
 
@@ -2896,7 +2896,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">REST API Reference for GrantPermissions Operation</seealso>
         public virtual GrantPermissionsResponse GrantPermissions(GrantPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantPermissionsResponseUnmarshaller.Instance;
 
@@ -2917,7 +2917,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">REST API Reference for GrantPermissions Operation</seealso>
         public virtual IAsyncResult BeginGrantPermissions(GrantPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantPermissionsResponseUnmarshaller.Instance;
 
@@ -2962,7 +2962,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListDataCellsFilter">REST API Reference for ListDataCellsFilter Operation</seealso>
         public virtual ListDataCellsFilterResponse ListDataCellsFilter(ListDataCellsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -2983,7 +2983,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListDataCellsFilter">REST API Reference for ListDataCellsFilter Operation</seealso>
         public virtual IAsyncResult BeginListDataCellsFilter(ListDataCellsFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
         public virtual ListLakeFormationOptInsResponse ListLakeFormationOptIns(ListLakeFormationOptInsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLakeFormationOptInsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLakeFormationOptInsResponseUnmarshaller.Instance;
 
@@ -3050,7 +3050,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
         public virtual IAsyncResult BeginListLakeFormationOptIns(ListLakeFormationOptInsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLakeFormationOptInsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLakeFormationOptInsResponseUnmarshaller.Instance;
 
@@ -3100,7 +3100,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
         public virtual ListLFTagExpressionsResponse ListLFTagExpressions(ListLFTagExpressionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLFTagExpressionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLFTagExpressionsResponseUnmarshaller.Instance;
 
@@ -3121,7 +3121,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
         public virtual IAsyncResult BeginListLFTagExpressions(ListLFTagExpressionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLFTagExpressionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLFTagExpressionsResponseUnmarshaller.Instance;
 
@@ -3169,7 +3169,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags">REST API Reference for ListLFTags Operation</seealso>
         public virtual ListLFTagsResponse ListLFTags(ListLFTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLFTagsResponseUnmarshaller.Instance;
 
@@ -3190,7 +3190,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags">REST API Reference for ListLFTags Operation</seealso>
         public virtual IAsyncResult BeginListLFTags(ListLFTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLFTagsResponseUnmarshaller.Instance;
 
@@ -3244,7 +3244,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
         public virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
         public virtual IAsyncResult BeginListPermissions(ListPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionsResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -3328,7 +3328,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -3373,7 +3373,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListTableStorageOptimizers">REST API Reference for ListTableStorageOptimizers Operation</seealso>
         public virtual ListTableStorageOptimizersResponse ListTableStorageOptimizers(ListTableStorageOptimizersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableStorageOptimizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableStorageOptimizersResponseUnmarshaller.Instance;
 
@@ -3394,7 +3394,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListTableStorageOptimizers">REST API Reference for ListTableStorageOptimizers Operation</seealso>
         public virtual IAsyncResult BeginListTableStorageOptimizers(ListTableStorageOptimizersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableStorageOptimizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableStorageOptimizersResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListTransactions">REST API Reference for ListTransactions Operation</seealso>
         public virtual ListTransactionsResponse ListTransactions(ListTransactionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 
@@ -3465,7 +3465,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListTransactions">REST API Reference for ListTransactions Operation</seealso>
         public virtual IAsyncResult BeginListTransactions(ListTransactionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 
@@ -3513,7 +3513,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">REST API Reference for PutDataLakeSettings Operation</seealso>
         public virtual PutDataLakeSettingsResponse PutDataLakeSettings(PutDataLakeSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataLakeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataLakeSettingsResponseUnmarshaller.Instance;
 
@@ -3534,7 +3534,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">REST API Reference for PutDataLakeSettings Operation</seealso>
         public virtual IAsyncResult BeginPutDataLakeSettings(PutDataLakeSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataLakeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataLakeSettingsResponseUnmarshaller.Instance;
 
@@ -3615,7 +3615,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">REST API Reference for RegisterResource Operation</seealso>
         public virtual RegisterResourceResponse RegisterResource(RegisterResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterResourceResponseUnmarshaller.Instance;
 
@@ -3636,7 +3636,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">REST API Reference for RegisterResource Operation</seealso>
         public virtual IAsyncResult BeginRegisterResource(RegisterResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterResourceResponseUnmarshaller.Instance;
 
@@ -3692,7 +3692,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource">REST API Reference for RemoveLFTagsFromResource Operation</seealso>
         public virtual RemoveLFTagsFromResourceResponse RemoveLFTagsFromResource(RemoveLFTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLFTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLFTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -3713,7 +3713,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource">REST API Reference for RemoveLFTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveLFTagsFromResource(RemoveLFTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLFTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLFTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -3756,7 +3756,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RevokePermissions">REST API Reference for RevokePermissions Operation</seealso>
         public virtual RevokePermissionsResponse RevokePermissions(RevokePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokePermissionsResponseUnmarshaller.Instance;
 
@@ -3777,7 +3777,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RevokePermissions">REST API Reference for RevokePermissions Operation</seealso>
         public virtual IAsyncResult BeginRevokePermissions(RevokePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokePermissionsResponseUnmarshaller.Instance;
 
@@ -3832,7 +3832,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags">REST API Reference for SearchDatabasesByLFTags Operation</seealso>
         public virtual SearchDatabasesByLFTagsResponse SearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDatabasesByLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDatabasesByLFTagsResponseUnmarshaller.Instance;
 
@@ -3853,7 +3853,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags">REST API Reference for SearchDatabasesByLFTags Operation</seealso>
         public virtual IAsyncResult BeginSearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDatabasesByLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDatabasesByLFTagsResponseUnmarshaller.Instance;
 
@@ -3908,7 +3908,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags">REST API Reference for SearchTablesByLFTags Operation</seealso>
         public virtual SearchTablesByLFTagsResponse SearchTablesByLFTags(SearchTablesByLFTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTablesByLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTablesByLFTagsResponseUnmarshaller.Instance;
 
@@ -3929,7 +3929,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags">REST API Reference for SearchTablesByLFTags Operation</seealso>
         public virtual IAsyncResult BeginSearchTablesByLFTags(SearchTablesByLFTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTablesByLFTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTablesByLFTagsResponseUnmarshaller.Instance;
 
@@ -3980,7 +3980,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StartQueryPlanning">REST API Reference for StartQueryPlanning Operation</seealso>
         public virtual StartQueryPlanningResponse StartQueryPlanning(StartQueryPlanningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryPlanningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryPlanningResponseUnmarshaller.Instance;
 
@@ -4001,7 +4001,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StartQueryPlanning">REST API Reference for StartQueryPlanning Operation</seealso>
         public virtual IAsyncResult BeginStartQueryPlanning(StartQueryPlanningRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryPlanningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryPlanningResponseUnmarshaller.Instance;
 
@@ -4041,7 +4041,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StartTransaction">REST API Reference for StartTransaction Operation</seealso>
         public virtual StartTransactionResponse StartTransaction(StartTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransactionResponseUnmarshaller.Instance;
 
@@ -4062,7 +4062,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StartTransaction">REST API Reference for StartTransaction Operation</seealso>
         public virtual IAsyncResult BeginStartTransaction(StartTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransactionResponseUnmarshaller.Instance;
 
@@ -4113,7 +4113,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">REST API Reference for UpdateDataCellsFilter Operation</seealso>
         public virtual UpdateDataCellsFilterResponse UpdateDataCellsFilter(UpdateDataCellsFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -4134,7 +4134,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter">REST API Reference for UpdateDataCellsFilter Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataCellsFilter(UpdateDataCellsFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCellsFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCellsFilterResponseUnmarshaller.Instance;
 
@@ -4185,7 +4185,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration">REST API Reference for UpdateLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual UpdateLakeFormationIdentityCenterConfigurationResponse UpdateLakeFormationIdentityCenterConfiguration(UpdateLakeFormationIdentityCenterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -4206,7 +4206,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration">REST API Reference for UpdateLakeFormationIdentityCenterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateLakeFormationIdentityCenterConfiguration(UpdateLakeFormationIdentityCenterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLakeFormationIdentityCenterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLakeFormationIdentityCenterConfigurationResponseUnmarshaller.Instance;
 
@@ -4261,7 +4261,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag">REST API Reference for UpdateLFTag Operation</seealso>
         public virtual UpdateLFTagResponse UpdateLFTag(UpdateLFTagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLFTagResponseUnmarshaller.Instance;
 
@@ -4282,7 +4282,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag">REST API Reference for UpdateLFTag Operation</seealso>
         public virtual IAsyncResult BeginUpdateLFTag(UpdateLFTagRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLFTagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLFTagResponseUnmarshaller.Instance;
 
@@ -4336,7 +4336,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
         public virtual UpdateLFTagExpressionResponse UpdateLFTagExpression(UpdateLFTagExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -4357,7 +4357,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
         public virtual IAsyncResult BeginUpdateLFTagExpression(UpdateLFTagExpressionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLFTagExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLFTagExpressionResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -4424,7 +4424,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -4485,7 +4485,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableObjects">REST API Reference for UpdateTableObjects Operation</seealso>
         public virtual UpdateTableObjectsResponse UpdateTableObjects(UpdateTableObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableObjectsResponseUnmarshaller.Instance;
 
@@ -4506,7 +4506,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableObjects">REST API Reference for UpdateTableObjects Operation</seealso>
         public virtual IAsyncResult BeginUpdateTableObjects(UpdateTableObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableObjectsResponseUnmarshaller.Instance;
 
@@ -4551,7 +4551,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableStorageOptimizer">REST API Reference for UpdateTableStorageOptimizer Operation</seealso>
         public virtual UpdateTableStorageOptimizerResponse UpdateTableStorageOptimizer(UpdateTableStorageOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableStorageOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableStorageOptimizerResponseUnmarshaller.Instance;
 
@@ -4572,7 +4572,7 @@ namespace Amazon.LakeFormation
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableStorageOptimizer">REST API Reference for UpdateTableStorageOptimizer Operation</seealso>
         public virtual IAsyncResult BeginUpdateTableStorageOptimizer(UpdateTableStorageOptimizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableStorageOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableStorageOptimizerResponseUnmarshaller.Instance;
 

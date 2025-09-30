@@ -279,7 +279,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual BatchGetTokenBalanceResponse BatchGetTokenBalance(BatchGetTokenBalanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">REST API Reference for BatchGetTokenBalance Operation</seealso>
         public virtual Task<BatchGetTokenBalanceResponse> BatchGetTokenBalanceAsync(BatchGetTokenBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -342,7 +342,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual GetAssetContractResponse GetAssetContract(GetAssetContractRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetContractRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetContractResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetAssetContract">REST API Reference for GetAssetContract Operation</seealso>
         public virtual Task<GetAssetContractResponse> GetAssetContractAsync(GetAssetContractRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetContractRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetContractResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual GetTokenBalanceResponse GetTokenBalance(GetTokenBalanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTokenBalance">REST API Reference for GetTokenBalance Operation</seealso>
         public virtual Task<GetTokenBalanceResponse> GetTokenBalanceAsync(GetTokenBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual GetTransactionResponse GetTransaction(GetTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransactionResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTransaction">REST API Reference for GetTransaction Operation</seealso>
         public virtual Task<GetTransactionResponse> GetTransactionAsync(GetTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransactionResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual ListAssetContractsResponse ListAssetContracts(ListAssetContractsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetContractsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetContractsResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListAssetContracts">REST API Reference for ListAssetContracts Operation</seealso>
         public virtual Task<ListAssetContractsResponse> ListAssetContractsAsync(ListAssetContractsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetContractsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetContractsResponseUnmarshaller.Instance;
 
@@ -592,7 +592,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual ListFilteredTransactionEventsResponse ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
         public virtual Task<ListFilteredTransactionEventsResponse> ListFilteredTransactionEventsAsync(ListFilteredTransactionEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
 
@@ -650,7 +650,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual ListTokenBalancesResponse ListTokenBalances(ListTokenBalancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTokenBalancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTokenBalancesResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTokenBalances">REST API Reference for ListTokenBalances Operation</seealso>
         public virtual Task<ListTokenBalancesResponse> ListTokenBalancesAsync(ListTokenBalancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTokenBalancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTokenBalancesResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual ListTransactionEventsResponse ListTransactionEvents(ListTransactionEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionEventsResponseUnmarshaller.Instance;
 
@@ -769,7 +769,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactionEvents">REST API Reference for ListTransactionEvents Operation</seealso>
         public virtual Task<ListTransactionEventsResponse> ListTransactionEventsAsync(ListTransactionEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionEventsResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.ManagedBlockchainQuery
 
         internal virtual ListTransactionsResponse ListTransactions(ListTransactionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactions">REST API Reference for ListTransactions Operation</seealso>
         public virtual Task<ListTransactionsResponse> ListTransactionsAsync(ListTransactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 

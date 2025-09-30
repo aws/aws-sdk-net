@@ -314,7 +314,7 @@ namespace Amazon.ConnectContactLens
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/ListRealtimeContactAnalysisSegments">REST API Reference for ListRealtimeContactAnalysisSegments Operation</seealso>
         public virtual ListRealtimeContactAnalysisSegmentsResponse ListRealtimeContactAnalysisSegments(ListRealtimeContactAnalysisSegmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.ConnectContactLens
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/ListRealtimeContactAnalysisSegments">REST API Reference for ListRealtimeContactAnalysisSegments Operation</seealso>
         public virtual Task<ListRealtimeContactAnalysisSegmentsResponse> ListRealtimeContactAnalysisSegmentsAsync(ListRealtimeContactAnalysisSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRealtimeContactAnalysisSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRealtimeContactAnalysisSegmentsResponseUnmarshaller.Instance;
             

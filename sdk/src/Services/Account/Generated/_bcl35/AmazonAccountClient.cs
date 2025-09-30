@@ -301,7 +301,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
         public virtual AcceptPrimaryEmailUpdateResponse AcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AcceptPrimaryEmailUpdate">REST API Reference for AcceptPrimaryEmailUpdate Operation</seealso>
         public virtual IAsyncResult BeginAcceptPrimaryEmailUpdate(AcceptPrimaryEmailUpdateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">REST API Reference for DeleteAlternateContact Operation</seealso>
         public virtual DeleteAlternateContactResponse DeleteAlternateContact(DeleteAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlternateContactResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">REST API Reference for DeleteAlternateContact Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlternateContact(DeleteAlternateContactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlternateContactResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">REST API Reference for DisableRegion Operation</seealso>
         public virtual DisableRegionResponse DisableRegion(DisableRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">REST API Reference for DisableRegion Operation</seealso>
         public virtual IAsyncResult BeginDisableRegion(DisableRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
         public virtual EnableRegionResponse EnableRegion(EnableRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
         public virtual IAsyncResult BeginEnableRegion(EnableRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
         public virtual GetAccountInformationResponse GetAccountInformation(GetAccountInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAccountInformation">REST API Reference for GetAccountInformation Operation</seealso>
         public virtual IAsyncResult BeginGetAccountInformation(GetAccountInformationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountInformationResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">REST API Reference for GetAlternateContact Operation</seealso>
         public virtual GetAlternateContactResponse GetAlternateContact(GetAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlternateContactResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">REST API Reference for GetAlternateContact Operation</seealso>
         public virtual IAsyncResult BeginGetAlternateContact(GetAlternateContactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAlternateContactResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">REST API Reference for GetContactInformation Operation</seealso>
         public virtual GetContactInformationResponse GetContactInformation(GetContactInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">REST API Reference for GetContactInformation Operation</seealso>
         public virtual IAsyncResult BeginGetContactInformation(GetContactInformationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
 
@@ -853,7 +853,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
         public virtual GetPrimaryEmailResponse GetPrimaryEmail(GetPrimaryEmailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
 
@@ -874,7 +874,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmail">REST API Reference for GetPrimaryEmail Operation</seealso>
         public virtual IAsyncResult BeginGetPrimaryEmail(GetPrimaryEmailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrimaryEmailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrimaryEmailResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">REST API Reference for GetRegionOptStatus Operation</seealso>
         public virtual GetRegionOptStatusResponse GetRegionOptStatus(GetRegionOptStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">REST API Reference for GetRegionOptStatus Operation</seealso>
         public virtual IAsyncResult BeginGetRegionOptStatus(GetRegionOptStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">REST API Reference for ListRegions Operation</seealso>
         public virtual ListRegionsResponse ListRegions(ListRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">REST API Reference for ListRegions Operation</seealso>
         public virtual IAsyncResult BeginListRegions(ListRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
 
@@ -1062,7 +1062,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
         public virtual PutAccountNameResponse PutAccountName(PutAccountNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAccountName">REST API Reference for PutAccountName Operation</seealso>
         public virtual IAsyncResult BeginPutAccountName(PutAccountNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountNameResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">REST API Reference for PutAlternateContact Operation</seealso>
         public virtual PutAlternateContactResponse PutAlternateContact(PutAlternateContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlternateContactResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">REST API Reference for PutAlternateContact Operation</seealso>
         public virtual IAsyncResult BeginPutAlternateContact(PutAlternateContactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAlternateContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAlternateContactResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">REST API Reference for PutContactInformation Operation</seealso>
         public virtual PutContactInformationResponse PutContactInformation(PutContactInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">REST API Reference for PutContactInformation Operation</seealso>
         public virtual IAsyncResult BeginPutContactInformation(PutContactInformationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
         public virtual StartPrimaryEmailUpdateResponse StartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
@@ -1320,7 +1320,7 @@ namespace Amazon.Account
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/StartPrimaryEmailUpdate">REST API Reference for StartPrimaryEmailUpdate Operation</seealso>
         public virtual IAsyncResult BeginStartPrimaryEmailUpdate(StartPrimaryEmailUpdateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPrimaryEmailUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
 

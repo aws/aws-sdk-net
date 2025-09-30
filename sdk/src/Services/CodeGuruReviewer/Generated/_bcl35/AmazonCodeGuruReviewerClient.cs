@@ -339,7 +339,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">REST API Reference for AssociateRepository Operation</seealso>
         public virtual AssociateRepositoryResponse AssociateRepository(AssociateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRepositoryResponseUnmarshaller.Instance;
 
@@ -360,7 +360,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">REST API Reference for AssociateRepository Operation</seealso>
         public virtual IAsyncResult BeginAssociateRepository(AssociateRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRepositoryResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
         public virtual CreateCodeReviewResponse CreateCodeReview(CreateCodeReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
         public virtual IAsyncResult BeginCreateCodeReview(CreateCodeReviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">REST API Reference for DescribeCodeReview Operation</seealso>
         public virtual DescribeCodeReviewResponse DescribeCodeReview(DescribeCodeReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeReviewResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">REST API Reference for DescribeCodeReview Operation</seealso>
         public virtual IAsyncResult BeginDescribeCodeReview(DescribeCodeReviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeReviewResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">REST API Reference for DescribeRecommendationFeedback Operation</seealso>
         public virtual DescribeRecommendationFeedbackResponse DescribeRecommendationFeedback(DescribeRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">REST API Reference for DescribeRecommendationFeedback Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecommendationFeedback(DescribeRecommendationFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -623,7 +623,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRepositoryAssociation">REST API Reference for DescribeRepositoryAssociation Operation</seealso>
         public virtual DescribeRepositoryAssociationResponse DescribeRepositoryAssociation(DescribeRepositoryAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -644,7 +644,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRepositoryAssociation">REST API Reference for DescribeRepositoryAssociation Operation</seealso>
         public virtual IAsyncResult BeginDescribeRepositoryAssociation(DescribeRepositoryAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -696,7 +696,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DisassociateRepository">REST API Reference for DisassociateRepository Operation</seealso>
         public virtual DisassociateRepositoryResponse DisassociateRepository(DisassociateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRepositoryResponseUnmarshaller.Instance;
 
@@ -717,7 +717,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DisassociateRepository">REST API Reference for DisassociateRepository Operation</seealso>
         public virtual IAsyncResult BeginDisassociateRepository(DisassociateRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRepositoryResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
         public virtual ListCodeReviewsResponse ListCodeReviews(ListCodeReviewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
         public virtual IAsyncResult BeginListCodeReviews(ListCodeReviewsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">REST API Reference for ListRecommendationFeedback Operation</seealso>
         public virtual ListRecommendationFeedbackResponse ListRecommendationFeedback(ListRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -853,7 +853,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">REST API Reference for ListRecommendationFeedback Operation</seealso>
         public virtual IAsyncResult BeginListRecommendationFeedback(ListRecommendationFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual IAsyncResult BeginListRecommendations(ListRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRepositoryAssociations">REST API Reference for ListRepositoryAssociations Operation</seealso>
         public virtual ListRepositoryAssociationsResponse ListRepositoryAssociations(ListRepositoryAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRepositoryAssociations">REST API Reference for ListRepositoryAssociations Operation</seealso>
         public virtual IAsyncResult BeginListRepositoryAssociations(ListRepositoryAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">REST API Reference for PutRecommendationFeedback Operation</seealso>
         public virtual PutRecommendationFeedbackResponse PutRecommendationFeedback(PutRecommendationFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">REST API Reference for PutRecommendationFeedback Operation</seealso>
         public virtual IAsyncResult BeginPutRecommendationFeedback(PutRecommendationFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationFeedbackResponseUnmarshaller.Instance;
 
@@ -1165,7 +1165,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.CodeGuruReviewer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

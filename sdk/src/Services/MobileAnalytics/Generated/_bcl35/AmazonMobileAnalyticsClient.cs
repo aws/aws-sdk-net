@@ -262,7 +262,7 @@ namespace Amazon.MobileAnalytics
         /// </exception>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -282,7 +282,7 @@ namespace Amazon.MobileAnalytics
         ///         operation.</returns>
         public virtual IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 

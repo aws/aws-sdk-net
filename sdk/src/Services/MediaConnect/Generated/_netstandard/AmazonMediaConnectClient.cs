@@ -305,7 +305,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddBridgeOutputsResponse AddBridgeOutputs(AddBridgeOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeOutputsResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs">REST API Reference for AddBridgeOutputs Operation</seealso>
         public virtual Task<AddBridgeOutputsResponse> AddBridgeOutputsAsync(AddBridgeOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeOutputsResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddBridgeSourcesResponse AddBridgeSources(AddBridgeSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeSourcesResponseUnmarshaller.Instance;
 
@@ -406,7 +406,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources">REST API Reference for AddBridgeSources Operation</seealso>
         public virtual Task<AddBridgeSourcesResponse> AddBridgeSourcesAsync(AddBridgeSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeSourcesResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowMediaStreamsResponse AddFlowMediaStreams(AddFlowMediaStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowMediaStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowMediaStreamsResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">REST API Reference for AddFlowMediaStreams Operation</seealso>
         public virtual Task<AddFlowMediaStreamsResponse> AddFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowMediaStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowMediaStreamsResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowOutputsResponse AddFlowOutputs(AddFlowOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowOutputsResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowOutputs">REST API Reference for AddFlowOutputs Operation</seealso>
         public virtual Task<AddFlowOutputsResponse> AddFlowOutputsAsync(AddFlowOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowOutputsResponseUnmarshaller.Instance;
 
@@ -531,7 +531,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowSourcesResponse AddFlowSources(AddFlowSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowSourcesResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources">REST API Reference for AddFlowSources Operation</seealso>
         public virtual Task<AddFlowSourcesResponse> AddFlowSourcesAsync(AddFlowSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowSourcesResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowVpcInterfacesResponse AddFlowVpcInterfaces(AddFlowVpcInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowVpcInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowVpcInterfacesResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">REST API Reference for AddFlowVpcInterfaces Operation</seealso>
         public virtual Task<AddFlowVpcInterfacesResponse> AddFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowVpcInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowVpcInterfacesResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.MediaConnect
 
         internal virtual CreateBridgeResponse CreateBridge(CreateBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBridgeResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">REST API Reference for CreateBridge Operation</seealso>
         public virtual Task<CreateBridgeResponse> CreateBridgeAsync(CreateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBridgeResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.MediaConnect
 
         internal virtual CreateFlowResponse CreateFlow(CreateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
         public virtual Task<CreateFlowResponse> CreateFlowAsync(CreateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.MediaConnect
 
         internal virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeleteBridgeResponse DeleteBridge(DeleteBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBridgeResponseUnmarshaller.Instance;
 
@@ -852,7 +852,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">REST API Reference for DeleteBridge Operation</seealso>
         public virtual Task<DeleteBridgeResponse> DeleteBridgeAsync(DeleteBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBridgeResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeleteFlowResponse DeleteFlow(DeleteFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
         public virtual Task<DeleteFlowResponse> DeleteFlowAsync(DeleteFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -918,7 +918,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeregisterGatewayInstanceResponse DeregisterGatewayInstance(DeregisterGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1022,7 +1022,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">REST API Reference for DeregisterGatewayInstance Operation</seealso>
         public virtual Task<DeregisterGatewayInstanceResponse> DeregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeBridgeResponse DescribeBridge(DescribeBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBridgeResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge">REST API Reference for DescribeBridge Operation</seealso>
         public virtual Task<DescribeBridgeResponse> DescribeBridgeAsync(DescribeBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBridgeResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowResponse DescribeFlow(DescribeFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlow">REST API Reference for DescribeFlow Operation</seealso>
         public virtual Task<DescribeFlowResponse> DescribeFlowAsync(DescribeFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowSourceMetadataResponse DescribeFlowSourceMetadata(DescribeFlowSourceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceMetadataResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata">REST API Reference for DescribeFlowSourceMetadata Operation</seealso>
         public virtual Task<DescribeFlowSourceMetadataResponse> DescribeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceMetadataResponseUnmarshaller.Instance;
 
@@ -1202,7 +1202,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowSourceThumbnailResponse DescribeFlowSourceThumbnail(DescribeFlowSourceThumbnailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceThumbnailResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceThumbnail">REST API Reference for DescribeFlowSourceThumbnail Operation</seealso>
         public virtual Task<DescribeFlowSourceThumbnailResponse> DescribeFlowSourceThumbnailAsync(DescribeFlowSourceThumbnailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceThumbnailResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual Task<DescribeGatewayResponse> DescribeGatewayAsync(DescribeGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeGatewayInstanceResponse DescribeGatewayInstance(DescribeGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1357,7 +1357,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance">REST API Reference for DescribeGatewayInstance Operation</seealso>
         public virtual Task<DescribeGatewayInstanceResponse> DescribeGatewayInstanceAsync(DescribeGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeOfferingResponse DescribeOffering(DescribeOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -1408,7 +1408,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual Task<DescribeOfferingResponse> DescribeOfferingAsync(DescribeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeReservationResponse DescribeReservation(DescribeReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -1460,7 +1460,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual Task<DescribeReservationResponse> DescribeReservationAsync(DescribeReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.MediaConnect
 
         internal virtual GrantFlowEntitlementsResponse GrantFlowEntitlements(GrantFlowEntitlementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantFlowEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantFlowEntitlementsResponseUnmarshaller.Instance;
 
@@ -1517,7 +1517,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">REST API Reference for GrantFlowEntitlements Operation</seealso>
         public virtual Task<GrantFlowEntitlementsResponse> GrantFlowEntitlementsAsync(GrantFlowEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantFlowEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantFlowEntitlementsResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListBridgesResponse ListBridges(ListBridgesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBridgesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBridgesResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">REST API Reference for ListBridges Operation</seealso>
         public virtual Task<ListBridgesResponse> ListBridgesAsync(ListBridgesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBridgesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBridgesResponseUnmarshaller.Instance;
 
@@ -1582,7 +1582,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListEntitlementsResponse ListEntitlements(ListEntitlementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitlementsResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListEntitlements">REST API Reference for ListEntitlements Operation</seealso>
         public virtual Task<ListEntitlementsResponse> ListEntitlementsAsync(ListEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitlementsResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListFlowsResponse ListFlows(ListFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1665,7 +1665,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListFlows">REST API Reference for ListFlows Operation</seealso>
         public virtual Task<ListFlowsResponse> ListFlowsAsync(ListFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1678,7 +1678,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListGatewayInstancesResponse ListGatewayInstances(ListGatewayInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayInstancesResponseUnmarshaller.Instance;
 
@@ -1718,7 +1718,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances">REST API Reference for ListGatewayInstances Operation</seealso>
         public virtual Task<ListGatewayInstancesResponse> ListGatewayInstancesAsync(ListGatewayInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayInstancesResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -1869,7 +1869,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1913,7 +1913,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1926,7 +1926,7 @@ namespace Amazon.MediaConnect
 
         internal virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -1967,7 +1967,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveBridgeOutputResponse RemoveBridgeOutput(RemoveBridgeOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2024,7 +2024,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput">REST API Reference for RemoveBridgeOutput Operation</seealso>
         public virtual Task<RemoveBridgeOutputResponse> RemoveBridgeOutputAsync(RemoveBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2037,7 +2037,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveBridgeSourceResponse RemoveBridgeSource(RemoveBridgeSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2081,7 +2081,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource">REST API Reference for RemoveBridgeSource Operation</seealso>
         public virtual Task<RemoveBridgeSourceResponse> RemoveBridgeSourceAsync(RemoveBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowMediaStreamResponse RemoveFlowMediaStream(RemoveFlowMediaStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2135,7 +2135,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">REST API Reference for RemoveFlowMediaStream Operation</seealso>
         public virtual Task<RemoveFlowMediaStreamResponse> RemoveFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowOutputResponse RemoveFlowOutput(RemoveFlowOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowOutputResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowOutput">REST API Reference for RemoveFlowOutput Operation</seealso>
         public virtual Task<RemoveFlowOutputResponse> RemoveFlowOutputAsync(RemoveFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowOutputResponseUnmarshaller.Instance;
 
@@ -2204,7 +2204,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowSourceResponse RemoveFlowSource(RemoveFlowSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowSourceResponseUnmarshaller.Instance;
 
@@ -2245,7 +2245,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource">REST API Reference for RemoveFlowSource Operation</seealso>
         public virtual Task<RemoveFlowSourceResponse> RemoveFlowSourceAsync(RemoveFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowSourceResponseUnmarshaller.Instance;
 
@@ -2258,7 +2258,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowVpcInterfaceResponse RemoveFlowVpcInterface(RemoveFlowVpcInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowVpcInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowVpcInterfaceResponseUnmarshaller.Instance;
 
@@ -2301,7 +2301,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">REST API Reference for RemoveFlowVpcInterface Operation</seealso>
         public virtual Task<RemoveFlowVpcInterfaceResponse> RemoveFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowVpcInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowVpcInterfaceResponseUnmarshaller.Instance;
 
@@ -2314,7 +2314,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RevokeFlowEntitlementResponse RevokeFlowEntitlement(RevokeFlowEntitlementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2355,7 +2355,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RevokeFlowEntitlement">REST API Reference for RevokeFlowEntitlement Operation</seealso>
         public virtual Task<RevokeFlowEntitlementResponse> RevokeFlowEntitlementAsync(RevokeFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2368,7 +2368,7 @@ namespace Amazon.MediaConnect
 
         internal virtual StartFlowResponse StartFlow(StartFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -2408,7 +2408,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartFlow">REST API Reference for StartFlow Operation</seealso>
         public virtual Task<StartFlowResponse> StartFlowAsync(StartFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -2421,7 +2421,7 @@ namespace Amazon.MediaConnect
 
         internal virtual StopFlowResponse StopFlow(StopFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -2461,7 +2461,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">REST API Reference for StopFlow Operation</seealso>
         public virtual Task<StopFlowResponse> StopFlowAsync(StopFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -2474,7 +2474,7 @@ namespace Amazon.MediaConnect
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2508,7 +2508,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2521,7 +2521,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2565,7 +2565,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeResponse UpdateBridge(UpdateBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeResponseUnmarshaller.Instance;
 
@@ -2609,7 +2609,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge">REST API Reference for UpdateBridge Operation</seealso>
         public virtual Task<UpdateBridgeResponse> UpdateBridgeAsync(UpdateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeResponseUnmarshaller.Instance;
 
@@ -2622,7 +2622,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeOutputResponse UpdateBridgeOutput(UpdateBridgeOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2666,7 +2666,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput">REST API Reference for UpdateBridgeOutput Operation</seealso>
         public virtual Task<UpdateBridgeOutputResponse> UpdateBridgeOutputAsync(UpdateBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2679,7 +2679,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeSourceResponse UpdateBridgeSource(UpdateBridgeSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource">REST API Reference for UpdateBridgeSource Operation</seealso>
         public virtual Task<UpdateBridgeSourceResponse> UpdateBridgeSourceAsync(UpdateBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2736,7 +2736,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeStateResponse UpdateBridgeState(UpdateBridgeStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeStateResponseUnmarshaller.Instance;
 
@@ -2780,7 +2780,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState">REST API Reference for UpdateBridgeState Operation</seealso>
         public virtual Task<UpdateBridgeStateResponse> UpdateBridgeStateAsync(UpdateBridgeStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeStateResponseUnmarshaller.Instance;
 
@@ -2793,7 +2793,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowResponse UpdateFlow(UpdateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 
@@ -2833,7 +2833,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
         public virtual Task<UpdateFlowResponse> UpdateFlowAsync(UpdateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 
@@ -2846,7 +2846,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowEntitlementResponse UpdateFlowEntitlement(UpdateFlowEntitlementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2888,7 +2888,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlement">REST API Reference for UpdateFlowEntitlement Operation</seealso>
         public virtual Task<UpdateFlowEntitlementResponse> UpdateFlowEntitlementAsync(UpdateFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2901,7 +2901,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowMediaStreamResponse UpdateFlowMediaStream(UpdateFlowMediaStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2941,7 +2941,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">REST API Reference for UpdateFlowMediaStream Operation</seealso>
         public virtual Task<UpdateFlowMediaStreamResponse> UpdateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowOutputResponse UpdateFlowOutput(UpdateFlowOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowOutputResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutput">REST API Reference for UpdateFlowOutput Operation</seealso>
         public virtual Task<UpdateFlowOutputResponse> UpdateFlowOutputAsync(UpdateFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowOutputResponseUnmarshaller.Instance;
 
@@ -3007,7 +3007,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowSourceResponse UpdateFlowSource(UpdateFlowSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowSourceResponseUnmarshaller.Instance;
 
@@ -3047,7 +3047,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSource">REST API Reference for UpdateFlowSource Operation</seealso>
         public virtual Task<UpdateFlowSourceResponse> UpdateFlowSourceAsync(UpdateFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowSourceResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateGatewayInstanceResponse UpdateGatewayInstance(UpdateGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -3104,7 +3104,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">REST API Reference for UpdateGatewayInstance Operation</seealso>
         public virtual Task<UpdateGatewayInstanceResponse> UpdateGatewayInstanceAsync(UpdateGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInstanceResponseUnmarshaller.Instance;
 

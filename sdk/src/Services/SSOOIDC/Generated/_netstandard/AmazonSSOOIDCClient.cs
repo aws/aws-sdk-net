@@ -309,7 +309,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual CreateTokenWithIAMResponse CreateTokenWithIAM(CreateTokenWithIAMRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenWithIAMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenWithIAMResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         public virtual Task<CreateTokenWithIAMResponse> CreateTokenWithIAMAsync(CreateTokenWithIAMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenWithIAMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenWithIAMResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual RegisterClientResponse RegisterClient(RegisterClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClientResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         public virtual Task<RegisterClientResponse> RegisterClientAsync(RegisterClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClientResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.SSOOIDC
 
         internal virtual StartDeviceAuthorizationResponse StartDeviceAuthorization(StartDeviceAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeviceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeviceAuthorizationResponseUnmarshaller.Instance;
 
@@ -578,7 +578,7 @@ namespace Amazon.SSOOIDC
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual Task<StartDeviceAuthorizationResponse> StartDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeviceAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeviceAuthorizationResponseUnmarshaller.Instance;
 

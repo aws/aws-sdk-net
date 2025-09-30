@@ -299,7 +299,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual AssociateAccessGrantsIdentityCenterResponse AssociateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual IAsyncResult BeginAssociateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
         public virtual CreateAccessGrantResponse CreateAccessGrant(CreateAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
 
@@ -405,7 +405,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessGrant(CreateAccessGrantRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
 
@@ -459,7 +459,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
         public virtual CreateAccessGrantsInstanceResponse CreateAccessGrantsInstance(CreateAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessGrantsInstance(CreateAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
         public virtual CreateAccessGrantsLocationResponse CreateAccessGrantsLocation(CreateAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessGrantsLocation(CreateAccessGrantsLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -669,7 +669,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         public virtual CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
 
@@ -690,7 +690,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessPoint(CreateAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
         public virtual CreateAccessPointForObjectLambdaResponse CreateAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
         public virtual CreateBucketResponse CreateBucket(CreateBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -912,7 +912,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
         public virtual IAsyncResult BeginCreateBucket(CreateBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1027,7 +1027,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
         public virtual CreateMultiRegionAccessPointResponse CreateMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginCreateMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -1193,7 +1193,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
         public virtual CreateStorageLensGroupResponse CreateStorageLensGroup(CreateStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateStorageLensGroup(CreateStorageLensGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
         public virtual DeleteAccessGrantResponse DeleteAccessGrant(DeleteAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
 
@@ -1281,7 +1281,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessGrant(DeleteAccessGrantRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
 
@@ -1333,7 +1333,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
         public virtual DeleteAccessGrantsInstanceResponse DeleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual DeleteAccessGrantsInstanceResourcePolicyResponse DeleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1424,7 +1424,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1475,7 +1475,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
         public virtual DeleteAccessGrantsLocationResponse DeleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         public virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
 
@@ -1587,7 +1587,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPoint(DeleteAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
         public virtual DeleteAccessPointForObjectLambdaResponse DeleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         public virtual DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -1760,7 +1760,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -1821,7 +1821,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual DeleteAccessPointPolicyForObjectLambdaResponse DeleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1897,7 +1897,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
         public virtual DeleteAccessPointScopeResponse DeleteAccessPointScope(DeleteAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -1918,7 +1918,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessPointScope(DeleteAccessPointScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2014,7 +2014,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketLifecycleConfiguration">REST API Reference for DeleteBucketLifecycleConfiguration Operation</seealso>
         public virtual DeleteBucketLifecycleConfigurationResponse DeleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketLifecycleConfiguration">REST API Reference for DeleteBucketLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -2221,7 +2221,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -2533,7 +2533,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         public virtual DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
 
@@ -2554,7 +2554,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteJobTagging(DeleteJobTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
 
@@ -2638,7 +2638,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
         public virtual DeleteMultiRegionAccessPointResponse DeleteMultiRegionAccessPoint(DeleteMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -2659,7 +2659,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteMultiRegionAccessPoint(DeleteMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -2722,7 +2722,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -2743,7 +2743,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -2799,7 +2799,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">REST API Reference for DeleteStorageLensConfiguration Operation</seealso>
         public virtual DeleteStorageLensConfigurationResponse DeleteStorageLensConfiguration(DeleteStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -2820,7 +2820,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">REST API Reference for DeleteStorageLensConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteStorageLensConfiguration(DeleteStorageLensConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -2876,7 +2876,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">REST API Reference for DeleteStorageLensConfigurationTagging Operation</seealso>
         public virtual DeleteStorageLensConfigurationTaggingResponse DeleteStorageLensConfigurationTagging(DeleteStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -2897,7 +2897,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">REST API Reference for DeleteStorageLensConfigurationTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteStorageLensConfigurationTagging(DeleteStorageLensConfigurationTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -2950,7 +2950,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
         public virtual DeleteStorageLensGroupResponse DeleteStorageLensGroup(DeleteStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -2971,7 +2971,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteStorageLensGroup(DeleteStorageLensGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -3055,7 +3055,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -3076,7 +3076,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -3150,7 +3150,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
         public virtual DescribeMultiRegionAccessPointOperationResponse DescribeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
 
@@ -3171,7 +3171,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
         public virtual IAsyncResult BeginDescribeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
 
@@ -3222,7 +3222,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual DissociateAccessGrantsIdentityCenterResponse DissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -3243,7 +3243,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual IAsyncResult BeginDissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -3288,7 +3288,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
         public virtual GetAccessGrantResponse GetAccessGrant(GetAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
 
@@ -3309,7 +3309,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
         public virtual IAsyncResult BeginGetAccessGrant(GetAccessGrantRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
 
@@ -3360,7 +3360,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
         public virtual GetAccessGrantsInstanceResponse GetAccessGrantsInstance(GetAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -3381,7 +3381,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
         public virtual IAsyncResult BeginGetAccessGrantsInstance(GetAccessGrantsInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -3432,7 +3432,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
         public virtual GetAccessGrantsInstanceForPrefixResponse GetAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
 
@@ -3453,7 +3453,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
         public virtual IAsyncResult BeginGetAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
 
@@ -3499,7 +3499,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual GetAccessGrantsInstanceResourcePolicyResponse GetAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3520,7 +3520,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3567,7 +3567,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
         public virtual GetAccessGrantsLocationResponse GetAccessGrantsLocation(GetAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -3588,7 +3588,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
         public virtual IAsyncResult BeginGetAccessGrantsLocation(GetAccessGrantsLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -3658,7 +3658,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         public virtual GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
 
@@ -3679,7 +3679,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPoint(GetAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
 
@@ -3735,7 +3735,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual GetAccessPointConfigurationForObjectLambdaResponse GetAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -3756,7 +3756,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -3822,7 +3822,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
         public virtual GetAccessPointForObjectLambdaResponse GetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -3843,7 +3843,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -3898,7 +3898,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         public virtual GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -3919,7 +3919,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointPolicy(GetAccessPointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -3980,7 +3980,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual GetAccessPointPolicyForObjectLambdaResponse GetAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4001,7 +4001,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4050,7 +4050,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         public virtual GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -4071,7 +4071,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -4119,7 +4119,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
         public virtual GetAccessPointPolicyStatusForObjectLambdaResponse GetAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4140,7 +4140,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4191,7 +4191,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
         public virtual GetAccessPointScopeResponse GetAccessPointScope(GetAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -4212,7 +4212,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
         public virtual IAsyncResult BeginGetAccessPointScope(GetAccessPointScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -4297,7 +4297,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucket">REST API Reference for GetBucket Operation</seealso>
         public virtual GetBucketResponse GetBucket(GetBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketResponseUnmarshaller.Instance;
 
@@ -4318,7 +4318,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucket">REST API Reference for GetBucket Operation</seealso>
         public virtual IAsyncResult BeginGetBucket(GetBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketResponseUnmarshaller.Instance;
 
@@ -4424,7 +4424,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketLifecycleConfiguration">REST API Reference for GetBucketLifecycleConfiguration Operation</seealso>
         public virtual GetBucketLifecycleConfigurationResponse GetBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -4445,7 +4445,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketLifecycleConfiguration">REST API Reference for GetBucketLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -4549,7 +4549,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -4570,7 +4570,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -4668,7 +4668,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -4689,7 +4689,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -4776,7 +4776,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -4797,7 +4797,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -4881,7 +4881,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -4902,7 +4902,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -4957,7 +4957,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
         public virtual GetDataAccessResponse GetDataAccess(GetDataAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
 
@@ -4978,7 +4978,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
         public virtual IAsyncResult BeginGetDataAccess(GetDataAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
 
@@ -5053,7 +5053,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         public virtual GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
 
@@ -5074,7 +5074,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         public virtual IAsyncResult BeginGetJobTagging(GetJobTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
 
@@ -5151,7 +5151,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
         public virtual GetMultiRegionAccessPointResponse GetMultiRegionAccessPoint(GetMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -5172,7 +5172,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
         public virtual IAsyncResult BeginGetMultiRegionAccessPoint(GetMultiRegionAccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -5239,7 +5239,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
         public virtual GetMultiRegionAccessPointPolicyResponse GetMultiRegionAccessPointPolicy(GetMultiRegionAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -5260,7 +5260,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetMultiRegionAccessPointPolicy(GetMultiRegionAccessPointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -5328,7 +5328,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
         public virtual GetMultiRegionAccessPointPolicyStatusResponse GetMultiRegionAccessPointPolicyStatus(GetMultiRegionAccessPointPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -5349,7 +5349,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
         public virtual IAsyncResult BeginGetMultiRegionAccessPointPolicyStatus(GetMultiRegionAccessPointPolicyStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -5422,7 +5422,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
         public virtual GetMultiRegionAccessPointRoutesResponse GetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -5443,7 +5443,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
         public virtual IAsyncResult BeginGetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -5510,7 +5510,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5531,7 +5531,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5587,7 +5587,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">REST API Reference for GetStorageLensConfiguration Operation</seealso>
         public virtual GetStorageLensConfigurationResponse GetStorageLensConfiguration(GetStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -5608,7 +5608,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">REST API Reference for GetStorageLensConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetStorageLensConfiguration(GetStorageLensConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -5664,7 +5664,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">REST API Reference for GetStorageLensConfigurationTagging Operation</seealso>
         public virtual GetStorageLensConfigurationTaggingResponse GetStorageLensConfigurationTagging(GetStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -5685,7 +5685,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">REST API Reference for GetStorageLensConfigurationTagging Operation</seealso>
         public virtual IAsyncResult BeginGetStorageLensConfigurationTagging(GetStorageLensConfigurationTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -5738,7 +5738,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
         public virtual GetStorageLensGroupResponse GetStorageLensGroup(GetStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -5759,7 +5759,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
         public virtual IAsyncResult BeginGetStorageLensGroup(GetStorageLensGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -5804,7 +5804,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
         public virtual ListAccessGrantsResponse ListAccessGrants(ListAccessGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
 
@@ -5825,7 +5825,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
         public virtual IAsyncResult BeginListAccessGrants(ListAccessGrantsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
 
@@ -5873,7 +5873,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
         public virtual ListAccessGrantsInstancesResponse ListAccessGrantsInstances(ListAccessGrantsInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
 
@@ -5894,7 +5894,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
         public virtual IAsyncResult BeginListAccessGrantsInstances(ListAccessGrantsInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
 
@@ -5940,7 +5940,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
         public virtual ListAccessGrantsLocationsResponse ListAccessGrantsLocations(ListAccessGrantsLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
 
@@ -5961,7 +5961,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
         public virtual IAsyncResult BeginListAccessGrantsLocations(ListAccessGrantsLocationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
 
@@ -6045,7 +6045,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         public virtual ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
 
@@ -6066,7 +6066,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         public virtual IAsyncResult BeginListAccessPoints(ListAccessPointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
 
@@ -6122,7 +6122,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
         public virtual ListAccessPointsForDirectoryBucketsResponse ListAccessPointsForDirectoryBuckets(ListAccessPointsForDirectoryBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -6143,7 +6143,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
         public virtual IAsyncResult BeginListAccessPointsForDirectoryBuckets(ListAccessPointsForDirectoryBucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -6212,7 +6212,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
         public virtual ListAccessPointsForObjectLambdaResponse ListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -6233,7 +6233,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -6289,7 +6289,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
         public virtual ListCallerAccessGrantsResponse ListCallerAccessGrants(ListCallerAccessGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
 
@@ -6310,7 +6310,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
         public virtual IAsyncResult BeginListCallerAccessGrants(ListCallerAccessGrantsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
 
@@ -6392,7 +6392,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -6413,7 +6413,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -6493,7 +6493,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
         public virtual ListMultiRegionAccessPointsResponse ListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
 
@@ -6514,7 +6514,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
         public virtual IAsyncResult BeginListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
 
@@ -6570,7 +6570,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListRegionalBuckets">REST API Reference for ListRegionalBuckets Operation</seealso>
         public virtual ListRegionalBucketsResponse ListRegionalBuckets(ListRegionalBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionalBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
 
@@ -6591,7 +6591,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListRegionalBuckets">REST API Reference for ListRegionalBuckets Operation</seealso>
         public virtual IAsyncResult BeginListRegionalBuckets(ListRegionalBucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionalBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
 
@@ -6647,7 +6647,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">REST API Reference for ListStorageLensConfigurations Operation</seealso>
         public virtual ListStorageLensConfigurationsResponse ListStorageLensConfigurations(ListStorageLensConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
 
@@ -6668,7 +6668,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">REST API Reference for ListStorageLensConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListStorageLensConfigurations(ListStorageLensConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
 
@@ -6721,7 +6721,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
         public virtual ListStorageLensGroupsResponse ListStorageLensGroups(ListStorageLensGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
 
@@ -6742,7 +6742,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
         public virtual IAsyncResult BeginListStorageLensGroups(ListStorageLensGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
 
@@ -6840,7 +6840,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6861,7 +6861,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6907,7 +6907,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual PutAccessGrantsInstanceResourcePolicyResponse PutAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -6928,7 +6928,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -6984,7 +6984,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual PutAccessPointConfigurationForObjectLambdaResponse PutAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -7005,7 +7005,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginPutAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -7072,7 +7072,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         public virtual PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -7093,7 +7093,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutAccessPointPolicy(PutAccessPointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -7156,7 +7156,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual PutAccessPointPolicyForObjectLambdaResponse PutAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -7177,7 +7177,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual IAsyncResult BeginPutAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -7235,7 +7235,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
         public virtual PutAccessPointScopeResponse PutAccessPointScope(PutAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -7256,7 +7256,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
         public virtual IAsyncResult BeginPutAccessPointScope(PutAccessPointScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -7326,7 +7326,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketLifecycleConfiguration">REST API Reference for PutBucketLifecycleConfiguration Operation</seealso>
         public virtual PutBucketLifecycleConfigurationResponse PutBucketLifecycleConfiguration(PutBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -7347,7 +7347,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketLifecycleConfiguration">REST API Reference for PutBucketLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketLifecycleConfiguration(PutBucketLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -7441,7 +7441,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -7462,7 +7462,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -7614,7 +7614,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -7635,7 +7635,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -7768,7 +7768,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -7789,7 +7789,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -7907,7 +7907,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -7928,7 +7928,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -8054,7 +8054,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         public virtual PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
 
@@ -8075,7 +8075,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         public virtual IAsyncResult BeginPutJobTagging(PutJobTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
 
@@ -8145,7 +8145,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
         public virtual PutMultiRegionAccessPointPolicyResponse PutMultiRegionAccessPointPolicy(PutMultiRegionAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -8166,7 +8166,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutMultiRegionAccessPointPolicy(PutMultiRegionAccessPointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -8230,7 +8230,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -8251,7 +8251,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -8308,7 +8308,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">REST API Reference for PutStorageLensConfiguration Operation</seealso>
         public virtual PutStorageLensConfigurationResponse PutStorageLensConfiguration(PutStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -8329,7 +8329,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">REST API Reference for PutStorageLensConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutStorageLensConfiguration(PutStorageLensConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -8385,7 +8385,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">REST API Reference for PutStorageLensConfigurationTagging Operation</seealso>
         public virtual PutStorageLensConfigurationTaggingResponse PutStorageLensConfigurationTagging(PutStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -8406,7 +8406,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">REST API Reference for PutStorageLensConfigurationTagging Operation</seealso>
         public virtual IAsyncResult BeginPutStorageLensConfigurationTagging(PutStorageLensConfigurationTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -8495,7 +8495,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
         public virtual SubmitMultiRegionAccessPointRoutesResponse SubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -8516,7 +8516,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
         public virtual IAsyncResult BeginSubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -8634,7 +8634,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8655,7 +8655,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8752,7 +8752,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8773,7 +8773,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8823,7 +8823,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
         public virtual UpdateAccessGrantsLocationResponse UpdateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -8844,7 +8844,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -8928,7 +8928,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         public virtual UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
 
@@ -8949,7 +8949,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         public virtual IAsyncResult BeginUpdateJobPriority(UpdateJobPriorityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
 
@@ -9036,7 +9036,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         public virtual UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
 
@@ -9057,7 +9057,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateJobStatus(UpdateJobStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
 
@@ -9110,7 +9110,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
         public virtual UpdateStorageLensGroupResponse UpdateStorageLensGroup(UpdateStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -9131,7 +9131,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateStorageLensGroup(UpdateStorageLensGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
 

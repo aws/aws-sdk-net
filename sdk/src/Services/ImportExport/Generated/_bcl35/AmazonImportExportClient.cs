@@ -283,7 +283,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -304,7 +304,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         public virtual GetShippingLabelResponse GetShippingLabel(GetShippingLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetShippingLabel">REST API Reference for GetShippingLabel Operation</seealso>
         public virtual IAsyncResult BeginGetShippingLabel(GetShippingLabelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShippingLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShippingLabelResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         public virtual GetStatusResponse GetStatus(GetStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/GetStatus">REST API Reference for GetStatus Operation</seealso>
         public virtual IAsyncResult BeginGetStatus(GetStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatusResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.ImportExport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 

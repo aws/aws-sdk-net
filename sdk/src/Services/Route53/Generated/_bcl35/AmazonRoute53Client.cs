@@ -331,7 +331,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
         public virtual ActivateKeySigningKeyResponse ActivateKeySigningKey(ActivateKeySigningKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
         public virtual IAsyncResult BeginActivateKeySigningKey(ActivateKeySigningKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         public virtual AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVPCWithHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         public virtual IAsyncResult BeginAssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVPCWithHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
         public virtual ChangeCidrCollectionResponse ChangeCidrCollection(ChangeCidrCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeCidrCollectionResponseUnmarshaller.Instance;
 
@@ -611,7 +611,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">REST API Reference for ChangeCidrCollection Operation</seealso>
         public virtual IAsyncResult BeginChangeCidrCollection(ChangeCidrCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeCidrCollectionResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         public virtual ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeResourceRecordSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         public virtual IAsyncResult BeginChangeResourceRecordSets(ChangeResourceRecordSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeResourceRecordSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         public virtual ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginChangeTagsForResource(ChangeTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
         public virtual CreateCidrCollectionResponse CreateCidrCollection(CreateCidrCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCidrCollectionResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">REST API Reference for CreateCidrCollection Operation</seealso>
         public virtual IAsyncResult BeginCreateCidrCollection(CreateCidrCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCidrCollectionResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         public virtual CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         public virtual IAsyncResult BeginCreateHealthCheck(CreateHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
 
@@ -1290,7 +1290,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         public virtual CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
 
@@ -1311,7 +1311,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         public virtual IAsyncResult BeginCreateHostedZone(CreateHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
         public virtual CreateKeySigningKeyResponse CreateKeySigningKey(CreateKeySigningKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
         public virtual IAsyncResult BeginCreateKeySigningKey(CreateKeySigningKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
         public virtual CreateQueryLoggingConfigResponse CreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -1667,7 +1667,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">REST API Reference for CreateQueryLoggingConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateQueryLoggingConfig(CreateQueryLoggingConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         public virtual CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -1821,7 +1821,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         public virtual IAsyncResult BeginCreateReusableDelegationSet(CreateReusableDelegationSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -1885,7 +1885,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         public virtual CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -1906,7 +1906,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficPolicy(CreateTrafficPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         public virtual CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -2006,7 +2006,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -2071,7 +2071,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         public virtual CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
 
@@ -2092,7 +2092,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
 
@@ -2159,7 +2159,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         public virtual CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCAssociationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
 
@@ -2180,7 +2180,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         public virtual IAsyncResult BeginCreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCAssociationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
 
@@ -2239,7 +2239,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
         public virtual DeactivateKeySigningKeyResponse DeactivateKeySigningKey(DeactivateKeySigningKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -2260,7 +2260,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
         public virtual IAsyncResult BeginDeactivateKeySigningKey(DeactivateKeySigningKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
         public virtual DeleteCidrCollectionResponse DeleteCidrCollection(DeleteCidrCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCidrCollectionResponseUnmarshaller.Instance;
 
@@ -2328,7 +2328,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">REST API Reference for DeleteCidrCollection Operation</seealso>
         public virtual IAsyncResult BeginDeleteCidrCollection(DeleteCidrCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCidrCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCidrCollectionResponseUnmarshaller.Instance;
 
@@ -2388,7 +2388,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         public virtual DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
 
@@ -2409,7 +2409,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         public virtual IAsyncResult BeginDeleteHealthCheck(DeleteHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
 
@@ -2518,7 +2518,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         public virtual DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
 
@@ -2539,7 +2539,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         public virtual IAsyncResult BeginDeleteHostedZone(DeleteHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
 
@@ -2605,7 +2605,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
         public virtual DeleteKeySigningKeyResponse DeleteKeySigningKey(DeleteKeySigningKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -2626,7 +2626,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteKeySigningKey(DeleteKeySigningKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeySigningKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeySigningKeyResponseUnmarshaller.Instance;
 
@@ -2676,7 +2676,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
         public virtual DeleteQueryLoggingConfigResponse DeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -2697,7 +2697,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">REST API Reference for DeleteQueryLoggingConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         public virtual DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -2776,7 +2776,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -2843,7 +2843,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         public virtual DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -2864,7 +2864,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficPolicy(DeleteTrafficPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -2917,7 +2917,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         public virtual DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -2938,7 +2938,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -3001,7 +3001,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
         public virtual DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCAssociationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
 
@@ -3022,7 +3022,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
         public virtual IAsyncResult BeginDeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCAssociationAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
 
@@ -3081,7 +3081,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">REST API Reference for DisableHostedZoneDNSSEC Operation</seealso>
         public virtual DisableHostedZoneDNSSECResponse DisableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHostedZoneDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHostedZoneDNSSECResponseUnmarshaller.Instance;
 
@@ -3102,7 +3102,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">REST API Reference for DisableHostedZoneDNSSEC Operation</seealso>
         public virtual IAsyncResult BeginDisableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHostedZoneDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHostedZoneDNSSECResponseUnmarshaller.Instance;
 
@@ -3209,7 +3209,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         public virtual DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVPCFromHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
 
@@ -3230,7 +3230,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         public virtual IAsyncResult BeginDisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVPCFromHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
 
@@ -3292,7 +3292,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">REST API Reference for EnableHostedZoneDNSSEC Operation</seealso>
         public virtual EnableHostedZoneDNSSECResponse EnableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHostedZoneDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHostedZoneDNSSECResponseUnmarshaller.Instance;
 
@@ -3313,7 +3313,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">REST API Reference for EnableHostedZoneDNSSEC Operation</seealso>
         public virtual IAsyncResult BeginEnableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHostedZoneDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHostedZoneDNSSECResponseUnmarshaller.Instance;
 
@@ -3365,7 +3365,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
         public virtual GetAccountLimitResponse GetAccountLimit(GetAccountLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
 
@@ -3386,7 +3386,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit">REST API Reference for GetAccountLimit Operation</seealso>
         public virtual IAsyncResult BeginGetAccountLimit(GetAccountLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
 
@@ -3439,7 +3439,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         public virtual GetChangeResponse GetChange(GetChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeResponseUnmarshaller.Instance;
 
@@ -3460,7 +3460,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         public virtual IAsyncResult BeginGetChange(GetChangeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeResponseUnmarshaller.Instance;
 
@@ -3504,7 +3504,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         public virtual GetCheckerIpRangesResponse GetCheckerIpRanges(GetCheckerIpRangesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCheckerIpRangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
 
@@ -3525,7 +3525,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         public virtual IAsyncResult BeginGetCheckerIpRanges(GetCheckerIpRangesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCheckerIpRangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
 
@@ -3568,7 +3568,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">REST API Reference for GetDNSSEC Operation</seealso>
         public virtual GetDNSSECResponse GetDNSSEC(GetDNSSECRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDNSSECResponseUnmarshaller.Instance;
 
@@ -3589,7 +3589,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">REST API Reference for GetDNSSEC Operation</seealso>
         public virtual IAsyncResult BeginGetDNSSEC(GetDNSSECRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDNSSECRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDNSSECResponseUnmarshaller.Instance;
 
@@ -3665,7 +3665,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         public virtual GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeoLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
 
@@ -3686,7 +3686,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         public virtual IAsyncResult BeginGetGeoLocation(GetGeoLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeoLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
 
@@ -3728,7 +3728,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         public virtual GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
 
@@ -3749,7 +3749,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         public virtual IAsyncResult BeginGetHealthCheck(GetHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
 
@@ -3783,7 +3783,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         public virtual GetHealthCheckCountResponse GetHealthCheckCount(GetHealthCheckCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
 
@@ -3804,7 +3804,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         public virtual IAsyncResult BeginGetHealthCheckCount(GetHealthCheckCountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
 
@@ -3843,7 +3843,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         public virtual GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckLastFailureReasonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
 
@@ -3864,7 +3864,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         public virtual IAsyncResult BeginGetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckLastFailureReasonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
 
@@ -3910,7 +3910,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         public virtual GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
 
@@ -3931,7 +3931,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         public virtual IAsyncResult BeginGetHealthCheckStatus(GetHealthCheckStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthCheckStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
 
@@ -3979,7 +3979,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         public virtual GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
 
@@ -4000,7 +4000,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         public virtual IAsyncResult BeginGetHostedZone(GetHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
 
@@ -4052,7 +4052,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         public virtual GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
 
@@ -4073,7 +4073,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         public virtual IAsyncResult BeginGetHostedZoneCount(GetHostedZoneCountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
 
@@ -4123,7 +4123,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
         public virtual GetHostedZoneLimitResponse GetHostedZoneLimit(GetHostedZoneLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
 
@@ -4144,7 +4144,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit">REST API Reference for GetHostedZoneLimit Operation</seealso>
         public virtual IAsyncResult BeginGetHostedZoneLimit(GetHostedZoneLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedZoneLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
 
@@ -4190,7 +4190,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
         public virtual GetQueryLoggingConfigResponse GetQueryLoggingConfig(GetQueryLoggingConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -4211,7 +4211,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">REST API Reference for GetQueryLoggingConfig Operation</seealso>
         public virtual IAsyncResult BeginGetQueryLoggingConfig(GetQueryLoggingConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryLoggingConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
 
@@ -4254,7 +4254,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         public virtual GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -4275,7 +4275,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         public virtual IAsyncResult BeginGetReusableDelegationSet(GetReusableDelegationSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReusableDelegationSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
 
@@ -4322,7 +4322,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
         public virtual GetReusableDelegationSetLimitResponse GetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReusableDelegationSetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
 
@@ -4343,7 +4343,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit">REST API Reference for GetReusableDelegationSetLimit Operation</seealso>
         public virtual IAsyncResult BeginGetReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReusableDelegationSetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
 
@@ -4389,7 +4389,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         public virtual GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -4410,7 +4410,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetTrafficPolicy(GetTrafficPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
 
@@ -4462,7 +4462,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         public virtual GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -4483,7 +4483,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         public virtual IAsyncResult BeginGetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -4517,7 +4517,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         public virtual GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyInstanceCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
 
@@ -4538,7 +4538,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         public virtual IAsyncResult BeginGetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrafficPolicyInstanceCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
 
@@ -4580,7 +4580,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
         public virtual ListCidrBlocksResponse ListCidrBlocks(ListCidrBlocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrBlocksResponseUnmarshaller.Instance;
 
@@ -4601,7 +4601,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">REST API Reference for ListCidrBlocks Operation</seealso>
         public virtual IAsyncResult BeginListCidrBlocks(ListCidrBlocksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrBlocksResponseUnmarshaller.Instance;
 
@@ -4638,7 +4638,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
         public virtual ListCidrCollectionsResponse ListCidrCollections(ListCidrCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrCollectionsResponseUnmarshaller.Instance;
 
@@ -4659,7 +4659,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">REST API Reference for ListCidrCollections Operation</seealso>
         public virtual IAsyncResult BeginListCidrCollections(ListCidrCollectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrCollectionsResponseUnmarshaller.Instance;
 
@@ -4699,7 +4699,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
         public virtual ListCidrLocationsResponse ListCidrLocations(ListCidrLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrLocationsResponseUnmarshaller.Instance;
 
@@ -4720,7 +4720,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">REST API Reference for ListCidrLocations Operation</seealso>
         public virtual IAsyncResult BeginListCidrLocations(ListCidrLocationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCidrLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCidrLocationsResponseUnmarshaller.Instance;
 
@@ -4806,7 +4806,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         public virtual ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeoLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
 
@@ -4827,7 +4827,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         public virtual IAsyncResult BeginListGeoLocations(ListGeoLocationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeoLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
 
@@ -4885,7 +4885,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         public virtual ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
 
@@ -4906,7 +4906,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         public virtual IAsyncResult BeginListHealthChecks(ListHealthChecksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
 
@@ -4986,7 +4986,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         public virtual ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
 
@@ -5007,7 +5007,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         public virtual IAsyncResult BeginListHostedZones(ListHostedZonesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
 
@@ -5120,7 +5120,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         public virtual ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesByNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
 
@@ -5141,7 +5141,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         public virtual IAsyncResult BeginListHostedZonesByName(ListHostedZonesByNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesByNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
 
@@ -5233,7 +5233,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">REST API Reference for ListHostedZonesByVPC Operation</seealso>
         public virtual ListHostedZonesByVPCResponse ListHostedZonesByVPC(ListHostedZonesByVPCRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesByVPCRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
 
@@ -5254,7 +5254,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC">REST API Reference for ListHostedZonesByVPC Operation</seealso>
         public virtual IAsyncResult BeginListHostedZonesByVPC(ListHostedZonesByVPCRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedZonesByVPCRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
 
@@ -5305,7 +5305,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
         public virtual ListQueryLoggingConfigsResponse ListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryLoggingConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
 
@@ -5326,7 +5326,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">REST API Reference for ListQueryLoggingConfigs Operation</seealso>
         public virtual IAsyncResult BeginListQueryLoggingConfigs(ListQueryLoggingConfigsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryLoggingConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
 
@@ -5460,7 +5460,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         public virtual ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceRecordSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
 
@@ -5481,7 +5481,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         public virtual IAsyncResult BeginListResourceRecordSets(ListResourceRecordSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceRecordSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
 
@@ -5533,7 +5533,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         public virtual ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReusableDelegationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
 
@@ -5554,7 +5554,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         public virtual IAsyncResult BeginListReusableDelegationSets(ListReusableDelegationSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReusableDelegationSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
 
@@ -5612,7 +5612,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5633,7 +5633,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5691,7 +5691,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public virtual ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
 
@@ -5712,7 +5712,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResources(ListTagsForResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
 
@@ -5757,7 +5757,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         public virtual ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
 
@@ -5778,7 +5778,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         public virtual IAsyncResult BeginListTrafficPolicies(ListTrafficPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
 
@@ -5831,7 +5831,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         public virtual ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
 
@@ -5852,7 +5852,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         public virtual IAsyncResult BeginListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
 
@@ -5909,7 +5909,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         public virtual ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesByHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
 
@@ -5930,7 +5930,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         public virtual IAsyncResult BeginListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesByHostedZoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
 
@@ -5987,7 +5987,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         public virtual ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesByPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
 
@@ -6008,7 +6008,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         public virtual IAsyncResult BeginListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyInstancesByPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
 
@@ -6052,7 +6052,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         public virtual ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
 
@@ -6073,7 +6073,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         public virtual IAsyncResult BeginListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrafficPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
 
@@ -6123,7 +6123,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
         public virtual ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCAssociationAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
 
@@ -6144,7 +6144,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
         public virtual IAsyncResult BeginListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCAssociationAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
 
@@ -6197,7 +6197,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
         public virtual TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestDNSAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
 
@@ -6218,7 +6218,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
         public virtual IAsyncResult BeginTestDNSAnswer(TestDNSAnswerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestDNSAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
 
@@ -6267,7 +6267,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         public virtual UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
 
@@ -6288,7 +6288,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         public virtual IAsyncResult BeginUpdateHealthCheck(UpdateHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
 
@@ -6334,7 +6334,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         public virtual UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostedZoneCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
 
@@ -6355,7 +6355,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         public virtual IAsyncResult BeginUpdateHostedZoneComment(UpdateHostedZoneCommentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostedZoneCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
 
@@ -6398,7 +6398,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         public virtual UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficPolicyCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
 
@@ -6419,7 +6419,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         public virtual IAsyncResult BeginUpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficPolicyCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
 
@@ -6509,7 +6509,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         public virtual UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
@@ -6530,7 +6530,7 @@ namespace Amazon.Route53
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrafficPolicyInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
 

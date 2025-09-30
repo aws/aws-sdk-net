@@ -314,7 +314,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateAwsLogSourceResponse CreateAwsLogSource(CreateAwsLogSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAwsLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAwsLogSourceResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource">REST API Reference for CreateAwsLogSource Operation</seealso>
         public virtual Task<CreateAwsLogSourceResponse> CreateAwsLogSourceAsync(CreateAwsLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAwsLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAwsLogSourceResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateCustomLogSourceResponse CreateCustomLogSource(CreateCustomLogSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomLogSourceResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource">REST API Reference for CreateCustomLogSource Operation</seealso>
         public virtual Task<CreateCustomLogSourceResponse> CreateCustomLogSourceAsync(CreateCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomLogSourceResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateDataLakeResponse CreateDataLake(CreateDataLakeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">REST API Reference for CreateDataLake Operation</seealso>
         public virtual Task<CreateDataLakeResponse> CreateDataLakeAsync(CreateDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateDataLakeExceptionSubscriptionResponse CreateDataLakeExceptionSubscription(CreateDataLakeExceptionSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription">REST API Reference for CreateDataLakeExceptionSubscription Operation</seealso>
         public virtual Task<CreateDataLakeExceptionSubscriptionResponse> CreateDataLakeExceptionSubscriptionAsync(CreateDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateDataLakeOrganizationConfigurationResponse CreateDataLakeOrganizationConfiguration(CreateDataLakeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">REST API Reference for CreateDataLakeOrganizationConfiguration Operation</seealso>
         public virtual Task<CreateDataLakeOrganizationConfigurationResponse> CreateDataLakeOrganizationConfigurationAsync(CreateDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.SecurityLake
 
         internal virtual CreateSubscriberNotificationResponse CreateSubscriberNotification(CreateSubscriberNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberNotificationResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification">REST API Reference for CreateSubscriberNotification Operation</seealso>
         public virtual Task<CreateSubscriberNotificationResponse> CreateSubscriberNotificationAsync(CreateSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubscriberNotificationResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteAwsLogSourceResponse DeleteAwsLogSource(DeleteAwsLogSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAwsLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAwsLogSourceResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource">REST API Reference for DeleteAwsLogSource Operation</seealso>
         public virtual Task<DeleteAwsLogSourceResponse> DeleteAwsLogSourceAsync(DeleteAwsLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAwsLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAwsLogSourceResponseUnmarshaller.Instance;
 
@@ -864,7 +864,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteCustomLogSourceResponse DeleteCustomLogSource(DeleteCustomLogSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomLogSourceResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource">REST API Reference for DeleteCustomLogSource Operation</seealso>
         public virtual Task<DeleteCustomLogSourceResponse> DeleteCustomLogSourceAsync(DeleteCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomLogSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomLogSourceResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteDataLakeResponse DeleteDataLake(DeleteDataLakeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeResponseUnmarshaller.Instance;
 
@@ -987,7 +987,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake">REST API Reference for DeleteDataLake Operation</seealso>
         public virtual Task<DeleteDataLakeResponse> DeleteDataLakeAsync(DeleteDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteDataLakeExceptionSubscriptionResponse DeleteDataLakeExceptionSubscription(DeleteDataLakeExceptionSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription">REST API Reference for DeleteDataLakeExceptionSubscription Operation</seealso>
         public virtual Task<DeleteDataLakeExceptionSubscriptionResponse> DeleteDataLakeExceptionSubscriptionAsync(DeleteDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -1062,7 +1062,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteDataLakeOrganizationConfigurationResponse DeleteDataLakeOrganizationConfiguration(DeleteDataLakeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1114,7 +1114,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">REST API Reference for DeleteDataLakeOrganizationConfiguration Operation</seealso>
         public virtual Task<DeleteDataLakeOrganizationConfigurationResponse> DeleteDataLakeOrganizationConfigurationAsync(DeleteDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeleteSubscriberNotificationResponse DeleteSubscriberNotification(DeleteSubscriberNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberNotificationResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification">REST API Reference for DeleteSubscriberNotification Operation</seealso>
         public virtual Task<DeleteSubscriberNotificationResponse> DeleteSubscriberNotificationAsync(DeleteSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubscriberNotificationResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.SecurityLake
 
         internal virtual DeregisterDataLakeDelegatedAdministratorResponse DeregisterDataLakeDelegatedAdministrator(DeregisterDataLakeDelegatedAdministratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator">REST API Reference for DeregisterDataLakeDelegatedAdministrator Operation</seealso>
         public virtual Task<DeregisterDataLakeDelegatedAdministratorResponse> DeregisterDataLakeDelegatedAdministratorAsync(DeregisterDataLakeDelegatedAdministratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
@@ -1317,7 +1317,7 @@ namespace Amazon.SecurityLake
 
         internal virtual GetDataLakeExceptionSubscriptionResponse GetDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -1366,7 +1366,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription">REST API Reference for GetDataLakeExceptionSubscription Operation</seealso>
         public virtual Task<GetDataLakeExceptionSubscriptionResponse> GetDataLakeExceptionSubscriptionAsync(GetDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.SecurityLake
 
         internal virtual GetDataLakeOrganizationConfigurationResponse GetDataLakeOrganizationConfiguration(GetDataLakeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration">REST API Reference for GetDataLakeOrganizationConfiguration Operation</seealso>
         public virtual Task<GetDataLakeOrganizationConfigurationResponse> GetDataLakeOrganizationConfigurationAsync(GetDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.SecurityLake
 
         internal virtual GetDataLakeSourcesResponse GetDataLakeSources(GetDataLakeSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeSourcesResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources">REST API Reference for GetDataLakeSources Operation</seealso>
         public virtual Task<GetDataLakeSourcesResponse> GetDataLakeSourcesAsync(GetDataLakeSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataLakeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataLakeSourcesResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.SecurityLake
 
         internal virtual GetSubscriberResponse GetSubscriber(GetSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriberResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetSubscriber">REST API Reference for GetSubscriber Operation</seealso>
         public virtual Task<GetSubscriberResponse> GetSubscriberAsync(GetSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriberResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.SecurityLake
 
         internal virtual ListDataLakeExceptionsResponse ListDataLakeExceptions(ListDataLakeExceptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeExceptionsResponseUnmarshaller.Instance;
 
@@ -1615,7 +1615,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions">REST API Reference for ListDataLakeExceptions Operation</seealso>
         public virtual Task<ListDataLakeExceptionsResponse> ListDataLakeExceptionsAsync(ListDataLakeExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakeExceptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakeExceptionsResponseUnmarshaller.Instance;
 
@@ -1628,7 +1628,7 @@ namespace Amazon.SecurityLake
 
         internal virtual ListDataLakesResponse ListDataLakes(ListDataLakesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakesResponseUnmarshaller.Instance;
 
@@ -1678,7 +1678,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">REST API Reference for ListDataLakes Operation</seealso>
         public virtual Task<ListDataLakesResponse> ListDataLakesAsync(ListDataLakesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataLakesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataLakesResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.SecurityLake
 
         internal virtual ListLogSourcesResponse ListLogSources(ListLogSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogSourcesResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListLogSources">REST API Reference for ListLogSources Operation</seealso>
         public virtual Task<ListLogSourcesResponse> ListLogSourcesAsync(ListLogSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogSourcesResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.SecurityLake
 
         internal virtual ListSubscribersResponse ListSubscribers(ListSubscribersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscribersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscribersResponseUnmarshaller.Instance;
 
@@ -1802,7 +1802,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListSubscribers">REST API Reference for ListSubscribers Operation</seealso>
         public virtual Task<ListSubscribersResponse> ListSubscribersAsync(ListSubscribersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscribersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscribersResponseUnmarshaller.Instance;
 
@@ -1815,7 +1815,7 @@ namespace Amazon.SecurityLake
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1865,7 +1865,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.SecurityLake
 
         internal virtual RegisterDataLakeDelegatedAdministratorResponse RegisterDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
         public virtual Task<RegisterDataLakeDelegatedAdministratorResponse> RegisterDataLakeDelegatedAdministratorAsync(RegisterDataLakeDelegatedAdministratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
@@ -1941,7 +1941,7 @@ namespace Amazon.SecurityLake
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1998,7 +1998,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2011,7 +2011,7 @@ namespace Amazon.SecurityLake
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2061,7 +2061,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2074,7 +2074,7 @@ namespace Amazon.SecurityLake
 
         internal virtual UpdateDataLakeResponse UpdateDataLake(UpdateDataLakeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake">REST API Reference for UpdateDataLake Operation</seealso>
         public virtual Task<UpdateDataLakeResponse> UpdateDataLakeAsync(UpdateDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeResponseUnmarshaller.Instance;
 
@@ -2158,7 +2158,7 @@ namespace Amazon.SecurityLake
 
         internal virtual UpdateDataLakeExceptionSubscriptionResponse UpdateDataLakeExceptionSubscription(UpdateDataLakeExceptionSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription">REST API Reference for UpdateDataLakeExceptionSubscription Operation</seealso>
         public virtual Task<UpdateDataLakeExceptionSubscriptionResponse> UpdateDataLakeExceptionSubscriptionAsync(UpdateDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
@@ -2220,7 +2220,7 @@ namespace Amazon.SecurityLake
 
         internal virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberResponseUnmarshaller.Instance;
 
@@ -2283,7 +2283,7 @@ namespace Amazon.SecurityLake
 
         internal virtual UpdateSubscriberNotificationResponse UpdateSubscriberNotification(UpdateSubscriberNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberNotificationResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.SecurityLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification">REST API Reference for UpdateSubscriberNotification Operation</seealso>
         public virtual Task<UpdateSubscriberNotificationResponse> UpdateSubscriberNotificationAsync(UpdateSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriberNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriberNotificationResponseUnmarshaller.Instance;
 

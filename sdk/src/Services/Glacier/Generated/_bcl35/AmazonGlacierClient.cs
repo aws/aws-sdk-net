@@ -358,7 +358,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual AbortVaultLockResponse AbortVaultLock(AbortVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortVaultLock">REST API Reference for AbortVaultLock Operation</seealso>
         public virtual IAsyncResult BeginAbortVaultLock(AbortVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortVaultLockResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual AddTagsToVaultResponse AddTagsToVault(AddTagsToVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">REST API Reference for AddTagsToVault Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToVault(AddTagsToVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToVaultResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual CompleteVaultLockResponse CompleteVaultLock(CompleteVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteVaultLock">REST API Reference for CompleteVaultLock Operation</seealso>
         public virtual IAsyncResult BeginCompleteVaultLock(CompleteVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteVaultLockResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual CreateVaultResponse CreateVault(CreateVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CreateVault">REST API Reference for CreateVault Operation</seealso>
         public virtual IAsyncResult BeginCreateVault(CreateVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVaultResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -1016,7 +1016,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual DeleteVaultResponse DeleteVault(DeleteVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">REST API Reference for DeleteVault Operation</seealso>
         public virtual IAsyncResult BeginDeleteVault(DeleteVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual DeleteVaultAccessPolicyResponse DeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1115,7 +1115,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultAccessPolicy">REST API Reference for DeleteVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteVaultAccessPolicy(DeleteVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual DeleteVaultNotificationsResponse DeleteVaultNotifications(DeleteVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">REST API Reference for DeleteVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginDeleteVaultNotifications(DeleteVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -1364,7 +1364,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual DescribeVaultResponse DescribeVault(DescribeVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVault">REST API Reference for DescribeVault Operation</seealso>
         public virtual IAsyncResult BeginDescribeVault(DescribeVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVaultResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual GetDataRetrievalPolicyResponse GetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -1451,7 +1451,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicy">REST API Reference for GetDataRetrievalPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetDataRetrievalPolicy(GetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual GetJobOutputResponse GetJobOutput(GetJobOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
@@ -1574,7 +1574,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutput">REST API Reference for GetJobOutput Operation</seealso>
         public virtual IAsyncResult BeginGetJobOutput(GetJobOutputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobOutputResponseUnmarshaller.Instance;
 
@@ -1625,7 +1625,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual GetVaultAccessPolicyResponse GetVaultAccessPolicy(GetVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultAccessPolicy">REST API Reference for GetVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetVaultAccessPolicy(GetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual GetVaultLockResponse GetVaultLock(GetVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
@@ -1745,7 +1745,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultLock">REST API Reference for GetVaultLock Operation</seealso>
         public virtual IAsyncResult BeginGetVaultLock(GetVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultLockResponseUnmarshaller.Instance;
 
@@ -1815,7 +1815,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual GetVaultNotificationsResponse GetVaultNotifications(GetVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1836,7 +1836,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotifications">REST API Reference for GetVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginGetVaultNotifications(GetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -1893,7 +1893,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual InitiateJobResponse InitiateJob(InitiateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
@@ -1914,7 +1914,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">REST API Reference for InitiateJob Operation</seealso>
         public virtual IAsyncResult BeginInitiateJob(InitiateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateJobResponseUnmarshaller.Instance;
 
@@ -2004,7 +2004,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -2025,7 +2025,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -2117,7 +2117,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual InitiateVaultLockResponse InitiateVaultLock(InitiateVaultLockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLock">REST API Reference for InitiateVaultLock Operation</seealso>
         public virtual IAsyncResult BeginInitiateVaultLock(InitiateVaultLockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateVaultLockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateVaultLockResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -2251,7 +2251,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -2353,7 +2353,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -2428,7 +2428,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -2449,7 +2449,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2512,7 +2512,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListProvisionedCapacity">REST API Reference for ListProvisionedCapacity Operation</seealso>
         public virtual IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2560,7 +2560,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
@@ -2581,7 +2581,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">REST API Reference for ListTagsForVault Operation</seealso>
         public virtual IAsyncResult BeginListTagsForVault(ListTagsForVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForVaultResponseUnmarshaller.Instance;
 
@@ -2703,7 +2703,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual ListVaultsResponse ListVaults(ListVaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
@@ -2724,7 +2724,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListVaults">REST API Reference for ListVaults Operation</seealso>
         public virtual IAsyncResult BeginListVaults(ListVaultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
@@ -2769,7 +2769,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2790,7 +2790,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/PurchaseProvisionedCapacity">REST API Reference for PurchaseProvisionedCapacity Operation</seealso>
         public virtual IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseProvisionedCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual RemoveTagsFromVaultResponse RemoveTagsFromVault(RemoveTagsFromVaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
@@ -2860,7 +2860,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">REST API Reference for RemoveTagsFromVault Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromVault(RemoveTagsFromVaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromVaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromVaultResponseUnmarshaller.Instance;
 
@@ -2912,7 +2912,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual SetDataRetrievalPolicyResponse SetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -2933,7 +2933,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetDataRetrievalPolicy">REST API Reference for SetDataRetrievalPolicy Operation</seealso>
         public virtual IAsyncResult BeginSetDataRetrievalPolicy(SetDataRetrievalPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDataRetrievalPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDataRetrievalPolicyResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual SetVaultAccessPolicyResponse SetVaultAccessPolicy(SetVaultAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3005,7 +3005,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultAccessPolicy">REST API Reference for SetVaultAccessPolicy Operation</seealso>
         public virtual IAsyncResult BeginSetVaultAccessPolicy(SetVaultAccessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3095,7 +3095,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual SetVaultNotificationsResponse SetVaultNotifications(SetVaultNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -3116,7 +3116,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SetVaultNotifications">REST API Reference for SetVaultNotifications Operation</seealso>
         public virtual IAsyncResult BeginSetVaultNotifications(SetVaultNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetVaultNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetVaultNotificationsResponseUnmarshaller.Instance;
 
@@ -3213,7 +3213,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual UploadArchiveResponse UploadArchive(UploadArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
@@ -3234,7 +3234,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadArchive">REST API Reference for UploadArchive Operation</seealso>
         public virtual IAsyncResult BeginUploadArchive(UploadArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadArchiveResponseUnmarshaller.Instance;
 
@@ -3342,7 +3342,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual UploadMultipartPartResponse UploadMultipartPart(UploadMultipartPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 
@@ -3363,7 +3363,7 @@ namespace Amazon.Glacier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPart">REST API Reference for UploadMultipartPart Operation</seealso>
         public virtual IAsyncResult BeginUploadMultipartPart(UploadMultipartPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadMultipartPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadMultipartPartResponseUnmarshaller.Instance;
 

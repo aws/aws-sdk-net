@@ -289,7 +289,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BuildSuggestersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/BuildSuggesters">REST API Reference for BuildSuggesters Operation</seealso>
         public virtual Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BuildSuggestersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BuildSuggestersResponseUnmarshaller.Instance;
             
@@ -365,7 +365,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
             
@@ -450,7 +450,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineAnalysisScheme">REST API Reference for DefineAnalysisScheme Operation</seealso>
         public virtual Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineAnalysisSchemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineAnalysisSchemeResponseUnmarshaller.Instance;
             
@@ -541,7 +541,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineExpressionResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineExpression">REST API Reference for DefineExpression Operation</seealso>
         public virtual Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineExpressionResponseUnmarshaller.Instance;
             
@@ -635,7 +635,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineIndexFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
 
@@ -683,7 +683,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineIndexField">REST API Reference for DefineIndexField Operation</seealso>
         public virtual Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineIndexFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineIndexFieldResponseUnmarshaller.Instance;
             
@@ -730,7 +730,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineSuggesterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggester">REST API Reference for DefineSuggester Operation</seealso>
         public virtual Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DefineSuggesterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DefineSuggesterResponseUnmarshaller.Instance;
             
@@ -817,7 +817,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteAnalysisScheme">REST API Reference for DeleteAnalysisScheme Operation</seealso>
         public virtual Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisSchemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.Instance;
             
@@ -889,7 +889,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -920,7 +920,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
             
@@ -962,7 +962,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteExpression">REST API Reference for DeleteExpression Operation</seealso>
         public virtual Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExpressionResponseUnmarshaller.Instance;
             
@@ -1045,7 +1045,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
 
@@ -1086,7 +1086,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteIndexField">REST API Reference for DeleteIndexField Operation</seealso>
         public virtual Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexFieldResponseUnmarshaller.Instance;
             
@@ -1127,7 +1127,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSuggesterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DeleteSuggester">REST API Reference for DeleteSuggester Operation</seealso>
         public virtual Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSuggesterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSuggesterResponseUnmarshaller.Instance;
             
@@ -1206,7 +1206,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemes">REST API Reference for DescribeAnalysisSchemes Operation</seealso>
         public virtual Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisSchemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.Instance;
             
@@ -1290,7 +1290,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAvailabilityOptions">REST API Reference for DescribeAvailabilityOptions Operation</seealso>
         public virtual Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.Instance;
             
@@ -1377,7 +1377,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual DescribeDomainEndpointOptionsResponse DescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainEndpointOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainEndpointOptionsResponseUnmarshaller.Instance;
 
@@ -1418,7 +1418,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomainEndpointOptions">REST API Reference for DescribeDomainEndpointOptions Operation</seealso>
         public virtual Task<DescribeDomainEndpointOptionsResponse> DescribeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainEndpointOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainEndpointOptionsResponseUnmarshaller.Instance;
             
@@ -1479,7 +1479,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
             
@@ -1579,7 +1579,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExpressionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
 
@@ -1616,7 +1616,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeExpressions">REST API Reference for DescribeExpressions Operation</seealso>
         public virtual Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExpressionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExpressionsResponseUnmarshaller.Instance;
             
@@ -1655,7 +1655,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
 
@@ -1693,7 +1693,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeIndexFields">REST API Reference for DescribeIndexFields Operation</seealso>
         public virtual Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIndexFieldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIndexFieldsResponseUnmarshaller.Instance;
             
@@ -1730,7 +1730,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
 
@@ -1766,7 +1766,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeScalingParameters">REST API Reference for DescribeScalingParameters Operation</seealso>
         public virtual Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingParametersResponseUnmarshaller.Instance;
             
@@ -1804,7 +1804,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeServiceAccessPolicies">REST API Reference for DescribeServiceAccessPolicies Operation</seealso>
         public virtual Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.Instance;
             
@@ -1880,7 +1880,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSuggestersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
 
@@ -1918,7 +1918,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeSuggesters">REST API Reference for DescribeSuggesters Operation</seealso>
         public virtual Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSuggestersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSuggestersResponseUnmarshaller.Instance;
             
@@ -1956,7 +1956,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IndexDocuments">REST API Reference for IndexDocuments Operation</seealso>
         public virtual Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexDocumentsResponseUnmarshaller.Instance;
             
@@ -2032,7 +2032,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
             
@@ -2123,7 +2123,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
 
@@ -2173,7 +2173,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptions">REST API Reference for UpdateAvailabilityOptions Operation</seealso>
         public virtual Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.Instance;
             
@@ -2221,7 +2221,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual UpdateDomainEndpointOptionsResponse UpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainEndpointOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainEndpointOptionsResponseUnmarshaller.Instance;
 
@@ -2268,7 +2268,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateDomainEndpointOptions">REST API Reference for UpdateDomainEndpointOptions Operation</seealso>
         public virtual Task<UpdateDomainEndpointOptionsResponse> UpdateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainEndpointOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainEndpointOptionsResponseUnmarshaller.Instance;
             
@@ -2317,7 +2317,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScalingParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
 
@@ -2365,7 +2365,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParameters">REST API Reference for UpdateScalingParameters Operation</seealso>
         public virtual Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScalingParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScalingParametersResponseUnmarshaller.Instance;
             
@@ -2409,7 +2409,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -2452,7 +2452,7 @@ namespace Amazon.CloudSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateServiceAccessPolicies">REST API Reference for UpdateServiceAccessPolicies Operation</seealso>
         public virtual Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.Instance;
             

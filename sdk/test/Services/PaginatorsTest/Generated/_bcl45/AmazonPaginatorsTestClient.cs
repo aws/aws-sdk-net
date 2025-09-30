@@ -267,7 +267,7 @@ namespace Amazon.PaginatorsTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/paginator-test-2021-03-14/TestPaginator">REST API Reference for TestPaginator Operation</seealso>
         public virtual TestPaginatorResponse TestPaginator(TestPaginatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestPaginatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestPaginatorResponseUnmarshaller.Instance;
 
@@ -287,7 +287,7 @@ namespace Amazon.PaginatorsTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/paginator-test-2021-03-14/TestPaginator">REST API Reference for TestPaginator Operation</seealso>
         public virtual Task<TestPaginatorResponse> TestPaginatorAsync(TestPaginatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestPaginatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestPaginatorResponseUnmarshaller.Instance;
             

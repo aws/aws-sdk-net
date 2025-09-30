@@ -308,7 +308,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CreateTrustAnchor">REST API Reference for CreateTrustAnchor Operation</seealso>
         public virtual CreateTrustAnchorResponse CreateTrustAnchor(CreateTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustAnchorResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CreateTrustAnchor">REST API Reference for CreateTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginCreateTrustAnchor(CreateTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustAnchorResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
         public virtual DeleteAttributeMappingResponse DeleteAttributeMapping(DeleteAttributeMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributeMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributeMappingResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteAttributeMapping(DeleteAttributeMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributeMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributeMappingResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteCrl">REST API Reference for DeleteCrl Operation</seealso>
         public virtual DeleteCrlResponse DeleteCrl(DeleteCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrlResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteCrl">REST API Reference for DeleteCrl Operation</seealso>
         public virtual IAsyncResult BeginDeleteCrl(DeleteCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrlResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteTrustAnchor">REST API Reference for DeleteTrustAnchor Operation</seealso>
         public virtual DeleteTrustAnchorResponse DeleteTrustAnchor(DeleteTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustAnchorResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteTrustAnchor">REST API Reference for DeleteTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrustAnchor(DeleteTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustAnchorResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableCrl">REST API Reference for DisableCrl Operation</seealso>
         public virtual DisableCrlResponse DisableCrl(DisableCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableCrlResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableCrl">REST API Reference for DisableCrl Operation</seealso>
         public virtual IAsyncResult BeginDisableCrl(DisableCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableCrlResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableProfile">REST API Reference for DisableProfile Operation</seealso>
         public virtual DisableProfileResponse DisableProfile(DisableProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableProfileResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableProfile">REST API Reference for DisableProfile Operation</seealso>
         public virtual IAsyncResult BeginDisableProfile(DisableProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableProfileResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableTrustAnchor">REST API Reference for DisableTrustAnchor Operation</seealso>
         public virtual DisableTrustAnchorResponse DisableTrustAnchor(DisableTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTrustAnchorResponseUnmarshaller.Instance;
 
@@ -853,7 +853,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DisableTrustAnchor">REST API Reference for DisableTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginDisableTrustAnchor(DisableTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTrustAnchorResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableCrl">REST API Reference for EnableCrl Operation</seealso>
         public virtual EnableCrlResponse EnableCrl(EnableCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableCrlResponseUnmarshaller.Instance;
 
@@ -919,7 +919,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableCrl">REST API Reference for EnableCrl Operation</seealso>
         public virtual IAsyncResult BeginEnableCrl(EnableCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableCrlResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableProfile">REST API Reference for EnableProfile Operation</seealso>
         public virtual EnableProfileResponse EnableProfile(EnableProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableProfileResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableProfile">REST API Reference for EnableProfile Operation</seealso>
         public virtual IAsyncResult BeginEnableProfile(EnableProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableProfileResponseUnmarshaller.Instance;
 
@@ -1029,7 +1029,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableTrustAnchor">REST API Reference for EnableTrustAnchor Operation</seealso>
         public virtual EnableTrustAnchorResponse EnableTrustAnchor(EnableTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTrustAnchorResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/EnableTrustAnchor">REST API Reference for EnableTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginEnableTrustAnchor(EnableTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTrustAnchorResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetCrl">REST API Reference for GetCrl Operation</seealso>
         public virtual GetCrlResponse GetCrl(GetCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrlResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetCrl">REST API Reference for GetCrl Operation</seealso>
         public virtual IAsyncResult BeginGetCrl(GetCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrlResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual IAsyncResult BeginGetProfile(GetProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1224,7 +1224,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetSubject">REST API Reference for GetSubject Operation</seealso>
         public virtual GetSubjectResponse GetSubject(GetSubjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubjectResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetSubject">REST API Reference for GetSubject Operation</seealso>
         public virtual IAsyncResult BeginGetSubject(GetSubjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubjectResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetTrustAnchor">REST API Reference for GetTrustAnchor Operation</seealso>
         public virtual GetTrustAnchorResponse GetTrustAnchor(GetTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustAnchorResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/GetTrustAnchor">REST API Reference for GetTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginGetTrustAnchor(GetTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustAnchorResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ImportCrl">REST API Reference for ImportCrl Operation</seealso>
         public virtual ImportCrlResponse ImportCrl(ImportCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCrlResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ImportCrl">REST API Reference for ImportCrl Operation</seealso>
         public virtual IAsyncResult BeginImportCrl(ImportCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCrlResponseUnmarshaller.Instance;
 
@@ -1426,7 +1426,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListCrls">REST API Reference for ListCrls Operation</seealso>
         public virtual ListCrlsResponse ListCrls(ListCrlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrlsResponseUnmarshaller.Instance;
 
@@ -1447,7 +1447,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListCrls">REST API Reference for ListCrls Operation</seealso>
         public virtual IAsyncResult BeginListCrls(ListCrlsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrlsResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1512,7 +1512,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual IAsyncResult BeginListProfiles(ListProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1556,7 +1556,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListSubjects">REST API Reference for ListSubjects Operation</seealso>
         public virtual ListSubjectsResponse ListSubjects(ListSubjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubjectsResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListSubjects">REST API Reference for ListSubjects Operation</seealso>
         public virtual IAsyncResult BeginListSubjects(ListSubjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubjectsResponseUnmarshaller.Instance;
 
@@ -1624,7 +1624,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1645,7 +1645,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTrustAnchors">REST API Reference for ListTrustAnchors Operation</seealso>
         public virtual ListTrustAnchorsResponse ListTrustAnchors(ListTrustAnchorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrustAnchorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrustAnchorsResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTrustAnchors">REST API Reference for ListTrustAnchors Operation</seealso>
         public virtual IAsyncResult BeginListTrustAnchors(ListTrustAnchorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrustAnchorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrustAnchorsResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
         public virtual PutAttributeMappingResponse PutAttributeMapping(PutAttributeMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributeMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributeMappingResponseUnmarshaller.Instance;
 
@@ -1775,7 +1775,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
         public virtual IAsyncResult BeginPutAttributeMapping(PutAttributeMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributeMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributeMappingResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings">REST API Reference for PutNotificationSettings Operation</seealso>
         public virtual PutNotificationSettingsResponse PutNotificationSettings(PutNotificationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationSettingsResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings">REST API Reference for PutNotificationSettings Operation</seealso>
         public virtual IAsyncResult BeginPutNotificationSettings(PutNotificationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationSettingsResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings">REST API Reference for ResetNotificationSettings Operation</seealso>
         public virtual ResetNotificationSettingsResponse ResetNotificationSettings(ResetNotificationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNotificationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNotificationSettingsResponseUnmarshaller.Instance;
 
@@ -1917,7 +1917,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings">REST API Reference for ResetNotificationSettings Operation</seealso>
         public virtual IAsyncResult BeginResetNotificationSettings(ResetNotificationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNotificationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNotificationSettingsResponseUnmarshaller.Instance;
 
@@ -1967,7 +1967,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2056,7 +2056,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2105,7 +2105,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateCrl">REST API Reference for UpdateCrl Operation</seealso>
         public virtual UpdateCrlResponse UpdateCrl(UpdateCrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrlResponseUnmarshaller.Instance;
 
@@ -2126,7 +2126,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateCrl">REST API Reference for UpdateCrl Operation</seealso>
         public virtual IAsyncResult BeginUpdateCrl(UpdateCrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrlResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateTrustAnchor">REST API Reference for UpdateTrustAnchor Operation</seealso>
         public virtual UpdateTrustAnchorResponse UpdateTrustAnchor(UpdateTrustAnchorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustAnchorResponseUnmarshaller.Instance;
 
@@ -2267,7 +2267,7 @@ namespace Amazon.IAMRolesAnywhere
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/UpdateTrustAnchor">REST API Reference for UpdateTrustAnchor Operation</seealso>
         public virtual IAsyncResult BeginUpdateTrustAnchor(UpdateTrustAnchorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustAnchorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustAnchorResponseUnmarshaller.Instance;
 

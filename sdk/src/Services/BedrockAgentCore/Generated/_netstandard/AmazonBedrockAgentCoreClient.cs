@@ -282,7 +282,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual CreateEventResponse CreateEvent(CreateEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreateEvent">REST API Reference for CreateEvent Operation</seealso>
         public virtual Task<CreateEventResponse> CreateEventAsync(CreateEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventResponseUnmarshaller.Instance;
 
@@ -357,7 +357,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual DeleteEventResponse DeleteEvent(DeleteEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         public virtual Task<DeleteEventResponse> DeleteEventAsync(DeleteEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual DeleteMemoryRecordResponse DeleteMemoryRecord(DeleteMemoryRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemoryRecordResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteMemoryRecord">REST API Reference for DeleteMemoryRecord Operation</seealso>
         public virtual Task<DeleteMemoryRecordResponse> DeleteMemoryRecordAsync(DeleteMemoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemoryRecordResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetBrowserSessionResponse GetBrowserSession(GetBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBrowserSessionResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetBrowserSession">REST API Reference for GetBrowserSession Operation</seealso>
         public virtual Task<GetBrowserSessionResponse> GetBrowserSessionAsync(GetBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBrowserSessionResponseUnmarshaller.Instance;
 
@@ -588,7 +588,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetCodeInterpreterSessionResponse GetCodeInterpreterSession(GetCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetCodeInterpreterSession">REST API Reference for GetCodeInterpreterSession Operation</seealso>
         public virtual Task<GetCodeInterpreterSessionResponse> GetCodeInterpreterSessionAsync(GetCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -675,7 +675,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetEventResponse GetEvent(GetEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetEvent">REST API Reference for GetEvent Operation</seealso>
         public virtual Task<GetEventResponse> GetEventAsync(GetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetMemoryRecordResponse GetMemoryRecord(GetMemoryRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemoryRecordResponseUnmarshaller.Instance;
 
@@ -803,7 +803,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetMemoryRecord">REST API Reference for GetMemoryRecord Operation</seealso>
         public virtual Task<GetMemoryRecordResponse> GetMemoryRecordAsync(GetMemoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemoryRecordResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetResourceApiKeyResponse GetResourceApiKey(GetResourceApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceApiKeyResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceApiKey">REST API Reference for GetResourceApiKey Operation</seealso>
         public virtual Task<GetResourceApiKeyResponse> GetResourceApiKeyAsync(GetResourceApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceApiKeyResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetResourceOauth2TokenResponse GetResourceOauth2Token(GetResourceOauth2TokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceOauth2TokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceOauth2TokenResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceOauth2Token">REST API Reference for GetResourceOauth2Token Operation</seealso>
         public virtual Task<GetResourceOauth2TokenResponse> GetResourceOauth2TokenAsync(GetResourceOauth2TokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceOauth2TokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceOauth2TokenResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetWorkloadAccessTokenResponse GetWorkloadAccessToken(GetWorkloadAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessToken">REST API Reference for GetWorkloadAccessToken Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenResponse> GetWorkloadAccessTokenAsync(GetWorkloadAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetWorkloadAccessTokenForJWTResponse GetWorkloadAccessTokenForJWT(GetWorkloadAccessTokenForJWTRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForJWTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForJWTResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForJWT">REST API Reference for GetWorkloadAccessTokenForJWT Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenForJWTResponse> GetWorkloadAccessTokenForJWTAsync(GetWorkloadAccessTokenForJWTRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForJWTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForJWTResponseUnmarshaller.Instance;
 
@@ -1069,7 +1069,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual GetWorkloadAccessTokenForUserIdResponse GetWorkloadAccessTokenForUserId(GetWorkloadAccessTokenForUserIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForUserIdResponseUnmarshaller.Instance;
 
@@ -1120,7 +1120,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForUserId">REST API Reference for GetWorkloadAccessTokenForUserId Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenForUserIdResponse> GetWorkloadAccessTokenForUserIdAsync(GetWorkloadAccessTokenForUserIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForUserIdResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual InvokeAgentRuntimeResponse InvokeAgentRuntime(InvokeAgentRuntimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAgentRuntimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAgentRuntimeResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntime">REST API Reference for InvokeAgentRuntime Operation</seealso>
         public virtual Task<InvokeAgentRuntimeResponse> InvokeAgentRuntimeAsync(InvokeAgentRuntimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAgentRuntimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAgentRuntimeResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual InvokeCodeInterpreterResponse InvokeCodeInterpreter(InvokeCodeInterpreterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeCodeInterpreterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeCodeInterpreterResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeCodeInterpreter">REST API Reference for InvokeCodeInterpreter Operation</seealso>
         public virtual Task<InvokeCodeInterpreterResponse> InvokeCodeInterpreterAsync(InvokeCodeInterpreterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeCodeInterpreterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeCodeInterpreterResponseUnmarshaller.Instance;
 
@@ -1331,7 +1331,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListActorsResponse ListActors(ListActorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActorsResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListActors">REST API Reference for ListActors Operation</seealso>
         public virtual Task<ListActorsResponse> ListActorsAsync(ListActorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActorsResponseUnmarshaller.Instance;
 
@@ -1402,7 +1402,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListBrowserSessionsResponse ListBrowserSessions(ListBrowserSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrowserSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrowserSessionsResponseUnmarshaller.Instance;
 
@@ -1476,7 +1476,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBrowserSessions">REST API Reference for ListBrowserSessions Operation</seealso>
         public virtual Task<ListBrowserSessionsResponse> ListBrowserSessionsAsync(ListBrowserSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrowserSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrowserSessionsResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListCodeInterpreterSessionsResponse ListCodeInterpreterSessions(ListCodeInterpreterSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeInterpreterSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeInterpreterSessionsResponseUnmarshaller.Instance;
 
@@ -1563,7 +1563,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListCodeInterpreterSessions">REST API Reference for ListCodeInterpreterSessions Operation</seealso>
         public virtual Task<ListCodeInterpreterSessionsResponse> ListCodeInterpreterSessionsAsync(ListCodeInterpreterSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeInterpreterSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeInterpreterSessionsResponseUnmarshaller.Instance;
 
@@ -1576,7 +1576,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListEventsResponse ListEvents(ListEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual Task<ListEventsResponse> ListEventsAsync(ListEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListMemoryRecordsResponse ListMemoryRecords(ListMemoryRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryRecords">REST API Reference for ListMemoryRecords Operation</seealso>
         public virtual Task<ListMemoryRecordsResponse> ListMemoryRecordsAsync(ListMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -1719,7 +1719,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -1790,7 +1790,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual RetrieveMemoryRecordsResponse RetrieveMemoryRecords(RetrieveMemoryRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -1850,7 +1850,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/RetrieveMemoryRecords">REST API Reference for RetrieveMemoryRecords Operation</seealso>
         public virtual Task<RetrieveMemoryRecordsResponse> RetrieveMemoryRecordsAsync(RetrieveMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual StartBrowserSessionResponse StartBrowserSession(StartBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBrowserSessionResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBrowserSession">REST API Reference for StartBrowserSession Operation</seealso>
         public virtual Task<StartBrowserSessionResponse> StartBrowserSessionAsync(StartBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBrowserSessionResponseUnmarshaller.Instance;
 
@@ -1962,7 +1962,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual StartCodeInterpreterSessionResponse StartCodeInterpreterSession(StartCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -2047,7 +2047,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">REST API Reference for StartCodeInterpreterSession Operation</seealso>
         public virtual Task<StartCodeInterpreterSessionResponse> StartCodeInterpreterSessionAsync(StartCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -2060,7 +2060,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual StopBrowserSessionResponse StopBrowserSession(StopBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBrowserSessionResponseUnmarshaller.Instance;
 
@@ -2139,7 +2139,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopBrowserSession">REST API Reference for StopBrowserSession Operation</seealso>
         public virtual Task<StopBrowserSessionResponse> StopBrowserSessionAsync(StopBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBrowserSessionResponseUnmarshaller.Instance;
 
@@ -2152,7 +2152,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual StopCodeInterpreterSessionResponse StopCodeInterpreterSession(StopCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -2232,7 +2232,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">REST API Reference for StopCodeInterpreterSession Operation</seealso>
         public virtual Task<StopCodeInterpreterSessionResponse> StopCodeInterpreterSessionAsync(StopCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -2245,7 +2245,7 @@ namespace Amazon.BedrockAgentCore
 
         internal virtual UpdateBrowserStreamResponse UpdateBrowserStream(UpdateBrowserStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrowserStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrowserStreamResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateBrowserStream">REST API Reference for UpdateBrowserStream Operation</seealso>
         public virtual Task<UpdateBrowserStreamResponse> UpdateBrowserStreamAsync(UpdateBrowserStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrowserStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrowserStreamResponseUnmarshaller.Instance;
 

@@ -286,7 +286,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeleteResourcePermission">REST API Reference for DeleteResourcePermission Operation</seealso>
         public virtual DeleteResourcePermissionResponse DeleteResourcePermission(DeleteResourcePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePermissionResponseUnmarshaller.Instance;
 
@@ -307,7 +307,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeleteResourcePermission">REST API Reference for DeleteResourcePermission Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePermission(DeleteResourcePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePermissionResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeregisterApplication">REST API Reference for DeregisterApplication Operation</seealso>
         public virtual DeregisterApplicationResponse DeregisterApplication(DeregisterApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterApplicationResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/DeregisterApplication">REST API Reference for DeregisterApplication Operation</seealso>
         public virtual IAsyncResult BeginDeregisterApplication(DeregisterApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterApplicationResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual IAsyncResult BeginGetApplication(GetApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual GetComponentResponse GetComponent(GetComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual IAsyncResult BeginGetComponent(GetComponentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -534,7 +534,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
         public virtual GetConfigurationCheckOperationResponse GetConfigurationCheckOperation(GetConfigurationCheckOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationCheckOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationCheckOperationResponseUnmarshaller.Instance;
 
@@ -555,7 +555,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetConfigurationCheckOperation">REST API Reference for GetConfigurationCheckOperation Operation</seealso>
         public virtual IAsyncResult BeginGetConfigurationCheckOperation(GetConfigurationCheckOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationCheckOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationCheckOperationResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual IAsyncResult BeginGetDatabase(GetDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
@@ -676,7 +676,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual IAsyncResult BeginGetOperation(GetOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOperationResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetResourcePermission">REST API Reference for GetResourcePermission Operation</seealso>
         public virtual GetResourcePermissionResponse GetResourcePermission(GetResourcePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePermissionResponseUnmarshaller.Instance;
 
@@ -739,7 +739,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/GetResourcePermission">REST API Reference for GetResourcePermission Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePermission(GetResourcePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePermissionResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -868,7 +868,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual IAsyncResult BeginListComponents(ListComponentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
         public virtual ListConfigurationCheckDefinitionsResponse ListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationCheckDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationCheckDefinitionsResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckDefinitions">REST API Reference for ListConfigurationCheckDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationCheckDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationCheckDefinitionsResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
         public virtual ListConfigurationCheckOperationsResponse ListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationCheckOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationCheckOperationsResponseUnmarshaller.Instance;
 
@@ -991,7 +991,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListConfigurationCheckOperations">REST API Reference for ListConfigurationCheckOperations Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationCheckOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationCheckOperationsResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -1055,7 +1055,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual IAsyncResult BeginListDatabases(ListDatabasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">REST API Reference for ListOperationEvents Operation</seealso>
         public virtual ListOperationEventsResponse ListOperationEvents(ListOperationEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationEventsResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">REST API Reference for ListOperationEvents Operation</seealso>
         public virtual IAsyncResult BeginListOperationEvents(ListOperationEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationEventsResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
@@ -1181,7 +1181,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
         public virtual ListSubCheckResultsResponse ListSubCheckResults(ListSubCheckResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubCheckResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubCheckResultsResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckResults">REST API Reference for ListSubCheckResults Operation</seealso>
         public virtual IAsyncResult BeginListSubCheckResults(ListSubCheckResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubCheckResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubCheckResultsResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
         public virtual ListSubCheckRuleResultsResponse ListSubCheckRuleResults(ListSubCheckRuleResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubCheckRuleResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubCheckRuleResultsResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListSubCheckRuleResults">REST API Reference for ListSubCheckRuleResults Operation</seealso>
         public virtual IAsyncResult BeginListSubCheckRuleResults(ListSubCheckRuleResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubCheckRuleResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubCheckRuleResultsResponseUnmarshaller.Instance;
 
@@ -1344,7 +1344,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1407,7 +1407,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/PutResourcePermission">REST API Reference for PutResourcePermission Operation</seealso>
         public virtual PutResourcePermissionResponse PutResourcePermission(PutResourcePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePermissionResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/PutResourcePermission">REST API Reference for PutResourcePermission Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePermission(PutResourcePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePermissionResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/RegisterApplication">REST API Reference for RegisterApplication Operation</seealso>
         public virtual RegisterApplicationResponse RegisterApplication(RegisterApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterApplicationResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/RegisterApplication">REST API Reference for RegisterApplication Operation</seealso>
         public virtual IAsyncResult BeginRegisterApplication(RegisterApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterApplicationResponseUnmarshaller.Instance;
 
@@ -1561,7 +1561,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
@@ -1582,7 +1582,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual IAsyncResult BeginStartApplication(StartApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
         public virtual StartApplicationRefreshResponse StartApplicationRefresh(StartApplicationRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationRefreshResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplicationRefresh">REST API Reference for StartApplicationRefresh Operation</seealso>
         public virtual IAsyncResult BeginStartApplicationRefresh(StartApplicationRefreshRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationRefreshResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
         public virtual StartConfigurationChecksResponse StartConfigurationChecks(StartConfigurationChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationChecksResponseUnmarshaller.Instance;
 
@@ -1717,7 +1717,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartConfigurationChecks">REST API Reference for StartConfigurationChecks Operation</seealso>
         public virtual IAsyncResult BeginStartConfigurationChecks(StartConfigurationChecksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartConfigurationChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartConfigurationChecksResponseUnmarshaller.Instance;
 
@@ -1768,7 +1768,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
@@ -1789,7 +1789,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual IAsyncResult BeginStopApplication(StopApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1963,7 +1963,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 
@@ -1984,7 +1984,7 @@ namespace Amazon.SsmSap
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/UpdateApplicationSettings">REST API Reference for UpdateApplicationSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplicationSettings(UpdateApplicationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationSettingsResponseUnmarshaller.Instance;
 

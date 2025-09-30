@@ -272,7 +272,7 @@ namespace Amazon.MediaLive
 
         internal virtual AcceptInputDeviceTransferResponse AcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer">REST API Reference for AcceptInputDeviceTransfer Operation</seealso>
         public virtual Task<AcceptInputDeviceTransferResponse> AcceptInputDeviceTransferAsync(AcceptInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.MediaLive
 
         internal virtual BatchDeleteResponse BatchDelete(BatchDeleteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">REST API Reference for BatchDelete Operation</seealso>
         public virtual Task<BatchDeleteResponse> BatchDeleteAsync(BatchDeleteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.MediaLive
 
         internal virtual BatchStartResponse BatchStart(BatchStartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">REST API Reference for BatchStart Operation</seealso>
         public virtual Task<BatchStartResponse> BatchStartAsync(BatchStartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.MediaLive
 
         internal virtual BatchStopResponse BatchStop(BatchStopRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">REST API Reference for BatchStop Operation</seealso>
         public virtual Task<BatchStopResponse> BatchStopAsync(BatchStopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.MediaLive
 
         internal virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">REST API Reference for BatchUpdateSchedule Operation</seealso>
         public virtual Task<BatchUpdateScheduleResponse> BatchUpdateScheduleAsync(BatchUpdateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.MediaLive
 
         internal virtual CancelInputDeviceTransferResponse CancelInputDeviceTransfer(CancelInputDeviceTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer">REST API Reference for CancelInputDeviceTransfer Operation</seealso>
         public virtual Task<CancelInputDeviceTransferResponse> CancelInputDeviceTransferAsync(CancelInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -627,7 +627,7 @@ namespace Amazon.MediaLive
 
         internal virtual ClaimDeviceResponse ClaimDevice(ClaimDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimDeviceResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ClaimDevice">REST API Reference for ClaimDevice Operation</seealso>
         public virtual Task<ClaimDeviceResponse> ClaimDeviceAsync(ClaimDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ClaimDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ClaimDeviceResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -731,7 +731,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateChannelPlacementGroupResponse CreateChannelPlacementGroup(CreateChannelPlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannelPlacementGroup">REST API Reference for CreateChannelPlacementGroup Operation</seealso>
         public virtual Task<CreateChannelPlacementGroupResponse> CreateChannelPlacementGroupAsync(CreateChannelPlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateCloudWatchAlarmTemplateResponse CreateCloudWatchAlarmTemplate(CreateCloudWatchAlarmTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -844,7 +844,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplate">REST API Reference for CreateCloudWatchAlarmTemplate Operation</seealso>
         public virtual Task<CreateCloudWatchAlarmTemplateResponse> CreateCloudWatchAlarmTemplateAsync(CreateCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateCloudWatchAlarmTemplateGroupResponse CreateCloudWatchAlarmTemplateGroup(CreateCloudWatchAlarmTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCloudWatchAlarmTemplateGroup">REST API Reference for CreateCloudWatchAlarmTemplateGroup Operation</seealso>
         public virtual Task<CreateCloudWatchAlarmTemplateGroupResponse> CreateCloudWatchAlarmTemplateGroupAsync(CreateCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateEventBridgeRuleTemplateResponse CreateEventBridgeRuleTemplate(CreateEventBridgeRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplate">REST API Reference for CreateEventBridgeRuleTemplate Operation</seealso>
         public virtual Task<CreateEventBridgeRuleTemplateResponse> CreateEventBridgeRuleTemplateAsync(CreateEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -1018,7 +1018,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateEventBridgeRuleTemplateGroupResponse CreateEventBridgeRuleTemplateGroup(CreateEventBridgeRuleTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -1058,7 +1058,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateEventBridgeRuleTemplateGroup">REST API Reference for CreateEventBridgeRuleTemplateGroup Operation</seealso>
         public virtual Task<CreateEventBridgeRuleTemplateGroupResponse> CreateEventBridgeRuleTemplateGroupAsync(CreateEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -1071,7 +1071,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateInputResponse CreateInput(CreateInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
@@ -1110,7 +1110,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual Task<CreateInputResponse> CreateInputAsync(CreateInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateInputSecurityGroupResponse CreateInputSecurityGroup(CreateInputSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup">REST API Reference for CreateInputSecurityGroup Operation</seealso>
         public virtual Task<CreateInputSecurityGroupResponse> CreateInputSecurityGroupAsync(CreateInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1175,7 +1175,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateMultiplexResponse CreateMultiplex(CreateMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiplexResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex">REST API Reference for CreateMultiplex Operation</seealso>
         public virtual Task<CreateMultiplexResponse> CreateMultiplexAsync(CreateMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiplexResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateMultiplexProgramResponse CreateMultiplexProgram(CreateMultiplexProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram">REST API Reference for CreateMultiplexProgram Operation</seealso>
         public virtual Task<CreateMultiplexProgramResponse> CreateMultiplexProgramAsync(CreateMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateNetworkResponse CreateNetwork(CreateNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNetwork">REST API Reference for CreateNetwork Operation</seealso>
         public virtual Task<CreateNetworkResponse> CreateNetworkAsync(CreateNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkResponseUnmarshaller.Instance;
 
@@ -1348,7 +1348,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateNodeResponse CreateNode(CreateNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNode">REST API Reference for CreateNode Operation</seealso>
         public virtual Task<CreateNodeResponse> CreateNodeAsync(CreateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateNodeRegistrationScriptResponse CreateNodeRegistrationScript(CreateNodeRegistrationScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRegistrationScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeRegistrationScriptResponseUnmarshaller.Instance;
 
@@ -1449,7 +1449,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateNodeRegistrationScript">REST API Reference for CreateNodeRegistrationScript Operation</seealso>
         public virtual Task<CreateNodeRegistrationScriptResponse> CreateNodeRegistrationScriptAsync(CreateNodeRegistrationScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeRegistrationScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeRegistrationScriptResponseUnmarshaller.Instance;
 
@@ -1462,7 +1462,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreatePartnerInputResponse CreatePartnerInput(CreatePartnerInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerInputResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">REST API Reference for CreatePartnerInput Operation</seealso>
         public virtual Task<CreatePartnerInputResponse> CreatePartnerInputAsync(CreatePartnerInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerInputResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateSdiSourceResponse CreateSdiSource(CreateSdiSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSdiSource">REST API Reference for CreateSdiSource Operation</seealso>
         public virtual Task<CreateSdiSourceResponse> CreateSdiSourceAsync(CreateSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSdiSourceResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateSignalMapResponse CreateSignalMap(CreateSignalMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalMapResponseUnmarshaller.Instance;
 
@@ -1612,7 +1612,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateSignalMap">REST API Reference for CreateSignalMap Operation</seealso>
         public virtual Task<CreateSignalMapResponse> CreateSignalMapAsync(CreateSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalMapResponseUnmarshaller.Instance;
 
@@ -1625,7 +1625,7 @@ namespace Amazon.MediaLive
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -1658,7 +1658,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -1716,7 +1716,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -1729,7 +1729,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteChannelPlacementGroupResponse DeleteChannelPlacementGroup(DeleteChannelPlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannelPlacementGroup">REST API Reference for DeleteChannelPlacementGroup Operation</seealso>
         public virtual Task<DeleteChannelPlacementGroupResponse> DeleteChannelPlacementGroupAsync(DeleteChannelPlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -1787,7 +1787,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteCloudWatchAlarmTemplateResponse DeleteCloudWatchAlarmTemplate(DeleteCloudWatchAlarmTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -1826,7 +1826,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplate">REST API Reference for DeleteCloudWatchAlarmTemplate Operation</seealso>
         public virtual Task<DeleteCloudWatchAlarmTemplateResponse> DeleteCloudWatchAlarmTemplateAsync(DeleteCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteCloudWatchAlarmTemplateGroupResponse DeleteCloudWatchAlarmTemplateGroup(DeleteCloudWatchAlarmTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCloudWatchAlarmTemplateGroup">REST API Reference for DeleteCloudWatchAlarmTemplateGroup Operation</seealso>
         public virtual Task<DeleteCloudWatchAlarmTemplateGroupResponse> DeleteCloudWatchAlarmTemplateGroupAsync(DeleteCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteEventBridgeRuleTemplateResponse DeleteEventBridgeRuleTemplate(DeleteEventBridgeRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplate">REST API Reference for DeleteEventBridgeRuleTemplate Operation</seealso>
         public virtual Task<DeleteEventBridgeRuleTemplateResponse> DeleteEventBridgeRuleTemplateAsync(DeleteEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -2002,7 +2002,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteEventBridgeRuleTemplateGroupResponse DeleteEventBridgeRuleTemplateGroup(DeleteEventBridgeRuleTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteEventBridgeRuleTemplateGroup">REST API Reference for DeleteEventBridgeRuleTemplateGroup Operation</seealso>
         public virtual Task<DeleteEventBridgeRuleTemplateGroupResponse> DeleteEventBridgeRuleTemplateGroupAsync(DeleteEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -2055,7 +2055,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteInputResponse DeleteInput(DeleteInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual Task<DeleteInputResponse> DeleteInputAsync(DeleteInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
@@ -2113,7 +2113,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteInputSecurityGroupResponse DeleteInputSecurityGroup(DeleteInputSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -2155,7 +2155,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup">REST API Reference for DeleteInputSecurityGroup Operation</seealso>
         public virtual Task<DeleteInputSecurityGroupResponse> DeleteInputSecurityGroupAsync(DeleteInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -2168,7 +2168,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteMultiplexResponse DeleteMultiplex(DeleteMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiplexResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex">REST API Reference for DeleteMultiplex Operation</seealso>
         public virtual Task<DeleteMultiplexResponse> DeleteMultiplexAsync(DeleteMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiplexResponseUnmarshaller.Instance;
 
@@ -2226,7 +2226,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteMultiplexProgramResponse DeleteMultiplexProgram(DeleteMultiplexProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -2271,7 +2271,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram">REST API Reference for DeleteMultiplexProgram Operation</seealso>
         public virtual Task<DeleteMultiplexProgramResponse> DeleteMultiplexProgramAsync(DeleteMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteNetworkResponse DeleteNetwork(DeleteNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkResponseUnmarshaller.Instance;
 
@@ -2329,7 +2329,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteNetwork">REST API Reference for DeleteNetwork Operation</seealso>
         public virtual Task<DeleteNetworkResponse> DeleteNetworkAsync(DeleteNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkResponseUnmarshaller.Instance;
 
@@ -2342,7 +2342,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteNodeResponse DeleteNode(DeleteNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodeResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteNode">REST API Reference for DeleteNode Operation</seealso>
         public virtual Task<DeleteNodeResponse> DeleteNodeAsync(DeleteNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodeResponseUnmarshaller.Instance;
 
@@ -2400,7 +2400,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteReservationResponse DeleteReservation(DeleteReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReservationResponseUnmarshaller.Instance;
 
@@ -2445,7 +2445,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation">REST API Reference for DeleteReservation Operation</seealso>
         public virtual Task<DeleteReservationResponse> DeleteReservationAsync(DeleteReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReservationResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteScheduleResponse DeleteSchedule(DeleteScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -2500,7 +2500,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSchedule">REST API Reference for DeleteSchedule Operation</seealso>
         public virtual Task<DeleteScheduleResponse> DeleteScheduleAsync(DeleteScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -2513,7 +2513,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteSdiSourceResponse DeleteSdiSource(DeleteSdiSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
 
@@ -2559,7 +2559,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSdiSource">REST API Reference for DeleteSdiSource Operation</seealso>
         public virtual Task<DeleteSdiSourceResponse> DeleteSdiSourceAsync(DeleteSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSdiSourceResponseUnmarshaller.Instance;
 
@@ -2572,7 +2572,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteSignalMapResponse DeleteSignalMap(DeleteSignalMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalMapResponseUnmarshaller.Instance;
 
@@ -2611,7 +2611,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteSignalMap">REST API Reference for DeleteSignalMap Operation</seealso>
         public virtual Task<DeleteSignalMapResponse> DeleteSignalMapAsync(DeleteSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalMapResponseUnmarshaller.Instance;
 
@@ -2624,7 +2624,7 @@ namespace Amazon.MediaLive
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -2657,7 +2657,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -2670,7 +2670,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeAccountConfigurationResponse DescribeAccountConfiguration(DescribeAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -2709,7 +2709,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">REST API Reference for DescribeAccountConfiguration Operation</seealso>
         public virtual Task<DescribeAccountConfigurationResponse> DescribeAccountConfigurationAsync(DescribeAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -2722,7 +2722,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -2764,7 +2764,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -2777,7 +2777,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeChannelPlacementGroupResponse DescribeChannelPlacementGroup(DescribeChannelPlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -2819,7 +2819,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannelPlacementGroup">REST API Reference for DescribeChannelPlacementGroup Operation</seealso>
         public virtual Task<DescribeChannelPlacementGroupResponse> DescribeChannelPlacementGroupAsync(DescribeChannelPlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -2832,7 +2832,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -2874,7 +2874,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -2887,7 +2887,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeInputResponse DescribeInput(DescribeInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
@@ -2929,7 +2929,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual Task<DescribeInputResponse> DescribeInputAsync(DescribeInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
@@ -2942,7 +2942,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeInputDeviceResponse DescribeInputDevice(DescribeInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputDeviceResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice">REST API Reference for DescribeInputDevice Operation</seealso>
         public virtual Task<DescribeInputDeviceResponse> DescribeInputDeviceAsync(DescribeInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputDeviceResponseUnmarshaller.Instance;
 
@@ -2997,7 +2997,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeInputDeviceThumbnailResponse DescribeInputDeviceThumbnail(DescribeInputDeviceThumbnailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputDeviceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputDeviceThumbnailResponseUnmarshaller.Instance;
 
@@ -3039,7 +3039,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail">REST API Reference for DescribeInputDeviceThumbnail Operation</seealso>
         public virtual Task<DescribeInputDeviceThumbnailResponse> DescribeInputDeviceThumbnailAsync(DescribeInputDeviceThumbnailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputDeviceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputDeviceThumbnailResponseUnmarshaller.Instance;
 
@@ -3052,7 +3052,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeInputSecurityGroupResponse DescribeInputSecurityGroup(DescribeInputSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -3094,7 +3094,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup">REST API Reference for DescribeInputSecurityGroup Operation</seealso>
         public virtual Task<DescribeInputSecurityGroupResponse> DescribeInputSecurityGroupAsync(DescribeInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -3107,7 +3107,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeMultiplexResponse DescribeMultiplex(DescribeMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiplexResponseUnmarshaller.Instance;
 
@@ -3149,7 +3149,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex">REST API Reference for DescribeMultiplex Operation</seealso>
         public virtual Task<DescribeMultiplexResponse> DescribeMultiplexAsync(DescribeMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiplexResponseUnmarshaller.Instance;
 
@@ -3162,7 +3162,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeMultiplexProgramResponse DescribeMultiplexProgram(DescribeMultiplexProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -3204,7 +3204,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram">REST API Reference for DescribeMultiplexProgram Operation</seealso>
         public virtual Task<DescribeMultiplexProgramResponse> DescribeMultiplexProgramAsync(DescribeMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -3217,7 +3217,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeNetworkResponse DescribeNetwork(DescribeNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkResponseUnmarshaller.Instance;
 
@@ -3259,7 +3259,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeNetwork">REST API Reference for DescribeNetwork Operation</seealso>
         public virtual Task<DescribeNetworkResponse> DescribeNetworkAsync(DescribeNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkResponseUnmarshaller.Instance;
 
@@ -3272,7 +3272,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeNodeResponse DescribeNode(DescribeNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeResponseUnmarshaller.Instance;
 
@@ -3314,7 +3314,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeNode">REST API Reference for DescribeNode Operation</seealso>
         public virtual Task<DescribeNodeResponse> DescribeNodeAsync(DescribeNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeResponseUnmarshaller.Instance;
 
@@ -3327,7 +3327,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeOfferingResponse DescribeOffering(DescribeOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -3369,7 +3369,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual Task<DescribeOfferingResponse> DescribeOfferingAsync(DescribeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -3382,7 +3382,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeReservationResponse DescribeReservation(DescribeReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -3424,7 +3424,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual Task<DescribeReservationResponse> DescribeReservationAsync(DescribeReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -3437,7 +3437,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeScheduleResponse DescribeSchedule(DescribeScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
@@ -3479,7 +3479,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
         public virtual Task<DescribeScheduleResponse> DescribeScheduleAsync(DescribeScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
@@ -3492,7 +3492,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeSdiSourceResponse DescribeSdiSource(DescribeSdiSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
 
@@ -3534,7 +3534,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSdiSource">REST API Reference for DescribeSdiSource Operation</seealso>
         public virtual Task<DescribeSdiSourceResponse> DescribeSdiSourceAsync(DescribeSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSdiSourceResponseUnmarshaller.Instance;
 
@@ -3547,7 +3547,7 @@ namespace Amazon.MediaLive
 
         internal virtual DescribeThumbnailsResponse DescribeThumbnails(DescribeThumbnailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
 
@@ -3592,7 +3592,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">REST API Reference for DescribeThumbnails Operation</seealso>
         public virtual Task<DescribeThumbnailsResponse> DescribeThumbnailsAsync(DescribeThumbnailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThumbnailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThumbnailsResponseUnmarshaller.Instance;
 
@@ -3605,7 +3605,7 @@ namespace Amazon.MediaLive
 
         internal virtual GetCloudWatchAlarmTemplateResponse GetCloudWatchAlarmTemplate(GetCloudWatchAlarmTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -3641,7 +3641,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplate">REST API Reference for GetCloudWatchAlarmTemplate Operation</seealso>
         public virtual Task<GetCloudWatchAlarmTemplateResponse> GetCloudWatchAlarmTemplateAsync(GetCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -3654,7 +3654,7 @@ namespace Amazon.MediaLive
 
         internal virtual GetCloudWatchAlarmTemplateGroupResponse GetCloudWatchAlarmTemplateGroup(GetCloudWatchAlarmTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -3690,7 +3690,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetCloudWatchAlarmTemplateGroup">REST API Reference for GetCloudWatchAlarmTemplateGroup Operation</seealso>
         public virtual Task<GetCloudWatchAlarmTemplateGroupResponse> GetCloudWatchAlarmTemplateGroupAsync(GetCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -3703,7 +3703,7 @@ namespace Amazon.MediaLive
 
         internal virtual GetEventBridgeRuleTemplateResponse GetEventBridgeRuleTemplate(GetEventBridgeRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -3739,7 +3739,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplate">REST API Reference for GetEventBridgeRuleTemplate Operation</seealso>
         public virtual Task<GetEventBridgeRuleTemplateResponse> GetEventBridgeRuleTemplateAsync(GetEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -3752,7 +3752,7 @@ namespace Amazon.MediaLive
 
         internal virtual GetEventBridgeRuleTemplateGroupResponse GetEventBridgeRuleTemplateGroup(GetEventBridgeRuleTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -3788,7 +3788,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetEventBridgeRuleTemplateGroup">REST API Reference for GetEventBridgeRuleTemplateGroup Operation</seealso>
         public virtual Task<GetEventBridgeRuleTemplateGroupResponse> GetEventBridgeRuleTemplateGroupAsync(GetEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -3801,7 +3801,7 @@ namespace Amazon.MediaLive
 
         internal virtual GetSignalMapResponse GetSignalMap(GetSignalMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalMapResponseUnmarshaller.Instance;
 
@@ -3837,7 +3837,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GetSignalMap">REST API Reference for GetSignalMap Operation</seealso>
         public virtual Task<GetSignalMapResponse> GetSignalMapAsync(GetSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalMapResponseUnmarshaller.Instance;
 
@@ -3850,7 +3850,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListChannelPlacementGroupsResponse ListChannelPlacementGroups(ListChannelPlacementGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelPlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelPlacementGroupsResponseUnmarshaller.Instance;
 
@@ -3889,7 +3889,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannelPlacementGroups">REST API Reference for ListChannelPlacementGroups Operation</seealso>
         public virtual Task<ListChannelPlacementGroupsResponse> ListChannelPlacementGroupsAsync(ListChannelPlacementGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelPlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelPlacementGroupsResponseUnmarshaller.Instance;
 
@@ -3902,7 +3902,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -3941,7 +3941,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -3954,7 +3954,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListCloudWatchAlarmTemplateGroupsResponse ListCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudWatchAlarmTemplateGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudWatchAlarmTemplateGroupsResponseUnmarshaller.Instance;
 
@@ -3990,7 +3990,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplateGroups">REST API Reference for ListCloudWatchAlarmTemplateGroups Operation</seealso>
         public virtual Task<ListCloudWatchAlarmTemplateGroupsResponse> ListCloudWatchAlarmTemplateGroupsAsync(ListCloudWatchAlarmTemplateGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudWatchAlarmTemplateGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudWatchAlarmTemplateGroupsResponseUnmarshaller.Instance;
 
@@ -4003,7 +4003,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListCloudWatchAlarmTemplatesResponse ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudWatchAlarmTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudWatchAlarmTemplatesResponseUnmarshaller.Instance;
 
@@ -4039,7 +4039,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListCloudWatchAlarmTemplates">REST API Reference for ListCloudWatchAlarmTemplates Operation</seealso>
         public virtual Task<ListCloudWatchAlarmTemplatesResponse> ListCloudWatchAlarmTemplatesAsync(ListCloudWatchAlarmTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudWatchAlarmTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudWatchAlarmTemplatesResponseUnmarshaller.Instance;
 
@@ -4052,7 +4052,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -4091,7 +4091,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -4104,7 +4104,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListEventBridgeRuleTemplateGroupsResponse ListEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBridgeRuleTemplateGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBridgeRuleTemplateGroupsResponseUnmarshaller.Instance;
 
@@ -4140,7 +4140,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplateGroups">REST API Reference for ListEventBridgeRuleTemplateGroups Operation</seealso>
         public virtual Task<ListEventBridgeRuleTemplateGroupsResponse> ListEventBridgeRuleTemplateGroupsAsync(ListEventBridgeRuleTemplateGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBridgeRuleTemplateGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBridgeRuleTemplateGroupsResponseUnmarshaller.Instance;
 
@@ -4153,7 +4153,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListEventBridgeRuleTemplatesResponse ListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBridgeRuleTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBridgeRuleTemplatesResponseUnmarshaller.Instance;
 
@@ -4189,7 +4189,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListEventBridgeRuleTemplates">REST API Reference for ListEventBridgeRuleTemplates Operation</seealso>
         public virtual Task<ListEventBridgeRuleTemplatesResponse> ListEventBridgeRuleTemplatesAsync(ListEventBridgeRuleTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBridgeRuleTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBridgeRuleTemplatesResponseUnmarshaller.Instance;
 
@@ -4202,7 +4202,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListInputDevicesResponse ListInputDevices(ListInputDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputDevicesResponseUnmarshaller.Instance;
 
@@ -4241,7 +4241,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices">REST API Reference for ListInputDevices Operation</seealso>
         public virtual Task<ListInputDevicesResponse> ListInputDevicesAsync(ListInputDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputDevicesResponseUnmarshaller.Instance;
 
@@ -4254,7 +4254,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListInputDeviceTransfersResponse ListInputDeviceTransfers(ListInputDeviceTransfersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers">REST API Reference for ListInputDeviceTransfers Operation</seealso>
         public virtual Task<ListInputDeviceTransfersResponse> ListInputDeviceTransfersAsync(ListInputDeviceTransfersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
 
@@ -4311,7 +4311,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListInputsResponse ListInputs(ListInputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
@@ -4350,7 +4350,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual Task<ListInputsResponse> ListInputsAsync(ListInputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
@@ -4363,7 +4363,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListInputSecurityGroupsResponse ListInputSecurityGroups(ListInputSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -4402,7 +4402,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups">REST API Reference for ListInputSecurityGroups Operation</seealso>
         public virtual Task<ListInputSecurityGroupsResponse> ListInputSecurityGroupsAsync(ListInputSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -4415,7 +4415,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListMultiplexesResponse ListMultiplexes(ListMultiplexesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiplexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiplexesResponseUnmarshaller.Instance;
 
@@ -4454,7 +4454,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes">REST API Reference for ListMultiplexes Operation</seealso>
         public virtual Task<ListMultiplexesResponse> ListMultiplexesAsync(ListMultiplexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiplexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiplexesResponseUnmarshaller.Instance;
 
@@ -4467,7 +4467,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListMultiplexProgramsResponse ListMultiplexPrograms(ListMultiplexProgramsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiplexProgramsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiplexProgramsResponseUnmarshaller.Instance;
 
@@ -4509,7 +4509,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms">REST API Reference for ListMultiplexPrograms Operation</seealso>
         public virtual Task<ListMultiplexProgramsResponse> ListMultiplexProgramsAsync(ListMultiplexProgramsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiplexProgramsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiplexProgramsResponseUnmarshaller.Instance;
 
@@ -4522,7 +4522,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListNetworksResponse ListNetworks(ListNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworksResponseUnmarshaller.Instance;
 
@@ -4561,7 +4561,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListNetworks">REST API Reference for ListNetworks Operation</seealso>
         public virtual Task<ListNetworksResponse> ListNetworksAsync(ListNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworksResponseUnmarshaller.Instance;
 
@@ -4574,7 +4574,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListNodesResponse ListNodes(ListNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -4613,7 +4613,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -4626,7 +4626,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -4665,7 +4665,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -4678,7 +4678,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -4717,7 +4717,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -4730,7 +4730,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListSdiSourcesResponse ListSdiSources(ListSdiSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
 
@@ -4769,7 +4769,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSdiSources">REST API Reference for ListSdiSources Operation</seealso>
         public virtual Task<ListSdiSourcesResponse> ListSdiSourcesAsync(ListSdiSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSdiSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSdiSourcesResponseUnmarshaller.Instance;
 
@@ -4782,7 +4782,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListSignalMapsResponse ListSignalMaps(ListSignalMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalMapsResponseUnmarshaller.Instance;
 
@@ -4818,7 +4818,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListSignalMaps">REST API Reference for ListSignalMaps Operation</seealso>
         public virtual Task<ListSignalMapsResponse> ListSignalMapsAsync(ListSignalMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalMapsResponseUnmarshaller.Instance;
 
@@ -4831,7 +4831,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4864,7 +4864,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4877,7 +4877,7 @@ namespace Amazon.MediaLive
 
         internal virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -4923,7 +4923,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -4936,7 +4936,7 @@ namespace Amazon.MediaLive
 
         internal virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -4981,7 +4981,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -4994,7 +4994,7 @@ namespace Amazon.MediaLive
 
         internal virtual RebootInputDeviceResponse RebootInputDevice(RebootInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInputDeviceResponseUnmarshaller.Instance;
 
@@ -5041,7 +5041,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">REST API Reference for RebootInputDevice Operation</seealso>
         public virtual Task<RebootInputDeviceResponse> RebootInputDeviceAsync(RebootInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInputDeviceResponseUnmarshaller.Instance;
 
@@ -5054,7 +5054,7 @@ namespace Amazon.MediaLive
 
         internal virtual RejectInputDeviceTransferResponse RejectInputDeviceTransfer(RejectInputDeviceTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -5102,7 +5102,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">REST API Reference for RejectInputDeviceTransfer Operation</seealso>
         public virtual Task<RejectInputDeviceTransferResponse> RejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
 
@@ -5115,7 +5115,7 @@ namespace Amazon.MediaLive
 
         internal virtual RestartChannelPipelinesResponse RestartChannelPipelines(RestartChannelPipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestartChannelPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestartChannelPipelinesResponseUnmarshaller.Instance;
 
@@ -5160,7 +5160,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines">REST API Reference for RestartChannelPipelines Operation</seealso>
         public virtual Task<RestartChannelPipelinesResponse> RestartChannelPipelinesAsync(RestartChannelPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestartChannelPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestartChannelPipelinesResponseUnmarshaller.Instance;
 
@@ -5173,7 +5173,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartChannelResponse StartChannel(StartChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
@@ -5218,7 +5218,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual Task<StartChannelResponse> StartChannelAsync(StartChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
@@ -5231,7 +5231,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartDeleteMonitorDeploymentResponse StartDeleteMonitorDeployment(StartDeleteMonitorDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeleteMonitorDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeleteMonitorDeploymentResponseUnmarshaller.Instance;
 
@@ -5270,7 +5270,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartDeleteMonitorDeployment">REST API Reference for StartDeleteMonitorDeployment Operation</seealso>
         public virtual Task<StartDeleteMonitorDeploymentResponse> StartDeleteMonitorDeploymentAsync(StartDeleteMonitorDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeleteMonitorDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeleteMonitorDeploymentResponseUnmarshaller.Instance;
 
@@ -5283,7 +5283,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartInputDeviceResponse StartInputDevice(StartInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInputDeviceResponseUnmarshaller.Instance;
 
@@ -5330,7 +5330,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice">REST API Reference for StartInputDevice Operation</seealso>
         public virtual Task<StartInputDeviceResponse> StartInputDeviceAsync(StartInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInputDeviceResponseUnmarshaller.Instance;
 
@@ -5343,7 +5343,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartInputDeviceMaintenanceWindowResponse StartInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInputDeviceMaintenanceWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInputDeviceMaintenanceWindowResponseUnmarshaller.Instance;
 
@@ -5394,7 +5394,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">REST API Reference for StartInputDeviceMaintenanceWindow Operation</seealso>
         public virtual Task<StartInputDeviceMaintenanceWindowResponse> StartInputDeviceMaintenanceWindowAsync(StartInputDeviceMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInputDeviceMaintenanceWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInputDeviceMaintenanceWindowResponseUnmarshaller.Instance;
 
@@ -5407,7 +5407,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartMonitorDeploymentResponse StartMonitorDeployment(StartMonitorDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMonitorDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMonitorDeploymentResponseUnmarshaller.Instance;
 
@@ -5446,7 +5446,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeployment">REST API Reference for StartMonitorDeployment Operation</seealso>
         public virtual Task<StartMonitorDeploymentResponse> StartMonitorDeploymentAsync(StartMonitorDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMonitorDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMonitorDeploymentResponseUnmarshaller.Instance;
 
@@ -5459,7 +5459,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartMultiplexResponse StartMultiplex(StartMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMultiplexResponseUnmarshaller.Instance;
 
@@ -5505,7 +5505,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">REST API Reference for StartMultiplex Operation</seealso>
         public virtual Task<StartMultiplexResponse> StartMultiplexAsync(StartMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMultiplexResponseUnmarshaller.Instance;
 
@@ -5518,7 +5518,7 @@ namespace Amazon.MediaLive
 
         internal virtual StartUpdateSignalMapResponse StartUpdateSignalMap(StartUpdateSignalMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUpdateSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUpdateSignalMapResponseUnmarshaller.Instance;
 
@@ -5558,7 +5558,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartUpdateSignalMap">REST API Reference for StartUpdateSignalMap Operation</seealso>
         public virtual Task<StartUpdateSignalMapResponse> StartUpdateSignalMapAsync(StartUpdateSignalMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartUpdateSignalMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartUpdateSignalMapResponseUnmarshaller.Instance;
 
@@ -5571,7 +5571,7 @@ namespace Amazon.MediaLive
 
         internal virtual StopChannelResponse StopChannel(StopChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
@@ -5616,7 +5616,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual Task<StopChannelResponse> StopChannelAsync(StopChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
@@ -5629,7 +5629,7 @@ namespace Amazon.MediaLive
 
         internal virtual StopInputDeviceResponse StopInputDevice(StopInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInputDeviceResponseUnmarshaller.Instance;
 
@@ -5676,7 +5676,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice">REST API Reference for StopInputDevice Operation</seealso>
         public virtual Task<StopInputDeviceResponse> StopInputDeviceAsync(StopInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInputDeviceResponseUnmarshaller.Instance;
 
@@ -5689,7 +5689,7 @@ namespace Amazon.MediaLive
 
         internal virtual StopMultiplexResponse StopMultiplex(StopMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMultiplexResponseUnmarshaller.Instance;
 
@@ -5734,7 +5734,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex">REST API Reference for StopMultiplex Operation</seealso>
         public virtual Task<StopMultiplexResponse> StopMultiplexAsync(StopMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMultiplexResponseUnmarshaller.Instance;
 
@@ -5747,7 +5747,7 @@ namespace Amazon.MediaLive
 
         internal virtual TransferInputDeviceResponse TransferInputDevice(TransferInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
 
@@ -5796,7 +5796,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice">REST API Reference for TransferInputDevice Operation</seealso>
         public virtual Task<TransferInputDeviceResponse> TransferInputDeviceAsync(TransferInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
 
@@ -5809,7 +5809,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateAccountConfigurationResponse UpdateAccountConfiguration(UpdateAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -5851,7 +5851,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">REST API Reference for UpdateAccountConfiguration Operation</seealso>
         public virtual Task<UpdateAccountConfigurationResponse> UpdateAccountConfigurationAsync(UpdateAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -5864,7 +5864,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -5906,7 +5906,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -5919,7 +5919,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateChannelClassResponse UpdateChannelClass(UpdateChannelClassRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelClassRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelClassResponseUnmarshaller.Instance;
 
@@ -5967,7 +5967,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelClass">REST API Reference for UpdateChannelClass Operation</seealso>
         public virtual Task<UpdateChannelClassResponse> UpdateChannelClassAsync(UpdateChannelClassRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelClassRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelClassResponseUnmarshaller.Instance;
 
@@ -5980,7 +5980,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateChannelPlacementGroupResponse UpdateChannelPlacementGroup(UpdateChannelPlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -6025,7 +6025,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelPlacementGroup">REST API Reference for UpdateChannelPlacementGroup Operation</seealso>
         public virtual Task<UpdateChannelPlacementGroupResponse> UpdateChannelPlacementGroupAsync(UpdateChannelPlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelPlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelPlacementGroupResponseUnmarshaller.Instance;
 
@@ -6038,7 +6038,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateCloudWatchAlarmTemplateResponse UpdateCloudWatchAlarmTemplate(UpdateCloudWatchAlarmTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -6077,7 +6077,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplate">REST API Reference for UpdateCloudWatchAlarmTemplate Operation</seealso>
         public virtual Task<UpdateCloudWatchAlarmTemplateResponse> UpdateCloudWatchAlarmTemplateAsync(UpdateCloudWatchAlarmTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudWatchAlarmTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateResponseUnmarshaller.Instance;
 
@@ -6090,7 +6090,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateCloudWatchAlarmTemplateGroupResponse UpdateCloudWatchAlarmTemplateGroup(UpdateCloudWatchAlarmTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -6129,7 +6129,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCloudWatchAlarmTemplateGroup">REST API Reference for UpdateCloudWatchAlarmTemplateGroup Operation</seealso>
         public virtual Task<UpdateCloudWatchAlarmTemplateGroupResponse> UpdateCloudWatchAlarmTemplateGroupAsync(UpdateCloudWatchAlarmTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudWatchAlarmTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudWatchAlarmTemplateGroupResponseUnmarshaller.Instance;
 
@@ -6142,7 +6142,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -6184,7 +6184,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -6197,7 +6197,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateEventBridgeRuleTemplateResponse UpdateEventBridgeRuleTemplate(UpdateEventBridgeRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -6236,7 +6236,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplate">REST API Reference for UpdateEventBridgeRuleTemplate Operation</seealso>
         public virtual Task<UpdateEventBridgeRuleTemplateResponse> UpdateEventBridgeRuleTemplateAsync(UpdateEventBridgeRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBridgeRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateResponseUnmarshaller.Instance;
 
@@ -6249,7 +6249,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateEventBridgeRuleTemplateGroupResponse UpdateEventBridgeRuleTemplateGroup(UpdateEventBridgeRuleTemplateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -6288,7 +6288,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateEventBridgeRuleTemplateGroup">REST API Reference for UpdateEventBridgeRuleTemplateGroup Operation</seealso>
         public virtual Task<UpdateEventBridgeRuleTemplateGroupResponse> UpdateEventBridgeRuleTemplateGroupAsync(UpdateEventBridgeRuleTemplateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBridgeRuleTemplateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBridgeRuleTemplateGroupResponseUnmarshaller.Instance;
 
@@ -6301,7 +6301,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateInputResponse UpdateInput(UpdateInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 
@@ -6343,7 +6343,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         public virtual Task<UpdateInputResponse> UpdateInputAsync(UpdateInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 
@@ -6356,7 +6356,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateInputDeviceResponse UpdateInputDevice(UpdateInputDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputDeviceResponseUnmarshaller.Instance;
 
@@ -6401,7 +6401,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDevice">REST API Reference for UpdateInputDevice Operation</seealso>
         public virtual Task<UpdateInputDeviceResponse> UpdateInputDeviceAsync(UpdateInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputDeviceResponseUnmarshaller.Instance;
 
@@ -6414,7 +6414,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateInputSecurityGroupResponse UpdateInputSecurityGroup(UpdateInputSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -6456,7 +6456,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup">REST API Reference for UpdateInputSecurityGroup Operation</seealso>
         public virtual Task<UpdateInputSecurityGroupResponse> UpdateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputSecurityGroupResponseUnmarshaller.Instance;
 
@@ -6469,7 +6469,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateMultiplexResponse UpdateMultiplex(UpdateMultiplexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiplexResponseUnmarshaller.Instance;
 
@@ -6514,7 +6514,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex">REST API Reference for UpdateMultiplex Operation</seealso>
         public virtual Task<UpdateMultiplexResponse> UpdateMultiplexAsync(UpdateMultiplexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiplexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiplexResponseUnmarshaller.Instance;
 
@@ -6527,7 +6527,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateMultiplexProgramResponse UpdateMultiplexProgram(UpdateMultiplexProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -6572,7 +6572,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram">REST API Reference for UpdateMultiplexProgram Operation</seealso>
         public virtual Task<UpdateMultiplexProgramResponse> UpdateMultiplexProgramAsync(UpdateMultiplexProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiplexProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiplexProgramResponseUnmarshaller.Instance;
 
@@ -6585,7 +6585,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateNetworkResponse UpdateNetwork(UpdateNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkResponseUnmarshaller.Instance;
 
@@ -6627,7 +6627,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNetwork">REST API Reference for UpdateNetwork Operation</seealso>
         public virtual Task<UpdateNetworkResponse> UpdateNetworkAsync(UpdateNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkResponseUnmarshaller.Instance;
 
@@ -6640,7 +6640,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateNodeResponse UpdateNode(UpdateNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
 
@@ -6682,7 +6682,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNode">REST API Reference for UpdateNode Operation</seealso>
         public virtual Task<UpdateNodeResponse> UpdateNodeAsync(UpdateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeResponseUnmarshaller.Instance;
 
@@ -6695,7 +6695,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateNodeStateResponse UpdateNodeState(UpdateNodeStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeStateResponseUnmarshaller.Instance;
 
@@ -6740,7 +6740,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateNodeState">REST API Reference for UpdateNodeState Operation</seealso>
         public virtual Task<UpdateNodeStateResponse> UpdateNodeStateAsync(UpdateNodeStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodeStateResponseUnmarshaller.Instance;
 
@@ -6753,7 +6753,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateReservationResponse UpdateReservation(UpdateReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReservationResponseUnmarshaller.Instance;
 
@@ -6798,7 +6798,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation">REST API Reference for UpdateReservation Operation</seealso>
         public virtual Task<UpdateReservationResponse> UpdateReservationAsync(UpdateReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReservationResponseUnmarshaller.Instance;
 
@@ -6811,7 +6811,7 @@ namespace Amazon.MediaLive
 
         internal virtual UpdateSdiSourceResponse UpdateSdiSource(UpdateSdiSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
 
@@ -6853,7 +6853,7 @@ namespace Amazon.MediaLive
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateSdiSource">REST API Reference for UpdateSdiSource Operation</seealso>
         public virtual Task<UpdateSdiSourceResponse> UpdateSdiSourceAsync(UpdateSdiSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSdiSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSdiSourceResponseUnmarshaller.Instance;
 

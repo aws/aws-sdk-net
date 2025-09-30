@@ -307,7 +307,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual CreateComponentResponse CreateComponent(CreateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
             
@@ -374,7 +374,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
         public virtual CreateFormResponse CreateForm(CreateFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFormResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
         public virtual Task<CreateFormResponse> CreateFormAsync(CreateFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFormResponseUnmarshaller.Instance;
             
@@ -441,7 +441,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
         public virtual CreateThemeResponse CreateTheme(CreateThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
         public virtual Task<CreateThemeResponse> CreateThemeAsync(CreateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
             
@@ -504,7 +504,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual DeleteComponentResponse DeleteComponent(DeleteComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
             
@@ -563,7 +563,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
         public virtual DeleteFormResponse DeleteForm(DeleteFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFormResponseUnmarshaller.Instance;
 
@@ -592,7 +592,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
         public virtual Task<DeleteFormResponse> DeleteFormAsync(DeleteFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFormResponseUnmarshaller.Instance;
             
@@ -622,7 +622,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
         public virtual DeleteThemeResponse DeleteTheme(DeleteThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
         public virtual Task<DeleteThemeResponse> DeleteThemeAsync(DeleteThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
             
@@ -682,7 +682,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForToken">REST API Reference for ExchangeCodeForToken Operation</seealso>
         public virtual ExchangeCodeForTokenResponse ExchangeCodeForToken(ExchangeCodeForTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExchangeCodeForTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExchangeCodeForTokenResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExchangeCodeForToken">REST API Reference for ExchangeCodeForToken Operation</seealso>
         public virtual Task<ExchangeCodeForTokenResponse> ExchangeCodeForTokenAsync(ExchangeCodeForTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExchangeCodeForTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExchangeCodeForTokenResponseUnmarshaller.Instance;
             
@@ -740,7 +740,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportComponents">REST API Reference for ExportComponents Operation</seealso>
         public virtual ExportComponentsResponse ExportComponents(ExportComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportComponentsResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportComponents">REST API Reference for ExportComponents Operation</seealso>
         public virtual Task<ExportComponentsResponse> ExportComponentsAsync(ExportComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportComponentsResponseUnmarshaller.Instance;
             
@@ -794,7 +794,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
         public virtual ExportFormsResponse ExportForms(ExportFormsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportFormsResponseUnmarshaller.Instance;
 
@@ -820,7 +820,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
         public virtual Task<ExportFormsResponse> ExportFormsAsync(ExportFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportFormsResponseUnmarshaller.Instance;
             
@@ -847,7 +847,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">REST API Reference for ExportThemes Operation</seealso>
         public virtual ExportThemesResponse ExportThemes(ExportThemesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportThemesResponseUnmarshaller.Instance;
 
@@ -873,7 +873,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportThemes">REST API Reference for ExportThemes Operation</seealso>
         public virtual Task<ExportThemesResponse> ExportThemesAsync(ExportThemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportThemesResponseUnmarshaller.Instance;
             
@@ -906,7 +906,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
         public virtual GetCodegenJobResponse GetCodegenJob(GetCodegenJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
         public virtual Task<GetCodegenJobResponse> GetCodegenJobAsync(GetCodegenJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
             
@@ -968,7 +968,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual GetComponentResponse GetComponent(GetComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -997,7 +997,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
             
@@ -1027,7 +1027,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
         public virtual GetFormResponse GetForm(GetFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFormResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
         public virtual Task<GetFormResponse> GetFormAsync(GetFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFormResponseUnmarshaller.Instance;
             
@@ -1083,7 +1083,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
         public virtual GetMetadataResponse GetMetadata(GetMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataResponseUnmarshaller.Instance;
 
@@ -1109,7 +1109,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
         public virtual Task<GetMetadataResponse> GetMetadataAsync(GetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataResponseUnmarshaller.Instance;
             
@@ -1139,7 +1139,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetTheme">REST API Reference for GetTheme Operation</seealso>
         public virtual GetThemeResponse GetTheme(GetThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThemeResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetTheme">REST API Reference for GetTheme Operation</seealso>
         public virtual Task<GetThemeResponse> GetThemeAsync(GetThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThemeResponseUnmarshaller.Instance;
             
@@ -1198,7 +1198,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
         public virtual ListCodegenJobsResponse ListCodegenJobs(ListCodegenJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
         public virtual Task<ListCodegenJobsResponse> ListCodegenJobsAsync(ListCodegenJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
             
@@ -1254,7 +1254,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
             
@@ -1307,7 +1307,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
         public virtual ListFormsResponse ListForms(ListFormsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFormsResponseUnmarshaller.Instance;
 
@@ -1333,7 +1333,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
         public virtual Task<ListFormsResponse> ListFormsAsync(ListFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFormsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFormsResponseUnmarshaller.Instance;
             
@@ -1369,7 +1369,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1431,7 +1431,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListThemes">REST API Reference for ListThemes Operation</seealso>
         public virtual ListThemesResponse ListThemes(ListThemesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
 
@@ -1457,7 +1457,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListThemes">REST API Reference for ListThemes Operation</seealso>
         public virtual Task<ListThemesResponse> ListThemesAsync(ListThemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
             
@@ -1484,7 +1484,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
         public virtual PutMetadataFlagResponse PutMetadataFlag(PutMetadataFlagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetadataFlagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetadataFlagResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
         public virtual Task<PutMetadataFlagResponse> PutMetadataFlagAsync(PutMetadataFlagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetadataFlagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetadataFlagResponseUnmarshaller.Instance;
             
@@ -1542,7 +1542,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">REST API Reference for RefreshToken Operation</seealso>
         public virtual RefreshTokenResponse RefreshToken(RefreshTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshTokenResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshToken">REST API Reference for RefreshToken Operation</seealso>
         public virtual Task<RefreshTokenResponse> RefreshTokenAsync(RefreshTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshTokenResponseUnmarshaller.Instance;
             
@@ -1603,7 +1603,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
         public virtual StartCodegenJobResponse StartCodegenJob(StartCodegenJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
         public virtual Task<StartCodegenJobResponse> StartCodegenJobAsync(StartCodegenJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
             
@@ -1668,7 +1668,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1739,7 +1739,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1804,7 +1804,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         public virtual UpdateComponentResponse UpdateComponent(UpdateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         public virtual Task<UpdateComponentResponse> UpdateComponentAsync(UpdateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
             
@@ -1863,7 +1863,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
         public virtual UpdateFormResponse UpdateForm(UpdateFormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFormResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
         public virtual Task<UpdateFormResponse> UpdateFormAsync(UpdateFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFormResponseUnmarshaller.Instance;
             
@@ -1922,7 +1922,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
         public virtual UpdateThemeResponse UpdateTheme(UpdateThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.AmplifyUIBuilder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
         public virtual Task<UpdateThemeResponse> UpdateThemeAsync(UpdateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
             

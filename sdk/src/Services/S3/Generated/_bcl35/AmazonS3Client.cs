@@ -491,7 +491,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortMultipartUpload">REST API Reference for AbortMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginAbortMultipartUpload(AbortMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AbortMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AbortMultipartUploadResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompleteMultipartUpload">REST API Reference for CompleteMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginCompleteMultipartUpload(CompleteMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMultipartUploadResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual CopyObjectResponse CopyObject(CopyObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">REST API Reference for CopyObject Operation</seealso>
         public virtual IAsyncResult BeginCopyObject(CopyObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyObjectResponseUnmarshaller.Instance;
 
@@ -2251,7 +2251,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual CopyPartResponse CopyPart(CopyPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
 
@@ -2272,7 +2272,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
         public virtual IAsyncResult BeginCopyPart(CopyPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPartResponseUnmarshaller.Instance;
 
@@ -2397,7 +2397,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
         public virtual CreateBucketMetadataConfigurationResponse CreateBucketMetadataConfiguration(CreateBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -2418,7 +2418,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataConfiguration">REST API Reference for CreateBucketMetadataConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateBucketMetadataConfiguration(CreateBucketMetadataConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -2525,7 +2525,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
         public virtual CreateBucketMetadataTableConfigurationResponse CreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -2546,7 +2546,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -2724,7 +2724,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual IAsyncResult BeginCreateSession(CreateSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -2899,7 +2899,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2920,7 +2920,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucket(DeleteBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -3015,7 +3015,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketAnalyticsConfiguration">REST API Reference for DeleteBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -3102,7 +3102,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual DeleteBucketEncryptionResponse DeleteBucketEncryption(DeleteBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -3123,7 +3123,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">REST API Reference for DeleteBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketEncryption(DeleteBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -3206,7 +3206,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">REST API Reference for DeleteBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual DeleteBucketIntelligentTieringConfigurationResponse DeleteBucketIntelligentTieringConfiguration(DeleteBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -3227,7 +3227,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketIntelligentTieringConfiguration">REST API Reference for DeleteBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketIntelligentTieringConfiguration(DeleteBucketIntelligentTieringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -3300,7 +3300,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -3321,7 +3321,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketInventoryConfiguration">REST API Reference for DeleteBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -3400,7 +3400,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
         public virtual DeleteBucketMetadataConfigurationResponse DeleteBucketMetadataConfiguration(DeleteBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -3421,7 +3421,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataConfiguration">REST API Reference for DeleteBucketMetadataConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketMetadataConfiguration(DeleteBucketMetadataConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -3506,7 +3506,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
         public virtual DeleteBucketMetadataTableConfigurationResponse DeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -3527,7 +3527,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -3607,7 +3607,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -3628,7 +3628,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetricsConfiguration">REST API Reference for DeleteBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -3689,7 +3689,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">REST API Reference for DeleteBucketOwnershipControls Operation</seealso>
         public virtual DeleteBucketOwnershipControlsResponse DeleteBucketOwnershipControls(DeleteBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -3710,7 +3710,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketOwnershipControls">REST API Reference for DeleteBucketOwnershipControls Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketOwnershipControls(DeleteBucketOwnershipControlsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -3902,7 +3902,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -3923,7 +3923,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketPolicy(DeleteBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -3995,7 +3995,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -4016,7 +4016,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketReplication(DeleteBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -4120,7 +4120,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -4141,7 +4141,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketTagging(DeleteBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -4267,7 +4267,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -4288,7 +4288,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketWebsite">REST API Reference for DeleteBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginDeleteBucketWebsite(DeleteBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -4402,7 +4402,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -4423,7 +4423,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">REST API Reference for DeleteCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteCORSConfiguration(DeleteCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -4603,7 +4603,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -4624,7 +4624,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketLifecycle">REST API Reference for DeleteLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -5050,7 +5050,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
@@ -5071,7 +5071,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">REST API Reference for DeleteObject Operation</seealso>
         public virtual IAsyncResult BeginDeleteObject(DeleteObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectResponseUnmarshaller.Instance;
 
@@ -5233,7 +5233,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
@@ -5254,7 +5254,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">REST API Reference for DeleteObjects Operation</seealso>
         public virtual IAsyncResult BeginDeleteObjects(DeleteObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectsResponseUnmarshaller.Instance;
 
@@ -5322,7 +5322,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
@@ -5343,7 +5343,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjectTagging">REST API Reference for DeleteObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
 
@@ -5412,7 +5412,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5433,7 +5433,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginDeletePublicAccessBlock(DeletePublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5595,7 +5595,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual GetACLResponse GetACL(GetACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
 
@@ -5616,7 +5616,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">REST API Reference for GetACL Operation</seealso>
         public virtual IAsyncResult BeginGetACL(GetACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetACLResponseUnmarshaller.Instance;
 
@@ -5754,7 +5754,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual GetBucketAccelerateConfigurationResponse GetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -5775,7 +5775,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">REST API Reference for GetBucketAccelerateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -5850,7 +5850,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -5871,7 +5871,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAnalyticsConfiguration">REST API Reference for GetBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -5959,7 +5959,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual GetBucketEncryptionResponse GetBucketEncryption(GetBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -5980,7 +5980,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">REST API Reference for GetBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginGetBucketEncryption(GetBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -6062,7 +6062,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">REST API Reference for GetBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual GetBucketIntelligentTieringConfigurationResponse GetBucketIntelligentTieringConfiguration(GetBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -6083,7 +6083,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketIntelligentTieringConfiguration">REST API Reference for GetBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketIntelligentTieringConfiguration(GetBucketIntelligentTieringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -6157,7 +6157,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -6178,7 +6178,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketInventoryConfiguration">REST API Reference for GetBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -6312,7 +6312,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
@@ -6333,7 +6333,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLocation">REST API Reference for GetBucketLocation Operation</seealso>
         public virtual IAsyncResult BeginGetBucketLocation(GetBucketLocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLocationResponseUnmarshaller.Instance;
 
@@ -6455,7 +6455,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
@@ -6476,7 +6476,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLogging">REST API Reference for GetBucketLogging Operation</seealso>
         public virtual IAsyncResult BeginGetBucketLogging(GetBucketLoggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
@@ -6555,7 +6555,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
         public virtual GetBucketMetadataConfigurationResponse GetBucketMetadataConfiguration(GetBucketMetadataConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -6576,7 +6576,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataConfiguration">REST API Reference for GetBucketMetadataConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketMetadataConfiguration(GetBucketMetadataConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataConfigurationResponseUnmarshaller.Instance;
 
@@ -6662,7 +6662,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
         public virtual GetBucketMetadataTableConfigurationResponse GetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -6683,7 +6683,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
 
@@ -6762,7 +6762,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -6783,7 +6783,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetricsConfiguration">REST API Reference for GetBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -6931,7 +6931,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
@@ -6952,7 +6952,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketNotificationConfiguration">REST API Reference for GetBucketNotification Operation</seealso>
         public virtual IAsyncResult BeginGetBucketNotification(GetBucketNotificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketNotificationResponseUnmarshaller.Instance;
 
@@ -7031,7 +7031,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">REST API Reference for GetBucketOwnershipControls Operation</seealso>
         public virtual GetBucketOwnershipControlsResponse GetBucketOwnershipControls(GetBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -7052,7 +7052,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketOwnershipControls">REST API Reference for GetBucketOwnershipControls Operation</seealso>
         public virtual IAsyncResult BeginGetBucketOwnershipControls(GetBucketOwnershipControlsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -7254,7 +7254,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -7275,7 +7275,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetBucketPolicy(GetBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -7348,7 +7348,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual GetBucketPolicyStatusResponse GetBucketPolicyStatus(GetBucketPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
 
@@ -7369,7 +7369,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">REST API Reference for GetBucketPolicyStatus Operation</seealso>
         public virtual IAsyncResult BeginGetBucketPolicyStatus(GetBucketPolicyStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyStatusResponseUnmarshaller.Instance;
 
@@ -7402,7 +7402,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -7423,7 +7423,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginGetBucketReplication(GetBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -7509,7 +7509,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -7530,7 +7530,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">REST API Reference for GetBucketRequestPayment Operation</seealso>
         public virtual IAsyncResult BeginGetBucketRequestPayment(GetBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -7603,7 +7603,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -7624,7 +7624,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginGetBucketTagging(GetBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -7746,7 +7746,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -7767,7 +7767,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginGetBucketVersioning(GetBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -7879,7 +7879,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -7900,7 +7900,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketWebsite">REST API Reference for GetBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginGetBucketWebsite(GetBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -8042,7 +8042,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -8063,7 +8063,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">REST API Reference for GetCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetCORSConfiguration(GetCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -8311,7 +8311,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -8332,7 +8332,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">REST API Reference for GetLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetLifecycleConfiguration(GetLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -8986,7 +8986,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual GetObjectResponse GetObject(GetObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
@@ -9007,7 +9007,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObject">REST API Reference for GetObject Operation</seealso>
         public virtual IAsyncResult BeginGetObject(GetObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectResponseUnmarshaller.Instance;
 
@@ -9271,7 +9271,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         public virtual GetObjectAttributesResponse GetObjectAttributes(GetObjectAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
 
@@ -9292,7 +9292,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectAttributes">REST API Reference for GetObjectAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetObjectAttributes(GetObjectAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectAttributesResponseUnmarshaller.Instance;
 
@@ -9347,7 +9347,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -9368,7 +9368,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">REST API Reference for GetObjectLegalHold Operation</seealso>
         public virtual IAsyncResult BeginGetObjectLegalHold(GetObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -9421,7 +9421,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -9442,7 +9442,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">REST API Reference for GetObjectLockConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetObjectLockConfiguration(GetObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -9985,7 +9985,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
@@ -10006,7 +10006,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadObject">REST API Reference for GetObjectMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetObjectMetadata(GetObjectMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
@@ -10061,7 +10061,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
 
@@ -10082,7 +10082,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">REST API Reference for GetObjectRetention Operation</seealso>
         public virtual IAsyncResult BeginGetObjectRetention(GetObjectRetentionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
 
@@ -10161,7 +10161,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
@@ -10182,7 +10182,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">REST API Reference for GetObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
 
@@ -10294,7 +10294,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
@@ -10315,7 +10315,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTorrent">REST API Reference for GetObjectTorrent Operation</seealso>
         public virtual IAsyncResult BeginGetObjectTorrent(GetObjectTorrentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetObjectTorrentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetObjectTorrentResponseUnmarshaller.Instance;
 
@@ -10397,7 +10397,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -10418,7 +10418,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginGetPublicAccessBlock(GetPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -10517,7 +10517,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         public virtual HeadBucketResponse HeadBucket(HeadBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
@@ -10538,7 +10538,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">REST API Reference for HeadBucket Operation</seealso>
         public virtual IAsyncResult BeginHeadBucket(HeadBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HeadBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HeadBucketResponseUnmarshaller.Instance;
 
@@ -11140,7 +11140,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -11161,7 +11161,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateMultipartUpload">REST API Reference for InitiateMultipartUpload Operation</seealso>
         public virtual IAsyncResult BeginInitiateMultipartUpload(InitiateMultipartUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitiateMultipartUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
@@ -11245,7 +11245,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
@@ -11266,7 +11266,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketAnalyticsConfigurations">REST API Reference for ListBucketAnalyticsConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketAnalyticsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
 
@@ -11348,7 +11348,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">REST API Reference for ListBucketIntelligentTieringConfigurations Operation</seealso>
         public virtual ListBucketIntelligentTieringConfigurationsResponse ListBucketIntelligentTieringConfigurations(ListBucketIntelligentTieringConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
 
@@ -11369,7 +11369,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketIntelligentTieringConfigurations">REST API Reference for ListBucketIntelligentTieringConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketIntelligentTieringConfigurations(ListBucketIntelligentTieringConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketIntelligentTieringConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketIntelligentTieringConfigurationsResponseUnmarshaller.Instance;
 
@@ -11453,7 +11453,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
@@ -11474,7 +11474,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketInventoryConfigurations">REST API Reference for ListBucketInventoryConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketInventoryConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
 
@@ -11560,7 +11560,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
@@ -11581,7 +11581,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBucketMetricsConfigurations">REST API Reference for ListBucketMetricsConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketMetricsConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
 
@@ -11703,7 +11703,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual ListBucketsResponse ListBuckets(ListBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
@@ -11724,7 +11724,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">REST API Reference for ListBuckets Operation</seealso>
         public virtual IAsyncResult BeginListBuckets(ListBucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBucketsResponseUnmarshaller.Instance;
 
@@ -11791,7 +11791,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">REST API Reference for ListDirectoryBuckets Operation</seealso>
         public virtual ListDirectoryBucketsResponse ListDirectoryBuckets(ListDirectoryBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -11812,7 +11812,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">REST API Reference for ListDirectoryBuckets Operation</seealso>
         public virtual IAsyncResult BeginListDirectoryBuckets(ListDirectoryBucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -12303,7 +12303,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -12324,7 +12324,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
         public virtual IAsyncResult BeginListMultipartUploads(ListMultipartUploadsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultipartUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultipartUploadsResponseUnmarshaller.Instance;
 
@@ -12569,7 +12569,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual ListObjectsResponse ListObjects(ListObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
@@ -12590,7 +12590,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
         public virtual IAsyncResult BeginListObjects(ListObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsResponseUnmarshaller.Instance;
 
@@ -12715,7 +12715,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual ListObjectsV2Response ListObjectsV2(ListObjectsV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
@@ -12736,7 +12736,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectsV2">REST API Reference for ListObjectsV2 Operation</seealso>
         public virtual IAsyncResult BeginListObjectsV2(ListObjectsV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectsV2ResponseUnmarshaller.Instance;
 
@@ -13020,7 +13020,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual ListPartsResponse ListParts(ListPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -13041,7 +13041,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListParts">REST API Reference for ListParts Operation</seealso>
         public virtual IAsyncResult BeginListParts(ListPartsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartsResponseUnmarshaller.Instance;
 
@@ -13292,7 +13292,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -13313,7 +13313,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjectVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual IAsyncResult BeginListVersions(ListVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -13607,7 +13607,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         public virtual PutACLResponse PutACL(PutACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
 
@@ -13628,7 +13628,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAcl">REST API Reference for PutACL Operation</seealso>
         public virtual IAsyncResult BeginPutACL(PutACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutACLResponseUnmarshaller.Instance;
 
@@ -14012,7 +14012,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual PutBucketResponse PutBucket(PutBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
 
@@ -14033,7 +14033,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
         public virtual IAsyncResult BeginPutBucket(PutBucketRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketResponseUnmarshaller.Instance;
 
@@ -14131,7 +14131,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual PutBucketAccelerateConfigurationResponse PutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -14152,7 +14152,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAccelerateConfiguration">REST API Reference for PutBucketAccelerateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketAccelerateConfiguration(PutBucketAccelerateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAccelerateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
@@ -14282,7 +14282,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -14303,7 +14303,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAnalyticsConfiguration">REST API Reference for PutBucketAnalyticsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketAnalyticsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
 
@@ -14476,7 +14476,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual PutBucketEncryptionResponse PutBucketEncryption(PutBucketEncryptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -14497,7 +14497,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">REST API Reference for PutBucketEncryption Operation</seealso>
         public virtual IAsyncResult BeginPutBucketEncryption(PutBucketEncryptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketEncryptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketEncryptionResponseUnmarshaller.Instance;
 
@@ -14613,7 +14613,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">REST API Reference for PutBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual PutBucketIntelligentTieringConfigurationResponse PutBucketIntelligentTieringConfiguration(PutBucketIntelligentTieringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -14634,7 +14634,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">REST API Reference for PutBucketIntelligentTieringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketIntelligentTieringConfiguration(PutBucketIntelligentTieringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketIntelligentTieringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketIntelligentTieringConfigurationResponseUnmarshaller.Instance;
 
@@ -14772,7 +14772,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -14793,7 +14793,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketInventoryConfiguration">REST API Reference for PutBucketInventoryConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketInventoryConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
@@ -14953,7 +14953,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
@@ -14974,7 +14974,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLogging">REST API Reference for PutBucketLogging Operation</seealso>
         public virtual IAsyncResult BeginPutBucketLogging(PutBucketLoggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
@@ -15068,7 +15068,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -15089,7 +15089,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketMetricsConfiguration">REST API Reference for PutBucketMetricsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketMetricsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
 
@@ -15207,7 +15207,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
@@ -15228,7 +15228,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">REST API Reference for PutBucketNotification Operation</seealso>
         public virtual IAsyncResult BeginPutBucketNotification(PutBucketNotificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketNotificationResponseUnmarshaller.Instance;
 
@@ -15289,7 +15289,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">REST API Reference for PutBucketOwnershipControls Operation</seealso>
         public virtual PutBucketOwnershipControlsResponse PutBucketOwnershipControls(PutBucketOwnershipControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -15310,7 +15310,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketOwnershipControls">REST API Reference for PutBucketOwnershipControls Operation</seealso>
         public virtual IAsyncResult BeginPutBucketOwnershipControls(PutBucketOwnershipControlsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketOwnershipControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketOwnershipControlsResponseUnmarshaller.Instance;
 
@@ -15625,7 +15625,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -15646,7 +15646,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutBucketPolicy(PutBucketPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -15771,7 +15771,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -15792,7 +15792,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual IAsyncResult BeginPutBucketReplication(PutBucketReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -15894,7 +15894,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -15915,7 +15915,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketRequestPayment">REST API Reference for PutBucketRequestPayment Operation</seealso>
         public virtual IAsyncResult BeginPutBucketRequestPayment(PutBucketRequestPaymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketRequestPaymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketRequestPaymentResponseUnmarshaller.Instance;
 
@@ -16111,7 +16111,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -16132,7 +16132,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual IAsyncResult BeginPutBucketTagging(PutBucketTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -16238,7 +16238,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -16259,7 +16259,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual IAsyncResult BeginPutBucketVersioning(PutBucketVersioningRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -16553,7 +16553,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -16574,7 +16574,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketWebsite">REST API Reference for PutBucketWebsite Operation</seealso>
         public virtual IAsyncResult BeginPutBucketWebsite(PutBucketWebsiteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketWebsiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketWebsiteResponseUnmarshaller.Instance;
 
@@ -16772,7 +16772,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -16793,7 +16793,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">REST API Reference for PutCORSConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutCORSConfiguration(PutCORSConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCORSConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCORSConfigurationResponseUnmarshaller.Instance;
 
@@ -17119,7 +17119,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -17140,7 +17140,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketLifecycleConfiguration">REST API Reference for PutLifecycleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutLifecycleConfiguration(PutLifecycleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -17342,7 +17342,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual PutObjectResponse PutObject(PutObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
@@ -17363,7 +17363,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject">REST API Reference for PutObject Operation</seealso>
         public virtual IAsyncResult BeginPutObject(PutObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectResponseUnmarshaller.Instance;
 
@@ -17409,7 +17409,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -17430,7 +17430,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">REST API Reference for PutObjectLegalHold Operation</seealso>
         public virtual IAsyncResult BeginPutObjectLegalHold(PutObjectLegalHoldRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLegalHoldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
 
@@ -17489,7 +17489,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -17510,7 +17510,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">REST API Reference for PutObjectLockConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutObjectLockConfiguration(PutObjectLockConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
 
@@ -17558,7 +17558,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
 
@@ -17579,7 +17579,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">REST API Reference for PutObjectRetention Operation</seealso>
         public virtual IAsyncResult BeginPutObjectRetention(PutObjectRetentionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
 
@@ -17684,7 +17684,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
@@ -17705,7 +17705,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">REST API Reference for PutObjectTagging Operation</seealso>
         public virtual IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutObjectTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
 
@@ -17787,7 +17787,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -17808,7 +17808,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual IAsyncResult BeginPutPublicAccessBlock(PutPublicAccessBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -17890,7 +17890,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
         public virtual RenameObjectResponse RenameObject(RenameObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
 
@@ -17911,7 +17911,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RenameObject">REST API Reference for RenameObject Operation</seealso>
         public virtual IAsyncResult BeginRenameObject(RenameObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenameObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenameObjectResponseUnmarshaller.Instance;
 
@@ -19060,7 +19060,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
@@ -19081,7 +19081,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">REST API Reference for RestoreObject Operation</seealso>
         public virtual IAsyncResult BeginRestoreObject(RestoreObjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreObjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreObjectResponseUnmarshaller.Instance;
 
@@ -19238,7 +19238,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual SelectObjectContentResponse SelectObjectContent(SelectObjectContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
 
@@ -19259,7 +19259,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">REST API Reference for SelectObjectContent Operation</seealso>
         public virtual IAsyncResult BeginSelectObjectContent(SelectObjectContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SelectObjectContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SelectObjectContentResponseUnmarshaller.Instance;
 
@@ -19366,7 +19366,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
         public virtual UpdateBucketMetadataInventoryTableConfigurationResponse UpdateBucketMetadataInventoryTableConfiguration(UpdateBucketMetadataInventoryTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataInventoryTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataInventoryTableConfigurationResponseUnmarshaller.Instance;
 
@@ -19387,7 +19387,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataInventoryTableConfiguration">REST API Reference for UpdateBucketMetadataInventoryTableConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateBucketMetadataInventoryTableConfiguration(UpdateBucketMetadataInventoryTableConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataInventoryTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataInventoryTableConfigurationResponseUnmarshaller.Instance;
 
@@ -19455,7 +19455,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
         public virtual UpdateBucketMetadataJournalTableConfigurationResponse UpdateBucketMetadataJournalTableConfiguration(UpdateBucketMetadataJournalTableConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataJournalTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataJournalTableConfigurationResponseUnmarshaller.Instance;
 
@@ -19476,7 +19476,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UpdateBucketMetadataJournalTableConfiguration">REST API Reference for UpdateBucketMetadataJournalTableConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateBucketMetadataJournalTableConfiguration(UpdateBucketMetadataJournalTableConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBucketMetadataJournalTableConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBucketMetadataJournalTableConfigurationResponseUnmarshaller.Instance;
 
@@ -19718,7 +19718,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual UploadPartResponse UploadPart(UploadPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
 
@@ -19739,7 +19739,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPart">REST API Reference for UploadPart Operation</seealso>
         public virtual IAsyncResult BeginUploadPart(UploadPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadPartResponseUnmarshaller.Instance;
 
@@ -19832,7 +19832,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">REST API Reference for WriteGetObjectResponse Operation</seealso>
         public virtual WriteGetObjectResponseResponse WriteGetObjectResponse(WriteGetObjectResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteGetObjectResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteGetObjectResponseResponseUnmarshaller.Instance;
 
@@ -19853,7 +19853,7 @@ namespace Amazon.S3
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WriteGetObjectResponse">REST API Reference for WriteGetObjectResponse Operation</seealso>
         public virtual IAsyncResult BeginWriteGetObjectResponse(WriteGetObjectResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteGetObjectResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteGetObjectResponseResponseUnmarshaller.Instance;
 

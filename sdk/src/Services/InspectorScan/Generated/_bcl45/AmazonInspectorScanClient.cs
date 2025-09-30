@@ -276,7 +276,7 @@ namespace Amazon.InspectorScan
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-scan-2023-08-08/ScanSbom">REST API Reference for ScanSbom Operation</seealso>
         public virtual ScanSbomResponse ScanSbom(ScanSbomRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanSbomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanSbomResponseUnmarshaller.Instance;
 
@@ -311,7 +311,7 @@ namespace Amazon.InspectorScan
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-scan-2023-08-08/ScanSbom">REST API Reference for ScanSbom Operation</seealso>
         public virtual Task<ScanSbomResponse> ScanSbomAsync(ScanSbomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanSbomRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanSbomResponseUnmarshaller.Instance;
             

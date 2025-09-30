@@ -306,7 +306,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual AssociateDefaultViewResponse AssociateDefaultView(AssociateDefaultViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDefaultViewResponseUnmarshaller.Instance;
 
@@ -357,7 +357,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/AssociateDefaultView">REST API Reference for AssociateDefaultView Operation</seealso>
         public virtual Task<AssociateDefaultViewResponse> AssociateDefaultViewAsync(AssociateDefaultViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDefaultViewResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual BatchGetViewResponse BatchGetView(BatchGetViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetViewResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/BatchGetView">REST API Reference for BatchGetView Operation</seealso>
         public virtual Task<BatchGetViewResponse> BatchGetViewAsync(BatchGetViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetViewResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
         public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual CreateViewResponse CreateView(CreateViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/CreateView">REST API Reference for CreateView Operation</seealso>
         public virtual Task<CreateViewResponse> CreateViewAsync(CreateViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateViewResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
         public virtual Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual DeleteViewResponse DeleteView(DeleteViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DeleteView">REST API Reference for DeleteView Operation</seealso>
         public virtual Task<DeleteViewResponse> DeleteViewAsync(DeleteViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteViewResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual DisassociateDefaultViewResponse DisassociateDefaultView(DisassociateDefaultViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDefaultViewResponseUnmarshaller.Instance;
 
@@ -826,7 +826,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/DisassociateDefaultView">REST API Reference for DisassociateDefaultView Operation</seealso>
         public virtual Task<DisassociateDefaultViewResponse> DisassociateDefaultViewAsync(DisassociateDefaultViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDefaultViewResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual GetAccountLevelServiceConfigurationResponse GetAccountLevelServiceConfiguration(GetAccountLevelServiceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLevelServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLevelServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -878,7 +878,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetAccountLevelServiceConfiguration">REST API Reference for GetAccountLevelServiceConfiguration Operation</seealso>
         public virtual Task<GetAccountLevelServiceConfigurationResponse> GetAccountLevelServiceConfigurationAsync(GetAccountLevelServiceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLevelServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLevelServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual GetDefaultViewResponse GetDefaultView(GetDefaultViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultViewResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetDefaultView">REST API Reference for GetDefaultView Operation</seealso>
         public virtual Task<GetDefaultViewResponse> GetDefaultViewAsync(GetDefaultViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultViewResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual GetIndexResponse GetIndex(GetIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetIndex">REST API Reference for GetIndex Operation</seealso>
         public virtual Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual GetManagedViewResponse GetManagedView(GetManagedViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedViewResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
         public virtual Task<GetManagedViewResponse> GetManagedViewAsync(GetManagedViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedViewResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual GetViewResponse GetView(GetViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetViewResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetView">REST API Reference for GetView Operation</seealso>
         public virtual Task<GetViewResponse> GetViewAsync(GetViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetViewResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListIndexesResponse ListIndexes(ListIndexesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesResponseUnmarshaller.Instance;
 
@@ -1155,7 +1155,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexes">REST API Reference for ListIndexes Operation</seealso>
         public virtual Task<ListIndexesResponse> ListIndexesAsync(ListIndexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListIndexesForMembersResponse ListIndexesForMembers(ListIndexesForMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesForMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesForMembersResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">REST API Reference for ListIndexesForMembers Operation</seealso>
         public virtual Task<ListIndexesForMembersResponse> ListIndexesForMembersAsync(ListIndexesForMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndexesForMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndexesForMembersResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListManagedViewsResponse ListManagedViews(ListManagedViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedViewsResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
         public virtual Task<ListManagedViewsResponse> ListManagedViewsAsync(ListManagedViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedViewsResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListSupportedResourceTypesResponse ListSupportedResourceTypes(ListSupportedResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupportedResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupportedResourceTypesResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListSupportedResourceTypes">REST API Reference for ListSupportedResourceTypes Operation</seealso>
         public virtual Task<ListSupportedResourceTypesResponse> ListSupportedResourceTypesAsync(ListSupportedResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupportedResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupportedResourceTypesResponseUnmarshaller.Instance;
 
@@ -1386,7 +1386,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual ListViewsResponse ListViews(ListViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListViews">REST API Reference for ListViews Operation</seealso>
         public virtual Task<ListViewsResponse> ListViewsAsync(ListViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListViewsResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual SearchResponse Search(SearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/Search">REST API Reference for Search Operation</seealso>
         public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -1582,7 +1582,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1699,7 +1699,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual UpdateIndexTypeResponse UpdateIndexType(UpdateIndexTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexTypeResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/UpdateIndexType">REST API Reference for UpdateIndexType Operation</seealso>
         public virtual Task<UpdateIndexTypeResponse> UpdateIndexTypeAsync(UpdateIndexTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIndexTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIndexTypeResponseUnmarshaller.Instance;
 
@@ -1850,7 +1850,7 @@ namespace Amazon.ResourceExplorer2
 
         internal virtual UpdateViewResponse UpdateView(UpdateViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.ResourceExplorer2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/UpdateView">REST API Reference for UpdateView Operation</seealso>
         public virtual Task<UpdateViewResponse> UpdateViewAsync(UpdateViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateViewResponseUnmarshaller.Instance;
 

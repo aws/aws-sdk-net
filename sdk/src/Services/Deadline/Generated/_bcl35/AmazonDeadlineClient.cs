@@ -306,7 +306,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFarm">REST API Reference for AssociateMemberToFarm Operation</seealso>
         public virtual AssociateMemberToFarmResponse AssociateMemberToFarm(AssociateMemberToFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFarmResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFarm">REST API Reference for AssociateMemberToFarm Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToFarm(AssociateMemberToFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFarmResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFleet">REST API Reference for AssociateMemberToFleet Operation</seealso>
         public virtual AssociateMemberToFleetResponse AssociateMemberToFleet(AssociateMemberToFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFleetResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFleet">REST API Reference for AssociateMemberToFleet Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToFleet(AssociateMemberToFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFleetResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToJob">REST API Reference for AssociateMemberToJob Operation</seealso>
         public virtual AssociateMemberToJobResponse AssociateMemberToJob(AssociateMemberToJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToJobResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToJob">REST API Reference for AssociateMemberToJob Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToJob(AssociateMemberToJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToJobResponseUnmarshaller.Instance;
 
@@ -528,7 +528,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToQueue">REST API Reference for AssociateMemberToQueue Operation</seealso>
         public virtual AssociateMemberToQueueResponse AssociateMemberToQueue(AssociateMemberToQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToQueueResponseUnmarshaller.Instance;
 
@@ -549,7 +549,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToQueue">REST API Reference for AssociateMemberToQueue Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToQueue(AssociateMemberToQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToQueueResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForRead">REST API Reference for AssumeFleetRoleForRead Operation</seealso>
         public virtual AssumeFleetRoleForReadResponse AssumeFleetRoleForRead(AssumeFleetRoleForReadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForReadResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForRead">REST API Reference for AssumeFleetRoleForRead Operation</seealso>
         public virtual IAsyncResult BeginAssumeFleetRoleForRead(AssumeFleetRoleForReadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForReadResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForWorker">REST API Reference for AssumeFleetRoleForWorker Operation</seealso>
         public virtual AssumeFleetRoleForWorkerResponse AssumeFleetRoleForWorker(AssumeFleetRoleForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForWorker">REST API Reference for AssumeFleetRoleForWorker Operation</seealso>
         public virtual IAsyncResult BeginAssumeFleetRoleForWorker(AssumeFleetRoleForWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForRead">REST API Reference for AssumeQueueRoleForRead Operation</seealso>
         public virtual AssumeQueueRoleForReadResponse AssumeQueueRoleForRead(AssumeQueueRoleForReadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForReadResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForRead">REST API Reference for AssumeQueueRoleForRead Operation</seealso>
         public virtual IAsyncResult BeginAssumeQueueRoleForRead(AssumeQueueRoleForReadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForReadResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForUser">REST API Reference for AssumeQueueRoleForUser Operation</seealso>
         public virtual AssumeQueueRoleForUserResponse AssumeQueueRoleForUser(AssumeQueueRoleForUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForUserResponseUnmarshaller.Instance;
 
@@ -835,7 +835,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForUser">REST API Reference for AssumeQueueRoleForUser Operation</seealso>
         public virtual IAsyncResult BeginAssumeQueueRoleForUser(AssumeQueueRoleForUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForUserResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForWorker">REST API Reference for AssumeQueueRoleForWorker Operation</seealso>
         public virtual AssumeQueueRoleForWorkerResponse AssumeQueueRoleForWorker(AssumeQueueRoleForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForWorker">REST API Reference for AssumeQueueRoleForWorker Operation</seealso>
         public virtual IAsyncResult BeginAssumeQueueRoleForWorker(AssumeQueueRoleForWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJobEntity">REST API Reference for BatchGetJobEntity Operation</seealso>
         public virtual BatchGetJobEntityResponse BatchGetJobEntity(BatchGetJobEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobEntityResponseUnmarshaller.Instance;
 
@@ -979,7 +979,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJobEntity">REST API Reference for BatchGetJobEntity Operation</seealso>
         public virtual IAsyncResult BeginBatchGetJobEntity(BatchGetJobEntityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobEntityResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CopyJobTemplate">REST API Reference for CopyJobTemplate Operation</seealso>
         public virtual CopyJobTemplateResponse CopyJobTemplate(CopyJobTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyJobTemplateResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CopyJobTemplate">REST API Reference for CopyJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginCopyJobTemplate(CopyJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyJobTemplateResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual IAsyncResult BeginCreateBudget(CreateBudgetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFarm">REST API Reference for CreateFarm Operation</seealso>
         public virtual CreateFarmResponse CreateFarm(CreateFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFarmResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFarm">REST API Reference for CreateFarm Operation</seealso>
         public virtual IAsyncResult BeginCreateFarm(CreateFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFarmResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -1331,7 +1331,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1407,7 +1407,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLicenseEndpoint">REST API Reference for CreateLicenseEndpoint Operation</seealso>
         public virtual CreateLicenseEndpointResponse CreateLicenseEndpoint(CreateLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLicenseEndpoint">REST API Reference for CreateLicenseEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateLicenseEndpoint(CreateLicenseEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">REST API Reference for CreateLimit Operation</seealso>
         public virtual CreateLimitResponse CreateLimit(CreateLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLimitResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">REST API Reference for CreateLimit Operation</seealso>
         public virtual IAsyncResult BeginCreateLimit(CreateLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLimitResponseUnmarshaller.Instance;
 
@@ -1563,7 +1563,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual IAsyncResult BeginCreateMonitor(CreateMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueEnvironment">REST API Reference for CreateQueueEnvironment Operation</seealso>
         public virtual CreateQueueEnvironmentResponse CreateQueueEnvironment(CreateQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -1733,7 +1733,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueEnvironment">REST API Reference for CreateQueueEnvironment Operation</seealso>
         public virtual IAsyncResult BeginCreateQueueEnvironment(CreateQueueEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueFleetAssociation">REST API Reference for CreateQueueFleetAssociation Operation</seealso>
         public virtual CreateQueueFleetAssociationResponse CreateQueueFleetAssociation(CreateQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueFleetAssociation">REST API Reference for CreateQueueFleetAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateQueueFleetAssociation(CreateQueueFleetAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -1855,7 +1855,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">REST API Reference for CreateQueueLimitAssociation Operation</seealso>
         public virtual CreateQueueLimitAssociationResponse CreateQueueLimitAssociation(CreateQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -1876,7 +1876,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">REST API Reference for CreateQueueLimitAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateQueueLimitAssociation(CreateQueueLimitAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -1930,7 +1930,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateStorageProfile">REST API Reference for CreateStorageProfile Operation</seealso>
         public virtual CreateStorageProfileResponse CreateStorageProfile(CreateStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageProfileResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateStorageProfile">REST API Reference for CreateStorageProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateStorageProfile(CreateStorageProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageProfileResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateWorker">REST API Reference for CreateWorker Operation</seealso>
         public virtual CreateWorkerResponse CreateWorker(CreateWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateWorker">REST API Reference for CreateWorker Operation</seealso>
         public virtual IAsyncResult BeginCreateWorker(CreateWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerResponseUnmarshaller.Instance;
 
@@ -2087,7 +2087,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual IAsyncResult BeginDeleteBudget(DeleteBudgetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
@@ -2157,7 +2157,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFarm">REST API Reference for DeleteFarm Operation</seealso>
         public virtual DeleteFarmResponse DeleteFarm(DeleteFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFarmResponseUnmarshaller.Instance;
 
@@ -2178,7 +2178,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFarm">REST API Reference for DeleteFarm Operation</seealso>
         public virtual IAsyncResult BeginDeleteFarm(DeleteFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFarmResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -2252,7 +2252,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -2305,7 +2305,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLicenseEndpoint">REST API Reference for DeleteLicenseEndpoint Operation</seealso>
         public virtual DeleteLicenseEndpointResponse DeleteLicenseEndpoint(DeleteLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -2326,7 +2326,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLicenseEndpoint">REST API Reference for DeleteLicenseEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteLicenseEndpoint(DeleteLicenseEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -2373,7 +2373,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">REST API Reference for DeleteLimit Operation</seealso>
         public virtual DeleteLimitResponse DeleteLimit(DeleteLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLimitResponseUnmarshaller.Instance;
 
@@ -2394,7 +2394,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">REST API Reference for DeleteLimit Operation</seealso>
         public virtual IAsyncResult BeginDeleteLimit(DeleteLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLimitResponseUnmarshaller.Instance;
 
@@ -2443,7 +2443,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMeteredProduct">REST API Reference for DeleteMeteredProduct Operation</seealso>
         public virtual DeleteMeteredProductResponse DeleteMeteredProduct(DeleteMeteredProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeteredProductResponseUnmarshaller.Instance;
 
@@ -2464,7 +2464,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMeteredProduct">REST API Reference for DeleteMeteredProduct Operation</seealso>
         public virtual IAsyncResult BeginDeleteMeteredProduct(DeleteMeteredProductRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeteredProductResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -2535,7 +2535,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual IAsyncResult BeginDeleteMonitor(DeleteMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -2595,7 +2595,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -2616,7 +2616,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -2662,7 +2662,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueEnvironment">REST API Reference for DeleteQueueEnvironment Operation</seealso>
         public virtual DeleteQueueEnvironmentResponse DeleteQueueEnvironment(DeleteQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2683,7 +2683,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueEnvironment">REST API Reference for DeleteQueueEnvironment Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueueEnvironment(DeleteQueueEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2736,7 +2736,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueFleetAssociation">REST API Reference for DeleteQueueFleetAssociation Operation</seealso>
         public virtual DeleteQueueFleetAssociationResponse DeleteQueueFleetAssociation(DeleteQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueFleetAssociation">REST API Reference for DeleteQueueFleetAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueueFleetAssociation(DeleteQueueFleetAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2813,7 +2813,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">REST API Reference for DeleteQueueLimitAssociation Operation</seealso>
         public virtual DeleteQueueLimitAssociationResponse DeleteQueueLimitAssociation(DeleteQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -2834,7 +2834,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">REST API Reference for DeleteQueueLimitAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueueLimitAssociation(DeleteQueueLimitAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -2880,7 +2880,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteStorageProfile">REST API Reference for DeleteStorageProfile Operation</seealso>
         public virtual DeleteStorageProfileResponse DeleteStorageProfile(DeleteStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageProfileResponseUnmarshaller.Instance;
 
@@ -2901,7 +2901,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteStorageProfile">REST API Reference for DeleteStorageProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteStorageProfile(DeleteStorageProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageProfileResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteWorker">REST API Reference for DeleteWorker Operation</seealso>
         public virtual DeleteWorkerResponse DeleteWorker(DeleteWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerResponseUnmarshaller.Instance;
 
@@ -2975,7 +2975,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteWorker">REST API Reference for DeleteWorker Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorker(DeleteWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerResponseUnmarshaller.Instance;
 
@@ -3024,7 +3024,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFarm">REST API Reference for DisassociateMemberFromFarm Operation</seealso>
         public virtual DisassociateMemberFromFarmResponse DisassociateMemberFromFarm(DisassociateMemberFromFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFarmResponseUnmarshaller.Instance;
 
@@ -3045,7 +3045,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFarm">REST API Reference for DisassociateMemberFromFarm Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromFarm(DisassociateMemberFromFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFarmResponseUnmarshaller.Instance;
 
@@ -3098,7 +3098,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFleet">REST API Reference for DisassociateMemberFromFleet Operation</seealso>
         public virtual DisassociateMemberFromFleetResponse DisassociateMemberFromFleet(DisassociateMemberFromFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFleetResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFleet">REST API Reference for DisassociateMemberFromFleet Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromFleet(DisassociateMemberFromFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFleetResponseUnmarshaller.Instance;
 
@@ -3168,7 +3168,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromJob">REST API Reference for DisassociateMemberFromJob Operation</seealso>
         public virtual DisassociateMemberFromJobResponse DisassociateMemberFromJob(DisassociateMemberFromJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromJobResponseUnmarshaller.Instance;
 
@@ -3189,7 +3189,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromJob">REST API Reference for DisassociateMemberFromJob Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromJob(DisassociateMemberFromJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromJobResponseUnmarshaller.Instance;
 
@@ -3242,7 +3242,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromQueue">REST API Reference for DisassociateMemberFromQueue Operation</seealso>
         public virtual DisassociateMemberFromQueueResponse DisassociateMemberFromQueue(DisassociateMemberFromQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromQueueResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromQueue">REST API Reference for DisassociateMemberFromQueue Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromQueue(DisassociateMemberFromQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromQueueResponseUnmarshaller.Instance;
 
@@ -3312,7 +3312,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetBudget">REST API Reference for GetBudget Operation</seealso>
         public virtual GetBudgetResponse GetBudget(GetBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBudgetResponseUnmarshaller.Instance;
 
@@ -3333,7 +3333,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetBudget">REST API Reference for GetBudget Operation</seealso>
         public virtual IAsyncResult BeginGetBudget(GetBudgetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBudgetResponseUnmarshaller.Instance;
 
@@ -3382,7 +3382,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFarm">REST API Reference for GetFarm Operation</seealso>
         public virtual GetFarmResponse GetFarm(GetFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFarmResponseUnmarshaller.Instance;
 
@@ -3403,7 +3403,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFarm">REST API Reference for GetFarm Operation</seealso>
         public virtual IAsyncResult BeginGetFarm(GetFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFarmResponseUnmarshaller.Instance;
 
@@ -3452,7 +3452,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFleet">REST API Reference for GetFleet Operation</seealso>
         public virtual GetFleetResponse GetFleet(GetFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -3473,7 +3473,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFleet">REST API Reference for GetFleet Operation</seealso>
         public virtual IAsyncResult BeginGetFleet(GetFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -3522,7 +3522,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -3543,7 +3543,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -3592,7 +3592,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLicenseEndpoint">REST API Reference for GetLicenseEndpoint Operation</seealso>
         public virtual GetLicenseEndpointResponse GetLicenseEndpoint(GetLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -3613,7 +3613,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLicenseEndpoint">REST API Reference for GetLicenseEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetLicenseEndpoint(GetLicenseEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -3662,7 +3662,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">REST API Reference for GetLimit Operation</seealso>
         public virtual GetLimitResponse GetLimit(GetLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLimitResponseUnmarshaller.Instance;
 
@@ -3683,7 +3683,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">REST API Reference for GetLimit Operation</seealso>
         public virtual IAsyncResult BeginGetLimit(GetLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLimitResponseUnmarshaller.Instance;
 
@@ -3732,7 +3732,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual GetMonitorResponse GetMonitor(GetMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -3753,7 +3753,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual IAsyncResult BeginGetMonitor(GetMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -3802,7 +3802,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual GetQueueResponse GetQueue(GetQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -3823,7 +3823,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual IAsyncResult BeginGetQueue(GetQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -3872,7 +3872,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueEnvironment">REST API Reference for GetQueueEnvironment Operation</seealso>
         public virtual GetQueueEnvironmentResponse GetQueueEnvironment(GetQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -3893,7 +3893,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueEnvironment">REST API Reference for GetQueueEnvironment Operation</seealso>
         public virtual IAsyncResult BeginGetQueueEnvironment(GetQueueEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -3942,7 +3942,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueFleetAssociation">REST API Reference for GetQueueFleetAssociation Operation</seealso>
         public virtual GetQueueFleetAssociationResponse GetQueueFleetAssociation(GetQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -3963,7 +3963,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueFleetAssociation">REST API Reference for GetQueueFleetAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetQueueFleetAssociation(GetQueueFleetAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -4012,7 +4012,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">REST API Reference for GetQueueLimitAssociation Operation</seealso>
         public virtual GetQueueLimitAssociationResponse GetQueueLimitAssociation(GetQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -4033,7 +4033,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">REST API Reference for GetQueueLimitAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetQueueLimitAssociation(GetQueueLimitAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -4082,7 +4082,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -4103,7 +4103,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual IAsyncResult BeginGetSession(GetSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -4152,7 +4152,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionAction">REST API Reference for GetSessionAction Operation</seealso>
         public virtual GetSessionActionResponse GetSessionAction(GetSessionActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionActionResponseUnmarshaller.Instance;
 
@@ -4173,7 +4173,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionAction">REST API Reference for GetSessionAction Operation</seealso>
         public virtual IAsyncResult BeginGetSessionAction(GetSessionActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionActionResponseUnmarshaller.Instance;
 
@@ -4225,7 +4225,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionsStatisticsAggregation">REST API Reference for GetSessionsStatisticsAggregation Operation</seealso>
         public virtual GetSessionsStatisticsAggregationResponse GetSessionsStatisticsAggregation(GetSessionsStatisticsAggregationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -4246,7 +4246,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionsStatisticsAggregation">REST API Reference for GetSessionsStatisticsAggregation Operation</seealso>
         public virtual IAsyncResult BeginGetSessionsStatisticsAggregation(GetSessionsStatisticsAggregationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -4295,7 +4295,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStep">REST API Reference for GetStep Operation</seealso>
         public virtual GetStepResponse GetStep(GetStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStepResponseUnmarshaller.Instance;
 
@@ -4316,7 +4316,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStep">REST API Reference for GetStep Operation</seealso>
         public virtual IAsyncResult BeginGetStep(GetStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStepResponseUnmarshaller.Instance;
 
@@ -4365,7 +4365,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfile">REST API Reference for GetStorageProfile Operation</seealso>
         public virtual GetStorageProfileResponse GetStorageProfile(GetStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileResponseUnmarshaller.Instance;
 
@@ -4386,7 +4386,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfile">REST API Reference for GetStorageProfile Operation</seealso>
         public virtual IAsyncResult BeginGetStorageProfile(GetStorageProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileResponseUnmarshaller.Instance;
 
@@ -4435,7 +4435,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfileForQueue">REST API Reference for GetStorageProfileForQueue Operation</seealso>
         public virtual GetStorageProfileForQueueResponse GetStorageProfileForQueue(GetStorageProfileForQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileForQueueResponseUnmarshaller.Instance;
 
@@ -4456,7 +4456,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfileForQueue">REST API Reference for GetStorageProfileForQueue Operation</seealso>
         public virtual IAsyncResult BeginGetStorageProfileForQueue(GetStorageProfileForQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileForQueueResponseUnmarshaller.Instance;
 
@@ -4505,7 +4505,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetTask">REST API Reference for GetTask Operation</seealso>
         public virtual GetTaskResponse GetTask(GetTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
 
@@ -4526,7 +4526,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetTask">REST API Reference for GetTask Operation</seealso>
         public virtual IAsyncResult BeginGetTask(GetTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
 
@@ -4575,7 +4575,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetWorker">REST API Reference for GetWorker Operation</seealso>
         public virtual GetWorkerResponse GetWorker(GetWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkerResponseUnmarshaller.Instance;
 
@@ -4596,7 +4596,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetWorker">REST API Reference for GetWorker Operation</seealso>
         public virtual IAsyncResult BeginGetWorker(GetWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkerResponseUnmarshaller.Instance;
 
@@ -4635,7 +4635,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListAvailableMeteredProducts">REST API Reference for ListAvailableMeteredProducts Operation</seealso>
         public virtual ListAvailableMeteredProductsResponse ListAvailableMeteredProducts(ListAvailableMeteredProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableMeteredProductsResponseUnmarshaller.Instance;
 
@@ -4656,7 +4656,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListAvailableMeteredProducts">REST API Reference for ListAvailableMeteredProducts Operation</seealso>
         public virtual IAsyncResult BeginListAvailableMeteredProducts(ListAvailableMeteredProductsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableMeteredProductsResponseUnmarshaller.Instance;
 
@@ -4705,7 +4705,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListBudgets">REST API Reference for ListBudgets Operation</seealso>
         public virtual ListBudgetsResponse ListBudgets(ListBudgetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBudgetsResponseUnmarshaller.Instance;
 
@@ -4726,7 +4726,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListBudgets">REST API Reference for ListBudgets Operation</seealso>
         public virtual IAsyncResult BeginListBudgets(ListBudgetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBudgetsResponseUnmarshaller.Instance;
 
@@ -4775,7 +4775,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarmMembers">REST API Reference for ListFarmMembers Operation</seealso>
         public virtual ListFarmMembersResponse ListFarmMembers(ListFarmMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmMembersResponseUnmarshaller.Instance;
 
@@ -4796,7 +4796,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarmMembers">REST API Reference for ListFarmMembers Operation</seealso>
         public virtual IAsyncResult BeginListFarmMembers(ListFarmMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmMembersResponseUnmarshaller.Instance;
 
@@ -4842,7 +4842,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarms">REST API Reference for ListFarms Operation</seealso>
         public virtual ListFarmsResponse ListFarms(ListFarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmsResponseUnmarshaller.Instance;
 
@@ -4863,7 +4863,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarms">REST API Reference for ListFarms Operation</seealso>
         public virtual IAsyncResult BeginListFarms(ListFarmsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmsResponseUnmarshaller.Instance;
 
@@ -4912,7 +4912,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleetMembers">REST API Reference for ListFleetMembers Operation</seealso>
         public virtual ListFleetMembersResponse ListFleetMembers(ListFleetMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetMembersResponseUnmarshaller.Instance;
 
@@ -4933,7 +4933,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleetMembers">REST API Reference for ListFleetMembers Operation</seealso>
         public virtual IAsyncResult BeginListFleetMembers(ListFleetMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetMembersResponseUnmarshaller.Instance;
 
@@ -4982,7 +4982,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -5003,7 +5003,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -5052,7 +5052,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobMembers">REST API Reference for ListJobMembers Operation</seealso>
         public virtual ListJobMembersResponse ListJobMembers(ListJobMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobMembersResponseUnmarshaller.Instance;
 
@@ -5073,7 +5073,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobMembers">REST API Reference for ListJobMembers Operation</seealso>
         public virtual IAsyncResult BeginListJobMembers(ListJobMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobMembersResponseUnmarshaller.Instance;
 
@@ -5122,7 +5122,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
         public virtual ListJobParameterDefinitionsResponse ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
 
@@ -5143,7 +5143,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListJobParameterDefinitions(ListJobParameterDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
 
@@ -5192,7 +5192,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -5213,7 +5213,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -5262,7 +5262,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLicenseEndpoints">REST API Reference for ListLicenseEndpoints Operation</seealso>
         public virtual ListLicenseEndpointsResponse ListLicenseEndpoints(ListLicenseEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLicenseEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLicenseEndpointsResponseUnmarshaller.Instance;
 
@@ -5283,7 +5283,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLicenseEndpoints">REST API Reference for ListLicenseEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListLicenseEndpoints(ListLicenseEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLicenseEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLicenseEndpointsResponseUnmarshaller.Instance;
 
@@ -5332,7 +5332,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">REST API Reference for ListLimits Operation</seealso>
         public virtual ListLimitsResponse ListLimits(ListLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLimitsResponseUnmarshaller.Instance;
 
@@ -5353,7 +5353,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">REST API Reference for ListLimits Operation</seealso>
         public virtual IAsyncResult BeginListLimits(ListLimitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLimitsResponseUnmarshaller.Instance;
 
@@ -5402,7 +5402,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMeteredProducts">REST API Reference for ListMeteredProducts Operation</seealso>
         public virtual ListMeteredProductsResponse ListMeteredProducts(ListMeteredProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeteredProductsResponseUnmarshaller.Instance;
 
@@ -5423,7 +5423,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMeteredProducts">REST API Reference for ListMeteredProducts Operation</seealso>
         public virtual IAsyncResult BeginListMeteredProducts(ListMeteredProductsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeteredProductsResponseUnmarshaller.Instance;
 
@@ -5469,7 +5469,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -5490,7 +5490,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual IAsyncResult BeginListMonitors(ListMonitorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -5539,7 +5539,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueEnvironments">REST API Reference for ListQueueEnvironments Operation</seealso>
         public virtual ListQueueEnvironmentsResponse ListQueueEnvironments(ListQueueEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueEnvironmentsResponseUnmarshaller.Instance;
 
@@ -5560,7 +5560,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueEnvironments">REST API Reference for ListQueueEnvironments Operation</seealso>
         public virtual IAsyncResult BeginListQueueEnvironments(ListQueueEnvironmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueEnvironmentsResponseUnmarshaller.Instance;
 
@@ -5605,7 +5605,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociations">REST API Reference for ListQueueFleetAssociations Operation</seealso>
         public virtual ListQueueFleetAssociationsResponse ListQueueFleetAssociations(ListQueueFleetAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueFleetAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueFleetAssociationsResponseUnmarshaller.Instance;
 
@@ -5626,7 +5626,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociations">REST API Reference for ListQueueFleetAssociations Operation</seealso>
         public virtual IAsyncResult BeginListQueueFleetAssociations(ListQueueFleetAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueFleetAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueFleetAssociationsResponseUnmarshaller.Instance;
 
@@ -5671,7 +5671,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">REST API Reference for ListQueueLimitAssociations Operation</seealso>
         public virtual ListQueueLimitAssociationsResponse ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueLimitAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueLimitAssociationsResponseUnmarshaller.Instance;
 
@@ -5692,7 +5692,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">REST API Reference for ListQueueLimitAssociations Operation</seealso>
         public virtual IAsyncResult BeginListQueueLimitAssociations(ListQueueLimitAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueLimitAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueLimitAssociationsResponseUnmarshaller.Instance;
 
@@ -5741,7 +5741,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueMembers">REST API Reference for ListQueueMembers Operation</seealso>
         public virtual ListQueueMembersResponse ListQueueMembers(ListQueueMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueMembersResponseUnmarshaller.Instance;
 
@@ -5762,7 +5762,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueMembers">REST API Reference for ListQueueMembers Operation</seealso>
         public virtual IAsyncResult BeginListQueueMembers(ListQueueMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueMembersResponseUnmarshaller.Instance;
 
@@ -5811,7 +5811,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -5832,7 +5832,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -5881,7 +5881,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionActions">REST API Reference for ListSessionActions Operation</seealso>
         public virtual ListSessionActionsResponse ListSessionActions(ListSessionActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionActionsResponseUnmarshaller.Instance;
 
@@ -5902,7 +5902,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionActions">REST API Reference for ListSessionActions Operation</seealso>
         public virtual IAsyncResult BeginListSessionActions(ListSessionActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionActionsResponseUnmarshaller.Instance;
 
@@ -5951,7 +5951,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -5972,7 +5972,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual IAsyncResult BeginListSessions(ListSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -6021,7 +6021,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionsForWorker">REST API Reference for ListSessionsForWorker Operation</seealso>
         public virtual ListSessionsForWorkerResponse ListSessionsForWorker(ListSessionsForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsForWorkerResponseUnmarshaller.Instance;
 
@@ -6042,7 +6042,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionsForWorker">REST API Reference for ListSessionsForWorker Operation</seealso>
         public virtual IAsyncResult BeginListSessionsForWorker(ListSessionsForWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsForWorkerResponseUnmarshaller.Instance;
 
@@ -6091,7 +6091,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepConsumers">REST API Reference for ListStepConsumers Operation</seealso>
         public virtual ListStepConsumersResponse ListStepConsumers(ListStepConsumersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepConsumersResponseUnmarshaller.Instance;
 
@@ -6112,7 +6112,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepConsumers">REST API Reference for ListStepConsumers Operation</seealso>
         public virtual IAsyncResult BeginListStepConsumers(ListStepConsumersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepConsumersResponseUnmarshaller.Instance;
 
@@ -6161,7 +6161,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepDependencies">REST API Reference for ListStepDependencies Operation</seealso>
         public virtual ListStepDependenciesResponse ListStepDependencies(ListStepDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepDependenciesResponseUnmarshaller.Instance;
 
@@ -6182,7 +6182,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepDependencies">REST API Reference for ListStepDependencies Operation</seealso>
         public virtual IAsyncResult BeginListStepDependencies(ListStepDependenciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepDependenciesResponseUnmarshaller.Instance;
 
@@ -6231,7 +6231,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
@@ -6252,7 +6252,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual IAsyncResult BeginListSteps(ListStepsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
@@ -6301,7 +6301,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfiles">REST API Reference for ListStorageProfiles Operation</seealso>
         public virtual ListStorageProfilesResponse ListStorageProfiles(ListStorageProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesResponseUnmarshaller.Instance;
 
@@ -6322,7 +6322,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfiles">REST API Reference for ListStorageProfiles Operation</seealso>
         public virtual IAsyncResult BeginListStorageProfiles(ListStorageProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesResponseUnmarshaller.Instance;
 
@@ -6371,7 +6371,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfilesForQueue">REST API Reference for ListStorageProfilesForQueue Operation</seealso>
         public virtual ListStorageProfilesForQueueResponse ListStorageProfilesForQueue(ListStorageProfilesForQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesForQueueResponseUnmarshaller.Instance;
 
@@ -6392,7 +6392,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfilesForQueue">REST API Reference for ListStorageProfilesForQueue Operation</seealso>
         public virtual IAsyncResult BeginListStorageProfilesForQueue(ListStorageProfilesForQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesForQueueResponseUnmarshaller.Instance;
 
@@ -6441,7 +6441,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6462,7 +6462,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6511,7 +6511,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -6532,7 +6532,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -6581,7 +6581,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListWorkers">REST API Reference for ListWorkers Operation</seealso>
         public virtual ListWorkersResponse ListWorkers(ListWorkersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkersResponseUnmarshaller.Instance;
 
@@ -6602,7 +6602,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListWorkers">REST API Reference for ListWorkers Operation</seealso>
         public virtual IAsyncResult BeginListWorkers(ListWorkersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkersResponseUnmarshaller.Instance;
 
@@ -6651,7 +6651,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/PutMeteredProduct">REST API Reference for PutMeteredProduct Operation</seealso>
         public virtual PutMeteredProductResponse PutMeteredProduct(PutMeteredProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMeteredProductResponseUnmarshaller.Instance;
 
@@ -6672,7 +6672,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/PutMeteredProduct">REST API Reference for PutMeteredProduct Operation</seealso>
         public virtual IAsyncResult BeginPutMeteredProduct(PutMeteredProductRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMeteredProductResponseUnmarshaller.Instance;
 
@@ -6721,7 +6721,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
         public virtual SearchJobsResponse SearchJobs(SearchJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
 
@@ -6742,7 +6742,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
         public virtual IAsyncResult BeginSearchJobs(SearchJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
 
@@ -6791,7 +6791,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchSteps">REST API Reference for SearchSteps Operation</seealso>
         public virtual SearchStepsResponse SearchSteps(SearchStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchStepsResponseUnmarshaller.Instance;
 
@@ -6812,7 +6812,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchSteps">REST API Reference for SearchSteps Operation</seealso>
         public virtual IAsyncResult BeginSearchSteps(SearchStepsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchStepsResponseUnmarshaller.Instance;
 
@@ -6861,7 +6861,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchTasks">REST API Reference for SearchTasks Operation</seealso>
         public virtual SearchTasksResponse SearchTasks(SearchTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTasksResponseUnmarshaller.Instance;
 
@@ -6882,7 +6882,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchTasks">REST API Reference for SearchTasks Operation</seealso>
         public virtual IAsyncResult BeginSearchTasks(SearchTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTasksResponseUnmarshaller.Instance;
 
@@ -6931,7 +6931,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchWorkers">REST API Reference for SearchWorkers Operation</seealso>
         public virtual SearchWorkersResponse SearchWorkers(SearchWorkersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchWorkersResponseUnmarshaller.Instance;
 
@@ -6952,7 +6952,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchWorkers">REST API Reference for SearchWorkers Operation</seealso>
         public virtual IAsyncResult BeginSearchWorkers(SearchWorkersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchWorkersResponseUnmarshaller.Instance;
 
@@ -7006,7 +7006,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/StartSessionsStatisticsAggregation">REST API Reference for StartSessionsStatisticsAggregation Operation</seealso>
         public virtual StartSessionsStatisticsAggregationResponse StartSessionsStatisticsAggregation(StartSessionsStatisticsAggregationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -7027,7 +7027,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/StartSessionsStatisticsAggregation">REST API Reference for StartSessionsStatisticsAggregation Operation</seealso>
         public virtual IAsyncResult BeginStartSessionsStatisticsAggregation(StartSessionsStatisticsAggregationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -7080,7 +7080,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7101,7 +7101,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7154,7 +7154,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7175,7 +7175,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7224,7 +7224,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
@@ -7245,7 +7245,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual IAsyncResult BeginUpdateBudget(UpdateBudgetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
@@ -7294,7 +7294,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFarm">REST API Reference for UpdateFarm Operation</seealso>
         public virtual UpdateFarmResponse UpdateFarm(UpdateFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFarmResponseUnmarshaller.Instance;
 
@@ -7315,7 +7315,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFarm">REST API Reference for UpdateFarm Operation</seealso>
         public virtual IAsyncResult BeginUpdateFarm(UpdateFarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFarmResponseUnmarshaller.Instance;
 
@@ -7368,7 +7368,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -7389,7 +7389,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -7454,7 +7454,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -7475,7 +7475,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -7524,7 +7524,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">REST API Reference for UpdateLimit Operation</seealso>
         public virtual UpdateLimitResponse UpdateLimit(UpdateLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLimitResponseUnmarshaller.Instance;
 
@@ -7545,7 +7545,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">REST API Reference for UpdateLimit Operation</seealso>
         public virtual IAsyncResult BeginUpdateLimit(UpdateLimitRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLimitResponseUnmarshaller.Instance;
 
@@ -7595,7 +7595,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual UpdateMonitorResponse UpdateMonitor(UpdateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -7616,7 +7616,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual IAsyncResult BeginUpdateMonitor(UpdateMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -7665,7 +7665,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -7686,7 +7686,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueue(UpdateQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -7735,7 +7735,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueEnvironment">REST API Reference for UpdateQueueEnvironment Operation</seealso>
         public virtual UpdateQueueEnvironmentResponse UpdateQueueEnvironment(UpdateQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -7756,7 +7756,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueEnvironment">REST API Reference for UpdateQueueEnvironment Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueueEnvironment(UpdateQueueEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -7805,7 +7805,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueFleetAssociation">REST API Reference for UpdateQueueFleetAssociation Operation</seealso>
         public virtual UpdateQueueFleetAssociationResponse UpdateQueueFleetAssociation(UpdateQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -7826,7 +7826,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueFleetAssociation">REST API Reference for UpdateQueueFleetAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueueFleetAssociation(UpdateQueueFleetAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -7877,7 +7877,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">REST API Reference for UpdateQueueLimitAssociation Operation</seealso>
         public virtual UpdateQueueLimitAssociationResponse UpdateQueueLimitAssociation(UpdateQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -7898,7 +7898,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">REST API Reference for UpdateQueueLimitAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueueLimitAssociation(UpdateQueueLimitAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -7951,7 +7951,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
         public virtual UpdateSessionResponse UpdateSession(UpdateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -7972,7 +7972,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
         public virtual IAsyncResult BeginUpdateSession(UpdateSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -8025,7 +8025,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStep">REST API Reference for UpdateStep Operation</seealso>
         public virtual UpdateStepResponse UpdateStep(UpdateStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStepResponseUnmarshaller.Instance;
 
@@ -8046,7 +8046,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStep">REST API Reference for UpdateStep Operation</seealso>
         public virtual IAsyncResult BeginUpdateStep(UpdateStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStepResponseUnmarshaller.Instance;
 
@@ -8095,7 +8095,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStorageProfile">REST API Reference for UpdateStorageProfile Operation</seealso>
         public virtual UpdateStorageProfileResponse UpdateStorageProfile(UpdateStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageProfileResponseUnmarshaller.Instance;
 
@@ -8116,7 +8116,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStorageProfile">REST API Reference for UpdateStorageProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateStorageProfile(UpdateStorageProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageProfileResponseUnmarshaller.Instance;
 
@@ -8169,7 +8169,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual UpdateTaskResponse UpdateTask(UpdateTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
@@ -8190,7 +8190,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual IAsyncResult BeginUpdateTask(UpdateTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
@@ -8243,7 +8243,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorker">REST API Reference for UpdateWorker Operation</seealso>
         public virtual UpdateWorkerResponse UpdateWorker(UpdateWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerResponseUnmarshaller.Instance;
 
@@ -8264,7 +8264,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorker">REST API Reference for UpdateWorker Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorker(UpdateWorkerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerResponseUnmarshaller.Instance;
 
@@ -8317,7 +8317,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorkerSchedule">REST API Reference for UpdateWorkerSchedule Operation</seealso>
         public virtual UpdateWorkerScheduleResponse UpdateWorkerSchedule(UpdateWorkerScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerScheduleResponseUnmarshaller.Instance;
 
@@ -8338,7 +8338,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorkerSchedule">REST API Reference for UpdateWorkerSchedule Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkerSchedule(UpdateWorkerScheduleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerScheduleResponseUnmarshaller.Instance;
 

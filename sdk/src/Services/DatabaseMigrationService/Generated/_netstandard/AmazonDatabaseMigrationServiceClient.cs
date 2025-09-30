@@ -286,7 +286,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -368,7 +368,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual BatchStartRecommendationsResponse BatchStartRecommendations(BatchStartRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartRecommendationsResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/BatchStartRecommendations">REST API Reference for BatchStartRecommendations Operation</seealso>
         public virtual Task<BatchStartRecommendationsResponse> BatchStartRecommendationsAsync(BatchStartRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartRecommendationsResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CancelReplicationTaskAssessmentRunResponse CancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun">REST API Reference for CancelReplicationTaskAssessmentRun Operation</seealso>
         public virtual Task<CancelReplicationTaskAssessmentRunResponse> CancelReplicationTaskAssessmentRunAsync(CancelReplicationTaskAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateDataMigrationResponse CreateDataMigration(CreateDataMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataMigrationResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataMigration">REST API Reference for CreateDataMigration Operation</seealso>
         public virtual Task<CreateDataMigrationResponse> CreateDataMigrationAsync(CreateDataMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataMigrationResponseUnmarshaller.Instance;
 
@@ -529,7 +529,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateDataProviderResponse CreateDataProvider(CreateDataProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProviderResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider">REST API Reference for CreateDataProvider Operation</seealso>
         public virtual Task<CreateDataProviderResponse> CreateDataProviderAsync(CreateDataProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataProviderResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -628,7 +628,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -713,7 +713,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -726,7 +726,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateFleetAdvisorCollectorResponse CreateFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">REST API Reference for CreateFleetAdvisorCollector Operation</seealso>
         public virtual Task<CreateFleetAdvisorCollectorResponse> CreateFleetAdvisorCollectorAsync(CreateFleetAdvisorCollectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
 
@@ -786,7 +786,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         public virtual Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateMigrationProjectResponse CreateMigrationProject(CreateMigrationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMigrationProjectResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject">REST API Reference for CreateMigrationProject Operation</seealso>
         public virtual Task<CreateMigrationProjectResponse> CreateMigrationProjectAsync(CreateMigrationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMigrationProjectResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateReplicationConfigResponse CreateReplicationConfig(CreateReplicationConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
 
@@ -957,7 +957,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">REST API Reference for CreateReplicationConfig Operation</seealso>
         public virtual Task<CreateReplicationConfigResponse> CreateReplicationConfigAsync(CreateReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1040,7 +1040,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public virtual Task<CreateReplicationInstanceResponse> CreateReplicationInstanceAsync(CreateReplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateReplicationSubnetGroupResponse CreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1108,7 +1108,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public virtual Task<CreateReplicationSubnetGroupResponse> CreateReplicationSubnetGroupAsync(CreateReplicationSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual CreateReplicationTaskResponse CreateReplicationTask(CreateReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public virtual Task<CreateReplicationTaskResponse> CreateReplicationTaskAsync(CreateReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationTaskResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public virtual Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1256,7 +1256,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteDataMigrationResponse DeleteDataMigration(DeleteDataMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataMigrationResponseUnmarshaller.Instance;
 
@@ -1286,7 +1286,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataMigration">REST API Reference for DeleteDataMigration Operation</seealso>
         public virtual Task<DeleteDataMigrationResponse> DeleteDataMigrationAsync(DeleteDataMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataMigrationResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteDataProviderResponse DeleteDataProvider(DeleteDataProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataProviderResponseUnmarshaller.Instance;
 
@@ -1339,7 +1339,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider">REST API Reference for DeleteDataProvider Operation</seealso>
         public virtual Task<DeleteDataProviderResponse> DeleteDataProviderAsync(DeleteDataProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataProviderResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1441,7 +1441,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteFleetAdvisorCollectorResponse DeleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
 
@@ -1482,7 +1482,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">REST API Reference for DeleteFleetAdvisorCollector Operation</seealso>
         public virtual Task<DeleteFleetAdvisorCollectorResponse> DeleteFleetAdvisorCollectorAsync(DeleteFleetAdvisorCollectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteFleetAdvisorDatabasesResponse DeleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">REST API Reference for DeleteFleetAdvisorDatabases Operation</seealso>
         public virtual Task<DeleteFleetAdvisorDatabasesResponse> DeleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         public virtual Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteMigrationProjectResponse DeleteMigrationProject(DeleteMigrationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMigrationProjectResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject">REST API Reference for DeleteMigrationProject Operation</seealso>
         public virtual Task<DeleteMigrationProjectResponse> DeleteMigrationProjectAsync(DeleteMigrationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMigrationProjectResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteReplicationConfigResponse DeleteReplicationConfig(DeleteReplicationConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">REST API Reference for DeleteReplicationConfig Operation</seealso>
         public virtual Task<DeleteReplicationConfigResponse> DeleteReplicationConfigAsync(DeleteReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteReplicationInstanceResponse DeleteReplicationInstance(DeleteReplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public virtual Task<DeleteReplicationInstanceResponse> DeleteReplicationInstanceAsync(DeleteReplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteReplicationSubnetGroupResponse DeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public virtual Task<DeleteReplicationSubnetGroupResponse> DeleteReplicationSubnetGroupAsync(DeleteReplicationSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1790,7 +1790,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteReplicationTaskResponse DeleteReplicationTask(DeleteReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
 
@@ -1817,7 +1817,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public virtual Task<DeleteReplicationTaskResponse> DeleteReplicationTaskAsync(DeleteReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationTaskResponseUnmarshaller.Instance;
 
@@ -1830,7 +1830,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DeleteReplicationTaskAssessmentRunResponse DeleteReplicationTaskAssessmentRun(DeleteReplicationTaskAssessmentRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -1867,7 +1867,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun">REST API Reference for DeleteReplicationTaskAssessmentRun Operation</seealso>
         public virtual Task<DeleteReplicationTaskAssessmentRunResponse> DeleteReplicationTaskAssessmentRunAsync(DeleteReplicationTaskAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -1880,7 +1880,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -1912,7 +1912,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeApplicableIndividualAssessmentsResponse DescribeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicableIndividualAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicableIndividualAssessmentsResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments">REST API Reference for DescribeApplicableIndividualAssessments Operation</seealso>
         public virtual Task<DescribeApplicableIndividualAssessmentsResponse> DescribeApplicableIndividualAssessmentsAsync(DescribeApplicableIndividualAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicableIndividualAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicableIndividualAssessmentsResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
@@ -2030,7 +2030,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
@@ -2055,7 +2055,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public virtual Task<DescribeConnectionsResponse> DescribeConnectionsAsync(DescribeConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionsResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeConversionConfigurationResponse DescribeConversionConfiguration(DescribeConversionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionConfigurationResponseUnmarshaller.Instance;
 
@@ -2092,7 +2092,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration">REST API Reference for DescribeConversionConfiguration Operation</seealso>
         public virtual Task<DescribeConversionConfigurationResponse> DescribeConversionConfigurationAsync(DescribeConversionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionConfigurationResponseUnmarshaller.Instance;
 
@@ -2105,7 +2105,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeDataMigrationsResponse DescribeDataMigrations(DescribeDataMigrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataMigrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataMigrationsResponseUnmarshaller.Instance;
 
@@ -2135,7 +2135,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataMigrations">REST API Reference for DescribeDataMigrations Operation</seealso>
         public virtual Task<DescribeDataMigrationsResponse> DescribeDataMigrationsAsync(DescribeDataMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataMigrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataMigrationsResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeDataProvidersResponse DescribeDataProviders(DescribeDataProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataProvidersResponseUnmarshaller.Instance;
 
@@ -2178,7 +2178,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders">REST API Reference for DescribeDataProviders Operation</seealso>
         public virtual Task<DescribeDataProvidersResponse> DescribeDataProvidersAsync(DescribeDataProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataProvidersResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -2215,7 +2215,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -2228,7 +2228,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEndpointSettingsResponse DescribeEndpointSettings(DescribeEndpointSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointSettingsResponseUnmarshaller.Instance;
 
@@ -2250,7 +2250,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">REST API Reference for DescribeEndpointSettings Operation</seealso>
         public virtual Task<DescribeEndpointSettingsResponse> DescribeEndpointSettingsAsync(DescribeEndpointSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointSettingsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEndpointTypesResponse DescribeEndpointTypes(DescribeEndpointTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public virtual Task<DescribeEndpointTypesResponse> DescribeEndpointTypesAsync(DescribeEndpointTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointTypesResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEngineVersionsResponse DescribeEngineVersions(DescribeEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2318,7 +2318,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
         public virtual Task<DescribeEngineVersionsResponse> DescribeEngineVersionsAsync(DescribeEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2331,7 +2331,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -2354,7 +2354,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -2367,7 +2367,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2435,7 +2435,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2448,7 +2448,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeExtensionPackAssociationsResponse DescribeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExtensionPackAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExtensionPackAssociationsResponseUnmarshaller.Instance;
 
@@ -2471,7 +2471,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations">REST API Reference for DescribeExtensionPackAssociations Operation</seealso>
         public virtual Task<DescribeExtensionPackAssociationsResponse> DescribeExtensionPackAssociationsAsync(DescribeExtensionPackAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExtensionPackAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExtensionPackAssociationsResponseUnmarshaller.Instance;
 
@@ -2484,7 +2484,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeFleetAdvisorCollectorsResponse DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
 
@@ -2519,7 +2519,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">REST API Reference for DescribeFleetAdvisorCollectors Operation</seealso>
         public virtual Task<DescribeFleetAdvisorCollectorsResponse> DescribeFleetAdvisorCollectorsAsync(DescribeFleetAdvisorCollectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
 
@@ -2532,7 +2532,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeFleetAdvisorDatabasesResponse DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
 
@@ -2567,7 +2567,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">REST API Reference for DescribeFleetAdvisorDatabases Operation</seealso>
         public virtual Task<DescribeFleetAdvisorDatabasesResponse> DescribeFleetAdvisorDatabasesAsync(DescribeFleetAdvisorDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
 
@@ -2580,7 +2580,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeFleetAdvisorLsaAnalysisResponse DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
 
@@ -2616,7 +2616,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">REST API Reference for DescribeFleetAdvisorLsaAnalysis Operation</seealso>
         public virtual Task<DescribeFleetAdvisorLsaAnalysisResponse> DescribeFleetAdvisorLsaAnalysisAsync(DescribeFleetAdvisorLsaAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
 
@@ -2629,7 +2629,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeFleetAdvisorSchemaObjectSummaryResponse DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
 
@@ -2664,7 +2664,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">REST API Reference for DescribeFleetAdvisorSchemaObjectSummary Operation</seealso>
         public virtual Task<DescribeFleetAdvisorSchemaObjectSummaryResponse> DescribeFleetAdvisorSchemaObjectSummaryAsync(DescribeFleetAdvisorSchemaObjectSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
 
@@ -2677,7 +2677,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeFleetAdvisorSchemasResponse DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
 
@@ -2712,7 +2712,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">REST API Reference for DescribeFleetAdvisorSchemas Operation</seealso>
         public virtual Task<DescribeFleetAdvisorSchemasResponse> DescribeFleetAdvisorSchemasAsync(DescribeFleetAdvisorSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
 
@@ -2725,7 +2725,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeInstanceProfilesResponse DescribeInstanceProfiles(DescribeInstanceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceProfilesResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles">REST API Reference for DescribeInstanceProfiles Operation</seealso>
         public virtual Task<DescribeInstanceProfilesResponse> DescribeInstanceProfilesAsync(DescribeInstanceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceProfilesResponseUnmarshaller.Instance;
 
@@ -2768,7 +2768,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMetadataModelAssessmentsResponse DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelAssessmentsResponseUnmarshaller.Instance;
 
@@ -2793,7 +2793,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments">REST API Reference for DescribeMetadataModelAssessments Operation</seealso>
         public virtual Task<DescribeMetadataModelAssessmentsResponse> DescribeMetadataModelAssessmentsAsync(DescribeMetadataModelAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelAssessmentsResponseUnmarshaller.Instance;
 
@@ -2806,7 +2806,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMetadataModelConversionsResponse DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelConversionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelConversionsResponseUnmarshaller.Instance;
 
@@ -2830,7 +2830,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions">REST API Reference for DescribeMetadataModelConversions Operation</seealso>
         public virtual Task<DescribeMetadataModelConversionsResponse> DescribeMetadataModelConversionsAsync(DescribeMetadataModelConversionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelConversionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelConversionsResponseUnmarshaller.Instance;
 
@@ -2843,7 +2843,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMetadataModelExportsAsScriptResponse DescribeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelExportsAsScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelExportsAsScriptResponseUnmarshaller.Instance;
 
@@ -2867,7 +2867,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript">REST API Reference for DescribeMetadataModelExportsAsScript Operation</seealso>
         public virtual Task<DescribeMetadataModelExportsAsScriptResponse> DescribeMetadataModelExportsAsScriptAsync(DescribeMetadataModelExportsAsScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelExportsAsScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelExportsAsScriptResponseUnmarshaller.Instance;
 
@@ -2880,7 +2880,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMetadataModelExportsToTargetResponse DescribeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelExportsToTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelExportsToTargetResponseUnmarshaller.Instance;
 
@@ -2904,7 +2904,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget">REST API Reference for DescribeMetadataModelExportsToTarget Operation</seealso>
         public virtual Task<DescribeMetadataModelExportsToTargetResponse> DescribeMetadataModelExportsToTargetAsync(DescribeMetadataModelExportsToTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelExportsToTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelExportsToTargetResponseUnmarshaller.Instance;
 
@@ -2917,7 +2917,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMetadataModelImportsResponse DescribeMetadataModelImports(DescribeMetadataModelImportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelImportsResponseUnmarshaller.Instance;
 
@@ -2941,7 +2941,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports">REST API Reference for DescribeMetadataModelImports Operation</seealso>
         public virtual Task<DescribeMetadataModelImportsResponse> DescribeMetadataModelImportsAsync(DescribeMetadataModelImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetadataModelImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetadataModelImportsResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeMigrationProjectsResponse DescribeMigrationProjects(DescribeMigrationProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMigrationProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMigrationProjectsResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects">REST API Reference for DescribeMigrationProjects Operation</seealso>
         public virtual Task<DescribeMigrationProjectsResponse> DescribeMigrationProjectsAsync(DescribeMigrationProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMigrationProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMigrationProjectsResponseUnmarshaller.Instance;
 
@@ -2997,7 +2997,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeOrderableReplicationInstancesResponse DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
 
@@ -3019,7 +3019,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public virtual Task<DescribeOrderableReplicationInstancesResponse> DescribeOrderableReplicationInstancesAsync(DescribeOrderableReplicationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableReplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableReplicationInstancesResponseUnmarshaller.Instance;
 
@@ -3032,7 +3032,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -3057,7 +3057,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -3070,7 +3070,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeRecommendationLimitationsResponse DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationLimitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationLimitationsResponseUnmarshaller.Instance;
 
@@ -3109,7 +3109,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations">REST API Reference for DescribeRecommendationLimitations Operation</seealso>
         public virtual Task<DescribeRecommendationLimitationsResponse> DescribeRecommendationLimitationsAsync(DescribeRecommendationLimitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationLimitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationLimitationsResponseUnmarshaller.Instance;
 
@@ -3122,7 +3122,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeRecommendationsResponse DescribeRecommendations(DescribeRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationsResponseUnmarshaller.Instance;
 
@@ -3160,7 +3160,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations">REST API Reference for DescribeRecommendations Operation</seealso>
         public virtual Task<DescribeRecommendationsResponse> DescribeRecommendationsAsync(DescribeRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationsResponseUnmarshaller.Instance;
 
@@ -3173,7 +3173,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeRefreshSchemasStatusResponse DescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
 
@@ -3200,7 +3200,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public virtual Task<DescribeRefreshSchemasStatusResponse> DescribeRefreshSchemasStatusAsync(DescribeRefreshSchemasStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRefreshSchemasStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRefreshSchemasStatusResponseUnmarshaller.Instance;
 
@@ -3213,7 +3213,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationConfigsResponse DescribeReplicationConfigs(DescribeReplicationConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
 
@@ -3238,7 +3238,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">REST API Reference for DescribeReplicationConfigs Operation</seealso>
         public virtual Task<DescribeReplicationConfigsResponse> DescribeReplicationConfigsAsync(DescribeReplicationConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigsResponseUnmarshaller.Instance;
 
@@ -3251,7 +3251,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationInstancesResponse DescribeReplicationInstances(DescribeReplicationInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
 
@@ -3275,7 +3275,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public virtual Task<DescribeReplicationInstancesResponse> DescribeReplicationInstancesAsync(DescribeReplicationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationInstancesResponseUnmarshaller.Instance;
 
@@ -3288,7 +3288,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationInstanceTaskLogsResponse DescribeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
 
@@ -3315,7 +3315,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">REST API Reference for DescribeReplicationInstanceTaskLogs Operation</seealso>
         public virtual Task<DescribeReplicationInstanceTaskLogsResponse> DescribeReplicationInstanceTaskLogsAsync(DescribeReplicationInstanceTaskLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationInstanceTaskLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationInstanceTaskLogsResponseUnmarshaller.Instance;
 
@@ -3328,7 +3328,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationsResponse DescribeReplications(DescribeReplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
 
@@ -3353,7 +3353,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">REST API Reference for DescribeReplications Operation</seealso>
         public virtual Task<DescribeReplicationsResponse> DescribeReplicationsAsync(DescribeReplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationsResponseUnmarshaller.Instance;
 
@@ -3366,7 +3366,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationSubnetGroupsResponse DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -3390,7 +3390,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public virtual Task<DescribeReplicationSubnetGroupsResponse> DescribeReplicationSubnetGroupsAsync(DescribeReplicationSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -3403,7 +3403,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationTableStatisticsResponse DescribeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
 
@@ -3431,7 +3431,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">REST API Reference for DescribeReplicationTableStatistics Operation</seealso>
         public virtual Task<DescribeReplicationTableStatisticsResponse> DescribeReplicationTableStatisticsAsync(DescribeReplicationTableStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTableStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTableStatisticsResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationTaskAssessmentResultsResponse DescribeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
 
@@ -3475,7 +3475,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults">REST API Reference for DescribeReplicationTaskAssessmentResults Operation</seealso>
         public virtual Task<DescribeReplicationTaskAssessmentResultsResponse> DescribeReplicationTaskAssessmentResultsAsync(DescribeReplicationTaskAssessmentResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskAssessmentResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentResultsResponseUnmarshaller.Instance;
 
@@ -3488,7 +3488,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationTaskAssessmentRunsResponse DescribeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskAssessmentRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentRunsResponseUnmarshaller.Instance;
 
@@ -3524,7 +3524,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns">REST API Reference for DescribeReplicationTaskAssessmentRuns Operation</seealso>
         public virtual Task<DescribeReplicationTaskAssessmentRunsResponse> DescribeReplicationTaskAssessmentRunsAsync(DescribeReplicationTaskAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskAssessmentRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskAssessmentRunsResponseUnmarshaller.Instance;
 
@@ -3537,7 +3537,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationTaskIndividualAssessmentsResponse DescribeReplicationTaskIndividualAssessments(DescribeReplicationTaskIndividualAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskIndividualAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskIndividualAssessmentsResponseUnmarshaller.Instance;
 
@@ -3567,7 +3567,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments">REST API Reference for DescribeReplicationTaskIndividualAssessments Operation</seealso>
         public virtual Task<DescribeReplicationTaskIndividualAssessmentsResponse> DescribeReplicationTaskIndividualAssessmentsAsync(DescribeReplicationTaskIndividualAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTaskIndividualAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTaskIndividualAssessmentsResponseUnmarshaller.Instance;
 
@@ -3580,7 +3580,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeReplicationTasksResponse DescribeReplicationTasks(DescribeReplicationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
 
@@ -3604,7 +3604,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public virtual Task<DescribeReplicationTasksResponse> DescribeReplicationTasksAsync(DescribeReplicationTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationTasksResponseUnmarshaller.Instance;
 
@@ -3617,7 +3617,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeSchemasResponse DescribeSchemas(DescribeSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
 
@@ -3644,7 +3644,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public virtual Task<DescribeSchemasResponse> DescribeSchemasAsync(DescribeSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemasResponseUnmarshaller.Instance;
 
@@ -3657,7 +3657,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual DescribeTableStatisticsResponse DescribeTableStatistics(DescribeTableStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
 
@@ -3695,7 +3695,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public virtual Task<DescribeTableStatisticsResponse> DescribeTableStatisticsAsync(DescribeTableStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableStatisticsResponseUnmarshaller.Instance;
 
@@ -3708,7 +3708,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ExportMetadataModelAssessmentResponse ExportMetadataModelAssessment(ExportMetadataModelAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportMetadataModelAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportMetadataModelAssessmentResponseUnmarshaller.Instance;
 
@@ -3733,7 +3733,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment">REST API Reference for ExportMetadataModelAssessment Operation</seealso>
         public virtual Task<ExportMetadataModelAssessmentResponse> ExportMetadataModelAssessmentAsync(ExportMetadataModelAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportMetadataModelAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportMetadataModelAssessmentResponseUnmarshaller.Instance;
 
@@ -3746,7 +3746,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
@@ -3776,7 +3776,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public virtual Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
 
@@ -3789,7 +3789,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3818,7 +3818,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3831,7 +3831,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyConversionConfigurationResponse ModifyConversionConfiguration(ModifyConversionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyConversionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyConversionConfigurationResponseUnmarshaller.Instance;
 
@@ -3858,7 +3858,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration">REST API Reference for ModifyConversionConfiguration Operation</seealso>
         public virtual Task<ModifyConversionConfigurationResponse> ModifyConversionConfigurationAsync(ModifyConversionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyConversionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyConversionConfigurationResponseUnmarshaller.Instance;
 
@@ -3871,7 +3871,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyDataMigrationResponse ModifyDataMigration(ModifyDataMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDataMigrationResponseUnmarshaller.Instance;
 
@@ -3901,7 +3901,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataMigration">REST API Reference for ModifyDataMigration Operation</seealso>
         public virtual Task<ModifyDataMigrationResponse> ModifyDataMigrationAsync(ModifyDataMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDataMigrationResponseUnmarshaller.Instance;
 
@@ -3914,7 +3914,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyDataProviderResponse ModifyDataProvider(ModifyDataProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDataProviderResponseUnmarshaller.Instance;
 
@@ -3954,7 +3954,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider">REST API Reference for ModifyDataProvider Operation</seealso>
         public virtual Task<ModifyDataProviderResponse> ModifyDataProviderAsync(ModifyDataProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDataProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDataProviderResponseUnmarshaller.Instance;
 
@@ -3967,7 +3967,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyEndpointResponse ModifyEndpoint(ModifyEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
 
@@ -4013,7 +4013,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public virtual Task<ModifyEndpointResponse> ModifyEndpointAsync(ModifyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEndpointResponseUnmarshaller.Instance;
 
@@ -4026,7 +4026,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -4078,7 +4078,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -4091,7 +4091,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyInstanceProfileResponse ModifyInstanceProfile(ModifyInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceProfileResponseUnmarshaller.Instance;
 
@@ -4140,7 +4140,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile">REST API Reference for ModifyInstanceProfile Operation</seealso>
         public virtual Task<ModifyInstanceProfileResponse> ModifyInstanceProfileAsync(ModifyInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceProfileResponseUnmarshaller.Instance;
 
@@ -4153,7 +4153,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyMigrationProjectResponse ModifyMigrationProject(ModifyMigrationProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyMigrationProjectResponseUnmarshaller.Instance;
 
@@ -4198,7 +4198,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject">REST API Reference for ModifyMigrationProject Operation</seealso>
         public virtual Task<ModifyMigrationProjectResponse> ModifyMigrationProjectAsync(ModifyMigrationProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyMigrationProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyMigrationProjectResponseUnmarshaller.Instance;
 
@@ -4211,7 +4211,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyReplicationConfigResponse ModifyReplicationConfig(ModifyReplicationConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
 
@@ -4262,7 +4262,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">REST API Reference for ModifyReplicationConfig Operation</seealso>
         public virtual Task<ModifyReplicationConfigResponse> ModifyReplicationConfigAsync(ModifyReplicationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationConfigResponseUnmarshaller.Instance;
 
@@ -4275,7 +4275,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -4323,7 +4323,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public virtual Task<ModifyReplicationInstanceResponse> ModifyReplicationInstanceAsync(ModifyReplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -4336,7 +4336,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyReplicationSubnetGroupResponse ModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -4376,7 +4376,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public virtual Task<ModifyReplicationSubnetGroupResponse> ModifyReplicationSubnetGroupAsync(ModifyReplicationSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
 
@@ -4389,7 +4389,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ModifyReplicationTaskResponse ModifyReplicationTask(ModifyReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
 
@@ -4433,7 +4433,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
         public virtual Task<ModifyReplicationTaskResponse> ModifyReplicationTaskAsync(ModifyReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
 
@@ -4446,7 +4446,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual MoveReplicationTaskResponse MoveReplicationTask(MoveReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveReplicationTaskResponseUnmarshaller.Instance;
 
@@ -4484,7 +4484,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">REST API Reference for MoveReplicationTask Operation</seealso>
         public virtual Task<MoveReplicationTaskResponse> MoveReplicationTaskAsync(MoveReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveReplicationTaskResponseUnmarshaller.Instance;
 
@@ -4497,7 +4497,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual RebootReplicationInstanceResponse RebootReplicationInstance(RebootReplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -4525,7 +4525,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance">REST API Reference for RebootReplicationInstance Operation</seealso>
         public virtual Task<RebootReplicationInstanceResponse> RebootReplicationInstanceAsync(RebootReplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootReplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootReplicationInstanceResponseUnmarshaller.Instance;
 
@@ -4538,7 +4538,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual RefreshSchemasResponse RefreshSchemas(RefreshSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
 
@@ -4573,7 +4573,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public virtual Task<RefreshSchemasResponse> RefreshSchemasAsync(RefreshSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshSchemasResponseUnmarshaller.Instance;
 
@@ -4586,7 +4586,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ReloadReplicationTablesResponse ReloadReplicationTables(ReloadReplicationTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
 
@@ -4620,7 +4620,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">REST API Reference for ReloadReplicationTables Operation</seealso>
         public virtual Task<ReloadReplicationTablesResponse> ReloadReplicationTablesAsync(ReloadReplicationTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReloadReplicationTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReloadReplicationTablesResponseUnmarshaller.Instance;
 
@@ -4633,7 +4633,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual ReloadTablesResponse ReloadTables(ReloadTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReloadTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReloadTablesResponseUnmarshaller.Instance;
 
@@ -4666,7 +4666,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables">REST API Reference for ReloadTables Operation</seealso>
         public virtual Task<ReloadTablesResponse> ReloadTablesAsync(ReloadTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReloadTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReloadTablesResponseUnmarshaller.Instance;
 
@@ -4679,7 +4679,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -4708,7 +4708,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -4721,7 +4721,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual RunFleetAdvisorLsaAnalysisResponse RunFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
 
@@ -4760,7 +4760,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
         public virtual Task<RunFleetAdvisorLsaAnalysisResponse> RunFleetAdvisorLsaAnalysisAsync(RunFleetAdvisorLsaAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
 
@@ -4773,7 +4773,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartDataMigrationResponse StartDataMigration(StartDataMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataMigrationResponseUnmarshaller.Instance;
 
@@ -4809,7 +4809,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartDataMigration">REST API Reference for StartDataMigration Operation</seealso>
         public virtual Task<StartDataMigrationResponse> StartDataMigrationAsync(StartDataMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataMigrationResponseUnmarshaller.Instance;
 
@@ -4822,7 +4822,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartExtensionPackAssociationResponse StartExtensionPackAssociation(StartExtensionPackAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExtensionPackAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExtensionPackAssociationResponseUnmarshaller.Instance;
 
@@ -4869,7 +4869,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation">REST API Reference for StartExtensionPackAssociation Operation</seealso>
         public virtual Task<StartExtensionPackAssociationResponse> StartExtensionPackAssociationAsync(StartExtensionPackAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExtensionPackAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExtensionPackAssociationResponseUnmarshaller.Instance;
 
@@ -4882,7 +4882,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartMetadataModelAssessmentResponse StartMetadataModelAssessment(StartMetadataModelAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelAssessmentResponseUnmarshaller.Instance;
 
@@ -4930,7 +4930,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment">REST API Reference for StartMetadataModelAssessment Operation</seealso>
         public virtual Task<StartMetadataModelAssessmentResponse> StartMetadataModelAssessmentAsync(StartMetadataModelAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelAssessmentResponseUnmarshaller.Instance;
 
@@ -4943,7 +4943,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartMetadataModelConversionResponse StartMetadataModelConversion(StartMetadataModelConversionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelConversionResponseUnmarshaller.Instance;
 
@@ -4988,7 +4988,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion">REST API Reference for StartMetadataModelConversion Operation</seealso>
         public virtual Task<StartMetadataModelConversionResponse> StartMetadataModelConversionAsync(StartMetadataModelConversionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelConversionResponseUnmarshaller.Instance;
 
@@ -5001,7 +5001,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartMetadataModelExportAsScriptResponse StartMetadataModelExportAsScript(StartMetadataModelExportAsScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelExportAsScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelExportAsScriptResponseUnmarshaller.Instance;
 
@@ -5047,7 +5047,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript">REST API Reference for StartMetadataModelExportAsScript Operation</seealso>
         public virtual Task<StartMetadataModelExportAsScriptResponse> StartMetadataModelExportAsScriptAsync(StartMetadataModelExportAsScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelExportAsScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelExportAsScriptResponseUnmarshaller.Instance;
 
@@ -5060,7 +5060,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartMetadataModelExportToTargetResponse StartMetadataModelExportToTarget(StartMetadataModelExportToTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelExportToTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelExportToTargetResponseUnmarshaller.Instance;
 
@@ -5105,7 +5105,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget">REST API Reference for StartMetadataModelExportToTarget Operation</seealso>
         public virtual Task<StartMetadataModelExportToTargetResponse> StartMetadataModelExportToTargetAsync(StartMetadataModelExportToTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelExportToTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelExportToTargetResponseUnmarshaller.Instance;
 
@@ -5118,7 +5118,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartMetadataModelImportResponse StartMetadataModelImport(StartMetadataModelImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelImportResponseUnmarshaller.Instance;
 
@@ -5169,7 +5169,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport">REST API Reference for StartMetadataModelImport Operation</seealso>
         public virtual Task<StartMetadataModelImportResponse> StartMetadataModelImportAsync(StartMetadataModelImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetadataModelImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetadataModelImportResponseUnmarshaller.Instance;
 
@@ -5182,7 +5182,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartRecommendationsResponse StartRecommendations(StartRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommendationsResponseUnmarshaller.Instance;
 
@@ -5227,7 +5227,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations">REST API Reference for StartRecommendations Operation</seealso>
         public virtual Task<StartRecommendationsResponse> StartRecommendationsAsync(StartRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommendationsResponseUnmarshaller.Instance;
 
@@ -5240,7 +5240,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
 
@@ -5274,7 +5274,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">REST API Reference for StartReplication Operation</seealso>
         public virtual Task<StartReplicationResponse> StartReplicationAsync(StartReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
 
@@ -5287,7 +5287,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartReplicationTaskResponse StartReplicationTask(StartReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
 
@@ -5323,7 +5323,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public virtual Task<StartReplicationTaskResponse> StartReplicationTaskAsync(StartReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskResponseUnmarshaller.Instance;
 
@@ -5336,7 +5336,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartReplicationTaskAssessmentResponse StartReplicationTaskAssessment(StartReplicationTaskAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
 
@@ -5387,7 +5387,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment">REST API Reference for StartReplicationTaskAssessment Operation</seealso>
         public virtual Task<StartReplicationTaskAssessmentResponse> StartReplicationTaskAssessmentAsync(StartReplicationTaskAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskAssessmentResponseUnmarshaller.Instance;
 
@@ -5400,7 +5400,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StartReplicationTaskAssessmentRunResponse StartReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -5468,7 +5468,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun">REST API Reference for StartReplicationTaskAssessmentRun Operation</seealso>
         public virtual Task<StartReplicationTaskAssessmentRunResponse> StartReplicationTaskAssessmentRunAsync(StartReplicationTaskAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationTaskAssessmentRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationTaskAssessmentRunResponseUnmarshaller.Instance;
 
@@ -5481,7 +5481,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StopDataMigrationResponse StopDataMigration(StopDataMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataMigrationResponseUnmarshaller.Instance;
 
@@ -5511,7 +5511,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopDataMigration">REST API Reference for StopDataMigration Operation</seealso>
         public virtual Task<StopDataMigrationResponse> StopDataMigrationAsync(StopDataMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDataMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDataMigrationResponseUnmarshaller.Instance;
 
@@ -5524,7 +5524,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
 
@@ -5555,7 +5555,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">REST API Reference for StopReplication Operation</seealso>
         public virtual Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
 
@@ -5568,7 +5568,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual StopReplicationTaskResponse StopReplicationTask(StopReplicationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
 
@@ -5595,7 +5595,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public virtual Task<StopReplicationTaskResponse> StopReplicationTaskAsync(StopReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationTaskResponseUnmarshaller.Instance;
 
@@ -5608,7 +5608,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual TestConnectionResponse TestConnection(TestConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -5644,7 +5644,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public virtual Task<TestConnectionResponse> TestConnectionAsync(TestConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -5657,7 +5657,7 @@ namespace Amazon.DatabaseMigrationService
 
         internal virtual UpdateSubscriptionsToEventBridgeResponse UpdateSubscriptionsToEventBridge(UpdateSubscriptionsToEventBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionsToEventBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionsToEventBridgeResponseUnmarshaller.Instance;
 
@@ -5699,7 +5699,7 @@ namespace Amazon.DatabaseMigrationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge">REST API Reference for UpdateSubscriptionsToEventBridge Operation</seealso>
         public virtual Task<UpdateSubscriptionsToEventBridgeResponse> UpdateSubscriptionsToEventBridgeAsync(UpdateSubscriptionsToEventBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubscriptionsToEventBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubscriptionsToEventBridgeResponseUnmarshaller.Instance;
 

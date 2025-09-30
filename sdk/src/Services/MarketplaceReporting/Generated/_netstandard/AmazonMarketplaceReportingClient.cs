@@ -318,7 +318,7 @@ namespace Amazon.MarketplaceReporting
 
         internal virtual GetBuyerDashboardResponse GetBuyerDashboard(GetBuyerDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBuyerDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBuyerDashboardResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.MarketplaceReporting
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-reporting-2018-05-10/GetBuyerDashboard">REST API Reference for GetBuyerDashboard Operation</seealso>
         public virtual Task<GetBuyerDashboardResponse> GetBuyerDashboardAsync(GetBuyerDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBuyerDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBuyerDashboardResponseUnmarshaller.Instance;
 

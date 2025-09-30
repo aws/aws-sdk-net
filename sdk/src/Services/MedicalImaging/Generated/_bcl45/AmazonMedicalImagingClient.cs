@@ -299,7 +299,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/CopyImageSet">REST API Reference for CopyImageSet Operation</seealso>
         public virtual CopyImageSetResponse CopyImageSet(CopyImageSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageSetResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/CopyImageSet">REST API Reference for CopyImageSet Operation</seealso>
         public virtual Task<CopyImageSetResponse> CopyImageSetAsync(CopyImageSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageSetResponseUnmarshaller.Instance;
             
@@ -382,7 +382,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/CreateDatastore">REST API Reference for CreateDatastore Operation</seealso>
         public virtual CreateDatastoreResponse CreateDatastore(CreateDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/CreateDatastore">REST API Reference for CreateDatastore Operation</seealso>
         public virtual Task<CreateDatastoreResponse> CreateDatastoreAsync(CreateDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatastoreResponseUnmarshaller.Instance;
             
@@ -468,7 +468,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/DeleteDatastore">REST API Reference for DeleteDatastore Operation</seealso>
         public virtual DeleteDatastoreResponse DeleteDatastore(DeleteDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/DeleteDatastore">REST API Reference for DeleteDatastore Operation</seealso>
         public virtual Task<DeleteDatastoreResponse> DeleteDatastoreAsync(DeleteDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatastoreResponseUnmarshaller.Instance;
             
@@ -551,7 +551,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/DeleteImageSet">REST API Reference for DeleteImageSet Operation</seealso>
         public virtual DeleteImageSetResponse DeleteImageSet(DeleteImageSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageSetResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/DeleteImageSet">REST API Reference for DeleteImageSet Operation</seealso>
         public virtual Task<DeleteImageSetResponse> DeleteImageSetAsync(DeleteImageSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageSetResponseUnmarshaller.Instance;
             
@@ -625,7 +625,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetDatastore">REST API Reference for GetDatastore Operation</seealso>
         public virtual GetDatastoreResponse GetDatastore(GetDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatastoreResponseUnmarshaller.Instance;
 
@@ -660,7 +660,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetDatastore">REST API Reference for GetDatastore Operation</seealso>
         public virtual Task<GetDatastoreResponse> GetDatastoreAsync(GetDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatastoreResponseUnmarshaller.Instance;
             
@@ -709,7 +709,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetDICOMImportJob">REST API Reference for GetDICOMImportJob Operation</seealso>
         public virtual GetDICOMImportJobResponse GetDICOMImportJob(GetDICOMImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDICOMImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDICOMImportJobResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetDICOMImportJob">REST API Reference for GetDICOMImportJob Operation</seealso>
         public virtual Task<GetDICOMImportJobResponse> GetDICOMImportJobAsync(GetDICOMImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDICOMImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDICOMImportJobResponseUnmarshaller.Instance;
             
@@ -796,7 +796,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageFrame">REST API Reference for GetImageFrame Operation</seealso>
         public virtual GetImageFrameResponse GetImageFrame(GetImageFrameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageFrameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageFrameResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageFrame">REST API Reference for GetImageFrame Operation</seealso>
         public virtual Task<GetImageFrameResponse> GetImageFrameAsync(GetImageFrameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageFrameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageFrameResponseUnmarshaller.Instance;
             
@@ -873,7 +873,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageSet">REST API Reference for GetImageSet Operation</seealso>
         public virtual GetImageSetResponse GetImageSet(GetImageSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageSetResponseUnmarshaller.Instance;
 
@@ -911,7 +911,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageSet">REST API Reference for GetImageSet Operation</seealso>
         public virtual Task<GetImageSetResponse> GetImageSetAsync(GetImageSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageSetResponseUnmarshaller.Instance;
             
@@ -950,7 +950,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageSetMetadata">REST API Reference for GetImageSetMetadata Operation</seealso>
         public virtual GetImageSetMetadataResponse GetImageSetMetadata(GetImageSetMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageSetMetadataResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/GetImageSetMetadata">REST API Reference for GetImageSetMetadata Operation</seealso>
         public virtual Task<GetImageSetMetadataResponse> GetImageSetMetadataAsync(GetImageSetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageSetMetadataResponseUnmarshaller.Instance;
             
@@ -1021,7 +1021,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListDatastores">REST API Reference for ListDatastores Operation</seealso>
         public virtual ListDatastoresResponse ListDatastores(ListDatastoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatastoresResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListDatastores">REST API Reference for ListDatastores Operation</seealso>
         public virtual Task<ListDatastoresResponse> ListDatastoresAsync(ListDatastoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatastoresResponseUnmarshaller.Instance;
             
@@ -1092,7 +1092,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListDICOMImportJobs">REST API Reference for ListDICOMImportJobs Operation</seealso>
         public virtual ListDICOMImportJobsResponse ListDICOMImportJobs(ListDICOMImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDICOMImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDICOMImportJobsResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListDICOMImportJobs">REST API Reference for ListDICOMImportJobs Operation</seealso>
         public virtual Task<ListDICOMImportJobsResponse> ListDICOMImportJobsAsync(ListDICOMImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDICOMImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDICOMImportJobsResponseUnmarshaller.Instance;
             
@@ -1169,7 +1169,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListImageSetVersions">REST API Reference for ListImageSetVersions Operation</seealso>
         public virtual ListImageSetVersionsResponse ListImageSetVersions(ListImageSetVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageSetVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageSetVersionsResponseUnmarshaller.Instance;
 
@@ -1207,7 +1207,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListImageSetVersions">REST API Reference for ListImageSetVersions Operation</seealso>
         public virtual Task<ListImageSetVersionsResponse> ListImageSetVersionsAsync(ListImageSetVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImageSetVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImageSetVersionsResponseUnmarshaller.Instance;
             
@@ -1243,7 +1243,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1330,7 +1330,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/SearchImageSets">REST API Reference for SearchImageSets Operation</seealso>
         public virtual SearchImageSetsResponse SearchImageSets(SearchImageSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchImageSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchImageSetsResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/SearchImageSets">REST API Reference for SearchImageSets Operation</seealso>
         public virtual Task<SearchImageSetsResponse> SearchImageSetsAsync(SearchImageSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchImageSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchImageSetsResponseUnmarshaller.Instance;
             
@@ -1426,7 +1426,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/StartDICOMImportJob">REST API Reference for StartDICOMImportJob Operation</seealso>
         public virtual StartDICOMImportJobResponse StartDICOMImportJob(StartDICOMImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDICOMImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDICOMImportJobResponseUnmarshaller.Instance;
 
@@ -1470,7 +1470,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/StartDICOMImportJob">REST API Reference for StartDICOMImportJob Operation</seealso>
         public virtual Task<StartDICOMImportJobResponse> StartDICOMImportJobAsync(StartDICOMImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDICOMImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDICOMImportJobResponseUnmarshaller.Instance;
             
@@ -1506,7 +1506,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1577,7 +1577,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1612,7 +1612,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1654,7 +1654,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/UpdateImageSetMetadata">REST API Reference for UpdateImageSetMetadata Operation</seealso>
         public virtual UpdateImageSetMetadataResponse UpdateImageSetMetadata(UpdateImageSetMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImageSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImageSetMetadataResponseUnmarshaller.Instance;
 
@@ -1695,7 +1695,7 @@ namespace Amazon.MedicalImaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medical-imaging-2023-07-19/UpdateImageSetMetadata">REST API Reference for UpdateImageSetMetadata Operation</seealso>
         public virtual Task<UpdateImageSetMetadataResponse> UpdateImageSetMetadataAsync(UpdateImageSetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImageSetMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImageSetMetadataResponseUnmarshaller.Instance;
             

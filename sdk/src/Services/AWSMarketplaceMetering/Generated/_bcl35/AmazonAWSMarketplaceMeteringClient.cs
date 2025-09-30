@@ -500,7 +500,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual IAsyncResult BeginBatchMeterUsage(BatchMeterUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual IAsyncResult BeginMeterUsage(MeterUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual RegisterUsageResponse RegisterUsage(RegisterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual IAsyncResult BeginRegisterUsage(RegisterUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
@@ -846,7 +846,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual IAsyncResult BeginResolveCustomer(ResolveCustomerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 

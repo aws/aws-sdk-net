@@ -275,7 +275,7 @@ namespace Amazon.FIS
 
         internal virtual CreateExperimentTemplateResponse CreateExperimentTemplate(CreateExperimentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">REST API Reference for CreateExperimentTemplate Operation</seealso>
         public virtual Task<CreateExperimentTemplateResponse> CreateExperimentTemplateAsync(CreateExperimentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.FIS
 
         internal virtual CreateTargetAccountConfigurationResponse CreateTargetAccountConfiguration(CreateTargetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration">REST API Reference for CreateTargetAccountConfiguration Operation</seealso>
         public virtual Task<CreateTargetAccountConfigurationResponse> CreateTargetAccountConfigurationAsync(CreateTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.FIS
 
         internal virtual DeleteExperimentTemplateResponse DeleteExperimentTemplate(DeleteExperimentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteExperimentTemplate">REST API Reference for DeleteExperimentTemplate Operation</seealso>
         public virtual Task<DeleteExperimentTemplateResponse> DeleteExperimentTemplateAsync(DeleteExperimentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.FIS
 
         internal virtual DeleteTargetAccountConfigurationResponse DeleteTargetAccountConfiguration(DeleteTargetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration">REST API Reference for DeleteTargetAccountConfiguration Operation</seealso>
         public virtual Task<DeleteTargetAccountConfigurationResponse> DeleteTargetAccountConfigurationAsync(DeleteTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.FIS
 
         internal virtual GetActionResponse GetAction(GetActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActionResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetAction">REST API Reference for GetAction Operation</seealso>
         public virtual Task<GetActionResponse> GetActionAsync(GetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActionResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.FIS
 
         internal virtual GetExperimentResponse GetExperiment(GetExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
         public virtual Task<GetExperimentResponse> GetExperimentAsync(GetExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
 
@@ -557,7 +557,7 @@ namespace Amazon.FIS
 
         internal virtual GetExperimentTargetAccountConfigurationResponse GetExperimentTargetAccountConfiguration(GetExperimentTargetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration">REST API Reference for GetExperimentTargetAccountConfiguration Operation</seealso>
         public virtual Task<GetExperimentTargetAccountConfigurationResponse> GetExperimentTargetAccountConfigurationAsync(GetExperimentTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.FIS
 
         internal virtual GetExperimentTemplateResponse GetExperimentTemplate(GetExperimentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTemplate">REST API Reference for GetExperimentTemplate Operation</seealso>
         public virtual Task<GetExperimentTemplateResponse> GetExperimentTemplateAsync(GetExperimentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.FIS
 
         internal virtual GetSafetyLeverResponse GetSafetyLever(GetSafetyLeverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
         public virtual Task<GetSafetyLeverResponse> GetSafetyLeverAsync(GetSafetyLeverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.FIS
 
         internal virtual GetTargetAccountConfigurationResponse GetTargetAccountConfiguration(GetTargetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -702,7 +702,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration">REST API Reference for GetTargetAccountConfiguration Operation</seealso>
         public virtual Task<GetTargetAccountConfigurationResponse> GetTargetAccountConfigurationAsync(GetTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.FIS
 
         internal virtual GetTargetResourceTypeResponse GetTargetResourceType(GetTargetResourceTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetResourceType">REST API Reference for GetTargetResourceType Operation</seealso>
         public virtual Task<GetTargetResourceTypeResponse> GetTargetResourceTypeAsync(GetTargetResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetResourceTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetResourceTypeResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.FIS
 
         internal virtual ListActionsResponse ListActions(ListActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListActions">REST API Reference for ListActions Operation</seealso>
         public virtual Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.FIS
 
         internal virtual ListExperimentResolvedTargetsResponse ListExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentResolvedTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentResolvedTargetsResponseUnmarshaller.Instance;
 
@@ -819,7 +819,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets">REST API Reference for ListExperimentResolvedTargets Operation</seealso>
         public virtual Task<ListExperimentResolvedTargetsResponse> ListExperimentResolvedTargetsAsync(ListExperimentResolvedTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentResolvedTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentResolvedTargetsResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.FIS
 
         internal virtual ListExperimentsResponse ListExperiments(ListExperimentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
         public virtual Task<ListExperimentsResponse> ListExperimentsAsync(ListExperimentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.FIS
 
         internal virtual ListExperimentTargetAccountConfigurationsResponse ListExperimentTargetAccountConfigurations(ListExperimentTargetAccountConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentTargetAccountConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentTargetAccountConfigurationsResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations">REST API Reference for ListExperimentTargetAccountConfigurations Operation</seealso>
         public virtual Task<ListExperimentTargetAccountConfigurationsResponse> ListExperimentTargetAccountConfigurationsAsync(ListExperimentTargetAccountConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentTargetAccountConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentTargetAccountConfigurationsResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.FIS
 
         internal virtual ListExperimentTemplatesResponse ListExperimentTemplates(ListExperimentTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentTemplatesResponseUnmarshaller.Instance;
 
@@ -933,7 +933,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTemplates">REST API Reference for ListExperimentTemplates Operation</seealso>
         public virtual Task<ListExperimentTemplatesResponse> ListExperimentTemplatesAsync(ListExperimentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentTemplatesResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.FIS
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -980,7 +980,7 @@ namespace Amazon.FIS
 
         internal virtual ListTargetAccountConfigurationsResponse ListTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetAccountConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetAccountConfigurationsResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations">REST API Reference for ListTargetAccountConfigurations Operation</seealso>
         public virtual Task<ListTargetAccountConfigurationsResponse> ListTargetAccountConfigurationsAsync(ListTargetAccountConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetAccountConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetAccountConfigurationsResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.FIS
 
         internal virtual ListTargetResourceTypesResponse ListTargetResourceTypes(ListTargetResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetResourceTypes">REST API Reference for ListTargetResourceTypes Operation</seealso>
         public virtual Task<ListTargetResourceTypesResponse> ListTargetResourceTypesAsync(ListTargetResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetResourceTypesResponseUnmarshaller.Instance;
 
@@ -1057,7 +1057,7 @@ namespace Amazon.FIS
 
         internal virtual StartExperimentResponse StartExperiment(StartExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
         public virtual Task<StartExperimentResponse> StartExperimentAsync(StartExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
 
@@ -1103,7 +1103,7 @@ namespace Amazon.FIS
 
         internal virtual StopExperimentResponse StopExperiment(StopExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
         public virtual Task<StopExperimentResponse> StopExperimentAsync(StopExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.FIS
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.FIS
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.FIS
 
         internal virtual UpdateExperimentTemplateResponse UpdateExperimentTemplate(UpdateExperimentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplate">REST API Reference for UpdateExperimentTemplate Operation</seealso>
         public virtual Task<UpdateExperimentTemplateResponse> UpdateExperimentTemplateAsync(UpdateExperimentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperimentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperimentTemplateResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.FIS
 
         internal virtual UpdateSafetyLeverStateResponse UpdateSafetyLeverState(UpdateSafetyLeverStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
         public virtual Task<UpdateSafetyLeverStateResponse> UpdateSafetyLeverStateAsync(UpdateSafetyLeverStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
 
@@ -1297,7 +1297,7 @@ namespace Amazon.FIS
 
         internal virtual UpdateTargetAccountConfigurationResponse UpdateTargetAccountConfiguration(UpdateTargetAccountConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTargetAccountConfigurationResponseUnmarshaller.Instance;
 
@@ -1324,7 +1324,7 @@ namespace Amazon.FIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration">REST API Reference for UpdateTargetAccountConfiguration Operation</seealso>
         public virtual Task<UpdateTargetAccountConfigurationResponse> UpdateTargetAccountConfigurationAsync(UpdateTargetAccountConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTargetAccountConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTargetAccountConfigurationResponseUnmarshaller.Instance;
 

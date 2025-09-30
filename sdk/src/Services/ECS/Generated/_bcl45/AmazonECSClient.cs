@@ -335,7 +335,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
             
@@ -448,7 +448,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
             
@@ -763,7 +763,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -1022,7 +1022,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
             
@@ -1103,7 +1103,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
         public virtual CreateTaskSetResponse CreateTaskSet(CreateTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
         public virtual Task<CreateTaskSetResponse> CreateTaskSetAsync(CreateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
             
@@ -1221,7 +1221,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">REST API Reference for DeleteAccountSetting Operation</seealso>
         public virtual DeleteAccountSettingResponse DeleteAccountSetting(DeleteAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
 
@@ -1258,7 +1258,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">REST API Reference for DeleteAccountSetting Operation</seealso>
         public virtual Task<DeleteAccountSettingResponse> DeleteAccountSettingAsync(DeleteAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
             
@@ -1297,7 +1297,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
             
@@ -1392,7 +1392,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
 
@@ -1448,7 +1448,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
             
@@ -1521,7 +1521,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
             
@@ -1661,7 +1661,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -1728,7 +1728,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
             
@@ -1803,7 +1803,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
         public virtual DeleteTaskDefinitionsResponse DeleteTaskDefinitions(DeleteTaskDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
 
@@ -1877,7 +1877,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
         public virtual Task<DeleteTaskDefinitionsResponse> DeleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
             
@@ -1940,7 +1940,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
         public virtual DeleteTaskSetResponse DeleteTaskSet(DeleteTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
 
@@ -2002,7 +2002,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
         public virtual Task<DeleteTaskSetResponse> DeleteTaskSetAsync(DeleteTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
             
@@ -2065,7 +2065,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual Task<DeregisterContainerInstanceResponse> DeregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
             
@@ -2190,7 +2190,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -2252,7 +2252,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual Task<DeregisterTaskDefinitionResponse> DeregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -2290,7 +2290,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         public virtual DescribeCapacityProvidersResponse DescribeCapacityProviders(DescribeCapacityProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityProvidersResponseUnmarshaller.Instance;
 
@@ -2327,7 +2327,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         public virtual Task<DescribeCapacityProvidersResponse> DescribeCapacityProvidersAsync(DescribeCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityProvidersResponseUnmarshaller.Instance;
             
@@ -2371,7 +2371,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
@@ -2414,7 +2414,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
             
@@ -2457,7 +2457,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
 
@@ -2499,7 +2499,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
             
@@ -2558,7 +2558,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
         public virtual DescribeServiceDeploymentsResponse DescribeServiceDeployments(DescribeServiceDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -2616,7 +2616,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
         public virtual Task<DescribeServiceDeploymentsResponse> DescribeServiceDeploymentsAsync(DescribeServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
             
@@ -2680,7 +2680,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
         public virtual DescribeServiceRevisionsResponse DescribeServiceRevisions(DescribeServiceRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
 
@@ -2743,7 +2743,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
         public virtual Task<DescribeServiceRevisionsResponse> DescribeServiceRevisionsAsync(DescribeServiceRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
             
@@ -2785,7 +2785,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
             
@@ -2873,7 +2873,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -2919,7 +2919,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual Task<DescribeTaskDefinitionResponse> DescribeTaskDefinitionAsync(DescribeTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -2972,7 +2972,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
@@ -3024,7 +3024,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual Task<DescribeTasksResponse> DescribeTasksAsync(DescribeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
             
@@ -3083,7 +3083,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
         public virtual DescribeTaskSetsResponse DescribeTaskSets(DescribeTaskSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
 
@@ -3141,7 +3141,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
         public virtual Task<DescribeTaskSetsResponse> DescribeTaskSetsAsync(DescribeTaskSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
             
@@ -3222,7 +3222,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual ExecuteCommandResponse ExecuteCommand(ExecuteCommandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCommandResponseUnmarshaller.Instance;
 
@@ -3302,7 +3302,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual Task<ExecuteCommandResponse> ExecuteCommandAsync(ExecuteCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCommandResponseUnmarshaller.Instance;
             
@@ -3353,7 +3353,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
         public virtual GetTaskProtectionResponse GetTaskProtection(GetTaskProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
 
@@ -3403,7 +3403,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
         public virtual Task<GetTaskProtectionResponse> GetTaskProtectionAsync(GetTaskProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
             
@@ -3441,7 +3441,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">REST API Reference for ListAccountSettings Operation</seealso>
         public virtual ListAccountSettingsResponse ListAccountSettings(ListAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
 
@@ -3478,7 +3478,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">REST API Reference for ListAccountSettings Operation</seealso>
         public virtual Task<ListAccountSettingsResponse> ListAccountSettingsAsync(ListAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
             
@@ -3517,7 +3517,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributesResponseUnmarshaller.Instance;
 
@@ -3555,7 +3555,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributesResponseUnmarshaller.Instance;
             
@@ -3593,7 +3593,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -3630,7 +3630,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
             
@@ -3675,7 +3675,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
@@ -3719,7 +3719,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
             
@@ -3778,7 +3778,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
         public virtual ListServiceDeploymentsResponse ListServiceDeployments(ListServiceDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -3836,7 +3836,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
         public virtual Task<ListServiceDeploymentsResponse> ListServiceDeploymentsAsync(ListServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
             
@@ -3879,7 +3879,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -3921,7 +3921,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
             
@@ -3967,7 +3967,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
         public virtual ListServicesByNamespaceResponse ListServicesByNamespace(ListServicesByNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
 
@@ -4012,7 +4012,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
         public virtual Task<ListServicesByNamespaceResponse> ListServicesByNamespaceAsync(ListServicesByNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
             
@@ -4054,7 +4054,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4095,7 +4095,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4142,7 +4142,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
 
@@ -4188,7 +4188,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
             
@@ -4228,7 +4228,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
 
@@ -4267,7 +4267,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual Task<ListTaskDefinitionsResponse> ListTaskDefinitionsAsync(ListTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
             
@@ -4320,7 +4320,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -4372,7 +4372,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
             
@@ -4418,7 +4418,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
 
@@ -4463,7 +4463,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual Task<PutAccountSettingResponse> PutAccountSettingAsync(PutAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
             
@@ -4502,7 +4502,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
         public virtual PutAccountSettingDefaultResponse PutAccountSettingDefault(PutAccountSettingDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
 
@@ -4540,7 +4540,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
         public virtual Task<PutAccountSettingDefaultResponse> PutAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
             
@@ -4588,7 +4588,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
@@ -4635,7 +4635,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
             
@@ -4707,7 +4707,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
         public virtual PutClusterCapacityProvidersResponse PutClusterCapacityProviders(PutClusterCapacityProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterCapacityProvidersResponseUnmarshaller.Instance;
 
@@ -4778,7 +4778,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
         public virtual Task<PutClusterCapacityProvidersResponse> PutClusterCapacityProvidersAsync(PutClusterCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterCapacityProvidersResponseUnmarshaller.Instance;
             
@@ -4837,7 +4837,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -4895,7 +4895,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual Task<RegisterTaskDefinitionResponse> RegisterTaskDefinitionAsync(RegisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -5040,7 +5040,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual RunTaskResponse RunTask(RunTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunTaskResponseUnmarshaller.Instance;
 
@@ -5184,7 +5184,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual Task<RunTaskResponse> RunTaskAsync(RunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunTaskResponseUnmarshaller.Instance;
             
@@ -5253,7 +5253,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual StartTaskResponse StartTask(StartTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskResponseUnmarshaller.Instance;
 
@@ -5321,7 +5321,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskResponseUnmarshaller.Instance;
             
@@ -5395,7 +5395,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
         public virtual StopServiceDeploymentResponse StopServiceDeployment(StopServiceDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServiceDeploymentResponseUnmarshaller.Instance;
 
@@ -5468,7 +5468,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
         public virtual Task<StopServiceDeploymentResponse> StopServiceDeploymentAsync(StopServiceDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServiceDeploymentResponseUnmarshaller.Instance;
             
@@ -5535,7 +5535,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual StopTaskResponse StopTask(StopTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTaskResponseUnmarshaller.Instance;
 
@@ -5601,7 +5601,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTaskResponseUnmarshaller.Instance;
             
@@ -5650,7 +5650,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
         public virtual SubmitAttachmentStateChangesResponse SubmitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitAttachmentStateChangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitAttachmentStateChangesResponseUnmarshaller.Instance;
 
@@ -5698,7 +5698,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
         public virtual Task<SubmitAttachmentStateChangesResponse> SubmitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitAttachmentStateChangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitAttachmentStateChangesResponseUnmarshaller.Instance;
             
@@ -5746,7 +5746,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5793,7 +5793,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5838,7 +5838,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5882,7 +5882,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -5920,7 +5920,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         public virtual UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
 
@@ -5957,7 +5957,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         public virtual Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
             
@@ -6002,7 +6002,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -6046,7 +6046,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
             
@@ -6088,7 +6088,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         public virtual UpdateClusterSettingsResponse UpdateClusterSettings(UpdateClusterSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterSettingsResponseUnmarshaller.Instance;
 
@@ -6129,7 +6129,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         public virtual Task<UpdateClusterSettingsResponse> UpdateClusterSettingsAsync(UpdateClusterSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterSettingsResponseUnmarshaller.Instance;
             
@@ -6217,7 +6217,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
 
@@ -6304,7 +6304,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
             
@@ -6410,7 +6410,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
 
@@ -6515,7 +6515,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual Task<UpdateContainerInstancesStateResponse> UpdateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
             
@@ -6736,7 +6736,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -6956,7 +6956,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
             
@@ -7021,7 +7021,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
         public virtual UpdateServicePrimaryTaskSetResponse UpdateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
 
@@ -7085,7 +7085,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
         public virtual Task<UpdateServicePrimaryTaskSetResponse> UpdateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
             
@@ -7174,7 +7174,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
         public virtual UpdateTaskProtectionResponse UpdateTaskProtection(UpdateTaskProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
 
@@ -7262,7 +7262,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
         public virtual Task<UpdateTaskProtectionResponse> UpdateTaskProtectionAsync(UpdateTaskProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
             
@@ -7325,7 +7325,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
         public virtual UpdateTaskSetResponse UpdateTaskSet(UpdateTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
 
@@ -7387,7 +7387,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
         public virtual Task<UpdateTaskSetResponse> UpdateTaskSetAsync(UpdateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
             

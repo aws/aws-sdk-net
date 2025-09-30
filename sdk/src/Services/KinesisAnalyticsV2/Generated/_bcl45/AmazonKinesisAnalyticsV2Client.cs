@@ -308,7 +308,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual AddApplicationCloudWatchLoggingOptionResponse AddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual Task<AddApplicationCloudWatchLoggingOptionResponse> AddApplicationCloudWatchLoggingOptionAsync(AddApplicationCloudWatchLoggingOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
             
@@ -403,7 +403,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         public virtual AddApplicationInputResponse AddApplicationInput(AddApplicationInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         public virtual Task<AddApplicationInputResponse> AddApplicationInputAsync(AddApplicationInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationInputResponseUnmarshaller.Instance;
             
@@ -498,7 +498,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         public virtual AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         public virtual Task<AddApplicationInputProcessingConfigurationResponse> AddApplicationInputProcessingConfigurationAsync(AddApplicationInputProcessingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationInputProcessingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
             
@@ -597,7 +597,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         public virtual AddApplicationOutputResponse AddApplicationOutput(AddApplicationOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         public virtual Task<AddApplicationOutputResponse> AddApplicationOutputAsync(AddApplicationOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationOutputResponseUnmarshaller.Instance;
             
@@ -702,7 +702,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         public virtual AddApplicationReferenceDataSourceResponse AddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         public virtual Task<AddApplicationReferenceDataSourceResponse> AddApplicationReferenceDataSourceAsync(AddApplicationReferenceDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationReferenceDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationReferenceDataSourceResponseUnmarshaller.Instance;
             
@@ -803,7 +803,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
         public virtual AddApplicationVpcConfigurationResponse AddApplicationVpcConfiguration(AddApplicationVpcConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">REST API Reference for AddApplicationVpcConfiguration Operation</seealso>
         public virtual Task<AddApplicationVpcConfigurationResponse> AddApplicationVpcConfigurationAsync(AddApplicationVpcConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddApplicationVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddApplicationVpcConfigurationResponseUnmarshaller.Instance;
             
@@ -910,7 +910,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -1013,7 +1013,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
         public virtual CreateApplicationPresignedUrlResponse CreateApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationPresignedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationPresignedUrlResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl">REST API Reference for CreateApplicationPresignedUrl Operation</seealso>
         public virtual Task<CreateApplicationPresignedUrlResponse> CreateApplicationPresignedUrlAsync(CreateApplicationPresignedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationPresignedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationPresignedUrlResponseUnmarshaller.Instance;
             
@@ -1106,7 +1106,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot">REST API Reference for CreateApplicationSnapshot Operation</seealso>
         public virtual CreateApplicationSnapshotResponse CreateApplicationSnapshot(CreateApplicationSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
 
@@ -1148,7 +1148,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot">REST API Reference for CreateApplicationSnapshot Operation</seealso>
         public virtual Task<CreateApplicationSnapshotResponse> CreateApplicationSnapshotAsync(CreateApplicationSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationSnapshotResponseUnmarshaller.Instance;
             
@@ -1190,7 +1190,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -1272,7 +1272,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual DeleteApplicationCloudWatchLoggingOptionResponse DeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual Task<DeleteApplicationCloudWatchLoggingOptionResponse> DeleteApplicationCloudWatchLoggingOptionAsync(DeleteApplicationCloudWatchLoggingOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationCloudWatchLoggingOptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationCloudWatchLoggingOptionResponseUnmarshaller.Instance;
             
@@ -1350,7 +1350,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         public virtual DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
 
@@ -1387,7 +1387,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         public virtual Task<DeleteApplicationInputProcessingConfigurationResponse> DeleteApplicationInputProcessingConfigurationAsync(DeleteApplicationInputProcessingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationInputProcessingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationInputProcessingConfigurationResponseUnmarshaller.Instance;
             
@@ -1427,7 +1427,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         public virtual DeleteApplicationOutputResponse DeleteApplicationOutput(DeleteApplicationOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         public virtual Task<DeleteApplicationOutputResponse> DeleteApplicationOutputAsync(DeleteApplicationOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationOutputResponseUnmarshaller.Instance;
             
@@ -1512,7 +1512,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         public virtual DeleteApplicationReferenceDataSourceResponse DeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
 
@@ -1557,7 +1557,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         public virtual Task<DeleteApplicationReferenceDataSourceResponse> DeleteApplicationReferenceDataSourceAsync(DeleteApplicationReferenceDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationReferenceDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationReferenceDataSourceResponseUnmarshaller.Instance;
             
@@ -1599,7 +1599,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationSnapshot">REST API Reference for DeleteApplicationSnapshot Operation</seealso>
         public virtual DeleteApplicationSnapshotResponse DeleteApplicationSnapshot(DeleteApplicationSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationSnapshot">REST API Reference for DeleteApplicationSnapshot Operation</seealso>
         public virtual Task<DeleteApplicationSnapshotResponse> DeleteApplicationSnapshotAsync(DeleteApplicationSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationSnapshotResponseUnmarshaller.Instance;
             
@@ -1678,7 +1678,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
         public virtual DeleteApplicationVpcConfigurationResponse DeleteApplicationVpcConfiguration(DeleteApplicationVpcConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -1715,7 +1715,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">REST API Reference for DeleteApplicationVpcConfiguration Operation</seealso>
         public virtual Task<DeleteApplicationVpcConfigurationResponse> DeleteApplicationVpcConfigurationAsync(DeleteApplicationVpcConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationVpcConfigurationResponseUnmarshaller.Instance;
             
@@ -1751,7 +1751,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
 
@@ -1786,7 +1786,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
             
@@ -1825,7 +1825,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">REST API Reference for DescribeApplicationOperation Operation</seealso>
         public virtual DescribeApplicationOperationResponse DescribeApplicationOperation(DescribeApplicationOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationOperationResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationOperation">REST API Reference for DescribeApplicationOperation Operation</seealso>
         public virtual Task<DescribeApplicationOperationResponse> DescribeApplicationOperationAsync(DescribeApplicationOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationOperationResponseUnmarshaller.Instance;
             
@@ -1894,7 +1894,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationSnapshot">REST API Reference for DescribeApplicationSnapshot Operation</seealso>
         public virtual DescribeApplicationSnapshotResponse DescribeApplicationSnapshot(DescribeApplicationSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationSnapshot">REST API Reference for DescribeApplicationSnapshot Operation</seealso>
         public virtual Task<DescribeApplicationSnapshotResponse> DescribeApplicationSnapshotAsync(DescribeApplicationSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationSnapshotResponseUnmarshaller.Instance;
             
@@ -1963,7 +1963,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">REST API Reference for DescribeApplicationVersion Operation</seealso>
         public virtual DescribeApplicationVersionResponse DescribeApplicationVersion(DescribeApplicationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationVersionResponseUnmarshaller.Instance;
 
@@ -2001,7 +2001,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">REST API Reference for DescribeApplicationVersion Operation</seealso>
         public virtual Task<DescribeApplicationVersionResponse> DescribeApplicationVersionAsync(DescribeApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationVersionResponseUnmarshaller.Instance;
             
@@ -2055,7 +2055,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         public virtual DiscoverInputSchemaResponse DiscoverInputSchema(DiscoverInputSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DiscoverInputSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
         public virtual Task<DiscoverInputSchemaResponse> DiscoverInputSchemaAsync(DiscoverInputSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DiscoverInputSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DiscoverInputSchemaResponseUnmarshaller.Instance;
             
@@ -2151,7 +2151,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">REST API Reference for ListApplicationOperations Operation</seealso>
         public virtual ListApplicationOperationsResponse ListApplicationOperations(ListApplicationOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationOperationsResponseUnmarshaller.Instance;
 
@@ -2193,7 +2193,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationOperations">REST API Reference for ListApplicationOperations Operation</seealso>
         public virtual Task<ListApplicationOperationsResponse> ListApplicationOperationsAsync(ListApplicationOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationOperationsResponseUnmarshaller.Instance;
             
@@ -2224,7 +2224,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -2254,7 +2254,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -2282,7 +2282,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationSnapshots">REST API Reference for ListApplicationSnapshots Operation</seealso>
         public virtual ListApplicationSnapshotsResponse ListApplicationSnapshots(ListApplicationSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
 
@@ -2309,7 +2309,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationSnapshots">REST API Reference for ListApplicationSnapshots Operation</seealso>
         public virtual Task<ListApplicationSnapshotsResponse> ListApplicationSnapshotsAsync(ListApplicationSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationSnapshotsResponseUnmarshaller.Instance;
             
@@ -2353,7 +2353,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual ListApplicationVersionsResponse ListApplicationVersions(ListApplicationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
 
@@ -2396,7 +2396,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual Task<ListApplicationVersionsResponse> ListApplicationVersionsAsync(ListApplicationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
             
@@ -2430,7 +2430,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2463,7 +2463,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2518,7 +2518,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">REST API Reference for RollbackApplication Operation</seealso>
         public virtual RollbackApplicationResponse RollbackApplication(RollbackApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackApplicationResponseUnmarshaller.Instance;
 
@@ -2572,7 +2572,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">REST API Reference for RollbackApplication Operation</seealso>
         public virtual Task<RollbackApplicationResponse> RollbackApplicationAsync(RollbackApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackApplicationResponseUnmarshaller.Instance;
             
@@ -2609,7 +2609,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
@@ -2645,7 +2645,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual Task<StartApplicationResponse> StartApplicationAsync(StartApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
             
@@ -2698,7 +2698,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
@@ -2750,7 +2750,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual Task<StopApplicationResponse> StopApplicationAsync(StopApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
             
@@ -2793,7 +2793,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2835,7 +2835,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2877,7 +2877,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2918,7 +2918,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2973,7 +2973,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -3027,7 +3027,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -3095,7 +3095,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
         public virtual UpdateApplicationMaintenanceConfigurationResponse UpdateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationMaintenanceConfigurationResponseUnmarshaller.Instance;
 
@@ -3162,7 +3162,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">REST API Reference for UpdateApplicationMaintenanceConfiguration Operation</seealso>
         public virtual Task<UpdateApplicationMaintenanceConfigurationResponse> UpdateApplicationMaintenanceConfigurationAsync(UpdateApplicationMaintenanceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationMaintenanceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationMaintenanceConfigurationResponseUnmarshaller.Instance;
             

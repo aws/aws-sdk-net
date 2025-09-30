@@ -293,7 +293,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscoverer">REST API Reference for CreateDiscoverer Operation</seealso>
         public virtual CreateDiscovererResponse CreateDiscoverer(CreateDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiscovererResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscoverer">REST API Reference for CreateDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginCreateDiscoverer(CreateDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiscovererResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
         public virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
         public virtual IAsyncResult BeginCreateRegistry(CreateRegistryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteDiscoverer">REST API Reference for DeleteDiscoverer Operation</seealso>
         public virtual DeleteDiscovererResponse DeleteDiscoverer(DeleteDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiscovererResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteDiscoverer">REST API Reference for DeleteDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginDeleteDiscoverer(DeleteDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiscovererResponseUnmarshaller.Instance;
 
@@ -581,7 +581,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
         public virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
@@ -602,7 +602,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegistry(DeleteRegistryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion">REST API Reference for DeleteSchemaVersion Operation</seealso>
         public virtual DeleteSchemaVersionResponse DeleteSchemaVersion(DeleteSchemaVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion">REST API Reference for DeleteSchemaVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteSchemaVersion(DeleteSchemaVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeCodeBinding">REST API Reference for DescribeCodeBinding Operation</seealso>
         public virtual DescribeCodeBindingResponse DescribeCodeBinding(DescribeCodeBindingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeBindingResponseUnmarshaller.Instance;
 
@@ -890,7 +890,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeCodeBinding">REST API Reference for DescribeCodeBinding Operation</seealso>
         public virtual IAsyncResult BeginDescribeCodeBinding(DescribeCodeBindingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeBindingResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeDiscoverer">REST API Reference for DescribeDiscoverer Operation</seealso>
         public virtual DescribeDiscovererResponse DescribeDiscoverer(DescribeDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDiscovererResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeDiscoverer">REST API Reference for DescribeDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginDescribeDiscoverer(DescribeDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDiscovererResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual DescribeRegistryResponse DescribeRegistry(DescribeRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual IAsyncResult BeginDescribeRegistry(DescribeRegistryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual DescribeSchemaResponse DescribeSchema(DescribeSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual IAsyncResult BeginDescribeSchema(DescribeSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
         public virtual ExportSchemaResponse ExportSchema(ExportSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
 
@@ -1181,7 +1181,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
         public virtual IAsyncResult BeginExportSchema(ExportSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetCodeBindingSource">REST API Reference for GetCodeBindingSource Operation</seealso>
         public virtual GetCodeBindingSourceResponse GetCodeBindingSource(GetCodeBindingSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeBindingSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeBindingSourceResponseUnmarshaller.Instance;
 
@@ -1253,7 +1253,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetCodeBindingSource">REST API Reference for GetCodeBindingSource Operation</seealso>
         public virtual IAsyncResult BeginGetCodeBindingSource(GetCodeBindingSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeBindingSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeBindingSourceResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetDiscoveredSchema">REST API Reference for GetDiscoveredSchema Operation</seealso>
         public virtual GetDiscoveredSchemaResponse GetDiscoveredSchema(GetDiscoveredSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredSchemaResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetDiscoveredSchema">REST API Reference for GetDiscoveredSchema Operation</seealso>
         public virtual IAsyncResult BeginGetDiscoveredSchema(GetDiscoveredSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredSchemaResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1394,7 +1394,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers">REST API Reference for ListDiscoverers Operation</seealso>
         public virtual ListDiscoverersResponse ListDiscoverers(ListDiscoverersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoverersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoverersResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers">REST API Reference for ListDiscoverers Operation</seealso>
         public virtual IAsyncResult BeginListDiscoverers(ListDiscoverersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoverersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoverersResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
         public virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
         public virtual IAsyncResult BeginListRegistries(ListRegistriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -1601,7 +1601,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual IAsyncResult BeginListSchemas(ListSchemasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         public virtual ListSchemaVersionsResponse ListSchemaVersions(ListSchemaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -1673,7 +1673,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         public virtual IAsyncResult BeginListSchemaVersions(ListSchemaVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -1718,7 +1718,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding">REST API Reference for PutCodeBinding Operation</seealso>
         public virtual PutCodeBindingResponse PutCodeBinding(PutCodeBindingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding">REST API Reference for PutCodeBinding Operation</seealso>
         public virtual IAsyncResult BeginPutCodeBinding(PutCodeBindingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
 
@@ -1868,7 +1868,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1889,7 +1889,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas">REST API Reference for SearchSchemas Operation</seealso>
         public virtual SearchSchemasResponse SearchSchemas(SearchSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSchemasResponseUnmarshaller.Instance;
 
@@ -1958,7 +1958,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas">REST API Reference for SearchSchemas Operation</seealso>
         public virtual IAsyncResult BeginSearchSchemas(SearchSchemasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSchemasResponseUnmarshaller.Instance;
 
@@ -2009,7 +2009,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer">REST API Reference for StartDiscoverer Operation</seealso>
         public virtual StartDiscovererResponse StartDiscoverer(StartDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscovererResponseUnmarshaller.Instance;
 
@@ -2030,7 +2030,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer">REST API Reference for StartDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginStartDiscoverer(StartDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscovererResponseUnmarshaller.Instance;
 
@@ -2081,7 +2081,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer">REST API Reference for StopDiscoverer Operation</seealso>
         public virtual StopDiscovererResponse StopDiscoverer(StopDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDiscovererResponseUnmarshaller.Instance;
 
@@ -2102,7 +2102,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer">REST API Reference for StopDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginStopDiscoverer(StopDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDiscovererResponseUnmarshaller.Instance;
 
@@ -2147,7 +2147,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2168,7 +2168,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2234,7 +2234,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2285,7 +2285,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer">REST API Reference for UpdateDiscoverer Operation</seealso>
         public virtual UpdateDiscovererResponse UpdateDiscoverer(UpdateDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDiscovererResponseUnmarshaller.Instance;
 
@@ -2306,7 +2306,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer">REST API Reference for UpdateDiscoverer Operation</seealso>
         public virtual IAsyncResult BeginUpdateDiscoverer(UpdateDiscovererRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDiscovererResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
         public virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
         public virtual IAsyncResult BeginUpdateRegistry(UpdateRegistryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
@@ -2453,7 +2453,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual IAsyncResult BeginUpdateSchema(UpdateSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 

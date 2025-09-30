@@ -310,7 +310,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/BatchUpdateRule">REST API Reference for BatchUpdateRule Operation</seealso>
         public virtual BatchUpdateRuleResponse BatchUpdateRule(BatchUpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRuleResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/BatchUpdateRule">REST API Reference for BatchUpdateRule Operation</seealso>
         public virtual IAsyncResult BeginBatchUpdateRule(BatchUpdateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateRuleResponseUnmarshaller.Instance;
 
@@ -389,7 +389,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateAccessLogSubscription">REST API Reference for CreateAccessLogSubscription Operation</seealso>
         public virtual CreateAccessLogSubscriptionResponse CreateAccessLogSubscription(CreateAccessLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateAccessLogSubscription">REST API Reference for CreateAccessLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateAccessLogSubscription(CreateAccessLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -468,7 +468,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual CreateListenerResponse CreateListener(CreateListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
@@ -489,7 +489,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual IAsyncResult BeginCreateListener(CreateListenerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
         public virtual CreateResourceConfigurationResponse CreateResourceConfiguration(CreateResourceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceConfiguration">REST API Reference for CreateResourceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateResourceConfiguration(CreateResourceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
         public virtual CreateResourceGatewayResponse CreateResourceGateway(CreateResourceGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceGatewayResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateResourceGateway">REST API Reference for CreateResourceGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateResourceGateway(CreateResourceGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceGatewayResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -786,7 +786,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -807,7 +807,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetwork">REST API Reference for CreateServiceNetwork Operation</seealso>
         public virtual CreateServiceNetworkResponse CreateServiceNetwork(CreateServiceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkResponseUnmarshaller.Instance;
 
@@ -890,7 +890,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetwork">REST API Reference for CreateServiceNetwork Operation</seealso>
         public virtual IAsyncResult BeginCreateServiceNetwork(CreateServiceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
         public virtual CreateServiceNetworkResourceAssociationResponse CreateServiceNetworkResourceAssociation(CreateServiceNetworkResourceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -968,7 +968,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkResourceAssociation">REST API Reference for CreateServiceNetworkResourceAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateServiceNetworkResourceAssociation(CreateServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkServiceAssociation">REST API Reference for CreateServiceNetworkServiceAssociation Operation</seealso>
         public virtual CreateServiceNetworkServiceAssociationResponse CreateServiceNetworkServiceAssociation(CreateServiceNetworkServiceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkServiceAssociation">REST API Reference for CreateServiceNetworkServiceAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateServiceNetworkServiceAssociation(CreateServiceNetworkServiceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkVpcAssociation">REST API Reference for CreateServiceNetworkVpcAssociation Operation</seealso>
         public virtual CreateServiceNetworkVpcAssociationResponse CreateServiceNetworkVpcAssociation(CreateServiceNetworkVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateServiceNetworkVpcAssociation">REST API Reference for CreateServiceNetworkVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateServiceNetworkVpcAssociation(CreateServiceNetworkVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public virtual CreateTargetGroupResponse CreateTargetGroup(CreateTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetGroupResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateTargetGroup(CreateTargetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetGroupResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAccessLogSubscription">REST API Reference for DeleteAccessLogSubscription Operation</seealso>
         public virtual DeleteAccessLogSubscriptionResponse DeleteAccessLogSubscription(DeleteAccessLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAccessLogSubscription">REST API Reference for DeleteAccessLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessLogSubscription(DeleteAccessLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1364,7 +1364,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAuthPolicy">REST API Reference for DeleteAuthPolicy Operation</seealso>
         public virtual DeleteAuthPolicyResponse DeleteAuthPolicy(DeleteAuthPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthPolicyResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteAuthPolicy">REST API Reference for DeleteAuthPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteAuthPolicy(DeleteAuthPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthPolicyResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual IAsyncResult BeginDeleteListener(DeleteListenerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
         public virtual DeleteResourceConfigurationResponse DeleteResourceConfiguration(DeleteResourceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -1531,7 +1531,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceConfiguration">REST API Reference for DeleteResourceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceConfiguration(DeleteResourceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
         public virtual DeleteResourceEndpointAssociationResponse DeleteResourceEndpointAssociation(DeleteResourceEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceEndpointAssociation">REST API Reference for DeleteResourceEndpointAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceEndpointAssociation(DeleteResourceEndpointAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
         public virtual DeleteResourceGatewayResponse DeleteResourceGateway(DeleteResourceGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceGatewayResponseUnmarshaller.Instance;
 
@@ -1673,7 +1673,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourceGateway">REST API Reference for DeleteResourceGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceGateway(DeleteResourceGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceGatewayResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1880,7 +1880,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -1901,7 +1901,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -1957,7 +1957,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetwork">REST API Reference for DeleteServiceNetwork Operation</seealso>
         public virtual DeleteServiceNetworkResponse DeleteServiceNetwork(DeleteServiceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkResponseUnmarshaller.Instance;
 
@@ -1978,7 +1978,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetwork">REST API Reference for DeleteServiceNetwork Operation</seealso>
         public virtual IAsyncResult BeginDeleteServiceNetwork(DeleteServiceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkResponseUnmarshaller.Instance;
 
@@ -2030,7 +2030,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
         public virtual DeleteServiceNetworkResourceAssociationResponse DeleteServiceNetworkResourceAssociation(DeleteServiceNetworkResourceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -2051,7 +2051,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkResourceAssociation">REST API Reference for DeleteServiceNetworkResourceAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteServiceNetworkResourceAssociation(DeleteServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -2104,7 +2104,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkServiceAssociation">REST API Reference for DeleteServiceNetworkServiceAssociation Operation</seealso>
         public virtual DeleteServiceNetworkServiceAssociationResponse DeleteServiceNetworkServiceAssociation(DeleteServiceNetworkServiceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -2125,7 +2125,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkServiceAssociation">REST API Reference for DeleteServiceNetworkServiceAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteServiceNetworkServiceAssociation(DeleteServiceNetworkServiceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -2178,7 +2178,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkVpcAssociation">REST API Reference for DeleteServiceNetworkVpcAssociation Operation</seealso>
         public virtual DeleteServiceNetworkVpcAssociationResponse DeleteServiceNetworkVpcAssociation(DeleteServiceNetworkVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -2199,7 +2199,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteServiceNetworkVpcAssociation">REST API Reference for DeleteServiceNetworkVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteServiceNetworkVpcAssociation(DeleteServiceNetworkVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -2249,7 +2249,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public virtual DeleteTargetGroupResponse DeleteTargetGroup(DeleteTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetGroupResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteTargetGroup(DeleteTargetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetGroupResponseUnmarshaller.Instance;
 
@@ -2322,7 +2322,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public virtual DeregisterTargetsResponse DeregisterTargets(DeregisterTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTargetsResponseUnmarshaller.Instance;
 
@@ -2343,7 +2343,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTargets(DeregisterTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTargetsResponseUnmarshaller.Instance;
 
@@ -2391,7 +2391,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetAccessLogSubscription">REST API Reference for GetAccessLogSubscription Operation</seealso>
         public virtual GetAccessLogSubscriptionResponse GetAccessLogSubscription(GetAccessLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -2412,7 +2412,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetAccessLogSubscription">REST API Reference for GetAccessLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginGetAccessLogSubscription(GetAccessLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetAuthPolicy">REST API Reference for GetAuthPolicy Operation</seealso>
         public virtual GetAuthPolicyResponse GetAuthPolicy(GetAuthPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthPolicyResponseUnmarshaller.Instance;
 
@@ -2481,7 +2481,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetAuthPolicy">REST API Reference for GetAuthPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetAuthPolicy(GetAuthPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthPolicyResponseUnmarshaller.Instance;
 
@@ -2529,7 +2529,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetListener">REST API Reference for GetListener Operation</seealso>
         public virtual GetListenerResponse GetListener(GetListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListenerResponseUnmarshaller.Instance;
 
@@ -2550,7 +2550,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetListener">REST API Reference for GetListener Operation</seealso>
         public virtual IAsyncResult BeginGetListener(GetListenerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetListenerResponseUnmarshaller.Instance;
 
@@ -2598,7 +2598,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
         public virtual GetResourceConfigurationResponse GetResourceConfiguration(GetResourceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -2619,7 +2619,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceConfiguration">REST API Reference for GetResourceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetResourceConfiguration(GetResourceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -2667,7 +2667,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
         public virtual GetResourceGatewayResponse GetResourceGateway(GetResourceGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceGatewayResponseUnmarshaller.Instance;
 
@@ -2688,7 +2688,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourceGateway">REST API Reference for GetResourceGateway Operation</seealso>
         public virtual IAsyncResult BeginGetResourceGateway(GetResourceGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceGatewayResponseUnmarshaller.Instance;
 
@@ -2737,7 +2737,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2758,7 +2758,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2808,7 +2808,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -2829,7 +2829,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -2877,7 +2877,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetService">REST API Reference for GetService Operation</seealso>
         public virtual GetServiceResponse GetService(GetServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -2898,7 +2898,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetService">REST API Reference for GetService Operation</seealso>
         public virtual IAsyncResult BeginGetService(GetServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -2946,7 +2946,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetwork">REST API Reference for GetServiceNetwork Operation</seealso>
         public virtual GetServiceNetworkResponse GetServiceNetwork(GetServiceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkResponseUnmarshaller.Instance;
 
@@ -2967,7 +2967,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetwork">REST API Reference for GetServiceNetwork Operation</seealso>
         public virtual IAsyncResult BeginGetServiceNetwork(GetServiceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkResponseUnmarshaller.Instance;
 
@@ -3016,7 +3016,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
         public virtual GetServiceNetworkResourceAssociationResponse GetServiceNetworkResourceAssociation(GetServiceNetworkResourceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -3037,7 +3037,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkResourceAssociation">REST API Reference for GetServiceNetworkResourceAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetServiceNetworkResourceAssociation(GetServiceNetworkResourceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkResourceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkResourceAssociationResponseUnmarshaller.Instance;
 
@@ -3086,7 +3086,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkServiceAssociation">REST API Reference for GetServiceNetworkServiceAssociation Operation</seealso>
         public virtual GetServiceNetworkServiceAssociationResponse GetServiceNetworkServiceAssociation(GetServiceNetworkServiceAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -3107,7 +3107,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkServiceAssociation">REST API Reference for GetServiceNetworkServiceAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetServiceNetworkServiceAssociation(GetServiceNetworkServiceAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkServiceAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkServiceAssociationResponseUnmarshaller.Instance;
 
@@ -3156,7 +3156,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkVpcAssociation">REST API Reference for GetServiceNetworkVpcAssociation Operation</seealso>
         public virtual GetServiceNetworkVpcAssociationResponse GetServiceNetworkVpcAssociation(GetServiceNetworkVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -3177,7 +3177,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetServiceNetworkVpcAssociation">REST API Reference for GetServiceNetworkVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginGetServiceNetworkVpcAssociation(GetServiceNetworkVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -3225,7 +3225,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetTargetGroup">REST API Reference for GetTargetGroup Operation</seealso>
         public virtual GetTargetGroupResponse GetTargetGroup(GetTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetGroupResponseUnmarshaller.Instance;
 
@@ -3246,7 +3246,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/GetTargetGroup">REST API Reference for GetTargetGroup Operation</seealso>
         public virtual IAsyncResult BeginGetTargetGroup(GetTargetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTargetGroupResponseUnmarshaller.Instance;
 
@@ -3291,7 +3291,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListAccessLogSubscriptions">REST API Reference for ListAccessLogSubscriptions Operation</seealso>
         public virtual ListAccessLogSubscriptionsResponse ListAccessLogSubscriptions(ListAccessLogSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessLogSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessLogSubscriptionsResponseUnmarshaller.Instance;
 
@@ -3312,7 +3312,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListAccessLogSubscriptions">REST API Reference for ListAccessLogSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListAccessLogSubscriptions(ListAccessLogSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessLogSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessLogSubscriptionsResponseUnmarshaller.Instance;
 
@@ -3360,7 +3360,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual ListListenersResponse ListListeners(ListListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
 
@@ -3381,7 +3381,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListListeners">REST API Reference for ListListeners Operation</seealso>
         public virtual IAsyncResult BeginListListeners(ListListenersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListListenersResponseUnmarshaller.Instance;
 
@@ -3426,7 +3426,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
         public virtual ListResourceConfigurationsResponse ListResourceConfigurations(ListResourceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceConfigurationsResponseUnmarshaller.Instance;
 
@@ -3447,7 +3447,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceConfigurations">REST API Reference for ListResourceConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListResourceConfigurations(ListResourceConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceConfigurationsResponseUnmarshaller.Instance;
 
@@ -3492,7 +3492,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
         public virtual ListResourceEndpointAssociationsResponse ListResourceEndpointAssociations(ListResourceEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3513,7 +3513,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceEndpointAssociations">REST API Reference for ListResourceEndpointAssociations Operation</seealso>
         public virtual IAsyncResult BeginListResourceEndpointAssociations(ListResourceEndpointAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3558,7 +3558,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
         public virtual ListResourceGatewaysResponse ListResourceGateways(ListResourceGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceGatewaysResponseUnmarshaller.Instance;
 
@@ -3579,7 +3579,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListResourceGateways">REST API Reference for ListResourceGateways Operation</seealso>
         public virtual IAsyncResult BeginListResourceGateways(ListResourceGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceGatewaysResponseUnmarshaller.Instance;
 
@@ -3627,7 +3627,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -3648,7 +3648,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -3693,7 +3693,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
         public virtual ListServiceNetworkResourceAssociationsResponse ListServiceNetworkResourceAssociations(ListServiceNetworkResourceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkResourceAssociationsResponseUnmarshaller.Instance;
 
@@ -3714,7 +3714,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkResourceAssociations">REST API Reference for ListServiceNetworkResourceAssociations Operation</seealso>
         public virtual IAsyncResult BeginListServiceNetworkResourceAssociations(ListServiceNetworkResourceAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkResourceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkResourceAssociationsResponseUnmarshaller.Instance;
 
@@ -3760,7 +3760,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworks">REST API Reference for ListServiceNetworks Operation</seealso>
         public virtual ListServiceNetworksResponse ListServiceNetworks(ListServiceNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworksResponseUnmarshaller.Instance;
 
@@ -3781,7 +3781,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworks">REST API Reference for ListServiceNetworks Operation</seealso>
         public virtual IAsyncResult BeginListServiceNetworks(ListServiceNetworksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworksResponseUnmarshaller.Instance;
 
@@ -3836,7 +3836,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkServiceAssociations">REST API Reference for ListServiceNetworkServiceAssociations Operation</seealso>
         public virtual ListServiceNetworkServiceAssociationsResponse ListServiceNetworkServiceAssociations(ListServiceNetworkServiceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkServiceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkServiceAssociationsResponseUnmarshaller.Instance;
 
@@ -3857,7 +3857,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkServiceAssociations">REST API Reference for ListServiceNetworkServiceAssociations Operation</seealso>
         public virtual IAsyncResult BeginListServiceNetworkServiceAssociations(ListServiceNetworkServiceAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkServiceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkServiceAssociationsResponseUnmarshaller.Instance;
 
@@ -3904,7 +3904,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcAssociations">REST API Reference for ListServiceNetworkVpcAssociations Operation</seealso>
         public virtual ListServiceNetworkVpcAssociationsResponse ListServiceNetworkVpcAssociations(ListServiceNetworkVpcAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -3925,7 +3925,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcAssociations">REST API Reference for ListServiceNetworkVpcAssociations Operation</seealso>
         public virtual IAsyncResult BeginListServiceNetworkVpcAssociations(ListServiceNetworkVpcAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -3970,7 +3970,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
         public virtual ListServiceNetworkVpcEndpointAssociationsResponse ListServiceNetworkVpcEndpointAssociations(ListServiceNetworkVpcEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3991,7 +3991,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServiceNetworkVpcEndpointAssociations">REST API Reference for ListServiceNetworkVpcEndpointAssociations Operation</seealso>
         public virtual IAsyncResult BeginListServiceNetworkVpcEndpointAssociations(ListServiceNetworkVpcEndpointAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceNetworkVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceNetworkVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -4036,7 +4036,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -4057,7 +4057,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -4102,7 +4102,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4123,7 +4123,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4169,7 +4169,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargetGroups">REST API Reference for ListTargetGroups Operation</seealso>
         public virtual ListTargetGroupsResponse ListTargetGroups(ListTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetGroupsResponseUnmarshaller.Instance;
 
@@ -4190,7 +4190,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargetGroups">REST API Reference for ListTargetGroups Operation</seealso>
         public virtual IAsyncResult BeginListTargetGroups(ListTargetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetGroupsResponseUnmarshaller.Instance;
 
@@ -4240,7 +4240,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargets">REST API Reference for ListTargets Operation</seealso>
         public virtual ListTargetsResponse ListTargets(ListTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsResponseUnmarshaller.Instance;
 
@@ -4261,7 +4261,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ListTargets">REST API Reference for ListTargets Operation</seealso>
         public virtual IAsyncResult BeginListTargets(ListTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsResponseUnmarshaller.Instance;
 
@@ -4316,7 +4316,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutAuthPolicy">REST API Reference for PutAuthPolicy Operation</seealso>
         public virtual PutAuthPolicyResponse PutAuthPolicy(PutAuthPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAuthPolicyResponseUnmarshaller.Instance;
 
@@ -4337,7 +4337,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutAuthPolicy">REST API Reference for PutAuthPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutAuthPolicy(PutAuthPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAuthPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAuthPolicyResponseUnmarshaller.Instance;
 
@@ -4387,7 +4387,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4408,7 +4408,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4464,7 +4464,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public virtual RegisterTargetsResponse RegisterTargets(RegisterTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
 
@@ -4485,7 +4485,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public virtual IAsyncResult BeginRegisterTargets(RegisterTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
 
@@ -4533,7 +4533,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4554,7 +4554,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4599,7 +4599,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4620,7 +4620,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4672,7 +4672,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateAccessLogSubscription">REST API Reference for UpdateAccessLogSubscription Operation</seealso>
         public virtual UpdateAccessLogSubscriptionResponse UpdateAccessLogSubscription(UpdateAccessLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -4693,7 +4693,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateAccessLogSubscription">REST API Reference for UpdateAccessLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccessLogSubscription(UpdateAccessLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -4748,7 +4748,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual UpdateListenerResponse UpdateListener(UpdateListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
 
@@ -4769,7 +4769,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateListener">REST API Reference for UpdateListener Operation</seealso>
         public virtual IAsyncResult BeginUpdateListener(UpdateListenerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateListenerResponseUnmarshaller.Instance;
 
@@ -4820,7 +4820,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
         public virtual UpdateResourceConfigurationResponse UpdateResourceConfiguration(UpdateResourceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -4841,7 +4841,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceConfiguration">REST API Reference for UpdateResourceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateResourceConfiguration(UpdateResourceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -4893,7 +4893,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
         public virtual UpdateResourceGatewayResponse UpdateResourceGateway(UpdateResourceGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceGatewayResponseUnmarshaller.Instance;
 
@@ -4914,7 +4914,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateResourceGateway">REST API Reference for UpdateResourceGateway Operation</seealso>
         public virtual IAsyncResult BeginUpdateResourceGateway(UpdateResourceGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceGatewayResponseUnmarshaller.Instance;
 
@@ -4970,7 +4970,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -4991,7 +4991,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -5046,7 +5046,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -5067,7 +5067,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -5119,7 +5119,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetwork">REST API Reference for UpdateServiceNetwork Operation</seealso>
         public virtual UpdateServiceNetworkResponse UpdateServiceNetwork(UpdateServiceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceNetworkResponseUnmarshaller.Instance;
 
@@ -5140,7 +5140,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetwork">REST API Reference for UpdateServiceNetwork Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceNetwork(UpdateServiceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceNetworkResponseUnmarshaller.Instance;
 
@@ -5196,7 +5196,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetworkVpcAssociation">REST API Reference for UpdateServiceNetworkVpcAssociation Operation</seealso>
         public virtual UpdateServiceNetworkVpcAssociationResponse UpdateServiceNetworkVpcAssociation(UpdateServiceNetworkVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -5217,7 +5217,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateServiceNetworkVpcAssociation">REST API Reference for UpdateServiceNetworkVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceNetworkVpcAssociation(UpdateServiceNetworkVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceNetworkVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceNetworkVpcAssociationResponseUnmarshaller.Instance;
 
@@ -5272,7 +5272,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateTargetGroup">REST API Reference for UpdateTargetGroup Operation</seealso>
         public virtual UpdateTargetGroupResponse UpdateTargetGroup(UpdateTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTargetGroupResponseUnmarshaller.Instance;
 
@@ -5293,7 +5293,7 @@ namespace Amazon.VPCLattice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/UpdateTargetGroup">REST API Reference for UpdateTargetGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateTargetGroup(UpdateTargetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTargetGroupResponseUnmarshaller.Instance;
 

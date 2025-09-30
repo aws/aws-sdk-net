@@ -277,7 +277,7 @@ namespace Amazon.MemoryDB
 
         internal virtual BatchUpdateClusterResponse BatchUpdateCluster(BatchUpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateClusterResponseUnmarshaller.Instance;
 
@@ -306,7 +306,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/BatchUpdateCluster">REST API Reference for BatchUpdateCluster Operation</seealso>
         public virtual Task<BatchUpdateClusterResponse> BatchUpdateClusterAsync(BatchUpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateClusterResponseUnmarshaller.Instance;
 
@@ -319,7 +319,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateACLResponse CreateACL(CreateACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateACLResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateACL">REST API Reference for CreateACL Operation</seealso>
         public virtual Task<CreateACLResponse> CreateACLAsync(CreateACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateACLResponseUnmarshaller.Instance;
 
@@ -433,7 +433,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateMultiRegionClusterResponse CreateMultiRegionCluster(CreateMultiRegionClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">REST API Reference for CreateMultiRegionCluster Operation</seealso>
         public virtual Task<CreateMultiRegionClusterResponse> CreateMultiRegionClusterAsync(CreateMultiRegionClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateParameterGroupResponse CreateParameterGroup(CreateParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateParameterGroup">REST API Reference for CreateParameterGroup Operation</seealso>
         public virtual Task<CreateParameterGroupResponse> CreateParameterGroupAsync(CreateParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateParameterGroupResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateSubnetGroupResponse CreateSubnetGroup(CreateSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
 
@@ -738,7 +738,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateSubnetGroup">REST API Reference for CreateSubnetGroup Operation</seealso>
         public virtual Task<CreateSubnetGroupResponse> CreateSubnetGroupAsync(CreateSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetGroupResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.MemoryDB
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteACLResponse DeleteACL(DeleteACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteACLResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteACL">REST API Reference for DeleteACL Operation</seealso>
         public virtual Task<DeleteACLResponse> DeleteACLAsync(DeleteACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteACLResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteMultiRegionClusterResponse DeleteMultiRegionCluster(DeleteMultiRegionClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -939,7 +939,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteMultiRegionCluster">REST API Reference for DeleteMultiRegionCluster Operation</seealso>
         public virtual Task<DeleteMultiRegionClusterResponse> DeleteMultiRegionClusterAsync(DeleteMultiRegionClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteParameterGroupResponse DeleteParameterGroup(DeleteParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteParameterGroup">REST API Reference for DeleteParameterGroup Operation</seealso>
         public virtual Task<DeleteParameterGroupResponse> DeleteParameterGroupAsync(DeleteParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteParameterGroupResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteSubnetGroupResponse DeleteSubnetGroup(DeleteSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteSubnetGroup">REST API Reference for DeleteSubnetGroup Operation</seealso>
         public virtual Task<DeleteSubnetGroupResponse> DeleteSubnetGroupAsync(DeleteSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeACLsResponse DescribeACLs(DescribeACLsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeACLsResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeACLs">REST API Reference for DescribeACLs Operation</seealso>
         public virtual Task<DescribeACLsResponse> DescribeACLsAsync(DescribeACLsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeACLsResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeEngineVersionsResponse DescribeEngineVersions(DescribeEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEngineVersions">REST API Reference for DescribeEngineVersions Operation</seealso>
         public virtual Task<DescribeEngineVersionsResponse> DescribeEngineVersionsAsync(DescribeEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineVersionsResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeMultiRegionClustersResponse DescribeMultiRegionClusters(DescribeMultiRegionClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionClustersResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionClusters">REST API Reference for DescribeMultiRegionClusters Operation</seealso>
         public virtual Task<DescribeMultiRegionClustersResponse> DescribeMultiRegionClustersAsync(DescribeMultiRegionClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionClustersResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeParameterGroupsResponse DescribeParameterGroups(DescribeParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeParameterGroups">REST API Reference for DescribeParameterGroups Operation</seealso>
         public virtual Task<DescribeParameterGroupsResponse> DescribeParameterGroupsAsync(DescribeParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeParameterGroupsResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public virtual Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeParametersResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         public virtual Task<DescribeReservedNodesResponse> DescribeReservedNodesAsync(DescribeReservedNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedNodesResponseUnmarshaller.Instance;
 
@@ -1505,7 +1505,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeReservedNodesOfferingsResponse DescribeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedNodesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedNodesOfferingsResponseUnmarshaller.Instance;
 
@@ -1538,7 +1538,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings">REST API Reference for DescribeReservedNodesOfferings Operation</seealso>
         public virtual Task<DescribeReservedNodesOfferingsResponse> DescribeReservedNodesOfferingsAsync(DescribeReservedNodesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedNodesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedNodesOfferingsResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeServiceUpdatesResponse DescribeServiceUpdates(DescribeServiceUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceUpdatesResponseUnmarshaller.Instance;
 
@@ -1578,7 +1578,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeServiceUpdates">REST API Reference for DescribeServiceUpdates Operation</seealso>
         public virtual Task<DescribeServiceUpdatesResponse> DescribeServiceUpdatesAsync(DescribeServiceUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceUpdatesResponseUnmarshaller.Instance;
 
@@ -1591,7 +1591,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeSubnetGroupsResponse DescribeSubnetGroups(DescribeSubnetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -1667,7 +1667,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeSubnetGroups">REST API Reference for DescribeSubnetGroups Operation</seealso>
         public virtual Task<DescribeSubnetGroupsResponse> DescribeSubnetGroupsAsync(DescribeSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -1680,7 +1680,7 @@ namespace Amazon.MemoryDB
 
         internal virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
@@ -1707,7 +1707,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
@@ -1720,7 +1720,7 @@ namespace Amazon.MemoryDB
 
         internal virtual FailoverShardResponse FailoverShard(FailoverShardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverShardResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/FailoverShard">REST API Reference for FailoverShard Operation</seealso>
         public virtual Task<FailoverShardResponse> FailoverShardAsync(FailoverShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverShardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverShardResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.MemoryDB
 
         internal virtual ListAllowedMultiRegionClusterUpdatesResponse ListAllowedMultiRegionClusterUpdates(ListAllowedMultiRegionClusterUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedMultiRegionClusterUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedMultiRegionClusterUpdatesResponseUnmarshaller.Instance;
 
@@ -1812,7 +1812,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedMultiRegionClusterUpdates">REST API Reference for ListAllowedMultiRegionClusterUpdates Operation</seealso>
         public virtual Task<ListAllowedMultiRegionClusterUpdatesResponse> ListAllowedMultiRegionClusterUpdatesAsync(ListAllowedMultiRegionClusterUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedMultiRegionClusterUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedMultiRegionClusterUpdatesResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.MemoryDB
 
         internal virtual ListAllowedNodeTypeUpdatesResponse ListAllowedNodeTypeUpdates(ListAllowedNodeTypeUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedNodeTypeUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedNodeTypeUpdatesResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedNodeTypeUpdates">REST API Reference for ListAllowedNodeTypeUpdates Operation</seealso>
         public virtual Task<ListAllowedNodeTypeUpdatesResponse> ListAllowedNodeTypeUpdatesAsync(ListAllowedNodeTypeUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedNodeTypeUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedNodeTypeUpdatesResponseUnmarshaller.Instance;
 
@@ -1873,7 +1873,7 @@ namespace Amazon.MemoryDB
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1938,7 +1938,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.MemoryDB
 
         internal virtual PurchaseReservedNodesOfferingResponse PurchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedNodesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedNodesOfferingResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering">REST API Reference for PurchaseReservedNodesOffering Operation</seealso>
         public virtual Task<PurchaseReservedNodesOfferingResponse> PurchaseReservedNodesOfferingAsync(PurchaseReservedNodesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedNodesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedNodesOfferingResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.MemoryDB
 
         internal virtual ResetParameterGroupResponse ResetParameterGroup(ResetParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetParameterGroupResponseUnmarshaller.Instance;
 
@@ -2045,7 +2045,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ResetParameterGroup">REST API Reference for ResetParameterGroup Operation</seealso>
         public virtual Task<ResetParameterGroupResponse> ResetParameterGroupAsync(ResetParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetParameterGroupResponseUnmarshaller.Instance;
 
@@ -2058,7 +2058,7 @@ namespace Amazon.MemoryDB
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2151,7 +2151,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2244,7 +2244,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateACLResponse UpdateACL(UpdateACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateACLResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateACL">REST API Reference for UpdateACL Operation</seealso>
         public virtual Task<UpdateACLResponse> UpdateACLAsync(UpdateACLRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateACLResponseUnmarshaller.Instance;
 
@@ -2299,7 +2299,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -2369,7 +2369,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -2382,7 +2382,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateMultiRegionClusterResponse UpdateMultiRegionCluster(UpdateMultiRegionClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -2419,7 +2419,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateMultiRegionCluster">REST API Reference for UpdateMultiRegionCluster Operation</seealso>
         public virtual Task<UpdateMultiRegionClusterResponse> UpdateMultiRegionClusterAsync(UpdateMultiRegionClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMultiRegionClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMultiRegionClusterResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateParameterGroupResponse UpdateParameterGroup(UpdateParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateParameterGroup">REST API Reference for UpdateParameterGroup Operation</seealso>
         public virtual Task<UpdateParameterGroupResponse> UpdateParameterGroupAsync(UpdateParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateParameterGroupResponseUnmarshaller.Instance;
 
@@ -2482,7 +2482,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateSubnetGroupResponse UpdateSubnetGroup(UpdateSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2522,7 +2522,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateSubnetGroup">REST API Reference for UpdateSubnetGroup Operation</seealso>
         public virtual Task<UpdateSubnetGroupResponse> UpdateSubnetGroupAsync(UpdateSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2535,7 +2535,7 @@ namespace Amazon.MemoryDB
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -2568,7 +2568,7 @@ namespace Amazon.MemoryDB
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

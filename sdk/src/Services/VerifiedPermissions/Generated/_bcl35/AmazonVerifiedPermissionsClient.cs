@@ -476,7 +476,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">REST API Reference for BatchGetPolicy Operation</seealso>
         public virtual BatchGetPolicyResponse BatchGetPolicy(BatchGetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPolicyResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">REST API Reference for BatchGetPolicy Operation</seealso>
         public virtual IAsyncResult BeginBatchGetPolicy(BatchGetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPolicyResponseUnmarshaller.Instance;
 
@@ -671,7 +671,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">REST API Reference for BatchIsAuthorized Operation</seealso>
         public virtual BatchIsAuthorizedResponse BatchIsAuthorized(BatchIsAuthorizedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchIsAuthorizedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchIsAuthorizedResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorized">REST API Reference for BatchIsAuthorized Operation</seealso>
         public virtual IAsyncResult BeginBatchIsAuthorized(BatchIsAuthorizedRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchIsAuthorizedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchIsAuthorizedResponseUnmarshaller.Instance;
 
@@ -864,7 +864,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">REST API Reference for BatchIsAuthorizedWithToken Operation</seealso>
         public virtual BatchIsAuthorizedWithTokenResponse BatchIsAuthorizedWithToken(BatchIsAuthorizedWithTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchIsAuthorizedWithTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchIsAuthorizedWithTokenResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchIsAuthorizedWithToken">REST API Reference for BatchIsAuthorizedWithToken Operation</seealso>
         public virtual IAsyncResult BeginBatchIsAuthorizedWithToken(BatchIsAuthorizedWithTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchIsAuthorizedWithTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchIsAuthorizedWithTokenResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreateIdentitySource">REST API Reference for CreateIdentitySource Operation</seealso>
         public virtual CreateIdentitySourceResponse CreateIdentitySource(CreateIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentitySourceResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreateIdentitySource">REST API Reference for CreateIdentitySource Operation</seealso>
         public virtual IAsyncResult BeginCreateIdentitySource(CreateIdentitySourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentitySourceResponseUnmarshaller.Instance;
 
@@ -1279,7 +1279,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         public virtual IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStore">REST API Reference for CreatePolicyStore Operation</seealso>
         public virtual CreatePolicyStoreResponse CreatePolicyStore(CreatePolicyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyStoreResponseUnmarshaller.Instance;
 
@@ -1485,7 +1485,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStore">REST API Reference for CreatePolicyStore Operation</seealso>
         public virtual IAsyncResult BeginCreatePolicyStore(CreatePolicyStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyStoreResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyTemplate">REST API Reference for CreatePolicyTemplate Operation</seealso>
         public virtual CreatePolicyTemplateResponse CreatePolicyTemplate(CreatePolicyTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyTemplateResponseUnmarshaller.Instance;
 
@@ -1672,7 +1672,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyTemplate">REST API Reference for CreatePolicyTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreatePolicyTemplate(CreatePolicyTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePolicyTemplateResponseUnmarshaller.Instance;
 
@@ -1826,7 +1826,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeleteIdentitySource">REST API Reference for DeleteIdentitySource Operation</seealso>
         public virtual DeleteIdentitySourceResponse DeleteIdentitySource(DeleteIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentitySourceResponseUnmarshaller.Instance;
 
@@ -1847,7 +1847,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeleteIdentitySource">REST API Reference for DeleteIdentitySource Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentitySource(DeleteIdentitySourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentitySourceResponseUnmarshaller.Instance;
 
@@ -2003,7 +2003,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -2024,7 +2024,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -2178,7 +2178,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyStore">REST API Reference for DeletePolicyStore Operation</seealso>
         public virtual DeletePolicyStoreResponse DeletePolicyStore(DeletePolicyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStoreResponseUnmarshaller.Instance;
 
@@ -2199,7 +2199,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyStore">REST API Reference for DeletePolicyStore Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicyStore(DeletePolicyStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStoreResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyTemplate">REST API Reference for DeletePolicyTemplate Operation</seealso>
         public virtual DeletePolicyTemplateResponse DeletePolicyTemplate(DeletePolicyTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyTemplateResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyTemplate">REST API Reference for DeletePolicyTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicyTemplate(DeletePolicyTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyTemplateResponseUnmarshaller.Instance;
 
@@ -2525,7 +2525,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetIdentitySource">REST API Reference for GetIdentitySource Operation</seealso>
         public virtual GetIdentitySourceResponse GetIdentitySource(GetIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentitySourceResponseUnmarshaller.Instance;
 
@@ -2546,7 +2546,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetIdentitySource">REST API Reference for GetIdentitySource Operation</seealso>
         public virtual IAsyncResult BeginGetIdentitySource(GetIdentitySourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentitySourceResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2714,7 +2714,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2861,7 +2861,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyStore">REST API Reference for GetPolicyStore Operation</seealso>
         public virtual GetPolicyStoreResponse GetPolicyStore(GetPolicyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyStoreResponseUnmarshaller.Instance;
 
@@ -2882,7 +2882,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyStore">REST API Reference for GetPolicyStore Operation</seealso>
         public virtual IAsyncResult BeginGetPolicyStore(GetPolicyStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyStoreResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyTemplate">REST API Reference for GetPolicyTemplate Operation</seealso>
         public virtual GetPolicyTemplateResponse GetPolicyTemplate(GetPolicyTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyTemplateResponseUnmarshaller.Instance;
 
@@ -3050,7 +3050,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyTemplate">REST API Reference for GetPolicyTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetPolicyTemplate(GetPolicyTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyTemplateResponseUnmarshaller.Instance;
 
@@ -3197,7 +3197,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetSchema">REST API Reference for GetSchema Operation</seealso>
         public virtual GetSchemaResponse GetSchema(GetSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetSchema">REST API Reference for GetSchema Operation</seealso>
         public virtual IAsyncResult BeginGetSchema(GetSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
 
@@ -3369,7 +3369,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorized">REST API Reference for IsAuthorized Operation</seealso>
         public virtual IsAuthorizedResponse IsAuthorized(IsAuthorizedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsAuthorizedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsAuthorizedResponseUnmarshaller.Instance;
 
@@ -3390,7 +3390,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorized">REST API Reference for IsAuthorized Operation</seealso>
         public virtual IAsyncResult BeginIsAuthorized(IsAuthorizedRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsAuthorizedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsAuthorizedResponseUnmarshaller.Instance;
 
@@ -3557,7 +3557,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">REST API Reference for IsAuthorizedWithToken Operation</seealso>
         public virtual IsAuthorizedWithTokenResponse IsAuthorizedWithToken(IsAuthorizedWithTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsAuthorizedWithTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsAuthorizedWithTokenResponseUnmarshaller.Instance;
 
@@ -3578,7 +3578,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">REST API Reference for IsAuthorizedWithToken Operation</seealso>
         public virtual IAsyncResult BeginIsAuthorizedWithToken(IsAuthorizedWithTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IsAuthorizedWithTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IsAuthorizedWithTokenResponseUnmarshaller.Instance;
 
@@ -3726,7 +3726,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListIdentitySources">REST API Reference for ListIdentitySources Operation</seealso>
         public virtual ListIdentitySourcesResponse ListIdentitySources(ListIdentitySourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitySourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitySourcesResponseUnmarshaller.Instance;
 
@@ -3747,7 +3747,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListIdentitySources">REST API Reference for ListIdentitySources Operation</seealso>
         public virtual IAsyncResult BeginListIdentitySources(ListIdentitySourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitySourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitySourcesResponseUnmarshaller.Instance;
 
@@ -3894,7 +3894,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
@@ -3915,7 +3915,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
@@ -4059,7 +4059,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStores">REST API Reference for ListPolicyStores Operation</seealso>
         public virtual ListPolicyStoresResponse ListPolicyStores(ListPolicyStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyStoresResponseUnmarshaller.Instance;
 
@@ -4080,7 +4080,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStores">REST API Reference for ListPolicyStores Operation</seealso>
         public virtual IAsyncResult BeginListPolicyStores(ListPolicyStoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyStoresResponseUnmarshaller.Instance;
 
@@ -4227,7 +4227,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyTemplates">REST API Reference for ListPolicyTemplates Operation</seealso>
         public virtual ListPolicyTemplatesResponse ListPolicyTemplates(ListPolicyTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyTemplatesResponseUnmarshaller.Instance;
 
@@ -4248,7 +4248,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyTemplates">REST API Reference for ListPolicyTemplates Operation</seealso>
         public virtual IAsyncResult BeginListPolicyTemplates(ListPolicyTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyTemplatesResponseUnmarshaller.Instance;
 
@@ -4396,7 +4396,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4417,7 +4417,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4583,7 +4583,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/PutSchema">REST API Reference for PutSchema Operation</seealso>
         public virtual PutSchemaResponse PutSchema(PutSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSchemaResponseUnmarshaller.Instance;
 
@@ -4604,7 +4604,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/PutSchema">REST API Reference for PutSchema Operation</seealso>
         public virtual IAsyncResult BeginPutSchema(PutSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSchemaResponseUnmarshaller.Instance;
 
@@ -4775,7 +4775,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4796,7 +4796,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4944,7 +4944,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4965,7 +4965,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5124,7 +5124,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdateIdentitySource">REST API Reference for UpdateIdentitySource Operation</seealso>
         public virtual UpdateIdentitySourceResponse UpdateIdentitySource(UpdateIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdentitySourceResponseUnmarshaller.Instance;
 
@@ -5145,7 +5145,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdateIdentitySource">REST API Reference for UpdateIdentitySource Operation</seealso>
         public virtual IAsyncResult BeginUpdateIdentitySource(UpdateIdentitySourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdentitySourceResponseUnmarshaller.Instance;
 
@@ -5352,7 +5352,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
         public virtual UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
 
@@ -5373,7 +5373,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdatePolicy(UpdatePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyResponseUnmarshaller.Instance;
 
@@ -5531,7 +5531,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyStore">REST API Reference for UpdatePolicyStore Operation</seealso>
         public virtual UpdatePolicyStoreResponse UpdatePolicyStore(UpdatePolicyStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyStoreResponseUnmarshaller.Instance;
 
@@ -5552,7 +5552,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyStore">REST API Reference for UpdatePolicyStore Operation</seealso>
         public virtual IAsyncResult BeginUpdatePolicyStore(UpdatePolicyStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyStoreResponseUnmarshaller.Instance;
 
@@ -5718,7 +5718,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyTemplate">REST API Reference for UpdatePolicyTemplate Operation</seealso>
         public virtual UpdatePolicyTemplateResponse UpdatePolicyTemplate(UpdatePolicyTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyTemplateResponseUnmarshaller.Instance;
 
@@ -5739,7 +5739,7 @@ namespace Amazon.VerifiedPermissions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicyTemplate">REST API Reference for UpdatePolicyTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdatePolicyTemplate(UpdatePolicyTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePolicyTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePolicyTemplateResponseUnmarshaller.Instance;
 

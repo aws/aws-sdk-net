@@ -385,7 +385,7 @@ namespace Amazon.Detective
 
         internal virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.Detective
 
         internal virtual BatchGetGraphMemberDatasourcesResponse BatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
         public virtual Task<BatchGetGraphMemberDatasourcesResponse> BatchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.Detective
 
         internal virtual BatchGetMembershipDatasourcesResponse BatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
         public virtual Task<BatchGetMembershipDatasourcesResponse> BatchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.Detective
 
         internal virtual CreateGraphResponse CreateGraph(CreateGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">REST API Reference for CreateGraph Operation</seealso>
         public virtual Task<CreateGraphResponse> CreateGraphAsync(CreateGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGraphResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.Detective
 
         internal virtual CreateMembersResponse CreateMembers(CreateMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">REST API Reference for CreateMembers Operation</seealso>
         public virtual Task<CreateMembersResponse> CreateMembersAsync(CreateMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembersResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.Detective
 
         internal virtual DeleteGraphResponse DeleteGraph(DeleteGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphResponseUnmarshaller.Instance;
 
@@ -765,7 +765,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">REST API Reference for DeleteGraph Operation</seealso>
         public virtual Task<DeleteGraphResponse> DeleteGraphAsync(DeleteGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGraphResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.Detective
 
         internal virtual DeleteMembersResponse DeleteMembers(DeleteMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">REST API Reference for DeleteMembers Operation</seealso>
         public virtual Task<DeleteMembersResponse> DeleteMembersAsync(DeleteMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMembersResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.Detective
 
         internal virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
         public virtual Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.Detective
 
         internal virtual DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -957,7 +957,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
         public virtual Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.Detective
 
         internal virtual DisassociateMembershipResponse DisassociateMembership(DisassociateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMembershipResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisassociateMembership">REST API Reference for DisassociateMembership Operation</seealso>
         public virtual Task<DisassociateMembershipResponse> DisassociateMembershipAsync(DisassociateMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMembershipResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.Detective
 
         internal virtual EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1088,7 +1088,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         public virtual Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.Detective
 
         internal virtual GetInvestigationResponse GetInvestigation(GetInvestigationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
         public virtual Task<GetInvestigationResponse> GetInvestigationAsync(GetInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.Detective
 
         internal virtual GetMembersResponse GetMembers(GetMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembersResponseUnmarshaller.Instance;
 
@@ -1190,7 +1190,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetMembers">REST API Reference for GetMembers Operation</seealso>
         public virtual Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembersResponseUnmarshaller.Instance;
 
@@ -1203,7 +1203,7 @@ namespace Amazon.Detective
 
         internal virtual ListDatasourcePackagesResponse ListDatasourcePackages(ListDatasourcePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
         public virtual Task<ListDatasourcePackagesResponse> ListDatasourcePackagesAsync(ListDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
 
@@ -1250,7 +1250,7 @@ namespace Amazon.Detective
 
         internal virtual ListGraphsResponse ListGraphs(ListGraphsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphsResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">REST API Reference for ListGraphs Operation</seealso>
         public virtual Task<ListGraphsResponse> ListGraphsAsync(ListGraphsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGraphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGraphsResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.Detective
 
         internal virtual ListIndicatorsResponse ListIndicators(ListIndicatorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicatorsResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators">REST API Reference for ListIndicators Operation</seealso>
         public virtual Task<ListIndicatorsResponse> ListIndicatorsAsync(ListIndicatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIndicatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIndicatorsResponseUnmarshaller.Instance;
 
@@ -1354,7 +1354,7 @@ namespace Amazon.Detective
 
         internal virtual ListInvestigationsResponse ListInvestigations(ListInvestigationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
 
@@ -1396,7 +1396,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
         public virtual Task<ListInvestigationsResponse> ListInvestigationsAsync(ListInvestigationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
 
@@ -1409,7 +1409,7 @@ namespace Amazon.Detective
 
         internal virtual ListInvitationsResponse ListInvitations(ListInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         public virtual Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvitationsResponseUnmarshaller.Instance;
 
@@ -1465,7 +1465,7 @@ namespace Amazon.Detective
 
         internal virtual ListMembersResponse ListMembers(ListMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         public virtual Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembersResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.Detective
 
         internal virtual ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
         public virtual Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationAdminAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationAdminAccountsResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.Detective
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1606,7 +1606,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1619,7 +1619,7 @@ namespace Amazon.Detective
 
         internal virtual RejectInvitationResponse RejectInvitation(RejectInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInvitationResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/RejectInvitation">REST API Reference for RejectInvitation Operation</seealso>
         public virtual Task<RejectInvitationResponse> RejectInvitationAsync(RejectInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInvitationResponseUnmarshaller.Instance;
 
@@ -1677,7 +1677,7 @@ namespace Amazon.Detective
 
         internal virtual StartInvestigationResponse StartInvestigation(StartInvestigationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInvestigationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInvestigationResponseUnmarshaller.Instance;
 
@@ -1719,7 +1719,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation">REST API Reference for StartInvestigation Operation</seealso>
         public virtual Task<StartInvestigationResponse> StartInvestigationAsync(StartInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInvestigationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInvestigationResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.Detective
 
         internal virtual StartMonitoringMemberResponse StartMonitoringMember(StartMonitoringMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMonitoringMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMonitoringMemberResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">REST API Reference for StartMonitoringMember Operation</seealso>
         public virtual Task<StartMonitoringMemberResponse> StartMonitoringMemberAsync(StartMonitoringMemberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMonitoringMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMonitoringMemberResponseUnmarshaller.Instance;
 
@@ -1813,7 +1813,7 @@ namespace Amazon.Detective
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1847,7 +1847,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.Detective
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1907,7 +1907,7 @@ namespace Amazon.Detective
 
         internal virtual UpdateDatasourcePackagesResponse UpdateDatasourcePackages(UpdateDatasourcePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
 
@@ -1957,7 +1957,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
         public virtual Task<UpdateDatasourcePackagesResponse> UpdateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
 
@@ -1970,7 +1970,7 @@ namespace Amazon.Detective
 
         internal virtual UpdateInvestigationStateResponse UpdateInvestigationState(UpdateInvestigationStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvestigationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvestigationStateResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState">REST API Reference for UpdateInvestigationState Operation</seealso>
         public virtual Task<UpdateInvestigationStateResponse> UpdateInvestigationStateAsync(UpdateInvestigationStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvestigationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvestigationStateResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.Detective
 
         internal virtual UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
@@ -2057,7 +2057,7 @@ namespace Amazon.Detective
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         public virtual Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOrganizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 

@@ -326,7 +326,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -406,7 +406,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
         public virtual CreateDataIntegrationResponse CreateDataIntegration(CreateDataIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegration">REST API Reference for CreateDataIntegration Operation</seealso>
         public virtual IAsyncResult BeginCreateDataIntegration(CreateDataIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegrationAssociation">REST API Reference for CreateDataIntegrationAssociation Operation</seealso>
         public virtual CreateDataIntegrationAssociationResponse CreateDataIntegrationAssociation(CreateDataIntegrationAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateDataIntegrationAssociation">REST API Reference for CreateDataIntegrationAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateDataIntegrationAssociation(CreateDataIntegrationAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">REST API Reference for CreateEventIntegration Operation</seealso>
         public virtual CreateEventIntegrationResponse CreateEventIntegration(CreateEventIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventIntegrationResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/CreateEventIntegration">REST API Reference for CreateEventIntegration Operation</seealso>
         public virtual IAsyncResult BeginCreateEventIntegration(CreateEventIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventIntegrationResponseUnmarshaller.Instance;
 
@@ -623,7 +623,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -644,7 +644,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
         public virtual DeleteDataIntegrationResponse DeleteDataIntegration(DeleteDataIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataIntegrationResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteDataIntegration">REST API Reference for DeleteDataIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataIntegration(DeleteDataIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataIntegrationResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteEventIntegration">REST API Reference for DeleteEventIntegration Operation</seealso>
         public virtual DeleteEventIntegrationResponse DeleteEventIntegration(DeleteEventIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventIntegrationResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/DeleteEventIntegration">REST API Reference for DeleteEventIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventIntegration(DeleteEventIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventIntegrationResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual IAsyncResult BeginGetApplication(GetApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -920,7 +920,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
         public virtual GetDataIntegrationResponse GetDataIntegration(GetDataIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetDataIntegration">REST API Reference for GetDataIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetDataIntegration(GetDataIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataIntegrationResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">REST API Reference for GetEventIntegration Operation</seealso>
         public virtual GetEventIntegrationResponse GetEventIntegration(GetEventIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventIntegrationResponseUnmarshaller.Instance;
 
@@ -1010,7 +1010,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/GetEventIntegration">REST API Reference for GetEventIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetEventIntegration(GetEventIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventIntegrationResponseUnmarshaller.Instance;
 
@@ -1058,7 +1058,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">REST API Reference for ListApplicationAssociations Operation</seealso>
         public virtual ListApplicationAssociationsResponse ListApplicationAssociations(ListApplicationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssociationsResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplicationAssociations">REST API Reference for ListApplicationAssociations Operation</seealso>
         public virtual IAsyncResult BeginListApplicationAssociations(ListApplicationAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssociationsResponseUnmarshaller.Instance;
 
@@ -1124,7 +1124,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1202,7 +1202,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
         public virtual ListDataIntegrationAssociationsResponse ListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrationAssociations">REST API Reference for ListDataIntegrationAssociations Operation</seealso>
         public virtual IAsyncResult BeginListDataIntegrationAssociations(ListDataIntegrationAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
         public virtual ListDataIntegrationsResponse ListDataIntegrations(ListDataIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationsResponseUnmarshaller.Instance;
 
@@ -1298,7 +1298,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListDataIntegrations">REST API Reference for ListDataIntegrations Operation</seealso>
         public virtual IAsyncResult BeginListDataIntegrations(ListDataIntegrationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIntegrationsResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrationAssociations">REST API Reference for ListEventIntegrationAssociations Operation</seealso>
         public virtual ListEventIntegrationAssociationsResponse ListEventIntegrationAssociations(ListEventIntegrationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrationAssociations">REST API Reference for ListEventIntegrationAssociations Operation</seealso>
         public virtual IAsyncResult BeginListEventIntegrationAssociations(ListEventIntegrationAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventIntegrationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventIntegrationAssociationsResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">REST API Reference for ListEventIntegrations Operation</seealso>
         public virtual ListEventIntegrationsResponse ListEventIntegrations(ListEventIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventIntegrationsResponseUnmarshaller.Instance;
 
@@ -1433,7 +1433,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListEventIntegrations">REST API Reference for ListEventIntegrations Operation</seealso>
         public virtual IAsyncResult BeginListEventIntegrations(ListEventIntegrationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventIntegrationsResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1499,7 +1499,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1565,7 +1565,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1631,7 +1631,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1682,7 +1682,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -1760,7 +1760,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
         public virtual UpdateDataIntegrationResponse UpdateDataIntegration(UpdateDataIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegration">REST API Reference for UpdateDataIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataIntegration(UpdateDataIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationResponseUnmarshaller.Instance;
 
@@ -1836,7 +1836,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegrationAssociation">REST API Reference for UpdateDataIntegrationAssociation Operation</seealso>
         public virtual UpdateDataIntegrationAssociationResponse UpdateDataIntegrationAssociation(UpdateDataIntegrationAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateDataIntegrationAssociation">REST API Reference for UpdateDataIntegrationAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataIntegrationAssociation(UpdateDataIntegrationAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataIntegrationAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataIntegrationAssociationResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">REST API Reference for UpdateEventIntegration Operation</seealso>
         public virtual UpdateEventIntegrationResponse UpdateEventIntegration(UpdateEventIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventIntegrationResponseUnmarshaller.Instance;
 
@@ -1926,7 +1926,7 @@ namespace Amazon.AppIntegrationsService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/UpdateEventIntegration">REST API Reference for UpdateEventIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventIntegration(UpdateEventIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventIntegrationResponseUnmarshaller.Instance;
 

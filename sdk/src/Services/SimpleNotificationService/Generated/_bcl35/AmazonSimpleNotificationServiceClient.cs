@@ -361,7 +361,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual CheckIfPhoneNumberIsOptedOutResponse CheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOut">REST API Reference for CheckIfPhoneNumberIsOptedOut Operation</seealso>
         public virtual IAsyncResult BeginCheckIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckIfPhoneNumberIsOptedOutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckIfPhoneNumberIsOptedOutResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscription">REST API Reference for ConfirmSubscription Operation</seealso>
         public virtual IAsyncResult BeginConfirmSubscription(ConfirmSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmSubscriptionResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformApplication">REST API Reference for CreatePlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginCreatePlatformApplication(CreatePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlatformApplicationResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlatformEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
@@ -833,7 +833,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreatePlatformEndpoint">REST API Reference for CreatePlatformEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreatePlatformEndpoint(CreatePlatformEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlatformEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlatformEndpointResponseUnmarshaller.Instance;
 
@@ -900,7 +900,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber">REST API Reference for CreateSMSSandboxPhoneNumber Operation</seealso>
         public virtual CreateSMSSandboxPhoneNumberResponse CreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 
@@ -921,7 +921,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber">REST API Reference for CreateSMSSandboxPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginCreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
@@ -1062,7 +1062,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual IAsyncResult BeginCreateTopic(CreateTopicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication">REST API Reference for DeletePlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginDeletePlatformApplication(DeletePlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlatformApplicationResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber">REST API Reference for DeleteSMSSandboxPhoneNumber Operation</seealso>
         public virtual DeleteSMSSandboxPhoneNumberResponse DeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber">REST API Reference for DeleteSMSSandboxPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginDeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 
@@ -1390,7 +1390,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual IAsyncResult BeginDeleteTopic(DeleteTopicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
@@ -1461,7 +1461,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy">REST API Reference for GetDataProtectionPolicy Operation</seealso>
         public virtual GetDataProtectionPolicyResponse GetDataProtectionPolicy(GetDataProtectionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
 
@@ -1482,7 +1482,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy">REST API Reference for GetDataProtectionPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetDataProtectionPolicy(GetDataProtectionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes">REST API Reference for GetEndpointAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetEndpointAttributes(GetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEndpointAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEndpointAttributesResponseUnmarshaller.Instance;
 
@@ -1599,7 +1599,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes">REST API Reference for GetPlatformApplicationAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlatformApplicationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual GetSMSAttributesResponse GetSMSAttributes(GetSMSAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSMSAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSAttributes">REST API Reference for GetSMSAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetSMSAttributes(GetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSMSAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSMSAttributesResponseUnmarshaller.Instance;
 
@@ -1748,7 +1748,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
         public virtual GetSMSSandboxAccountStatusResponse GetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSMSSandboxAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus">REST API Reference for GetSMSSandboxAccountStatus Operation</seealso>
         public virtual IAsyncResult BeginGetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSMSSandboxAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSMSSandboxAccountStatusResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
@@ -1862,7 +1862,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributes">REST API Reference for GetSubscriptionAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetSubscriptionAttributes(GetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubscriptionAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubscriptionAttributesResponseUnmarshaller.Instance;
 
@@ -1944,7 +1944,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTopicAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes">REST API Reference for GetTopicAttributes Operation</seealso>
         public virtual IAsyncResult BeginGetTopicAttributes(GetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTopicAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTopicAttributesResponseUnmarshaller.Instance;
 
@@ -2022,7 +2022,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
@@ -2043,7 +2043,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">REST API Reference for ListEndpointsByPlatformApplication Operation</seealso>
         public virtual IAsyncResult BeginListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsByPlatformApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">REST API Reference for ListOriginationNumbers Operation</seealso>
         public virtual ListOriginationNumbersResponse ListOriginationNumbers(ListOriginationNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginationNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginationNumbersResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers">REST API Reference for ListOriginationNumbers Operation</seealso>
         public virtual IAsyncResult BeginListOriginationNumbers(ListOriginationNumbersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginationNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginationNumbersResponseUnmarshaller.Instance;
 
@@ -2172,7 +2172,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual ListPhoneNumbersOptedOutResponse ListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
@@ -2193,7 +2193,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPhoneNumbersOptedOut">REST API Reference for ListPhoneNumbersOptedOut Operation</seealso>
         public virtual IAsyncResult BeginListPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersOptedOutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersOptedOutResponseUnmarshaller.Instance;
 
@@ -2279,7 +2279,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlatformApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">REST API Reference for ListPlatformApplications Operation</seealso>
         public virtual IAsyncResult BeginListPlatformApplications(ListPlatformApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlatformApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlatformApplicationsResponseUnmarshaller.Instance;
 
@@ -2362,7 +2362,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
         public virtual ListSMSSandboxPhoneNumbersResponse ListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSMSSandboxPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -2383,7 +2383,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers">REST API Reference for ListSMSSandboxPhoneNumbers Operation</seealso>
         public virtual IAsyncResult BeginListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSMSSandboxPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSMSSandboxPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -2493,7 +2493,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListSubscriptions(ListSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2639,7 +2639,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">REST API Reference for ListSubscriptionsByTopic Operation</seealso>
         public virtual IAsyncResult BeginListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscriptionsByTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.Instance;
 
@@ -2711,7 +2711,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
@@ -2860,7 +2860,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual IAsyncResult BeginListTopics(ListTopicsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
@@ -2912,7 +2912,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual OptInPhoneNumberResponse OptInPhoneNumber(OptInPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptInPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
@@ -2933,7 +2933,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/OptInPhoneNumber">REST API Reference for OptInPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginOptInPhoneNumber(OptInPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptInPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptInPhoneNumberResponseUnmarshaller.Instance;
 
@@ -3248,7 +3248,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
@@ -3269,7 +3269,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual IAsyncResult BeginPublish(PublishRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
@@ -3422,7 +3422,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
         public virtual PublishBatchResponse PublishBatch(PublishBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishBatchResponseUnmarshaller.Instance;
 
@@ -3443,7 +3443,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
         public virtual IAsyncResult BeginPublishBatch(PublishBatchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishBatchResponseUnmarshaller.Instance;
 
@@ -3493,7 +3493,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy">REST API Reference for PutDataProtectionPolicy Operation</seealso>
         public virtual PutDataProtectionPolicyResponse PutDataProtectionPolicy(PutDataProtectionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
 
@@ -3514,7 +3514,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy">REST API Reference for PutDataProtectionPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutDataProtectionPolicy(PutDataProtectionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
 
@@ -3604,7 +3604,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3625,7 +3625,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3673,7 +3673,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetEndpointAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
@@ -3694,7 +3694,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes">REST API Reference for SetEndpointAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetEndpointAttributes(SetEndpointAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetEndpointAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetEndpointAttributesResponseUnmarshaller.Instance;
 
@@ -3744,7 +3744,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
@@ -3765,7 +3765,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributes">REST API Reference for SetPlatformApplicationAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetPlatformApplicationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.Instance;
 
@@ -3826,7 +3826,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual SetSMSAttributesResponse SetSMSAttributes(SetSMSAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSMSAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
@@ -3847,7 +3847,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSMSAttributes">REST API Reference for SetSMSAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetSMSAttributes(SetSMSAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSMSAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSMSAttributesResponseUnmarshaller.Instance;
 
@@ -3941,7 +3941,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
@@ -3962,7 +3962,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">REST API Reference for SetSubscriptionAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetSubscriptionAttributes(SetSubscriptionAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSubscriptionAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSubscriptionAttributesResponseUnmarshaller.Instance;
 
@@ -4062,7 +4062,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTopicAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
@@ -4083,7 +4083,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">REST API Reference for SetTopicAttributes Operation</seealso>
         public virtual IAsyncResult BeginSetTopicAttributes(SetTopicAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTopicAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTopicAttributesResponseUnmarshaller.Instance;
 
@@ -4215,7 +4215,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual SubscribeResponse Subscribe(SubscribeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
 
@@ -4236,7 +4236,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">REST API Reference for Subscribe Operation</seealso>
         public virtual IAsyncResult BeginSubscribe(SubscribeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubscribeResponseUnmarshaller.Instance;
 
@@ -4323,7 +4323,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4344,7 +4344,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4444,7 +4444,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
@@ -4465,7 +4465,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">REST API Reference for Unsubscribe Operation</seealso>
         public virtual IAsyncResult BeginUnsubscribe(UnsubscribeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnsubscribeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnsubscribeResponseUnmarshaller.Instance;
 
@@ -4523,7 +4523,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4544,7 +4544,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4609,7 +4609,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber">REST API Reference for VerifySMSSandboxPhoneNumber Operation</seealso>
         public virtual VerifySMSSandboxPhoneNumberResponse VerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifySMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 
@@ -4630,7 +4630,7 @@ namespace Amazon.SimpleNotificationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber">REST API Reference for VerifySMSSandboxPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginVerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifySMSSandboxPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifySMSSandboxPhoneNumberResponseUnmarshaller.Instance;
 

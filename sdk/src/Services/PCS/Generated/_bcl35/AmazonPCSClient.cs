@@ -427,7 +427,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -609,7 +609,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateComputeNodeGroup">REST API Reference for CreateComputeNodeGroup Operation</seealso>
         public virtual CreateComputeNodeGroupResponse CreateComputeNodeGroup(CreateComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateComputeNodeGroup">REST API Reference for CreateComputeNodeGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateComputeNodeGroup(CreateComputeNodeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteComputeNodeGroup">REST API Reference for DeleteComputeNodeGroup Operation</seealso>
         public virtual DeleteComputeNodeGroupResponse DeleteComputeNodeGroup(DeleteComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteComputeNodeGroup">REST API Reference for DeleteComputeNodeGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteComputeNodeGroup(DeleteComputeNodeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetCluster">REST API Reference for GetCluster Operation</seealso>
         public virtual GetClusterResponse GetCluster(GetClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -1401,7 +1401,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetCluster">REST API Reference for GetCluster Operation</seealso>
         public virtual IAsyncResult BeginGetCluster(GetClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetComputeNodeGroup">REST API Reference for GetComputeNodeGroup Operation</seealso>
         public virtual GetComputeNodeGroupResponse GetComputeNodeGroup(GetComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetComputeNodeGroup">REST API Reference for GetComputeNodeGroup Operation</seealso>
         public virtual IAsyncResult BeginGetComputeNodeGroup(GetComputeNodeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual GetQueueResponse GetQueue(GetQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual IAsyncResult BeginGetQueue(GetQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -1975,7 +1975,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListComputeNodeGroups">REST API Reference for ListComputeNodeGroups Operation</seealso>
         public virtual ListComputeNodeGroupsResponse ListComputeNodeGroups(ListComputeNodeGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeNodeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeNodeGroupsResponseUnmarshaller.Instance;
 
@@ -1996,7 +1996,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListComputeNodeGroups">REST API Reference for ListComputeNodeGroups Operation</seealso>
         public virtual IAsyncResult BeginListComputeNodeGroups(ListComputeNodeGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComputeNodeGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComputeNodeGroupsResponseUnmarshaller.Instance;
 
@@ -2123,7 +2123,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -2144,7 +2144,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2277,7 +2277,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">REST API Reference for RegisterComputeNodeGroupInstance Operation</seealso>
         public virtual RegisterComputeNodeGroupInstanceResponse RegisterComputeNodeGroupInstance(RegisterComputeNodeGroupInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeNodeGroupInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeNodeGroupInstanceResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/RegisterComputeNodeGroupInstance">REST API Reference for RegisterComputeNodeGroupInstance Operation</seealso>
         public virtual IAsyncResult BeginRegisterComputeNodeGroupInstance(RegisterComputeNodeGroupInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterComputeNodeGroupInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterComputeNodeGroupInstanceResponseUnmarshaller.Instance;
 
@@ -2368,7 +2368,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2389,7 +2389,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2453,7 +2453,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2607,7 +2607,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateComputeNodeGroup">REST API Reference for UpdateComputeNodeGroup Operation</seealso>
         public virtual UpdateComputeNodeGroupResponse UpdateComputeNodeGroup(UpdateComputeNodeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -2628,7 +2628,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateComputeNodeGroup">REST API Reference for UpdateComputeNodeGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateComputeNodeGroup(UpdateComputeNodeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComputeNodeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComputeNodeGroupResponseUnmarshaller.Instance;
 
@@ -2781,7 +2781,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -2802,7 +2802,7 @@ namespace Amazon.PCS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual IAsyncResult BeginUpdateQueue(UpdateQueueRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 

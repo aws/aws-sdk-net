@@ -668,7 +668,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssociateExternalConnection">REST API Reference for AssociateExternalConnection Operation</seealso>
         public virtual AssociateExternalConnectionResponse AssociateExternalConnection(AssociateExternalConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateExternalConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateExternalConnectionResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssociateExternalConnection">REST API Reference for AssociateExternalConnection Operation</seealso>
         public virtual IAsyncResult BeginAssociateExternalConnection(AssociateExternalConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateExternalConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateExternalConnectionResponseUnmarshaller.Instance;
 
@@ -754,7 +754,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CopyPackageVersions">REST API Reference for CopyPackageVersions Operation</seealso>
         public virtual CopyPackageVersionsResponse CopyPackageVersions(CopyPackageVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPackageVersionsResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CopyPackageVersions">REST API Reference for CopyPackageVersions Operation</seealso>
         public virtual IAsyncResult BeginCopyPackageVersions(CopyPackageVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyPackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyPackageVersionsResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -864,7 +864,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup">REST API Reference for CreatePackageGroup Operation</seealso>
         public virtual CreatePackageGroupResponse CreatePackageGroup(CreatePackageGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageGroupResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup">REST API Reference for CreatePackageGroup Operation</seealso>
         public virtual IAsyncResult BeginCreatePackageGroup(CreatePackageGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageGroupResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -1022,7 +1022,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1093,7 +1093,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteDomainPermissionsPolicy">REST API Reference for DeleteDomainPermissionsPolicy Operation</seealso>
         public virtual DeleteDomainPermissionsPolicyResponse DeleteDomainPermissionsPolicy(DeleteDomainPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteDomainPermissionsPolicy">REST API Reference for DeleteDomainPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainPermissionsPolicy(DeleteDomainPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -1222,7 +1222,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup">REST API Reference for DeletePackageGroup Operation</seealso>
         public virtual DeletePackageGroupResponse DeletePackageGroup(DeletePackageGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageGroupResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup">REST API Reference for DeletePackageGroup Operation</seealso>
         public virtual IAsyncResult BeginDeletePackageGroup(DeletePackageGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageGroupResponseUnmarshaller.Instance;
 
@@ -1383,7 +1383,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageVersions">REST API Reference for DeletePackageVersions Operation</seealso>
         public virtual DeletePackageVersionsResponse DeletePackageVersions(DeletePackageVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageVersionsResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageVersions">REST API Reference for DeletePackageVersions Operation</seealso>
         public virtual IAsyncResult BeginDeletePackageVersions(DeletePackageVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageVersionsResponseUnmarshaller.Instance;
 
@@ -1457,7 +1457,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">REST API Reference for DeleteRepositoryPermissionsPolicy Operation</seealso>
         public virtual DeleteRepositoryPermissionsPolicyResponse DeleteRepositoryPermissionsPolicy(DeleteRepositoryPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">REST API Reference for DeleteRepositoryPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepositoryPermissionsPolicy(DeleteRepositoryPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -1685,7 +1685,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
         public virtual DescribePackageResponse DescribePackage(DescribePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
         public virtual IAsyncResult BeginDescribePackage(DescribePackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup">REST API Reference for DescribePackageGroup Operation</seealso>
         public virtual DescribePackageGroupResponse DescribePackageGroup(DescribePackageGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageGroupResponseUnmarshaller.Instance;
 
@@ -1778,7 +1778,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup">REST API Reference for DescribePackageGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribePackageGroup(DescribePackageGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageGroupResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageVersion">REST API Reference for DescribePackageVersion Operation</seealso>
         public virtual DescribePackageVersionResponse DescribePackageVersion(DescribePackageVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageVersionResponseUnmarshaller.Instance;
 
@@ -1853,7 +1853,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageVersion">REST API Reference for DescribePackageVersion Operation</seealso>
         public virtual IAsyncResult BeginDescribePackageVersion(DescribePackageVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageVersionResponseUnmarshaller.Instance;
 
@@ -1904,7 +1904,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeRepository">REST API Reference for DescribeRepository Operation</seealso>
         public virtual DescribeRepositoryResponse DescribeRepository(DescribeRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeRepository">REST API Reference for DescribeRepository Operation</seealso>
         public virtual IAsyncResult BeginDescribeRepository(DescribeRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRepositoryResponseUnmarshaller.Instance;
 
@@ -1982,7 +1982,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisassociateExternalConnection">REST API Reference for DisassociateExternalConnection Operation</seealso>
         public virtual DisassociateExternalConnectionResponse DisassociateExternalConnection(DisassociateExternalConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateExternalConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateExternalConnectionResponseUnmarshaller.Instance;
 
@@ -2003,7 +2003,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisassociateExternalConnection">REST API Reference for DisassociateExternalConnection Operation</seealso>
         public virtual IAsyncResult BeginDisassociateExternalConnection(DisassociateExternalConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateExternalConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateExternalConnectionResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">REST API Reference for DisposePackageVersions Operation</seealso>
         public virtual DisposePackageVersionsResponse DisposePackageVersions(DisposePackageVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisposePackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisposePackageVersionsResponseUnmarshaller.Instance;
 
@@ -2091,7 +2091,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">REST API Reference for DisposePackageVersions Operation</seealso>
         public virtual IAsyncResult BeginDisposePackageVersions(DisposePackageVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisposePackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisposePackageVersionsResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup">REST API Reference for GetAssociatedPackageGroup Operation</seealso>
         public virtual GetAssociatedPackageGroupResponse GetAssociatedPackageGroup(GetAssociatedPackageGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedPackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedPackageGroupResponseUnmarshaller.Instance;
 
@@ -2169,7 +2169,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup">REST API Reference for GetAssociatedPackageGroup Operation</seealso>
         public virtual IAsyncResult BeginGetAssociatedPackageGroup(GetAssociatedPackageGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedPackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedPackageGroupResponseUnmarshaller.Instance;
 
@@ -2247,7 +2247,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
@@ -2268,7 +2268,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizationToken(GetAuthorizationTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizationTokenResponseUnmarshaller.Instance;
 
@@ -2326,7 +2326,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">REST API Reference for GetDomainPermissionsPolicy Operation</seealso>
         public virtual GetDomainPermissionsPolicyResponse GetDomainPermissionsPolicy(GetDomainPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -2347,7 +2347,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">REST API Reference for GetDomainPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetDomainPermissionsPolicy(GetDomainPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -2402,7 +2402,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionAsset">REST API Reference for GetPackageVersionAsset Operation</seealso>
         public virtual GetPackageVersionAssetResponse GetPackageVersionAsset(GetPackageVersionAssetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionAssetResponseUnmarshaller.Instance;
 
@@ -2423,7 +2423,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionAsset">REST API Reference for GetPackageVersionAsset Operation</seealso>
         public virtual IAsyncResult BeginGetPackageVersionAsset(GetPackageVersionAssetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionAssetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionAssetResponseUnmarshaller.Instance;
 
@@ -2479,7 +2479,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionReadme">REST API Reference for GetPackageVersionReadme Operation</seealso>
         public virtual GetPackageVersionReadmeResponse GetPackageVersionReadme(GetPackageVersionReadmeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionReadmeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionReadmeResponseUnmarshaller.Instance;
 
@@ -2500,7 +2500,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionReadme">REST API Reference for GetPackageVersionReadme Operation</seealso>
         public virtual IAsyncResult BeginGetPackageVersionReadme(GetPackageVersionReadmeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionReadmeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionReadmeResponseUnmarshaller.Instance;
 
@@ -2585,7 +2585,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">REST API Reference for GetRepositoryEndpoint Operation</seealso>
         public virtual GetRepositoryEndpointResponse GetRepositoryEndpoint(GetRepositoryEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryEndpointResponseUnmarshaller.Instance;
 
@@ -2606,7 +2606,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">REST API Reference for GetRepositoryEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetRepositoryEndpoint(GetRepositoryEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryEndpointResponseUnmarshaller.Instance;
 
@@ -2656,7 +2656,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryPermissionsPolicy">REST API Reference for GetRepositoryPermissionsPolicy Operation</seealso>
         public virtual GetRepositoryPermissionsPolicyResponse GetRepositoryPermissionsPolicy(GetRepositoryPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -2677,7 +2677,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryPermissionsPolicy">REST API Reference for GetRepositoryPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetRepositoryPermissionsPolicy(GetRepositoryPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -2734,7 +2734,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup">REST API Reference for ListAllowedRepositoriesForGroup Operation</seealso>
         public virtual ListAllowedRepositoriesForGroupResponse ListAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedRepositoriesForGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedRepositoriesForGroupResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup">REST API Reference for ListAllowedRepositoriesForGroup Operation</seealso>
         public virtual IAsyncResult BeginListAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedRepositoriesForGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedRepositoriesForGroupResponseUnmarshaller.Instance;
 
@@ -2804,7 +2804,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages">REST API Reference for ListAssociatedPackages Operation</seealso>
         public virtual ListAssociatedPackagesResponse ListAssociatedPackages(ListAssociatedPackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedPackagesResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages">REST API Reference for ListAssociatedPackages Operation</seealso>
         public virtual IAsyncResult BeginListAssociatedPackages(ListAssociatedPackagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedPackagesResponseUnmarshaller.Instance;
 
@@ -2873,7 +2873,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -2894,7 +2894,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -2944,7 +2944,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups">REST API Reference for ListPackageGroups Operation</seealso>
         public virtual ListPackageGroupsResponse ListPackageGroups(ListPackageGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageGroupsResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups">REST API Reference for ListPackageGroups Operation</seealso>
         public virtual IAsyncResult BeginListPackageGroups(ListPackageGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageGroupsResponseUnmarshaller.Instance;
 
@@ -3016,7 +3016,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackages">REST API Reference for ListPackages Operation</seealso>
         public virtual ListPackagesResponse ListPackages(ListPackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
 
@@ -3037,7 +3037,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackages">REST API Reference for ListPackages Operation</seealso>
         public virtual IAsyncResult BeginListPackages(ListPackagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
 
@@ -3088,7 +3088,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionAssets">REST API Reference for ListPackageVersionAssets Operation</seealso>
         public virtual ListPackageVersionAssetsResponse ListPackageVersionAssets(ListPackageVersionAssetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionAssetsResponseUnmarshaller.Instance;
 
@@ -3109,7 +3109,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionAssets">REST API Reference for ListPackageVersionAssets Operation</seealso>
         public virtual IAsyncResult BeginListPackageVersionAssets(ListPackageVersionAssetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionAssetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionAssetsResponseUnmarshaller.Instance;
 
@@ -3164,7 +3164,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionDependencies">REST API Reference for ListPackageVersionDependencies Operation</seealso>
         public virtual ListPackageVersionDependenciesResponse ListPackageVersionDependencies(ListPackageVersionDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionDependenciesResponseUnmarshaller.Instance;
 
@@ -3185,7 +3185,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionDependencies">REST API Reference for ListPackageVersionDependencies Operation</seealso>
         public virtual IAsyncResult BeginListPackageVersionDependencies(ListPackageVersionDependenciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionDependenciesResponseUnmarshaller.Instance;
 
@@ -3238,7 +3238,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
         public virtual ListPackageVersionsResponse ListPackageVersions(ListPackageVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionsResponseUnmarshaller.Instance;
 
@@ -3259,7 +3259,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
         public virtual IAsyncResult BeginListPackageVersions(ListPackageVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageVersionsResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
@@ -3328,7 +3328,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual IAsyncResult BeginListRepositories(ListRepositoriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
@@ -3380,7 +3380,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">REST API Reference for ListRepositoriesInDomain Operation</seealso>
         public virtual ListRepositoriesInDomainResponse ListRepositoriesInDomain(ListRepositoriesInDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesInDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesInDomainResponseUnmarshaller.Instance;
 
@@ -3401,7 +3401,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">REST API Reference for ListRepositoriesInDomain Operation</seealso>
         public virtual IAsyncResult BeginListRepositoriesInDomain(ListRepositoriesInDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesInDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesInDomainResponseUnmarshaller.Instance;
 
@@ -3457,7 +3457,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups">REST API Reference for ListSubPackageGroups Operation</seealso>
         public virtual ListSubPackageGroupsResponse ListSubPackageGroups(ListSubPackageGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubPackageGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubPackageGroupsResponseUnmarshaller.Instance;
 
@@ -3478,7 +3478,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups">REST API Reference for ListSubPackageGroups Operation</seealso>
         public virtual IAsyncResult BeginListSubPackageGroups(ListSubPackageGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubPackageGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubPackageGroupsResponseUnmarshaller.Instance;
 
@@ -3526,7 +3526,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3547,7 +3547,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
         public virtual PublishPackageVersionResponse PublishPackageVersion(PublishPackageVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishPackageVersionResponseUnmarshaller.Instance;
 
@@ -3643,7 +3643,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
         public virtual IAsyncResult BeginPublishPackageVersion(PublishPackageVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishPackageVersionResponseUnmarshaller.Instance;
 
@@ -3708,7 +3708,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">REST API Reference for PutDomainPermissionsPolicy Operation</seealso>
         public virtual PutDomainPermissionsPolicyResponse PutDomainPermissionsPolicy(PutDomainPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -3729,7 +3729,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">REST API Reference for PutDomainPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutDomainPermissionsPolicy(PutDomainPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDomainPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDomainPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -3799,7 +3799,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">REST API Reference for PutPackageOriginConfiguration Operation</seealso>
         public virtual PutPackageOriginConfigurationResponse PutPackageOriginConfiguration(PutPackageOriginConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPackageOriginConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPackageOriginConfigurationResponseUnmarshaller.Instance;
 
@@ -3820,7 +3820,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">REST API Reference for PutPackageOriginConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutPackageOriginConfiguration(PutPackageOriginConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPackageOriginConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPackageOriginConfigurationResponseUnmarshaller.Instance;
 
@@ -3886,7 +3886,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">REST API Reference for PutRepositoryPermissionsPolicy Operation</seealso>
         public virtual PutRepositoryPermissionsPolicyResponse PutRepositoryPermissionsPolicy(PutRepositoryPermissionsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -3907,7 +3907,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">REST API Reference for PutRepositoryPermissionsPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutRepositoryPermissionsPolicy(PutRepositoryPermissionsPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRepositoryPermissionsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRepositoryPermissionsPolicyResponseUnmarshaller.Instance;
 
@@ -3958,7 +3958,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3979,7 +3979,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4026,7 +4026,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4047,7 +4047,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4103,7 +4103,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup">REST API Reference for UpdatePackageGroup Operation</seealso>
         public virtual UpdatePackageGroupResponse UpdatePackageGroup(UpdatePackageGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageGroupResponseUnmarshaller.Instance;
 
@@ -4124,7 +4124,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup">REST API Reference for UpdatePackageGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdatePackageGroup(UpdatePackageGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageGroupResponseUnmarshaller.Instance;
 
@@ -4188,7 +4188,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration">REST API Reference for UpdatePackageGroupOriginConfiguration Operation</seealso>
         public virtual UpdatePackageGroupOriginConfigurationResponse UpdatePackageGroupOriginConfiguration(UpdatePackageGroupOriginConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageGroupOriginConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageGroupOriginConfigurationResponseUnmarshaller.Instance;
 
@@ -4209,7 +4209,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration">REST API Reference for UpdatePackageGroupOriginConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdatePackageGroupOriginConfiguration(UpdatePackageGroupOriginConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageGroupOriginConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageGroupOriginConfigurationResponseUnmarshaller.Instance;
 
@@ -4265,7 +4265,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageVersionsStatus">REST API Reference for UpdatePackageVersionsStatus Operation</seealso>
         public virtual UpdatePackageVersionsStatusResponse UpdatePackageVersionsStatus(UpdatePackageVersionsStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageVersionsStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageVersionsStatusResponseUnmarshaller.Instance;
 
@@ -4286,7 +4286,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageVersionsStatus">REST API Reference for UpdatePackageVersionsStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdatePackageVersionsStatus(UpdatePackageVersionsStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageVersionsStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageVersionsStatusResponseUnmarshaller.Instance;
 
@@ -4343,7 +4343,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdateRepository">REST API Reference for UpdateRepository Operation</seealso>
         public virtual UpdateRepositoryResponse UpdateRepository(UpdateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryResponseUnmarshaller.Instance;
 
@@ -4364,7 +4364,7 @@ namespace Amazon.CodeArtifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdateRepository">REST API Reference for UpdateRepository Operation</seealso>
         public virtual IAsyncResult BeginUpdateRepository(UpdateRepositoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryResponseUnmarshaller.Instance;
 

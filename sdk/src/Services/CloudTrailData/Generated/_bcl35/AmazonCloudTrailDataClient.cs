@@ -284,7 +284,7 @@ namespace Amazon.CloudTrailData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents">REST API Reference for PutAuditEvents Operation</seealso>
         public virtual PutAuditEventsResponse PutAuditEvents(PutAuditEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAuditEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAuditEventsResponseUnmarshaller.Instance;
 
@@ -305,7 +305,7 @@ namespace Amazon.CloudTrailData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents">REST API Reference for PutAuditEvents Operation</seealso>
         public virtual IAsyncResult BeginPutAuditEvents(PutAuditEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAuditEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAuditEventsResponseUnmarshaller.Instance;
 

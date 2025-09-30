@@ -302,7 +302,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnector">REST API Reference for AssociatePhoneNumbersWithVoiceConnector Operation</seealso>
         public virtual AssociatePhoneNumbersWithVoiceConnectorResponse AssociatePhoneNumbersWithVoiceConnector(AssociatePhoneNumbersWithVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -323,7 +323,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnector">REST API Reference for AssociatePhoneNumbersWithVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginAssociatePhoneNumbersWithVoiceConnector(AssociatePhoneNumbersWithVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnectorGroup">REST API Reference for AssociatePhoneNumbersWithVoiceConnectorGroup Operation</seealso>
         public virtual AssociatePhoneNumbersWithVoiceConnectorGroupResponse AssociatePhoneNumbersWithVoiceConnectorGroup(AssociatePhoneNumbersWithVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnectorGroup">REST API Reference for AssociatePhoneNumbersWithVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginAssociatePhoneNumbersWithVoiceConnectorGroup(AssociatePhoneNumbersWithVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePhoneNumbersWithVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -462,7 +462,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchDeletePhoneNumber">REST API Reference for BatchDeletePhoneNumber Operation</seealso>
         public virtual BatchDeletePhoneNumberResponse BatchDeletePhoneNumber(BatchDeletePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeletePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeletePhoneNumberResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchDeletePhoneNumber">REST API Reference for BatchDeletePhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginBatchDeletePhoneNumber(BatchDeletePhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeletePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeletePhoneNumberResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchUpdatePhoneNumber">REST API Reference for BatchUpdatePhoneNumber Operation</seealso>
         public virtual BatchUpdatePhoneNumberResponse BatchUpdatePhoneNumber(BatchUpdatePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchUpdatePhoneNumber">REST API Reference for BatchUpdatePhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginBatchUpdatePhoneNumber(BatchUpdatePhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreatePhoneNumberOrder">REST API Reference for CreatePhoneNumberOrder Operation</seealso>
         public virtual CreatePhoneNumberOrderResponse CreatePhoneNumberOrder(CreatePhoneNumberOrderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePhoneNumberOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePhoneNumberOrderResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreatePhoneNumberOrder">REST API Reference for CreatePhoneNumberOrder Operation</seealso>
         public virtual IAsyncResult BeginCreatePhoneNumberOrder(CreatePhoneNumberOrderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePhoneNumberOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePhoneNumberOrderResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">REST API Reference for CreateProxySession Operation</seealso>
         public virtual CreateProxySessionResponse CreateProxySession(CreateProxySessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProxySessionResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">REST API Reference for CreateProxySession Operation</seealso>
         public virtual IAsyncResult BeginCreateProxySession(CreateProxySessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProxySessionResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplication">REST API Reference for CreateSipMediaApplication Operation</seealso>
         public virtual CreateSipMediaApplicationResponse CreateSipMediaApplication(CreateSipMediaApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplication">REST API Reference for CreateSipMediaApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateSipMediaApplication(CreateSipMediaApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplicationCall">REST API Reference for CreateSipMediaApplicationCall Operation</seealso>
         public virtual CreateSipMediaApplicationCallResponse CreateSipMediaApplicationCall(CreateSipMediaApplicationCallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipMediaApplicationCallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipMediaApplicationCallResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplicationCall">REST API Reference for CreateSipMediaApplicationCall Operation</seealso>
         public virtual IAsyncResult BeginCreateSipMediaApplicationCall(CreateSipMediaApplicationCallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipMediaApplicationCallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipMediaApplicationCallResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipRule">REST API Reference for CreateSipRule Operation</seealso>
         public virtual CreateSipRuleResponse CreateSipRule(CreateSipRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipRuleResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipRule">REST API Reference for CreateSipRule Operation</seealso>
         public virtual IAsyncResult BeginCreateSipRule(CreateSipRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSipRuleResponseUnmarshaller.Instance;
 
@@ -1026,7 +1026,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnector">REST API Reference for CreateVoiceConnector Operation</seealso>
         public virtual CreateVoiceConnectorResponse CreateVoiceConnector(CreateVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnector">REST API Reference for CreateVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginCreateVoiceConnector(CreateVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnectorGroup">REST API Reference for CreateVoiceConnectorGroup Operation</seealso>
         public virtual CreateVoiceConnectorGroupResponse CreateVoiceConnectorGroup(CreateVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnectorGroup">REST API Reference for CreateVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateVoiceConnectorGroup(CreateVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">REST API Reference for CreateVoiceProfile Operation</seealso>
         public virtual CreateVoiceProfileResponse CreateVoiceProfile(CreateVoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceProfileResponseUnmarshaller.Instance;
 
@@ -1235,7 +1235,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">REST API Reference for CreateVoiceProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateVoiceProfile(CreateVoiceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceProfileResponseUnmarshaller.Instance;
 
@@ -1309,7 +1309,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">REST API Reference for CreateVoiceProfileDomain Operation</seealso>
         public virtual CreateVoiceProfileDomainResponse CreateVoiceProfileDomain(CreateVoiceProfileDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -1330,7 +1330,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">REST API Reference for CreateVoiceProfileDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateVoiceProfileDomain(CreateVoiceProfileDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeletePhoneNumber">REST API Reference for DeletePhoneNumber Operation</seealso>
         public virtual DeletePhoneNumberResponse DeletePhoneNumber(DeletePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePhoneNumberResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeletePhoneNumber">REST API Reference for DeletePhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginDeletePhoneNumber(DeletePhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePhoneNumberResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">REST API Reference for DeleteProxySession Operation</seealso>
         public virtual DeleteProxySessionResponse DeleteProxySession(DeleteProxySessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProxySessionResponseUnmarshaller.Instance;
 
@@ -1488,7 +1488,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">REST API Reference for DeleteProxySession Operation</seealso>
         public virtual IAsyncResult BeginDeleteProxySession(DeleteProxySessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProxySessionResponseUnmarshaller.Instance;
 
@@ -1545,7 +1545,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipMediaApplication">REST API Reference for DeleteSipMediaApplication Operation</seealso>
         public virtual DeleteSipMediaApplicationResponse DeleteSipMediaApplication(DeleteSipMediaApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipMediaApplication">REST API Reference for DeleteSipMediaApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteSipMediaApplication(DeleteSipMediaApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipRule">REST API Reference for DeleteSipRule Operation</seealso>
         public virtual DeleteSipRuleResponse DeleteSipRule(DeleteSipRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSipRuleResponseUnmarshaller.Instance;
 
@@ -1644,7 +1644,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipRule">REST API Reference for DeleteSipRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteSipRule(DeleteSipRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSipRuleResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnector">REST API Reference for DeleteVoiceConnector Operation</seealso>
         public virtual DeleteVoiceConnectorResponse DeleteVoiceConnector(DeleteVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -1723,7 +1723,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnector">REST API Reference for DeleteVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnector(DeleteVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorEmergencyCallingConfiguration">REST API Reference for DeleteVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual DeleteVoiceConnectorEmergencyCallingConfigurationResponse DeleteVoiceConnectorEmergencyCallingConfiguration(DeleteVoiceConnectorEmergencyCallingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -1798,7 +1798,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorEmergencyCallingConfiguration">REST API Reference for DeleteVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorEmergencyCallingConfiguration(DeleteVoiceConnectorEmergencyCallingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual DeleteVoiceConnectorExternalSystemsConfigurationResponse DeleteVoiceConnectorExternalSystemsConfiguration(DeleteVoiceConnectorExternalSystemsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -1873,7 +1873,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorExternalSystemsConfiguration(DeleteVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -1931,7 +1931,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorGroup">REST API Reference for DeleteVoiceConnectorGroup Operation</seealso>
         public virtual DeleteVoiceConnectorGroupResponse DeleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -1952,7 +1952,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorGroup">REST API Reference for DeleteVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -2014,7 +2014,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorOrigination">REST API Reference for DeleteVoiceConnectorOrigination Operation</seealso>
         public virtual DeleteVoiceConnectorOriginationResponse DeleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorOrigination">REST API Reference for DeleteVoiceConnectorOrigination Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -2089,7 +2089,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">REST API Reference for DeleteVoiceConnectorProxy Operation</seealso>
         public virtual DeleteVoiceConnectorProxyResponse DeleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">REST API Reference for DeleteVoiceConnectorProxy Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorStreamingConfiguration">REST API Reference for DeleteVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual DeleteVoiceConnectorStreamingConfigurationResponse DeleteVoiceConnectorStreamingConfiguration(DeleteVoiceConnectorStreamingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -2185,7 +2185,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorStreamingConfiguration">REST API Reference for DeleteVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorStreamingConfiguration(DeleteVoiceConnectorStreamingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTermination">REST API Reference for DeleteVoiceConnectorTermination Operation</seealso>
         public virtual DeleteVoiceConnectorTerminationResponse DeleteVoiceConnectorTermination(DeleteVoiceConnectorTerminationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -2267,7 +2267,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTermination">REST API Reference for DeleteVoiceConnectorTermination Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorTermination(DeleteVoiceConnectorTerminationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -2322,7 +2322,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTerminationCredentials">REST API Reference for DeleteVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual DeleteVoiceConnectorTerminationCredentialsResponse DeleteVoiceConnectorTerminationCredentials(DeleteVoiceConnectorTerminationCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -2343,7 +2343,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTerminationCredentials">REST API Reference for DeleteVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceConnectorTerminationCredentials(DeleteVoiceConnectorTerminationCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -2404,7 +2404,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">REST API Reference for DeleteVoiceProfile Operation</seealso>
         public virtual DeleteVoiceProfileResponse DeleteVoiceProfile(DeleteVoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceProfileResponseUnmarshaller.Instance;
 
@@ -2425,7 +2425,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">REST API Reference for DeleteVoiceProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceProfile(DeleteVoiceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceProfileResponseUnmarshaller.Instance;
 
@@ -2485,7 +2485,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">REST API Reference for DeleteVoiceProfileDomain Operation</seealso>
         public virtual DeleteVoiceProfileDomainResponse DeleteVoiceProfileDomain(DeleteVoiceProfileDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -2506,7 +2506,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">REST API Reference for DeleteVoiceProfileDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteVoiceProfileDomain(DeleteVoiceProfileDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -2561,7 +2561,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnector">REST API Reference for DisassociatePhoneNumbersFromVoiceConnector Operation</seealso>
         public virtual DisassociatePhoneNumbersFromVoiceConnectorResponse DisassociatePhoneNumbersFromVoiceConnector(DisassociatePhoneNumbersFromVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -2582,7 +2582,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnector">REST API Reference for DisassociatePhoneNumbersFromVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginDisassociatePhoneNumbersFromVoiceConnector(DisassociatePhoneNumbersFromVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -2637,7 +2637,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnectorGroup">REST API Reference for DisassociatePhoneNumbersFromVoiceConnectorGroup Operation</seealso>
         public virtual DisassociatePhoneNumbersFromVoiceConnectorGroupResponse DisassociatePhoneNumbersFromVoiceConnectorGroup(DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -2658,7 +2658,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnectorGroup">REST API Reference for DisassociatePhoneNumbersFromVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginDisassociatePhoneNumbersFromVoiceConnectorGroup(DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociatePhoneNumbersFromVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -2710,7 +2710,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
         public virtual GetGlobalSettingsResponse GetGlobalSettings(GetGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -2731,7 +2731,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
         public virtual IAsyncResult BeginGetGlobalSettings(GetGlobalSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -2786,7 +2786,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumber">REST API Reference for GetPhoneNumber Operation</seealso>
         public virtual GetPhoneNumberResponse GetPhoneNumber(GetPhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumber">REST API Reference for GetPhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginGetPhoneNumber(GetPhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberResponseUnmarshaller.Instance;
 
@@ -2862,7 +2862,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberOrder">REST API Reference for GetPhoneNumberOrder Operation</seealso>
         public virtual GetPhoneNumberOrderResponse GetPhoneNumberOrder(GetPhoneNumberOrderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberOrderResponseUnmarshaller.Instance;
 
@@ -2883,7 +2883,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberOrder">REST API Reference for GetPhoneNumberOrder Operation</seealso>
         public virtual IAsyncResult BeginGetPhoneNumberOrder(GetPhoneNumberOrderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberOrderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberOrderResponseUnmarshaller.Instance;
 
@@ -2935,7 +2935,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberSettings">REST API Reference for GetPhoneNumberSettings Operation</seealso>
         public virtual GetPhoneNumberSettingsResponse GetPhoneNumberSettings(GetPhoneNumberSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberSettingsResponseUnmarshaller.Instance;
 
@@ -2956,7 +2956,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberSettings">REST API Reference for GetPhoneNumberSettings Operation</seealso>
         public virtual IAsyncResult BeginGetPhoneNumberSettings(GetPhoneNumberSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPhoneNumberSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPhoneNumberSettingsResponseUnmarshaller.Instance;
 
@@ -3011,7 +3011,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">REST API Reference for GetProxySession Operation</seealso>
         public virtual GetProxySessionResponse GetProxySession(GetProxySessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProxySessionResponseUnmarshaller.Instance;
 
@@ -3032,7 +3032,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">REST API Reference for GetProxySession Operation</seealso>
         public virtual IAsyncResult BeginGetProxySession(GetProxySessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProxySessionResponseUnmarshaller.Instance;
 
@@ -3087,7 +3087,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplication">REST API Reference for GetSipMediaApplication Operation</seealso>
         public virtual GetSipMediaApplicationResponse GetSipMediaApplication(GetSipMediaApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -3108,7 +3108,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplication">REST API Reference for GetSipMediaApplication Operation</seealso>
         public virtual IAsyncResult BeginGetSipMediaApplication(GetSipMediaApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -3171,7 +3171,7 @@ namespace Amazon.ChimeSDKVoice
         [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual GetSipMediaApplicationAlexaSkillConfigurationResponse GetSipMediaApplicationAlexaSkillConfiguration(GetSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationAlexaSkillConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationAlexaSkillConfigurationResponseUnmarshaller.Instance;
 
@@ -3193,7 +3193,7 @@ namespace Amazon.ChimeSDKVoice
         [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual IAsyncResult BeginGetSipMediaApplicationAlexaSkillConfiguration(GetSipMediaApplicationAlexaSkillConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationAlexaSkillConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationAlexaSkillConfigurationResponseUnmarshaller.Instance;
 
@@ -3248,7 +3248,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationLoggingConfiguration">REST API Reference for GetSipMediaApplicationLoggingConfiguration Operation</seealso>
         public virtual GetSipMediaApplicationLoggingConfigurationResponse GetSipMediaApplicationLoggingConfiguration(GetSipMediaApplicationLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3269,7 +3269,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationLoggingConfiguration">REST API Reference for GetSipMediaApplicationLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetSipMediaApplicationLoggingConfiguration(GetSipMediaApplicationLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipMediaApplicationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipMediaApplicationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3324,7 +3324,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipRule">REST API Reference for GetSipRule Operation</seealso>
         public virtual GetSipRuleResponse GetSipRule(GetSipRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipRuleResponseUnmarshaller.Instance;
 
@@ -3345,7 +3345,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipRule">REST API Reference for GetSipRule Operation</seealso>
         public virtual IAsyncResult BeginGetSipRule(GetSipRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSipRuleResponseUnmarshaller.Instance;
 
@@ -3405,7 +3405,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
         public virtual GetSpeakerSearchTaskResponse GetSpeakerSearchTask(GetSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -3426,7 +3426,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginGetSpeakerSearchTask(GetSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -3481,7 +3481,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnector">REST API Reference for GetVoiceConnector Operation</seealso>
         public virtual GetVoiceConnectorResponse GetVoiceConnector(GetVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -3502,7 +3502,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnector">REST API Reference for GetVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnector(GetVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -3556,7 +3556,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">REST API Reference for GetVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual GetVoiceConnectorEmergencyCallingConfigurationResponse GetVoiceConnectorEmergencyCallingConfiguration(GetVoiceConnectorEmergencyCallingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -3577,7 +3577,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">REST API Reference for GetVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorEmergencyCallingConfiguration(GetVoiceConnectorEmergencyCallingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -3631,7 +3631,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual GetVoiceConnectorExternalSystemsConfigurationResponse GetVoiceConnectorExternalSystemsConfiguration(GetVoiceConnectorExternalSystemsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -3652,7 +3652,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorExternalSystemsConfiguration(GetVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorGroup">REST API Reference for GetVoiceConnectorGroup Operation</seealso>
         public virtual GetVoiceConnectorGroupResponse GetVoiceConnectorGroup(GetVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -3728,7 +3728,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorGroup">REST API Reference for GetVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorGroup(GetVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -3783,7 +3783,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorLoggingConfiguration">REST API Reference for GetVoiceConnectorLoggingConfiguration Operation</seealso>
         public virtual GetVoiceConnectorLoggingConfigurationResponse GetVoiceConnectorLoggingConfiguration(GetVoiceConnectorLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3804,7 +3804,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorLoggingConfiguration">REST API Reference for GetVoiceConnectorLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorLoggingConfiguration(GetVoiceConnectorLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3858,7 +3858,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorOrigination">REST API Reference for GetVoiceConnectorOrigination Operation</seealso>
         public virtual GetVoiceConnectorOriginationResponse GetVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -3879,7 +3879,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorOrigination">REST API Reference for GetVoiceConnectorOrigination Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -3934,7 +3934,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">REST API Reference for GetVoiceConnectorProxy Operation</seealso>
         public virtual GetVoiceConnectorProxyResponse GetVoiceConnectorProxy(GetVoiceConnectorProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -3955,7 +3955,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">REST API Reference for GetVoiceConnectorProxy Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorProxy(GetVoiceConnectorProxyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -4011,7 +4011,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorStreamingConfiguration">REST API Reference for GetVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual GetVoiceConnectorStreamingConfigurationResponse GetVoiceConnectorStreamingConfiguration(GetVoiceConnectorStreamingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -4032,7 +4032,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorStreamingConfiguration">REST API Reference for GetVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorStreamingConfiguration(GetVoiceConnectorStreamingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -4086,7 +4086,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTermination">REST API Reference for GetVoiceConnectorTermination Operation</seealso>
         public virtual GetVoiceConnectorTerminationResponse GetVoiceConnectorTermination(GetVoiceConnectorTerminationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -4107,7 +4107,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTermination">REST API Reference for GetVoiceConnectorTermination Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorTermination(GetVoiceConnectorTerminationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -4162,7 +4162,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTerminationHealth">REST API Reference for GetVoiceConnectorTerminationHealth Operation</seealso>
         public virtual GetVoiceConnectorTerminationHealthResponse GetVoiceConnectorTerminationHealth(GetVoiceConnectorTerminationHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorTerminationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorTerminationHealthResponseUnmarshaller.Instance;
 
@@ -4183,7 +4183,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTerminationHealth">REST API Reference for GetVoiceConnectorTerminationHealth Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceConnectorTerminationHealth(GetVoiceConnectorTerminationHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceConnectorTerminationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceConnectorTerminationHealthResponseUnmarshaller.Instance;
 
@@ -4240,7 +4240,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">REST API Reference for GetVoiceProfile Operation</seealso>
         public virtual GetVoiceProfileResponse GetVoiceProfile(GetVoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceProfileResponseUnmarshaller.Instance;
 
@@ -4261,7 +4261,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">REST API Reference for GetVoiceProfile Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceProfile(GetVoiceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceProfileResponseUnmarshaller.Instance;
 
@@ -4318,7 +4318,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">REST API Reference for GetVoiceProfileDomain Operation</seealso>
         public virtual GetVoiceProfileDomainResponse GetVoiceProfileDomain(GetVoiceProfileDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -4339,7 +4339,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">REST API Reference for GetVoiceProfileDomain Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceProfileDomain(GetVoiceProfileDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -4399,7 +4399,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
         public virtual GetVoiceToneAnalysisTaskResponse GetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -4420,7 +4420,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -4472,7 +4472,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListAvailableVoiceConnectorRegions">REST API Reference for ListAvailableVoiceConnectorRegions Operation</seealso>
         public virtual ListAvailableVoiceConnectorRegionsResponse ListAvailableVoiceConnectorRegions(ListAvailableVoiceConnectorRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableVoiceConnectorRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableVoiceConnectorRegionsResponseUnmarshaller.Instance;
 
@@ -4493,7 +4493,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListAvailableVoiceConnectorRegions">REST API Reference for ListAvailableVoiceConnectorRegions Operation</seealso>
         public virtual IAsyncResult BeginListAvailableVoiceConnectorRegions(ListAvailableVoiceConnectorRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableVoiceConnectorRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableVoiceConnectorRegionsResponseUnmarshaller.Instance;
 
@@ -4544,7 +4544,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumberOrders">REST API Reference for ListPhoneNumberOrders Operation</seealso>
         public virtual ListPhoneNumberOrdersResponse ListPhoneNumberOrders(ListPhoneNumberOrdersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumberOrdersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumberOrdersResponseUnmarshaller.Instance;
 
@@ -4565,7 +4565,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumberOrders">REST API Reference for ListPhoneNumberOrders Operation</seealso>
         public virtual IAsyncResult BeginListPhoneNumberOrders(ListPhoneNumberOrdersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumberOrdersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumberOrdersResponseUnmarshaller.Instance;
 
@@ -4620,7 +4620,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumbers">REST API Reference for ListPhoneNumbers Operation</seealso>
         public virtual ListPhoneNumbersResponse ListPhoneNumbers(ListPhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -4641,7 +4641,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumbers">REST API Reference for ListPhoneNumbers Operation</seealso>
         public virtual IAsyncResult BeginListPhoneNumbers(ListPhoneNumbersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPhoneNumbersResponseUnmarshaller.Instance;
 
@@ -4695,7 +4695,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">REST API Reference for ListProxySessions Operation</seealso>
         public virtual ListProxySessionsResponse ListProxySessions(ListProxySessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProxySessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProxySessionsResponseUnmarshaller.Instance;
 
@@ -4716,7 +4716,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">REST API Reference for ListProxySessions Operation</seealso>
         public virtual IAsyncResult BeginListProxySessions(ListProxySessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProxySessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProxySessionsResponseUnmarshaller.Instance;
 
@@ -4767,7 +4767,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipMediaApplications">REST API Reference for ListSipMediaApplications Operation</seealso>
         public virtual ListSipMediaApplicationsResponse ListSipMediaApplications(ListSipMediaApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSipMediaApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSipMediaApplicationsResponseUnmarshaller.Instance;
 
@@ -4788,7 +4788,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipMediaApplications">REST API Reference for ListSipMediaApplications Operation</seealso>
         public virtual IAsyncResult BeginListSipMediaApplications(ListSipMediaApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSipMediaApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSipMediaApplicationsResponseUnmarshaller.Instance;
 
@@ -4839,7 +4839,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipRules">REST API Reference for ListSipRules Operation</seealso>
         public virtual ListSipRulesResponse ListSipRules(ListSipRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSipRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSipRulesResponseUnmarshaller.Instance;
 
@@ -4860,7 +4860,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipRules">REST API Reference for ListSipRules Operation</seealso>
         public virtual IAsyncResult BeginListSipRules(ListSipRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSipRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSipRulesResponseUnmarshaller.Instance;
 
@@ -4914,7 +4914,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSupportedPhoneNumberCountries">REST API Reference for ListSupportedPhoneNumberCountries Operation</seealso>
         public virtual ListSupportedPhoneNumberCountriesResponse ListSupportedPhoneNumberCountries(ListSupportedPhoneNumberCountriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupportedPhoneNumberCountriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupportedPhoneNumberCountriesResponseUnmarshaller.Instance;
 
@@ -4935,7 +4935,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSupportedPhoneNumberCountries">REST API Reference for ListSupportedPhoneNumberCountries Operation</seealso>
         public virtual IAsyncResult BeginListSupportedPhoneNumberCountries(ListSupportedPhoneNumberCountriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSupportedPhoneNumberCountriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSupportedPhoneNumberCountriesResponseUnmarshaller.Instance;
 
@@ -4986,7 +4986,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5007,7 +5007,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5058,7 +5058,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorGroups">REST API Reference for ListVoiceConnectorGroups Operation</seealso>
         public virtual ListVoiceConnectorGroupsResponse ListVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorGroupsResponseUnmarshaller.Instance;
 
@@ -5079,7 +5079,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorGroups">REST API Reference for ListVoiceConnectorGroups Operation</seealso>
         public virtual IAsyncResult BeginListVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorGroupsResponseUnmarshaller.Instance;
 
@@ -5130,7 +5130,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectors">REST API Reference for ListVoiceConnectors Operation</seealso>
         public virtual ListVoiceConnectorsResponse ListVoiceConnectors(ListVoiceConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorsResponseUnmarshaller.Instance;
 
@@ -5151,7 +5151,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectors">REST API Reference for ListVoiceConnectors Operation</seealso>
         public virtual IAsyncResult BeginListVoiceConnectors(ListVoiceConnectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorsResponseUnmarshaller.Instance;
 
@@ -5205,7 +5205,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorTerminationCredentials">REST API Reference for ListVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual ListVoiceConnectorTerminationCredentialsResponse ListVoiceConnectorTerminationCredentials(ListVoiceConnectorTerminationCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -5226,7 +5226,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorTerminationCredentials">REST API Reference for ListVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual IAsyncResult BeginListVoiceConnectorTerminationCredentials(ListVoiceConnectorTerminationCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -5280,7 +5280,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">REST API Reference for ListVoiceProfileDomains Operation</seealso>
         public virtual ListVoiceProfileDomainsResponse ListVoiceProfileDomains(ListVoiceProfileDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceProfileDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceProfileDomainsResponseUnmarshaller.Instance;
 
@@ -5301,7 +5301,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">REST API Reference for ListVoiceProfileDomains Operation</seealso>
         public virtual IAsyncResult BeginListVoiceProfileDomains(ListVoiceProfileDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceProfileDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceProfileDomainsResponseUnmarshaller.Instance;
 
@@ -5355,7 +5355,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">REST API Reference for ListVoiceProfiles Operation</seealso>
         public virtual ListVoiceProfilesResponse ListVoiceProfiles(ListVoiceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceProfilesResponseUnmarshaller.Instance;
 
@@ -5376,7 +5376,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">REST API Reference for ListVoiceProfiles Operation</seealso>
         public virtual IAsyncResult BeginListVoiceProfiles(ListVoiceProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVoiceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVoiceProfilesResponseUnmarshaller.Instance;
 
@@ -5439,7 +5439,7 @@ namespace Amazon.ChimeSDKVoice
         [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual PutSipMediaApplicationAlexaSkillConfigurationResponse PutSipMediaApplicationAlexaSkillConfiguration(PutSipMediaApplicationAlexaSkillConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSipMediaApplicationAlexaSkillConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSipMediaApplicationAlexaSkillConfigurationResponseUnmarshaller.Instance;
 
@@ -5461,7 +5461,7 @@ namespace Amazon.ChimeSDKVoice
         [Obsolete("Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information, refer to the Alexa Smart Properties page(https://developer.amazon.com/en-US/alexa/alexasmartproperties).")]
         public virtual IAsyncResult BeginPutSipMediaApplicationAlexaSkillConfiguration(PutSipMediaApplicationAlexaSkillConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSipMediaApplicationAlexaSkillConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSipMediaApplicationAlexaSkillConfigurationResponseUnmarshaller.Instance;
 
@@ -5516,7 +5516,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationLoggingConfiguration">REST API Reference for PutSipMediaApplicationLoggingConfiguration Operation</seealso>
         public virtual PutSipMediaApplicationLoggingConfigurationResponse PutSipMediaApplicationLoggingConfiguration(PutSipMediaApplicationLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSipMediaApplicationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSipMediaApplicationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5537,7 +5537,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationLoggingConfiguration">REST API Reference for PutSipMediaApplicationLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutSipMediaApplicationLoggingConfiguration(PutSipMediaApplicationLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSipMediaApplicationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSipMediaApplicationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5591,7 +5591,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">REST API Reference for PutVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual PutVoiceConnectorEmergencyCallingConfigurationResponse PutVoiceConnectorEmergencyCallingConfiguration(PutVoiceConnectorEmergencyCallingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -5612,7 +5612,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">REST API Reference for PutVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorEmergencyCallingConfiguration(PutVoiceConnectorEmergencyCallingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorEmergencyCallingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorEmergencyCallingConfigurationResponseUnmarshaller.Instance;
 
@@ -5669,7 +5669,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual PutVoiceConnectorExternalSystemsConfigurationResponse PutVoiceConnectorExternalSystemsConfiguration(PutVoiceConnectorExternalSystemsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -5690,7 +5690,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorExternalSystemsConfiguration(PutVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorExternalSystemsConfigurationResponseUnmarshaller.Instance;
 
@@ -5744,7 +5744,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorLoggingConfiguration">REST API Reference for PutVoiceConnectorLoggingConfiguration Operation</seealso>
         public virtual PutVoiceConnectorLoggingConfigurationResponse PutVoiceConnectorLoggingConfiguration(PutVoiceConnectorLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5765,7 +5765,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorLoggingConfiguration">REST API Reference for PutVoiceConnectorLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorLoggingConfiguration(PutVoiceConnectorLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5819,7 +5819,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorOrigination">REST API Reference for PutVoiceConnectorOrigination Operation</seealso>
         public virtual PutVoiceConnectorOriginationResponse PutVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -5840,7 +5840,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorOrigination">REST API Reference for PutVoiceConnectorOrigination Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorOriginationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorOriginationResponseUnmarshaller.Instance;
 
@@ -5897,7 +5897,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">REST API Reference for PutVoiceConnectorProxy Operation</seealso>
         public virtual PutVoiceConnectorProxyResponse PutVoiceConnectorProxy(PutVoiceConnectorProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -5918,7 +5918,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">REST API Reference for PutVoiceConnectorProxy Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorProxy(PutVoiceConnectorProxyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorProxyResponseUnmarshaller.Instance;
 
@@ -5972,7 +5972,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorStreamingConfiguration">REST API Reference for PutVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual PutVoiceConnectorStreamingConfigurationResponse PutVoiceConnectorStreamingConfiguration(PutVoiceConnectorStreamingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -5993,7 +5993,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorStreamingConfiguration">REST API Reference for PutVoiceConnectorStreamingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorStreamingConfiguration(PutVoiceConnectorStreamingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorStreamingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorStreamingConfigurationResponseUnmarshaller.Instance;
 
@@ -6050,7 +6050,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTermination">REST API Reference for PutVoiceConnectorTermination Operation</seealso>
         public virtual PutVoiceConnectorTerminationResponse PutVoiceConnectorTermination(PutVoiceConnectorTerminationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -6071,7 +6071,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTermination">REST API Reference for PutVoiceConnectorTermination Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorTermination(PutVoiceConnectorTerminationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorTerminationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorTerminationResponseUnmarshaller.Instance;
 
@@ -6125,7 +6125,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTerminationCredentials">REST API Reference for PutVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual PutVoiceConnectorTerminationCredentialsResponse PutVoiceConnectorTerminationCredentials(PutVoiceConnectorTerminationCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -6146,7 +6146,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTerminationCredentials">REST API Reference for PutVoiceConnectorTerminationCredentials Operation</seealso>
         public virtual IAsyncResult BeginPutVoiceConnectorTerminationCredentials(PutVoiceConnectorTerminationCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutVoiceConnectorTerminationCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance;
 
@@ -6203,7 +6203,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/RestorePhoneNumber">REST API Reference for RestorePhoneNumber Operation</seealso>
         public virtual RestorePhoneNumberResponse RestorePhoneNumber(RestorePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestorePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestorePhoneNumberResponseUnmarshaller.Instance;
 
@@ -6224,7 +6224,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/RestorePhoneNumber">REST API Reference for RestorePhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginRestorePhoneNumber(RestorePhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestorePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestorePhoneNumberResponseUnmarshaller.Instance;
 
@@ -6278,7 +6278,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SearchAvailablePhoneNumbers">REST API Reference for SearchAvailablePhoneNumbers Operation</seealso>
         public virtual SearchAvailablePhoneNumbersResponse SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -6299,7 +6299,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SearchAvailablePhoneNumbers">REST API Reference for SearchAvailablePhoneNumbers Operation</seealso>
         public virtual IAsyncResult BeginSearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAvailablePhoneNumbersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
 
@@ -6378,7 +6378,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
         public virtual StartSpeakerSearchTaskResponse StartSpeakerSearchTask(StartSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -6399,7 +6399,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginStartSpeakerSearchTask(StartSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -6480,7 +6480,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
         public virtual StartVoiceToneAnalysisTaskResponse StartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -6501,7 +6501,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginStartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -6564,7 +6564,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
         public virtual StopSpeakerSearchTaskResponse StopSpeakerSearchTask(StopSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -6585,7 +6585,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginStopSpeakerSearchTask(StopSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -6648,7 +6648,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
         public virtual StopVoiceToneAnalysisTaskResponse StopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -6669,7 +6669,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginStopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -6723,7 +6723,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6744,7 +6744,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6795,7 +6795,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6816,7 +6816,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6867,7 +6867,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         public virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -6888,7 +6888,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateGlobalSettings(UpdateGlobalSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -6959,7 +6959,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         public virtual UpdatePhoneNumberResponse UpdatePhoneNumber(UpdatePhoneNumberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -6980,7 +6980,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         public virtual IAsyncResult BeginUpdatePhoneNumber(UpdatePhoneNumberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
 
@@ -7033,7 +7033,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumberSettings">REST API Reference for UpdatePhoneNumberSettings Operation</seealso>
         public virtual UpdatePhoneNumberSettingsResponse UpdatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberSettingsResponseUnmarshaller.Instance;
 
@@ -7054,7 +7054,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumberSettings">REST API Reference for UpdatePhoneNumberSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePhoneNumberSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePhoneNumberSettingsResponseUnmarshaller.Instance;
 
@@ -7108,7 +7108,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">REST API Reference for UpdateProxySession Operation</seealso>
         public virtual UpdateProxySessionResponse UpdateProxySession(UpdateProxySessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProxySessionResponseUnmarshaller.Instance;
 
@@ -7129,7 +7129,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">REST API Reference for UpdateProxySession Operation</seealso>
         public virtual IAsyncResult BeginUpdateProxySession(UpdateProxySessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProxySessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProxySessionResponseUnmarshaller.Instance;
 
@@ -7186,7 +7186,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplication">REST API Reference for UpdateSipMediaApplication Operation</seealso>
         public virtual UpdateSipMediaApplicationResponse UpdateSipMediaApplication(UpdateSipMediaApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -7207,7 +7207,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplication">REST API Reference for UpdateSipMediaApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateSipMediaApplication(UpdateSipMediaApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipMediaApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipMediaApplicationResponseUnmarshaller.Instance;
 
@@ -7265,7 +7265,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplicationCall">REST API Reference for UpdateSipMediaApplicationCall Operation</seealso>
         public virtual UpdateSipMediaApplicationCallResponse UpdateSipMediaApplicationCall(UpdateSipMediaApplicationCallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipMediaApplicationCallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipMediaApplicationCallResponseUnmarshaller.Instance;
 
@@ -7286,7 +7286,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplicationCall">REST API Reference for UpdateSipMediaApplicationCall Operation</seealso>
         public virtual IAsyncResult BeginUpdateSipMediaApplicationCall(UpdateSipMediaApplicationCallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipMediaApplicationCallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipMediaApplicationCallResponseUnmarshaller.Instance;
 
@@ -7346,7 +7346,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipRule">REST API Reference for UpdateSipRule Operation</seealso>
         public virtual UpdateSipRuleResponse UpdateSipRule(UpdateSipRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipRuleResponseUnmarshaller.Instance;
 
@@ -7367,7 +7367,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipRule">REST API Reference for UpdateSipRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateSipRule(UpdateSipRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSipRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSipRuleResponseUnmarshaller.Instance;
 
@@ -7421,7 +7421,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnector">REST API Reference for UpdateVoiceConnector Operation</seealso>
         public virtual UpdateVoiceConnectorResponse UpdateVoiceConnector(UpdateVoiceConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -7442,7 +7442,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnector">REST API Reference for UpdateVoiceConnector Operation</seealso>
         public virtual IAsyncResult BeginUpdateVoiceConnector(UpdateVoiceConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceConnectorResponseUnmarshaller.Instance;
 
@@ -7499,7 +7499,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
         public virtual UpdateVoiceConnectorGroupResponse UpdateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -7520,7 +7520,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceConnectorGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance;
 
@@ -7600,7 +7600,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">REST API Reference for UpdateVoiceProfile Operation</seealso>
         public virtual UpdateVoiceProfileResponse UpdateVoiceProfile(UpdateVoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceProfileResponseUnmarshaller.Instance;
 
@@ -7621,7 +7621,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">REST API Reference for UpdateVoiceProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateVoiceProfile(UpdateVoiceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceProfileResponseUnmarshaller.Instance;
 
@@ -7678,7 +7678,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">REST API Reference for UpdateVoiceProfileDomain Operation</seealso>
         public virtual UpdateVoiceProfileDomainResponse UpdateVoiceProfileDomain(UpdateVoiceProfileDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -7699,7 +7699,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">REST API Reference for UpdateVoiceProfileDomain Operation</seealso>
         public virtual IAsyncResult BeginUpdateVoiceProfileDomain(UpdateVoiceProfileDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVoiceProfileDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVoiceProfileDomainResponseUnmarshaller.Instance;
 
@@ -7759,7 +7759,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
         public virtual ValidateE911AddressResponse ValidateE911Address(ValidateE911AddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateE911AddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateE911AddressResponseUnmarshaller.Instance;
 
@@ -7780,7 +7780,7 @@ namespace Amazon.ChimeSDKVoice
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
         public virtual IAsyncResult BeginValidateE911Address(ValidateE911AddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateE911AddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateE911AddressResponseUnmarshaller.Instance;
 

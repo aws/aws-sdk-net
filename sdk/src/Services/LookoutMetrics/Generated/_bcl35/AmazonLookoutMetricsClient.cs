@@ -296,7 +296,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ActivateAnomalyDetector">REST API Reference for ActivateAnomalyDetector Operation</seealso>
         public virtual ActivateAnomalyDetectorResponse ActivateAnomalyDetector(ActivateAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ActivateAnomalyDetector">REST API Reference for ActivateAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginActivateAnomalyDetector(ActivateAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -366,7 +366,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/BackTestAnomalyDetector">REST API Reference for BackTestAnomalyDetector Operation</seealso>
         public virtual BackTestAnomalyDetectorResponse BackTestAnomalyDetector(BackTestAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BackTestAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BackTestAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/BackTestAnomalyDetector">REST API Reference for BackTestAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginBackTestAnomalyDetector(BackTestAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BackTestAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BackTestAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAlert">REST API Reference for CreateAlert Operation</seealso>
         public virtual CreateAlertResponse CreateAlert(CreateAlertRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAlert">REST API Reference for CreateAlert Operation</seealso>
         public virtual IAsyncResult BeginCreateAlert(CreateAlertRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlertResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
         public virtual CreateAnomalyDetectorResponse CreateAnomalyDetector(CreateAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateAnomalyDetector">REST API Reference for CreateAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginCreateAnomalyDetector(CreateAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateMetricSet">REST API Reference for CreateMetricSet Operation</seealso>
         public virtual CreateMetricSetResponse CreateMetricSet(CreateMetricSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetricSetResponseUnmarshaller.Instance;
 
@@ -612,7 +612,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CreateMetricSet">REST API Reference for CreateMetricSet Operation</seealso>
         public virtual IAsyncResult BeginCreateMetricSet(CreateMetricSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetricSetResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">REST API Reference for DeactivateAnomalyDetector Operation</seealso>
         public virtual DeactivateAnomalyDetectorResponse DeactivateAnomalyDetector(DeactivateAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeactivateAnomalyDetector">REST API Reference for DeactivateAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginDeactivateAnomalyDetector(DeactivateAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAlert">REST API Reference for DeleteAlert Operation</seealso>
         public virtual DeleteAlertResponse DeleteAlert(DeleteAlertRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAlert">REST API Reference for DeleteAlert Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlert(DeleteAlertRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlertResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginDeleteAnomalyDetector(DeleteAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">REST API Reference for DescribeAlert Operation</seealso>
         public virtual DescribeAlertResponse DescribeAlert(DescribeAlertRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">REST API Reference for DescribeAlert Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlert(DescribeAlertRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlertResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetectionExecutions">REST API Reference for DescribeAnomalyDetectionExecutions Operation</seealso>
         public virtual DescribeAnomalyDetectionExecutionsResponse DescribeAnomalyDetectionExecutions(DescribeAnomalyDetectionExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectionExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectionExecutionsResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetectionExecutions">REST API Reference for DescribeAnomalyDetectionExecutions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAnomalyDetectionExecutions(DescribeAnomalyDetectionExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectionExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectionExecutionsResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
         public virtual DescribeAnomalyDetectorResponse DescribeAnomalyDetector(DescribeAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">REST API Reference for DescribeAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginDescribeAnomalyDetector(DescribeAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -1109,7 +1109,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">REST API Reference for DescribeMetricSet Operation</seealso>
         public virtual DescribeMetricSetResponse DescribeMetricSet(DescribeMetricSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricSetResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">REST API Reference for DescribeMetricSet Operation</seealso>
         public virtual IAsyncResult BeginDescribeMetricSet(DescribeMetricSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricSetResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">REST API Reference for DetectMetricSetConfig Operation</seealso>
         public virtual DetectMetricSetConfigResponse DetectMetricSetConfig(DetectMetricSetConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectMetricSetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectMetricSetConfigResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectMetricSetConfig">REST API Reference for DetectMetricSetConfig Operation</seealso>
         public virtual IAsyncResult BeginDetectMetricSetConfig(DetectMetricSetConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectMetricSetConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectMetricSetConfigResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetAnomalyGroup">REST API Reference for GetAnomalyGroup Operation</seealso>
         public virtual GetAnomalyGroupResponse GetAnomalyGroup(GetAnomalyGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnomalyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnomalyGroupResponseUnmarshaller.Instance;
 
@@ -1270,7 +1270,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetAnomalyGroup">REST API Reference for GetAnomalyGroup Operation</seealso>
         public virtual IAsyncResult BeginGetAnomalyGroup(GetAnomalyGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnomalyGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnomalyGroupResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">REST API Reference for GetDataQualityMetrics Operation</seealso>
         public virtual GetDataQualityMetricsResponse GetDataQualityMetrics(GetDataQualityMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">REST API Reference for GetDataQualityMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetDataQualityMetrics(GetDataQualityMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetFeedback">REST API Reference for GetFeedback Operation</seealso>
         public virtual GetFeedbackResponse GetFeedback(GetFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFeedbackResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetFeedback">REST API Reference for GetFeedback Operation</seealso>
         public virtual IAsyncResult BeginGetFeedback(GetFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFeedbackResponseUnmarshaller.Instance;
 
@@ -1459,7 +1459,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetSampleData">REST API Reference for GetSampleData Operation</seealso>
         public virtual GetSampleDataResponse GetSampleData(GetSampleDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampleDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampleDataResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetSampleData">REST API Reference for GetSampleData Operation</seealso>
         public virtual IAsyncResult BeginGetSampleData(GetSampleDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampleDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampleDataResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
         public virtual ListAlertsResponse ListAlerts(ListAlertsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
 
@@ -1557,7 +1557,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
         public virtual IAsyncResult BeginListAlerts(ListAlertsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
         public virtual ListAnomalyDetectorsResponse ListAnomalyDetectors(ListAnomalyDetectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyDetectorsResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">REST API Reference for ListAnomalyDetectors Operation</seealso>
         public virtual IAsyncResult BeginListAnomalyDetectors(ListAnomalyDetectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyDetectorsResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">REST API Reference for ListAnomalyGroupRelatedMetrics Operation</seealso>
         public virtual ListAnomalyGroupRelatedMetricsResponse ListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupRelatedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupRelatedMetricsResponseUnmarshaller.Instance;
 
@@ -1704,7 +1704,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupRelatedMetrics">REST API Reference for ListAnomalyGroupRelatedMetrics Operation</seealso>
         public virtual IAsyncResult BeginListAnomalyGroupRelatedMetrics(ListAnomalyGroupRelatedMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupRelatedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupRelatedMetricsResponseUnmarshaller.Instance;
 
@@ -1753,7 +1753,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupSummaries">REST API Reference for ListAnomalyGroupSummaries Operation</seealso>
         public virtual ListAnomalyGroupSummariesResponse ListAnomalyGroupSummaries(ListAnomalyGroupSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupSummariesResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupSummaries">REST API Reference for ListAnomalyGroupSummaries Operation</seealso>
         public virtual IAsyncResult BeginListAnomalyGroupSummaries(ListAnomalyGroupSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupSummariesResponseUnmarshaller.Instance;
 
@@ -1823,7 +1823,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupTimeSeries">REST API Reference for ListAnomalyGroupTimeSeries Operation</seealso>
         public virtual ListAnomalyGroupTimeSeriesResponse ListAnomalyGroupTimeSeries(ListAnomalyGroupTimeSeriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupTimeSeriesResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyGroupTimeSeries">REST API Reference for ListAnomalyGroupTimeSeries Operation</seealso>
         public virtual IAsyncResult BeginListAnomalyGroupTimeSeries(ListAnomalyGroupTimeSeriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalyGroupTimeSeriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalyGroupTimeSeriesResponseUnmarshaller.Instance;
 
@@ -1900,7 +1900,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">REST API Reference for ListMetricSets Operation</seealso>
         public virtual ListMetricSetsResponse ListMetricSets(ListMetricSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricSetsResponseUnmarshaller.Instance;
 
@@ -1921,7 +1921,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">REST API Reference for ListMetricSets Operation</seealso>
         public virtual IAsyncResult BeginListMetricSets(ListMetricSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricSetsResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1986,7 +1986,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -2056,7 +2056,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual IAsyncResult BeginPutFeedback(PutFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2121,7 +2121,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2165,7 +2165,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2186,7 +2186,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2235,7 +2235,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
         public virtual UpdateAlertResponse UpdateAlert(UpdateAlertRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAlertResponseUnmarshaller.Instance;
 
@@ -2256,7 +2256,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
         public virtual IAsyncResult BeginUpdateAlert(UpdateAlertRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAlertRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAlertResponseUnmarshaller.Instance;
 
@@ -2306,7 +2306,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">REST API Reference for UpdateAnomalyDetector Operation</seealso>
         public virtual UpdateAnomalyDetectorResponse UpdateAnomalyDetector(UpdateAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -2327,7 +2327,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">REST API Reference for UpdateAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginUpdateAnomalyDetector(UpdateAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateMetricSet">REST API Reference for UpdateMetricSet Operation</seealso>
         public virtual UpdateMetricSetResponse UpdateMetricSet(UpdateMetricSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricSetResponseUnmarshaller.Instance;
 
@@ -2400,7 +2400,7 @@ namespace Amazon.LookoutMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateMetricSet">REST API Reference for UpdateMetricSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateMetricSet(UpdateMetricSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricSetResponseUnmarshaller.Instance;
 

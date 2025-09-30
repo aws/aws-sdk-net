@@ -283,7 +283,7 @@ namespace Amazon.GeoRoutes
 
         internal virtual CalculateIsolinesResponse CalculateIsolines(CalculateIsolinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateIsolinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateIsolinesResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.GeoRoutes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateIsolines">REST API Reference for CalculateIsolines Operation</seealso>
         public virtual Task<CalculateIsolinesResponse> CalculateIsolinesAsync(CalculateIsolinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateIsolinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateIsolinesResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.GeoRoutes
 
         internal virtual CalculateRouteMatrixResponse CalculateRouteMatrix(CalculateRouteMatrixRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteMatrixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteMatrixResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.GeoRoutes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRouteMatrix">REST API Reference for CalculateRouteMatrix Operation</seealso>
         public virtual Task<CalculateRouteMatrixResponse> CalculateRouteMatrixAsync(CalculateRouteMatrixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteMatrixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteMatrixResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.GeoRoutes
 
         internal virtual CalculateRoutesResponse CalculateRoutes(CalculateRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRoutesResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.GeoRoutes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/CalculateRoutes">REST API Reference for CalculateRoutes Operation</seealso>
         public virtual Task<CalculateRoutesResponse> CalculateRoutesAsync(CalculateRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRoutesResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.GeoRoutes
 
         internal virtual OptimizeWaypointsResponse OptimizeWaypoints(OptimizeWaypointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptimizeWaypointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptimizeWaypointsResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.GeoRoutes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/OptimizeWaypoints">REST API Reference for OptimizeWaypoints Operation</seealso>
         public virtual Task<OptimizeWaypointsResponse> OptimizeWaypointsAsync(OptimizeWaypointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptimizeWaypointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptimizeWaypointsResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.GeoRoutes
 
         internal virtual SnapToRoadsResponse SnapToRoads(SnapToRoadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SnapToRoadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SnapToRoadsResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.GeoRoutes
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/SnapToRoads">REST API Reference for SnapToRoads Operation</seealso>
         public virtual Task<SnapToRoadsResponse> SnapToRoadsAsync(SnapToRoadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SnapToRoadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SnapToRoadsResponseUnmarshaller.Instance;
 

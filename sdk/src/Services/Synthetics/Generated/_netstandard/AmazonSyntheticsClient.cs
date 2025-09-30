@@ -290,7 +290,7 @@ namespace Amazon.Synthetics
 
         internal virtual AssociateResourceResponse AssociateResource(AssociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/AssociateResource">REST API Reference for AssociateResource Operation</seealso>
         public virtual Task<AssociateResourceResponse> AssociateResourceAsync(AssociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateResourceResponseUnmarshaller.Instance;
 
@@ -346,7 +346,7 @@ namespace Amazon.Synthetics
 
         internal virtual CreateCanaryResponse CreateCanary(CreateCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCanaryResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateCanary">REST API Reference for CreateCanary Operation</seealso>
         public virtual Task<CreateCanaryResponse> CreateCanaryAsync(CreateCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCanaryResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.Synthetics
 
         internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.Synthetics
 
         internal virtual DeleteCanaryResponse DeleteCanary(DeleteCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCanaryResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteCanary">REST API Reference for DeleteCanary Operation</seealso>
         public virtual Task<DeleteCanaryResponse> DeleteCanaryAsync(DeleteCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCanaryResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.Synthetics
 
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.Synthetics
 
         internal virtual DescribeCanariesResponse DescribeCanaries(DescribeCanariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCanariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCanariesResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanaries">REST API Reference for DescribeCanaries Operation</seealso>
         public virtual Task<DescribeCanariesResponse> DescribeCanariesAsync(DescribeCanariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCanariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCanariesResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.Synthetics
 
         internal virtual DescribeCanariesLastRunResponse DescribeCanariesLastRun(DescribeCanariesLastRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCanariesLastRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCanariesLastRunResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeCanariesLastRun">REST API Reference for DescribeCanariesLastRun Operation</seealso>
         public virtual Task<DescribeCanariesLastRunResponse> DescribeCanariesLastRunAsync(DescribeCanariesLastRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCanariesLastRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCanariesLastRunResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.Synthetics
 
         internal virtual DescribeRuntimeVersionsResponse DescribeRuntimeVersions(DescribeRuntimeVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuntimeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuntimeVersionsResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DescribeRuntimeVersions">REST API Reference for DescribeRuntimeVersions Operation</seealso>
         public virtual Task<DescribeRuntimeVersionsResponse> DescribeRuntimeVersionsAsync(DescribeRuntimeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuntimeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuntimeVersionsResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.Synthetics
 
         internal virtual DisassociateResourceResponse DisassociateResource(DisassociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DisassociateResource">REST API Reference for DisassociateResource Operation</seealso>
         public virtual Task<DisassociateResourceResponse> DisassociateResourceAsync(DisassociateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateResourceResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.Synthetics
 
         internal virtual GetCanaryResponse GetCanary(GetCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCanaryResponseUnmarshaller.Instance;
 
@@ -852,7 +852,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetCanary">REST API Reference for GetCanary Operation</seealso>
         public virtual Task<GetCanaryResponse> GetCanaryAsync(GetCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCanaryResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.Synthetics
 
         internal virtual GetCanaryRunsResponse GetCanaryRuns(GetCanaryRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCanaryRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCanaryRunsResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetCanaryRuns">REST API Reference for GetCanaryRuns Operation</seealso>
         public virtual Task<GetCanaryRunsResponse> GetCanaryRunsAsync(GetCanaryRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCanaryRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCanaryRunsResponseUnmarshaller.Instance;
 
@@ -908,7 +908,7 @@ namespace Amazon.Synthetics
 
         internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.Synthetics
 
         internal virtual ListAssociatedGroupsResponse ListAssociatedGroups(ListAssociatedGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedGroupsResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListAssociatedGroups">REST API Reference for ListAssociatedGroups Operation</seealso>
         public virtual Task<ListAssociatedGroupsResponse> ListAssociatedGroupsAsync(ListAssociatedGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedGroupsResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.Synthetics
 
         internal virtual ListGroupResourcesResponse ListGroupResources(ListGroupResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual Task<ListGroupResourcesResponse> ListGroupResourcesAsync(ListGroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.Synthetics
 
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1074,7 +1074,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1087,7 +1087,7 @@ namespace Amazon.Synthetics
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1123,7 +1123,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1136,7 +1136,7 @@ namespace Amazon.Synthetics
 
         internal virtual StartCanaryResponse StartCanary(StartCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCanaryResponseUnmarshaller.Instance;
 
@@ -1171,7 +1171,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanary">REST API Reference for StartCanary Operation</seealso>
         public virtual Task<StartCanaryResponse> StartCanaryAsync(StartCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCanaryResponseUnmarshaller.Instance;
 
@@ -1184,7 +1184,7 @@ namespace Amazon.Synthetics
 
         internal virtual StartCanaryDryRunResponse StartCanaryDryRun(StartCanaryDryRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCanaryDryRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCanaryDryRunResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StartCanaryDryRun">REST API Reference for StartCanaryDryRun Operation</seealso>
         public virtual Task<StartCanaryDryRunResponse> StartCanaryDryRunAsync(StartCanaryDryRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCanaryDryRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCanaryDryRunResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.Synthetics
 
         internal virtual StopCanaryResponse StopCanary(StopCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCanaryResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StopCanary">REST API Reference for StopCanary Operation</seealso>
         public virtual Task<StopCanaryResponse> StopCanaryAsync(StopCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCanaryResponseUnmarshaller.Instance;
 
@@ -1287,7 +1287,7 @@ namespace Amazon.Synthetics
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1347,7 +1347,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.Synthetics
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1396,7 +1396,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1409,7 +1409,7 @@ namespace Amazon.Synthetics
 
         internal virtual UpdateCanaryResponse UpdateCanary(UpdateCanaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCanaryResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.Synthetics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UpdateCanary">REST API Reference for UpdateCanary Operation</seealso>
         public virtual Task<UpdateCanaryResponse> UpdateCanaryAsync(UpdateCanaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCanaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCanaryResponseUnmarshaller.Instance;
 

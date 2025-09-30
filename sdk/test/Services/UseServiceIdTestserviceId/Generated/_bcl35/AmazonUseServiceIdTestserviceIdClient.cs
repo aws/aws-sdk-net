@@ -248,7 +248,7 @@ namespace Amazon.UseServiceIdTestserviceId
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/use-service-id-2022-07-12/NoPayload">REST API Reference for NoPayload Operation</seealso>
         public virtual NoPayloadResponse NoPayload(NoPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadResponseUnmarshaller.Instance;
 
@@ -269,7 +269,7 @@ namespace Amazon.UseServiceIdTestserviceId
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/use-service-id-2022-07-12/NoPayload">REST API Reference for NoPayload Operation</seealso>
         public virtual IAsyncResult BeginNoPayload(NoPayloadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoPayloadResponseUnmarshaller.Instance;
 

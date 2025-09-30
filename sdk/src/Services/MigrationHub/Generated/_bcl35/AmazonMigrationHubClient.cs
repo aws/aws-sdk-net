@@ -335,7 +335,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
         public virtual AssociateCreatedArtifactResponse AssociateCreatedArtifact(AssociateCreatedArtifactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCreatedArtifactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateCreatedArtifact">REST API Reference for AssociateCreatedArtifact Operation</seealso>
         public virtual IAsyncResult BeginAssociateCreatedArtifact(AssociateCreatedArtifactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCreatedArtifactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCreatedArtifactResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
         public virtual AssociateDiscoveredResourceResponse AssociateDiscoveredResource(AssociateDiscoveredResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDiscoveredResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateDiscoveredResource">REST API Reference for AssociateDiscoveredResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateDiscoveredResource(AssociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDiscoveredResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDiscoveredResourceResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateSourceResource">REST API Reference for AssociateSourceResource Operation</seealso>
         public virtual AssociateSourceResourceResponse AssociateSourceResource(AssociateSourceResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceResourceResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/AssociateSourceResource">REST API Reference for AssociateSourceResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateSourceResource(AssociateSourceResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceResourceResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
         public virtual CreateProgressUpdateStreamResponse CreateProgressUpdateStream(CreateProgressUpdateStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProgressUpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreateProgressUpdateStream">REST API Reference for CreateProgressUpdateStream Operation</seealso>
         public virtual IAsyncResult BeginCreateProgressUpdateStream(CreateProgressUpdateStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProgressUpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProgressUpdateStreamResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
         public virtual DeleteProgressUpdateStreamResponse DeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProgressUpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">REST API Reference for DeleteProgressUpdateStream Operation</seealso>
         public virtual IAsyncResult BeginDeleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProgressUpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProgressUpdateStreamResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
         public virtual DescribeApplicationStateResponse DescribeApplicationState(DescribeApplicationStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeApplicationState">REST API Reference for DescribeApplicationState Operation</seealso>
         public virtual IAsyncResult BeginDescribeApplicationState(DescribeApplicationStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationStateResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
         public virtual DescribeMigrationTaskResponse DescribeMigrationTask(DescribeMigrationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMigrationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
 
@@ -896,7 +896,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DescribeMigrationTask">REST API Reference for DescribeMigrationTask Operation</seealso>
         public virtual IAsyncResult BeginDescribeMigrationTask(DescribeMigrationTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMigrationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMigrationTaskResponseUnmarshaller.Instance;
 
@@ -979,7 +979,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
         public virtual DisassociateCreatedArtifactResponse DisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCreatedArtifactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateCreatedArtifact">REST API Reference for DisassociateCreatedArtifact Operation</seealso>
         public virtual IAsyncResult BeginDisassociateCreatedArtifact(DisassociateCreatedArtifactRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCreatedArtifactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCreatedArtifactResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
         public virtual DisassociateDiscoveredResourceResponse DisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDiscoveredResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
 
@@ -1087,7 +1087,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateDiscoveredResource">REST API Reference for DisassociateDiscoveredResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDiscoveredResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDiscoveredResourceResponseUnmarshaller.Instance;
 
@@ -1149,7 +1149,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateSourceResource">REST API Reference for DisassociateSourceResource Operation</seealso>
         public virtual DisassociateSourceResourceResponse DisassociateSourceResource(DisassociateSourceResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceResourceResponseUnmarshaller.Instance;
 
@@ -1170,7 +1170,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DisassociateSourceResource">REST API Reference for DisassociateSourceResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateSourceResource(DisassociateSourceResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceResourceResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
         public virtual ImportMigrationTaskResponse ImportMigrationTask(ImportMigrationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportMigrationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ImportMigrationTask">REST API Reference for ImportMigrationTask Operation</seealso>
         public virtual IAsyncResult BeginImportMigrationTask(ImportMigrationTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportMigrationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportMigrationTaskResponseUnmarshaller.Instance;
 
@@ -1316,7 +1316,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">REST API Reference for ListApplicationStates Operation</seealso>
         public virtual ListApplicationStatesResponse ListApplicationStates(ListApplicationStatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationStatesResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">REST API Reference for ListApplicationStates Operation</seealso>
         public virtual IAsyncResult BeginListApplicationStates(ListApplicationStatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationStatesResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
         public virtual ListCreatedArtifactsResponse ListCreatedArtifacts(ListCreatedArtifactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCreatedArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
 
@@ -1431,7 +1431,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListCreatedArtifacts">REST API Reference for ListCreatedArtifacts Operation</seealso>
         public virtual IAsyncResult BeginListCreatedArtifacts(ListCreatedArtifactsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCreatedArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCreatedArtifactsResponseUnmarshaller.Instance;
 
@@ -1488,7 +1488,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -1586,7 +1586,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
         public virtual ListMigrationTasksResponse ListMigrationTasks(ListMigrationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMigrationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
 
@@ -1607,7 +1607,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTasks">REST API Reference for ListMigrationTasks Operation</seealso>
         public virtual IAsyncResult BeginListMigrationTasks(ListMigrationTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMigrationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMigrationTasksResponseUnmarshaller.Instance;
 
@@ -1662,7 +1662,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTaskUpdates">REST API Reference for ListMigrationTaskUpdates Operation</seealso>
         public virtual ListMigrationTaskUpdatesResponse ListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMigrationTaskUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMigrationTaskUpdatesResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListMigrationTaskUpdates">REST API Reference for ListMigrationTaskUpdates Operation</seealso>
         public virtual IAsyncResult BeginListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMigrationTaskUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMigrationTaskUpdatesResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         public virtual ListProgressUpdateStreamsResponse ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProgressUpdateStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
 
@@ -1756,7 +1756,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListProgressUpdateStreams">REST API Reference for ListProgressUpdateStreams Operation</seealso>
         public virtual IAsyncResult BeginListProgressUpdateStreams(ListProgressUpdateStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProgressUpdateStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProgressUpdateStreamsResponseUnmarshaller.Instance;
 
@@ -1811,7 +1811,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListSourceResources">REST API Reference for ListSourceResources Operation</seealso>
         public virtual ListSourceResourcesResponse ListSourceResources(ListSourceResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceResourcesResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListSourceResources">REST API Reference for ListSourceResources Operation</seealso>
         public virtual IAsyncResult BeginListSourceResources(ListSourceResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceResourcesResponseUnmarshaller.Instance;
 
@@ -1904,7 +1904,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
         public virtual NotifyApplicationStateResponse NotifyApplicationState(NotifyApplicationStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyApplicationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyApplicationState">REST API Reference for NotifyApplicationState Operation</seealso>
         public virtual IAsyncResult BeginNotifyApplicationState(NotifyApplicationStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyApplicationStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyApplicationStateResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
         public virtual NotifyMigrationTaskStateResponse NotifyMigrationTaskState(NotifyMigrationTaskStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyMigrationTaskStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
 
@@ -2028,7 +2028,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/NotifyMigrationTaskState">REST API Reference for NotifyMigrationTaskState Operation</seealso>
         public virtual IAsyncResult BeginNotifyMigrationTaskState(NotifyMigrationTaskStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyMigrationTaskStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyMigrationTaskStateResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
         public virtual PutResourceAttributesResponse PutResourceAttributes(PutResourceAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;
 
@@ -2136,7 +2136,7 @@ namespace Amazon.MigrationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">REST API Reference for PutResourceAttributes Operation</seealso>
         public virtual IAsyncResult BeginPutResourceAttributes(PutResourceAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceAttributesResponseUnmarshaller.Instance;
 

@@ -296,7 +296,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
             
@@ -379,7 +379,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxChangeset">REST API Reference for CreateKxChangeset Operation</seealso>
         public virtual CreateKxChangesetResponse CreateKxChangeset(CreateKxChangesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxChangesetResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxChangeset">REST API Reference for CreateKxChangeset Operation</seealso>
         public virtual Task<CreateKxChangesetResponse> CreateKxChangesetAsync(CreateKxChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxChangesetResponseUnmarshaller.Instance;
             
@@ -463,7 +463,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxCluster">REST API Reference for CreateKxCluster Operation</seealso>
         public virtual CreateKxClusterResponse CreateKxCluster(CreateKxClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxClusterResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxCluster">REST API Reference for CreateKxCluster Operation</seealso>
         public virtual Task<CreateKxClusterResponse> CreateKxClusterAsync(CreateKxClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxClusterResponseUnmarshaller.Instance;
             
@@ -549,7 +549,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxDatabase">REST API Reference for CreateKxDatabase Operation</seealso>
         public virtual CreateKxDatabaseResponse CreateKxDatabase(CreateKxDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxDatabaseResponseUnmarshaller.Instance;
 
@@ -593,7 +593,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxDatabase">REST API Reference for CreateKxDatabase Operation</seealso>
         public virtual Task<CreateKxDatabaseResponse> CreateKxDatabaseAsync(CreateKxDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxDatabaseResponseUnmarshaller.Instance;
             
@@ -640,7 +640,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxDataview">REST API Reference for CreateKxDataview Operation</seealso>
         public virtual CreateKxDataviewResponse CreateKxDataview(CreateKxDataviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxDataviewResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxDataview">REST API Reference for CreateKxDataview Operation</seealso>
         public virtual Task<CreateKxDataviewResponse> CreateKxDataviewAsync(CreateKxDataviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxDataviewResponseUnmarshaller.Instance;
             
@@ -729,7 +729,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxEnvironment">REST API Reference for CreateKxEnvironment Operation</seealso>
         public virtual CreateKxEnvironmentResponse CreateKxEnvironment(CreateKxEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxEnvironmentResponseUnmarshaller.Instance;
 
@@ -771,7 +771,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxEnvironment">REST API Reference for CreateKxEnvironment Operation</seealso>
         public virtual Task<CreateKxEnvironmentResponse> CreateKxEnvironmentAsync(CreateKxEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxEnvironmentResponseUnmarshaller.Instance;
             
@@ -813,7 +813,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxScalingGroup">REST API Reference for CreateKxScalingGroup Operation</seealso>
         public virtual CreateKxScalingGroupResponse CreateKxScalingGroup(CreateKxScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxScalingGroupResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxScalingGroup">REST API Reference for CreateKxScalingGroup Operation</seealso>
         public virtual Task<CreateKxScalingGroupResponse> CreateKxScalingGroupAsync(CreateKxScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxScalingGroupResponseUnmarshaller.Instance;
             
@@ -899,7 +899,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxUser">REST API Reference for CreateKxUser Operation</seealso>
         public virtual CreateKxUserResponse CreateKxUser(CreateKxUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxUserResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxUser">REST API Reference for CreateKxUser Operation</seealso>
         public virtual Task<CreateKxUserResponse> CreateKxUserAsync(CreateKxUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxUserResponseUnmarshaller.Instance;
             
@@ -988,7 +988,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxVolume">REST API Reference for CreateKxVolume Operation</seealso>
         public virtual CreateKxVolumeResponse CreateKxVolume(CreateKxVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxVolumeResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CreateKxVolume">REST API Reference for CreateKxVolume Operation</seealso>
         public virtual Task<CreateKxVolumeResponse> CreateKxVolumeAsync(CreateKxVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKxVolumeResponseUnmarshaller.Instance;
             
@@ -1069,7 +1069,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
             
@@ -1147,7 +1147,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxCluster">REST API Reference for DeleteKxCluster Operation</seealso>
         public virtual DeleteKxClusterResponse DeleteKxCluster(DeleteKxClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxClusterResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxCluster">REST API Reference for DeleteKxCluster Operation</seealso>
         public virtual Task<DeleteKxClusterResponse> DeleteKxClusterAsync(DeleteKxClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxClusterResponseUnmarshaller.Instance;
             
@@ -1224,7 +1224,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
         public virtual DeleteKxClusterNodeResponse DeleteKxClusterNode(DeleteKxClusterNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">REST API Reference for DeleteKxClusterNode Operation</seealso>
         public virtual Task<DeleteKxClusterNodeResponse> DeleteKxClusterNodeAsync(DeleteKxClusterNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxClusterNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxClusterNodeResponseUnmarshaller.Instance;
             
@@ -1300,7 +1300,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxDatabase">REST API Reference for DeleteKxDatabase Operation</seealso>
         public virtual DeleteKxDatabaseResponse DeleteKxDatabase(DeleteKxDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxDatabaseResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxDatabase">REST API Reference for DeleteKxDatabase Operation</seealso>
         public virtual Task<DeleteKxDatabaseResponse> DeleteKxDatabaseAsync(DeleteKxDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxDatabaseResponseUnmarshaller.Instance;
             
@@ -1380,7 +1380,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxDataview">REST API Reference for DeleteKxDataview Operation</seealso>
         public virtual DeleteKxDataviewResponse DeleteKxDataview(DeleteKxDataviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxDataviewResponseUnmarshaller.Instance;
 
@@ -1419,7 +1419,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxDataview">REST API Reference for DeleteKxDataview Operation</seealso>
         public virtual Task<DeleteKxDataviewResponse> DeleteKxDataviewAsync(DeleteKxDataviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxDataviewResponseUnmarshaller.Instance;
             
@@ -1459,7 +1459,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxEnvironment">REST API Reference for DeleteKxEnvironment Operation</seealso>
         public virtual DeleteKxEnvironmentResponse DeleteKxEnvironment(DeleteKxEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxEnvironmentResponseUnmarshaller.Instance;
 
@@ -1498,7 +1498,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxEnvironment">REST API Reference for DeleteKxEnvironment Operation</seealso>
         public virtual Task<DeleteKxEnvironmentResponse> DeleteKxEnvironmentAsync(DeleteKxEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxEnvironmentResponseUnmarshaller.Instance;
             
@@ -1541,7 +1541,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxScalingGroup">REST API Reference for DeleteKxScalingGroup Operation</seealso>
         public virtual DeleteKxScalingGroupResponse DeleteKxScalingGroup(DeleteKxScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxScalingGroupResponseUnmarshaller.Instance;
 
@@ -1583,7 +1583,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxScalingGroup">REST API Reference for DeleteKxScalingGroup Operation</seealso>
         public virtual Task<DeleteKxScalingGroupResponse> DeleteKxScalingGroupAsync(DeleteKxScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxScalingGroupResponseUnmarshaller.Instance;
             
@@ -1622,7 +1622,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxUser">REST API Reference for DeleteKxUser Operation</seealso>
         public virtual DeleteKxUserResponse DeleteKxUser(DeleteKxUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxUserResponseUnmarshaller.Instance;
 
@@ -1660,7 +1660,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxUser">REST API Reference for DeleteKxUser Operation</seealso>
         public virtual Task<DeleteKxUserResponse> DeleteKxUserAsync(DeleteKxUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxUserResponseUnmarshaller.Instance;
             
@@ -1704,7 +1704,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxVolume">REST API Reference for DeleteKxVolume Operation</seealso>
         public virtual DeleteKxVolumeResponse DeleteKxVolume(DeleteKxVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxVolumeResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxVolume">REST API Reference for DeleteKxVolume Operation</seealso>
         public virtual Task<DeleteKxVolumeResponse> DeleteKxVolumeAsync(DeleteKxVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKxVolumeResponseUnmarshaller.Instance;
             
@@ -1781,7 +1781,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
             
@@ -1850,7 +1850,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxChangeset">REST API Reference for GetKxChangeset Operation</seealso>
         public virtual GetKxChangesetResponse GetKxChangeset(GetKxChangesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxChangesetResponseUnmarshaller.Instance;
 
@@ -1885,7 +1885,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxChangeset">REST API Reference for GetKxChangeset Operation</seealso>
         public virtual Task<GetKxChangesetResponse> GetKxChangesetAsync(GetKxChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxChangesetResponseUnmarshaller.Instance;
             
@@ -1927,7 +1927,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxCluster">REST API Reference for GetKxCluster Operation</seealso>
         public virtual GetKxClusterResponse GetKxCluster(GetKxClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxClusterResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxCluster">REST API Reference for GetKxCluster Operation</seealso>
         public virtual Task<GetKxClusterResponse> GetKxClusterAsync(GetKxClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxClusterResponseUnmarshaller.Instance;
             
@@ -2005,7 +2005,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxConnectionString">REST API Reference for GetKxConnectionString Operation</seealso>
         public virtual GetKxConnectionStringResponse GetKxConnectionString(GetKxConnectionStringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxConnectionStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxConnectionStringResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxConnectionString">REST API Reference for GetKxConnectionString Operation</seealso>
         public virtual Task<GetKxConnectionStringResponse> GetKxConnectionStringAsync(GetKxConnectionStringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxConnectionStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxConnectionStringResponseUnmarshaller.Instance;
             
@@ -2077,7 +2077,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxDatabase">REST API Reference for GetKxDatabase Operation</seealso>
         public virtual GetKxDatabaseResponse GetKxDatabase(GetKxDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxDatabaseResponseUnmarshaller.Instance;
 
@@ -2112,7 +2112,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxDatabase">REST API Reference for GetKxDatabase Operation</seealso>
         public virtual Task<GetKxDatabaseResponse> GetKxDatabaseAsync(GetKxDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxDatabaseResponseUnmarshaller.Instance;
             
@@ -2148,7 +2148,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxDataview">REST API Reference for GetKxDataview Operation</seealso>
         public virtual GetKxDataviewResponse GetKxDataview(GetKxDataviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxDataviewResponseUnmarshaller.Instance;
 
@@ -2183,7 +2183,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxDataview">REST API Reference for GetKxDataview Operation</seealso>
         public virtual Task<GetKxDataviewResponse> GetKxDataviewAsync(GetKxDataviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxDataviewResponseUnmarshaller.Instance;
             
@@ -2219,7 +2219,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxEnvironment">REST API Reference for GetKxEnvironment Operation</seealso>
         public virtual GetKxEnvironmentResponse GetKxEnvironment(GetKxEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxEnvironmentResponseUnmarshaller.Instance;
 
@@ -2254,7 +2254,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxEnvironment">REST API Reference for GetKxEnvironment Operation</seealso>
         public virtual Task<GetKxEnvironmentResponse> GetKxEnvironmentAsync(GetKxEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxEnvironmentResponseUnmarshaller.Instance;
             
@@ -2296,7 +2296,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxScalingGroup">REST API Reference for GetKxScalingGroup Operation</seealso>
         public virtual GetKxScalingGroupResponse GetKxScalingGroup(GetKxScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxScalingGroupResponseUnmarshaller.Instance;
 
@@ -2337,7 +2337,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxScalingGroup">REST API Reference for GetKxScalingGroup Operation</seealso>
         public virtual Task<GetKxScalingGroupResponse> GetKxScalingGroupAsync(GetKxScalingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxScalingGroupResponseUnmarshaller.Instance;
             
@@ -2373,7 +2373,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxUser">REST API Reference for GetKxUser Operation</seealso>
         public virtual GetKxUserResponse GetKxUser(GetKxUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxUserResponseUnmarshaller.Instance;
 
@@ -2408,7 +2408,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxUser">REST API Reference for GetKxUser Operation</seealso>
         public virtual Task<GetKxUserResponse> GetKxUserAsync(GetKxUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxUserResponseUnmarshaller.Instance;
             
@@ -2450,7 +2450,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxVolume">REST API Reference for GetKxVolume Operation</seealso>
         public virtual GetKxVolumeResponse GetKxVolume(GetKxVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxVolumeResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/GetKxVolume">REST API Reference for GetKxVolume Operation</seealso>
         public virtual Task<GetKxVolumeResponse> GetKxVolumeAsync(GetKxVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKxVolumeResponseUnmarshaller.Instance;
             
@@ -2522,7 +2522,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
             
@@ -2588,7 +2588,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxChangesets">REST API Reference for ListKxChangesets Operation</seealso>
         public virtual ListKxChangesetsResponse ListKxChangesets(ListKxChangesetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxChangesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxChangesetsResponseUnmarshaller.Instance;
 
@@ -2623,7 +2623,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxChangesets">REST API Reference for ListKxChangesets Operation</seealso>
         public virtual Task<ListKxChangesetsResponse> ListKxChangesetsAsync(ListKxChangesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxChangesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxChangesetsResponseUnmarshaller.Instance;
             
@@ -2662,7 +2662,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxClusterNodes">REST API Reference for ListKxClusterNodes Operation</seealso>
         public virtual ListKxClusterNodesResponse ListKxClusterNodes(ListKxClusterNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxClusterNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxClusterNodesResponseUnmarshaller.Instance;
 
@@ -2700,7 +2700,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxClusterNodes">REST API Reference for ListKxClusterNodes Operation</seealso>
         public virtual Task<ListKxClusterNodesResponse> ListKxClusterNodesAsync(ListKxClusterNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxClusterNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxClusterNodesResponseUnmarshaller.Instance;
             
@@ -2742,7 +2742,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxClusters">REST API Reference for ListKxClusters Operation</seealso>
         public virtual ListKxClustersResponse ListKxClusters(ListKxClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxClustersResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxClusters">REST API Reference for ListKxClusters Operation</seealso>
         public virtual Task<ListKxClustersResponse> ListKxClustersAsync(ListKxClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxClustersResponseUnmarshaller.Instance;
             
@@ -2819,7 +2819,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxDatabases">REST API Reference for ListKxDatabases Operation</seealso>
         public virtual ListKxDatabasesResponse ListKxDatabases(ListKxDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxDatabasesResponseUnmarshaller.Instance;
 
@@ -2854,7 +2854,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxDatabases">REST API Reference for ListKxDatabases Operation</seealso>
         public virtual Task<ListKxDatabasesResponse> ListKxDatabasesAsync(ListKxDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxDatabasesResponseUnmarshaller.Instance;
             
@@ -2890,7 +2890,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxDataviews">REST API Reference for ListKxDataviews Operation</seealso>
         public virtual ListKxDataviewsResponse ListKxDataviews(ListKxDataviewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxDataviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxDataviewsResponseUnmarshaller.Instance;
 
@@ -2925,7 +2925,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxDataviews">REST API Reference for ListKxDataviews Operation</seealso>
         public virtual Task<ListKxDataviewsResponse> ListKxDataviewsAsync(ListKxDataviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxDataviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxDataviewsResponseUnmarshaller.Instance;
             
@@ -2955,7 +2955,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxEnvironments">REST API Reference for ListKxEnvironments Operation</seealso>
         public virtual ListKxEnvironmentsResponse ListKxEnvironments(ListKxEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxEnvironments">REST API Reference for ListKxEnvironments Operation</seealso>
         public virtual Task<ListKxEnvironmentsResponse> ListKxEnvironmentsAsync(ListKxEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxEnvironmentsResponseUnmarshaller.Instance;
             
@@ -3026,7 +3026,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxScalingGroups">REST API Reference for ListKxScalingGroups Operation</seealso>
         public virtual ListKxScalingGroupsResponse ListKxScalingGroups(ListKxScalingGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxScalingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxScalingGroupsResponseUnmarshaller.Instance;
 
@@ -3067,7 +3067,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxScalingGroups">REST API Reference for ListKxScalingGroups Operation</seealso>
         public virtual Task<ListKxScalingGroupsResponse> ListKxScalingGroupsAsync(ListKxScalingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxScalingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxScalingGroupsResponseUnmarshaller.Instance;
             
@@ -3103,7 +3103,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxUsers">REST API Reference for ListKxUsers Operation</seealso>
         public virtual ListKxUsersResponse ListKxUsers(ListKxUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxUsersResponseUnmarshaller.Instance;
 
@@ -3138,7 +3138,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxUsers">REST API Reference for ListKxUsers Operation</seealso>
         public virtual Task<ListKxUsersResponse> ListKxUsersAsync(ListKxUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxUsersResponseUnmarshaller.Instance;
             
@@ -3180,7 +3180,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxVolumes">REST API Reference for ListKxVolumes Operation</seealso>
         public virtual ListKxVolumesResponse ListKxVolumes(ListKxVolumesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxVolumesResponseUnmarshaller.Instance;
 
@@ -3221,7 +3221,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListKxVolumes">REST API Reference for ListKxVolumes Operation</seealso>
         public virtual Task<ListKxVolumesResponse> ListKxVolumesAsync(ListKxVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKxVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKxVolumesResponseUnmarshaller.Instance;
             
@@ -3251,7 +3251,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3280,7 +3280,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -3310,7 +3310,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3339,7 +3339,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3369,7 +3369,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3398,7 +3398,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -3435,7 +3435,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -3471,7 +3471,7 @@ namespace Amazon.Finspace
         [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
             
@@ -3516,7 +3516,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">REST API Reference for UpdateKxClusterCodeConfiguration Operation</seealso>
         public virtual UpdateKxClusterCodeConfigurationResponse UpdateKxClusterCodeConfiguration(UpdateKxClusterCodeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxClusterCodeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxClusterCodeConfigurationResponseUnmarshaller.Instance;
 
@@ -3560,7 +3560,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterCodeConfiguration">REST API Reference for UpdateKxClusterCodeConfiguration Operation</seealso>
         public virtual Task<UpdateKxClusterCodeConfigurationResponse> UpdateKxClusterCodeConfigurationAsync(UpdateKxClusterCodeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxClusterCodeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxClusterCodeConfigurationResponseUnmarshaller.Instance;
             
@@ -3610,7 +3610,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterDatabases">REST API Reference for UpdateKxClusterDatabases Operation</seealso>
         public virtual UpdateKxClusterDatabasesResponse UpdateKxClusterDatabases(UpdateKxClusterDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxClusterDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxClusterDatabasesResponseUnmarshaller.Instance;
 
@@ -3659,7 +3659,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxClusterDatabases">REST API Reference for UpdateKxClusterDatabases Operation</seealso>
         public virtual Task<UpdateKxClusterDatabasesResponse> UpdateKxClusterDatabasesAsync(UpdateKxClusterDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxClusterDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxClusterDatabasesResponseUnmarshaller.Instance;
             
@@ -3698,7 +3698,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxDatabase">REST API Reference for UpdateKxDatabase Operation</seealso>
         public virtual UpdateKxDatabaseResponse UpdateKxDatabase(UpdateKxDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxDatabaseResponseUnmarshaller.Instance;
 
@@ -3736,7 +3736,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxDatabase">REST API Reference for UpdateKxDatabase Operation</seealso>
         public virtual Task<UpdateKxDatabaseResponse> UpdateKxDatabaseAsync(UpdateKxDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxDatabaseResponseUnmarshaller.Instance;
             
@@ -3780,7 +3780,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxDataview">REST API Reference for UpdateKxDataview Operation</seealso>
         public virtual UpdateKxDataviewResponse UpdateKxDataview(UpdateKxDataviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxDataviewResponseUnmarshaller.Instance;
 
@@ -3823,7 +3823,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxDataview">REST API Reference for UpdateKxDataview Operation</seealso>
         public virtual Task<UpdateKxDataviewResponse> UpdateKxDataviewAsync(UpdateKxDataviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxDataviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxDataviewResponseUnmarshaller.Instance;
             
@@ -3862,7 +3862,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxEnvironment">REST API Reference for UpdateKxEnvironment Operation</seealso>
         public virtual UpdateKxEnvironmentResponse UpdateKxEnvironment(UpdateKxEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxEnvironmentResponseUnmarshaller.Instance;
 
@@ -3900,7 +3900,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxEnvironment">REST API Reference for UpdateKxEnvironment Operation</seealso>
         public virtual Task<UpdateKxEnvironmentResponse> UpdateKxEnvironmentAsync(UpdateKxEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxEnvironmentResponseUnmarshaller.Instance;
             
@@ -3947,7 +3947,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxEnvironmentNetwork">REST API Reference for UpdateKxEnvironmentNetwork Operation</seealso>
         public virtual UpdateKxEnvironmentNetworkResponse UpdateKxEnvironmentNetwork(UpdateKxEnvironmentNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxEnvironmentNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxEnvironmentNetworkResponseUnmarshaller.Instance;
 
@@ -3993,7 +3993,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxEnvironmentNetwork">REST API Reference for UpdateKxEnvironmentNetwork Operation</seealso>
         public virtual Task<UpdateKxEnvironmentNetworkResponse> UpdateKxEnvironmentNetworkAsync(UpdateKxEnvironmentNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxEnvironmentNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxEnvironmentNetworkResponseUnmarshaller.Instance;
             
@@ -4035,7 +4035,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxUser">REST API Reference for UpdateKxUser Operation</seealso>
         public virtual UpdateKxUserResponse UpdateKxUser(UpdateKxUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxUserResponseUnmarshaller.Instance;
 
@@ -4076,7 +4076,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxUser">REST API Reference for UpdateKxUser Operation</seealso>
         public virtual Task<UpdateKxUserResponse> UpdateKxUserAsync(UpdateKxUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxUserResponseUnmarshaller.Instance;
             
@@ -4120,7 +4120,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxVolume">REST API Reference for UpdateKxVolume Operation</seealso>
         public virtual UpdateKxVolumeResponse UpdateKxVolume(UpdateKxVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxVolumeResponseUnmarshaller.Instance;
 
@@ -4163,7 +4163,7 @@ namespace Amazon.Finspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/UpdateKxVolume">REST API Reference for UpdateKxVolume Operation</seealso>
         public virtual Task<UpdateKxVolumeResponse> UpdateKxVolumeAsync(UpdateKxVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKxVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKxVolumeResponseUnmarshaller.Instance;
             

@@ -296,7 +296,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetReport">REST API Reference for GetReport Operation</seealso>
         public virtual GetReportResponse GetReport(GetReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetReport">REST API Reference for GetReport Operation</seealso>
         public virtual IAsyncResult BeginGetReport(GetReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetReportMetadata">REST API Reference for GetReportMetadata Operation</seealso>
         public virtual GetReportMetadataResponse GetReportMetadata(GetReportMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportMetadataResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetReportMetadata">REST API Reference for GetReportMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetReportMetadata(GetReportMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReportMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReportMetadataResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetTermForReport">REST API Reference for GetTermForReport Operation</seealso>
         public virtual GetTermForReportResponse GetTermForReport(GetTermForReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTermForReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTermForReportResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/GetTermForReport">REST API Reference for GetTermForReport Operation</seealso>
         public virtual IAsyncResult BeginGetTermForReport(GetTermForReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTermForReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTermForReportResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
         public virtual ListCustomerAgreementsResponse ListCustomerAgreements(ListCustomerAgreementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">REST API Reference for ListCustomerAgreements Operation</seealso>
         public virtual IAsyncResult BeginListCustomerAgreements(ListCustomerAgreementsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomerAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomerAgreementsResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReports">REST API Reference for ListReports Operation</seealso>
         public virtual ListReportsResponse ListReports(ListReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportsResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReports">REST API Reference for ListReports Operation</seealso>
         public virtual IAsyncResult BeginListReports(ListReportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReportsResponseUnmarshaller.Instance;
 
@@ -731,7 +731,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/PutAccountSettings">REST API Reference for PutAccountSettings Operation</seealso>
         public virtual PutAccountSettingsResponse PutAccountSettings(PutAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingsResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.Artifact
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/PutAccountSettings">REST API Reference for PutAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginPutAccountSettings(PutAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingsResponseUnmarshaller.Instance;
 

@@ -324,7 +324,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
         public virtual CreateBatchInferenceJobResponse CreateBatchInferenceJob(CreateBatchInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchInferenceJob">REST API Reference for CreateBatchInferenceJob Operation</seealso>
         public virtual IAsyncResult BeginCreateBatchInferenceJob(CreateBatchInferenceJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchInferenceJobResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
         public virtual CreateBatchSegmentJobResponse CreateBatchSegmentJob(CreateBatchSegmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchSegmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchSegmentJobResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateBatchSegmentJob">REST API Reference for CreateBatchSegmentJob Operation</seealso>
         public virtual IAsyncResult BeginCreateBatchSegmentJob(CreateBatchSegmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchSegmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchSegmentJobResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual IAsyncResult BeginCreateCampaign(CreateCampaignRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">REST API Reference for CreateDataDeletionJob Operation</seealso>
         public virtual CreateDataDeletionJobResponse CreateDataDeletionJob(CreateDataDeletionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataDeletionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataDeletionJobResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataDeletionJob">REST API Reference for CreateDataDeletionJob Operation</seealso>
         public virtual IAsyncResult BeginCreateDataDeletionJob(CreateDataDeletionJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataDeletionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataDeletionJobResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
         public virtual CreateDatasetExportJobResponse CreateDatasetExportJob(CreateDatasetExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetExportJobResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">REST API Reference for CreateDatasetExportJob Operation</seealso>
         public virtual IAsyncResult BeginCreateDatasetExportJob(CreateDatasetExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetExportJobResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         public virtual CreateDatasetGroupResponse CreateDatasetGroup(CreateDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetGroupResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDatasetGroup(CreateDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetGroupResponseUnmarshaller.Instance;
 
@@ -1242,7 +1242,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         public virtual CreateDatasetImportJobResponse CreateDatasetImportJob(CreateDatasetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         public virtual IAsyncResult BeginCreateDatasetImportJob(CreateDatasetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateEventTracker">REST API Reference for CreateEventTracker Operation</seealso>
         public virtual CreateEventTrackerResponse CreateEventTracker(CreateEventTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTrackerResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateEventTracker">REST API Reference for CreateEventTracker Operation</seealso>
         public virtual IAsyncResult BeginCreateEventTracker(CreateEventTrackerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventTrackerResponseUnmarshaller.Instance;
 
@@ -1440,7 +1440,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         public virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFilterResponseUnmarshaller.Instance;
 
@@ -1461,7 +1461,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter">REST API Reference for CreateFilter Operation</seealso>
         public virtual IAsyncResult BeginCreateFilter(CreateFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFilterResponseUnmarshaller.Instance;
 
@@ -1512,7 +1512,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
         public virtual CreateMetricAttributionResponse CreateMetricAttribution(CreateMetricAttributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetricAttributionResponseUnmarshaller.Instance;
 
@@ -1533,7 +1533,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
         public virtual IAsyncResult BeginCreateMetricAttribution(CreateMetricAttributionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetricAttributionResponseUnmarshaller.Instance;
 
@@ -1680,7 +1680,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
         public virtual CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
         public virtual IAsyncResult BeginCreateRecommender(CreateRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
 
@@ -1772,7 +1772,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -1955,7 +1955,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolution">REST API Reference for CreateSolution Operation</seealso>
         public virtual CreateSolutionResponse CreateSolution(CreateSolutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolutionResponseUnmarshaller.Instance;
 
@@ -1976,7 +1976,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolution">REST API Reference for CreateSolution Operation</seealso>
         public virtual IAsyncResult BeginCreateSolution(CreateSolutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolutionResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">REST API Reference for CreateSolutionVersion Operation</seealso>
         public virtual CreateSolutionVersionResponse CreateSolutionVersion(CreateSolutionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolutionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolutionVersionResponseUnmarshaller.Instance;
 
@@ -2129,7 +2129,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion">REST API Reference for CreateSolutionVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateSolutionVersion(CreateSolutionVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolutionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolutionVersionResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual IAsyncResult BeginDeleteCampaign(DeleteCampaignRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -2240,7 +2240,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2261,7 +2261,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2317,7 +2317,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteDatasetGroup">REST API Reference for DeleteDatasetGroup Operation</seealso>
         public virtual DeleteDatasetGroupResponse DeleteDatasetGroup(DeleteDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetGroupResponseUnmarshaller.Instance;
 
@@ -2338,7 +2338,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteDatasetGroup">REST API Reference for DeleteDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDatasetGroup(DeleteDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetGroupResponseUnmarshaller.Instance;
 
@@ -2381,7 +2381,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteEventTracker">REST API Reference for DeleteEventTracker Operation</seealso>
         public virtual DeleteEventTrackerResponse DeleteEventTracker(DeleteEventTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTrackerResponseUnmarshaller.Instance;
 
@@ -2402,7 +2402,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteEventTracker">REST API Reference for DeleteEventTracker Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventTracker(DeleteEventTrackerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventTrackerResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         public virtual DeleteFilterResponse DeleteFilter(DeleteFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFilterResponseUnmarshaller.Instance;
 
@@ -2465,7 +2465,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         public virtual IAsyncResult BeginDeleteFilter(DeleteFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFilterResponseUnmarshaller.Instance;
 
@@ -2507,7 +2507,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
         public virtual DeleteMetricAttributionResponse DeleteMetricAttribution(DeleteMetricAttributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricAttributionResponseUnmarshaller.Instance;
 
@@ -2528,7 +2528,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
         public virtual IAsyncResult BeginDeleteMetricAttribution(DeleteMetricAttributionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricAttributionResponseUnmarshaller.Instance;
 
@@ -2572,7 +2572,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
         public virtual DeleteRecommenderResponse DeleteRecommender(DeleteRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
 
@@ -2593,7 +2593,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
         public virtual IAsyncResult BeginDeleteRecommender(DeleteRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
 
@@ -2636,7 +2636,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -2657,7 +2657,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -2704,7 +2704,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteSolution">REST API Reference for DeleteSolution Operation</seealso>
         public virtual DeleteSolutionResponse DeleteSolution(DeleteSolutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolutionResponseUnmarshaller.Instance;
 
@@ -2725,7 +2725,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteSolution">REST API Reference for DeleteSolution Operation</seealso>
         public virtual IAsyncResult BeginDeleteSolution(DeleteSolutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolutionResponseUnmarshaller.Instance;
 
@@ -2764,7 +2764,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeAlgorithm">REST API Reference for DescribeAlgorithm Operation</seealso>
         public virtual DescribeAlgorithmResponse DescribeAlgorithm(DescribeAlgorithmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
 
@@ -2785,7 +2785,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeAlgorithm">REST API Reference for DescribeAlgorithm Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlgorithm(DescribeAlgorithmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlgorithmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
         public virtual DescribeBatchInferenceJobResponse DescribeBatchInferenceJob(DescribeBatchInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
 
@@ -2847,7 +2847,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchInferenceJob">REST API Reference for DescribeBatchInferenceJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeBatchInferenceJob(DescribeBatchInferenceJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchInferenceJobResponseUnmarshaller.Instance;
 
@@ -2888,7 +2888,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">REST API Reference for DescribeBatchSegmentJob Operation</seealso>
         public virtual DescribeBatchSegmentJobResponse DescribeBatchSegmentJob(DescribeBatchSegmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchSegmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchSegmentJobResponseUnmarshaller.Instance;
 
@@ -2909,7 +2909,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeBatchSegmentJob">REST API Reference for DescribeBatchSegmentJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeBatchSegmentJob(DescribeBatchSegmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchSegmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchSegmentJobResponseUnmarshaller.Instance;
 
@@ -2970,7 +2970,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeCampaign">REST API Reference for DescribeCampaign Operation</seealso>
         public virtual DescribeCampaignResponse DescribeCampaign(DescribeCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCampaignResponseUnmarshaller.Instance;
 
@@ -2991,7 +2991,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeCampaign">REST API Reference for DescribeCampaign Operation</seealso>
         public virtual IAsyncResult BeginDescribeCampaign(DescribeCampaignRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCampaignResponseUnmarshaller.Instance;
 
@@ -3031,7 +3031,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">REST API Reference for DescribeDataDeletionJob Operation</seealso>
         public virtual DescribeDataDeletionJobResponse DescribeDataDeletionJob(DescribeDataDeletionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataDeletionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataDeletionJobResponseUnmarshaller.Instance;
 
@@ -3052,7 +3052,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataDeletionJob">REST API Reference for DescribeDataDeletionJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataDeletionJob(DescribeDataDeletionJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataDeletionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataDeletionJobResponseUnmarshaller.Instance;
 
@@ -3091,7 +3091,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -3112,7 +3112,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -3152,7 +3152,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
         public virtual DescribeDatasetExportJobResponse DescribeDatasetExportJob(DescribeDatasetExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetExportJobResponseUnmarshaller.Instance;
 
@@ -3173,7 +3173,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">REST API Reference for DescribeDatasetExportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatasetExportJob(DescribeDatasetExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetExportJobResponseUnmarshaller.Instance;
 
@@ -3213,7 +3213,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetGroup">REST API Reference for DescribeDatasetGroup Operation</seealso>
         public virtual DescribeDatasetGroupResponse DescribeDatasetGroup(DescribeDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetGroupResponseUnmarshaller.Instance;
 
@@ -3234,7 +3234,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetGroup">REST API Reference for DescribeDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatasetGroup(DescribeDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetGroupResponseUnmarshaller.Instance;
 
@@ -3274,7 +3274,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetImportJob">REST API Reference for DescribeDatasetImportJob Operation</seealso>
         public virtual DescribeDatasetImportJobResponse DescribeDatasetImportJob(DescribeDatasetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -3295,7 +3295,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetImportJob">REST API Reference for DescribeDatasetImportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatasetImportJob(DescribeDatasetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -3335,7 +3335,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeEventTracker">REST API Reference for DescribeEventTracker Operation</seealso>
         public virtual DescribeEventTrackerResponse DescribeEventTracker(DescribeEventTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTrackerResponseUnmarshaller.Instance;
 
@@ -3356,7 +3356,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeEventTracker">REST API Reference for DescribeEventTracker Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventTracker(DescribeEventTrackerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTrackerResponseUnmarshaller.Instance;
 
@@ -3395,7 +3395,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFeatureTransformation">REST API Reference for DescribeFeatureTransformation Operation</seealso>
         public virtual DescribeFeatureTransformationResponse DescribeFeatureTransformation(DescribeFeatureTransformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeatureTransformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeatureTransformationResponseUnmarshaller.Instance;
 
@@ -3416,7 +3416,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFeatureTransformation">REST API Reference for DescribeFeatureTransformation Operation</seealso>
         public virtual IAsyncResult BeginDescribeFeatureTransformation(DescribeFeatureTransformationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeatureTransformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeatureTransformationResponseUnmarshaller.Instance;
 
@@ -3455,7 +3455,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
         public virtual DescribeFilterResponse DescribeFilter(DescribeFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFilterResponseUnmarshaller.Instance;
 
@@ -3476,7 +3476,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
         public virtual IAsyncResult BeginDescribeFilter(DescribeFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFilterResponseUnmarshaller.Instance;
 
@@ -3515,7 +3515,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
         public virtual DescribeMetricAttributionResponse DescribeMetricAttribution(DescribeMetricAttributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricAttributionResponseUnmarshaller.Instance;
 
@@ -3536,7 +3536,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
         public virtual IAsyncResult BeginDescribeMetricAttribution(DescribeMetricAttributionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricAttributionResponseUnmarshaller.Instance;
 
@@ -3601,7 +3601,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecipe">REST API Reference for DescribeRecipe Operation</seealso>
         public virtual DescribeRecipeResponse DescribeRecipe(DescribeRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecipeResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecipe">REST API Reference for DescribeRecipe Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecipe(DescribeRecipeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecipeResponseUnmarshaller.Instance;
 
@@ -3692,7 +3692,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">REST API Reference for DescribeRecommender Operation</seealso>
         public virtual DescribeRecommenderResponse DescribeRecommender(DescribeRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommenderResponseUnmarshaller.Instance;
 
@@ -3713,7 +3713,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">REST API Reference for DescribeRecommender Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecommender(DescribeRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommenderResponseUnmarshaller.Instance;
 
@@ -3752,7 +3752,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual DescribeSchemaResponse DescribeSchema(DescribeSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
 
@@ -3773,7 +3773,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual IAsyncResult BeginDescribeSchema(DescribeSchemaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
 
@@ -3812,7 +3812,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSolution">REST API Reference for DescribeSolution Operation</seealso>
         public virtual DescribeSolutionResponse DescribeSolution(DescribeSolutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSolutionResponseUnmarshaller.Instance;
 
@@ -3833,7 +3833,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSolution">REST API Reference for DescribeSolution Operation</seealso>
         public virtual IAsyncResult BeginDescribeSolution(DescribeSolutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSolutionResponseUnmarshaller.Instance;
 
@@ -3873,7 +3873,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSolutionVersion">REST API Reference for DescribeSolutionVersion Operation</seealso>
         public virtual DescribeSolutionVersionResponse DescribeSolutionVersion(DescribeSolutionVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSolutionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSolutionVersionResponseUnmarshaller.Instance;
 
@@ -3894,7 +3894,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeSolutionVersion">REST API Reference for DescribeSolutionVersion Operation</seealso>
         public virtual IAsyncResult BeginDescribeSolutionVersion(DescribeSolutionVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSolutionVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSolutionVersionResponseUnmarshaller.Instance;
 
@@ -3936,7 +3936,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/GetSolutionMetrics">REST API Reference for GetSolutionMetrics Operation</seealso>
         public virtual GetSolutionMetricsResponse GetSolutionMetrics(GetSolutionMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolutionMetricsResponseUnmarshaller.Instance;
 
@@ -3957,7 +3957,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/GetSolutionMetrics">REST API Reference for GetSolutionMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetSolutionMetrics(GetSolutionMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolutionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolutionMetricsResponseUnmarshaller.Instance;
 
@@ -3997,7 +3997,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
         public virtual ListBatchInferenceJobsResponse ListBatchInferenceJobs(ListBatchInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
 
@@ -4018,7 +4018,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchInferenceJobs">REST API Reference for ListBatchInferenceJobs Operation</seealso>
         public virtual IAsyncResult BeginListBatchInferenceJobs(ListBatchInferenceJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchInferenceJobsResponseUnmarshaller.Instance;
 
@@ -4058,7 +4058,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">REST API Reference for ListBatchSegmentJobs Operation</seealso>
         public virtual ListBatchSegmentJobsResponse ListBatchSegmentJobs(ListBatchSegmentJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchSegmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchSegmentJobsResponseUnmarshaller.Instance;
 
@@ -4079,7 +4079,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListBatchSegmentJobs">REST API Reference for ListBatchSegmentJobs Operation</seealso>
         public virtual IAsyncResult BeginListBatchSegmentJobs(ListBatchSegmentJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchSegmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchSegmentJobsResponseUnmarshaller.Instance;
 
@@ -4121,7 +4121,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         public virtual ListCampaignsResponse ListCampaigns(ListCampaignsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -4142,7 +4142,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         public virtual IAsyncResult BeginListCampaigns(ListCampaignsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -4186,7 +4186,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">REST API Reference for ListDataDeletionJobs Operation</seealso>
         public virtual ListDataDeletionJobsResponse ListDataDeletionJobs(ListDataDeletionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataDeletionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataDeletionJobsResponseUnmarshaller.Instance;
 
@@ -4207,7 +4207,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDataDeletionJobs">REST API Reference for ListDataDeletionJobs Operation</seealso>
         public virtual IAsyncResult BeginListDataDeletionJobs(ListDataDeletionJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataDeletionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataDeletionJobsResponseUnmarshaller.Instance;
 
@@ -4250,7 +4250,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
         public virtual ListDatasetExportJobsResponse ListDatasetExportJobs(ListDatasetExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetExportJobsResponseUnmarshaller.Instance;
 
@@ -4271,7 +4271,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">REST API Reference for ListDatasetExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListDatasetExportJobs(ListDatasetExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetExportJobsResponseUnmarshaller.Instance;
 
@@ -4309,7 +4309,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetGroups">REST API Reference for ListDatasetGroups Operation</seealso>
         public virtual ListDatasetGroupsResponse ListDatasetGroups(ListDatasetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetGroupsResponseUnmarshaller.Instance;
 
@@ -4330,7 +4330,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetGroups">REST API Reference for ListDatasetGroups Operation</seealso>
         public virtual IAsyncResult BeginListDatasetGroups(ListDatasetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetGroupsResponseUnmarshaller.Instance;
 
@@ -4373,7 +4373,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetImportJobs">REST API Reference for ListDatasetImportJobs Operation</seealso>
         public virtual ListDatasetImportJobsResponse ListDatasetImportJobs(ListDatasetImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetImportJobsResponseUnmarshaller.Instance;
 
@@ -4394,7 +4394,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetImportJobs">REST API Reference for ListDatasetImportJobs Operation</seealso>
         public virtual IAsyncResult BeginListDatasetImportJobs(ListDatasetImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetImportJobsResponseUnmarshaller.Instance;
 
@@ -4435,7 +4435,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -4456,7 +4456,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -4497,7 +4497,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListEventTrackers">REST API Reference for ListEventTrackers Operation</seealso>
         public virtual ListEventTrackersResponse ListEventTrackers(ListEventTrackersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTrackersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTrackersResponseUnmarshaller.Instance;
 
@@ -4518,7 +4518,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListEventTrackers">REST API Reference for ListEventTrackers Operation</seealso>
         public virtual IAsyncResult BeginListEventTrackers(ListEventTrackersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventTrackersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventTrackersResponseUnmarshaller.Instance;
 
@@ -4557,7 +4557,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
         public virtual ListFiltersResponse ListFilters(ListFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFiltersResponseUnmarshaller.Instance;
 
@@ -4578,7 +4578,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters">REST API Reference for ListFilters Operation</seealso>
         public virtual IAsyncResult BeginListFilters(ListFiltersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFiltersResponseUnmarshaller.Instance;
 
@@ -4617,7 +4617,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
         public virtual ListMetricAttributionMetricsResponse ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricAttributionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricAttributionMetricsResponseUnmarshaller.Instance;
 
@@ -4638,7 +4638,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
         public virtual IAsyncResult BeginListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricAttributionMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricAttributionMetricsResponseUnmarshaller.Instance;
 
@@ -4677,7 +4677,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
         public virtual ListMetricAttributionsResponse ListMetricAttributions(ListMetricAttributionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricAttributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricAttributionsResponseUnmarshaller.Instance;
 
@@ -4698,7 +4698,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
         public virtual IAsyncResult BeginListMetricAttributions(ListMetricAttributionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricAttributionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricAttributionsResponseUnmarshaller.Instance;
 
@@ -4738,7 +4738,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecipes">REST API Reference for ListRecipes Operation</seealso>
         public virtual ListRecipesResponse ListRecipes(ListRecipesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipesResponseUnmarshaller.Instance;
 
@@ -4759,7 +4759,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecipes">REST API Reference for ListRecipes Operation</seealso>
         public virtual IAsyncResult BeginListRecipes(ListRecipesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipesResponseUnmarshaller.Instance;
 
@@ -4801,7 +4801,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
         public virtual ListRecommendersResponse ListRecommenders(ListRecommendersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
 
@@ -4822,7 +4822,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
         public virtual IAsyncResult BeginListRecommenders(ListRecommendersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
 
@@ -4860,7 +4860,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -4881,7 +4881,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual IAsyncResult BeginListSchemas(ListSchemasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -4923,7 +4923,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual ListSolutionsResponse ListSolutions(ListSolutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
 
@@ -4944,7 +4944,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutions">REST API Reference for ListSolutions Operation</seealso>
         public virtual IAsyncResult BeginListSolutions(ListSolutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionsResponseUnmarshaller.Instance;
 
@@ -4989,7 +4989,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions">REST API Reference for ListSolutionVersions Operation</seealso>
         public virtual ListSolutionVersionsResponse ListSolutionVersions(ListSolutionVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionVersionsResponseUnmarshaller.Instance;
 
@@ -5010,7 +5010,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions">REST API Reference for ListSolutionVersions Operation</seealso>
         public virtual IAsyncResult BeginListSolutionVersions(ListSolutionVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolutionVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolutionVersionsResponseUnmarshaller.Instance;
 
@@ -5053,7 +5053,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5074,7 +5074,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5117,7 +5117,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
         public virtual StartRecommenderResponse StartRecommender(StartRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
 
@@ -5138,7 +5138,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
         public virtual IAsyncResult BeginStartRecommender(StartRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
 
@@ -5181,7 +5181,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
         public virtual StopRecommenderResponse StopRecommender(StopRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
 
@@ -5202,7 +5202,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
         public virtual IAsyncResult BeginStopRecommender(StopRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
 
@@ -5268,7 +5268,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">REST API Reference for StopSolutionVersionCreation Operation</seealso>
         public virtual StopSolutionVersionCreationResponse StopSolutionVersionCreation(StopSolutionVersionCreationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSolutionVersionCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSolutionVersionCreationResponseUnmarshaller.Instance;
 
@@ -5289,7 +5289,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">REST API Reference for StopSolutionVersionCreation Operation</seealso>
         public virtual IAsyncResult BeginStopSolutionVersionCreation(StopSolutionVersionCreationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSolutionVersionCreationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSolutionVersionCreationResponseUnmarshaller.Instance;
 
@@ -5337,7 +5337,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5358,7 +5358,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5406,7 +5406,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5427,7 +5427,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5507,7 +5507,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         public virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
@@ -5528,7 +5528,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         public virtual IAsyncResult BeginUpdateCampaign(UpdateCampaignRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
@@ -5572,7 +5572,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -5593,7 +5593,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataset(UpdateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -5638,7 +5638,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
         public virtual UpdateMetricAttributionResponse UpdateMetricAttribution(UpdateMetricAttributionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricAttributionResponseUnmarshaller.Instance;
 
@@ -5659,7 +5659,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
         public virtual IAsyncResult BeginUpdateMetricAttribution(UpdateMetricAttributionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricAttributionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricAttributionResponseUnmarshaller.Instance;
 
@@ -5707,7 +5707,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
         public virtual UpdateRecommenderResponse UpdateRecommender(UpdateRecommenderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
 
@@ -5728,7 +5728,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
         public virtual IAsyncResult BeginUpdateRecommender(UpdateRecommenderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
 
@@ -5791,7 +5791,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">REST API Reference for UpdateSolution Operation</seealso>
         public virtual UpdateSolutionResponse UpdateSolution(UpdateSolutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolutionResponseUnmarshaller.Instance;
 
@@ -5812,7 +5812,7 @@ namespace Amazon.Personalize
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateSolution">REST API Reference for UpdateSolution Operation</seealso>
         public virtual IAsyncResult BeginUpdateSolution(UpdateSolutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolutionResponseUnmarshaller.Instance;
 

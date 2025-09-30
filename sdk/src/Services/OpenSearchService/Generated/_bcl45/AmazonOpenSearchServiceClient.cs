@@ -291,7 +291,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">REST API Reference for AcceptInboundConnection Operation</seealso>
         public virtual AcceptInboundConnectionResponse AcceptInboundConnection(AcceptInboundConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInboundConnectionResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">REST API Reference for AcceptInboundConnection Operation</seealso>
         public virtual Task<AcceptInboundConnectionResponse> AcceptInboundConnectionAsync(AcceptInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInboundConnectionResponseUnmarshaller.Instance;
             
@@ -367,7 +367,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDataSource">REST API Reference for AddDataSource Operation</seealso>
         public virtual AddDataSourceResponse AddDataSource(AddDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDataSourceResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDataSource">REST API Reference for AddDataSource Operation</seealso>
         public virtual Task<AddDataSourceResponse> AddDataSourceAsync(AddDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDataSourceResponseUnmarshaller.Instance;
             
@@ -451,7 +451,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">REST API Reference for AddDirectQueryDataSource Operation</seealso>
         public virtual AddDirectQueryDataSourceResponse AddDirectQueryDataSource(AddDirectQueryDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDirectQueryDataSourceResponseUnmarshaller.Instance;
 
@@ -490,7 +490,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">REST API Reference for AddDirectQueryDataSource Operation</seealso>
         public virtual Task<AddDirectQueryDataSourceResponse> AddDirectQueryDataSourceAsync(AddDirectQueryDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddDirectQueryDataSourceResponseUnmarshaller.Instance;
             
@@ -531,7 +531,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
             
@@ -613,7 +613,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual AssociatePackageResponse AssociatePackage(AssociatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual Task<AssociatePackageResponse> AssociatePackageAsync(AssociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
             
@@ -695,7 +695,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackages">REST API Reference for AssociatePackages Operation</seealso>
         public virtual AssociatePackagesResponse AssociatePackages(AssociatePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackagesResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackages">REST API Reference for AssociatePackages Operation</seealso>
         public virtual Task<AssociatePackagesResponse> AssociatePackagesAsync(AssociatePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackagesResponseUnmarshaller.Instance;
             
@@ -775,7 +775,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
         public virtual AuthorizeVpcEndpointAccessResponse AuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
         public virtual Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -850,7 +850,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
         public virtual CancelDomainConfigChangeResponse CancelDomainConfigChange(CancelDomainConfigChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDomainConfigChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDomainConfigChangeResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
         public virtual Task<CancelDomainConfigChangeResponse> CancelDomainConfigChangeAsync(CancelDomainConfigChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDomainConfigChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDomainConfigChangeResponseUnmarshaller.Instance;
             
@@ -922,7 +922,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">REST API Reference for CancelServiceSoftwareUpdate Operation</seealso>
         public virtual CancelServiceSoftwareUpdateResponse CancelServiceSoftwareUpdate(CancelServiceSoftwareUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CancelServiceSoftwareUpdate">REST API Reference for CancelServiceSoftwareUpdate Operation</seealso>
         public virtual Task<CancelServiceSoftwareUpdateResponse> CancelServiceSoftwareUpdateAsync(CancelServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServiceSoftwareUpdateResponseUnmarshaller.Instance;
             
@@ -999,7 +999,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -1083,7 +1083,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -1126,7 +1126,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
             
@@ -1161,7 +1161,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateOutboundConnection">REST API Reference for CreateOutboundConnection Operation</seealso>
         public virtual CreateOutboundConnectionResponse CreateOutboundConnection(CreateOutboundConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutboundConnectionResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateOutboundConnection">REST API Reference for CreateOutboundConnection Operation</seealso>
         public virtual Task<CreateOutboundConnectionResponse> CreateOutboundConnectionAsync(CreateOutboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutboundConnectionResponseUnmarshaller.Instance;
             
@@ -1240,7 +1240,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
             
@@ -1324,7 +1324,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
             
@@ -1406,7 +1406,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1448,7 +1448,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -1489,7 +1489,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -1529,7 +1529,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
             
@@ -1565,7 +1565,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">REST API Reference for DeleteDirectQueryDataSource Operation</seealso>
         public virtual DeleteDirectQueryDataSourceResponse DeleteDirectQueryDataSource(DeleteDirectQueryDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectQueryDataSourceResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">REST API Reference for DeleteDirectQueryDataSource Operation</seealso>
         public virtual Task<DeleteDirectQueryDataSourceResponse> DeleteDirectQueryDataSourceAsync(DeleteDirectQueryDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectQueryDataSourceResponseUnmarshaller.Instance;
             
@@ -1634,7 +1634,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1667,7 +1667,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
             
@@ -1696,7 +1696,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         public virtual DeleteInboundConnectionResponse DeleteInboundConnection(DeleteInboundConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInboundConnectionResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         public virtual Task<DeleteInboundConnectionResponse> DeleteInboundConnectionAsync(DeleteInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInboundConnectionResponseUnmarshaller.Instance;
             
@@ -1753,7 +1753,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">REST API Reference for DeleteOutboundConnection Operation</seealso>
         public virtual DeleteOutboundConnectionResponse DeleteOutboundConnection(DeleteOutboundConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutboundConnectionResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">REST API Reference for DeleteOutboundConnection Operation</seealso>
         public virtual Task<DeleteOutboundConnectionResponse> DeleteOutboundConnectionAsync(DeleteOutboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutboundConnectionResponseUnmarshaller.Instance;
             
@@ -1822,7 +1822,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -1862,7 +1862,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
             
@@ -1895,7 +1895,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
 
@@ -1927,7 +1927,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
             
@@ -1961,7 +1961,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
             
@@ -2029,7 +2029,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual DescribeDomainAutoTunesResponse DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
 
@@ -2063,7 +2063,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual Task<DescribeDomainAutoTunesResponse> DescribeDomainAutoTunesAsync(DescribeDomainAutoTunesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
             
@@ -2098,7 +2098,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
         public virtual DescribeDomainChangeProgressResponse DescribeDomainChangeProgress(DescribeDomainChangeProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
 
@@ -2132,7 +2132,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
         public virtual Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
             
@@ -2165,7 +2165,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">REST API Reference for DescribeDomainConfig Operation</seealso>
         public virtual DescribeDomainConfigResponse DescribeDomainConfig(DescribeDomainConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainConfigResponseUnmarshaller.Instance;
 
@@ -2197,7 +2197,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">REST API Reference for DescribeDomainConfig Operation</seealso>
         public virtual Task<DescribeDomainConfigResponse> DescribeDomainConfigAsync(DescribeDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainConfigResponseUnmarshaller.Instance;
             
@@ -2234,7 +2234,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
         public virtual DescribeDomainHealthResponse DescribeDomainHealth(DescribeDomainHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainHealthResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
         public virtual Task<DescribeDomainHealthResponse> DescribeDomainHealthAsync(DescribeDomainHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainHealthResponseUnmarshaller.Instance;
             
@@ -2311,7 +2311,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
         public virtual DescribeDomainNodesResponse DescribeDomainNodes(DescribeDomainNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
 
@@ -2351,7 +2351,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
         public virtual Task<DescribeDomainNodesResponse> DescribeDomainNodesAsync(DescribeDomainNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
             
@@ -2382,7 +2382,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
 
@@ -2412,7 +2412,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">REST API Reference for DescribeDomains Operation</seealso>
         public virtual Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainsResponseUnmarshaller.Instance;
             
@@ -2450,7 +2450,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
         public virtual DescribeDryRunProgressResponse DescribeDryRunProgress(DescribeDryRunProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
 
@@ -2487,7 +2487,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDryRunProgress">REST API Reference for DescribeDryRunProgress Operation</seealso>
         public virtual Task<DescribeDryRunProgressResponse> DescribeDryRunProgressAsync(DescribeDryRunProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDryRunProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDryRunProgressResponseUnmarshaller.Instance;
             
@@ -2516,7 +2516,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">REST API Reference for DescribeInboundConnections Operation</seealso>
         public virtual DescribeInboundConnectionsResponse DescribeInboundConnections(DescribeInboundConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundConnectionsResponseUnmarshaller.Instance;
 
@@ -2544,7 +2544,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">REST API Reference for DescribeInboundConnections Operation</seealso>
         public virtual Task<DescribeInboundConnectionsResponse> DescribeInboundConnectionsAsync(DescribeInboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundConnectionsResponseUnmarshaller.Instance;
             
@@ -2585,7 +2585,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInstanceTypeLimits">REST API Reference for DescribeInstanceTypeLimits Operation</seealso>
         public virtual DescribeInstanceTypeLimitsResponse DescribeInstanceTypeLimits(DescribeInstanceTypeLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeLimitsResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInstanceTypeLimits">REST API Reference for DescribeInstanceTypeLimits Operation</seealso>
         public virtual Task<DescribeInstanceTypeLimitsResponse> DescribeInstanceTypeLimitsAsync(DescribeInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeLimitsResponseUnmarshaller.Instance;
             
@@ -2654,7 +2654,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">REST API Reference for DescribeOutboundConnections Operation</seealso>
         public virtual DescribeOutboundConnectionsResponse DescribeOutboundConnections(DescribeOutboundConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutboundConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutboundConnectionsResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">REST API Reference for DescribeOutboundConnections Operation</seealso>
         public virtual Task<DescribeOutboundConnectionsResponse> DescribeOutboundConnectionsAsync(DescribeOutboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutboundConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutboundConnectionsResponseUnmarshaller.Instance;
             
@@ -2720,7 +2720,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual DescribePackagesResponse DescribePackages(DescribePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual Task<DescribePackagesResponse> DescribePackagesAsync(DescribePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
             
@@ -2792,7 +2792,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">REST API Reference for DescribeReservedInstanceOfferings Operation</seealso>
         public virtual DescribeReservedInstanceOfferingsResponse DescribeReservedInstanceOfferings(DescribeReservedInstanceOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstanceOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstanceOfferingsResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstanceOfferings">REST API Reference for DescribeReservedInstanceOfferings Operation</seealso>
         public virtual Task<DescribeReservedInstanceOfferingsResponse> DescribeReservedInstanceOfferingsAsync(DescribeReservedInstanceOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstanceOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstanceOfferingsResponseUnmarshaller.Instance;
             
@@ -2861,7 +2861,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
 
@@ -2895,7 +2895,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
             
@@ -2928,7 +2928,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -2960,7 +2960,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
             
@@ -3004,7 +3004,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
 
@@ -3047,7 +3047,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual Task<DissociatePackageResponse> DissociatePackageAsync(DissociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
             
@@ -3087,7 +3087,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackages">REST API Reference for DissociatePackages Operation</seealso>
         public virtual DissociatePackagesResponse DissociatePackages(DissociatePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackagesResponseUnmarshaller.Instance;
 
@@ -3126,7 +3126,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackages">REST API Reference for DissociatePackages Operation</seealso>
         public virtual Task<DissociatePackagesResponse> DissociatePackagesAsync(DissociatePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackagesResponseUnmarshaller.Instance;
             
@@ -3165,7 +3165,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -3203,7 +3203,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
             
@@ -3240,7 +3240,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">REST API Reference for GetCompatibleVersions Operation</seealso>
         public virtual GetCompatibleVersionsResponse GetCompatibleVersions(GetCompatibleVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleVersionsResponseUnmarshaller.Instance;
 
@@ -3276,7 +3276,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCompatibleVersions">REST API Reference for GetCompatibleVersions Operation</seealso>
         public virtual Task<GetCompatibleVersionsResponse> GetCompatibleVersionsAsync(GetCompatibleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleVersionsResponseUnmarshaller.Instance;
             
@@ -3316,7 +3316,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual GetDataSourceResponse GetDataSource(GetDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
@@ -3355,7 +3355,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDataSource">REST API Reference for GetDataSource Operation</seealso>
         public virtual Task<GetDataSourceResponse> GetDataSourceAsync(GetDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSourceResponseUnmarshaller.Instance;
             
@@ -3392,7 +3392,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">REST API Reference for GetDirectQueryDataSource Operation</seealso>
         public virtual GetDirectQueryDataSourceResponse GetDirectQueryDataSource(GetDirectQueryDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectQueryDataSourceResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">REST API Reference for GetDirectQueryDataSource Operation</seealso>
         public virtual Task<GetDirectQueryDataSourceResponse> GetDirectQueryDataSourceAsync(GetDirectQueryDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectQueryDataSourceResponseUnmarshaller.Instance;
             
@@ -3464,7 +3464,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
         public virtual GetDomainMaintenanceStatusResponse GetDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainMaintenanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainMaintenanceStatusResponseUnmarshaller.Instance;
 
@@ -3499,7 +3499,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
         public virtual Task<GetDomainMaintenanceStatusResponse> GetDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainMaintenanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainMaintenanceStatusResponseUnmarshaller.Instance;
             
@@ -3538,7 +3538,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual GetPackageVersionHistoryResponse GetPackageVersionHistory(GetPackageVersionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
 
@@ -3576,7 +3576,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual Task<GetPackageVersionHistoryResponse> GetPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
             
@@ -3613,7 +3613,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
 
@@ -3649,7 +3649,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
             
@@ -3686,7 +3686,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
 
@@ -3722,7 +3722,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
             
@@ -3761,7 +3761,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -3799,7 +3799,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -3841,7 +3841,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -3882,7 +3882,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
             
@@ -3919,7 +3919,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">REST API Reference for ListDirectQueryDataSources Operation</seealso>
         public virtual ListDirectQueryDataSourcesResponse ListDirectQueryDataSources(ListDirectQueryDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectQueryDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectQueryDataSourcesResponseUnmarshaller.Instance;
 
@@ -3955,7 +3955,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">REST API Reference for ListDirectQueryDataSources Operation</seealso>
         public virtual Task<ListDirectQueryDataSourcesResponse> ListDirectQueryDataSourcesAsync(ListDirectQueryDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectQueryDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectQueryDataSourcesResponseUnmarshaller.Instance;
             
@@ -3991,7 +3991,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">REST API Reference for ListDomainMaintenances Operation</seealso>
         public virtual ListDomainMaintenancesResponse ListDomainMaintenances(ListDomainMaintenancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainMaintenancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainMaintenancesResponseUnmarshaller.Instance;
 
@@ -4026,7 +4026,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainMaintenances">REST API Reference for ListDomainMaintenances Operation</seealso>
         public virtual Task<ListDomainMaintenancesResponse> ListDomainMaintenancesAsync(ListDomainMaintenancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainMaintenancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainMaintenancesResponseUnmarshaller.Instance;
             
@@ -4054,7 +4054,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
@@ -4081,7 +4081,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
             
@@ -4119,7 +4119,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
 
@@ -4156,7 +4156,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual Task<ListDomainsForPackageResponse> ListDomainsForPackageAsync(ListDomainsForPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
             
@@ -4190,7 +4190,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails">REST API Reference for ListInstanceTypeDetails Operation</seealso>
         public virtual ListInstanceTypeDetailsResponse ListInstanceTypeDetails(ListInstanceTypeDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceTypeDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceTypeDetailsResponseUnmarshaller.Instance;
 
@@ -4223,7 +4223,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails">REST API Reference for ListInstanceTypeDetails Operation</seealso>
         public virtual Task<ListInstanceTypeDetailsResponse> ListInstanceTypeDetailsAsync(ListInstanceTypeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceTypeDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceTypeDetailsResponseUnmarshaller.Instance;
             
@@ -4261,7 +4261,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual Task<ListPackagesForDomainResponse> ListPackagesForDomainAsync(ListPackagesForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
             
@@ -4337,7 +4337,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         public virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
 
@@ -4375,7 +4375,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         public virtual Task<ListScheduledActionsResponse> ListScheduledActionsAsync(ListScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledActionsResponseUnmarshaller.Instance;
             
@@ -4410,7 +4410,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -4444,7 +4444,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
             
@@ -4478,7 +4478,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual ListVersionsResponse ListVersions(ListVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
 
@@ -4511,7 +4511,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVersions">REST API Reference for ListVersions Operation</seealso>
         public virtual Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsResponseUnmarshaller.Instance;
             
@@ -4546,7 +4546,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         public virtual ListVpcEndpointAccessResponse ListVpcEndpointAccess(ListVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -4580,7 +4580,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         public virtual Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -4611,7 +4611,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -4641,7 +4641,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
             
@@ -4675,7 +4675,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         public virtual ListVpcEndpointsForDomainResponse ListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
 
@@ -4708,7 +4708,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         public virtual Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
             
@@ -4747,7 +4747,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOffering">REST API Reference for PurchaseReservedInstanceOffering Operation</seealso>
         public virtual PurchaseReservedInstanceOfferingResponse PurchaseReservedInstanceOffering(PurchaseReservedInstanceOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstanceOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstanceOfferingResponseUnmarshaller.Instance;
 
@@ -4785,7 +4785,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOffering">REST API Reference for PurchaseReservedInstanceOffering Operation</seealso>
         public virtual Task<PurchaseReservedInstanceOfferingResponse> PurchaseReservedInstanceOfferingAsync(PurchaseReservedInstanceOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstanceOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstanceOfferingResponseUnmarshaller.Instance;
             
@@ -4813,7 +4813,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">REST API Reference for RejectInboundConnection Operation</seealso>
         public virtual RejectInboundConnectionResponse RejectInboundConnection(RejectInboundConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInboundConnectionResponseUnmarshaller.Instance;
 
@@ -4840,7 +4840,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">REST API Reference for RejectInboundConnection Operation</seealso>
         public virtual Task<RejectInboundConnectionResponse> RejectInboundConnectionAsync(RejectInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInboundConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInboundConnectionResponseUnmarshaller.Instance;
             
@@ -4872,7 +4872,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -4903,7 +4903,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
             
@@ -4940,7 +4940,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
         public virtual RevokeVpcEndpointAccessResponse RevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -4976,7 +4976,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
         public virtual Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -5014,7 +5014,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">REST API Reference for StartDomainMaintenance Operation</seealso>
         public virtual StartDomainMaintenanceResponse StartDomainMaintenance(StartDomainMaintenanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDomainMaintenanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
 
@@ -5051,7 +5051,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartDomainMaintenance">REST API Reference for StartDomainMaintenance Operation</seealso>
         public virtual Task<StartDomainMaintenanceResponse> StartDomainMaintenanceAsync(StartDomainMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDomainMaintenanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
             
@@ -5086,7 +5086,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">REST API Reference for StartServiceSoftwareUpdate Operation</seealso>
         public virtual StartServiceSoftwareUpdateResponse StartServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
@@ -5120,7 +5120,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartServiceSoftwareUpdate">REST API Reference for StartServiceSoftwareUpdate Operation</seealso>
         public virtual Task<StartServiceSoftwareUpdateResponse> StartServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartServiceSoftwareUpdateResponseUnmarshaller.Instance;
             
@@ -5163,7 +5163,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -5205,7 +5205,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -5246,7 +5246,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -5286,7 +5286,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
             
@@ -5323,7 +5323,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">REST API Reference for UpdateDirectQueryDataSource Operation</seealso>
         public virtual UpdateDirectQueryDataSourceResponse UpdateDirectQueryDataSource(UpdateDirectQueryDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectQueryDataSourceResponseUnmarshaller.Instance;
 
@@ -5359,7 +5359,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">REST API Reference for UpdateDirectQueryDataSource Operation</seealso>
         public virtual Task<UpdateDirectQueryDataSourceResponse> UpdateDirectQueryDataSourceAsync(UpdateDirectQueryDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectQueryDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectQueryDataSourceResponseUnmarshaller.Instance;
             
@@ -5399,7 +5399,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         public virtual UpdateDomainConfigResponse UpdateDomainConfig(UpdateDomainConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainConfigResponseUnmarshaller.Instance;
 
@@ -5438,7 +5438,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         public virtual Task<UpdateDomainConfigResponse> UpdateDomainConfigAsync(UpdateDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainConfigResponseUnmarshaller.Instance;
             
@@ -5479,7 +5479,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
 
@@ -5519,7 +5519,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual Task<UpdatePackageResponse> UpdatePackageAsync(UpdatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
             
@@ -5556,7 +5556,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackageScope">REST API Reference for UpdatePackageScope Operation</seealso>
         public virtual UpdatePackageScopeResponse UpdatePackageScope(UpdatePackageScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageScopeResponseUnmarshaller.Instance;
 
@@ -5592,7 +5592,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackageScope">REST API Reference for UpdatePackageScope Operation</seealso>
         public virtual Task<UpdatePackageScopeResponse> UpdatePackageScopeAsync(UpdatePackageScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageScopeResponseUnmarshaller.Instance;
             
@@ -5639,7 +5639,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         public virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
 
@@ -5685,7 +5685,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         public virtual Task<UpdateScheduledActionResponse> UpdateScheduledActionAsync(UpdateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledActionResponseUnmarshaller.Instance;
             
@@ -5725,7 +5725,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -5764,7 +5764,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
             
@@ -5804,7 +5804,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeDomain">REST API Reference for UpgradeDomain Operation</seealso>
         public virtual UpgradeDomainResponse UpgradeDomain(UpgradeDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeDomainResponseUnmarshaller.Instance;
 
@@ -5843,7 +5843,7 @@ namespace Amazon.OpenSearchService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpgradeDomain">REST API Reference for UpgradeDomain Operation</seealso>
         public virtual Task<UpgradeDomainResponse> UpgradeDomainAsync(UpgradeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeDomainResponseUnmarshaller.Instance;
             

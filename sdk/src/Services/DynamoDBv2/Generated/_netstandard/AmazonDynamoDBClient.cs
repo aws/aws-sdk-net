@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = BatchGetItemEndpointDiscoveryMarshaller.Instance;
@@ -764,7 +764,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         public virtual Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = BatchGetItemEndpointDiscoveryMarshaller.Instance;
@@ -779,7 +779,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchWriteItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = BatchWriteItemEndpointDiscoveryMarshaller.Instance;
@@ -1120,7 +1120,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
         public virtual Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchWriteItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchWriteItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = BatchWriteItemEndpointDiscoveryMarshaller.Instance;
@@ -1135,7 +1135,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateBackupEndpointDiscoveryMarshaller.Instance;
@@ -1259,7 +1259,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateBackupEndpointDiscoveryMarshaller.Instance;
@@ -1274,7 +1274,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual CreateGlobalTableResponse CreateGlobalTable(CreateGlobalTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -1423,7 +1423,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
         public virtual Task<CreateGlobalTableResponse> CreateGlobalTableAsync(CreateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -1438,7 +1438,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateTableEndpointDiscoveryMarshaller.Instance;
@@ -1643,7 +1643,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateTableEndpointDiscoveryMarshaller.Instance;
@@ -1658,7 +1658,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteBackupEndpointDiscoveryMarshaller.Instance;
@@ -1730,7 +1730,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteBackupEndpointDiscoveryMarshaller.Instance;
@@ -1745,7 +1745,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DeleteItemResponse DeleteItem(DeleteItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteItemEndpointDiscoveryMarshaller.Instance;
@@ -1993,7 +1993,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
         public virtual Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteItemEndpointDiscoveryMarshaller.Instance;
@@ -2008,7 +2008,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -2126,7 +2126,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -2141,7 +2141,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteTableEndpointDiscoveryMarshaller.Instance;
@@ -2358,7 +2358,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteTableEndpointDiscoveryMarshaller.Instance;
@@ -2373,7 +2373,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeBackupResponse DescribeBackup(DescribeBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeBackupEndpointDiscoveryMarshaller.Instance;
@@ -2407,7 +2407,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup">REST API Reference for DescribeBackup Operation</seealso>
         public virtual Task<DescribeBackupResponse> DescribeBackupAsync(DescribeBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeBackupEndpointDiscoveryMarshaller.Instance;
@@ -2422,7 +2422,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeContinuousBackupsResponse DescribeContinuousBackups(DescribeContinuousBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContinuousBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeContinuousBackupsEndpointDiscoveryMarshaller.Instance;
@@ -2472,7 +2472,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
         public virtual Task<DescribeContinuousBackupsResponse> DescribeContinuousBackupsAsync(DescribeContinuousBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContinuousBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContinuousBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeContinuousBackupsEndpointDiscoveryMarshaller.Instance;
@@ -2487,7 +2487,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeContributorInsightsResponse DescribeContributorInsights(DescribeContributorInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
 
@@ -2516,7 +2516,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
         public virtual Task<DescribeContributorInsightsResponse> DescribeContributorInsightsAsync(DescribeContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContributorInsightsResponseUnmarshaller.Instance;
 
@@ -2529,7 +2529,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -2565,7 +2565,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeExportResponse DescribeExport(DescribeExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
 
@@ -2626,7 +2626,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
         public virtual Task<DescribeExportResponse> DescribeExportAsync(DescribeExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
 
@@ -2639,7 +2639,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -2684,7 +2684,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">REST API Reference for DescribeGlobalTable Operation</seealso>
         public virtual Task<DescribeGlobalTableResponse> DescribeGlobalTableAsync(DescribeGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -2699,7 +2699,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeGlobalTableSettingsResponse DescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeGlobalTableSettingsEndpointDiscoveryMarshaller.Instance;
@@ -2744,7 +2744,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">REST API Reference for DescribeGlobalTableSettings Operation</seealso>
         public virtual Task<DescribeGlobalTableSettingsResponse> DescribeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalTableSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalTableSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeGlobalTableSettingsEndpointDiscoveryMarshaller.Instance;
@@ -2759,7 +2759,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeImportResponse DescribeImport(DescribeImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
         public virtual Task<DescribeImportResponse> DescribeImportAsync(DescribeImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeKinesisStreamingDestinationResponse DescribeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -2826,7 +2826,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
         public virtual Task<DescribeKinesisStreamingDestinationResponse> DescribeKinesisStreamingDestinationAsync(DescribeKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -2841,7 +2841,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeLimitsEndpointDiscoveryMarshaller.Instance;
@@ -2954,7 +2954,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
         public virtual Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeLimitsEndpointDiscoveryMarshaller.Instance;
@@ -2969,7 +2969,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTableEndpointDiscoveryMarshaller.Instance;
@@ -3046,7 +3046,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTableEndpointDiscoveryMarshaller.Instance;
@@ -3061,7 +3061,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeTableReplicaAutoScalingResponse DescribeTableReplicaAutoScaling(DescribeTableReplicaAutoScalingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
 
@@ -3089,7 +3089,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
         public virtual Task<DescribeTableReplicaAutoScalingResponse> DescribeTableReplicaAutoScalingAsync(DescribeTableReplicaAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableReplicaAutoScalingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableReplicaAutoScalingResponseUnmarshaller.Instance;
 
@@ -3102,7 +3102,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeToLiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTimeToLiveEndpointDiscoveryMarshaller.Instance;
@@ -3157,7 +3157,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
         public virtual Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTimeToLiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTimeToLiveEndpointDiscoveryMarshaller.Instance;
@@ -3172,7 +3172,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual DisableKinesisStreamingDestinationResponse DisableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -3258,7 +3258,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
         public virtual Task<DisableKinesisStreamingDestinationResponse> DisableKinesisStreamingDestinationAsync(DisableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -3273,7 +3273,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual EnableKinesisStreamingDestinationResponse EnableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -3361,7 +3361,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
         public virtual Task<EnableKinesisStreamingDestinationResponse> EnableKinesisStreamingDestinationAsync(EnableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -3376,7 +3376,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
 
@@ -3457,7 +3457,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
 
@@ -3470,7 +3470,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ExecuteTransactionResponse ExecuteTransaction(ExecuteTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteTransactionResponseUnmarshaller.Instance;
 
@@ -3853,7 +3853,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">REST API Reference for ExecuteTransaction Operation</seealso>
         public virtual Task<ExecuteTransactionResponse> ExecuteTransactionAsync(ExecuteTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteTransactionResponseUnmarshaller.Instance;
 
@@ -3866,7 +3866,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ExportTableToPointInTimeResponse ExportTableToPointInTime(ExportTableToPointInTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
 
@@ -3939,7 +3939,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
         public virtual Task<ExportTableToPointInTimeResponse> ExportTableToPointInTimeAsync(ExportTableToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
 
@@ -3952,7 +3952,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual GetItemResponse GetItem(GetItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = GetItemEndpointDiscoveryMarshaller.Instance;
@@ -4131,7 +4131,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         public virtual Task<GetItemResponse> GetItemAsync(GetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = GetItemEndpointDiscoveryMarshaller.Instance;
@@ -4146,7 +4146,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = GetResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -4225,7 +4225,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = GetResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -4240,7 +4240,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ImportTableResponse ImportTable(ImportTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
 
@@ -4321,7 +4321,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
         public virtual Task<ImportTableResponse> ImportTableAsync(ImportTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
 
@@ -4334,7 +4334,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListBackupsResponse ListBackups(ListBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListBackupsEndpointDiscoveryMarshaller.Instance;
@@ -4380,7 +4380,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">REST API Reference for ListBackups Operation</seealso>
         public virtual Task<ListBackupsResponse> ListBackupsAsync(ListBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListBackupsEndpointDiscoveryMarshaller.Instance;
@@ -4395,7 +4395,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListContributorInsightsResponse ListContributorInsights(ListContributorInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
 
@@ -4424,7 +4424,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
         public virtual Task<ListContributorInsightsResponse> ListContributorInsightsAsync(ListContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
 
@@ -4437,7 +4437,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -4495,7 +4495,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -4508,7 +4508,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListGlobalTablesResponse ListGlobalTables(ListGlobalTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGlobalTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListGlobalTablesEndpointDiscoveryMarshaller.Instance;
@@ -4550,7 +4550,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">REST API Reference for ListGlobalTables Operation</seealso>
         public virtual Task<ListGlobalTablesResponse> ListGlobalTablesAsync(ListGlobalTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGlobalTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGlobalTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListGlobalTablesEndpointDiscoveryMarshaller.Instance;
@@ -4565,7 +4565,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -4620,7 +4620,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -4637,7 +4637,7 @@ namespace Amazon.DynamoDBv2
         }
         internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTablesEndpointDiscoveryMarshaller.Instance;
@@ -4756,7 +4756,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTablesEndpointDiscoveryMarshaller.Instance;
@@ -4771,7 +4771,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ListTagsOfResourceResponse ListTagsOfResource(ListTagsOfResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsOfResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsOfResourceEndpointDiscoveryMarshaller.Instance;
@@ -4808,7 +4808,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
         public virtual Task<ListTagsOfResourceResponse> ListTagsOfResourceAsync(ListTagsOfResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsOfResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsOfResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsOfResourceEndpointDiscoveryMarshaller.Instance;
@@ -4823,7 +4823,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual PutItemResponse PutItem(PutItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PutItemEndpointDiscoveryMarshaller.Instance;
@@ -5119,7 +5119,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
         public virtual Task<PutItemResponse> PutItemAsync(PutItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PutItemEndpointDiscoveryMarshaller.Instance;
@@ -5134,7 +5134,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PutResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -5249,7 +5249,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PutResourcePolicyEndpointDiscoveryMarshaller.Instance;
@@ -5264,7 +5264,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual QueryResponse Query(QueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = QueryEndpointDiscoveryMarshaller.Instance;
@@ -5380,7 +5380,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
         public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = QueryEndpointDiscoveryMarshaller.Instance;
@@ -5395,7 +5395,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual RestoreTableFromBackupResponse RestoreTableFromBackup(RestoreTableFromBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = RestoreTableFromBackupEndpointDiscoveryMarshaller.Instance;
@@ -5503,7 +5503,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup">REST API Reference for RestoreTableFromBackup Operation</seealso>
         public virtual Task<RestoreTableFromBackupResponse> RestoreTableFromBackupAsync(RestoreTableFromBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableFromBackupResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = RestoreTableFromBackupEndpointDiscoveryMarshaller.Instance;
@@ -5518,7 +5518,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual RestoreTableToPointInTimeResponse RestoreTableToPointInTime(RestoreTableToPointInTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = RestoreTableToPointInTimeEndpointDiscoveryMarshaller.Instance;
@@ -5666,7 +5666,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
         public virtual Task<RestoreTableToPointInTimeResponse> RestoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableToPointInTimeResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = RestoreTableToPointInTimeEndpointDiscoveryMarshaller.Instance;
@@ -5681,7 +5681,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual ScanResponse Scan(ScanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ScanEndpointDiscoveryMarshaller.Instance;
@@ -6094,7 +6094,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         public virtual Task<ScanResponse> ScanAsync(ScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScanResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ScanEndpointDiscoveryMarshaller.Instance;
@@ -6109,7 +6109,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -6218,7 +6218,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -6233,7 +6233,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual TransactGetItemsResponse TransactGetItems(TransactGetItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransactGetItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransactGetItemsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TransactGetItemsEndpointDiscoveryMarshaller.Instance;
@@ -6555,7 +6555,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">REST API Reference for TransactGetItems Operation</seealso>
         public virtual Task<TransactGetItemsResponse> TransactGetItemsAsync(TransactGetItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransactGetItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransactGetItemsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TransactGetItemsEndpointDiscoveryMarshaller.Instance;
@@ -6570,7 +6570,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual TransactWriteItemsResponse TransactWriteItems(TransactWriteItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransactWriteItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransactWriteItemsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TransactWriteItemsEndpointDiscoveryMarshaller.Instance;
@@ -7019,7 +7019,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems">REST API Reference for TransactWriteItems Operation</seealso>
         public virtual Task<TransactWriteItemsResponse> TransactWriteItemsAsync(TransactWriteItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TransactWriteItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TransactWriteItemsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TransactWriteItemsEndpointDiscoveryMarshaller.Instance;
@@ -7034,7 +7034,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -7141,7 +7141,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -7156,7 +7156,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateContinuousBackupsResponse UpdateContinuousBackups(UpdateContinuousBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContinuousBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateContinuousBackupsEndpointDiscoveryMarshaller.Instance;
@@ -7207,7 +7207,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
         public virtual Task<UpdateContinuousBackupsResponse> UpdateContinuousBackupsAsync(UpdateContinuousBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContinuousBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContinuousBackupsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateContinuousBackupsEndpointDiscoveryMarshaller.Instance;
@@ -7222,7 +7222,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateContributorInsightsResponse UpdateContributorInsights(UpdateContributorInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
 
@@ -7256,7 +7256,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
         public virtual Task<UpdateContributorInsightsResponse> UpdateContributorInsightsAsync(UpdateContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContributorInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContributorInsightsResponseUnmarshaller.Instance;
 
@@ -7269,7 +7269,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateGlobalTableResponse UpdateGlobalTable(UpdateGlobalTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -7359,7 +7359,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
         public virtual Task<UpdateGlobalTableResponse> UpdateGlobalTableAsync(UpdateGlobalTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateGlobalTableEndpointDiscoveryMarshaller.Instance;
@@ -7374,7 +7374,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateGlobalTableSettingsResponse UpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateGlobalTableSettingsEndpointDiscoveryMarshaller.Instance;
@@ -7480,7 +7480,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
         public virtual Task<UpdateGlobalTableSettingsResponse> UpdateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalTableSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalTableSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateGlobalTableSettingsEndpointDiscoveryMarshaller.Instance;
@@ -7495,7 +7495,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateItemResponse UpdateItem(UpdateItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateItemEndpointDiscoveryMarshaller.Instance;
@@ -7720,7 +7720,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
         public virtual Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateItemResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateItemEndpointDiscoveryMarshaller.Instance;
@@ -7735,7 +7735,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateKinesisStreamingDestinationResponse UpdateKinesisStreamingDestination(UpdateKinesisStreamingDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -7820,7 +7820,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">REST API Reference for UpdateKinesisStreamingDestination Operation</seealso>
         public virtual Task<UpdateKinesisStreamingDestinationResponse> UpdateKinesisStreamingDestinationAsync(UpdateKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKinesisStreamingDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKinesisStreamingDestinationResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
@@ -7835,7 +7835,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTableEndpointDiscoveryMarshaller.Instance;
@@ -8054,7 +8054,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTableEndpointDiscoveryMarshaller.Instance;
@@ -8069,7 +8069,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateTableReplicaAutoScalingResponse UpdateTableReplicaAutoScaling(UpdateTableReplicaAutoScalingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
 
@@ -8152,7 +8152,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
         public virtual Task<UpdateTableReplicaAutoScalingResponse> UpdateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableReplicaAutoScalingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableReplicaAutoScalingResponseUnmarshaller.Instance;
 
@@ -8165,7 +8165,7 @@ namespace Amazon.DynamoDBv2
 
         internal virtual UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTimeToLiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTimeToLiveEndpointDiscoveryMarshaller.Instance;
@@ -8288,7 +8288,7 @@ namespace Amazon.DynamoDBv2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
         public virtual Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTimeToLiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTimeToLiveEndpointDiscoveryMarshaller.Instance;

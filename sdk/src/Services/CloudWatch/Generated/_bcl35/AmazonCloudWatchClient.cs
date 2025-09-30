@@ -328,7 +328,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public virtual DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlarms(DeleteAlarmsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmsResponseUnmarshaller.Instance;
 
@@ -399,7 +399,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual DeleteAnomalyDetectorResponse DeleteAnomalyDetector(DeleteAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAnomalyDetector">REST API Reference for DeleteAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginDeleteAnomalyDetector(DeleteAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -466,7 +466,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
         public virtual DeleteDashboardsResponse DeleteDashboards(DeleteDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards">REST API Reference for DeleteDashboards Operation</seealso>
         public virtual IAsyncResult BeginDeleteDashboards(DeleteDashboardsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardsResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
         public virtual DeleteInsightRulesResponse DeleteInsightRules(DeleteInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteInsightRules">REST API Reference for DeleteInsightRules Operation</seealso>
         public virtual IAsyncResult BeginDeleteInsightRules(DeleteInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightRulesResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
         public virtual DeleteMetricStreamResponse DeleteMetricStream(DeleteMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">REST API Reference for DeleteMetricStream Operation</seealso>
         public virtual IAsyncResult BeginDeleteMetricStream(DeleteMetricStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
         public virtual DescribeAlarmContributorsResponse DescribeAlarmContributors(DescribeAlarmContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmContributors">REST API Reference for DescribeAlarmContributors Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlarmContributors(DescribeAlarmContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmContributorsResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public virtual DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlarmHistory(DescribeAlarmHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmHistoryResponseUnmarshaller.Instance;
 
@@ -845,7 +845,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public virtual DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlarms(DescribeAlarmsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public virtual DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsForMetricRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmsForMetricRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.Instance;
 
@@ -978,7 +978,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
         public virtual DescribeAnomalyDetectorsResponse DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAnomalyDetectors">REST API Reference for DescribeAnomalyDetectors Operation</seealso>
         public virtual IAsyncResult BeginDescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyDetectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyDetectorsResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
         public virtual DescribeInsightRulesResponse DescribeInsightRules(DescribeInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
 
@@ -1062,7 +1062,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeInsightRules">REST API Reference for DescribeInsightRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeInsightRules(DescribeInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightRulesResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public virtual DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public virtual IAsyncResult BeginDisableAlarmActions(DisableAlarmActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1157,7 +1157,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
         public virtual DisableInsightRulesResponse DisableInsightRules(DisableInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableInsightRules">REST API Reference for DisableInsightRules Operation</seealso>
         public virtual IAsyncResult BeginDisableInsightRules(DisableInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public virtual EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public virtual IAsyncResult BeginEnableAlarmActions(EnableAlarmActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAlarmActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAlarmActionsResponseUnmarshaller.Instance;
 
@@ -1275,7 +1275,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
         public virtual EnableInsightRulesResponse EnableInsightRules(EnableInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableInsightRules">REST API Reference for EnableInsightRules Operation</seealso>
         public virtual IAsyncResult BeginEnableInsightRules(EnableInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableInsightRulesResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual GetDashboardResponse GetDashboard(GetDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
@@ -1366,7 +1366,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual IAsyncResult BeginGetDashboard(GetDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
@@ -1456,7 +1456,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
         public virtual GetInsightRuleReportResponse GetInsightRuleReport(GetInsightRuleReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
 
@@ -1477,7 +1477,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetInsightRuleReport">REST API Reference for GetInsightRuleReport Operation</seealso>
         public virtual IAsyncResult BeginGetInsightRuleReport(GetInsightRuleReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightRuleReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightRuleReportResponseUnmarshaller.Instance;
 
@@ -1596,7 +1596,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual GetMetricDataResponse GetMetricData(GetMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
         public virtual IAsyncResult BeginGetMetricData(GetMetricDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricDataResponseUnmarshaller.Instance;
 
@@ -1740,7 +1740,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public virtual GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
 
@@ -1761,7 +1761,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetMetricStatistics(GetMetricStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStatisticsResponseUnmarshaller.Instance;
 
@@ -1809,7 +1809,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
         public virtual GetMetricStreamResponse GetMetricStream(GetMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
 
@@ -1830,7 +1830,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream">REST API Reference for GetMetricStream Operation</seealso>
         public virtual IAsyncResult BeginGetMetricStream(GetMetricStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricStreamResponseUnmarshaller.Instance;
 
@@ -1887,7 +1887,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
         public virtual GetMetricWidgetImageResponse GetMetricWidgetImage(GetMetricWidgetImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricWidgetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
 
@@ -1908,7 +1908,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">REST API Reference for GetMetricWidgetImage Operation</seealso>
         public virtual IAsyncResult BeginGetMetricWidgetImage(GetMetricWidgetImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricWidgetImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricWidgetImageResponseUnmarshaller.Instance;
 
@@ -1956,7 +1956,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -1977,7 +1977,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual IAsyncResult BeginListDashboards(ListDashboardsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
         public virtual ListManagedInsightRulesResponse ListManagedInsightRules(ListManagedInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
         public virtual IAsyncResult BeginListManagedInsightRules(ListManagedInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -2151,7 +2151,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
 
@@ -2172,7 +2172,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public virtual IAsyncResult BeginListMetrics(ListMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
 
@@ -2217,7 +2217,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
         public virtual ListMetricStreamsResponse ListMetricStreams(ListMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
 
@@ -2238,7 +2238,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams">REST API Reference for ListMetricStreams Operation</seealso>
         public virtual IAsyncResult BeginListMetricStreams(ListMetricStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetricStreamsResponseUnmarshaller.Instance;
 
@@ -2281,7 +2281,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2364,7 +2364,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
         public virtual PutAnomalyDetectorResponse PutAnomalyDetector(PutAnomalyDetectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -2385,7 +2385,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">REST API Reference for PutAnomalyDetector Operation</seealso>
         public virtual IAsyncResult BeginPutAnomalyDetector(PutAnomalyDetectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAnomalyDetectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAnomalyDetectorResponseUnmarshaller.Instance;
 
@@ -2502,7 +2502,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
         public virtual PutCompositeAlarmResponse PutCompositeAlarm(PutCompositeAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
 
@@ -2523,7 +2523,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">REST API Reference for PutCompositeAlarm Operation</seealso>
         public virtual IAsyncResult BeginPutCompositeAlarm(PutCompositeAlarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCompositeAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCompositeAlarmResponseUnmarshaller.Instance;
 
@@ -2589,7 +2589,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
         public virtual PutDashboardResponse PutDashboard(PutDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDashboardResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard">REST API Reference for PutDashboard Operation</seealso>
         public virtual IAsyncResult BeginPutDashboard(PutDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDashboardResponseUnmarshaller.Instance;
 
@@ -2661,7 +2661,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         public virtual PutInsightRuleResponse PutInsightRule(PutInsightRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         public virtual IAsyncResult BeginPutInsightRule(PutInsightRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightRuleResponseUnmarshaller.Instance;
 
@@ -2727,7 +2727,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
         public virtual PutManagedInsightRulesResponse PutManagedInsightRules(PutManagedInsightRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
         public virtual IAsyncResult BeginPutManagedInsightRules(PutManagedInsightRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutManagedInsightRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutManagedInsightRulesResponseUnmarshaller.Instance;
 
@@ -2858,7 +2858,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public virtual PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
 
@@ -2879,7 +2879,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public virtual IAsyncResult BeginPutMetricAlarm(PutMetricAlarmRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricAlarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricAlarmResponseUnmarshaller.Instance;
 
@@ -2998,7 +2998,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public virtual PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricDataResponseUnmarshaller.Instance;
 
@@ -3019,7 +3019,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public virtual IAsyncResult BeginPutMetricData(PutMetricDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricDataResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
         public virtual PutMetricStreamResponse PutMetricStream(PutMetricStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
 
@@ -3140,7 +3140,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream">REST API Reference for PutMetricStream Operation</seealso>
         public virtual IAsyncResult BeginPutMetricStream(PutMetricStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricStreamResponseUnmarshaller.Instance;
 
@@ -3202,7 +3202,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public virtual SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAlarmStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAlarmStateResponseUnmarshaller.Instance;
 
@@ -3223,7 +3223,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public virtual IAsyncResult BeginSetAlarmState(SetAlarmStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetAlarmStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetAlarmStateResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
         public virtual StartMetricStreamsResponse StartMetricStreams(StartMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3286,7 +3286,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams">REST API Reference for StartMetricStreams Operation</seealso>
         public virtual IAsyncResult BeginStartMetricStreams(StartMetricStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3328,7 +3328,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
         public virtual StopMetricStreamsResponse StopMetricStreams(StopMetricStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3349,7 +3349,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams">REST API Reference for StopMetricStreams Operation</seealso>
         public virtual IAsyncResult BeginStopMetricStreams(StopMetricStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMetricStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
 
@@ -3423,7 +3423,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3492,7 +3492,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3513,7 +3513,7 @@ namespace Amazon.CloudWatch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

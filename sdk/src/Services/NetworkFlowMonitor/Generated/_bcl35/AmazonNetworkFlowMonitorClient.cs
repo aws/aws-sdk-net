@@ -319,7 +319,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual IAsyncResult BeginCreateMonitor(CreateMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateScope">REST API Reference for CreateScope Operation</seealso>
         public virtual CreateScopeResponse CreateScope(CreateScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScopeResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/CreateScope">REST API Reference for CreateScope Operation</seealso>
         public virtual IAsyncResult BeginCreateScope(CreateScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScopeResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual IAsyncResult BeginDeleteMonitor(DeleteMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeleteScope">REST API Reference for DeleteScope Operation</seealso>
         public virtual DeleteScopeResponse DeleteScope(DeleteScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScopeResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/DeleteScope">REST API Reference for DeleteScope Operation</seealso>
         public virtual IAsyncResult BeginDeleteScope(DeleteScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScopeResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual GetMonitorResponse GetMonitor(GetMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual IAsyncResult BeginGetMonitor(GetMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -728,7 +728,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsMonitorTopContributors">REST API Reference for GetQueryResultsMonitorTopContributors Operation</seealso>
         public virtual GetQueryResultsMonitorTopContributorsResponse GetQueryResultsMonitorTopContributors(GetQueryResultsMonitorTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsMonitorTopContributors">REST API Reference for GetQueryResultsMonitorTopContributors Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResultsMonitorTopContributors(GetQueryResultsMonitorTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -822,7 +822,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsWorkloadInsightsTopContributors">REST API Reference for GetQueryResultsWorkloadInsightsTopContributors Operation</seealso>
         public virtual GetQueryResultsWorkloadInsightsTopContributorsResponse GetQueryResultsWorkloadInsightsTopContributors(GetQueryResultsWorkloadInsightsTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsWorkloadInsightsTopContributors">REST API Reference for GetQueryResultsWorkloadInsightsTopContributors Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResultsWorkloadInsightsTopContributors(GetQueryResultsWorkloadInsightsTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -921,7 +921,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsWorkloadInsightsTopContributorsData">REST API Reference for GetQueryResultsWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual GetQueryResultsWorkloadInsightsTopContributorsDataResponse GetQueryResultsWorkloadInsightsTopContributorsData(GetQueryResultsWorkloadInsightsTopContributorsDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryResultsWorkloadInsightsTopContributorsData">REST API Reference for GetQueryResultsWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResultsWorkloadInsightsTopContributorsData(GetQueryResultsWorkloadInsightsTopContributorsDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusMonitorTopContributors">REST API Reference for GetQueryStatusMonitorTopContributors Operation</seealso>
         public virtual GetQueryStatusMonitorTopContributorsResponse GetQueryStatusMonitorTopContributors(GetQueryStatusMonitorTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusMonitorTopContributors">REST API Reference for GetQueryStatusMonitorTopContributors Operation</seealso>
         public virtual IAsyncResult BeginGetQueryStatusMonitorTopContributors(GetQueryStatusMonitorTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusWorkloadInsightsTopContributors">REST API Reference for GetQueryStatusWorkloadInsightsTopContributors Operation</seealso>
         public virtual GetQueryStatusWorkloadInsightsTopContributorsResponse GetQueryStatusWorkloadInsightsTopContributors(GetQueryStatusWorkloadInsightsTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1110,7 +1110,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusWorkloadInsightsTopContributors">REST API Reference for GetQueryStatusWorkloadInsightsTopContributors Operation</seealso>
         public virtual IAsyncResult BeginGetQueryStatusWorkloadInsightsTopContributors(GetQueryStatusWorkloadInsightsTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusWorkloadInsightsTopContributorsData">REST API Reference for GetQueryStatusWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual GetQueryStatusWorkloadInsightsTopContributorsDataResponse GetQueryStatusWorkloadInsightsTopContributorsData(GetQueryStatusWorkloadInsightsTopContributorsDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetQueryStatusWorkloadInsightsTopContributorsData">REST API Reference for GetQueryStatusWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual IAsyncResult BeginGetQueryStatusWorkloadInsightsTopContributorsData(GetQueryStatusWorkloadInsightsTopContributorsDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetScope">REST API Reference for GetScope Operation</seealso>
         public virtual GetScopeResponse GetScope(GetScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScopeResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/GetScope">REST API Reference for GetScope Operation</seealso>
         public virtual IAsyncResult BeginGetScope(GetScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetScopeResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual IAsyncResult BeginListMonitors(ListMonitorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListScopes">REST API Reference for ListScopes Operation</seealso>
         public virtual ListScopesResponse ListScopes(ListScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScopesResponseUnmarshaller.Instance;
 
@@ -1409,7 +1409,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListScopes">REST API Reference for ListScopes Operation</seealso>
         public virtual IAsyncResult BeginListScopes(ListScopesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScopesResponseUnmarshaller.Instance;
 
@@ -1460,7 +1460,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1481,7 +1481,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1545,7 +1545,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryMonitorTopContributors">REST API Reference for StartQueryMonitorTopContributors Operation</seealso>
         public virtual StartQueryMonitorTopContributorsResponse StartQueryMonitorTopContributors(StartQueryMonitorTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryMonitorTopContributors">REST API Reference for StartQueryMonitorTopContributors Operation</seealso>
         public virtual IAsyncResult BeginStartQueryMonitorTopContributors(StartQueryMonitorTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryWorkloadInsightsTopContributors">REST API Reference for StartQueryWorkloadInsightsTopContributors Operation</seealso>
         public virtual StartQueryWorkloadInsightsTopContributorsResponse StartQueryWorkloadInsightsTopContributors(StartQueryWorkloadInsightsTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryWorkloadInsightsTopContributors">REST API Reference for StartQueryWorkloadInsightsTopContributors Operation</seealso>
         public virtual IAsyncResult BeginStartQueryWorkloadInsightsTopContributors(StartQueryWorkloadInsightsTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1715,7 +1715,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryWorkloadInsightsTopContributorsData">REST API Reference for StartQueryWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual StartQueryWorkloadInsightsTopContributorsDataResponse StartQueryWorkloadInsightsTopContributorsData(StartQueryWorkloadInsightsTopContributorsDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1736,7 +1736,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StartQueryWorkloadInsightsTopContributorsData">REST API Reference for StartQueryWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual IAsyncResult BeginStartQueryWorkloadInsightsTopContributorsData(StartQueryWorkloadInsightsTopContributorsDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryMonitorTopContributors">REST API Reference for StopQueryMonitorTopContributors Operation</seealso>
         public virtual StopQueryMonitorTopContributorsResponse StopQueryMonitorTopContributors(StopQueryMonitorTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryMonitorTopContributors">REST API Reference for StopQueryMonitorTopContributors Operation</seealso>
         public virtual IAsyncResult BeginStopQueryMonitorTopContributors(StopQueryMonitorTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryMonitorTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryMonitorTopContributorsResponseUnmarshaller.Instance;
 
@@ -1871,7 +1871,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryWorkloadInsightsTopContributors">REST API Reference for StopQueryWorkloadInsightsTopContributors Operation</seealso>
         public virtual StopQueryWorkloadInsightsTopContributorsResponse StopQueryWorkloadInsightsTopContributors(StopQueryWorkloadInsightsTopContributorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryWorkloadInsightsTopContributors">REST API Reference for StopQueryWorkloadInsightsTopContributors Operation</seealso>
         public virtual IAsyncResult BeginStopQueryWorkloadInsightsTopContributors(StopQueryWorkloadInsightsTopContributorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryWorkloadInsightsTopContributorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryWorkloadInsightsTopContributorsResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryWorkloadInsightsTopContributorsData">REST API Reference for StopQueryWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual StopQueryWorkloadInsightsTopContributorsDataResponse StopQueryWorkloadInsightsTopContributorsData(StopQueryWorkloadInsightsTopContributorsDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -1970,7 +1970,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/StopQueryWorkloadInsightsTopContributorsData">REST API Reference for StopQueryWorkloadInsightsTopContributorsData Operation</seealso>
         public virtual IAsyncResult BeginStopQueryWorkloadInsightsTopContributorsData(StopQueryWorkloadInsightsTopContributorsDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryWorkloadInsightsTopContributorsDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryWorkloadInsightsTopContributorsDataResponseUnmarshaller.Instance;
 
@@ -2021,7 +2021,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2093,7 +2093,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2114,7 +2114,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2162,7 +2162,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual UpdateMonitorResponse UpdateMonitor(UpdateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -2183,7 +2183,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual IAsyncResult BeginUpdateMonitor(UpdateMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -2239,7 +2239,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdateScope">REST API Reference for UpdateScope Operation</seealso>
         public virtual UpdateScopeResponse UpdateScope(UpdateScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScopeResponseUnmarshaller.Instance;
 
@@ -2260,7 +2260,7 @@ namespace Amazon.NetworkFlowMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkflowmonitor-2023-04-19/UpdateScope">REST API Reference for UpdateScope Operation</seealso>
         public virtual IAsyncResult BeginUpdateScope(UpdateScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScopeResponseUnmarshaller.Instance;
 

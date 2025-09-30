@@ -271,7 +271,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -292,7 +292,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual PostToConnectionResponse PostToConnection(PostToConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.ApiGatewayManagementApi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/PostToConnection">REST API Reference for PostToConnection Operation</seealso>
         public virtual IAsyncResult BeginPostToConnection(PostToConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostToConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostToConnectionResponseUnmarshaller.Instance;
 

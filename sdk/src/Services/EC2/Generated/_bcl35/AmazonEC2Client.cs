@@ -296,7 +296,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
         public virtual AcceptAddressTransferResponse AcceptAddressTransfer(AcceptAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
         public virtual IAsyncResult BeginAcceptAddressTransfer(AcceptAddressTransferRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
         public virtual AcceptCapacityReservationBillingOwnershipResponse AcceptCapacityReservationBillingOwnership(AcceptCapacityReservationBillingOwnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -373,7 +373,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
         public virtual IAsyncResult BeginAcceptCapacityReservationBillingOwnership(AcceptCapacityReservationBillingOwnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public virtual AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public virtual IAsyncResult BeginAcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual AcceptTransitGatewayMulticastDomainAssociationsResponse AcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual IAsyncResult BeginAcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
         public virtual AcceptTransitGatewayPeeringAttachmentResponse AcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">REST API Reference for AcceptTransitGatewayPeeringAttachment Operation</seealso>
         public virtual IAsyncResult BeginAcceptTransitGatewayPeeringAttachment(AcceptTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -577,7 +577,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
         public virtual AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -598,7 +598,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
         public virtual IAsyncResult BeginAcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections">REST API Reference for AcceptVpcEndpointConnections Operation</seealso>
         public virtual AcceptVpcEndpointConnectionsResponse AcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections">REST API Reference for AcceptVpcEndpointConnections Operation</seealso>
         public virtual IAsyncResult BeginAcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public virtual AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginAcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
         public virtual AdvertiseByoipCidrResponse AdvertiseByoipCidr(AdvertiseByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">REST API Reference for AdvertiseByoipCidr Operation</seealso>
         public virtual IAsyncResult BeginAdvertiseByoipCidr(AdvertiseByoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AdvertiseByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AdvertiseByoipCidrResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public virtual AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateAddressResponseUnmarshaller.Instance;
 
@@ -914,7 +914,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public virtual IAsyncResult BeginAllocateAddress(AllocateAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateAddressResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public virtual AllocateHostsResponse AllocateHosts(AllocateHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostsResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public virtual IAsyncResult BeginAllocateHosts(AllocateHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateHostsResponseUnmarshaller.Instance;
 
@@ -1018,7 +1018,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
         public virtual AllocateIpamPoolCidrResponse AllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateIpamPoolCidr">REST API Reference for AllocateIpamPoolCidr Operation</seealso>
         public virtual IAsyncResult BeginAllocateIpamPoolCidr(AllocateIpamPoolCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllocateIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllocateIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -1074,7 +1074,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
         public virtual ApplySecurityGroupsToClientVpnTargetNetworkResponse ApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
         public virtual IAsyncResult BeginApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public virtual AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public virtual IAsyncResult BeginAssignIpv6Addresses(AssignIpv6AddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public virtual AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public virtual IAsyncResult BeginAssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -1286,7 +1286,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
         public virtual AssignPrivateNatGatewayAddressResponse AssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1307,7 +1307,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
         public virtual IAsyncResult BeginAssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1368,7 +1368,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public virtual AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAddressResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public virtual IAsyncResult BeginAssociateAddress(AssociateAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAddressResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
         public virtual AssociateCapacityReservationBillingOwnerResponse AssociateCapacityReservationBillingOwner(AssociateCapacityReservationBillingOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
         public virtual IAsyncResult BeginAssociateCapacityReservationBillingOwner(AssociateCapacityReservationBillingOwnerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
         public virtual AssociateClientVpnTargetNetworkResponse AssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
         public virtual IAsyncResult BeginAssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public virtual AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public virtual IAsyncResult BeginAssociateDhcpOptions(AssociateDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -1633,7 +1633,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
         public virtual AssociateEnclaveCertificateIamRoleResponse AssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole">REST API Reference for AssociateEnclaveCertificateIamRole Operation</seealso>
         public virtual IAsyncResult BeginAssociateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
         public virtual AssociateIamInstanceProfileResponse AssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1709,7 +1709,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginAssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1749,7 +1749,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
         public virtual AssociateInstanceEventWindowResponse AssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateInstanceEventWindow">REST API Reference for AssociateInstanceEventWindow Operation</seealso>
         public virtual IAsyncResult BeginAssociateInstanceEventWindow(AssociateInstanceEventWindowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -1812,7 +1812,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
         public virtual AssociateIpamByoasnResponse AssociateIpamByoasn(AssociateIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn">REST API Reference for AssociateIpamByoasn Operation</seealso>
         public virtual IAsyncResult BeginAssociateIpamByoasn(AssociateIpamByoasnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -1868,7 +1868,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
         public virtual AssociateIpamResourceDiscoveryResponse AssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -1889,7 +1889,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
         public virtual IAsyncResult BeginAssociateIpamResourceDiscovery(AssociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -1944,7 +1944,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
         public virtual AssociateNatGatewayAddressResponse AssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
         public virtual IAsyncResult BeginAssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -2009,7 +2009,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
         public virtual AssociateRouteServerResponse AssociateRouteServer(AssociateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteServerResponseUnmarshaller.Instance;
 
@@ -2030,7 +2030,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteServer">REST API Reference for AssociateRouteServer Operation</seealso>
         public virtual IAsyncResult BeginAssociateRouteServer(AssociateRouteServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteServerResponseUnmarshaller.Instance;
 
@@ -2073,7 +2073,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public virtual AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteTableResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public virtual IAsyncResult BeginAssociateRouteTable(AssociateRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateRouteTableResponseUnmarshaller.Instance;
 
@@ -2152,7 +2152,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
         public virtual AssociateSecurityGroupVpcResponse AssociateSecurityGroupVpc(AssociateSecurityGroupVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -2173,7 +2173,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
         public virtual IAsyncResult BeginAssociateSecurityGroupVpc(AssociateSecurityGroupVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public virtual AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -2228,7 +2228,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public virtual IAsyncResult BeginAssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual AssociateTransitGatewayMulticastDomainResponse AssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -2290,7 +2290,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">REST API Reference for AssociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual IAsyncResult BeginAssociateTransitGatewayMulticastDomain(AssociateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -2324,7 +2324,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
         public virtual AssociateTransitGatewayPolicyTableResponse AssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -2345,7 +2345,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
         public virtual IAsyncResult BeginAssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
         public virtual AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -2400,7 +2400,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginAssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -2441,7 +2441,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">REST API Reference for AssociateTrunkInterface Operation</seealso>
         public virtual AssociateTrunkInterfaceResponse AssociateTrunkInterface(AssociateTrunkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -2462,7 +2462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface">REST API Reference for AssociateTrunkInterface Operation</seealso>
         public virtual IAsyncResult BeginAssociateTrunkInterface(AssociateTrunkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public virtual AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -2530,7 +2530,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public virtual IAsyncResult BeginAssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -2584,7 +2584,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public virtual AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -2605,7 +2605,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public virtual IAsyncResult BeginAttachClassicLinkVpc(AttachClassicLinkVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -2640,7 +2640,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public virtual AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -2661,7 +2661,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginAttachInternetGateway(AttachInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -2694,7 +2694,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public virtual AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -2715,7 +2715,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public virtual IAsyncResult BeginAttachNetworkInterface(AttachNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -2749,7 +2749,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
         public virtual AttachVerifiedAccessTrustProviderResponse AttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -2770,7 +2770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">REST API Reference for AttachVerifiedAccessTrustProvider Operation</seealso>
         public virtual IAsyncResult BeginAttachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -2846,7 +2846,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public virtual AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
 
@@ -2867,7 +2867,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public virtual IAsyncResult BeginAttachVolume(AttachVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVolumeResponseUnmarshaller.Instance;
 
@@ -2908,7 +2908,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public virtual AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -2929,7 +2929,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public virtual IAsyncResult BeginAttachVpnGateway(AttachVpnGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
         public virtual AuthorizeClientVpnIngressResponse AuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -2986,7 +2986,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
         public virtual IAsyncResult BeginAuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -3051,7 +3051,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public virtual AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -3072,7 +3072,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public virtual IAsyncResult BeginAuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -3138,7 +3138,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public virtual AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -3159,7 +3159,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public virtual IAsyncResult BeginAuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -3204,7 +3204,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public virtual BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BundleInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BundleInstanceResponseUnmarshaller.Instance;
 
@@ -3225,7 +3225,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public virtual IAsyncResult BeginBundleInstance(BundleInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BundleInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BundleInstanceResponseUnmarshaller.Instance;
 
@@ -3258,7 +3258,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public virtual CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBundleTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBundleTaskResponseUnmarshaller.Instance;
 
@@ -3279,7 +3279,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public virtual IAsyncResult BeginCancelBundleTask(CancelBundleTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBundleTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBundleTaskResponseUnmarshaller.Instance;
 
@@ -3346,7 +3346,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3367,7 +3367,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginCancelCapacityReservation(CancelCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3417,7 +3417,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">REST API Reference for CancelCapacityReservationFleets Operation</seealso>
         public virtual CancelCapacityReservationFleetsResponse CancelCapacityReservationFleets(CancelCapacityReservationFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -3438,7 +3438,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservationFleets">REST API Reference for CancelCapacityReservationFleets Operation</seealso>
         public virtual IAsyncResult BeginCancelCapacityReservationFleets(CancelCapacityReservationFleetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -3474,7 +3474,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public virtual CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelConversionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelConversionTaskResponseUnmarshaller.Instance;
 
@@ -3495,7 +3495,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public virtual IAsyncResult BeginCancelConversionTask(CancelConversionTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelConversionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelConversionTaskResponseUnmarshaller.Instance;
 
@@ -3540,7 +3540,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
         public virtual CancelDeclarativePoliciesReportResponse CancelDeclarativePoliciesReport(CancelDeclarativePoliciesReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -3561,7 +3561,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
         public virtual IAsyncResult BeginCancelDeclarativePoliciesReport(CancelDeclarativePoliciesReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -3596,7 +3596,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -3617,7 +3617,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -3653,7 +3653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
         public virtual CancelImageLaunchPermissionResponse CancelImageLaunchPermission(CancelImageLaunchPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
 
@@ -3674,7 +3674,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
         public virtual IAsyncResult BeginCancelImageLaunchPermission(CancelImageLaunchPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public virtual CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
 
@@ -3728,7 +3728,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public virtual IAsyncResult BeginCancelImportTask(CancelImportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelImportTaskResponseUnmarshaller.Instance;
 
@@ -3767,7 +3767,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public virtual CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -3788,7 +3788,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public virtual IAsyncResult BeginCancelReservedInstancesListing(CancelReservedInstancesListingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -3844,7 +3844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public virtual CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -3865,7 +3865,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public virtual IAsyncResult BeginCancelSpotFleetRequests(CancelSpotFleetRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -3905,7 +3905,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public virtual CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -3926,7 +3926,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public virtual IAsyncResult BeginCancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -3961,7 +3961,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public virtual ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmProductInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmProductInstanceResponseUnmarshaller.Instance;
 
@@ -3982,7 +3982,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public virtual IAsyncResult BeginConfirmProductInstance(ConfirmProductInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfirmProductInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfirmProductInstanceResponseUnmarshaller.Instance;
 
@@ -4015,7 +4015,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
         public virtual CopyFpgaImageResponse CopyFpgaImage(CopyFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
 
@@ -4036,7 +4036,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage">REST API Reference for CopyFpgaImage Operation</seealso>
         public virtual IAsyncResult BeginCopyFpgaImage(CopyFpgaImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyFpgaImageResponseUnmarshaller.Instance;
 
@@ -4178,7 +4178,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public virtual CopyImageResponse CopyImage(CopyImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
@@ -4199,7 +4199,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public virtual IAsyncResult BeginCopyImage(CopyImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyImageResponseUnmarshaller.Instance;
 
@@ -4277,7 +4277,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -4365,7 +4365,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -4386,7 +4386,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginCreateCapacityReservation(CreateCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -4422,7 +4422,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
         public virtual CreateCapacityReservationBySplittingResponse CreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
 
@@ -4443,7 +4443,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">REST API Reference for CreateCapacityReservationBySplitting Operation</seealso>
         public virtual IAsyncResult BeginCreateCapacityReservationBySplitting(CreateCapacityReservationBySplittingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationBySplittingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
 
@@ -4477,7 +4477,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">REST API Reference for CreateCapacityReservationFleet Operation</seealso>
         public virtual CreateCapacityReservationFleetResponse CreateCapacityReservationFleet(CreateCapacityReservationFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -4498,7 +4498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationFleet">REST API Reference for CreateCapacityReservationFleet Operation</seealso>
         public virtual IAsyncResult BeginCreateCapacityReservationFleet(CreateCapacityReservationFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -4532,7 +4532,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
         public virtual CreateCarrierGatewayResponse CreateCarrierGateway(CreateCarrierGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -4553,7 +4553,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway">REST API Reference for CreateCarrierGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateCarrierGateway(CreateCarrierGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -4588,7 +4588,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
         public virtual CreateClientVpnEndpointResponse CreateClientVpnEndpoint(CreateClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -4609,7 +4609,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateClientVpnEndpoint(CreateClientVpnEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -4644,7 +4644,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
         public virtual CreateClientVpnRouteResponse CreateClientVpnRoute(CreateClientVpnRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -4665,7 +4665,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateClientVpnRoute(CreateClientVpnRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -4698,7 +4698,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
         public virtual CreateCoipCidrResponse CreateCoipCidr(CreateCoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
 
@@ -4719,7 +4719,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
         public virtual IAsyncResult BeginCreateCoipCidr(CreateCoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
 
@@ -4752,7 +4752,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
         public virtual CreateCoipPoolResponse CreateCoipPool(CreateCoipPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
 
@@ -4773,7 +4773,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
         public virtual IAsyncResult BeginCreateCoipPool(CreateCoipPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
 
@@ -4827,7 +4827,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public virtual CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -4848,7 +4848,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateCustomerGateway(CreateCustomerGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -4884,7 +4884,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
         public virtual CreateDefaultSubnetResponse CreateDefaultSubnet(CreateDefaultSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
 
@@ -4905,7 +4905,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">REST API Reference for CreateDefaultSubnet Operation</seealso>
         public virtual IAsyncResult BeginCreateDefaultSubnet(CreateDefaultSubnetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultSubnetResponseUnmarshaller.Instance;
 
@@ -4948,7 +4948,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
         public virtual CreateDefaultVpcResponse CreateDefaultVpc(CreateDefaultVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
 
@@ -4969,7 +4969,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc">REST API Reference for CreateDefaultVpc Operation</seealso>
         public virtual IAsyncResult BeginCreateDefaultVpc(CreateDefaultVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDefaultVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDefaultVpcResponseUnmarshaller.Instance;
 
@@ -5003,7 +5003,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
         public virtual CreateDelegateMacVolumeOwnershipTaskResponse CreateDelegateMacVolumeOwnershipTask(CreateDelegateMacVolumeOwnershipTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
 
@@ -5024,7 +5024,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDelegateMacVolumeOwnershipTask">REST API Reference for CreateDelegateMacVolumeOwnershipTask Operation</seealso>
         public virtual IAsyncResult BeginCreateDelegateMacVolumeOwnershipTask(CreateDelegateMacVolumeOwnershipTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDelegateMacVolumeOwnershipTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDelegateMacVolumeOwnershipTaskResponseUnmarshaller.Instance;
 
@@ -5114,7 +5114,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public virtual CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -5135,7 +5135,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public virtual IAsyncResult BeginCreateDhcpOptions(CreateDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -5171,7 +5171,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public virtual CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -5192,7 +5192,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -5237,7 +5237,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -5258,7 +5258,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -5312,7 +5312,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public virtual CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
 
@@ -5333,7 +5333,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public virtual IAsyncResult BeginCreateFlowLogs(CreateFlowLogsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowLogsResponseUnmarshaller.Instance;
 
@@ -5379,7 +5379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
         public virtual CreateFpgaImageResponse CreateFpgaImage(CreateFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
 
@@ -5400,7 +5400,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
         public virtual IAsyncResult BeginCreateFpgaImage(CreateFpgaImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
 
@@ -5462,7 +5462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual CreateImageResponse CreateImage(CreateImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
 
@@ -5483,7 +5483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public virtual IAsyncResult BeginCreateImage(CreateImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageResponseUnmarshaller.Instance;
 
@@ -5525,7 +5525,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
         public virtual CreateImageUsageReportResponse CreateImageUsageReport(CreateImageUsageReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
 
@@ -5546,7 +5546,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImageUsageReport">REST API Reference for CreateImageUsageReport Operation</seealso>
         public virtual IAsyncResult BeginCreateImageUsageReport(CreateImageUsageReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImageUsageReportResponseUnmarshaller.Instance;
 
@@ -5588,7 +5588,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
         public virtual CreateInstanceConnectEndpointResponse CreateInstanceConnectEndpoint(CreateInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -5609,7 +5609,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint">REST API Reference for CreateInstanceConnectEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateInstanceConnectEndpoint(CreateInstanceConnectEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -5682,7 +5682,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
         public virtual CreateInstanceEventWindowResponse CreateInstanceEventWindow(CreateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -5703,7 +5703,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceEventWindow">REST API Reference for CreateInstanceEventWindow Operation</seealso>
         public virtual IAsyncResult BeginCreateInstanceEventWindow(CreateInstanceEventWindowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -5744,7 +5744,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public virtual CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceExportTaskResponseUnmarshaller.Instance;
 
@@ -5765,7 +5765,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public virtual IAsyncResult BeginCreateInstanceExportTask(CreateInstanceExportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceExportTaskResponseUnmarshaller.Instance;
 
@@ -5823,7 +5823,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public virtual CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInternetGatewayResponseUnmarshaller.Instance;
 
@@ -5844,7 +5844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateInternetGateway(CreateInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInternetGatewayResponseUnmarshaller.Instance;
 
@@ -5886,7 +5886,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
         public virtual CreateIpamResponse CreateIpam(CreateIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
 
@@ -5907,7 +5907,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpam">REST API Reference for CreateIpam Operation</seealso>
         public virtual IAsyncResult BeginCreateIpam(CreateIpamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResponseUnmarshaller.Instance;
 
@@ -5943,7 +5943,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
         public virtual CreateIpamExternalResourceVerificationTokenResponse CreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -5964,7 +5964,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
         public virtual IAsyncResult BeginCreateIpamExternalResourceVerificationToken(CreateIpamExternalResourceVerificationTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -6007,7 +6007,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
         public virtual CreateIpamPoolResponse CreateIpamPool(CreateIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
 
@@ -6028,7 +6028,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPool">REST API Reference for CreateIpamPool Operation</seealso>
         public virtual IAsyncResult BeginCreateIpamPool(CreateIpamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamPoolResponseUnmarshaller.Instance;
 
@@ -6062,7 +6062,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
         public virtual CreateIpamResourceDiscoveryResponse CreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -6083,7 +6083,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
         public virtual IAsyncResult BeginCreateIpamResourceDiscovery(CreateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -6126,7 +6126,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
         public virtual CreateIpamScopeResponse CreateIpamScope(CreateIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
 
@@ -6147,7 +6147,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamScope">REST API Reference for CreateIpamScope Operation</seealso>
         public virtual IAsyncResult BeginCreateIpamScope(CreateIpamScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpamScopeResponseUnmarshaller.Instance;
 
@@ -6200,7 +6200,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -6221,7 +6221,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public virtual IAsyncResult BeginCreateKeyPair(CreateKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyPairResponseUnmarshaller.Instance;
 
@@ -6270,7 +6270,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate">REST API Reference for CreateLaunchTemplate Operation</seealso>
         public virtual CreateLaunchTemplateResponse CreateLaunchTemplate(CreateLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -6291,7 +6291,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate">REST API Reference for CreateLaunchTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateLaunchTemplate(CreateLaunchTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -6344,7 +6344,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">REST API Reference for CreateLaunchTemplateVersion Operation</seealso>
         public virtual CreateLaunchTemplateVersionResponse CreateLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
 
@@ -6365,7 +6365,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">REST API Reference for CreateLaunchTemplateVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchTemplateVersionResponseUnmarshaller.Instance;
 
@@ -6409,7 +6409,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
         public virtual CreateLocalGatewayRouteResponse CreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -6430,7 +6430,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayRoute(CreateLocalGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -6463,7 +6463,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
         public virtual CreateLocalGatewayRouteTableResponse CreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -6484,7 +6484,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -6517,7 +6517,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -6538,7 +6538,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -6571,7 +6571,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual CreateLocalGatewayRouteTableVpcAssociationResponse CreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -6592,7 +6592,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">REST API Reference for CreateLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayRouteTableVpcAssociation(CreateLocalGatewayRouteTableVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -6625,7 +6625,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
         public virtual CreateLocalGatewayVirtualInterfaceResponse CreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -6646,7 +6646,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterface">REST API Reference for CreateLocalGatewayVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayVirtualInterface(CreateLocalGatewayVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -6679,7 +6679,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual CreateLocalGatewayVirtualInterfaceGroupResponse CreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -6700,7 +6700,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayVirtualInterfaceGroup">REST API Reference for CreateLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateLocalGatewayVirtualInterfaceGroup(CreateLocalGatewayVirtualInterfaceGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -6783,7 +6783,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
         public virtual CreateMacSystemIntegrityProtectionModificationTaskResponse CreateMacSystemIntegrityProtectionModificationTask(CreateMacSystemIntegrityProtectionModificationTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
 
@@ -6804,7 +6804,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMacSystemIntegrityProtectionModificationTask">REST API Reference for CreateMacSystemIntegrityProtectionModificationTask Operation</seealso>
         public virtual IAsyncResult BeginCreateMacSystemIntegrityProtectionModificationTask(CreateMacSystemIntegrityProtectionModificationTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMacSystemIntegrityProtectionModificationTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMacSystemIntegrityProtectionModificationTaskResponseUnmarshaller.Instance;
 
@@ -6838,7 +6838,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
         public virtual CreateManagedPrefixListResponse CreateManagedPrefixList(CreateManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -6859,7 +6859,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList">REST API Reference for CreateManagedPrefixList Operation</seealso>
         public virtual IAsyncResult BeginCreateManagedPrefixList(CreateManagedPrefixListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -6924,7 +6924,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public virtual CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
 
@@ -6945,7 +6945,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateNatGateway(CreateNatGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNatGatewayResponseUnmarshaller.Instance;
 
@@ -6985,7 +6985,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public virtual CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclResponseUnmarshaller.Instance;
 
@@ -7006,7 +7006,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkAcl(CreateNetworkAclRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclResponseUnmarshaller.Instance;
 
@@ -7062,7 +7062,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public virtual CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -7083,7 +7083,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkAclEntry(CreateNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -7124,7 +7124,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
         public virtual CreateNetworkInsightsAccessScopeResponse CreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -7145,7 +7145,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsAccessScope">REST API Reference for CreateNetworkInsightsAccessScope Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkInsightsAccessScope(CreateNetworkInsightsAccessScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -7186,7 +7186,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
         public virtual CreateNetworkInsightsPathResponse CreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -7207,7 +7207,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -7251,7 +7251,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public virtual CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -7272,7 +7272,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkInterface(CreateNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -7312,7 +7312,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
         public virtual CreateNetworkInterfacePermissionResponse CreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -7333,7 +7333,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission">REST API Reference for CreateNetworkInterfacePermission Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -7381,7 +7381,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public virtual CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlacementGroupResponseUnmarshaller.Instance;
 
@@ -7402,7 +7402,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public virtual IAsyncResult BeginCreatePlacementGroup(CreatePlacementGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlacementGroupResponseUnmarshaller.Instance;
 
@@ -7438,7 +7438,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
         public virtual CreatePublicIpv4PoolResponse CreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -7459,7 +7459,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePublicIpv4Pool">REST API Reference for CreatePublicIpv4Pool Operation</seealso>
         public virtual IAsyncResult BeginCreatePublicIpv4Pool(CreatePublicIpv4PoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -7501,7 +7501,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
         public virtual CreateReplaceRootVolumeTaskResponse CreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplaceRootVolumeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplaceRootVolumeTaskResponseUnmarshaller.Instance;
 
@@ -7522,7 +7522,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask">REST API Reference for CreateReplaceRootVolumeTask Operation</seealso>
         public virtual IAsyncResult BeginCreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplaceRootVolumeTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplaceRootVolumeTaskResponseUnmarshaller.Instance;
 
@@ -7586,7 +7586,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public virtual CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -7607,7 +7607,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public virtual IAsyncResult BeginCreateReservedInstancesListing(CreateReservedInstancesListingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReservedInstancesListingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReservedInstancesListingResponseUnmarshaller.Instance;
 
@@ -7653,7 +7653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
         public virtual CreateRestoreImageTaskResponse CreateRestoreImageTask(CreateRestoreImageTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreImageTaskResponseUnmarshaller.Instance;
 
@@ -7674,7 +7674,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">REST API Reference for CreateRestoreImageTask Operation</seealso>
         public virtual IAsyncResult BeginCreateRestoreImageTask(CreateRestoreImageTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestoreImageTaskResponseUnmarshaller.Instance;
 
@@ -7738,7 +7738,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -7759,7 +7759,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateRoute(CreateRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -7829,7 +7829,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
         public virtual CreateRouteServerResponse CreateRouteServer(CreateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerResponseUnmarshaller.Instance;
 
@@ -7850,7 +7850,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServer">REST API Reference for CreateRouteServer Operation</seealso>
         public virtual IAsyncResult BeginCreateRouteServer(CreateRouteServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerResponseUnmarshaller.Instance;
 
@@ -7895,7 +7895,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
         public virtual CreateRouteServerEndpointResponse CreateRouteServerEndpoint(CreateRouteServerEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -7916,7 +7916,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerEndpoint">REST API Reference for CreateRouteServerEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateRouteServerEndpoint(CreateRouteServerEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -7973,7 +7973,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
         public virtual CreateRouteServerPeerResponse CreateRouteServerPeer(CreateRouteServerPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -7994,7 +7994,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteServerPeer">REST API Reference for CreateRouteServerPeer Operation</seealso>
         public virtual IAsyncResult BeginCreateRouteServerPeer(CreateRouteServerPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -8034,7 +8034,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public virtual CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteTableResponseUnmarshaller.Instance;
 
@@ -8055,7 +8055,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public virtual IAsyncResult BeginCreateRouteTable(CreateRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteTableResponseUnmarshaller.Instance;
 
@@ -8118,7 +8118,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public virtual CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityGroupResponseUnmarshaller.Instance;
 
@@ -8139,7 +8139,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateSecurityGroup(CreateSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityGroupResponseUnmarshaller.Instance;
 
@@ -8224,7 +8224,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -8245,7 +8245,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -8304,7 +8304,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
         public virtual CreateSnapshotsResponse CreateSnapshots(CreateSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
 
@@ -8325,7 +8325,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshots">REST API Reference for CreateSnapshots Operation</seealso>
         public virtual IAsyncResult BeginCreateSnapshots(CreateSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotsResponseUnmarshaller.Instance;
 
@@ -8361,7 +8361,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public virtual CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -8382,7 +8382,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -8427,7 +8427,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
         public virtual CreateStoreImageTaskResponse CreateStoreImageTask(CreateStoreImageTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStoreImageTaskResponseUnmarshaller.Instance;
 
@@ -8448,7 +8448,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">REST API Reference for CreateStoreImageTask Operation</seealso>
         public virtual IAsyncResult BeginCreateStoreImageTask(CreateStoreImageTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStoreImageTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStoreImageTaskResponseUnmarshaller.Instance;
 
@@ -8518,7 +8518,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public virtual CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetResponseUnmarshaller.Instance;
 
@@ -8539,7 +8539,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public virtual IAsyncResult BeginCreateSubnet(CreateSubnetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetResponseUnmarshaller.Instance;
 
@@ -8574,7 +8574,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
         public virtual CreateSubnetCidrReservationResponse CreateSubnetCidrReservation(CreateSubnetCidrReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -8595,7 +8595,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">REST API Reference for CreateSubnetCidrReservation Operation</seealso>
         public virtual IAsyncResult BeginCreateSubnetCidrReservation(CreateSubnetCidrReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -8641,7 +8641,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -8662,7 +8662,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -8707,7 +8707,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
         public virtual CreateTrafficMirrorFilterResponse CreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -8728,7 +8728,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilter">REST API Reference for CreateTrafficMirrorFilter Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficMirrorFilter(CreateTrafficMirrorFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -8770,7 +8770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
         public virtual CreateTrafficMirrorFilterRuleResponse CreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -8791,7 +8791,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorFilterRule">REST API Reference for CreateTrafficMirrorFilterRule Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficMirrorFilterRule(CreateTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -8842,7 +8842,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
         public virtual CreateTrafficMirrorSessionResponse CreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -8863,7 +8863,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">REST API Reference for CreateTrafficMirrorSession Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficMirrorSession(CreateTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -8912,7 +8912,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
         public virtual CreateTrafficMirrorTargetResponse CreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -8933,7 +8933,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorTarget">REST API Reference for CreateTrafficMirrorTarget Operation</seealso>
         public virtual IAsyncResult BeginCreateTrafficMirrorTarget(CreateTrafficMirrorTargetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -8994,7 +8994,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
         public virtual CreateTransitGatewayResponse CreateTransitGateway(CreateTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
 
@@ -9015,7 +9015,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGateway(CreateTransitGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
 
@@ -9056,7 +9056,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
         public virtual CreateTransitGatewayConnectResponse CreateTransitGatewayConnect(CreateTransitGatewayConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -9077,7 +9077,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayConnect(CreateTransitGatewayConnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -9122,7 +9122,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
         public virtual CreateTransitGatewayConnectPeerResponse CreateTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -9143,7 +9143,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -9183,7 +9183,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
         public virtual CreateTransitGatewayMulticastDomainResponse CreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -9204,7 +9204,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">REST API Reference for CreateTransitGatewayMulticastDomain Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -9245,7 +9245,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
         public virtual CreateTransitGatewayPeeringAttachmentResponse CreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -9266,7 +9266,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -9299,7 +9299,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
         public virtual CreateTransitGatewayPolicyTableResponse CreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -9320,7 +9320,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -9354,7 +9354,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
         public virtual CreateTransitGatewayPrefixListReferenceResponse CreateTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -9375,7 +9375,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference">REST API Reference for CreateTransitGatewayPrefixListReference Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -9408,7 +9408,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
         public virtual CreateTransitGatewayRouteResponse CreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -9429,7 +9429,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -9462,7 +9462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
         public virtual CreateTransitGatewayRouteTableResponse CreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -9483,7 +9483,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -9516,7 +9516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual CreateTransitGatewayRouteTableAnnouncementResponse CreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -9537,7 +9537,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -9582,7 +9582,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
         public virtual CreateTransitGatewayVpcAttachmentResponse CreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -9603,7 +9603,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
         public virtual IAsyncResult BeginCreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -9637,7 +9637,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
         public virtual CreateVerifiedAccessEndpointResponse CreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -9658,7 +9658,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint">REST API Reference for CreateVerifiedAccessEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -9695,7 +9695,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
         public virtual CreateVerifiedAccessGroupResponse CreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -9716,7 +9716,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">REST API Reference for CreateVerifiedAccessGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -9750,7 +9750,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
         public virtual CreateVerifiedAccessInstanceResponse CreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -9771,7 +9771,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance">REST API Reference for CreateVerifiedAccessInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -9807,7 +9807,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
         public virtual CreateVerifiedAccessTrustProviderResponse CreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -9828,7 +9828,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">REST API Reference for CreateVerifiedAccessTrustProvider Operation</seealso>
         public virtual IAsyncResult BeginCreateVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -9885,7 +9885,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public virtual CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -9906,7 +9906,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public virtual IAsyncResult BeginCreateVolume(CreateVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -9960,7 +9960,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public virtual CreateVpcResponse CreateVpc(CreateVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcResponseUnmarshaller.Instance;
 
@@ -9981,7 +9981,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public virtual IAsyncResult BeginCreateVpc(CreateVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcResponseUnmarshaller.Instance;
 
@@ -10020,7 +10020,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual CreateVpcBlockPublicAccessExclusionResponse CreateVpcBlockPublicAccessExclusion(CreateVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -10041,7 +10041,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcBlockPublicAccessExclusion(CreateVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -10078,7 +10078,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -10099,7 +10099,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcEndpoint(CreateVpcEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -10140,7 +10140,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification">REST API Reference for CreateVpcEndpointConnectionNotification Operation</seealso>
         public virtual CreateVpcEndpointConnectionNotificationResponse CreateVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -10161,7 +10161,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification">REST API Reference for CreateVpcEndpointConnectionNotification Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -10222,7 +10222,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">REST API Reference for CreateVpcEndpointServiceConfiguration Operation</seealso>
         public virtual CreateVpcEndpointServiceConfigurationResponse CreateVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -10243,7 +10243,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">REST API Reference for CreateVpcEndpointServiceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -10297,7 +10297,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -10318,7 +10318,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -10381,7 +10381,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public virtual CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionResponseUnmarshaller.Instance;
 
@@ -10402,7 +10402,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateVpnConnection(CreateVpnConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionResponseUnmarshaller.Instance;
 
@@ -10444,7 +10444,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public virtual CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -10465,7 +10465,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public virtual IAsyncResult BeginCreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -10507,7 +10507,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public virtual CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnGatewayResponseUnmarshaller.Instance;
 
@@ -10528,7 +10528,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateVpnGateway(CreateVpnGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpnGatewayResponseUnmarshaller.Instance;
 
@@ -10568,7 +10568,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
         public virtual DeleteCarrierGatewayResponse DeleteCarrierGateway(DeleteCarrierGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -10589,7 +10589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway">REST API Reference for DeleteCarrierGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteCarrierGateway(DeleteCarrierGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCarrierGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCarrierGatewayResponseUnmarshaller.Instance;
 
@@ -10623,7 +10623,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
         public virtual DeleteClientVpnEndpointResponse DeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -10644,7 +10644,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -10680,7 +10680,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
         public virtual DeleteClientVpnRouteResponse DeleteClientVpnRoute(DeleteClientVpnRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -10701,7 +10701,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteClientVpnRoute(DeleteClientVpnRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
 
@@ -10734,7 +10734,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
         public virtual DeleteCoipCidrResponse DeleteCoipCidr(DeleteCoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
 
@@ -10755,7 +10755,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
         public virtual IAsyncResult BeginDeleteCoipCidr(DeleteCoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
 
@@ -10788,7 +10788,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
         public virtual DeleteCoipPoolResponse DeleteCoipPool(DeleteCoipPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
 
@@ -10809,7 +10809,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
         public virtual IAsyncResult BeginDeleteCoipPool(DeleteCoipPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
 
@@ -10843,7 +10843,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public virtual DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -10864,7 +10864,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteCustomerGateway(DeleteCustomerGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomerGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomerGatewayResponseUnmarshaller.Instance;
 
@@ -10899,7 +10899,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public virtual DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -10920,7 +10920,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public virtual IAsyncResult BeginDeleteDhcpOptions(DeleteDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -10953,7 +10953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public virtual DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -10974,7 +10974,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEgressOnlyInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
 
@@ -11056,7 +11056,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
         public virtual DeleteFleetsResponse DeleteFleets(DeleteFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
 
@@ -11077,7 +11077,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets">REST API Reference for DeleteFleets Operation</seealso>
         public virtual IAsyncResult BeginDeleteFleets(DeleteFleetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetsResponseUnmarshaller.Instance;
 
@@ -11110,7 +11110,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public virtual DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
 
@@ -11131,7 +11131,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public virtual IAsyncResult BeginDeleteFlowLogs(DeleteFlowLogsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowLogsResponseUnmarshaller.Instance;
 
@@ -11164,7 +11164,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
         public virtual DeleteFpgaImageResponse DeleteFpgaImage(DeleteFpgaImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
 
@@ -11185,7 +11185,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage">REST API Reference for DeleteFpgaImage Operation</seealso>
         public virtual IAsyncResult BeginDeleteFpgaImage(DeleteFpgaImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFpgaImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFpgaImageResponseUnmarshaller.Instance;
 
@@ -11224,7 +11224,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
         public virtual DeleteImageUsageReportResponse DeleteImageUsageReport(DeleteImageUsageReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
 
@@ -11245,7 +11245,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteImageUsageReport">REST API Reference for DeleteImageUsageReport Operation</seealso>
         public virtual IAsyncResult BeginDeleteImageUsageReport(DeleteImageUsageReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImageUsageReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImageUsageReportResponseUnmarshaller.Instance;
 
@@ -11278,7 +11278,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
         public virtual DeleteInstanceConnectEndpointResponse DeleteInstanceConnectEndpoint(DeleteInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -11299,7 +11299,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint">REST API Reference for DeleteInstanceConnectEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstanceConnectEndpoint(DeleteInstanceConnectEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -11338,7 +11338,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
         public virtual DeleteInstanceEventWindowResponse DeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -11359,7 +11359,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceEventWindow">REST API Reference for DeleteInstanceEventWindow Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstanceEventWindow(DeleteInstanceEventWindowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -11393,7 +11393,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public virtual DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInternetGatewayResponseUnmarshaller.Instance;
 
@@ -11414,7 +11414,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteInternetGateway(DeleteInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInternetGatewayResponseUnmarshaller.Instance;
 
@@ -11454,7 +11454,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
         public virtual DeleteIpamResponse DeleteIpam(DeleteIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
 
@@ -11475,7 +11475,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpam">REST API Reference for DeleteIpam Operation</seealso>
         public virtual IAsyncResult BeginDeleteIpam(DeleteIpamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResponseUnmarshaller.Instance;
 
@@ -11511,7 +11511,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
         public virtual DeleteIpamExternalResourceVerificationTokenResponse DeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -11532,7 +11532,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
         public virtual IAsyncResult BeginDeleteIpamExternalResourceVerificationToken(DeleteIpamExternalResourceVerificationTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamExternalResourceVerificationTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamExternalResourceVerificationTokenResponseUnmarshaller.Instance;
 
@@ -11577,7 +11577,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
         public virtual DeleteIpamPoolResponse DeleteIpamPool(DeleteIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
@@ -11598,7 +11598,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPool">REST API Reference for DeleteIpamPool Operation</seealso>
         public virtual IAsyncResult BeginDeleteIpamPool(DeleteIpamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamPoolResponseUnmarshaller.Instance;
 
@@ -11632,7 +11632,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
         public virtual DeleteIpamResourceDiscoveryResponse DeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -11653,7 +11653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
         public virtual IAsyncResult BeginDeleteIpamResourceDiscovery(DeleteIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -11692,7 +11692,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
         public virtual DeleteIpamScopeResponse DeleteIpamScope(DeleteIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
 
@@ -11713,7 +11713,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamScope">REST API Reference for DeleteIpamScope Operation</seealso>
         public virtual IAsyncResult BeginDeleteIpamScope(DeleteIpamScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpamScopeResponseUnmarshaller.Instance;
 
@@ -11746,7 +11746,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -11767,7 +11767,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public virtual IAsyncResult BeginDeleteKeyPair(DeleteKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyPairResponseUnmarshaller.Instance;
 
@@ -11800,7 +11800,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate">REST API Reference for DeleteLaunchTemplate Operation</seealso>
         public virtual DeleteLaunchTemplateResponse DeleteLaunchTemplate(DeleteLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -11821,7 +11821,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate">REST API Reference for DeleteLaunchTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunchTemplate(DeleteLaunchTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -11872,7 +11872,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">REST API Reference for DeleteLaunchTemplateVersions Operation</seealso>
         public virtual DeleteLaunchTemplateVersionsResponse DeleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -11893,7 +11893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">REST API Reference for DeleteLaunchTemplateVersions Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -11926,7 +11926,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
         public virtual DeleteLocalGatewayRouteResponse DeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -11947,7 +11947,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -11980,7 +11980,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
         public virtual DeleteLocalGatewayRouteTableResponse DeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -12001,7 +12001,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -12034,7 +12034,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -12055,7 +12055,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
 
@@ -12088,7 +12088,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual DeleteLocalGatewayRouteTableVpcAssociationResponse DeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -12109,7 +12109,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">REST API Reference for DeleteLocalGatewayRouteTableVpcAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayRouteTableVpcAssociation(DeleteLocalGatewayRouteTableVpcAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVpcAssociationResponseUnmarshaller.Instance;
 
@@ -12142,7 +12142,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
         public virtual DeleteLocalGatewayVirtualInterfaceResponse DeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -12163,7 +12163,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterface">REST API Reference for DeleteLocalGatewayVirtualInterface Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayVirtualInterface(DeleteLocalGatewayVirtualInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceResponseUnmarshaller.Instance;
 
@@ -12196,7 +12196,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual DeleteLocalGatewayVirtualInterfaceGroupResponse DeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -12217,7 +12217,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayVirtualInterfaceGroup">REST API Reference for DeleteLocalGatewayVirtualInterfaceGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteLocalGatewayVirtualInterfaceGroup(DeleteLocalGatewayVirtualInterfaceGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLocalGatewayVirtualInterfaceGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLocalGatewayVirtualInterfaceGroupResponseUnmarshaller.Instance;
 
@@ -12251,7 +12251,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
         public virtual DeleteManagedPrefixListResponse DeleteManagedPrefixList(DeleteManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -12272,7 +12272,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList">REST API Reference for DeleteManagedPrefixList Operation</seealso>
         public virtual IAsyncResult BeginDeleteManagedPrefixList(DeleteManagedPrefixListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -12307,7 +12307,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public virtual DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
 
@@ -12328,7 +12328,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteNatGateway(DeleteNatGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNatGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNatGatewayResponseUnmarshaller.Instance;
 
@@ -12362,7 +12362,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public virtual DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclResponseUnmarshaller.Instance;
 
@@ -12383,7 +12383,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkAcl(DeleteNetworkAclRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclResponseUnmarshaller.Instance;
 
@@ -12416,7 +12416,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public virtual DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -12437,7 +12437,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -12470,7 +12470,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
         public virtual DeleteNetworkInsightsAccessScopeResponse DeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -12491,7 +12491,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScope">REST API Reference for DeleteNetworkInsightsAccessScope Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInsightsAccessScope(DeleteNetworkInsightsAccessScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeResponseUnmarshaller.Instance;
 
@@ -12524,7 +12524,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual DeleteNetworkInsightsAccessScopeAnalysisResponse DeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -12545,7 +12545,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAccessScopeAnalysis">REST API Reference for DeleteNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInsightsAccessScopeAnalysis(DeleteNetworkInsightsAccessScopeAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -12578,7 +12578,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
         public virtual DeleteNetworkInsightsAnalysisResponse DeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -12599,7 +12599,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -12632,7 +12632,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
         public virtual DeleteNetworkInsightsPathResponse DeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -12653,7 +12653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
 
@@ -12687,7 +12687,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public virtual DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -12708,7 +12708,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInterface(DeleteNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -12743,7 +12743,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
         public virtual DeleteNetworkInterfacePermissionResponse DeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -12764,7 +12764,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission">REST API Reference for DeleteNetworkInterfacePermission Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkInterfacePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkInterfacePermissionResponseUnmarshaller.Instance;
 
@@ -12799,7 +12799,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public virtual DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
@@ -12820,7 +12820,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public virtual IAsyncResult BeginDeletePlacementGroup(DeletePlacementGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlacementGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlacementGroupResponseUnmarshaller.Instance;
 
@@ -12855,7 +12855,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
         public virtual DeletePublicIpv4PoolResponse DeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -12876,7 +12876,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePublicIpv4Pool">REST API Reference for DeletePublicIpv4Pool Operation</seealso>
         public virtual IAsyncResult BeginDeletePublicIpv4Pool(DeletePublicIpv4PoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicIpv4PoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicIpv4PoolResponseUnmarshaller.Instance;
 
@@ -12909,7 +12909,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
         public virtual DeleteQueuedReservedInstancesResponse DeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
 
@@ -12930,7 +12930,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteQueuedReservedInstances">REST API Reference for DeleteQueuedReservedInstances Operation</seealso>
         public virtual IAsyncResult BeginDeleteQueuedReservedInstances(DeleteQueuedReservedInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedReservedInstancesResponseUnmarshaller.Instance;
 
@@ -12963,7 +12963,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -12984,7 +12984,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteRoute(DeleteRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -13054,7 +13054,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
         public virtual DeleteRouteServerResponse DeleteRouteServer(DeleteRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerResponseUnmarshaller.Instance;
 
@@ -13075,7 +13075,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServer">REST API Reference for DeleteRouteServer Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteServer(DeleteRouteServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerResponseUnmarshaller.Instance;
 
@@ -13115,7 +13115,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
         public virtual DeleteRouteServerEndpointResponse DeleteRouteServerEndpoint(DeleteRouteServerEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -13136,7 +13136,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerEndpoint">REST API Reference for DeleteRouteServerEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteServerEndpoint(DeleteRouteServerEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerEndpointResponseUnmarshaller.Instance;
 
@@ -13189,7 +13189,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
         public virtual DeleteRouteServerPeerResponse DeleteRouteServerPeer(DeleteRouteServerPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -13210,7 +13210,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteServerPeer">REST API Reference for DeleteRouteServerPeer Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteServerPeer(DeleteRouteServerPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteServerPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteServerPeerResponseUnmarshaller.Instance;
 
@@ -13244,7 +13244,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public virtual DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteTableResponseUnmarshaller.Instance;
 
@@ -13265,7 +13265,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public virtual IAsyncResult BeginDeleteRouteTable(DeleteRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteTableResponseUnmarshaller.Instance;
 
@@ -13305,7 +13305,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public virtual DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityGroupResponseUnmarshaller.Instance;
 
@@ -13326,7 +13326,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteSecurityGroup(DeleteSecurityGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityGroupResponseUnmarshaller.Instance;
 
@@ -13378,7 +13378,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -13399,7 +13399,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -13443,7 +13443,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public virtual DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -13464,7 +13464,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -13498,7 +13498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public virtual DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetResponseUnmarshaller.Instance;
 
@@ -13519,7 +13519,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public virtual IAsyncResult BeginDeleteSubnet(DeleteSubnetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetResponseUnmarshaller.Instance;
 
@@ -13552,7 +13552,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
         public virtual DeleteSubnetCidrReservationResponse DeleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -13573,7 +13573,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnetCidrReservation">REST API Reference for DeleteSubnetCidrReservation Operation</seealso>
         public virtual IAsyncResult BeginDeleteSubnetCidrReservation(DeleteSubnetCidrReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSubnetCidrReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSubnetCidrReservationResponseUnmarshaller.Instance;
 
@@ -13613,7 +13613,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -13634,7 +13634,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -13672,7 +13672,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
         public virtual DeleteTrafficMirrorFilterResponse DeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -13693,7 +13693,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilter">REST API Reference for DeleteTrafficMirrorFilter Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficMirrorFilter(DeleteTrafficMirrorFilterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterResponseUnmarshaller.Instance;
 
@@ -13726,7 +13726,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
         public virtual DeleteTrafficMirrorFilterRuleResponse DeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -13747,7 +13747,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorFilterRule">REST API Reference for DeleteTrafficMirrorFilterRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficMirrorFilterRule(DeleteTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -13780,7 +13780,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
         public virtual DeleteTrafficMirrorSessionResponse DeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -13801,7 +13801,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorSession">REST API Reference for DeleteTrafficMirrorSession Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficMirrorSession(DeleteTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -13839,7 +13839,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
         public virtual DeleteTrafficMirrorTargetResponse DeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -13860,7 +13860,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTrafficMirrorTarget">REST API Reference for DeleteTrafficMirrorTarget Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrafficMirrorTarget(DeleteTrafficMirrorTargetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrafficMirrorTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrafficMirrorTargetResponseUnmarshaller.Instance;
 
@@ -13893,7 +13893,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
         public virtual DeleteTransitGatewayResponse DeleteTransitGateway(DeleteTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
 
@@ -13914,7 +13914,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGateway(DeleteTransitGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
 
@@ -13948,7 +13948,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
         public virtual DeleteTransitGatewayConnectResponse DeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -13969,7 +13969,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
 
@@ -14002,7 +14002,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
         public virtual DeleteTransitGatewayConnectPeerResponse DeleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -14023,7 +14023,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
 
@@ -14056,7 +14056,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
         public virtual DeleteTransitGatewayMulticastDomainResponse DeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -14077,7 +14077,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">REST API Reference for DeleteTransitGatewayMulticastDomain Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -14110,7 +14110,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
         public virtual DeleteTransitGatewayPeeringAttachmentResponse DeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -14131,7 +14131,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">REST API Reference for DeleteTransitGatewayPeeringAttachment Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -14164,7 +14164,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
         public virtual DeleteTransitGatewayPolicyTableResponse DeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -14185,7 +14185,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -14219,7 +14219,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
         public virtual DeleteTransitGatewayPrefixListReferenceResponse DeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -14240,7 +14240,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference">REST API Reference for DeleteTransitGatewayPrefixListReference Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -14273,7 +14273,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
         public virtual DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -14294,7 +14294,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -14330,7 +14330,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
         public virtual DeleteTransitGatewayRouteTableResponse DeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -14351,7 +14351,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -14384,7 +14384,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual DeleteTransitGatewayRouteTableAnnouncementResponse DeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -14405,7 +14405,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
 
@@ -14438,7 +14438,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
         public virtual DeleteTransitGatewayVpcAttachmentResponse DeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -14459,7 +14459,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -14492,7 +14492,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
         public virtual DeleteVerifiedAccessEndpointResponse DeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -14513,7 +14513,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint">REST API Reference for DeleteVerifiedAccessEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -14546,7 +14546,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
         public virtual DeleteVerifiedAccessGroupResponse DeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -14567,7 +14567,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup">REST API Reference for DeleteVerifiedAccessGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -14600,7 +14600,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
         public virtual DeleteVerifiedAccessInstanceResponse DeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -14621,7 +14621,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance">REST API Reference for DeleteVerifiedAccessInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -14654,7 +14654,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
         public virtual DeleteVerifiedAccessTrustProviderResponse DeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -14675,7 +14675,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider">REST API Reference for DeleteVerifiedAccessTrustProvider Operation</seealso>
         public virtual IAsyncResult BeginDeleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -14719,7 +14719,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -14740,7 +14740,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual IAsyncResult BeginDeleteVolume(DeleteVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -14784,7 +14784,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public virtual DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
@@ -14805,7 +14805,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpc(DeleteVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcResponseUnmarshaller.Instance;
 
@@ -14844,7 +14844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual DeleteVpcBlockPublicAccessExclusionResponse DeleteVpcBlockPublicAccessExclusion(DeleteVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -14865,7 +14865,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcBlockPublicAccessExclusion(DeleteVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -14898,7 +14898,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">REST API Reference for DeleteVpcEndpointConnectionNotifications Operation</seealso>
         public virtual DeleteVpcEndpointConnectionNotificationsResponse DeleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -14919,7 +14919,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">REST API Reference for DeleteVpcEndpointConnectionNotifications Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -14968,7 +14968,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public virtual DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -14989,7 +14989,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcEndpoints(DeleteVpcEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -15024,7 +15024,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations">REST API Reference for DeleteVpcEndpointServiceConfigurations Operation</seealso>
         public virtual DeleteVpcEndpointServiceConfigurationsResponse DeleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -15045,7 +15045,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations">REST API Reference for DeleteVpcEndpointServiceConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -15082,7 +15082,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -15103,7 +15103,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -15153,7 +15153,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public virtual DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionResponseUnmarshaller.Instance;
 
@@ -15174,7 +15174,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpnConnection(DeleteVpnConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionResponseUnmarshaller.Instance;
 
@@ -15209,7 +15209,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public virtual DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -15230,7 +15230,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnConnectionRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnConnectionRouteResponseUnmarshaller.Instance;
 
@@ -15265,7 +15265,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public virtual DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnGatewayResponseUnmarshaller.Instance;
 
@@ -15286,7 +15286,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpnGateway(DeleteVpnGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpnGatewayResponseUnmarshaller.Instance;
 
@@ -15327,7 +15327,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         public virtual DeprovisionByoipCidrResponse DeprovisionByoipCidr(DeprovisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -15348,7 +15348,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">REST API Reference for DeprovisionByoipCidr Operation</seealso>
         public virtual IAsyncResult BeginDeprovisionByoipCidr(DeprovisionByoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -15385,7 +15385,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
         public virtual DeprovisionIpamByoasnResponse DeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -15406,7 +15406,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn">REST API Reference for DeprovisionIpamByoasn Operation</seealso>
         public virtual IAsyncResult BeginDeprovisionIpamByoasn(DeprovisionIpamByoasnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -15442,7 +15442,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
         public virtual DeprovisionIpamPoolCidrResponse DeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -15463,7 +15463,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamPoolCidr">REST API Reference for DeprovisionIpamPoolCidr Operation</seealso>
         public virtual IAsyncResult BeginDeprovisionIpamPoolCidr(DeprovisionIpamPoolCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -15496,7 +15496,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
         public virtual DeprovisionPublicIpv4PoolCidrResponse DeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -15517,7 +15517,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionPublicIpv4PoolCidr">REST API Reference for DeprovisionPublicIpv4PoolCidr Operation</seealso>
         public virtual IAsyncResult BeginDeprovisionPublicIpv4PoolCidr(DeprovisionPublicIpv4PoolCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprovisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprovisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -15591,7 +15591,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public virtual DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterImageResponseUnmarshaller.Instance;
 
@@ -15612,7 +15612,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public virtual IAsyncResult BeginDeregisterImage(DeregisterImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterImageResponseUnmarshaller.Instance;
 
@@ -15646,7 +15646,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual DeregisterInstanceEventNotificationAttributesResponse DeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -15667,7 +15667,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">REST API Reference for DeregisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual IAsyncResult BeginDeregisterInstanceEventNotificationAttributes(DeregisterInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -15701,7 +15701,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual DeregisterTransitGatewayMulticastGroupMembersResponse DeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -15722,7 +15722,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">REST API Reference for DeregisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTransitGatewayMulticastGroupMembers(DeregisterTransitGatewayMulticastGroupMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -15756,7 +15756,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual DeregisterTransitGatewayMulticastGroupSourcesResponse DeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -15777,7 +15777,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">REST API Reference for DeregisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual IAsyncResult BeginDeregisterTransitGatewayMulticastGroupSources(DeregisterTransitGatewayMulticastGroupSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -15895,7 +15895,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -15916,7 +15916,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -15960,7 +15960,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public virtual DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
@@ -15981,7 +15981,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public virtual IAsyncResult BeginDescribeAddresses(DescribeAddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
@@ -16016,7 +16016,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
         public virtual DescribeAddressesAttributeResponse DescribeAddressesAttribute(DescribeAddressesAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
 
@@ -16037,7 +16037,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeAddressesAttribute(DescribeAddressesAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
 
@@ -16082,7 +16082,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
         public virtual DescribeAddressTransfersResponse DescribeAddressTransfers(DescribeAddressTransfersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
 
@@ -16103,7 +16103,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
         public virtual IAsyncResult BeginDescribeAddressTransfers(DescribeAddressTransfersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
 
@@ -16155,7 +16155,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
         public virtual DescribeAggregateIdFormatResponse DescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateIdFormatResponseUnmarshaller.Instance;
 
@@ -16176,7 +16176,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat">REST API Reference for DescribeAggregateIdFormat Operation</seealso>
         public virtual IAsyncResult BeginDescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAggregateIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAggregateIdFormatResponseUnmarshaller.Instance;
 
@@ -16248,7 +16248,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public virtual DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -16269,7 +16269,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public virtual IAsyncResult BeginDescribeAvailabilityZones(DescribeAvailabilityZonesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -16302,7 +16302,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
         public virtual DescribeAwsNetworkPerformanceMetricSubscriptionsResponse DescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
 
@@ -16323,7 +16323,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">REST API Reference for DescribeAwsNetworkPerformanceMetricSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeAwsNetworkPerformanceMetricSubscriptions(DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAwsNetworkPerformanceMetricSubscriptionsResponseUnmarshaller.Instance;
 
@@ -16395,7 +16395,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public virtual DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleTasksResponseUnmarshaller.Instance;
 
@@ -16416,7 +16416,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeBundleTasks(DescribeBundleTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleTasksResponseUnmarshaller.Instance;
 
@@ -16450,7 +16450,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
         public virtual DescribeByoipCidrsResponse DescribeByoipCidrs(DescribeByoipCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
 
@@ -16471,7 +16471,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">REST API Reference for DescribeByoipCidrs Operation</seealso>
         public virtual IAsyncResult BeginDescribeByoipCidrs(DescribeByoipCidrsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeByoipCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeByoipCidrsResponseUnmarshaller.Instance;
 
@@ -16505,7 +16505,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionHistory">REST API Reference for DescribeCapacityBlockExtensionHistory Operation</seealso>
         public virtual DescribeCapacityBlockExtensionHistoryResponse DescribeCapacityBlockExtensionHistory(DescribeCapacityBlockExtensionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
 
@@ -16526,7 +16526,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionHistory">REST API Reference for DescribeCapacityBlockExtensionHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityBlockExtensionHistory(DescribeCapacityBlockExtensionHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
 
@@ -16560,7 +16560,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionOfferings">REST API Reference for DescribeCapacityBlockExtensionOfferings Operation</seealso>
         public virtual DescribeCapacityBlockExtensionOfferingsResponse DescribeCapacityBlockExtensionOfferings(DescribeCapacityBlockExtensionOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
 
@@ -16581,7 +16581,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionOfferings">REST API Reference for DescribeCapacityBlockExtensionOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityBlockExtensionOfferings(DescribeCapacityBlockExtensionOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
 
@@ -16622,7 +16622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
         public virtual DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
 
@@ -16643,7 +16643,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings">REST API Reference for DescribeCapacityBlockOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockOfferingsResponseUnmarshaller.Instance;
 
@@ -16677,7 +16677,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlocks">REST API Reference for DescribeCapacityBlocks Operation</seealso>
         public virtual DescribeCapacityBlocksResponse DescribeCapacityBlocks(DescribeCapacityBlocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
 
@@ -16698,7 +16698,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlocks">REST API Reference for DescribeCapacityBlocks Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityBlocks(DescribeCapacityBlocksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlocksResponseUnmarshaller.Instance;
 
@@ -16732,7 +16732,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">REST API Reference for DescribeCapacityBlockStatus Operation</seealso>
         public virtual DescribeCapacityBlockStatusResponse DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
 
@@ -16753,7 +16753,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockStatus">REST API Reference for DescribeCapacityBlockStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityBlockStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityBlockStatusResponseUnmarshaller.Instance;
 
@@ -16788,7 +16788,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
         public virtual DescribeCapacityReservationBillingRequestsResponse DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationBillingRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationBillingRequestsResponseUnmarshaller.Instance;
 
@@ -16809,7 +16809,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationBillingRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationBillingRequestsResponseUnmarshaller.Instance;
 
@@ -16842,7 +16842,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">REST API Reference for DescribeCapacityReservationFleets Operation</seealso>
         public virtual DescribeCapacityReservationFleetsResponse DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -16863,7 +16863,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">REST API Reference for DescribeCapacityReservationFleets Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationFleetsResponseUnmarshaller.Instance;
 
@@ -16897,7 +16897,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
         public virtual DescribeCapacityReservationsResponse DescribeCapacityReservations(DescribeCapacityReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -16918,7 +16918,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">REST API Reference for DescribeCapacityReservations Operation</seealso>
         public virtual IAsyncResult BeginDescribeCapacityReservations(DescribeCapacityReservationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -16951,7 +16951,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
         public virtual DescribeCarrierGatewaysResponse DescribeCarrierGateways(DescribeCarrierGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
 
@@ -16972,7 +16972,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways">REST API Reference for DescribeCarrierGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeCarrierGateways(DescribeCarrierGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCarrierGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCarrierGatewaysResponseUnmarshaller.Instance;
 
@@ -17014,7 +17014,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public virtual DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassicLinkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
 
@@ -17035,7 +17035,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClassicLinkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClassicLinkInstancesResponseUnmarshaller.Instance;
 
@@ -17068,7 +17068,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
         public virtual DescribeClientVpnAuthorizationRulesResponse DescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
 
@@ -17089,7 +17089,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
 
@@ -17123,7 +17123,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
         public virtual DescribeClientVpnConnectionsResponse DescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -17144,7 +17144,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -17177,7 +17177,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
         public virtual DescribeClientVpnEndpointsResponse DescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
 
@@ -17198,7 +17198,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
 
@@ -17231,7 +17231,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
         public virtual DescribeClientVpnRoutesResponse DescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
 
@@ -17252,7 +17252,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
 
@@ -17285,7 +17285,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
         public virtual DescribeClientVpnTargetNetworksResponse DescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
 
@@ -17306,7 +17306,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
 
@@ -17340,7 +17340,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
         public virtual DescribeCoipPoolsResponse DescribeCoipPools(DescribeCoipPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
 
@@ -17361,7 +17361,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">REST API Reference for DescribeCoipPools Operation</seealso>
         public virtual IAsyncResult BeginDescribeCoipPools(DescribeCoipPoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCoipPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCoipPoolsResponseUnmarshaller.Instance;
 
@@ -17421,7 +17421,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public virtual DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionTasksResponseUnmarshaller.Instance;
 
@@ -17442,7 +17442,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeConversionTasks(DescribeConversionTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConversionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConversionTasksResponseUnmarshaller.Instance;
 
@@ -17500,7 +17500,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public virtual DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.Instance;
 
@@ -17521,7 +17521,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeCustomerGateways(DescribeCustomerGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomerGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomerGatewaysResponseUnmarshaller.Instance;
 
@@ -17570,7 +17570,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
         public virtual DescribeDeclarativePoliciesReportsResponse DescribeDeclarativePoliciesReports(DescribeDeclarativePoliciesReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeclarativePoliciesReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeclarativePoliciesReportsResponseUnmarshaller.Instance;
 
@@ -17591,7 +17591,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
         public virtual IAsyncResult BeginDescribeDeclarativePoliciesReports(DescribeDeclarativePoliciesReportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeclarativePoliciesReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeclarativePoliciesReportsResponseUnmarshaller.Instance;
 
@@ -17651,7 +17651,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public virtual DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -17672,7 +17672,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeDhcpOptions(DescribeDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDhcpOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDhcpOptionsResponseUnmarshaller.Instance;
 
@@ -17708,7 +17708,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public virtual DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEgressOnlyInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -17729,7 +17729,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEgressOnlyInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -17769,7 +17769,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
         public virtual DescribeElasticGpusResponse DescribeElasticGpus(DescribeElasticGpusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticGpusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
 
@@ -17790,7 +17790,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">REST API Reference for DescribeElasticGpus Operation</seealso>
         public virtual IAsyncResult BeginDescribeElasticGpus(DescribeElasticGpusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticGpusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticGpusResponseUnmarshaller.Instance;
 
@@ -17823,7 +17823,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
         public virtual DescribeExportImageTasksResponse DescribeExportImageTasks(DescribeExportImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
 
@@ -17844,7 +17844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks">REST API Reference for DescribeExportImageTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeExportImageTasks(DescribeExportImageTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportImageTasksResponseUnmarshaller.Instance;
 
@@ -17888,7 +17888,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -17909,7 +17909,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -17942,7 +17942,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
         public virtual DescribeFastLaunchImagesResponse DescribeFastLaunchImages(DescribeFastLaunchImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
 
@@ -17963,7 +17963,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastLaunchImages">REST API Reference for DescribeFastLaunchImages Operation</seealso>
         public virtual IAsyncResult BeginDescribeFastLaunchImages(DescribeFastLaunchImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastLaunchImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastLaunchImagesResponseUnmarshaller.Instance;
 
@@ -17996,7 +17996,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
         public virtual DescribeFastSnapshotRestoresResponse DescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -18017,7 +18017,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">REST API Reference for DescribeFastSnapshotRestores Operation</seealso>
         public virtual IAsyncResult BeginDescribeFastSnapshotRestores(DescribeFastSnapshotRestoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -18062,7 +18062,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
         public virtual DescribeFleetHistoryResponse DescribeFleetHistory(DescribeFleetHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
 
@@ -18083,7 +18083,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">REST API Reference for DescribeFleetHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetHistory(DescribeFleetHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetHistoryResponseUnmarshaller.Instance;
 
@@ -18128,7 +18128,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
         public virtual DescribeFleetInstancesResponse DescribeFleetInstances(DescribeFleetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
 
@@ -18149,7 +18149,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances">REST API Reference for DescribeFleetInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleetInstances(DescribeFleetInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetInstancesResponseUnmarshaller.Instance;
 
@@ -18193,7 +18193,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
@@ -18214,7 +18214,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         public virtual IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFleetsResponseUnmarshaller.Instance;
 
@@ -18254,7 +18254,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public virtual DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
@@ -18275,7 +18275,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public virtual IAsyncResult BeginDescribeFlowLogs(DescribeFlowLogsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowLogsResponseUnmarshaller.Instance;
 
@@ -18308,7 +18308,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
         public virtual DescribeFpgaImageAttributeResponse DescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -18329,7 +18329,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute">REST API Reference for DescribeFpgaImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -18364,7 +18364,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
         public virtual DescribeFpgaImagesResponse DescribeFpgaImages(DescribeFpgaImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
 
@@ -18385,7 +18385,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages">REST API Reference for DescribeFpgaImages Operation</seealso>
         public virtual IAsyncResult BeginDescribeFpgaImages(DescribeFpgaImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFpgaImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFpgaImagesResponseUnmarshaller.Instance;
 
@@ -18428,7 +18428,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public virtual DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -18449,7 +18449,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationOfferingsResponseUnmarshaller.Instance;
 
@@ -18482,7 +18482,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public virtual DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
 
@@ -18503,7 +18503,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public virtual IAsyncResult BeginDescribeHostReservations(DescribeHostReservationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostReservationsResponseUnmarshaller.Instance;
 
@@ -18543,7 +18543,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public virtual DescribeHostsResponse DescribeHosts(DescribeHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostsResponseUnmarshaller.Instance;
 
@@ -18564,7 +18564,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public virtual IAsyncResult BeginDescribeHosts(DescribeHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHostsResponseUnmarshaller.Instance;
 
@@ -18597,7 +18597,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
         public virtual DescribeIamInstanceProfileAssociationsResponse DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIamInstanceProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
 
@@ -18618,7 +18618,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIamInstanceProfileAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
 
@@ -18674,7 +18674,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public virtual DescribeIdentityIdFormatResponse DescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -18695,7 +18695,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public virtual IAsyncResult BeginDescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -18753,7 +18753,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public virtual DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
 
@@ -18774,7 +18774,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public virtual IAsyncResult BeginDescribeIdFormat(DescribeIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdFormatResponseUnmarshaller.Instance;
 
@@ -18815,7 +18815,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public virtual DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAttributeResponseUnmarshaller.Instance;
 
@@ -18836,7 +18836,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageAttribute(DescribeImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAttributeResponseUnmarshaller.Instance;
 
@@ -18875,7 +18875,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
         public virtual DescribeImageReferencesResponse DescribeImageReferences(DescribeImageReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
 
@@ -18896,7 +18896,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageReferences">REST API Reference for DescribeImageReferences Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageReferences(DescribeImageReferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageReferencesResponseUnmarshaller.Instance;
 
@@ -19026,7 +19026,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -19047,7 +19047,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public virtual IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImagesResponseUnmarshaller.Instance;
 
@@ -19087,7 +19087,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
         public virtual DescribeImageUsageReportEntriesResponse DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
 
@@ -19108,7 +19108,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReportEntries">REST API Reference for DescribeImageUsageReportEntries Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportEntriesResponseUnmarshaller.Instance;
 
@@ -19148,7 +19148,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
         public virtual DescribeImageUsageReportsResponse DescribeImageUsageReports(DescribeImageUsageReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
 
@@ -19169,7 +19169,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageUsageReports">REST API Reference for DescribeImageUsageReports Operation</seealso>
         public virtual IAsyncResult BeginDescribeImageUsageReports(DescribeImageUsageReportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageUsageReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageUsageReportsResponseUnmarshaller.Instance;
 
@@ -19203,7 +19203,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public virtual DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
 
@@ -19224,7 +19224,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeImportImageTasks(DescribeImportImageTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportImageTasksResponseUnmarshaller.Instance;
 
@@ -19257,7 +19257,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public virtual DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportSnapshotTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
 
@@ -19278,7 +19278,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImportSnapshotTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImportSnapshotTasksResponseUnmarshaller.Instance;
 
@@ -19312,7 +19312,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public virtual DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -19333,7 +19333,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceAttribute(DescribeInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -19367,7 +19367,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
         public virtual DescribeInstanceConnectEndpointsResponse DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
 
@@ -19388,7 +19388,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints">REST API Reference for DescribeInstanceConnectEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceConnectEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceConnectEndpointsResponseUnmarshaller.Instance;
 
@@ -19454,7 +19454,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
         public virtual DescribeInstanceCreditSpecificationsResponse DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceCreditSpecificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
 
@@ -19475,7 +19475,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">REST API Reference for DescribeInstanceCreditSpecifications Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceCreditSpecificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceCreditSpecificationsResponseUnmarshaller.Instance;
 
@@ -19509,7 +19509,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
         public virtual DescribeInstanceEventNotificationAttributesResponse DescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -19530,7 +19530,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">REST API Reference for DescribeInstanceEventNotificationAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceEventNotificationAttributes(DescribeInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -19578,7 +19578,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
         public virtual DescribeInstanceEventWindowsResponse DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
 
@@ -19599,7 +19599,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventWindows">REST API Reference for DescribeInstanceEventWindows Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceEventWindowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceEventWindowsResponseUnmarshaller.Instance;
 
@@ -19665,7 +19665,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
         public virtual DescribeInstanceImageMetadataResponse DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceImageMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceImageMetadataResponseUnmarshaller.Instance;
 
@@ -19686,7 +19686,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceImageMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceImageMetadataResponseUnmarshaller.Instance;
 
@@ -19822,7 +19822,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
@@ -19843,7 +19843,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstancesResponseUnmarshaller.Instance;
 
@@ -19969,7 +19969,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public virtual DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStatusResponseUnmarshaller.Instance;
 
@@ -19990,7 +19990,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceStatus(DescribeInstanceStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceStatusResponseUnmarshaller.Instance;
 
@@ -20047,7 +20047,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
         public virtual DescribeInstanceTopologyResponse DescribeInstanceTopology(DescribeInstanceTopologyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTopologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTopologyResponseUnmarshaller.Instance;
 
@@ -20068,7 +20068,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology">REST API Reference for DescribeInstanceTopology Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceTopology(DescribeInstanceTopologyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTopologyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTopologyResponseUnmarshaller.Instance;
 
@@ -20103,7 +20103,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
         public virtual DescribeInstanceTypeOfferingsResponse DescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeOfferingsResponseUnmarshaller.Instance;
 
@@ -20124,7 +20124,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">REST API Reference for DescribeInstanceTypeOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceTypeOfferings(DescribeInstanceTypeOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypeOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypeOfferingsResponseUnmarshaller.Instance;
 
@@ -20158,7 +20158,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
         public virtual DescribeInstanceTypesResponse DescribeInstanceTypes(DescribeInstanceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypesResponseUnmarshaller.Instance;
 
@@ -20179,7 +20179,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">REST API Reference for DescribeInstanceTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceTypes(DescribeInstanceTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceTypesResponseUnmarshaller.Instance;
 
@@ -20227,7 +20227,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public virtual DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -20248,7 +20248,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeInternetGateways(DescribeInternetGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInternetGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInternetGatewaysResponseUnmarshaller.Instance;
 
@@ -20283,7 +20283,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
         public virtual DescribeIpamByoasnResponse DescribeIpamByoasn(DescribeIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
 
@@ -20304,7 +20304,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn">REST API Reference for DescribeIpamByoasn Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamByoasn(DescribeIpamByoasnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamByoasnResponseUnmarshaller.Instance;
 
@@ -20340,7 +20340,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         public virtual DescribeIpamExternalResourceVerificationTokensResponse DescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamExternalResourceVerificationTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamExternalResourceVerificationTokensResponseUnmarshaller.Instance;
 
@@ -20361,7 +20361,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamExternalResourceVerificationTokens(DescribeIpamExternalResourceVerificationTokensRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamExternalResourceVerificationTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamExternalResourceVerificationTokensResponseUnmarshaller.Instance;
 
@@ -20394,7 +20394,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
         public virtual DescribeIpamPoolsResponse DescribeIpamPools(DescribeIpamPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
 
@@ -20415,7 +20415,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPools">REST API Reference for DescribeIpamPools Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamPools(DescribeIpamPoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamPoolsResponseUnmarshaller.Instance;
 
@@ -20449,7 +20449,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
         public virtual DescribeIpamResourceDiscoveriesResponse DescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
 
@@ -20470,7 +20470,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries">REST API Reference for DescribeIpamResourceDiscoveries Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamResourceDiscoveries(DescribeIpamResourceDiscoveriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveriesResponseUnmarshaller.Instance;
 
@@ -20504,7 +20504,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
         public virtual DescribeIpamResourceDiscoveryAssociationsResponse DescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
 
@@ -20525,7 +20525,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations">REST API Reference for DescribeIpamResourceDiscoveryAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamResourceDiscoveryAssociations(DescribeIpamResourceDiscoveryAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamResourceDiscoveryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamResourceDiscoveryAssociationsResponseUnmarshaller.Instance;
 
@@ -20564,7 +20564,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
         public virtual DescribeIpamsResponse DescribeIpams(DescribeIpamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
 
@@ -20585,7 +20585,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpams">REST API Reference for DescribeIpams Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpams(DescribeIpamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamsResponseUnmarshaller.Instance;
 
@@ -20618,7 +20618,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
         public virtual DescribeIpamScopesResponse DescribeIpamScopes(DescribeIpamScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
 
@@ -20639,7 +20639,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamScopes">REST API Reference for DescribeIpamScopes Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpamScopes(DescribeIpamScopesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpamScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpamScopesResponseUnmarshaller.Instance;
 
@@ -20672,7 +20672,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">REST API Reference for DescribeIpv6Pools Operation</seealso>
         public virtual DescribeIpv6PoolsResponse DescribeIpv6Pools(DescribeIpv6PoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpv6PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpv6PoolsResponseUnmarshaller.Instance;
 
@@ -20693,7 +20693,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">REST API Reference for DescribeIpv6Pools Operation</seealso>
         public virtual IAsyncResult BeginDescribeIpv6Pools(DescribeIpv6PoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpv6PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpv6PoolsResponseUnmarshaller.Instance;
 
@@ -20749,7 +20749,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public virtual DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyPairsResponseUnmarshaller.Instance;
 
@@ -20770,7 +20770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public virtual IAsyncResult BeginDescribeKeyPairs(DescribeKeyPairsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyPairsResponseUnmarshaller.Instance;
 
@@ -20803,7 +20803,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates">REST API Reference for DescribeLaunchTemplates Operation</seealso>
         public virtual DescribeLaunchTemplatesResponse DescribeLaunchTemplates(DescribeLaunchTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
 
@@ -20824,7 +20824,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates">REST API Reference for DescribeLaunchTemplates Operation</seealso>
         public virtual IAsyncResult BeginDescribeLaunchTemplates(DescribeLaunchTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplatesResponseUnmarshaller.Instance;
 
@@ -20859,7 +20859,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
         public virtual DescribeLaunchTemplateVersionsResponse DescribeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -20880,7 +20880,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions">REST API Reference for DescribeLaunchTemplateVersions Operation</seealso>
         public virtual IAsyncResult BeginDescribeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -20914,7 +20914,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
         public virtual DescribeLocalGatewayRouteTablesResponse DescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -20935,7 +20935,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">REST API Reference for DescribeLocalGatewayRouteTables Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -20969,7 +20969,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
         public virtual DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
 
@@ -20990,7 +20990,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">REST API Reference for DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseUnmarshaller.Instance;
 
@@ -21023,7 +21023,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
         public virtual DescribeLocalGatewayRouteTableVpcAssociationsResponse DescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -21044,7 +21044,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">REST API Reference for DescribeLocalGatewayRouteTableVpcAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGatewayRouteTableVpcAssociations(DescribeLocalGatewayRouteTableVpcAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayRouteTableVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayRouteTableVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -21078,7 +21078,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
         public virtual DescribeLocalGatewaysResponse DescribeLocalGateways(DescribeLocalGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
 
@@ -21099,7 +21099,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">REST API Reference for DescribeLocalGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGateways(DescribeLocalGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewaysResponseUnmarshaller.Instance;
 
@@ -21132,7 +21132,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
         public virtual DescribeLocalGatewayVirtualInterfaceGroupsResponse DescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
 
@@ -21153,7 +21153,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">REST API Reference for DescribeLocalGatewayVirtualInterfaceGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGatewayVirtualInterfaceGroups(DescribeLocalGatewayVirtualInterfaceGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfaceGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfaceGroupsResponseUnmarshaller.Instance;
 
@@ -21186,7 +21186,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
         public virtual DescribeLocalGatewayVirtualInterfacesResponse DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -21207,7 +21207,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">REST API Reference for DescribeLocalGatewayVirtualInterfaces Operation</seealso>
         public virtual IAsyncResult BeginDescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLocalGatewayVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLocalGatewayVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -21240,7 +21240,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
         public virtual DescribeLockedSnapshotsResponse DescribeLockedSnapshots(DescribeLockedSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
 
@@ -21261,7 +21261,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots">REST API Reference for DescribeLockedSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeLockedSnapshots(DescribeLockedSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLockedSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLockedSnapshotsResponseUnmarshaller.Instance;
 
@@ -21294,7 +21294,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts">REST API Reference for DescribeMacHosts Operation</seealso>
         public virtual DescribeMacHostsResponse DescribeMacHosts(DescribeMacHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
 
@@ -21315,7 +21315,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts">REST API Reference for DescribeMacHosts Operation</seealso>
         public virtual IAsyncResult BeginDescribeMacHosts(DescribeMacHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacHostsResponseUnmarshaller.Instance;
 
@@ -21350,7 +21350,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
         public virtual DescribeMacModificationTasksResponse DescribeMacModificationTasks(DescribeMacModificationTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
 
@@ -21371,7 +21371,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacModificationTasks">REST API Reference for DescribeMacModificationTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeMacModificationTasks(DescribeMacModificationTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMacModificationTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMacModificationTasksResponseUnmarshaller.Instance;
 
@@ -21404,7 +21404,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
         public virtual DescribeManagedPrefixListsResponse DescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
 
@@ -21425,7 +21425,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists">REST API Reference for DescribeManagedPrefixLists Operation</seealso>
         public virtual IAsyncResult BeginDescribeManagedPrefixLists(DescribeManagedPrefixListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedPrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedPrefixListsResponseUnmarshaller.Instance;
 
@@ -21467,7 +21467,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public virtual DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMovingAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
 
@@ -21488,7 +21488,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public virtual IAsyncResult BeginDescribeMovingAddresses(DescribeMovingAddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMovingAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMovingAddressesResponseUnmarshaller.Instance;
 
@@ -21523,7 +21523,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public virtual DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNatGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
 
@@ -21544,7 +21544,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeNatGateways(DescribeNatGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNatGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNatGatewaysResponseUnmarshaller.Instance;
 
@@ -21604,7 +21604,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public virtual DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkAclsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkAclsResponseUnmarshaller.Instance;
 
@@ -21625,7 +21625,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkAcls(DescribeNetworkAclsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkAclsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkAclsResponseUnmarshaller.Instance;
 
@@ -21658,7 +21658,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
         public virtual DescribeNetworkInsightsAccessScopeAnalysesResponse DescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
 
@@ -21679,7 +21679,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopeAnalyses">REST API Reference for DescribeNetworkInsightsAccessScopeAnalyses Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInsightsAccessScopeAnalyses(DescribeNetworkInsightsAccessScopeAnalysesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopeAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopeAnalysesResponseUnmarshaller.Instance;
 
@@ -21712,7 +21712,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
         public virtual DescribeNetworkInsightsAccessScopesResponse DescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
 
@@ -21733,7 +21733,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAccessScopes">REST API Reference for DescribeNetworkInsightsAccessScopes Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInsightsAccessScopes(DescribeNetworkInsightsAccessScopesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAccessScopesResponseUnmarshaller.Instance;
 
@@ -21766,7 +21766,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
         public virtual DescribeNetworkInsightsAnalysesResponse DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
 
@@ -21787,7 +21787,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
 
@@ -21820,7 +21820,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
         public virtual DescribeNetworkInsightsPathsResponse DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
 
@@ -21841,7 +21841,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
 
@@ -21874,7 +21874,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public virtual DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -21895,7 +21895,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -21928,7 +21928,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
         public virtual DescribeNetworkInterfacePermissionsResponse DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
 
@@ -21949,7 +21949,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions">REST API Reference for DescribeNetworkInterfacePermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacePermissionsResponseUnmarshaller.Instance;
 
@@ -22019,7 +22019,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public virtual DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -22040,7 +22040,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public virtual IAsyncResult BeginDescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -22079,7 +22079,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
         public virtual DescribeOutpostLagsResponse DescribeOutpostLags(DescribeOutpostLagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
 
@@ -22100,7 +22100,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeOutpostLags">REST API Reference for DescribeOutpostLags Operation</seealso>
         public virtual IAsyncResult BeginDescribeOutpostLags(DescribeOutpostLagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutpostLagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutpostLagsResponseUnmarshaller.Instance;
 
@@ -22170,7 +22170,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public virtual DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
@@ -22191,7 +22191,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribePlacementGroups(DescribePlacementGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlacementGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlacementGroupsResponseUnmarshaller.Instance;
 
@@ -22226,7 +22226,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public virtual DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
 
@@ -22247,7 +22247,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public virtual IAsyncResult BeginDescribePrefixLists(DescribePrefixListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrefixListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrefixListsResponseUnmarshaller.Instance;
 
@@ -22300,7 +22300,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
         public virtual DescribePrincipalIdFormatResponse DescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalIdFormatResponseUnmarshaller.Instance;
 
@@ -22321,7 +22321,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat">REST API Reference for DescribePrincipalIdFormat Operation</seealso>
         public virtual IAsyncResult BeginDescribePrincipalIdFormat(DescribePrincipalIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePrincipalIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePrincipalIdFormatResponseUnmarshaller.Instance;
 
@@ -22354,7 +22354,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
         public virtual DescribePublicIpv4PoolsResponse DescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
 
@@ -22375,7 +22375,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">REST API Reference for DescribePublicIpv4Pools Operation</seealso>
         public virtual IAsyncResult BeginDescribePublicIpv4Pools(DescribePublicIpv4PoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePublicIpv4PoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePublicIpv4PoolsResponseUnmarshaller.Instance;
 
@@ -22455,7 +22455,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public virtual DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -22476,7 +22476,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public virtual IAsyncResult BeginDescribeRegions(DescribeRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -22510,7 +22510,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
         public virtual DescribeReplaceRootVolumeTasksResponse DescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplaceRootVolumeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplaceRootVolumeTasksResponseUnmarshaller.Instance;
 
@@ -22531,7 +22531,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks">REST API Reference for DescribeReplaceRootVolumeTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplaceRootVolumeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplaceRootVolumeTasksResponseUnmarshaller.Instance;
 
@@ -22599,7 +22599,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
 
@@ -22620,7 +22620,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedInstances(DescribeReservedInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesResponseUnmarshaller.Instance;
 
@@ -22730,7 +22730,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public virtual DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.Instance;
 
@@ -22751,7 +22751,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesListingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesListingsResponseUnmarshaller.Instance;
 
@@ -22825,7 +22825,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public virtual DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesModificationsResponseUnmarshaller.Instance;
 
@@ -22846,7 +22846,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesModificationsResponseUnmarshaller.Instance;
 
@@ -22932,7 +22932,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public virtual DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -22953,7 +22953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public virtual IAsyncResult BeginDescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -22998,7 +22998,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
         public virtual DescribeRouteServerEndpointsResponse DescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerEndpointsResponseUnmarshaller.Instance;
 
@@ -23019,7 +23019,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerEndpoints">REST API Reference for DescribeRouteServerEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeRouteServerEndpoints(DescribeRouteServerEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerEndpointsResponseUnmarshaller.Instance;
 
@@ -23076,7 +23076,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
         public virtual DescribeRouteServerPeersResponse DescribeRouteServerPeers(DescribeRouteServerPeersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerPeersResponseUnmarshaller.Instance;
 
@@ -23097,7 +23097,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServerPeers">REST API Reference for DescribeRouteServerPeers Operation</seealso>
         public virtual IAsyncResult BeginDescribeRouteServerPeers(DescribeRouteServerPeersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServerPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServerPeersResponseUnmarshaller.Instance;
 
@@ -23167,7 +23167,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
         public virtual DescribeRouteServersResponse DescribeRouteServers(DescribeRouteServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServersResponseUnmarshaller.Instance;
 
@@ -23188,7 +23188,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteServers">REST API Reference for DescribeRouteServers Operation</seealso>
         public virtual IAsyncResult BeginDescribeRouteServers(DescribeRouteServersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteServersResponseUnmarshaller.Instance;
 
@@ -23260,7 +23260,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public virtual DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteTablesResponseUnmarshaller.Instance;
 
@@ -23281,7 +23281,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public virtual IAsyncResult BeginDescribeRouteTables(DescribeRouteTablesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteTablesResponseUnmarshaller.Instance;
 
@@ -23327,7 +23327,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public virtual DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstanceAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
 
@@ -23348,7 +23348,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public virtual IAsyncResult BeginDescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstanceAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstanceAvailabilityResponseUnmarshaller.Instance;
 
@@ -23381,7 +23381,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public virtual DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -23402,7 +23402,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeScheduledInstances(DescribeScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -23436,7 +23436,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public virtual DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
 
@@ -23457,7 +23457,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupReferencesResponseUnmarshaller.Instance;
 
@@ -23490,7 +23490,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
         public virtual DescribeSecurityGroupRulesResponse DescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -23511,7 +23511,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">REST API Reference for DescribeSecurityGroupRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -23555,7 +23555,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public virtual DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -23576,7 +23576,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityGroups(DescribeSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -23609,7 +23609,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
         public virtual DescribeSecurityGroupVpcAssociationsResponse DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -23630,7 +23630,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
 
@@ -23663,7 +23663,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
         public virtual DescribeServiceLinkVirtualInterfacesResponse DescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -23684,7 +23684,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeServiceLinkVirtualInterfaces">REST API Reference for DescribeServiceLinkVirtualInterfaces Operation</seealso>
         public virtual IAsyncResult BeginDescribeServiceLinkVirtualInterfaces(DescribeServiceLinkVirtualInterfacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceLinkVirtualInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceLinkVirtualInterfacesResponseUnmarshaller.Instance;
 
@@ -23724,7 +23724,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public virtual DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -23745,7 +23745,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -23931,7 +23931,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -23952,7 +23952,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -23985,7 +23985,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
         public virtual DescribeSnapshotTierStatusResponse DescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
 
@@ -24006,7 +24006,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotTierStatus">REST API Reference for DescribeSnapshotTierStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshotTierStatus(DescribeSnapshotTierStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotTierStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotTierStatusResponseUnmarshaller.Instance;
 
@@ -24052,7 +24052,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public virtual DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -24073,7 +24073,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotDatafeedSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotDatafeedSubscriptionResponseUnmarshaller.Instance;
 
@@ -24106,7 +24106,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public virtual DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
 
@@ -24127,7 +24127,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetInstancesResponseUnmarshaller.Instance;
 
@@ -24172,7 +24172,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public virtual DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
 
@@ -24193,7 +24193,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestHistoryResponseUnmarshaller.Instance;
 
@@ -24232,7 +24232,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public virtual DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -24253,7 +24253,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotFleetRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotFleetRequestsResponseUnmarshaller.Instance;
 
@@ -24343,7 +24343,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public virtual DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -24364,7 +24364,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotInstanceRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotInstanceRequestsResponseUnmarshaller.Instance;
 
@@ -24424,7 +24424,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public virtual DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotPriceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
@@ -24445,7 +24445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public virtual IAsyncResult BeginDescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpotPriceHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpotPriceHistoryResponseUnmarshaller.Instance;
 
@@ -24485,7 +24485,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public virtual DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStaleSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -24506,7 +24506,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStaleSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStaleSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -24564,7 +24564,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
         public virtual DescribeStoreImageTasksResponse DescribeStoreImageTasks(DescribeStoreImageTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStoreImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStoreImageTasksResponseUnmarshaller.Instance;
 
@@ -24585,7 +24585,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">REST API Reference for DescribeStoreImageTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeStoreImageTasks(DescribeStoreImageTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStoreImageTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStoreImageTasksResponseUnmarshaller.Instance;
 
@@ -24645,7 +24645,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public virtual DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetsResponseUnmarshaller.Instance;
 
@@ -24666,7 +24666,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public virtual IAsyncResult BeginDescribeSubnets(DescribeSubnetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSubnetsResponseUnmarshaller.Instance;
 
@@ -24744,7 +24744,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -24765,7 +24765,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -24798,7 +24798,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
         public virtual DescribeTrafficMirrorFilterRulesResponse DescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
 
@@ -24819,7 +24819,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilterRules">REST API Reference for DescribeTrafficMirrorFilterRules Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrafficMirrorFilterRules(DescribeTrafficMirrorFilterRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFilterRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFilterRulesResponseUnmarshaller.Instance;
 
@@ -24852,7 +24852,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
         public virtual DescribeTrafficMirrorFiltersResponse DescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
 
@@ -24873,7 +24873,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorFilters">REST API Reference for DescribeTrafficMirrorFilters Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrafficMirrorFilters(DescribeTrafficMirrorFiltersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorFiltersResponseUnmarshaller.Instance;
 
@@ -24907,7 +24907,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
         public virtual DescribeTrafficMirrorSessionsResponse DescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
 
@@ -24928,7 +24928,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorSessions">REST API Reference for DescribeTrafficMirrorSessions Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrafficMirrorSessions(DescribeTrafficMirrorSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorSessionsResponseUnmarshaller.Instance;
 
@@ -24961,7 +24961,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
         public virtual DescribeTrafficMirrorTargetsResponse DescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
 
@@ -24982,7 +24982,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrafficMirrorTargets">REST API Reference for DescribeTrafficMirrorTargets Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrafficMirrorTargets(DescribeTrafficMirrorTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficMirrorTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficMirrorTargetsResponseUnmarshaller.Instance;
 
@@ -25017,7 +25017,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
         public virtual DescribeTransitGatewayAttachmentsResponse DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -25038,7 +25038,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
 
@@ -25071,7 +25071,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
         public virtual DescribeTransitGatewayConnectPeersResponse DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
 
@@ -25092,7 +25092,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
 
@@ -25125,7 +25125,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
         public virtual DescribeTransitGatewayConnectsResponse DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
 
@@ -25146,7 +25146,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
 
@@ -25179,7 +25179,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
         public virtual DescribeTransitGatewayMulticastDomainsResponse DescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
 
@@ -25200,7 +25200,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">REST API Reference for DescribeTransitGatewayMulticastDomains Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayMulticastDomains(DescribeTransitGatewayMulticastDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayMulticastDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayMulticastDomainsResponseUnmarshaller.Instance;
 
@@ -25233,7 +25233,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
         public virtual DescribeTransitGatewayPeeringAttachmentsResponse DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
 
@@ -25254,7 +25254,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">REST API Reference for DescribeTransitGatewayPeeringAttachments Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPeeringAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPeeringAttachmentsResponseUnmarshaller.Instance;
 
@@ -25287,7 +25287,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
         public virtual DescribeTransitGatewayPolicyTablesResponse DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
 
@@ -25308,7 +25308,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
 
@@ -25341,7 +25341,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
         public virtual DescribeTransitGatewayRouteTableAnnouncementsResponse DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
 
@@ -25362,7 +25362,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
 
@@ -25396,7 +25396,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
         public virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -25417,7 +25417,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
 
@@ -25451,7 +25451,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
         public virtual DescribeTransitGatewaysResponse DescribeTransitGateways(DescribeTransitGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
 
@@ -25472,7 +25472,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGateways(DescribeTransitGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
 
@@ -25506,7 +25506,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
         public virtual DescribeTransitGatewayVpcAttachmentsResponse DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
 
@@ -25527,7 +25527,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
         public virtual IAsyncResult BeginDescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
 
@@ -25560,7 +25560,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">REST API Reference for DescribeTrunkInterfaceAssociations Operation</seealso>
         public virtual DescribeTrunkInterfaceAssociationsResponse DescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
 
@@ -25581,7 +25581,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations">REST API Reference for DescribeTrunkInterfaceAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrunkInterfaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrunkInterfaceAssociationsResponseUnmarshaller.Instance;
 
@@ -25614,7 +25614,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
         public virtual DescribeVerifiedAccessEndpointsResponse DescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
 
@@ -25635,7 +25635,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">REST API Reference for DescribeVerifiedAccessEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessEndpointsResponseUnmarshaller.Instance;
 
@@ -25668,7 +25668,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
         public virtual DescribeVerifiedAccessGroupsResponse DescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
 
@@ -25689,7 +25689,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">REST API Reference for DescribeVerifiedAccessGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessGroupsResponseUnmarshaller.Instance;
 
@@ -25722,7 +25722,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
         public virtual DescribeVerifiedAccessInstanceLoggingConfigurationsResponse DescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -25743,7 +25743,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">REST API Reference for DescribeVerifiedAccessInstanceLoggingConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeVerifiedAccessInstanceLoggingConfigurations(DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstanceLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -25776,7 +25776,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
         public virtual DescribeVerifiedAccessInstancesResponse DescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
 
@@ -25797,7 +25797,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">REST API Reference for DescribeVerifiedAccessInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessInstancesResponseUnmarshaller.Instance;
 
@@ -25830,7 +25830,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
         public virtual DescribeVerifiedAccessTrustProvidersResponse DescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
 
@@ -25851,7 +25851,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">REST API Reference for DescribeVerifiedAccessTrustProviders Operation</seealso>
         public virtual IAsyncResult BeginDescribeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVerifiedAccessTrustProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVerifiedAccessTrustProvidersResponseUnmarshaller.Instance;
 
@@ -25891,7 +25891,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public virtual DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -25912,7 +25912,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumeAttribute(DescribeVolumeAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -26000,7 +26000,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -26021,7 +26021,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -26060,7 +26060,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
         public virtual DescribeVolumesModificationsResponse DescribeVolumesModifications(DescribeVolumesModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
 
@@ -26081,7 +26081,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumesModifications(DescribeVolumesModificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
 
@@ -26227,7 +26227,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public virtual DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeStatusResponseUnmarshaller.Instance;
 
@@ -26248,7 +26248,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumeStatus(DescribeVolumeStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumeStatusResponseUnmarshaller.Instance;
 
@@ -26282,7 +26282,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public virtual DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcAttributeResponseUnmarshaller.Instance;
 
@@ -26303,7 +26303,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcAttribute(DescribeVpcAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcAttributeResponseUnmarshaller.Instance;
 
@@ -26342,7 +26342,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
         public virtual DescribeVpcBlockPublicAccessExclusionsResponse DescribeVpcBlockPublicAccessExclusions(DescribeVpcBlockPublicAccessExclusionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
 
@@ -26363,7 +26363,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcBlockPublicAccessExclusions(DescribeVpcBlockPublicAccessExclusionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
 
@@ -26400,7 +26400,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
         public virtual DescribeVpcBlockPublicAccessOptionsResponse DescribeVpcBlockPublicAccessOptions(DescribeVpcBlockPublicAccessOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -26421,7 +26421,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcBlockPublicAccessOptions(DescribeVpcBlockPublicAccessOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -26461,7 +26461,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public virtual DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -26482,7 +26482,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcClassicLink(DescribeVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -26526,7 +26526,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public virtual DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -26547,7 +26547,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -26581,7 +26581,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
         public virtual DescribeVpcEndpointAssociationsResponse DescribeVpcEndpointAssociations(DescribeVpcEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -26602,7 +26602,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointAssociations(DescribeVpcEndpointAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -26635,7 +26635,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">REST API Reference for DescribeVpcEndpointConnectionNotifications Operation</seealso>
         public virtual DescribeVpcEndpointConnectionNotificationsResponse DescribeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -26656,7 +26656,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">REST API Reference for DescribeVpcEndpointConnectionNotifications Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionNotificationsResponseUnmarshaller.Instance;
 
@@ -26690,7 +26690,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections">REST API Reference for DescribeVpcEndpointConnections Operation</seealso>
         public virtual DescribeVpcEndpointConnectionsResponse DescribeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -26711,7 +26711,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections">REST API Reference for DescribeVpcEndpointConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -26746,7 +26746,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -26767,7 +26767,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpoints(DescribeVpcEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -26800,7 +26800,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations">REST API Reference for DescribeVpcEndpointServiceConfigurations Operation</seealso>
         public virtual DescribeVpcEndpointServiceConfigurationsResponse DescribeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -26821,7 +26821,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations">REST API Reference for DescribeVpcEndpointServiceConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServiceConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServiceConfigurationsResponseUnmarshaller.Instance;
 
@@ -26855,7 +26855,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">REST API Reference for DescribeVpcEndpointServicePermissions Operation</seealso>
         public virtual DescribeVpcEndpointServicePermissionsResponse DescribeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -26876,7 +26876,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions">REST API Reference for DescribeVpcEndpointServicePermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -26919,7 +26919,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public virtual DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
 
@@ -26940,7 +26940,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointServicesResponseUnmarshaller.Instance;
 
@@ -26990,7 +26990,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -27011,7 +27011,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -27059,7 +27059,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public virtual DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcsResponseUnmarshaller.Instance;
 
@@ -27080,7 +27080,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcs(DescribeVpcsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcsResponseUnmarshaller.Instance;
 
@@ -27138,7 +27138,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public virtual DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -27159,7 +27159,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpnConnections(DescribeVpnConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -27217,7 +27217,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public virtual DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnGatewaysResponseUnmarshaller.Instance;
 
@@ -27238,7 +27238,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpnGateways(DescribeVpnGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpnGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpnGatewaysResponseUnmarshaller.Instance;
 
@@ -27280,7 +27280,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public virtual DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -27301,7 +27301,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public virtual IAsyncResult BeginDetachClassicLinkVpc(DetachClassicLinkVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachClassicLinkVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
 
@@ -27336,7 +27336,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public virtual DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -27357,7 +27357,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public virtual IAsyncResult BeginDetachInternetGateway(DetachInternetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInternetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInternetGatewayResponseUnmarshaller.Instance;
 
@@ -27390,7 +27390,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public virtual DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -27411,7 +27411,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public virtual IAsyncResult BeginDetachNetworkInterface(DetachNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachNetworkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachNetworkInterfaceResponseUnmarshaller.Instance;
 
@@ -27445,7 +27445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
         public virtual DetachVerifiedAccessTrustProviderResponse DetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -27466,7 +27466,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">REST API Reference for DetachVerifiedAccessTrustProvider Operation</seealso>
         public virtual IAsyncResult BeginDetachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -27522,7 +27522,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public virtual DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
 
@@ -27543,7 +27543,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public virtual IAsyncResult BeginDetachVolume(DetachVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVolumeResponseUnmarshaller.Instance;
 
@@ -27585,7 +27585,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public virtual DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -27606,7 +27606,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public virtual IAsyncResult BeginDetachVpnGateway(DetachVpnGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachVpnGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachVpnGatewayResponseUnmarshaller.Instance;
 
@@ -27640,7 +27640,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
         public virtual DisableAddressTransferResponse DisableAddressTransfer(DisableAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
 
@@ -27661,7 +27661,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
         public virtual IAsyncResult BeginDisableAddressTransfer(DisableAddressTransferRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
 
@@ -27710,7 +27710,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
         public virtual DisableAllowedImagesSettingsResponse DisableAllowedImagesSettings(DisableAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -27731,7 +27731,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
         public virtual IAsyncResult BeginDisableAllowedImagesSettings(DisableAllowedImagesSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -27764,7 +27764,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual DisableAwsNetworkPerformanceMetricSubscriptionResponse DisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -27785,7 +27785,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription">REST API Reference for DisableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual IAsyncResult BeginDisableAwsNetworkPerformanceMetricSubscription(DisableAwsNetworkPerformanceMetricSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -27834,7 +27834,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
         public virtual DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -27855,7 +27855,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">REST API Reference for DisableEbsEncryptionByDefault Operation</seealso>
         public virtual IAsyncResult BeginDisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -27898,7 +27898,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
         public virtual DisableFastLaunchResponse DisableFastLaunch(DisableFastLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
 
@@ -27919,7 +27919,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastLaunch">REST API Reference for DisableFastLaunch Operation</seealso>
         public virtual IAsyncResult BeginDisableFastLaunch(DisableFastLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastLaunchResponseUnmarshaller.Instance;
 
@@ -27953,7 +27953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
         public virtual DisableFastSnapshotRestoresResponse DisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -27974,7 +27974,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">REST API Reference for DisableFastSnapshotRestores Operation</seealso>
         public virtual IAsyncResult BeginDisableFastSnapshotRestores(DisableFastSnapshotRestoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -28033,7 +28033,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
         public virtual DisableImageResponse DisableImage(DisableImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
 
@@ -28054,7 +28054,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage">REST API Reference for DisableImage Operation</seealso>
         public virtual IAsyncResult BeginDisableImage(DisableImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageResponseUnmarshaller.Instance;
 
@@ -28096,7 +28096,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
         public virtual DisableImageBlockPublicAccessResponse DisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -28117,7 +28117,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">REST API Reference for DisableImageBlockPublicAccess Operation</seealso>
         public virtual IAsyncResult BeginDisableImageBlockPublicAccess(DisableImageBlockPublicAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -28156,7 +28156,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
         public virtual DisableImageDeprecationResponse DisableImageDeprecation(DisableImageDeprecationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -28177,7 +28177,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">REST API Reference for DisableImageDeprecation Operation</seealso>
         public virtual IAsyncResult BeginDisableImageDeprecation(DisableImageDeprecationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -28223,7 +28223,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
         public virtual DisableImageDeregistrationProtectionResponse DisableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -28244,7 +28244,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection">REST API Reference for DisableImageDeregistrationProtection Operation</seealso>
         public virtual IAsyncResult BeginDisableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -28278,7 +28278,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
         public virtual DisableIpamOrganizationAdminAccountResponse DisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -28299,7 +28299,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginDisableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -28374,7 +28374,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
         public virtual DisableRouteServerPropagationResponse DisableRouteServerPropagation(DisableRouteServerPropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -28395,7 +28395,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableRouteServerPropagation">REST API Reference for DisableRouteServerPropagation Operation</seealso>
         public virtual IAsyncResult BeginDisableRouteServerPropagation(DisableRouteServerPropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -28431,7 +28431,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
         public virtual DisableSerialConsoleAccessResponse DisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -28452,7 +28452,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess">REST API Reference for DisableSerialConsoleAccess Operation</seealso>
         public virtual IAsyncResult BeginDisableSerialConsoleAccess(DisableSerialConsoleAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -28506,7 +28506,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
         public virtual DisableSnapshotBlockPublicAccessResponse DisableSnapshotBlockPublicAccess(DisableSnapshotBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -28527,7 +28527,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">REST API Reference for DisableSnapshotBlockPublicAccess Operation</seealso>
         public virtual IAsyncResult BeginDisableSnapshotBlockPublicAccess(DisableSnapshotBlockPublicAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -28561,7 +28561,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -28582,7 +28582,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual IAsyncResult BeginDisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -28616,7 +28616,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public virtual DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -28637,7 +28637,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public virtual IAsyncResult BeginDisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -28678,7 +28678,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public virtual DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -28699,7 +28699,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public virtual IAsyncResult BeginDisableVpcClassicLink(DisableVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -28745,7 +28745,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -28766,7 +28766,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual IAsyncResult BeginDisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -28823,7 +28823,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public virtual DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAddressResponseUnmarshaller.Instance;
 
@@ -28844,7 +28844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAddress(DisassociateAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAddressResponseUnmarshaller.Instance;
 
@@ -28880,7 +28880,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
         public virtual DisassociateCapacityReservationBillingOwnerResponse DisassociateCapacityReservationBillingOwner(DisassociateCapacityReservationBillingOwnerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -28901,7 +28901,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
         public virtual IAsyncResult BeginDisassociateCapacityReservationBillingOwner(DisassociateCapacityReservationBillingOwnerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCapacityReservationBillingOwnerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCapacityReservationBillingOwnerResponseUnmarshaller.Instance;
 
@@ -28953,7 +28953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
         public virtual DisassociateClientVpnTargetNetworkResponse DisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -28974,7 +28974,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
         public virtual IAsyncResult BeginDisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
 
@@ -29011,7 +29011,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
         public virtual DisassociateEnclaveCertificateIamRoleResponse DisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -29032,7 +29032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole">REST API Reference for DisassociateEnclaveCertificateIamRole Operation</seealso>
         public virtual IAsyncResult BeginDisassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateEnclaveCertificateIamRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateEnclaveCertificateIamRoleResponseUnmarshaller.Instance;
 
@@ -29070,7 +29070,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
         public virtual DisassociateIamInstanceProfileResponse DisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -29091,7 +29091,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginDisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIamInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
 
@@ -29130,7 +29130,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
         public virtual DisassociateInstanceEventWindowResponse DisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -29151,7 +29151,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateInstanceEventWindow">REST API Reference for DisassociateInstanceEventWindow Operation</seealso>
         public virtual IAsyncResult BeginDisassociateInstanceEventWindow(DisassociateInstanceEventWindowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -29187,7 +29187,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
         public virtual DisassociateIpamByoasnResponse DisassociateIpamByoasn(DisassociateIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -29208,7 +29208,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn">REST API Reference for DisassociateIpamByoasn Operation</seealso>
         public virtual IAsyncResult BeginDisassociateIpamByoasn(DisassociateIpamByoasnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamByoasnResponseUnmarshaller.Instance;
 
@@ -29243,7 +29243,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
         public virtual DisassociateIpamResourceDiscoveryResponse DisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -29264,7 +29264,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
         public virtual IAsyncResult BeginDisassociateIpamResourceDiscovery(DisassociateIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -29314,7 +29314,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
         public virtual DisassociateNatGatewayAddressResponse DisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -29335,7 +29335,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
         public virtual IAsyncResult BeginDisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -29379,7 +29379,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
         public virtual DisassociateRouteServerResponse DisassociateRouteServer(DisassociateRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteServerResponseUnmarshaller.Instance;
 
@@ -29400,7 +29400,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteServer">REST API Reference for DisassociateRouteServer Operation</seealso>
         public virtual IAsyncResult BeginDisassociateRouteServer(DisassociateRouteServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteServerResponseUnmarshaller.Instance;
 
@@ -29441,7 +29441,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public virtual DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteTableResponseUnmarshaller.Instance;
 
@@ -29462,7 +29462,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public virtual IAsyncResult BeginDisassociateRouteTable(DisassociateRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateRouteTableResponseUnmarshaller.Instance;
 
@@ -29498,7 +29498,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
         public virtual DisassociateSecurityGroupVpcResponse DisassociateSecurityGroupVpc(DisassociateSecurityGroupVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -29519,7 +29519,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
         public virtual IAsyncResult BeginDisassociateSecurityGroupVpc(DisassociateSecurityGroupVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
 
@@ -29554,7 +29554,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public virtual DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -29575,7 +29575,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public virtual IAsyncResult BeginDisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
@@ -29608,7 +29608,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual DisassociateTransitGatewayMulticastDomainResponse DisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -29629,7 +29629,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTransitGatewayMulticastDomain(DisassociateTransitGatewayMulticastDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayMulticastDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance;
 
@@ -29662,7 +29662,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
         public virtual DisassociateTransitGatewayPolicyTableResponse DisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -29683,7 +29683,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
 
@@ -29716,7 +29716,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
         public virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -29737,7 +29737,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
@@ -29770,7 +29770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">REST API Reference for DisassociateTrunkInterface Operation</seealso>
         public virtual DisassociateTrunkInterfaceResponse DisassociateTrunkInterface(DisassociateTrunkInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -29791,7 +29791,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface">REST API Reference for DisassociateTrunkInterface Operation</seealso>
         public virtual IAsyncResult BeginDisassociateTrunkInterface(DisassociateTrunkInterfaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrunkInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrunkInterfaceResponseUnmarshaller.Instance;
 
@@ -29833,7 +29833,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public virtual DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -29854,7 +29854,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public virtual IAsyncResult BeginDisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVpcCidrBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
@@ -29888,7 +29888,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
         public virtual EnableAddressTransferResponse EnableAddressTransfer(EnableAddressTransferRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
 
@@ -29909,7 +29909,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
         public virtual IAsyncResult BeginEnableAddressTransfer(EnableAddressTransferRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
 
@@ -29975,7 +29975,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
         public virtual EnableAllowedImagesSettingsResponse EnableAllowedImagesSettings(EnableAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -29996,7 +29996,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
         public virtual IAsyncResult BeginEnableAllowedImagesSettings(EnableAllowedImagesSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -30029,7 +30029,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual EnableAwsNetworkPerformanceMetricSubscriptionResponse EnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -30050,7 +30050,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription">REST API Reference for EnableAwsNetworkPerformanceMetricSubscription Operation</seealso>
         public virtual IAsyncResult BeginEnableAwsNetworkPerformanceMetricSubscription(EnableAwsNetworkPerformanceMetricSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAwsNetworkPerformanceMetricSubscriptionResponseUnmarshaller.Instance;
 
@@ -30102,7 +30102,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         public virtual EnableEbsEncryptionByDefaultResponse EnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -30123,7 +30123,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">REST API Reference for EnableEbsEncryptionByDefault Operation</seealso>
         public virtual IAsyncResult BeginEnableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -30168,7 +30168,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
         public virtual EnableFastLaunchResponse EnableFastLaunch(EnableFastLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
 
@@ -30189,7 +30189,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastLaunch">REST API Reference for EnableFastLaunch Operation</seealso>
         public virtual IAsyncResult BeginEnableFastLaunch(EnableFastLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastLaunchResponseUnmarshaller.Instance;
 
@@ -30234,7 +30234,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         public virtual EnableFastSnapshotRestoresResponse EnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -30255,7 +30255,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">REST API Reference for EnableFastSnapshotRestores Operation</seealso>
         public virtual IAsyncResult BeginEnableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFastSnapshotRestoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFastSnapshotRestoresResponseUnmarshaller.Instance;
 
@@ -30302,7 +30302,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
         public virtual EnableImageResponse EnableImage(EnableImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
 
@@ -30323,7 +30323,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage">REST API Reference for EnableImage Operation</seealso>
         public virtual IAsyncResult BeginEnableImage(EnableImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageResponseUnmarshaller.Instance;
 
@@ -30371,7 +30371,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
         public virtual EnableImageBlockPublicAccessResponse EnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -30392,7 +30392,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">REST API Reference for EnableImageBlockPublicAccess Operation</seealso>
         public virtual IAsyncResult BeginEnableImageBlockPublicAccess(EnableImageBlockPublicAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -30431,7 +30431,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
         public virtual EnableImageDeprecationResponse EnableImageDeprecation(EnableImageDeprecationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -30452,7 +30452,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">REST API Reference for EnableImageDeprecation Operation</seealso>
         public virtual IAsyncResult BeginEnableImageDeprecation(EnableImageDeprecationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeprecationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeprecationResponseUnmarshaller.Instance;
 
@@ -30496,7 +30496,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
         public virtual EnableImageDeregistrationProtectionResponse EnableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -30517,7 +30517,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection">REST API Reference for EnableImageDeregistrationProtection Operation</seealso>
         public virtual IAsyncResult BeginEnableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableImageDeregistrationProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance;
 
@@ -30553,7 +30553,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         public virtual EnableIpamOrganizationAdminAccountResponse EnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -30574,7 +30574,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginEnableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableIpamOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableIpamOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -30615,7 +30615,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
         public virtual EnableReachabilityAnalyzerOrganizationSharingResponse EnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
 
@@ -30636,7 +30636,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">REST API Reference for EnableReachabilityAnalyzerOrganizationSharing Operation</seealso>
         public virtual IAsyncResult BeginEnableReachabilityAnalyzerOrganizationSharing(EnableReachabilityAnalyzerOrganizationSharingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableReachabilityAnalyzerOrganizationSharingResponseUnmarshaller.Instance;
 
@@ -30680,7 +30680,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
         public virtual EnableRouteServerPropagationResponse EnableRouteServerPropagation(EnableRouteServerPropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -30701,7 +30701,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableRouteServerPropagation">REST API Reference for EnableRouteServerPropagation Operation</seealso>
         public virtual IAsyncResult BeginEnableRouteServerPropagation(EnableRouteServerPropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRouteServerPropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRouteServerPropagationResponseUnmarshaller.Instance;
 
@@ -30737,7 +30737,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
         public virtual EnableSerialConsoleAccessResponse EnableSerialConsoleAccess(EnableSerialConsoleAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -30758,7 +30758,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess">REST API Reference for EnableSerialConsoleAccess Operation</seealso>
         public virtual IAsyncResult BeginEnableSerialConsoleAccess(EnableSerialConsoleAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSerialConsoleAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSerialConsoleAccessResponseUnmarshaller.Instance;
 
@@ -30814,7 +30814,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
         public virtual EnableSnapshotBlockPublicAccessResponse EnableSnapshotBlockPublicAccess(EnableSnapshotBlockPublicAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -30835,7 +30835,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">REST API Reference for EnableSnapshotBlockPublicAccess Operation</seealso>
         public virtual IAsyncResult BeginEnableSnapshotBlockPublicAccess(EnableSnapshotBlockPublicAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSnapshotBlockPublicAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSnapshotBlockPublicAccessResponseUnmarshaller.Instance;
 
@@ -30869,7 +30869,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -30890,7 +30890,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
         public virtual IAsyncResult BeginEnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
 
@@ -30924,7 +30924,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public virtual EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -30945,7 +30945,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public virtual IAsyncResult BeginEnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVgwRoutePropagationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVgwRoutePropagationResponseUnmarshaller.Instance;
 
@@ -30979,7 +30979,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public virtual EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVolumeIORequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVolumeIOResponseUnmarshaller.Instance;
 
@@ -31000,7 +31000,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public virtual IAsyncResult BeginEnableVolumeIO(EnableVolumeIORequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVolumeIORequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVolumeIOResponseUnmarshaller.Instance;
 
@@ -31044,7 +31044,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public virtual EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -31065,7 +31065,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public virtual IAsyncResult BeginEnableVpcClassicLink(EnableVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkResponseUnmarshaller.Instance;
 
@@ -31113,7 +31113,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -31134,7 +31134,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public virtual IAsyncResult BeginEnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableVpcClassicLinkDnsSupportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
@@ -31167,7 +31167,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual ExportClientVpnClientCertificateRevocationListResponse ExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -31188,7 +31188,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual IAsyncResult BeginExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -31224,7 +31224,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
         public virtual ExportClientVpnClientConfigurationResponse ExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
 
@@ -31245,7 +31245,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
         public virtual IAsyncResult BeginExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
 
@@ -31280,7 +31280,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
         public virtual ExportImageResponse ExportImage(ExportImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
 
@@ -31301,7 +31301,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage">REST API Reference for ExportImage Operation</seealso>
         public virtual IAsyncResult BeginExportImage(ExportImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportImageResponseUnmarshaller.Instance;
 
@@ -31343,7 +31343,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
         public virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -31364,7 +31364,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
         public virtual IAsyncResult BeginExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -31397,7 +31397,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
         public virtual ExportVerifiedAccessInstanceClientConfigurationResponse ExportVerifiedAccessInstanceClientConfiguration(ExportVerifiedAccessInstanceClientConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVerifiedAccessInstanceClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVerifiedAccessInstanceClientConfigurationResponseUnmarshaller.Instance;
 
@@ -31418,7 +31418,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
         public virtual IAsyncResult BeginExportVerifiedAccessInstanceClientConfiguration(ExportVerifiedAccessInstanceClientConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVerifiedAccessInstanceClientConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVerifiedAccessInstanceClientConfigurationResponseUnmarshaller.Instance;
 
@@ -31452,7 +31452,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
         public virtual GetActiveVpnTunnelStatusResponse GetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
 
@@ -31473,7 +31473,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetActiveVpnTunnelStatus">REST API Reference for GetActiveVpnTunnelStatus Operation</seealso>
         public virtual IAsyncResult BeginGetActiveVpnTunnelStatus(GetActiveVpnTunnelStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetActiveVpnTunnelStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetActiveVpnTunnelStatusResponseUnmarshaller.Instance;
 
@@ -31520,7 +31520,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
         public virtual GetAllowedImagesSettingsResponse GetAllowedImagesSettings(GetAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -31541,7 +31541,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
         public virtual IAsyncResult BeginGetAllowedImagesSettings(GetAllowedImagesSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -31577,7 +31577,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
         public virtual GetAssociatedEnclaveCertificateIamRolesResponse GetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
 
@@ -31598,7 +31598,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles">REST API Reference for GetAssociatedEnclaveCertificateIamRoles Operation</seealso>
         public virtual IAsyncResult BeginGetAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedEnclaveCertificateIamRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedEnclaveCertificateIamRolesResponseUnmarshaller.Instance;
 
@@ -31632,7 +31632,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">REST API Reference for GetAssociatedIpv6PoolCidrs Operation</seealso>
         public virtual GetAssociatedIpv6PoolCidrsResponse GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedIpv6PoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance;
 
@@ -31653,7 +31653,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">REST API Reference for GetAssociatedIpv6PoolCidrs Operation</seealso>
         public virtual IAsyncResult BeginGetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssociatedIpv6PoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssociatedIpv6PoolCidrsResponseUnmarshaller.Instance;
 
@@ -31686,7 +31686,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
         public virtual GetAwsNetworkPerformanceDataResponse GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
 
@@ -31707,7 +31707,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData">REST API Reference for GetAwsNetworkPerformanceData Operation</seealso>
         public virtual IAsyncResult BeginGetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAwsNetworkPerformanceDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAwsNetworkPerformanceDataResponseUnmarshaller.Instance;
 
@@ -31743,7 +31743,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
         public virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
 
@@ -31764,7 +31764,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">REST API Reference for GetCapacityReservationUsage Operation</seealso>
         public virtual IAsyncResult BeginGetCapacityReservationUsage(GetCapacityReservationUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationUsageResponseUnmarshaller.Instance;
 
@@ -31797,7 +31797,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
         public virtual GetCoipPoolUsageResponse GetCoipPoolUsage(GetCoipPoolUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
 
@@ -31818,7 +31818,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">REST API Reference for GetCoipPoolUsage Operation</seealso>
         public virtual IAsyncResult BeginGetCoipPoolUsage(GetCoipPoolUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCoipPoolUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCoipPoolUsageResponseUnmarshaller.Instance;
 
@@ -31860,7 +31860,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public virtual GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleOutputResponseUnmarshaller.Instance;
 
@@ -31881,7 +31881,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public virtual IAsyncResult BeginGetConsoleOutput(GetConsoleOutputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleOutputResponseUnmarshaller.Instance;
 
@@ -31924,7 +31924,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public virtual GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleScreenshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
 
@@ -31945,7 +31945,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public virtual IAsyncResult BeginGetConsoleScreenshot(GetConsoleScreenshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsoleScreenshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsoleScreenshotResponseUnmarshaller.Instance;
 
@@ -31994,7 +31994,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
         public virtual GetDeclarativePoliciesReportSummaryResponse GetDeclarativePoliciesReportSummary(GetDeclarativePoliciesReportSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeclarativePoliciesReportSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeclarativePoliciesReportSummaryResponseUnmarshaller.Instance;
 
@@ -32015,7 +32015,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
         public virtual IAsyncResult BeginGetDeclarativePoliciesReportSummary(GetDeclarativePoliciesReportSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeclarativePoliciesReportSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeclarativePoliciesReportSummaryResponseUnmarshaller.Instance;
 
@@ -32055,7 +32055,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
         public virtual GetDefaultCreditSpecificationResponse GetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -32076,7 +32076,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">REST API Reference for GetDefaultCreditSpecification Operation</seealso>
         public virtual IAsyncResult BeginGetDefaultCreditSpecification(GetDefaultCreditSpecificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -32116,7 +32116,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
         public virtual GetEbsDefaultKmsKeyIdResponse GetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -32137,7 +32137,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">REST API Reference for GetEbsDefaultKmsKeyId Operation</seealso>
         public virtual IAsyncResult BeginGetEbsDefaultKmsKeyId(GetEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -32177,7 +32177,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
         public virtual GetEbsEncryptionByDefaultResponse GetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -32198,7 +32198,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">REST API Reference for GetEbsEncryptionByDefault Operation</seealso>
         public virtual IAsyncResult BeginGetEbsEncryptionByDefault(GetEbsEncryptionByDefaultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEbsEncryptionByDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEbsEncryptionByDefaultResponseUnmarshaller.Instance;
 
@@ -32258,7 +32258,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
         public virtual GetFlowLogsIntegrationTemplateResponse GetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
 
@@ -32279,7 +32279,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">REST API Reference for GetFlowLogsIntegrationTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowLogsIntegrationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowLogsIntegrationTemplateResponseUnmarshaller.Instance;
 
@@ -32312,7 +32312,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
         public virtual GetGroupsForCapacityReservationResponse GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
 
@@ -32333,7 +32333,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation">REST API Reference for GetGroupsForCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginGetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupsForCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupsForCapacityReservationResponseUnmarshaller.Instance;
 
@@ -32373,7 +32373,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public virtual GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostReservationPurchasePreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
 
@@ -32394,7 +32394,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public virtual IAsyncResult BeginGetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostReservationPurchasePreviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostReservationPurchasePreviewResponseUnmarshaller.Instance;
 
@@ -32434,7 +32434,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
         public virtual GetImageBlockPublicAccessStateResponse GetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -32455,7 +32455,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">REST API Reference for GetImageBlockPublicAccessState Operation</seealso>
         public virtual IAsyncResult BeginGetImageBlockPublicAccessState(GetImageBlockPublicAccessStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImageBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -32495,7 +32495,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
         public virtual GetInstanceMetadataDefaultsResponse GetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -32516,7 +32516,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">REST API Reference for GetInstanceMetadataDefaults Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceMetadataDefaults(GetInstanceMetadataDefaultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -32550,7 +32550,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
         public virtual GetInstanceTpmEkPubResponse GetInstanceTpmEkPub(GetInstanceTpmEkPubRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
 
@@ -32571,7 +32571,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub">REST API Reference for GetInstanceTpmEkPub Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceTpmEkPub(GetInstanceTpmEkPubRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTpmEkPubRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTpmEkPubResponseUnmarshaller.Instance;
 
@@ -32622,7 +32622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
         public virtual GetInstanceTypesFromInstanceRequirementsResponse GetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
 
@@ -32643,7 +32643,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTypesFromInstanceRequirements">REST API Reference for GetInstanceTypesFromInstanceRequirements Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceTypesFromInstanceRequirements(GetInstanceTypesFromInstanceRequirementsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceTypesFromInstanceRequirementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceTypesFromInstanceRequirementsResponseUnmarshaller.Instance;
 
@@ -32694,7 +32694,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">REST API Reference for GetInstanceUefiData Operation</seealso>
         public virtual GetInstanceUefiDataResponse GetInstanceUefiData(GetInstanceUefiDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
 
@@ -32715,7 +32715,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceUefiData">REST API Reference for GetInstanceUefiData Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceUefiData(GetInstanceUefiDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceUefiDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceUefiDataResponseUnmarshaller.Instance;
 
@@ -32750,7 +32750,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
         public virtual GetIpamAddressHistoryResponse GetIpamAddressHistory(GetIpamAddressHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
 
@@ -32771,7 +32771,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamAddressHistory">REST API Reference for GetIpamAddressHistory Operation</seealso>
         public virtual IAsyncResult BeginGetIpamAddressHistory(GetIpamAddressHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamAddressHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamAddressHistoryResponseUnmarshaller.Instance;
 
@@ -32807,7 +32807,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
         public virtual GetIpamDiscoveredAccountsResponse GetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
 
@@ -32828,7 +32828,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts">REST API Reference for GetIpamDiscoveredAccounts Operation</seealso>
         public virtual IAsyncResult BeginGetIpamDiscoveredAccounts(GetIpamDiscoveredAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredAccountsResponseUnmarshaller.Instance;
 
@@ -32861,7 +32861,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
         public virtual GetIpamDiscoveredPublicAddressesResponse GetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
 
@@ -32882,7 +32882,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses">REST API Reference for GetIpamDiscoveredPublicAddresses Operation</seealso>
         public virtual IAsyncResult BeginGetIpamDiscoveredPublicAddresses(GetIpamDiscoveredPublicAddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredPublicAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredPublicAddressesResponseUnmarshaller.Instance;
 
@@ -32917,7 +32917,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
         public virtual GetIpamDiscoveredResourceCidrsResponse GetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
 
@@ -32938,7 +32938,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
         public virtual IAsyncResult BeginGetIpamDiscoveredResourceCidrs(GetIpamDiscoveredResourceCidrsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamDiscoveredResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamDiscoveredResourceCidrsResponseUnmarshaller.Instance;
 
@@ -32982,7 +32982,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
         public virtual GetIpamPoolAllocationsResponse GetIpamPoolAllocations(GetIpamPoolAllocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
 
@@ -33003,7 +33003,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolAllocations">REST API Reference for GetIpamPoolAllocations Operation</seealso>
         public virtual IAsyncResult BeginGetIpamPoolAllocations(GetIpamPoolAllocationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolAllocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolAllocationsResponseUnmarshaller.Instance;
 
@@ -33036,7 +33036,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
         public virtual GetIpamPoolCidrsResponse GetIpamPoolCidrs(GetIpamPoolCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
 
@@ -33057,7 +33057,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPoolCidrs">REST API Reference for GetIpamPoolCidrs Operation</seealso>
         public virtual IAsyncResult BeginGetIpamPoolCidrs(GetIpamPoolCidrsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamPoolCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamPoolCidrsResponseUnmarshaller.Instance;
 
@@ -33093,7 +33093,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
         public virtual GetIpamResourceCidrsResponse GetIpamResourceCidrs(GetIpamResourceCidrsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
 
@@ -33114,7 +33114,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
         public virtual IAsyncResult BeginGetIpamResourceCidrs(GetIpamResourceCidrsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIpamResourceCidrsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIpamResourceCidrsResponseUnmarshaller.Instance;
 
@@ -33157,7 +33157,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
         public virtual GetLaunchTemplateDataResponse GetLaunchTemplateData(GetLaunchTemplateDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchTemplateDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
 
@@ -33178,7 +33178,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData">REST API Reference for GetLaunchTemplateData Operation</seealso>
         public virtual IAsyncResult BeginGetLaunchTemplateData(GetLaunchTemplateDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchTemplateDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchTemplateDataResponseUnmarshaller.Instance;
 
@@ -33212,7 +33212,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
         public virtual GetManagedPrefixListAssociationsResponse GetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
 
@@ -33233,7 +33233,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations">REST API Reference for GetManagedPrefixListAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListAssociationsResponseUnmarshaller.Instance;
 
@@ -33266,7 +33266,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
         public virtual GetManagedPrefixListEntriesResponse GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
 
@@ -33287,7 +33287,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries">REST API Reference for GetManagedPrefixListEntries Operation</seealso>
         public virtual IAsyncResult BeginGetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedPrefixListEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
 
@@ -33320,7 +33320,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
         public virtual GetNetworkInsightsAccessScopeAnalysisFindingsResponse GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
 
@@ -33341,7 +33341,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">REST API Reference for GetNetworkInsightsAccessScopeAnalysisFindings Operation</seealso>
         public virtual IAsyncResult BeginGetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeAnalysisFindingsResponseUnmarshaller.Instance;
 
@@ -33374,7 +33374,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
         public virtual GetNetworkInsightsAccessScopeContentResponse GetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
 
@@ -33395,7 +33395,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeContent">REST API Reference for GetNetworkInsightsAccessScopeContent Operation</seealso>
         public virtual IAsyncResult BeginGetNetworkInsightsAccessScopeContent(GetNetworkInsightsAccessScopeContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkInsightsAccessScopeContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkInsightsAccessScopeContentResponseUnmarshaller.Instance;
 
@@ -33454,7 +33454,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public virtual GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPasswordDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPasswordDataResponseUnmarshaller.Instance;
 
@@ -33475,7 +33475,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public virtual IAsyncResult BeginGetPasswordData(GetPasswordDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPasswordDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPasswordDataResponseUnmarshaller.Instance;
 
@@ -33511,7 +33511,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public virtual GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -33532,7 +33532,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public virtual IAsyncResult BeginGetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReservedInstancesExchangeQuoteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
@@ -33576,7 +33576,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
         public virtual GetRouteServerAssociationsResponse GetRouteServerAssociations(GetRouteServerAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerAssociationsResponseUnmarshaller.Instance;
 
@@ -33597,7 +33597,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerAssociations">REST API Reference for GetRouteServerAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetRouteServerAssociations(GetRouteServerAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerAssociationsResponseUnmarshaller.Instance;
 
@@ -33667,7 +33667,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
         public virtual GetRouteServerPropagationsResponse GetRouteServerPropagations(GetRouteServerPropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerPropagationsResponseUnmarshaller.Instance;
 
@@ -33688,7 +33688,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerPropagations">REST API Reference for GetRouteServerPropagations Operation</seealso>
         public virtual IAsyncResult BeginGetRouteServerPropagations(GetRouteServerPropagationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerPropagationsResponseUnmarshaller.Instance;
 
@@ -33758,7 +33758,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
         public virtual GetRouteServerRoutingDatabaseResponse GetRouteServerRoutingDatabase(GetRouteServerRoutingDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerRoutingDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerRoutingDatabaseResponseUnmarshaller.Instance;
 
@@ -33779,7 +33779,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetRouteServerRoutingDatabase">REST API Reference for GetRouteServerRoutingDatabase Operation</seealso>
         public virtual IAsyncResult BeginGetRouteServerRoutingDatabase(GetRouteServerRoutingDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteServerRoutingDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteServerRoutingDatabaseResponseUnmarshaller.Instance;
 
@@ -33813,7 +33813,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
         public virtual GetSecurityGroupsForVpcResponse GetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
 
@@ -33834,7 +33834,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc">REST API Reference for GetSecurityGroupsForVpc Operation</seealso>
         public virtual IAsyncResult BeginGetSecurityGroupsForVpc(GetSecurityGroupsForVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityGroupsForVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityGroupsForVpcResponseUnmarshaller.Instance;
 
@@ -33870,7 +33870,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         public virtual GetSerialConsoleAccessStatusResponse GetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSerialConsoleAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance;
 
@@ -33891,7 +33891,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus">REST API Reference for GetSerialConsoleAccessStatus Operation</seealso>
         public virtual IAsyncResult BeginGetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSerialConsoleAccessStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSerialConsoleAccessStatusResponseUnmarshaller.Instance;
 
@@ -33931,7 +33931,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
         public virtual GetSnapshotBlockPublicAccessStateResponse GetSnapshotBlockPublicAccessState(GetSnapshotBlockPublicAccessStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -33952,7 +33952,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">REST API Reference for GetSnapshotBlockPublicAccessState Operation</seealso>
         public virtual IAsyncResult BeginGetSnapshotBlockPublicAccessState(GetSnapshotBlockPublicAccessStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotBlockPublicAccessStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotBlockPublicAccessStateResponseUnmarshaller.Instance;
 
@@ -33998,7 +33998,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
         public virtual GetSpotPlacementScoresResponse GetSpotPlacementScores(GetSpotPlacementScoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
 
@@ -34019,7 +34019,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSpotPlacementScores">REST API Reference for GetSpotPlacementScores Operation</seealso>
         public virtual IAsyncResult BeginGetSpotPlacementScores(GetSpotPlacementScoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpotPlacementScoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpotPlacementScoresResponseUnmarshaller.Instance;
 
@@ -34052,7 +34052,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
         public virtual GetSubnetCidrReservationsResponse GetSubnetCidrReservations(GetSubnetCidrReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
 
@@ -34073,7 +34073,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSubnetCidrReservations">REST API Reference for GetSubnetCidrReservations Operation</seealso>
         public virtual IAsyncResult BeginGetSubnetCidrReservations(GetSubnetCidrReservationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSubnetCidrReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSubnetCidrReservationsResponseUnmarshaller.Instance;
 
@@ -34106,7 +34106,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
         public virtual GetTransitGatewayAttachmentPropagationsResponse GetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
 
@@ -34127,7 +34127,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
 
@@ -34160,7 +34160,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual GetTransitGatewayMulticastDomainAssociationsResponse GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -34181,7 +34181,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -34214,7 +34214,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
         public virtual GetTransitGatewayPolicyTableAssociationsResponse GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
 
@@ -34235,7 +34235,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
 
@@ -34268,7 +34268,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
         public virtual GetTransitGatewayPolicyTableEntriesResponse GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
 
@@ -34289,7 +34289,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
 
@@ -34323,7 +34323,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
         public virtual GetTransitGatewayPrefixListReferencesResponse GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPrefixListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPrefixListReferencesResponseUnmarshaller.Instance;
 
@@ -34344,7 +34344,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences">REST API Reference for GetTransitGatewayPrefixListReferences Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayPrefixListReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayPrefixListReferencesResponseUnmarshaller.Instance;
 
@@ -34377,7 +34377,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
         public virtual GetTransitGatewayRouteTableAssociationsResponse GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
 
@@ -34398,7 +34398,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
 
@@ -34432,7 +34432,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
         public virtual GetTransitGatewayRouteTablePropagationsResponse GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
 
@@ -34453,7 +34453,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
         public virtual IAsyncResult BeginGetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
 
@@ -34486,7 +34486,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual GetVerifiedAccessEndpointPolicyResponse GetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -34507,7 +34507,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -34540,7 +34540,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
         public virtual GetVerifiedAccessEndpointTargetsResponse GetVerifiedAccessEndpointTargets(GetVerifiedAccessEndpointTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointTargetsResponseUnmarshaller.Instance;
 
@@ -34561,7 +34561,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
         public virtual IAsyncResult BeginGetVerifiedAccessEndpointTargets(GetVerifiedAccessEndpointTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessEndpointTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessEndpointTargetsResponseUnmarshaller.Instance;
 
@@ -34594,7 +34594,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
         public virtual GetVerifiedAccessGroupPolicyResponse GetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -34615,7 +34615,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -34649,7 +34649,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">REST API Reference for GetVpnConnectionDeviceSampleConfiguration Operation</seealso>
         public virtual GetVpnConnectionDeviceSampleConfigurationResponse GetVpnConnectionDeviceSampleConfiguration(GetVpnConnectionDeviceSampleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceSampleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceSampleConfigurationResponseUnmarshaller.Instance;
 
@@ -34670,7 +34670,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceSampleConfiguration">REST API Reference for GetVpnConnectionDeviceSampleConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVpnConnectionDeviceSampleConfiguration(GetVpnConnectionDeviceSampleConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceSampleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceSampleConfigurationResponseUnmarshaller.Instance;
 
@@ -34706,7 +34706,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">REST API Reference for GetVpnConnectionDeviceTypes Operation</seealso>
         public virtual GetVpnConnectionDeviceTypesResponse GetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceTypesResponseUnmarshaller.Instance;
 
@@ -34727,7 +34727,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnConnectionDeviceTypes">REST API Reference for GetVpnConnectionDeviceTypes Operation</seealso>
         public virtual IAsyncResult BeginGetVpnConnectionDeviceTypes(GetVpnConnectionDeviceTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnConnectionDeviceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnConnectionDeviceTypesResponseUnmarshaller.Instance;
 
@@ -34760,7 +34760,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
         public virtual GetVpnTunnelReplacementStatusResponse GetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
 
@@ -34781,7 +34781,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
         public virtual IAsyncResult BeginGetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpnTunnelReplacementStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpnTunnelReplacementStatusResponseUnmarshaller.Instance;
 
@@ -34821,7 +34821,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual ImportClientVpnClientCertificateRevocationListResponse ImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -34842,7 +34842,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
         public virtual IAsyncResult BeginImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
 
@@ -34899,7 +34899,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public virtual ImportImageResponse ImportImage(ImportImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportImageResponseUnmarshaller.Instance;
 
@@ -34920,7 +34920,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public virtual IAsyncResult BeginImportImage(ImportImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportImageResponseUnmarshaller.Instance;
 
@@ -34976,7 +34976,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public virtual ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportInstanceResponseUnmarshaller.Instance;
 
@@ -34997,7 +34997,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public virtual IAsyncResult BeginImportInstance(ImportInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportInstanceResponseUnmarshaller.Instance;
 
@@ -35038,7 +35038,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -35059,7 +35059,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public virtual IAsyncResult BeginImportKeyPair(ImportKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyPairResponseUnmarshaller.Instance;
 
@@ -35098,7 +35098,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public virtual ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
 
@@ -35119,7 +35119,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public virtual IAsyncResult BeginImportSnapshot(ImportSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSnapshotResponseUnmarshaller.Instance;
 
@@ -35169,7 +35169,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public virtual ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
@@ -35190,7 +35190,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public virtual IAsyncResult BeginImportVolume(ImportVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
@@ -35225,7 +35225,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
         public virtual ListImagesInRecycleBinResponse ListImagesInRecycleBin(ListImagesInRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
 
@@ -35246,7 +35246,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">REST API Reference for ListImagesInRecycleBin Operation</seealso>
         public virtual IAsyncResult BeginListImagesInRecycleBin(ListImagesInRecycleBinRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImagesInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImagesInRecycleBinResponseUnmarshaller.Instance;
 
@@ -35279,7 +35279,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
         public virtual ListSnapshotsInRecycleBinResponse ListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
 
@@ -35300,7 +35300,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
         public virtual IAsyncResult BeginListSnapshotsInRecycleBin(ListSnapshotsInRecycleBinRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSnapshotsInRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSnapshotsInRecycleBinResponseUnmarshaller.Instance;
 
@@ -35357,7 +35357,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
         public virtual LockSnapshotResponse LockSnapshot(LockSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
 
@@ -35378,7 +35378,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot">REST API Reference for LockSnapshot Operation</seealso>
         public virtual IAsyncResult BeginLockSnapshot(LockSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockSnapshotResponseUnmarshaller.Instance;
 
@@ -35413,7 +35413,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
         public virtual ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
 
@@ -35434,7 +35434,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyAddressAttribute(ModifyAddressAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
 
@@ -35467,7 +35467,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
         public virtual ModifyAvailabilityZoneGroupResponse ModifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAvailabilityZoneGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAvailabilityZoneGroupResponseUnmarshaller.Instance;
 
@@ -35488,7 +35488,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup">REST API Reference for ModifyAvailabilityZoneGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAvailabilityZoneGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAvailabilityZoneGroupResponseUnmarshaller.Instance;
 
@@ -35557,7 +35557,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         public virtual ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
 
@@ -35578,7 +35578,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginModifyCapacityReservation(ModifyCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
 
@@ -35620,7 +35620,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">REST API Reference for ModifyCapacityReservationFleet Operation</seealso>
         public virtual ModifyCapacityReservationFleetResponse ModifyCapacityReservationFleet(ModifyCapacityReservationFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -35641,7 +35641,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservationFleet">REST API Reference for ModifyCapacityReservationFleet Operation</seealso>
         public virtual IAsyncResult BeginModifyCapacityReservationFleet(ModifyCapacityReservationFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationFleetResponseUnmarshaller.Instance;
 
@@ -35675,7 +35675,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         public virtual ModifyClientVpnEndpointResponse ModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -35696,7 +35696,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         public virtual IAsyncResult BeginModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
@@ -35747,7 +35747,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
         public virtual ModifyDefaultCreditSpecificationResponse ModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -35768,7 +35768,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">REST API Reference for ModifyDefaultCreditSpecification Operation</seealso>
         public virtual IAsyncResult BeginModifyDefaultCreditSpecification(ModifyDefaultCreditSpecificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDefaultCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDefaultCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -35820,7 +35820,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
         public virtual ModifyEbsDefaultKmsKeyIdResponse ModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -35841,7 +35841,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">REST API Reference for ModifyEbsDefaultKmsKeyId Operation</seealso>
         public virtual IAsyncResult BeginModifyEbsDefaultKmsKeyId(ModifyEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -35913,7 +35913,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
         public virtual ModifyFleetResponse ModifyFleet(ModifyFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFleetResponseUnmarshaller.Instance;
 
@@ -35934,7 +35934,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet">REST API Reference for ModifyFleet Operation</seealso>
         public virtual IAsyncResult BeginModifyFleet(ModifyFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFleetResponseUnmarshaller.Instance;
 
@@ -35967,7 +35967,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
         public virtual ModifyFpgaImageAttributeResponse ModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -35988,7 +35988,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute">REST API Reference for ModifyFpgaImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -36032,7 +36032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public virtual ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHostsResponseUnmarshaller.Instance;
 
@@ -36053,7 +36053,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public virtual IAsyncResult BeginModifyHosts(ModifyHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyHostsResponseUnmarshaller.Instance;
 
@@ -36119,7 +36119,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public virtual ModifyIdentityIdFormatResponse ModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -36140,7 +36140,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public virtual IAsyncResult BeginModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdentityIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdentityIdFormatResponseUnmarshaller.Instance;
 
@@ -36202,7 +36202,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public virtual ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
 
@@ -36223,7 +36223,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public virtual IAsyncResult BeginModifyIdFormat(ModifyIdFormatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIdFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIdFormatResponseUnmarshaller.Instance;
 
@@ -36272,7 +36272,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public virtual ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyImageAttributeResponseUnmarshaller.Instance;
 
@@ -36293,7 +36293,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyImageAttribute(ModifyImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyImageAttributeResponseUnmarshaller.Instance;
 
@@ -36342,7 +36342,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public virtual ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -36363,7 +36363,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceAttribute(ModifyInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -36399,7 +36399,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
         public virtual ModifyInstanceCapacityReservationAttributesResponse ModifyInstanceCapacityReservationAttributes(ModifyInstanceCapacityReservationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
 
@@ -36420,7 +36420,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">REST API Reference for ModifyInstanceCapacityReservationAttributes Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceCapacityReservationAttributes(ModifyInstanceCapacityReservationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCapacityReservationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCapacityReservationAttributesResponseUnmarshaller.Instance;
 
@@ -36459,7 +36459,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
         public virtual ModifyInstanceConnectEndpointResponse ModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -36480,7 +36480,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceConnectEndpoint">REST API Reference for ModifyInstanceConnectEndpoint Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceConnectEndpoint(ModifyInstanceConnectEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceConnectEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceConnectEndpointResponseUnmarshaller.Instance;
 
@@ -36530,7 +36530,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
         public virtual ModifyInstanceCpuOptionsResponse ModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
 
@@ -36551,7 +36551,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
 
@@ -36591,7 +36591,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
         public virtual ModifyInstanceCreditSpecificationResponse ModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -36612,7 +36612,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">REST API Reference for ModifyInstanceCreditSpecification Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceCreditSpecificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceCreditSpecificationResponseUnmarshaller.Instance;
 
@@ -36645,7 +36645,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
         public virtual ModifyInstanceEventStartTimeResponse ModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
 
@@ -36666,7 +36666,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">REST API Reference for ModifyInstanceEventStartTime Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceEventStartTime(ModifyInstanceEventStartTimeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventStartTimeResponseUnmarshaller.Instance;
 
@@ -36720,7 +36720,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
         public virtual ModifyInstanceEventWindowResponse ModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -36741,7 +36741,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventWindow">REST API Reference for ModifyInstanceEventWindow Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceEventWindow(ModifyInstanceEventWindowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceEventWindowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceEventWindowResponseUnmarshaller.Instance;
 
@@ -36785,7 +36785,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
         public virtual ModifyInstanceMaintenanceOptionsResponse ModifyInstanceMaintenanceOptions(ModifyInstanceMaintenanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
 
@@ -36806,7 +36806,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMaintenanceOptions">REST API Reference for ModifyInstanceMaintenanceOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceMaintenanceOptions(ModifyInstanceMaintenanceOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMaintenanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance;
 
@@ -36850,7 +36850,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
         public virtual ModifyInstanceMetadataDefaultsResponse ModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -36871,7 +36871,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">REST API Reference for ModifyInstanceMetadataDefaults Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceMetadataDefaults(ModifyInstanceMetadataDefaultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataDefaultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance;
 
@@ -36910,7 +36910,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
         public virtual ModifyInstanceMetadataOptionsResponse ModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -36931,7 +36931,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceMetadataOptions(ModifyInstanceMetadataOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceMetadataOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
 
@@ -36964,7 +36964,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
         public virtual ModifyInstanceNetworkPerformanceOptionsResponse ModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
 
@@ -36985,7 +36985,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
 
@@ -37050,7 +37050,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public virtual ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstancePlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
 
@@ -37071,7 +37071,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public virtual IAsyncResult BeginModifyInstancePlacement(ModifyInstancePlacementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyInstancePlacementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyInstancePlacementResponseUnmarshaller.Instance;
 
@@ -37104,7 +37104,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
         public virtual ModifyIpamResponse ModifyIpam(ModifyIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
 
@@ -37125,7 +37125,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpam">REST API Reference for ModifyIpam Operation</seealso>
         public virtual IAsyncResult BeginModifyIpam(ModifyIpamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResponseUnmarshaller.Instance;
 
@@ -37164,7 +37164,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
         public virtual ModifyIpamPoolResponse ModifyIpamPool(ModifyIpamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
 
@@ -37185,7 +37185,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPool">REST API Reference for ModifyIpamPool Operation</seealso>
         public virtual IAsyncResult BeginModifyIpamPool(ModifyIpamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
 
@@ -37228,7 +37228,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
         public virtual ModifyIpamResourceCidrResponse ModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
 
@@ -37249,7 +37249,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceCidr">REST API Reference for ModifyIpamResourceCidr Operation</seealso>
         public virtual IAsyncResult BeginModifyIpamResourceCidr(ModifyIpamResourceCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceCidrResponseUnmarshaller.Instance;
 
@@ -37283,7 +37283,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
         public virtual ModifyIpamResourceDiscoveryResponse ModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -37304,7 +37304,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
         public virtual IAsyncResult BeginModifyIpamResourceDiscovery(ModifyIpamResourceDiscoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamResourceDiscoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamResourceDiscoveryResponseUnmarshaller.Instance;
 
@@ -37337,7 +37337,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
         public virtual ModifyIpamScopeResponse ModifyIpamScope(ModifyIpamScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
 
@@ -37358,7 +37358,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamScope">REST API Reference for ModifyIpamScope Operation</seealso>
         public virtual IAsyncResult BeginModifyIpamScope(ModifyIpamScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpamScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpamScopeResponseUnmarshaller.Instance;
 
@@ -37393,7 +37393,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         public virtual ModifyLaunchTemplateResponse ModifyLaunchTemplate(ModifyLaunchTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -37414,7 +37414,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         public virtual IAsyncResult BeginModifyLaunchTemplate(ModifyLaunchTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLaunchTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLaunchTemplateResponseUnmarshaller.Instance;
 
@@ -37447,7 +37447,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
         public virtual ModifyLocalGatewayRouteResponse ModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -37468,7 +37468,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
 
@@ -37512,7 +37512,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
         public virtual ModifyManagedPrefixListResponse ModifyManagedPrefixList(ModifyManagedPrefixListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -37533,7 +37533,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList">REST API Reference for ModifyManagedPrefixList Operation</seealso>
         public virtual IAsyncResult BeginModifyManagedPrefixList(ModifyManagedPrefixListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyManagedPrefixListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
 
@@ -37568,7 +37568,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public virtual ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -37589,7 +37589,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -37622,7 +37622,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
         public virtual ModifyPrivateDnsNameOptionsResponse ModifyPrivateDnsNameOptions(ModifyPrivateDnsNameOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPrivateDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPrivateDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -37643,7 +37643,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPrivateDnsNameOptions">REST API Reference for ModifyPrivateDnsNameOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyPrivateDnsNameOptions(ModifyPrivateDnsNameOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPrivateDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPrivateDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -37678,7 +37678,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
         public virtual ModifyPublicIpDnsNameOptionsResponse ModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -37699,7 +37699,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyPublicIpDnsNameOptions">REST API Reference for ModifyPublicIpDnsNameOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyPublicIpDnsNameOptions(ModifyPublicIpDnsNameOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyPublicIpDnsNameOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyPublicIpDnsNameOptionsResponseUnmarshaller.Instance;
 
@@ -37740,7 +37740,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public virtual ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReservedInstancesResponseUnmarshaller.Instance;
 
@@ -37761,7 +37761,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public virtual IAsyncResult BeginModifyReservedInstances(ModifyReservedInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReservedInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReservedInstancesResponseUnmarshaller.Instance;
 
@@ -37831,7 +37831,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
         public virtual ModifyRouteServerResponse ModifyRouteServer(ModifyRouteServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRouteServerResponseUnmarshaller.Instance;
 
@@ -37852,7 +37852,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyRouteServer">REST API Reference for ModifyRouteServer Operation</seealso>
         public virtual IAsyncResult BeginModifyRouteServer(ModifyRouteServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRouteServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRouteServerResponseUnmarshaller.Instance;
 
@@ -37885,7 +37885,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
         public virtual ModifySecurityGroupRulesResponse ModifySecurityGroupRules(ModifySecurityGroupRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -37906,7 +37906,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">REST API Reference for ModifySecurityGroupRules Operation</seealso>
         public virtual IAsyncResult BeginModifySecurityGroupRules(ModifySecurityGroupRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySecurityGroupRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySecurityGroupRulesResponseUnmarshaller.Instance;
 
@@ -37955,7 +37955,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public virtual ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -37976,7 +37976,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifySnapshotAttribute(ModifySnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -38013,7 +38013,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
         public virtual ModifySnapshotTierResponse ModifySnapshotTier(ModifySnapshotTierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
 
@@ -38034,7 +38034,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">REST API Reference for ModifySnapshotTier Operation</seealso>
         public virtual IAsyncResult BeginModifySnapshotTier(ModifySnapshotTierRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySnapshotTierResponseUnmarshaller.Instance;
 
@@ -38106,7 +38106,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public virtual ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySpotFleetRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
 
@@ -38127,7 +38127,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public virtual IAsyncResult BeginModifySpotFleetRequest(ModifySpotFleetRequestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySpotFleetRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySpotFleetRequestResponseUnmarshaller.Instance;
 
@@ -38190,7 +38190,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public virtual ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySubnetAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySubnetAttributeResponseUnmarshaller.Instance;
 
@@ -38211,7 +38211,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifySubnetAttribute(ModifySubnetAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySubnetAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySubnetAttributeResponseUnmarshaller.Instance;
 
@@ -38254,7 +38254,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
         public virtual ModifyTrafficMirrorFilterNetworkServicesResponse ModifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
 
@@ -38275,7 +38275,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterNetworkServices">REST API Reference for ModifyTrafficMirrorFilterNetworkServices Operation</seealso>
         public virtual IAsyncResult BeginModifyTrafficMirrorFilterNetworkServices(ModifyTrafficMirrorFilterNetworkServicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterNetworkServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterNetworkServicesResponseUnmarshaller.Instance;
 
@@ -38314,7 +38314,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
         public virtual ModifyTrafficMirrorFilterRuleResponse ModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -38335,7 +38335,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorFilterRule">REST API Reference for ModifyTrafficMirrorFilterRule Operation</seealso>
         public virtual IAsyncResult BeginModifyTrafficMirrorFilterRule(ModifyTrafficMirrorFilterRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorFilterRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorFilterRuleResponseUnmarshaller.Instance;
 
@@ -38368,7 +38368,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
         public virtual ModifyTrafficMirrorSessionResponse ModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -38389,7 +38389,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTrafficMirrorSession">REST API Reference for ModifyTrafficMirrorSession Operation</seealso>
         public virtual IAsyncResult BeginModifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrafficMirrorSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrafficMirrorSessionResponseUnmarshaller.Instance;
 
@@ -38424,7 +38424,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
         public virtual ModifyTransitGatewayResponse ModifyTransitGateway(ModifyTransitGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayResponseUnmarshaller.Instance;
 
@@ -38445,7 +38445,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway">REST API Reference for ModifyTransitGateway Operation</seealso>
         public virtual IAsyncResult BeginModifyTransitGateway(ModifyTransitGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayResponseUnmarshaller.Instance;
 
@@ -38479,7 +38479,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
         public virtual ModifyTransitGatewayPrefixListReferenceResponse ModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -38500,7 +38500,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference">REST API Reference for ModifyTransitGatewayPrefixListReference Operation</seealso>
         public virtual IAsyncResult BeginModifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayPrefixListReferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayPrefixListReferenceResponseUnmarshaller.Instance;
 
@@ -38533,7 +38533,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
         public virtual ModifyTransitGatewayVpcAttachmentResponse ModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -38554,7 +38554,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
         public virtual IAsyncResult BeginModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -38587,7 +38587,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
         public virtual ModifyVerifiedAccessEndpointResponse ModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -38608,7 +38608,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">REST API Reference for ModifyVerifiedAccessEndpoint Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointResponseUnmarshaller.Instance;
 
@@ -38641,7 +38641,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual ModifyVerifiedAccessEndpointPolicyResponse ModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -38662,7 +38662,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">REST API Reference for ModifyVerifiedAccessEndpointPolicy Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -38695,7 +38695,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
         public virtual ModifyVerifiedAccessGroupResponse ModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -38716,7 +38716,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">REST API Reference for ModifyVerifiedAccessGroup Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupResponseUnmarshaller.Instance;
 
@@ -38749,7 +38749,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
         public virtual ModifyVerifiedAccessGroupPolicyResponse ModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -38770,7 +38770,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">REST API Reference for ModifyVerifiedAccessGroupPolicy Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessGroupPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessGroupPolicyResponseUnmarshaller.Instance;
 
@@ -38803,7 +38803,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
         public virtual ModifyVerifiedAccessInstanceResponse ModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -38824,7 +38824,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">REST API Reference for ModifyVerifiedAccessInstance Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceResponseUnmarshaller.Instance;
 
@@ -38858,7 +38858,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
         public virtual ModifyVerifiedAccessInstanceLoggingConfigurationResponse ModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -38879,7 +38879,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration">REST API Reference for ModifyVerifiedAccessInstanceLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessInstanceLoggingConfiguration(ModifyVerifiedAccessInstanceLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessInstanceLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -38913,7 +38913,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
         public virtual ModifyVerifiedAccessTrustProviderResponse ModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -38934,7 +38934,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider">REST API Reference for ModifyVerifiedAccessTrustProvider Operation</seealso>
         public virtual IAsyncResult BeginModifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVerifiedAccessTrustProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVerifiedAccessTrustProviderResponseUnmarshaller.Instance;
 
@@ -38996,7 +38996,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
         public virtual ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
 
@@ -39017,7 +39017,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
         public virtual IAsyncResult BeginModifyVolume(ModifyVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
 
@@ -39063,7 +39063,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public virtual ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -39084,7 +39084,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyVolumeAttribute(ModifyVolumeAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVolumeAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVolumeAttributeResponseUnmarshaller.Instance;
 
@@ -39117,7 +39117,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public virtual ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcAttributeResponseUnmarshaller.Instance;
 
@@ -39138,7 +39138,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcAttribute(ModifyVpcAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcAttributeResponseUnmarshaller.Instance;
 
@@ -39175,7 +39175,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual ModifyVpcBlockPublicAccessExclusionResponse ModifyVpcBlockPublicAccessExclusion(ModifyVpcBlockPublicAccessExclusionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -39196,7 +39196,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcBlockPublicAccessExclusion(ModifyVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
 
@@ -39233,7 +39233,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
         public virtual ModifyVpcBlockPublicAccessOptionsResponse ModifyVpcBlockPublicAccessOptions(ModifyVpcBlockPublicAccessOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -39254,7 +39254,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcBlockPublicAccessOptions(ModifyVpcBlockPublicAccessOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
 
@@ -39290,7 +39290,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public virtual ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
@@ -39311,7 +39311,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcEndpoint(ModifyVpcEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointResponseUnmarshaller.Instance;
 
@@ -39345,7 +39345,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
         public virtual ModifyVpcEndpointConnectionNotificationResponse ModifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -39366,7 +39366,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointConnectionNotificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointConnectionNotificationResponseUnmarshaller.Instance;
 
@@ -39405,7 +39405,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">REST API Reference for ModifyVpcEndpointServiceConfiguration Operation</seealso>
         public virtual ModifyVpcEndpointServiceConfigurationResponse ModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -39426,7 +39426,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">REST API Reference for ModifyVpcEndpointServiceConfiguration Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServiceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServiceConfigurationResponseUnmarshaller.Instance;
 
@@ -39459,7 +39459,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
         public virtual ModifyVpcEndpointServicePayerResponsibilityResponse ModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
 
@@ -39480,7 +39480,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePayerResponsibility">REST API Reference for ModifyVpcEndpointServicePayerResponsibility Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcEndpointServicePayerResponsibility(ModifyVpcEndpointServicePayerResponsibilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePayerResponsibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePayerResponsibilityResponseUnmarshaller.Instance;
 
@@ -39522,7 +39522,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">REST API Reference for ModifyVpcEndpointServicePermissions Operation</seealso>
         public virtual ModifyVpcEndpointServicePermissionsResponse ModifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -39543,7 +39543,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions">REST API Reference for ModifyVpcEndpointServicePermissions Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcEndpointServicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcEndpointServicePermissionsResponseUnmarshaller.Instance;
 
@@ -39591,7 +39591,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public virtual ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcPeeringConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -39612,7 +39612,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcPeeringConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcPeeringConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -39659,7 +39659,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
         public virtual ModifyVpcTenancyResponse ModifyVpcTenancy(ModifyVpcTenancyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcTenancyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
 
@@ -39680,7 +39680,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">REST API Reference for ModifyVpcTenancy Operation</seealso>
         public virtual IAsyncResult BeginModifyVpcTenancy(ModifyVpcTenancyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpcTenancyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpcTenancyResponseUnmarshaller.Instance;
 
@@ -39777,7 +39777,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
         public virtual ModifyVpnConnectionResponse ModifyVpnConnection(ModifyVpnConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
 
@@ -39798,7 +39798,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">REST API Reference for ModifyVpnConnection Operation</seealso>
         public virtual IAsyncResult BeginModifyVpnConnection(ModifyVpnConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionResponseUnmarshaller.Instance;
 
@@ -39838,7 +39838,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">REST API Reference for ModifyVpnConnectionOptions Operation</seealso>
         public virtual ModifyVpnConnectionOptionsResponse ModifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -39859,7 +39859,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions">REST API Reference for ModifyVpnConnectionOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnConnectionOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnConnectionOptionsResponseUnmarshaller.Instance;
 
@@ -39892,7 +39892,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
         public virtual ModifyVpnTunnelCertificateResponse ModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
 
@@ -39913,7 +39913,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate">REST API Reference for ModifyVpnTunnelCertificate Operation</seealso>
         public virtual IAsyncResult BeginModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelCertificateResponseUnmarshaller.Instance;
 
@@ -39950,7 +39950,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
         public virtual ModifyVpnTunnelOptionsResponse ModifyVpnTunnelOptions(ModifyVpnTunnelOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
 
@@ -39971,7 +39971,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions">REST API Reference for ModifyVpnTunnelOptions Operation</seealso>
         public virtual IAsyncResult BeginModifyVpnTunnelOptions(ModifyVpnTunnelOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyVpnTunnelOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyVpnTunnelOptionsResponseUnmarshaller.Instance;
 
@@ -40011,7 +40011,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public virtual MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
@@ -40032,7 +40032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public virtual IAsyncResult BeginMonitorInstances(MonitorInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MonitorInstancesResponseUnmarshaller.Instance;
 
@@ -40077,7 +40077,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public virtual MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveAddressToVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
 
@@ -40098,7 +40098,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public virtual IAsyncResult BeginMoveAddressToVpc(MoveAddressToVpcRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveAddressToVpcRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveAddressToVpcResponseUnmarshaller.Instance;
 
@@ -40140,7 +40140,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
         public virtual MoveByoipCidrToIpamResponse MoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
 
@@ -40161,7 +40161,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveByoipCidrToIpam">REST API Reference for MoveByoipCidrToIpam Operation</seealso>
         public virtual IAsyncResult BeginMoveByoipCidrToIpam(MoveByoipCidrToIpamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveByoipCidrToIpamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveByoipCidrToIpamResponseUnmarshaller.Instance;
 
@@ -40223,7 +40223,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
         public virtual MoveCapacityReservationInstancesResponse MoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
 
@@ -40244,7 +40244,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveCapacityReservationInstances">REST API Reference for MoveCapacityReservationInstances Operation</seealso>
         public virtual IAsyncResult BeginMoveCapacityReservationInstances(MoveCapacityReservationInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MoveCapacityReservationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MoveCapacityReservationInstancesResponseUnmarshaller.Instance;
 
@@ -40295,7 +40295,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         public virtual ProvisionByoipCidrResponse ProvisionByoipCidr(ProvisionByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -40316,7 +40316,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">REST API Reference for ProvisionByoipCidr Operation</seealso>
         public virtual IAsyncResult BeginProvisionByoipCidr(ProvisionByoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionByoipCidrResponseUnmarshaller.Instance;
 
@@ -40352,7 +40352,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
         public virtual ProvisionIpamByoasnResponse ProvisionIpamByoasn(ProvisionIpamByoasnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -40373,7 +40373,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn">REST API Reference for ProvisionIpamByoasn Operation</seealso>
         public virtual IAsyncResult BeginProvisionIpamByoasn(ProvisionIpamByoasnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamByoasnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamByoasnResponseUnmarshaller.Instance;
 
@@ -40413,7 +40413,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
         public virtual ProvisionIpamPoolCidrResponse ProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -40434,7 +40434,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamPoolCidr">REST API Reference for ProvisionIpamPoolCidr Operation</seealso>
         public virtual IAsyncResult BeginProvisionIpamPoolCidr(ProvisionIpamPoolCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionIpamPoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionIpamPoolCidrResponseUnmarshaller.Instance;
 
@@ -40473,7 +40473,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         public virtual ProvisionPublicIpv4PoolCidrResponse ProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -40494,7 +40494,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionPublicIpv4PoolCidr">REST API Reference for ProvisionPublicIpv4PoolCidr Operation</seealso>
         public virtual IAsyncResult BeginProvisionPublicIpv4PoolCidr(ProvisionPublicIpv4PoolCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPublicIpv4PoolCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPublicIpv4PoolCidrResponseUnmarshaller.Instance;
 
@@ -40529,7 +40529,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
         public virtual PurchaseCapacityBlockResponse PurchaseCapacityBlock(PurchaseCapacityBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
 
@@ -40550,7 +40550,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock">REST API Reference for PurchaseCapacityBlock Operation</seealso>
         public virtual IAsyncResult BeginPurchaseCapacityBlock(PurchaseCapacityBlockRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
 
@@ -40584,7 +40584,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlockExtension">REST API Reference for PurchaseCapacityBlockExtension Operation</seealso>
         public virtual PurchaseCapacityBlockExtensionResponse PurchaseCapacityBlockExtension(PurchaseCapacityBlockExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
 
@@ -40605,7 +40605,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlockExtension">REST API Reference for PurchaseCapacityBlockExtension Operation</seealso>
         public virtual IAsyncResult BeginPurchaseCapacityBlockExtension(PurchaseCapacityBlockExtensionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
 
@@ -40641,7 +40641,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public virtual PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseHostReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
 
@@ -40662,7 +40662,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public virtual IAsyncResult BeginPurchaseHostReservation(PurchaseHostReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseHostReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseHostReservationResponseUnmarshaller.Instance;
 
@@ -40714,7 +40714,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public virtual PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -40735,7 +40735,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public virtual IAsyncResult BeginPurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -40788,7 +40788,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public virtual PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -40809,7 +40809,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public virtual IAsyncResult BeginPurchaseScheduledInstances(PurchaseScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -40856,7 +40856,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public virtual RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstancesResponseUnmarshaller.Instance;
 
@@ -40877,7 +40877,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public virtual IAsyncResult BeginRebootInstances(RebootInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootInstancesResponseUnmarshaller.Instance;
 
@@ -40972,7 +40972,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public virtual RegisterImageResponse RegisterImage(RegisterImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterImageResponseUnmarshaller.Instance;
 
@@ -40993,7 +40993,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public virtual IAsyncResult BeginRegisterImage(RegisterImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterImageResponseUnmarshaller.Instance;
 
@@ -41032,7 +41032,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual RegisterInstanceEventNotificationAttributesResponse RegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -41053,7 +41053,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">REST API Reference for RegisterInstanceEventNotificationAttributes Operation</seealso>
         public virtual IAsyncResult BeginRegisterInstanceEventNotificationAttributes(RegisterInstanceEventNotificationAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstanceEventNotificationAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstanceEventNotificationAttributesResponseUnmarshaller.Instance;
 
@@ -41095,7 +41095,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual RegisterTransitGatewayMulticastGroupMembersResponse RegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -41116,7 +41116,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">REST API Reference for RegisterTransitGatewayMulticastGroupMembers Operation</seealso>
         public virtual IAsyncResult BeginRegisterTransitGatewayMulticastGroupMembers(RegisterTransitGatewayMulticastGroupMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupMembersResponseUnmarshaller.Instance;
 
@@ -41162,7 +41162,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual RegisterTransitGatewayMulticastGroupSourcesResponse RegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -41183,7 +41183,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">REST API Reference for RegisterTransitGatewayMulticastGroupSources Operation</seealso>
         public virtual IAsyncResult BeginRegisterTransitGatewayMulticastGroupSources(RegisterTransitGatewayMulticastGroupSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTransitGatewayMulticastGroupSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTransitGatewayMulticastGroupSourcesResponseUnmarshaller.Instance;
 
@@ -41218,7 +41218,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
         public virtual RejectCapacityReservationBillingOwnershipResponse RejectCapacityReservationBillingOwnership(RejectCapacityReservationBillingOwnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -41239,7 +41239,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
         public virtual IAsyncResult BeginRejectCapacityReservationBillingOwnership(RejectCapacityReservationBillingOwnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectCapacityReservationBillingOwnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
@@ -41273,7 +41273,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual RejectTransitGatewayMulticastDomainAssociationsResponse RejectTransitGatewayMulticastDomainAssociations(RejectTransitGatewayMulticastDomainAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -41294,7 +41294,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
         public virtual IAsyncResult BeginRejectTransitGatewayMulticastDomainAssociations(RejectTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
@@ -41327,7 +41327,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
         public virtual RejectTransitGatewayPeeringAttachmentResponse RejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -41348,7 +41348,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">REST API Reference for RejectTransitGatewayPeeringAttachment Operation</seealso>
         public virtual IAsyncResult BeginRejectTransitGatewayPeeringAttachment(RejectTransitGatewayPeeringAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayPeeringAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
@@ -41388,7 +41388,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
         public virtual RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -41409,7 +41409,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
         public virtual IAsyncResult BeginRejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
 
@@ -41442,7 +41442,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections">REST API Reference for RejectVpcEndpointConnections Operation</seealso>
         public virtual RejectVpcEndpointConnectionsResponse RejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -41463,7 +41463,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections">REST API Reference for RejectVpcEndpointConnections Operation</seealso>
         public virtual IAsyncResult BeginRejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -41500,7 +41500,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public virtual RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -41521,7 +41521,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public virtual IAsyncResult BeginRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectVpcPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -41580,7 +41580,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public virtual ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseAddressResponseUnmarshaller.Instance;
 
@@ -41601,7 +41601,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public virtual IAsyncResult BeginReleaseAddress(ReleaseAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseAddressResponseUnmarshaller.Instance;
 
@@ -41649,7 +41649,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public virtual ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
 
@@ -41670,7 +41670,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public virtual IAsyncResult BeginReleaseHosts(ReleaseHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseHostsResponseUnmarshaller.Instance;
 
@@ -41716,7 +41716,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
         public virtual ReleaseIpamPoolAllocationResponse ReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
 
@@ -41737,7 +41737,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseIpamPoolAllocation">REST API Reference for ReleaseIpamPoolAllocation Operation</seealso>
         public virtual IAsyncResult BeginReleaseIpamPoolAllocation(ReleaseIpamPoolAllocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseIpamPoolAllocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseIpamPoolAllocationResponseUnmarshaller.Instance;
 
@@ -41777,7 +41777,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
         public virtual ReplaceIamInstanceProfileAssociationResponse ReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceIamInstanceProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
 
@@ -41798,7 +41798,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
         public virtual IAsyncResult BeginReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceIamInstanceProfileAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
 
@@ -41844,7 +41844,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
         public virtual ReplaceImageCriteriaInAllowedImagesSettingsResponse ReplaceImageCriteriaInAllowedImagesSettings(ReplaceImageCriteriaInAllowedImagesSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceImageCriteriaInAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -41865,7 +41865,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
         public virtual IAsyncResult BeginReplaceImageCriteriaInAllowedImagesSettings(ReplaceImageCriteriaInAllowedImagesSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceImageCriteriaInAllowedImagesSettingsResponseUnmarshaller.Instance;
 
@@ -41906,7 +41906,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public virtual ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.Instance;
 
@@ -41927,7 +41927,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public virtual IAsyncResult BeginReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclAssociationResponseUnmarshaller.Instance;
 
@@ -41961,7 +41961,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public virtual ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -41982,7 +41982,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public virtual IAsyncResult BeginReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceNetworkAclEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceNetworkAclEntryResponseUnmarshaller.Instance;
 
@@ -42027,7 +42027,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public virtual ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteResponseUnmarshaller.Instance;
 
@@ -42048,7 +42048,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public virtual IAsyncResult BeginReplaceRoute(ReplaceRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteResponseUnmarshaller.Instance;
 
@@ -42092,7 +42092,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public virtual ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.Instance;
 
@@ -42113,7 +42113,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public virtual IAsyncResult BeginReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceRouteTableAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.Instance;
 
@@ -42146,7 +42146,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
         public virtual ReplaceTransitGatewayRouteResponse ReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -42167,7 +42167,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
         public virtual IAsyncResult BeginReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
 
@@ -42200,7 +42200,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
         public virtual ReplaceVpnTunnelResponse ReplaceVpnTunnel(ReplaceVpnTunnelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
 
@@ -42221,7 +42221,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
         public virtual IAsyncResult BeginReplaceVpnTunnel(ReplaceVpnTunnelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReplaceVpnTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReplaceVpnTunnelResponseUnmarshaller.Instance;
 
@@ -42263,7 +42263,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public virtual ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportInstanceStatusResponseUnmarshaller.Instance;
 
@@ -42284,7 +42284,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public virtual IAsyncResult BeginReportInstanceStatus(ReportInstanceStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportInstanceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportInstanceStatusResponseUnmarshaller.Instance;
 
@@ -42360,7 +42360,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public virtual RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
 
@@ -42381,7 +42381,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public virtual IAsyncResult BeginRequestSpotFleet(RequestSpotFleetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotFleetResponseUnmarshaller.Instance;
 
@@ -42427,7 +42427,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public virtual RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
@@ -42448,7 +42448,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public virtual IAsyncResult BeginRequestSpotInstances(RequestSpotInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestSpotInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
@@ -42482,7 +42482,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
         public virtual ResetAddressAttributeResponse ResetAddressAttribute(ResetAddressAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
 
@@ -42503,7 +42503,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetAddressAttribute(ResetAddressAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
 
@@ -42545,7 +42545,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
         public virtual ResetEbsDefaultKmsKeyIdResponse ResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -42566,7 +42566,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">REST API Reference for ResetEbsDefaultKmsKeyId Operation</seealso>
         public virtual IAsyncResult BeginResetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetEbsDefaultKmsKeyIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetEbsDefaultKmsKeyIdResponseUnmarshaller.Instance;
 
@@ -42600,7 +42600,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
         public virtual ResetFpgaImageAttributeResponse ResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -42621,7 +42621,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute">REST API Reference for ResetFpgaImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetFpgaImageAttribute(ResetFpgaImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetFpgaImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetFpgaImageAttributeResponseUnmarshaller.Instance;
 
@@ -42654,7 +42654,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public virtual ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetImageAttributeResponseUnmarshaller.Instance;
 
@@ -42675,7 +42675,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetImageAttribute(ResetImageAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetImageAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetImageAttributeResponseUnmarshaller.Instance;
 
@@ -42719,7 +42719,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public virtual ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -42740,7 +42740,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetInstanceAttribute(ResetInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetInstanceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetInstanceAttributeResponseUnmarshaller.Instance;
 
@@ -42773,7 +42773,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public virtual ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -42794,7 +42794,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetNetworkInterfaceAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetNetworkInterfaceAttributeResponseUnmarshaller.Instance;
 
@@ -42833,7 +42833,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public virtual ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -42854,7 +42854,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public virtual IAsyncResult BeginResetSnapshotAttribute(ResetSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -42897,7 +42897,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public virtual RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAddressToClassicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
 
@@ -42918,7 +42918,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public virtual IAsyncResult BeginRestoreAddressToClassic(RestoreAddressToClassicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAddressToClassicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAddressToClassicResponseUnmarshaller.Instance;
 
@@ -42953,7 +42953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
         public virtual RestoreImageFromRecycleBinResponse RestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -42974,7 +42974,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">REST API Reference for RestoreImageFromRecycleBin Operation</seealso>
         public virtual IAsyncResult BeginRestoreImageFromRecycleBin(RestoreImageFromRecycleBinRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreImageFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreImageFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -43008,7 +43008,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
         public virtual RestoreManagedPrefixListVersionResponse RestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
 
@@ -43029,7 +43029,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion">REST API Reference for RestoreManagedPrefixListVersion Operation</seealso>
         public virtual IAsyncResult BeginRestoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreManagedPrefixListVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreManagedPrefixListVersionResponseUnmarshaller.Instance;
 
@@ -43063,7 +43063,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
         public virtual RestoreSnapshotFromRecycleBinResponse RestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -43084,7 +43084,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">REST API Reference for RestoreSnapshotFromRecycleBin Operation</seealso>
         public virtual IAsyncResult BeginRestoreSnapshotFromRecycleBin(RestoreSnapshotFromRecycleBinRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotFromRecycleBinRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotFromRecycleBinResponseUnmarshaller.Instance;
 
@@ -43127,7 +43127,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
         public virtual RestoreSnapshotTierResponse RestoreSnapshotTier(RestoreSnapshotTierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
 
@@ -43148,7 +43148,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">REST API Reference for RestoreSnapshotTier Operation</seealso>
         public virtual IAsyncResult BeginRestoreSnapshotTier(RestoreSnapshotTierRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreSnapshotTierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreSnapshotTierResponseUnmarshaller.Instance;
 
@@ -43181,7 +43181,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
         public virtual RevokeClientVpnIngressResponse RevokeClientVpnIngress(RevokeClientVpnIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -43202,7 +43202,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
         public virtual IAsyncResult BeginRevokeClientVpnIngress(RevokeClientVpnIngressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
 
@@ -43262,7 +43262,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public virtual RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -43283,7 +43283,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public virtual IAsyncResult BeginRevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupEgressResponseUnmarshaller.Instance;
 
@@ -43349,7 +43349,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public virtual RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -43370,7 +43370,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public virtual IAsyncResult BeginRevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -43475,7 +43475,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public virtual RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunInstancesResponseUnmarshaller.Instance;
 
@@ -43496,7 +43496,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public virtual IAsyncResult BeginRunInstances(RunInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunInstancesResponseUnmarshaller.Instance;
 
@@ -43542,7 +43542,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public virtual RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -43563,7 +43563,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public virtual IAsyncResult BeginRunScheduledInstances(RunScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunScheduledInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
@@ -43596,7 +43596,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
         public virtual SearchLocalGatewayRoutesResponse SearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -43617,7 +43617,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">REST API Reference for SearchLocalGatewayRoutes Operation</seealso>
         public virtual IAsyncResult BeginSearchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchLocalGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchLocalGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -43651,7 +43651,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
         public virtual SearchTransitGatewayMulticastGroupsResponse SearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
 
@@ -43672,7 +43672,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">REST API Reference for SearchTransitGatewayMulticastGroups Operation</seealso>
         public virtual IAsyncResult BeginSearchTransitGatewayMulticastGroups(SearchTransitGatewayMulticastGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayMulticastGroupsResponseUnmarshaller.Instance;
 
@@ -43705,7 +43705,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
         public virtual SearchTransitGatewayRoutesResponse SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -43726,7 +43726,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
         public virtual IAsyncResult BeginSearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -43781,7 +43781,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">REST API Reference for SendDiagnosticInterrupt Operation</seealso>
         public virtual SendDiagnosticInterruptResponse SendDiagnosticInterrupt(SendDiagnosticInterruptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
 
@@ -43802,7 +43802,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">REST API Reference for SendDiagnosticInterrupt Operation</seealso>
         public virtual IAsyncResult BeginSendDiagnosticInterrupt(SendDiagnosticInterruptRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDiagnosticInterruptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDiagnosticInterruptResponseUnmarshaller.Instance;
 
@@ -43894,7 +43894,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
         public virtual StartDeclarativePoliciesReportResponse StartDeclarativePoliciesReport(StartDeclarativePoliciesReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -43915,7 +43915,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
         public virtual IAsyncResult BeginStartDeclarativePoliciesReport(StartDeclarativePoliciesReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeclarativePoliciesReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeclarativePoliciesReportResponseUnmarshaller.Instance;
 
@@ -43981,7 +43981,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public virtual StartInstancesResponse StartInstances(StartInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
 
@@ -44002,7 +44002,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public virtual IAsyncResult BeginStartInstances(StartInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstancesResponseUnmarshaller.Instance;
 
@@ -44035,7 +44035,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual StartNetworkInsightsAccessScopeAnalysisResponse StartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -44056,7 +44056,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAccessScopeAnalysis">REST API Reference for StartNetworkInsightsAccessScopeAnalysis Operation</seealso>
         public virtual IAsyncResult BeginStartNetworkInsightsAccessScopeAnalysis(StartNetworkInsightsAccessScopeAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAccessScopeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAccessScopeAnalysisResponseUnmarshaller.Instance;
 
@@ -44090,7 +44090,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
         public virtual StartNetworkInsightsAnalysisResponse StartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -44111,7 +44111,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
         public virtual IAsyncResult BeginStartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
 
@@ -44155,7 +44155,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">REST API Reference for StartVpcEndpointServicePrivateDnsVerification Operation</seealso>
         public virtual StartVpcEndpointServicePrivateDnsVerificationResponse StartVpcEndpointServicePrivateDnsVerification(StartVpcEndpointServicePrivateDnsVerificationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
 
@@ -44176,7 +44176,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">REST API Reference for StartVpcEndpointServicePrivateDnsVerification Operation</seealso>
         public virtual IAsyncResult BeginStartVpcEndpointServicePrivateDnsVerification(StartVpcEndpointServicePrivateDnsVerificationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVpcEndpointServicePrivateDnsVerificationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVpcEndpointServicePrivateDnsVerificationResponseUnmarshaller.Instance;
 
@@ -44257,7 +44257,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public virtual StopInstancesResponse StopInstances(StopInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstancesResponseUnmarshaller.Instance;
 
@@ -44278,7 +44278,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public virtual IAsyncResult BeginStopInstances(StopInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInstancesResponseUnmarshaller.Instance;
 
@@ -44313,7 +44313,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
         public virtual TerminateClientVpnConnectionsResponse TerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -44334,7 +44334,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
         public virtual IAsyncResult BeginTerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
 
@@ -44460,7 +44460,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public virtual TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstancesResponseUnmarshaller.Instance;
 
@@ -44481,7 +44481,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public virtual IAsyncResult BeginTerminateInstances(TerminateInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstancesResponseUnmarshaller.Instance;
 
@@ -44515,7 +44515,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public virtual UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -44536,7 +44536,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public virtual IAsyncResult BeginUnassignIpv6Addresses(UnassignIpv6AddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignIpv6AddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
 
@@ -44570,7 +44570,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public virtual UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -44591,7 +44591,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public virtual IAsyncResult BeginUnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateIpAddressesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateIpAddressesResponseUnmarshaller.Instance;
 
@@ -44641,7 +44641,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
         public virtual UnassignPrivateNatGatewayAddressResponse UnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -44662,7 +44662,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
         public virtual IAsyncResult BeginUnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnassignPrivateNatGatewayAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnassignPrivateNatGatewayAddressResponseUnmarshaller.Instance;
 
@@ -44697,7 +44697,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
         public virtual UnlockSnapshotResponse UnlockSnapshot(UnlockSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
 
@@ -44718,7 +44718,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot">REST API Reference for UnlockSnapshot Operation</seealso>
         public virtual IAsyncResult BeginUnlockSnapshot(UnlockSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockSnapshotResponseUnmarshaller.Instance;
 
@@ -44753,7 +44753,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public virtual UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnmonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
 
@@ -44774,7 +44774,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public virtual IAsyncResult BeginUnmonitorInstances(UnmonitorInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnmonitorInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
 
@@ -44810,7 +44810,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
         public virtual UpdateSecurityGroupRuleDescriptionsEgressResponse UpdateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
 
@@ -44831,7 +44831,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">REST API Reference for UpdateSecurityGroupRuleDescriptionsEgress Operation</seealso>
         public virtual IAsyncResult BeginUpdateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsEgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsEgressResponseUnmarshaller.Instance;
 
@@ -44867,7 +44867,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
         public virtual UpdateSecurityGroupRuleDescriptionsIngressResponse UpdateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
 
@@ -44888,7 +44888,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">REST API Reference for UpdateSecurityGroupRuleDescriptionsIngress Operation</seealso>
         public virtual IAsyncResult BeginUpdateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
 
@@ -44932,7 +44932,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
         public virtual WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
 
@@ -44953,7 +44953,7 @@ namespace Amazon.EC2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">REST API Reference for WithdrawByoipCidr Operation</seealso>
         public virtual IAsyncResult BeginWithdrawByoipCidr(WithdrawByoipCidrRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WithdrawByoipCidrRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WithdrawByoipCidrResponseUnmarshaller.Instance;
 

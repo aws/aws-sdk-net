@@ -326,7 +326,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -394,7 +394,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -580,7 +580,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule">REST API Reference for LockRule Operation</seealso>
         public virtual LockRuleResponse LockRule(LockRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockRuleResponseUnmarshaller.Instance;
 
@@ -675,7 +675,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule">REST API Reference for LockRule Operation</seealso>
         public virtual IAsyncResult BeginLockRule(LockRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LockRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LockRuleResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule">REST API Reference for UnlockRule Operation</seealso>
         public virtual UnlockRuleResponse UnlockRule(UnlockRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockRuleResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule">REST API Reference for UnlockRule Operation</seealso>
         public virtual IAsyncResult BeginUnlockRule(UnlockRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnlockRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnlockRuleResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -926,7 +926,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.RecycleBin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 

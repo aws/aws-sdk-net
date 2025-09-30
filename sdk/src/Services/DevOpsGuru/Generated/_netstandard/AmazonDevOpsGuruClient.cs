@@ -293,7 +293,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual AddNotificationChannelResponse AddNotificationChannel(AddNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel">REST API Reference for AddNotificationChannel Operation</seealso>
         public virtual Task<AddNotificationChannelResponse> AddNotificationChannelAsync(AddNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DeleteInsightResponse DeleteInsight(DeleteInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         public virtual Task<DeleteInsightResponse> DeleteInsightAsync(DeleteInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeAccountHealthResponse DescribeAccountHealth(DescribeAccountHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountHealthResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountHealth">REST API Reference for DescribeAccountHealth Operation</seealso>
         public virtual Task<DescribeAccountHealthResponse> DescribeAccountHealthAsync(DescribeAccountHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountHealthResponseUnmarshaller.Instance;
 
@@ -477,7 +477,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeAccountOverviewResponse DescribeAccountOverview(DescribeAccountOverviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountOverviewResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountOverview">REST API Reference for DescribeAccountOverview Operation</seealso>
         public virtual Task<DescribeAccountOverviewResponse> DescribeAccountOverviewAsync(DescribeAccountOverviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountOverviewResponseUnmarshaller.Instance;
 
@@ -529,7 +529,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeAnomalyResponse DescribeAnomaly(DescribeAnomalyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAnomaly">REST API Reference for DescribeAnomaly Operation</seealso>
         public virtual Task<DescribeAnomalyResponse> DescribeAnomalyAsync(DescribeAnomalyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeEventSourcesConfigResponse DescribeEventSourcesConfig(DescribeEventSourcesConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
         public virtual Task<DescribeEventSourcesConfigResponse> DescribeEventSourcesConfigAsync(DescribeEventSourcesConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeFeedbackResponse DescribeFeedback(DescribeFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeedbackResponseUnmarshaller.Instance;
 
@@ -676,7 +676,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback">REST API Reference for DescribeFeedback Operation</seealso>
         public virtual Task<DescribeFeedbackResponse> DescribeFeedbackAsync(DescribeFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeedbackResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeInsightResponse DescribeInsight(DescribeInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
 
@@ -729,7 +729,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         public virtual Task<DescribeInsightResponse> DescribeInsightAsync(DescribeInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeOrganizationHealthResponse DescribeOrganizationHealth(DescribeOrganizationHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationHealthResponseUnmarshaller.Instance;
 
@@ -780,7 +780,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationHealth">REST API Reference for DescribeOrganizationHealth Operation</seealso>
         public virtual Task<DescribeOrganizationHealthResponse> DescribeOrganizationHealthAsync(DescribeOrganizationHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationHealthResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeOrganizationOverviewResponse DescribeOrganizationOverview(DescribeOrganizationOverviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationOverviewResponseUnmarshaller.Instance;
 
@@ -831,7 +831,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationOverview">REST API Reference for DescribeOrganizationOverview Operation</seealso>
         public virtual Task<DescribeOrganizationOverviewResponse> DescribeOrganizationOverviewAsync(DescribeOrganizationOverviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationOverviewResponseUnmarshaller.Instance;
 
@@ -844,7 +844,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeOrganizationResourceCollectionHealthResponse DescribeOrganizationResourceCollectionHealth(DescribeOrganizationResourceCollectionHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationResourceCollectionHealth">REST API Reference for DescribeOrganizationResourceCollectionHealth Operation</seealso>
         public virtual Task<DescribeOrganizationResourceCollectionHealthResponse> DescribeOrganizationResourceCollectionHealthAsync(DescribeOrganizationResourceCollectionHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeResourceCollectionHealthResponse DescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -939,7 +939,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">REST API Reference for DescribeResourceCollectionHealth Operation</seealso>
         public virtual Task<DescribeResourceCollectionHealthResponse> DescribeResourceCollectionHealthAsync(DescribeResourceCollectionHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual DescribeServiceIntegrationResponse DescribeServiceIntegration(DescribeServiceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeServiceIntegration">REST API Reference for DescribeServiceIntegration Operation</seealso>
         public virtual Task<DescribeServiceIntegrationResponse> DescribeServiceIntegrationAsync(DescribeServiceIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual GetCostEstimationResponse GetCostEstimation(GetCostEstimationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimationResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">REST API Reference for GetCostEstimation Operation</seealso>
         public virtual Task<GetCostEstimationResponse> GetCostEstimationAsync(GetCostEstimationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimationResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual GetResourceCollectionResponse GetResourceCollection(GetResourceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1109,7 +1109,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">REST API Reference for GetResourceCollection Operation</seealso>
         public virtual Task<GetResourceCollectionResponse> GetResourceCollectionAsync(GetResourceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListAnomaliesForInsightResponse ListAnomaliesForInsight(ListAnomaliesForInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomaliesForInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomaliesForInsightResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomaliesForInsight">REST API Reference for ListAnomaliesForInsight Operation</seealso>
         public virtual Task<ListAnomaliesForInsightResponse> ListAnomaliesForInsightAsync(ListAnomaliesForInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomaliesForInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomaliesForInsightResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListAnomalousLogGroupsResponse ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
         public virtual Task<ListAnomalousLogGroupsResponse> ListAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListEventsResponse ListEvents(ListEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1270,7 +1270,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual Task<ListEventsResponse> ListEventsAsync(ListEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         public virtual Task<ListInsightsResponse> ListInsightsAsync(ListInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListMonitoredResourcesResponse ListMonitoredResources(ListMonitoredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
         public virtual Task<ListMonitoredResourcesResponse> ListMonitoredResourcesAsync(ListMonitoredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
 
@@ -1383,7 +1383,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListNotificationChannelsResponse ListNotificationChannels(ListNotificationChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListNotificationChannels">REST API Reference for ListNotificationChannels Operation</seealso>
         public virtual Task<ListNotificationChannelsResponse> ListNotificationChannelsAsync(ListNotificationChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -1436,7 +1436,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListOrganizationInsightsResponse ListOrganizationInsights(ListOrganizationInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListOrganizationInsights">REST API Reference for ListOrganizationInsights Operation</seealso>
         public virtual Task<ListOrganizationInsightsResponse> ListOrganizationInsightsAsync(ListOrganizationInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1486,7 +1486,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -1583,7 +1583,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -1596,7 +1596,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual RemoveNotificationChannelResponse RemoveNotificationChannel(RemoveNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RemoveNotificationChannel">REST API Reference for RemoveNotificationChannel Operation</seealso>
         public virtual Task<RemoveNotificationChannelResponse> RemoveNotificationChannelAsync(RemoveNotificationChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual SearchInsightsResponse SearchInsights(SearchInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchInsightsResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsights">REST API Reference for SearchInsights Operation</seealso>
         public virtual Task<SearchInsightsResponse> SearchInsightsAsync(SearchInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchInsightsResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual SearchOrganizationInsightsResponse SearchOrganizationInsights(SearchOrganizationInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1761,7 +1761,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchOrganizationInsights">REST API Reference for SearchOrganizationInsights Operation</seealso>
         public virtual Task<SearchOrganizationInsightsResponse> SearchOrganizationInsightsAsync(SearchOrganizationInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual StartCostEstimationResponse StartCostEstimation(StartCostEstimationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCostEstimationResponseUnmarshaller.Instance;
 
@@ -1818,7 +1818,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
         public virtual Task<StartCostEstimationResponse> StartCostEstimationAsync(StartCostEstimationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCostEstimationResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual UpdateEventSourcesConfigResponse UpdateEventSourcesConfig(UpdateEventSourcesConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -1871,7 +1871,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
         public virtual Task<UpdateEventSourcesConfigResponse> UpdateEventSourcesConfigAsync(UpdateEventSourcesConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -1884,7 +1884,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual UpdateResourceCollectionResponse UpdateResourceCollection(UpdateResourceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1930,7 +1930,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">REST API Reference for UpdateResourceCollection Operation</seealso>
         public virtual Task<UpdateResourceCollectionResponse> UpdateResourceCollectionAsync(UpdateResourceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.DevOpsGuru
 
         internal virtual UpdateServiceIntegrationResponse UpdateServiceIntegration(UpdateServiceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegration">REST API Reference for UpdateServiceIntegration Operation</seealso>
         public virtual Task<UpdateServiceIntegrationResponse> UpdateServiceIntegrationAsync(UpdateServiceIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceIntegrationResponseUnmarshaller.Instance;
 

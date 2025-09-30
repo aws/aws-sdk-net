@@ -343,7 +343,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
         public virtual AttachCustomerManagedPolicyReferenceToPermissionSetResponse AttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetResponseUnmarshaller.Instance;
 
@@ -389,7 +389,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
         public virtual Task<AttachCustomerManagedPolicyReferenceToPermissionSetResponse> AttachCustomerManagedPolicyReferenceToPermissionSetAsync(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetResponseUnmarshaller.Instance;
             
@@ -445,7 +445,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">REST API Reference for AttachManagedPolicyToPermissionSet Operation</seealso>
         public virtual AttachManagedPolicyToPermissionSetResponse AttachManagedPolicyToPermissionSet(AttachManagedPolicyToPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachManagedPolicyToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachManagedPolicyToPermissionSetResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">REST API Reference for AttachManagedPolicyToPermissionSet Operation</seealso>
         public virtual Task<AttachManagedPolicyToPermissionSetResponse> AttachManagedPolicyToPermissionSetAsync(AttachManagedPolicyToPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachManagedPolicyToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachManagedPolicyToPermissionSetResponseUnmarshaller.Instance;
             
@@ -569,7 +569,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">REST API Reference for CreateAccountAssignment Operation</seealso>
         public virtual CreateAccountAssignmentResponse CreateAccountAssignment(CreateAccountAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountAssignmentResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">REST API Reference for CreateAccountAssignment Operation</seealso>
         public virtual Task<CreateAccountAssignmentResponse> CreateAccountAssignmentAsync(CreateAccountAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountAssignmentResponseUnmarshaller.Instance;
             
@@ -697,7 +697,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -803,7 +803,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">REST API Reference for CreateApplicationAssignment Operation</seealso>
         public virtual CreateApplicationAssignmentResponse CreateApplicationAssignment(CreateApplicationAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationAssignmentResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment">REST API Reference for CreateApplicationAssignment Operation</seealso>
         public virtual Task<CreateApplicationAssignmentResponse> CreateApplicationAssignmentAsync(CreateApplicationAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationAssignmentResponseUnmarshaller.Instance;
             
@@ -910,7 +910,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         public virtual Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
             
@@ -1023,7 +1023,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">REST API Reference for CreateInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual CreateInstanceAccessControlAttributeConfigurationResponse CreateInstanceAccessControlAttributeConfiguration(CreateInstanceAccessControlAttributeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstanceAccessControlAttributeConfiguration">REST API Reference for CreateInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual Task<CreateInstanceAccessControlAttributeConfigurationResponse> CreateInstanceAccessControlAttributeConfigurationAsync(CreateInstanceAccessControlAttributeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
             
@@ -1129,7 +1129,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">REST API Reference for CreatePermissionSet Operation</seealso>
         public virtual CreatePermissionSetResponse CreatePermissionSet(CreatePermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePermissionSetResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">REST API Reference for CreatePermissionSet Operation</seealso>
         public virtual Task<CreatePermissionSetResponse> CreatePermissionSetAsync(CreatePermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePermissionSetResponseUnmarshaller.Instance;
             
@@ -1235,7 +1235,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">REST API Reference for CreateTrustedTokenIssuer Operation</seealso>
         public virtual CreateTrustedTokenIssuerResponse CreateTrustedTokenIssuer(CreateTrustedTokenIssuerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustedTokenIssuerResponseUnmarshaller.Instance;
 
@@ -1287,7 +1287,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer">REST API Reference for CreateTrustedTokenIssuer Operation</seealso>
         public virtual Task<CreateTrustedTokenIssuerResponse> CreateTrustedTokenIssuerAsync(CreateTrustedTokenIssuerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustedTokenIssuerResponseUnmarshaller.Instance;
             
@@ -1338,7 +1338,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteAccountAssignment">REST API Reference for DeleteAccountAssignment Operation</seealso>
         public virtual DeleteAccountAssignmentResponse DeleteAccountAssignment(DeleteAccountAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountAssignmentResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteAccountAssignment">REST API Reference for DeleteAccountAssignment Operation</seealso>
         public virtual Task<DeleteAccountAssignmentResponse> DeleteAccountAssignmentAsync(DeleteAccountAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountAssignmentResponseUnmarshaller.Instance;
             
@@ -1432,7 +1432,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1475,7 +1475,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -1518,7 +1518,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">REST API Reference for DeleteApplicationAccessScope Operation</seealso>
         public virtual DeleteApplicationAccessScopeResponse DeleteApplicationAccessScope(DeleteApplicationAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAccessScopeResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope">REST API Reference for DeleteApplicationAccessScope Operation</seealso>
         public virtual Task<DeleteApplicationAccessScopeResponse> DeleteApplicationAccessScopeAsync(DeleteApplicationAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAccessScopeResponseUnmarshaller.Instance;
             
@@ -1604,7 +1604,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">REST API Reference for DeleteApplicationAssignment Operation</seealso>
         public virtual DeleteApplicationAssignmentResponse DeleteApplicationAssignment(DeleteApplicationAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAssignmentResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment">REST API Reference for DeleteApplicationAssignment Operation</seealso>
         public virtual Task<DeleteApplicationAssignmentResponse> DeleteApplicationAssignmentAsync(DeleteApplicationAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAssignmentResponseUnmarshaller.Instance;
             
@@ -1690,7 +1690,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">REST API Reference for DeleteApplicationAuthenticationMethod Operation</seealso>
         public virtual DeleteApplicationAuthenticationMethodResponse DeleteApplicationAuthenticationMethod(DeleteApplicationAuthenticationMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAuthenticationMethodResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod">REST API Reference for DeleteApplicationAuthenticationMethod Operation</seealso>
         public virtual Task<DeleteApplicationAuthenticationMethodResponse> DeleteApplicationAuthenticationMethodAsync(DeleteApplicationAuthenticationMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationAuthenticationMethodResponseUnmarshaller.Instance;
             
@@ -1775,7 +1775,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">REST API Reference for DeleteApplicationGrant Operation</seealso>
         public virtual DeleteApplicationGrantResponse DeleteApplicationGrant(DeleteApplicationGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationGrantResponseUnmarshaller.Instance;
 
@@ -1817,7 +1817,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant">REST API Reference for DeleteApplicationGrant Operation</seealso>
         public virtual Task<DeleteApplicationGrantResponse> DeleteApplicationGrantAsync(DeleteApplicationGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationGrantResponseUnmarshaller.Instance;
             
@@ -1860,7 +1860,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInlinePolicyFromPermissionSet">REST API Reference for DeleteInlinePolicyFromPermissionSet Operation</seealso>
         public virtual DeleteInlinePolicyFromPermissionSetResponse DeleteInlinePolicyFromPermissionSet(DeleteInlinePolicyFromPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInlinePolicyFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInlinePolicyFromPermissionSetResponseUnmarshaller.Instance;
 
@@ -1902,7 +1902,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInlinePolicyFromPermissionSet">REST API Reference for DeleteInlinePolicyFromPermissionSet Operation</seealso>
         public virtual Task<DeleteInlinePolicyFromPermissionSetResponse> DeleteInlinePolicyFromPermissionSetAsync(DeleteInlinePolicyFromPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInlinePolicyFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInlinePolicyFromPermissionSetResponseUnmarshaller.Instance;
             
@@ -1944,7 +1944,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
             
@@ -2033,7 +2033,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">REST API Reference for DeleteInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual DeleteInstanceAccessControlAttributeConfigurationResponse DeleteInstanceAccessControlAttributeConfiguration(DeleteInstanceAccessControlAttributeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstanceAccessControlAttributeConfiguration">REST API Reference for DeleteInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual Task<DeleteInstanceAccessControlAttributeConfigurationResponse> DeleteInstanceAccessControlAttributeConfigurationAsync(DeleteInstanceAccessControlAttributeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
             
@@ -2123,7 +2123,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
         public virtual DeletePermissionsBoundaryFromPermissionSetResponse DeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionsBoundaryFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionsBoundaryFromPermissionSetResponseUnmarshaller.Instance;
 
@@ -2165,7 +2165,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
         public virtual Task<DeletePermissionsBoundaryFromPermissionSetResponse> DeletePermissionsBoundaryFromPermissionSetAsync(DeletePermissionsBoundaryFromPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionsBoundaryFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionsBoundaryFromPermissionSetResponseUnmarshaller.Instance;
             
@@ -2208,7 +2208,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionSet">REST API Reference for DeletePermissionSet Operation</seealso>
         public virtual DeletePermissionSetResponse DeletePermissionSet(DeletePermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionSetResponseUnmarshaller.Instance;
 
@@ -2250,7 +2250,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionSet">REST API Reference for DeletePermissionSet Operation</seealso>
         public virtual Task<DeletePermissionSetResponse> DeletePermissionSetAsync(DeletePermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionSetResponseUnmarshaller.Instance;
             
@@ -2300,7 +2300,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">REST API Reference for DeleteTrustedTokenIssuer Operation</seealso>
         public virtual DeleteTrustedTokenIssuerResponse DeleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustedTokenIssuerResponseUnmarshaller.Instance;
 
@@ -2349,7 +2349,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer">REST API Reference for DeleteTrustedTokenIssuer Operation</seealso>
         public virtual Task<DeleteTrustedTokenIssuerResponse> DeleteTrustedTokenIssuerAsync(DeleteTrustedTokenIssuerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustedTokenIssuerResponseUnmarshaller.Instance;
             
@@ -2386,7 +2386,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentCreationStatus">REST API Reference for DescribeAccountAssignmentCreationStatus Operation</seealso>
         public virtual DescribeAccountAssignmentCreationStatusResponse DescribeAccountAssignmentCreationStatus(DescribeAccountAssignmentCreationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAssignmentCreationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAssignmentCreationStatusResponseUnmarshaller.Instance;
 
@@ -2422,7 +2422,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentCreationStatus">REST API Reference for DescribeAccountAssignmentCreationStatus Operation</seealso>
         public virtual Task<DescribeAccountAssignmentCreationStatusResponse> DescribeAccountAssignmentCreationStatusAsync(DescribeAccountAssignmentCreationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAssignmentCreationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAssignmentCreationStatusResponseUnmarshaller.Instance;
             
@@ -2459,7 +2459,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentDeletionStatus">REST API Reference for DescribeAccountAssignmentDeletionStatus Operation</seealso>
         public virtual DescribeAccountAssignmentDeletionStatusResponse DescribeAccountAssignmentDeletionStatus(DescribeAccountAssignmentDeletionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAssignmentDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAssignmentDeletionStatusResponseUnmarshaller.Instance;
 
@@ -2495,7 +2495,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeAccountAssignmentDeletionStatus">REST API Reference for DescribeAccountAssignmentDeletionStatus Operation</seealso>
         public virtual Task<DescribeAccountAssignmentDeletionStatusResponse> DescribeAccountAssignmentDeletionStatusAsync(DescribeAccountAssignmentDeletionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAssignmentDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAssignmentDeletionStatusResponseUnmarshaller.Instance;
             
@@ -2533,7 +2533,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
 
@@ -2570,7 +2570,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
             
@@ -2610,7 +2610,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">REST API Reference for DescribeApplicationAssignment Operation</seealso>
         public virtual DescribeApplicationAssignmentResponse DescribeApplicationAssignment(DescribeApplicationAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationAssignmentResponseUnmarshaller.Instance;
 
@@ -2649,7 +2649,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment">REST API Reference for DescribeApplicationAssignment Operation</seealso>
         public virtual Task<DescribeApplicationAssignmentResponse> DescribeApplicationAssignmentAsync(DescribeApplicationAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationAssignmentResponseUnmarshaller.Instance;
             
@@ -2687,7 +2687,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">REST API Reference for DescribeApplicationProvider Operation</seealso>
         public virtual DescribeApplicationProviderResponse DescribeApplicationProvider(DescribeApplicationProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationProviderResponseUnmarshaller.Instance;
 
@@ -2724,7 +2724,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider">REST API Reference for DescribeApplicationProvider Operation</seealso>
         public virtual Task<DescribeApplicationProviderResponse> DescribeApplicationProviderAsync(DescribeApplicationProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationProviderResponseUnmarshaller.Instance;
             
@@ -2777,7 +2777,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
         public virtual DescribeInstanceResponse DescribeInstance(DescribeInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
 
@@ -2829,7 +2829,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
         public virtual Task<DescribeInstanceResponse> DescribeInstanceAsync(DescribeInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
             
@@ -2870,7 +2870,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration">REST API Reference for DescribeInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual DescribeInstanceAccessControlAttributeConfigurationResponse DescribeInstanceAccessControlAttributeConfiguration(DescribeInstanceAccessControlAttributeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
 
@@ -2910,7 +2910,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstanceAccessControlAttributeConfiguration">REST API Reference for DescribeInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual Task<DescribeInstanceAccessControlAttributeConfigurationResponse> DescribeInstanceAccessControlAttributeConfigurationAsync(DescribeInstanceAccessControlAttributeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
             
@@ -2947,7 +2947,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSet">REST API Reference for DescribePermissionSet Operation</seealso>
         public virtual DescribePermissionSetResponse DescribePermissionSet(DescribePermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePermissionSetResponseUnmarshaller.Instance;
 
@@ -2983,7 +2983,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSet">REST API Reference for DescribePermissionSet Operation</seealso>
         public virtual Task<DescribePermissionSetResponse> DescribePermissionSetAsync(DescribePermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePermissionSetResponseUnmarshaller.Instance;
             
@@ -3020,7 +3020,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSetProvisioningStatus">REST API Reference for DescribePermissionSetProvisioningStatus Operation</seealso>
         public virtual DescribePermissionSetProvisioningStatusResponse DescribePermissionSetProvisioningStatus(DescribePermissionSetProvisioningStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePermissionSetProvisioningStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePermissionSetProvisioningStatusResponseUnmarshaller.Instance;
 
@@ -3056,7 +3056,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribePermissionSetProvisioningStatus">REST API Reference for DescribePermissionSetProvisioningStatus Operation</seealso>
         public virtual Task<DescribePermissionSetProvisioningStatusResponse> DescribePermissionSetProvisioningStatusAsync(DescribePermissionSetProvisioningStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePermissionSetProvisioningStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePermissionSetProvisioningStatusResponseUnmarshaller.Instance;
             
@@ -3096,7 +3096,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">REST API Reference for DescribeTrustedTokenIssuer Operation</seealso>
         public virtual DescribeTrustedTokenIssuerResponse DescribeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedTokenIssuerResponseUnmarshaller.Instance;
 
@@ -3135,7 +3135,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer">REST API Reference for DescribeTrustedTokenIssuer Operation</seealso>
         public virtual Task<DescribeTrustedTokenIssuerResponse> DescribeTrustedTokenIssuerAsync(DescribeTrustedTokenIssuerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedTokenIssuerResponseUnmarshaller.Instance;
             
@@ -3178,7 +3178,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
         public virtual DetachCustomerManagedPolicyReferenceFromPermissionSetResponse DetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetResponseUnmarshaller.Instance;
 
@@ -3220,7 +3220,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
         public virtual Task<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetResponseUnmarshaller.Instance;
             
@@ -3264,7 +3264,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachManagedPolicyFromPermissionSet">REST API Reference for DetachManagedPolicyFromPermissionSet Operation</seealso>
         public virtual DetachManagedPolicyFromPermissionSetResponse DetachManagedPolicyFromPermissionSet(DetachManagedPolicyFromPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachManagedPolicyFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachManagedPolicyFromPermissionSetResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachManagedPolicyFromPermissionSet">REST API Reference for DetachManagedPolicyFromPermissionSet Operation</seealso>
         public virtual Task<DetachManagedPolicyFromPermissionSetResponse> DetachManagedPolicyFromPermissionSetAsync(DetachManagedPolicyFromPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachManagedPolicyFromPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachManagedPolicyFromPermissionSetResponseUnmarshaller.Instance;
             
@@ -3344,7 +3344,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">REST API Reference for GetApplicationAccessScope Operation</seealso>
         public virtual GetApplicationAccessScopeResponse GetApplicationAccessScope(GetApplicationAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAccessScopeResponseUnmarshaller.Instance;
 
@@ -3380,7 +3380,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope">REST API Reference for GetApplicationAccessScope Operation</seealso>
         public virtual Task<GetApplicationAccessScopeResponse> GetApplicationAccessScopeAsync(GetApplicationAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAccessScopeResponseUnmarshaller.Instance;
             
@@ -3417,7 +3417,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">REST API Reference for GetApplicationAssignmentConfiguration Operation</seealso>
         public virtual GetApplicationAssignmentConfigurationResponse GetApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -3453,7 +3453,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration">REST API Reference for GetApplicationAssignmentConfiguration Operation</seealso>
         public virtual Task<GetApplicationAssignmentConfigurationResponse> GetApplicationAssignmentConfigurationAsync(GetApplicationAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
             
@@ -3490,7 +3490,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">REST API Reference for GetApplicationAuthenticationMethod Operation</seealso>
         public virtual GetApplicationAuthenticationMethodResponse GetApplicationAuthenticationMethod(GetApplicationAuthenticationMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAuthenticationMethodResponseUnmarshaller.Instance;
 
@@ -3526,7 +3526,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod">REST API Reference for GetApplicationAuthenticationMethod Operation</seealso>
         public virtual Task<GetApplicationAuthenticationMethodResponse> GetApplicationAuthenticationMethodAsync(GetApplicationAuthenticationMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationAuthenticationMethodResponseUnmarshaller.Instance;
             
@@ -3563,7 +3563,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">REST API Reference for GetApplicationGrant Operation</seealso>
         public virtual GetApplicationGrantResponse GetApplicationGrant(GetApplicationGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationGrantResponseUnmarshaller.Instance;
 
@@ -3599,7 +3599,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant">REST API Reference for GetApplicationGrant Operation</seealso>
         public virtual Task<GetApplicationGrantResponse> GetApplicationGrantAsync(GetApplicationGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationGrantResponseUnmarshaller.Instance;
             
@@ -3644,7 +3644,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
         public virtual GetApplicationSessionConfigurationResponse GetApplicationSessionConfiguration(GetApplicationSessionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationSessionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationSessionConfigurationResponseUnmarshaller.Instance;
 
@@ -3688,7 +3688,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationSessionConfiguration">REST API Reference for GetApplicationSessionConfiguration Operation</seealso>
         public virtual Task<GetApplicationSessionConfigurationResponse> GetApplicationSessionConfigurationAsync(GetApplicationSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationSessionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationSessionConfigurationResponseUnmarshaller.Instance;
             
@@ -3725,7 +3725,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetInlinePolicyForPermissionSet">REST API Reference for GetInlinePolicyForPermissionSet Operation</seealso>
         public virtual GetInlinePolicyForPermissionSetResponse GetInlinePolicyForPermissionSet(GetInlinePolicyForPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInlinePolicyForPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInlinePolicyForPermissionSetResponseUnmarshaller.Instance;
 
@@ -3761,7 +3761,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetInlinePolicyForPermissionSet">REST API Reference for GetInlinePolicyForPermissionSet Operation</seealso>
         public virtual Task<GetInlinePolicyForPermissionSetResponse> GetInlinePolicyForPermissionSetAsync(GetInlinePolicyForPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInlinePolicyForPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInlinePolicyForPermissionSetResponseUnmarshaller.Instance;
             
@@ -3798,7 +3798,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
         public virtual GetPermissionsBoundaryForPermissionSetResponse GetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionsBoundaryForPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionsBoundaryForPermissionSetResponseUnmarshaller.Instance;
 
@@ -3834,7 +3834,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
         public virtual Task<GetPermissionsBoundaryForPermissionSetResponse> GetPermissionsBoundaryForPermissionSetAsync(GetPermissionsBoundaryForPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionsBoundaryForPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionsBoundaryForPermissionSetResponseUnmarshaller.Instance;
             
@@ -3872,7 +3872,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentCreationStatus">REST API Reference for ListAccountAssignmentCreationStatus Operation</seealso>
         public virtual ListAccountAssignmentCreationStatusResponse ListAccountAssignmentCreationStatus(ListAccountAssignmentCreationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentCreationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentCreationStatusResponseUnmarshaller.Instance;
 
@@ -3909,7 +3909,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentCreationStatus">REST API Reference for ListAccountAssignmentCreationStatus Operation</seealso>
         public virtual Task<ListAccountAssignmentCreationStatusResponse> ListAccountAssignmentCreationStatusAsync(ListAccountAssignmentCreationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentCreationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentCreationStatusResponseUnmarshaller.Instance;
             
@@ -3947,7 +3947,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentDeletionStatus">REST API Reference for ListAccountAssignmentDeletionStatus Operation</seealso>
         public virtual ListAccountAssignmentDeletionStatusResponse ListAccountAssignmentDeletionStatus(ListAccountAssignmentDeletionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentDeletionStatusResponseUnmarshaller.Instance;
 
@@ -3984,7 +3984,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentDeletionStatus">REST API Reference for ListAccountAssignmentDeletionStatus Operation</seealso>
         public virtual Task<ListAccountAssignmentDeletionStatusResponse> ListAccountAssignmentDeletionStatusAsync(ListAccountAssignmentDeletionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentDeletionStatusResponseUnmarshaller.Instance;
             
@@ -4022,7 +4022,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignments">REST API Reference for ListAccountAssignments Operation</seealso>
         public virtual ListAccountAssignmentsResponse ListAccountAssignments(ListAccountAssignmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentsResponseUnmarshaller.Instance;
 
@@ -4059,7 +4059,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignments">REST API Reference for ListAccountAssignments Operation</seealso>
         public virtual Task<ListAccountAssignmentsResponse> ListAccountAssignmentsAsync(ListAccountAssignmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentsResponseUnmarshaller.Instance;
             
@@ -4099,7 +4099,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">REST API Reference for ListAccountAssignmentsForPrincipal Operation</seealso>
         public virtual ListAccountAssignmentsForPrincipalResponse ListAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentsForPrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentsForPrincipalResponseUnmarshaller.Instance;
 
@@ -4138,7 +4138,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal">REST API Reference for ListAccountAssignmentsForPrincipal Operation</seealso>
         public virtual Task<ListAccountAssignmentsForPrincipalResponse> ListAccountAssignmentsForPrincipalAsync(ListAccountAssignmentsForPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountAssignmentsForPrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountAssignmentsForPrincipalResponseUnmarshaller.Instance;
             
@@ -4175,7 +4175,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountsForProvisionedPermissionSet">REST API Reference for ListAccountsForProvisionedPermissionSet Operation</seealso>
         public virtual ListAccountsForProvisionedPermissionSetResponse ListAccountsForProvisionedPermissionSet(ListAccountsForProvisionedPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsForProvisionedPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsForProvisionedPermissionSetResponseUnmarshaller.Instance;
 
@@ -4211,7 +4211,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountsForProvisionedPermissionSet">REST API Reference for ListAccountsForProvisionedPermissionSet Operation</seealso>
         public virtual Task<ListAccountsForProvisionedPermissionSetResponse> ListAccountsForProvisionedPermissionSetAsync(ListAccountsForProvisionedPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsForProvisionedPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsForProvisionedPermissionSetResponseUnmarshaller.Instance;
             
@@ -4248,7 +4248,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">REST API Reference for ListApplicationAccessScopes Operation</seealso>
         public virtual ListApplicationAccessScopesResponse ListApplicationAccessScopes(ListApplicationAccessScopesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAccessScopesResponseUnmarshaller.Instance;
 
@@ -4284,7 +4284,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes">REST API Reference for ListApplicationAccessScopes Operation</seealso>
         public virtual Task<ListApplicationAccessScopesResponse> ListApplicationAccessScopesAsync(ListApplicationAccessScopesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAccessScopesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAccessScopesResponseUnmarshaller.Instance;
             
@@ -4321,7 +4321,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">REST API Reference for ListApplicationAssignments Operation</seealso>
         public virtual ListApplicationAssignmentsResponse ListApplicationAssignments(ListApplicationAssignmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssignmentsResponseUnmarshaller.Instance;
 
@@ -4357,7 +4357,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments">REST API Reference for ListApplicationAssignments Operation</seealso>
         public virtual Task<ListApplicationAssignmentsResponse> ListApplicationAssignmentsAsync(ListApplicationAssignmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssignmentsResponseUnmarshaller.Instance;
             
@@ -4398,7 +4398,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">REST API Reference for ListApplicationAssignmentsForPrincipal Operation</seealso>
         public virtual ListApplicationAssignmentsForPrincipalResponse ListApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssignmentsForPrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssignmentsForPrincipalResponseUnmarshaller.Instance;
 
@@ -4438,7 +4438,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal">REST API Reference for ListApplicationAssignmentsForPrincipal Operation</seealso>
         public virtual Task<ListApplicationAssignmentsForPrincipalResponse> ListApplicationAssignmentsForPrincipalAsync(ListApplicationAssignmentsForPrincipalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAssignmentsForPrincipalRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAssignmentsForPrincipalResponseUnmarshaller.Instance;
             
@@ -4475,7 +4475,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">REST API Reference for ListApplicationAuthenticationMethods Operation</seealso>
         public virtual ListApplicationAuthenticationMethodsResponse ListApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAuthenticationMethodsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAuthenticationMethodsResponseUnmarshaller.Instance;
 
@@ -4511,7 +4511,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods">REST API Reference for ListApplicationAuthenticationMethods Operation</seealso>
         public virtual Task<ListApplicationAuthenticationMethodsResponse> ListApplicationAuthenticationMethodsAsync(ListApplicationAuthenticationMethodsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationAuthenticationMethodsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationAuthenticationMethodsResponseUnmarshaller.Instance;
             
@@ -4548,7 +4548,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">REST API Reference for ListApplicationGrants Operation</seealso>
         public virtual ListApplicationGrantsResponse ListApplicationGrants(ListApplicationGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationGrantsResponseUnmarshaller.Instance;
 
@@ -4584,7 +4584,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants">REST API Reference for ListApplicationGrants Operation</seealso>
         public virtual Task<ListApplicationGrantsResponse> ListApplicationGrantsAsync(ListApplicationGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationGrantsResponseUnmarshaller.Instance;
             
@@ -4618,7 +4618,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">REST API Reference for ListApplicationProviders Operation</seealso>
         public virtual ListApplicationProvidersResponse ListApplicationProviders(ListApplicationProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationProvidersResponseUnmarshaller.Instance;
 
@@ -4651,7 +4651,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders">REST API Reference for ListApplicationProviders Operation</seealso>
         public virtual Task<ListApplicationProvidersResponse> ListApplicationProvidersAsync(ListApplicationProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationProvidersResponseUnmarshaller.Instance;
             
@@ -4689,7 +4689,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -4726,7 +4726,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -4763,7 +4763,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
         public virtual ListCustomerManagedPolicyReferencesInPermissionSetResponse ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomerManagedPolicyReferencesInPermissionSetResponseUnmarshaller.Instance;
 
@@ -4799,7 +4799,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
         public virtual Task<ListCustomerManagedPolicyReferencesInPermissionSetResponse> ListCustomerManagedPolicyReferencesInPermissionSetAsync(ListCustomerManagedPolicyReferencesInPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomerManagedPolicyReferencesInPermissionSetResponseUnmarshaller.Instance;
             
@@ -4834,7 +4834,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
 
@@ -4868,7 +4868,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
             
@@ -4906,7 +4906,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet">REST API Reference for ListManagedPoliciesInPermissionSet Operation</seealso>
         public virtual ListManagedPoliciesInPermissionSetResponse ListManagedPoliciesInPermissionSet(ListManagedPoliciesInPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedPoliciesInPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedPoliciesInPermissionSetResponseUnmarshaller.Instance;
 
@@ -4943,7 +4943,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet">REST API Reference for ListManagedPoliciesInPermissionSet Operation</seealso>
         public virtual Task<ListManagedPoliciesInPermissionSetResponse> ListManagedPoliciesInPermissionSetAsync(ListManagedPoliciesInPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedPoliciesInPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedPoliciesInPermissionSetResponseUnmarshaller.Instance;
             
@@ -4981,7 +4981,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetProvisioningStatus">REST API Reference for ListPermissionSetProvisioningStatus Operation</seealso>
         public virtual ListPermissionSetProvisioningStatusResponse ListPermissionSetProvisioningStatus(ListPermissionSetProvisioningStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetProvisioningStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetProvisioningStatusResponseUnmarshaller.Instance;
 
@@ -5018,7 +5018,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetProvisioningStatus">REST API Reference for ListPermissionSetProvisioningStatus Operation</seealso>
         public virtual Task<ListPermissionSetProvisioningStatusResponse> ListPermissionSetProvisioningStatusAsync(ListPermissionSetProvisioningStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetProvisioningStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetProvisioningStatusResponseUnmarshaller.Instance;
             
@@ -5055,7 +5055,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSets">REST API Reference for ListPermissionSets Operation</seealso>
         public virtual ListPermissionSetsResponse ListPermissionSets(ListPermissionSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetsResponseUnmarshaller.Instance;
 
@@ -5091,7 +5091,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSets">REST API Reference for ListPermissionSets Operation</seealso>
         public virtual Task<ListPermissionSetsResponse> ListPermissionSetsAsync(ListPermissionSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetsResponseUnmarshaller.Instance;
             
@@ -5129,7 +5129,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetsProvisionedToAccount">REST API Reference for ListPermissionSetsProvisionedToAccount Operation</seealso>
         public virtual ListPermissionSetsProvisionedToAccountResponse ListPermissionSetsProvisionedToAccount(ListPermissionSetsProvisionedToAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetsProvisionedToAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetsProvisionedToAccountResponseUnmarshaller.Instance;
 
@@ -5166,7 +5166,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetsProvisionedToAccount">REST API Reference for ListPermissionSetsProvisionedToAccount Operation</seealso>
         public virtual Task<ListPermissionSetsProvisionedToAccountResponse> ListPermissionSetsProvisionedToAccountAsync(ListPermissionSetsProvisionedToAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionSetsProvisionedToAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionSetsProvisionedToAccountResponseUnmarshaller.Instance;
             
@@ -5203,7 +5203,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5239,7 +5239,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5273,7 +5273,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">REST API Reference for ListTrustedTokenIssuers Operation</seealso>
         public virtual ListTrustedTokenIssuersResponse ListTrustedTokenIssuers(ListTrustedTokenIssuersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrustedTokenIssuersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrustedTokenIssuersResponseUnmarshaller.Instance;
 
@@ -5306,7 +5306,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers">REST API Reference for ListTrustedTokenIssuers Operation</seealso>
         public virtual Task<ListTrustedTokenIssuersResponse> ListTrustedTokenIssuersAsync(ListTrustedTokenIssuersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrustedTokenIssuersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrustedTokenIssuersResponseUnmarshaller.Instance;
             
@@ -5349,7 +5349,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ProvisionPermissionSet">REST API Reference for ProvisionPermissionSet Operation</seealso>
         public virtual ProvisionPermissionSetResponse ProvisionPermissionSet(ProvisionPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPermissionSetResponseUnmarshaller.Instance;
 
@@ -5391,7 +5391,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ProvisionPermissionSet">REST API Reference for ProvisionPermissionSet Operation</seealso>
         public virtual Task<ProvisionPermissionSetResponse> ProvisionPermissionSetAsync(ProvisionPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionPermissionSetResponseUnmarshaller.Instance;
             
@@ -5435,7 +5435,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">REST API Reference for PutApplicationAccessScope Operation</seealso>
         public virtual PutApplicationAccessScopeResponse PutApplicationAccessScope(PutApplicationAccessScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAccessScopeResponseUnmarshaller.Instance;
 
@@ -5478,7 +5478,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope">REST API Reference for PutApplicationAccessScope Operation</seealso>
         public virtual Task<PutApplicationAccessScopeResponse> PutApplicationAccessScopeAsync(PutApplicationAccessScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAccessScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAccessScopeResponseUnmarshaller.Instance;
             
@@ -5526,7 +5526,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">REST API Reference for PutApplicationAssignmentConfiguration Operation</seealso>
         public virtual PutApplicationAssignmentConfigurationResponse PutApplicationAssignmentConfiguration(PutApplicationAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -5573,7 +5573,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration">REST API Reference for PutApplicationAssignmentConfiguration Operation</seealso>
         public virtual Task<PutApplicationAssignmentConfigurationResponse> PutApplicationAssignmentConfigurationAsync(PutApplicationAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAssignmentConfigurationResponseUnmarshaller.Instance;
             
@@ -5616,7 +5616,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">REST API Reference for PutApplicationAuthenticationMethod Operation</seealso>
         public virtual PutApplicationAuthenticationMethodResponse PutApplicationAuthenticationMethod(PutApplicationAuthenticationMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAuthenticationMethodResponseUnmarshaller.Instance;
 
@@ -5658,7 +5658,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod">REST API Reference for PutApplicationAuthenticationMethod Operation</seealso>
         public virtual Task<PutApplicationAuthenticationMethodResponse> PutApplicationAuthenticationMethodAsync(PutApplicationAuthenticationMethodRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationAuthenticationMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationAuthenticationMethodResponseUnmarshaller.Instance;
             
@@ -5777,7 +5777,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
         public virtual PutApplicationGrantResponse PutApplicationGrant(PutApplicationGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationGrantResponseUnmarshaller.Instance;
 
@@ -5895,7 +5895,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant">REST API Reference for PutApplicationGrant Operation</seealso>
         public virtual Task<PutApplicationGrantResponse> PutApplicationGrantAsync(PutApplicationGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationGrantResponseUnmarshaller.Instance;
             
@@ -5946,7 +5946,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
         public virtual PutApplicationSessionConfigurationResponse PutApplicationSessionConfiguration(PutApplicationSessionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationSessionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationSessionConfigurationResponseUnmarshaller.Instance;
 
@@ -5996,7 +5996,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationSessionConfiguration">REST API Reference for PutApplicationSessionConfiguration Operation</seealso>
         public virtual Task<PutApplicationSessionConfigurationResponse> PutApplicationSessionConfigurationAsync(PutApplicationSessionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationSessionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationSessionConfigurationResponseUnmarshaller.Instance;
             
@@ -6051,7 +6051,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">REST API Reference for PutInlinePolicyToPermissionSet Operation</seealso>
         public virtual PutInlinePolicyToPermissionSetResponse PutInlinePolicyToPermissionSet(PutInlinePolicyToPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInlinePolicyToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInlinePolicyToPermissionSetResponseUnmarshaller.Instance;
 
@@ -6105,7 +6105,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">REST API Reference for PutInlinePolicyToPermissionSet Operation</seealso>
         public virtual Task<PutInlinePolicyToPermissionSetResponse> PutInlinePolicyToPermissionSetAsync(PutInlinePolicyToPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInlinePolicyToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInlinePolicyToPermissionSetResponseUnmarshaller.Instance;
             
@@ -6149,7 +6149,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
         public virtual PutPermissionsBoundaryToPermissionSetResponse PutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionsBoundaryToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionsBoundaryToPermissionSetResponseUnmarshaller.Instance;
 
@@ -6192,7 +6192,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
         public virtual Task<PutPermissionsBoundaryToPermissionSetResponse> PutPermissionsBoundaryToPermissionSetAsync(PutPermissionsBoundaryToPermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionsBoundaryToPermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionsBoundaryToPermissionSetResponseUnmarshaller.Instance;
             
@@ -6239,7 +6239,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6285,7 +6285,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -6328,7 +6328,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6370,7 +6370,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -6413,7 +6413,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -6455,7 +6455,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -6499,7 +6499,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
 
@@ -6542,7 +6542,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         public virtual Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
             
@@ -6592,7 +6592,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration">REST API Reference for UpdateInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual UpdateInstanceAccessControlAttributeConfigurationResponse UpdateInstanceAccessControlAttributeConfiguration(UpdateInstanceAccessControlAttributeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
 
@@ -6641,7 +6641,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstanceAccessControlAttributeConfiguration">REST API Reference for UpdateInstanceAccessControlAttributeConfiguration Operation</seealso>
         public virtual Task<UpdateInstanceAccessControlAttributeConfigurationResponse> UpdateInstanceAccessControlAttributeConfigurationAsync(UpdateInstanceAccessControlAttributeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceAccessControlAttributeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceAccessControlAttributeConfigurationResponseUnmarshaller.Instance;
             
@@ -6684,7 +6684,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdatePermissionSet">REST API Reference for UpdatePermissionSet Operation</seealso>
         public virtual UpdatePermissionSetResponse UpdatePermissionSet(UpdatePermissionSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionSetResponseUnmarshaller.Instance;
 
@@ -6726,7 +6726,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdatePermissionSet">REST API Reference for UpdatePermissionSet Operation</seealso>
         public virtual Task<UpdatePermissionSetResponse> UpdatePermissionSetAsync(UpdatePermissionSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionSetResponseUnmarshaller.Instance;
             
@@ -6777,7 +6777,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">REST API Reference for UpdateTrustedTokenIssuer Operation</seealso>
         public virtual UpdateTrustedTokenIssuerResponse UpdateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustedTokenIssuerResponseUnmarshaller.Instance;
 
@@ -6827,7 +6827,7 @@ namespace Amazon.SSOAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer">REST API Reference for UpdateTrustedTokenIssuer Operation</seealso>
         public virtual Task<UpdateTrustedTokenIssuerResponse> UpdateTrustedTokenIssuerAsync(UpdateTrustedTokenIssuerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustedTokenIssuerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustedTokenIssuerResponseUnmarshaller.Instance;
             

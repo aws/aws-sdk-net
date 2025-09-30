@@ -319,7 +319,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public virtual AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInstancesResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">REST API Reference for AttachInstances Operation</seealso>
         public virtual IAsyncResult BeginAttachInstances(AttachInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachInstancesResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public virtual AttachLoadBalancersResponse AttachLoadBalancers(AttachLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">REST API Reference for AttachLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginAttachLoadBalancers(AttachLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public virtual AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">REST API Reference for AttachLoadBalancerTargetGroups Operation</seealso>
         public virtual IAsyncResult BeginAttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -615,7 +615,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
         public virtual AttachTrafficSourcesResponse AttachTrafficSources(AttachTrafficSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -636,7 +636,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">REST API Reference for AttachTrafficSources Operation</seealso>
         public virtual IAsyncResult BeginAttachTrafficSources(AttachTrafficSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
         public virtual BatchDeleteScheduledActionResponse BatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">REST API Reference for BatchDeleteScheduledAction Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteScheduledAction(BatchDeleteScheduledActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
         public virtual BatchPutScheduledUpdateGroupActionResponse BatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchPutScheduledUpdateGroupAction">REST API Reference for BatchPutScheduledUpdateGroupAction Operation</seealso>
         public virtual IAsyncResult BeginBatchPutScheduledUpdateGroupAction(BatchPutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutScheduledUpdateGroupActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
@@ -822,7 +822,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">REST API Reference for CancelInstanceRefresh Operation</seealso>
         public virtual CancelInstanceRefreshResponse CancelInstanceRefresh(CancelInstanceRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -843,7 +843,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CancelInstanceRefresh">REST API Reference for CancelInstanceRefresh Operation</seealso>
         public virtual IAsyncResult BeginCancelInstanceRefresh(CancelInstanceRefreshRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public virtual CompleteLifecycleActionResponse CompleteLifecycleAction(CompleteLifecycleActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteLifecycleActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">REST API Reference for CompleteLifecycleAction Operation</seealso>
         public virtual IAsyncResult BeginCompleteLifecycleAction(CompleteLifecycleActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteLifecycleActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteLifecycleActionResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public virtual CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">REST API Reference for CreateAutoScalingGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateAutoScalingGroup(CreateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public virtual CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">REST API Reference for CreateLaunchConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateLaunchConfiguration(CreateLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public virtual CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">REST API Reference for CreateOrUpdateTags Operation</seealso>
         public virtual IAsyncResult BeginCreateOrUpdateTags(CreateOrUpdateTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrUpdateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrUpdateTagsResponseUnmarshaller.Instance;
 
@@ -1285,7 +1285,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public virtual DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup">REST API Reference for DeleteAutoScalingGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public virtual DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration">REST API Reference for DeleteLaunchConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -1416,7 +1416,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public virtual DeleteLifecycleHookResponse DeleteLifecycleHook(DeleteLifecycleHookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleHookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook">REST API Reference for DeleteLifecycleHook Operation</seealso>
         public virtual IAsyncResult BeginDeleteLifecycleHook(DeleteLifecycleHookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecycleHookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecycleHookResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public virtual DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteNotificationConfiguration">REST API Reference for DeleteNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1547,7 +1547,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -1568,7 +1568,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -1605,7 +1605,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual IAsyncResult BeginDeleteScheduledAction(DeleteScheduledActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledActionResponseUnmarshaller.Instance;
 
@@ -1666,7 +1666,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool">REST API Reference for DeleteWarmPool Operation</seealso>
         public virtual DeleteWarmPoolResponse DeleteWarmPool(DeleteWarmPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWarmPoolResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool">REST API Reference for DeleteWarmPool Operation</seealso>
         public virtual IAsyncResult BeginDeleteWarmPool(DeleteWarmPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWarmPoolResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public virtual DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
 
@@ -1961,7 +1961,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAdjustmentTypes">REST API Reference for DescribeAdjustmentTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAdjustmentTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAdjustmentTypesResponseUnmarshaller.Instance;
 
@@ -2049,7 +2049,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public virtual DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
 
@@ -2070,7 +2070,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">REST API Reference for DescribeAutoScalingGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingGroupsResponseUnmarshaller.Instance;
 
@@ -2128,7 +2128,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public virtual DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
 
@@ -2149,7 +2149,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances">REST API Reference for DescribeAutoScalingInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingInstancesResponseUnmarshaller.Instance;
 
@@ -2201,7 +2201,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public virtual DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
 
@@ -2222,7 +2222,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingNotificationTypes">REST API Reference for DescribeAutoScalingNotificationTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingNotificationTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingNotificationTypesResponseUnmarshaller.Instance;
 
@@ -2279,7 +2279,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">REST API Reference for DescribeInstanceRefreshes Operation</seealso>
         public virtual DescribeInstanceRefreshesResponse DescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRefreshesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceRefreshesResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeInstanceRefreshes">REST API Reference for DescribeInstanceRefreshes Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceRefreshes(DescribeInstanceRefreshesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceRefreshesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceRefreshesResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public virtual DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLaunchConfigurations">REST API Reference for DescribeLaunchConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationsResponseUnmarshaller.Instance;
 
@@ -2416,7 +2416,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public virtual DescribeLifecycleHooksResponse DescribeLifecycleHooks(DescribeLifecycleHooksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks">REST API Reference for DescribeLifecycleHooks Operation</seealso>
         public virtual IAsyncResult BeginDescribeLifecycleHooks(DescribeLifecycleHooksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLifecycleHooksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLifecycleHooksResponseUnmarshaller.Instance;
 
@@ -2488,7 +2488,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public virtual DescribeLifecycleHookTypesResponse DescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHookTypes">REST API Reference for DescribeLifecycleHookTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeLifecycleHookTypes(DescribeLifecycleHookTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLifecycleHookTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLifecycleHookTypesResponseUnmarshaller.Instance;
 
@@ -2593,7 +2593,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
@@ -2614,7 +2614,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
@@ -2700,7 +2700,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public virtual DescribeLoadBalancerTargetGroupsResponse DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -2721,7 +2721,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">REST API Reference for DescribeLoadBalancerTargetGroups Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -2773,7 +2773,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public virtual DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">REST API Reference for DescribeMetricCollectionTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMetricCollectionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMetricCollectionTypesResponseUnmarshaller.Instance;
 
@@ -2854,7 +2854,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public virtual DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2875,7 +2875,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations">REST API Reference for DescribeNotificationConfigurations Operation</seealso>
         public virtual IAsyncResult BeginDescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationConfigurationsResponseUnmarshaller.Instance;
 
@@ -2939,7 +2939,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public virtual DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
 
@@ -2960,7 +2960,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies">REST API Reference for DescribePolicies Operation</seealso>
         public virtual IAsyncResult BeginDescribePolicies(DescribePoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePoliciesResponseUnmarshaller.Instance;
 
@@ -3052,7 +3052,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public virtual DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
 
@@ -3073,7 +3073,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public virtual IAsyncResult BeginDescribeScalingActivities(DescribeScalingActivitiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingActivitiesResponseUnmarshaller.Instance;
 
@@ -3129,7 +3129,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public virtual DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
 
@@ -3150,7 +3150,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingProcessTypes">REST API Reference for DescribeScalingProcessTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScalingProcessTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScalingProcessTypesResponseUnmarshaller.Instance;
 
@@ -3224,7 +3224,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public virtual DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
 
@@ -3245,7 +3245,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">REST API Reference for DescribeScheduledActions Operation</seealso>
         public virtual IAsyncResult BeginDescribeScheduledActions(DescribeScheduledActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledActionsResponseUnmarshaller.Instance;
 
@@ -3339,7 +3339,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -3360,7 +3360,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -3426,7 +3426,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public virtual DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
 
@@ -3447,7 +3447,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">REST API Reference for DescribeTerminationPolicyTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTerminationPolicyTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTerminationPolicyTypesResponseUnmarshaller.Instance;
 
@@ -3498,7 +3498,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
         public virtual DescribeTrafficSourcesResponse DescribeTrafficSources(DescribeTrafficSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -3519,7 +3519,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">REST API Reference for DescribeTrafficSources Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrafficSources(DescribeTrafficSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -3571,7 +3571,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool">REST API Reference for DescribeWarmPool Operation</seealso>
         public virtual DescribeWarmPoolResponse DescribeWarmPool(DescribeWarmPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWarmPoolResponseUnmarshaller.Instance;
 
@@ -3592,7 +3592,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool">REST API Reference for DescribeWarmPool Operation</seealso>
         public virtual IAsyncResult BeginDescribeWarmPool(DescribeWarmPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWarmPoolResponseUnmarshaller.Instance;
 
@@ -3651,7 +3651,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public virtual DetachInstancesResponse DetachInstances(DetachInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInstancesResponseUnmarshaller.Instance;
 
@@ -3672,7 +3672,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">REST API Reference for DetachInstances Operation</seealso>
         public virtual IAsyncResult BeginDetachInstances(DetachInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachInstancesResponseUnmarshaller.Instance;
 
@@ -3733,7 +3733,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public virtual DetachLoadBalancersResponse DetachLoadBalancers(DetachLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
 
@@ -3754,7 +3754,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">REST API Reference for DetachLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginDetachLoadBalancers(DetachLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
 
@@ -3816,7 +3816,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public virtual DetachLoadBalancerTargetGroupsResponse DetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -3837,7 +3837,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">REST API Reference for DetachLoadBalancerTargetGroups Operation</seealso>
         public virtual IAsyncResult BeginDetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancerTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
 
@@ -3882,7 +3882,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
         public virtual DetachTrafficSourcesResponse DetachTrafficSources(DetachTrafficSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -3903,7 +3903,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">REST API Reference for DetachTrafficSources Operation</seealso>
         public virtual IAsyncResult BeginDetachTrafficSources(DetachTrafficSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachTrafficSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachTrafficSourcesResponseUnmarshaller.Instance;
 
@@ -3940,7 +3940,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public virtual DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableMetricsCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
 
@@ -3961,7 +3961,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">REST API Reference for DisableMetricsCollection Operation</seealso>
         public virtual IAsyncResult BeginDisableMetricsCollection(DisableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableMetricsCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableMetricsCollectionResponseUnmarshaller.Instance;
 
@@ -4007,7 +4007,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public virtual EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableMetricsCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
 
@@ -4028,7 +4028,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">REST API Reference for EnableMetricsCollection Operation</seealso>
         public virtual IAsyncResult BeginEnableMetricsCollection(EnableMetricsCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableMetricsCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableMetricsCollectionResponseUnmarshaller.Instance;
 
@@ -4084,7 +4084,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public virtual EnterStandbyResponse EnterStandby(EnterStandbyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnterStandbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnterStandbyResponseUnmarshaller.Instance;
 
@@ -4105,7 +4105,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">REST API Reference for EnterStandby Operation</seealso>
         public virtual IAsyncResult BeginEnterStandby(EnterStandbyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnterStandbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnterStandbyResponseUnmarshaller.Instance;
 
@@ -4146,7 +4146,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public virtual ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecutePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
 
@@ -4167,7 +4167,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy">REST API Reference for ExecutePolicy Operation</seealso>
         public virtual IAsyncResult BeginExecutePolicy(ExecutePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecutePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecutePolicyResponseUnmarshaller.Instance;
 
@@ -4215,7 +4215,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public virtual ExitStandbyResponse ExitStandby(ExitStandbyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExitStandbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExitStandbyResponseUnmarshaller.Instance;
 
@@ -4236,7 +4236,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">REST API Reference for ExitStandby Operation</seealso>
         public virtual IAsyncResult BeginExitStandby(ExitStandbyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExitStandbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExitStandbyResponseUnmarshaller.Instance;
 
@@ -4291,7 +4291,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast">REST API Reference for GetPredictiveScalingForecast Operation</seealso>
         public virtual GetPredictiveScalingForecastResponse GetPredictiveScalingForecast(GetPredictiveScalingForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPredictiveScalingForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPredictiveScalingForecastResponseUnmarshaller.Instance;
 
@@ -4312,7 +4312,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast">REST API Reference for GetPredictiveScalingForecast Operation</seealso>
         public virtual IAsyncResult BeginGetPredictiveScalingForecast(GetPredictiveScalingForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPredictiveScalingForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPredictiveScalingForecastResponseUnmarshaller.Instance;
 
@@ -4417,7 +4417,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public virtual PutLifecycleHookResponse PutLifecycleHook(PutLifecycleHookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleHookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
 
@@ -4438,7 +4438,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">REST API Reference for PutLifecycleHook Operation</seealso>
         public virtual IAsyncResult BeginPutLifecycleHook(PutLifecycleHookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecycleHookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecycleHookResponseUnmarshaller.Instance;
 
@@ -4502,7 +4502,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public virtual PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -4523,7 +4523,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">REST API Reference for PutNotificationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutNotificationConfiguration(PutNotificationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -4590,7 +4590,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
@@ -4611,7 +4611,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScalingPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScalingPolicyResponseUnmarshaller.Instance;
 
@@ -4675,7 +4675,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public virtual PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
@@ -4696,7 +4696,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">REST API Reference for PutScheduledUpdateGroupAction Operation</seealso>
         public virtual IAsyncResult BeginPutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutScheduledUpdateGroupActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutScheduledUpdateGroupActionResponseUnmarshaller.Instance;
 
@@ -4760,7 +4760,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool">REST API Reference for PutWarmPool Operation</seealso>
         public virtual PutWarmPoolResponse PutWarmPool(PutWarmPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWarmPoolResponseUnmarshaller.Instance;
 
@@ -4781,7 +4781,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool">REST API Reference for PutWarmPool Operation</seealso>
         public virtual IAsyncResult BeginPutWarmPool(PutWarmPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWarmPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWarmPoolResponseUnmarshaller.Instance;
 
@@ -4863,7 +4863,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public virtual RecordLifecycleActionHeartbeatResponse RecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
 
@@ -4884,7 +4884,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">REST API Reference for RecordLifecycleActionHeartbeat Operation</seealso>
         public virtual IAsyncResult BeginRecordLifecycleActionHeartbeat(RecordLifecycleActionHeartbeatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordLifecycleActionHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordLifecycleActionHeartbeatResponseUnmarshaller.Instance;
 
@@ -4932,7 +4932,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public virtual ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeProcessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
 
@@ -4953,7 +4953,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">REST API Reference for ResumeProcesses Operation</seealso>
         public virtual IAsyncResult BeginResumeProcesses(ResumeProcessesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeProcessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeProcessesResponseUnmarshaller.Instance;
 
@@ -5041,7 +5041,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RollbackInstanceRefresh">REST API Reference for RollbackInstanceRefresh Operation</seealso>
         public virtual RollbackInstanceRefreshResponse RollbackInstanceRefresh(RollbackInstanceRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -5062,7 +5062,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RollbackInstanceRefresh">REST API Reference for RollbackInstanceRefresh Operation</seealso>
         public virtual IAsyncResult BeginRollbackInstanceRefresh(RollbackInstanceRefreshRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -5114,7 +5114,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public virtual SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDesiredCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
 
@@ -5135,7 +5135,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">REST API Reference for SetDesiredCapacity Operation</seealso>
         public virtual IAsyncResult BeginSetDesiredCapacity(SetDesiredCapacityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetDesiredCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetDesiredCapacityResponseUnmarshaller.Instance;
 
@@ -5179,7 +5179,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public virtual SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetInstanceHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
 
@@ -5200,7 +5200,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">REST API Reference for SetInstanceHealth Operation</seealso>
         public virtual IAsyncResult BeginSetInstanceHealth(SetInstanceHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetInstanceHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetInstanceHealthResponseUnmarshaller.Instance;
 
@@ -5255,7 +5255,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public virtual SetInstanceProtectionResponse SetInstanceProtection(SetInstanceProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetInstanceProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
 
@@ -5276,7 +5276,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">REST API Reference for SetInstanceProtection Operation</seealso>
         public virtual IAsyncResult BeginSetInstanceProtection(SetInstanceProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetInstanceProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetInstanceProtectionResponseUnmarshaller.Instance;
 
@@ -5357,7 +5357,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">REST API Reference for StartInstanceRefresh Operation</seealso>
         public virtual StartInstanceRefreshResponse StartInstanceRefresh(StartInstanceRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -5378,7 +5378,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StartInstanceRefresh">REST API Reference for StartInstanceRefresh Operation</seealso>
         public virtual IAsyncResult BeginStartInstanceRefresh(StartInstanceRefreshRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceRefreshResponseUnmarshaller.Instance;
 
@@ -5433,7 +5433,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public virtual SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendProcessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
 
@@ -5454,7 +5454,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">REST API Reference for SuspendProcesses Operation</seealso>
         public virtual IAsyncResult BeginSuspendProcesses(SuspendProcessesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuspendProcessesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuspendProcessesResponseUnmarshaller.Instance;
 
@@ -5516,7 +5516,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public virtual TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -5537,7 +5537,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">REST API Reference for TerminateInstanceInAutoScalingGroup Operation</seealso>
         public virtual IAsyncResult BeginTerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateInstanceInAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateInstanceInAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -5636,7 +5636,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public virtual UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
 
@@ -5657,7 +5657,7 @@ namespace Amazon.AutoScaling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup">REST API Reference for UpdateAutoScalingGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAutoScalingGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAutoScalingGroupResponseUnmarshaller.Instance;
 

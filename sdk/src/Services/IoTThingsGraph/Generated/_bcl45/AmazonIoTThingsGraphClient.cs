@@ -311,7 +311,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual AssociateEntityToThingResponse AssociateEntityToThing(AssociateEntityToThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEntityToThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEntityToThingResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<AssociateEntityToThingResponse> AssociateEntityToThingAsync(AssociateEntityToThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEntityToThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEntityToThingResponseUnmarshaller.Instance;
             
@@ -391,7 +391,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual CreateFlowTemplateResponse CreateFlowTemplate(CreateFlowTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowTemplateResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<CreateFlowTemplateResponse> CreateFlowTemplateAsync(CreateFlowTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowTemplateResponseUnmarshaller.Instance;
             
@@ -495,7 +495,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemInstanceResponse CreateSystemInstance(CreateSystemInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSystemInstanceResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<CreateSystemInstanceResponse> CreateSystemInstanceAsync(CreateSystemInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSystemInstanceResponseUnmarshaller.Instance;
             
@@ -593,7 +593,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemTemplateResponse CreateSystemTemplate(CreateSystemTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSystemTemplateResponseUnmarshaller.Instance;
 
@@ -627,7 +627,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<CreateSystemTemplateResponse> CreateSystemTemplateAsync(CreateSystemTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSystemTemplateResponseUnmarshaller.Instance;
             
@@ -663,7 +663,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeleteFlowTemplateResponse DeleteFlowTemplate(DeleteFlowTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowTemplateResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeleteFlowTemplateResponse> DeleteFlowTemplateAsync(DeleteFlowTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowTemplateResponseUnmarshaller.Instance;
             
@@ -728,7 +728,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
             
@@ -797,7 +797,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemInstanceResponse DeleteSystemInstance(DeleteSystemInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSystemInstanceResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeleteSystemInstanceResponse> DeleteSystemInstanceAsync(DeleteSystemInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSystemInstanceResponseUnmarshaller.Instance;
             
@@ -872,7 +872,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemTemplateResponse DeleteSystemTemplate(DeleteSystemTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSystemTemplateResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeleteSystemTemplateResponse> DeleteSystemTemplateAsync(DeleteSystemTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSystemTemplateResponseUnmarshaller.Instance;
             
@@ -972,7 +972,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeploySystemInstanceResponse DeploySystemInstance(DeploySystemInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeploySystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeploySystemInstanceResponseUnmarshaller.Instance;
 
@@ -1036,7 +1036,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeploySystemInstanceResponse> DeploySystemInstanceAsync(DeploySystemInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeploySystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeploySystemInstanceResponseUnmarshaller.Instance;
             
@@ -1071,7 +1071,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeprecateFlowTemplateResponse DeprecateFlowTemplate(DeprecateFlowTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateFlowTemplateResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeprecateFlowTemplateResponse> DeprecateFlowTemplateAsync(DeprecateFlowTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateFlowTemplateResponseUnmarshaller.Instance;
             
@@ -1139,7 +1139,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DeprecateSystemTemplateResponse DeprecateSystemTemplate(DeprecateSystemTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateSystemTemplateResponseUnmarshaller.Instance;
 
@@ -1172,7 +1172,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DeprecateSystemTemplateResponse> DeprecateSystemTemplateAsync(DeprecateSystemTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateSystemTemplateResponseUnmarshaller.Instance;
             
@@ -1207,7 +1207,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DescribeNamespaceResponse DescribeNamespace(DescribeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DescribeNamespaceResponse> DescribeNamespaceAsync(DescribeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
             
@@ -1277,7 +1277,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual DissociateEntityFromThingResponse DissociateEntityFromThing(DissociateEntityFromThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateEntityFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateEntityFromThingResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<DissociateEntityFromThingResponse> DissociateEntityFromThingAsync(DissociateEntityFromThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateEntityFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateEntityFromThingResponseUnmarshaller.Instance;
             
@@ -1388,7 +1388,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetEntitiesResponse GetEntities(GetEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntitiesResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetEntitiesResponse> GetEntitiesAsync(GetEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntitiesResponseUnmarshaller.Instance;
             
@@ -1498,7 +1498,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateResponse GetFlowTemplate(GetFlowTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowTemplateResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetFlowTemplateResponse> GetFlowTemplateAsync(GetFlowTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowTemplateResponseUnmarshaller.Instance;
             
@@ -1568,7 +1568,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateRevisionsResponse GetFlowTemplateRevisions(GetFlowTemplateRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowTemplateRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowTemplateRevisionsResponseUnmarshaller.Instance;
 
@@ -1603,7 +1603,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetFlowTemplateRevisionsResponse> GetFlowTemplateRevisionsAsync(GetFlowTemplateRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFlowTemplateRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFlowTemplateRevisionsResponseUnmarshaller.Instance;
             
@@ -1634,7 +1634,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetNamespaceDeletionStatusResponse GetNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceDeletionStatusResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetNamespaceDeletionStatusResponse> GetNamespaceDeletionStatusAsync(GetNamespaceDeletionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamespaceDeletionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamespaceDeletionStatusResponseUnmarshaller.Instance;
             
@@ -1698,7 +1698,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetSystemInstanceResponse GetSystemInstance(GetSystemInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemInstanceResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetSystemInstanceResponse> GetSystemInstanceAsync(GetSystemInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemInstanceResponseUnmarshaller.Instance;
             
@@ -1765,7 +1765,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateResponse GetSystemTemplate(GetSystemTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemTemplateResponseUnmarshaller.Instance;
 
@@ -1798,7 +1798,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetSystemTemplateResponse> GetSystemTemplateAsync(GetSystemTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemTemplateResponseUnmarshaller.Instance;
             
@@ -1835,7 +1835,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateRevisionsResponse GetSystemTemplateRevisions(GetSystemTemplateRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemTemplateRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemTemplateRevisionsResponseUnmarshaller.Instance;
 
@@ -1871,7 +1871,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetSystemTemplateRevisionsResponse> GetSystemTemplateRevisionsAsync(GetSystemTemplateRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSystemTemplateRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSystemTemplateRevisionsResponseUnmarshaller.Instance;
             
@@ -1905,7 +1905,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual GetUploadStatusResponse GetUploadStatus(GetUploadStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadStatusResponseUnmarshaller.Instance;
 
@@ -1938,7 +1938,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<GetUploadStatusResponse> GetUploadStatusAsync(GetUploadStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadStatusResponseUnmarshaller.Instance;
             
@@ -1972,7 +1972,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual ListFlowExecutionMessagesResponse ListFlowExecutionMessages(ListFlowExecutionMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowExecutionMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowExecutionMessagesResponseUnmarshaller.Instance;
 
@@ -2005,7 +2005,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<ListFlowExecutionMessagesResponse> ListFlowExecutionMessagesAsync(ListFlowExecutionMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowExecutionMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowExecutionMessagesResponseUnmarshaller.Instance;
             
@@ -2039,7 +2039,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2104,7 +2104,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchEntitiesResponse SearchEntities(SearchEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchEntitiesResponseUnmarshaller.Instance;
 
@@ -2135,7 +2135,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchEntitiesResponse> SearchEntitiesAsync(SearchEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchEntitiesResponseUnmarshaller.Instance;
             
@@ -2169,7 +2169,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowExecutionsResponse SearchFlowExecutions(SearchFlowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFlowExecutionsResponseUnmarshaller.Instance;
 
@@ -2202,7 +2202,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchFlowExecutionsResponse> SearchFlowExecutionsAsync(SearchFlowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFlowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFlowExecutionsResponseUnmarshaller.Instance;
             
@@ -2233,7 +2233,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowTemplatesResponse SearchFlowTemplates(SearchFlowTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFlowTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFlowTemplatesResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchFlowTemplatesResponse> SearchFlowTemplatesAsync(SearchFlowTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFlowTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFlowTemplatesResponseUnmarshaller.Instance;
             
@@ -2294,7 +2294,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemInstancesResponse SearchSystemInstances(SearchSystemInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSystemInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSystemInstancesResponseUnmarshaller.Instance;
 
@@ -2324,7 +2324,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchSystemInstancesResponse> SearchSystemInstancesAsync(SearchSystemInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSystemInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSystemInstancesResponseUnmarshaller.Instance;
             
@@ -2356,7 +2356,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemTemplatesResponse SearchSystemTemplates(SearchSystemTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSystemTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSystemTemplatesResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchSystemTemplatesResponse> SearchSystemTemplatesAsync(SearchSystemTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSystemTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSystemTemplatesResponseUnmarshaller.Instance;
             
@@ -2434,7 +2434,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual SearchThingsResponse SearchThings(SearchThingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchThingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchThingsResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<SearchThingsResponse> SearchThingsAsync(SearchThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchThingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchThingsResponseUnmarshaller.Instance;
             
@@ -2514,7 +2514,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2584,7 +2584,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual UndeploySystemInstanceResponse UndeploySystemInstance(UndeploySystemInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeploySystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeploySystemInstanceResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<UndeploySystemInstanceResponse> UndeploySystemInstanceAsync(UndeploySystemInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeploySystemInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeploySystemInstanceResponseUnmarshaller.Instance;
             
@@ -2654,7 +2654,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2687,7 +2687,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2724,7 +2724,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual UpdateFlowTemplateResponse UpdateFlowTemplate(UpdateFlowTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowTemplateResponseUnmarshaller.Instance;
 
@@ -2760,7 +2760,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<UpdateFlowTemplateResponse> UpdateFlowTemplateAsync(UpdateFlowTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowTemplateResponseUnmarshaller.Instance;
             
@@ -2796,7 +2796,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual UpdateSystemTemplateResponse UpdateSystemTemplate(UpdateSystemTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSystemTemplateResponseUnmarshaller.Instance;
 
@@ -2831,7 +2831,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<UpdateSystemTemplateResponse> UpdateSystemTemplateAsync(UpdateSystemTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSystemTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSystemTemplateResponseUnmarshaller.Instance;
             
@@ -2888,7 +2888,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual UploadEntityDefinitionsResponse UploadEntityDefinitions(UploadEntityDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadEntityDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadEntityDefinitionsResponseUnmarshaller.Instance;
 
@@ -2944,7 +2944,7 @@ namespace Amazon.IoTThingsGraph
         [Obsolete("since: 2022-08-30")]
         public virtual Task<UploadEntityDefinitionsResponse> UploadEntityDefinitionsAsync(UploadEntityDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadEntityDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadEntityDefinitionsResponseUnmarshaller.Instance;
             

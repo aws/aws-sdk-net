@@ -301,7 +301,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
         public virtual CreatePipelineEndpointResponse CreatePipelineEndpoint(CreatePipelineEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineEndpointResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipelineEndpoint">REST API Reference for CreatePipelineEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreatePipelineEndpoint(CreatePipelineEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineEndpointResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
         public virtual DeletePipelineEndpointResponse DeletePipelineEndpoint(DeletePipelineEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineEndpointResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipelineEndpoint">REST API Reference for DeletePipelineEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeletePipelineEndpoint(DeletePipelineEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineEndpointResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual GetPipelineResponse GetPipeline(GetPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
@@ -680,7 +680,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         public virtual IAsyncResult BeginGetPipeline(GetPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineBlueprint">REST API Reference for GetPipelineBlueprint Operation</seealso>
         public virtual GetPipelineBlueprintResponse GetPipelineBlueprint(GetPipelineBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineBlueprintResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineBlueprint">REST API Reference for GetPipelineBlueprint Operation</seealso>
         public virtual IAsyncResult BeginGetPipelineBlueprint(GetPipelineBlueprintRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineBlueprintResponseUnmarshaller.Instance;
 
@@ -810,7 +810,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineChangeProgress">REST API Reference for GetPipelineChangeProgress Operation</seealso>
         public virtual GetPipelineChangeProgressResponse GetPipelineChangeProgress(GetPipelineChangeProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineChangeProgressResponseUnmarshaller.Instance;
 
@@ -831,7 +831,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineChangeProgress">REST API Reference for GetPipelineChangeProgress Operation</seealso>
         public virtual IAsyncResult BeginGetPipelineChangeProgress(GetPipelineChangeProgressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineChangeProgressResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineBlueprints">REST API Reference for ListPipelineBlueprints Operation</seealso>
         public virtual ListPipelineBlueprintsResponse ListPipelineBlueprints(ListPipelineBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineBlueprintsResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineBlueprints">REST API Reference for ListPipelineBlueprints Operation</seealso>
         public virtual IAsyncResult BeginListPipelineBlueprints(ListPipelineBlueprintsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineBlueprintsResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
         public virtual ListPipelineEndpointConnectionsResponse ListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpointConnections">REST API Reference for ListPipelineEndpointConnections Operation</seealso>
         public virtual IAsyncResult BeginListPipelineEndpointConnections(ListPipelineEndpointConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
         public virtual ListPipelineEndpointsResponse ListPipelineEndpoints(ListPipelineEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineEndpointsResponseUnmarshaller.Instance;
 
@@ -1116,7 +1116,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineEndpoints">REST API Reference for ListPipelineEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListPipelineEndpoints(ListPipelineEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelineEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelineEndpointsResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
@@ -1239,7 +1239,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1383,7 +1383,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
         public virtual RevokePipelineEndpointConnectionsResponse RevokePipelineEndpointConnections(RevokePipelineEndpointConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokePipelineEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokePipelineEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/RevokePipelineEndpointConnections">REST API Reference for RevokePipelineEndpointConnections Operation</seealso>
         public virtual IAsyncResult BeginRevokePipelineEndpointConnections(RevokePipelineEndpointConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokePipelineEndpointConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokePipelineEndpointConnectionsResponseUnmarshaller.Instance;
 
@@ -1457,7 +1457,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StartPipeline">REST API Reference for StartPipeline Operation</seealso>
         public virtual StartPipelineResponse StartPipeline(StartPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPipelineResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StartPipeline">REST API Reference for StartPipeline Operation</seealso>
         public virtual IAsyncResult BeginStartPipeline(StartPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPipelineResponseUnmarshaller.Instance;
 
@@ -1531,7 +1531,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StopPipeline">REST API Reference for StopPipeline Operation</seealso>
         public virtual StopPipelineResponse StopPipeline(StopPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPipelineResponseUnmarshaller.Instance;
 
@@ -1552,7 +1552,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StopPipeline">REST API Reference for StopPipeline Operation</seealso>
         public virtual IAsyncResult BeginStopPipeline(StopPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPipelineResponseUnmarshaller.Instance;
 
@@ -1605,7 +1605,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1677,7 +1677,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1698,7 +1698,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
@@ -1772,7 +1772,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ValidatePipeline">REST API Reference for ValidatePipeline Operation</seealso>
         public virtual ValidatePipelineResponse ValidatePipeline(ValidatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePipelineResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.OSIS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ValidatePipeline">REST API Reference for ValidatePipeline Operation</seealso>
         public virtual IAsyncResult BeginValidatePipeline(ValidatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePipelineResponseUnmarshaller.Instance;
 

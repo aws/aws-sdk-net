@@ -420,7 +420,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
         public virtual AddLayerVersionPermissionResponse AddLayerVersionPermission(AddLayerVersionPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
         public virtual IAsyncResult BeginAddLayerVersionPermission(AddLayerVersionPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -612,7 +612,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -675,7 +675,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
         public virtual CreateCodeSigningConfigResponse CreateCodeSigningConfig(CreateCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -696,7 +696,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateCodeSigningConfig(CreateCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public virtual CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -886,7 +886,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public virtual IAsyncResult BeginCreateEventSourceMapping(CreateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public virtual IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
         public virtual CreateFunctionUrlConfigResponse CreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1115,7 +1115,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig">REST API Reference for CreateFunctionUrlConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateFunctionUrlConfig(CreateFunctionUrlConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
         public virtual DeleteCodeSigningConfigResponse DeleteCodeSigningConfig(DeleteCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteCodeSigningConfig(DeleteCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1310,7 +1310,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public virtual DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1331,7 +1331,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventSourceMapping(DeleteEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
 
@@ -1502,7 +1502,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
         public virtual DeleteFunctionCodeSigningConfigResponse DeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         public virtual DeleteFunctionConcurrencyResponse DeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -1648,7 +1648,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         public virtual DeleteFunctionEventInvokeConfigResponse DeleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">REST API Reference for DeleteFunctionEventInvokeConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunctionEventInvokeConfig(DeleteFunctionEventInvokeConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -1716,7 +1716,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
         public virtual DeleteFunctionUrlConfigResponse DeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1737,7 +1737,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig">REST API Reference for DeleteFunctionUrlConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteFunctionUrlConfig(DeleteFunctionUrlConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -1780,7 +1780,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
         public virtual DeleteLayerVersionResponse DeleteLayerVersion(DeleteLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
 
@@ -1801,7 +1801,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteLayerVersion(DeleteLayerVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
 
@@ -1850,7 +1850,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         public virtual DeleteProvisionedConcurrencyConfigResponse DeleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -1871,7 +1871,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig">REST API Reference for DeleteProvisionedConcurrencyConfig Operation</seealso>
         public virtual IAsyncResult BeginDeleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -1912,7 +1912,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1933,7 +1933,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1979,7 +1979,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public virtual GetAliasResponse GetAlias(GetAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -2000,7 +2000,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public virtual IAsyncResult BeginGetAlias(GetAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
         public virtual GetCodeSigningConfigResponse GetCodeSigningConfig(GetCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -2063,7 +2063,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginGetCodeSigningConfig(GetCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public virtual GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -2131,7 +2131,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public virtual IAsyncResult BeginGetEventSourceMapping(GetEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -2209,7 +2209,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public virtual IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
 
@@ -2276,7 +2276,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
         public virtual GetFunctionCodeSigningConfigResponse GetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -2344,7 +2344,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
         public virtual GetFunctionConcurrencyResponse GetFunctionConcurrency(GetFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -2365,7 +2365,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">REST API Reference for GetFunctionConcurrency Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionConcurrency(GetFunctionConcurrencyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -2453,7 +2453,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -2474,7 +2474,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionConfiguration(GetFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -2526,7 +2526,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         public virtual GetFunctionEventInvokeConfigResponse GetFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">REST API Reference for GetFunctionEventInvokeConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionEventInvokeConfig(GetFunctionEventInvokeConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -2594,7 +2594,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionRecursionConfig">REST API Reference for GetFunctionRecursionConfig Operation</seealso>
         public virtual GetFunctionRecursionConfigResponse GetFunctionRecursionConfig(GetFunctionRecursionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -2615,7 +2615,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionRecursionConfig">REST API Reference for GetFunctionRecursionConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionRecursionConfig(GetFunctionRecursionConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -2661,7 +2661,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
         public virtual GetFunctionUrlConfigResponse GetFunctionUrlConfig(GetFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig">REST API Reference for GetFunctionUrlConfig Operation</seealso>
         public virtual IAsyncResult BeginGetFunctionUrlConfig(GetFunctionUrlConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -2729,7 +2729,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
         public virtual GetLayerVersionResponse GetLayerVersion(GetLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
 
@@ -2750,7 +2750,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
         public virtual IAsyncResult BeginGetLayerVersion(GetLayerVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
 
@@ -2797,7 +2797,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
         public virtual GetLayerVersionByArnResponse GetLayerVersionByArn(GetLayerVersionByArnRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
 
@@ -2818,7 +2818,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">REST API Reference for GetLayerVersionByArn Operation</seealso>
         public virtual IAsyncResult BeginGetLayerVersionByArn(GetLayerVersionByArnRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionByArnRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionByArnResponseUnmarshaller.Instance;
 
@@ -2865,7 +2865,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
         public virtual GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
 
@@ -2886,7 +2886,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetLayerVersionPolicy(GetLayerVersionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
 
@@ -2933,7 +2933,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -3003,7 +3003,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         public virtual GetProvisionedConcurrencyConfigResponse GetProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -3024,7 +3024,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig">REST API Reference for GetProvisionedConcurrencyConfig Operation</seealso>
         public virtual IAsyncResult BeginGetProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -3075,7 +3075,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">REST API Reference for GetRuntimeManagementConfig Operation</seealso>
         public virtual GetRuntimeManagementConfigResponse GetRuntimeManagementConfig(GetRuntimeManagementConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -3096,7 +3096,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig">REST API Reference for GetRuntimeManagementConfig Operation</seealso>
         public virtual IAsyncResult BeginGetRuntimeManagementConfig(GetRuntimeManagementConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -3294,7 +3294,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public virtual InvokeResponse Invoke(InvokeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeResponseUnmarshaller.Instance;
 
@@ -3315,7 +3315,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public virtual IAsyncResult BeginInvoke(InvokeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeResponseUnmarshaller.Instance;
 
@@ -3380,7 +3380,7 @@ namespace Amazon.Lambda
         [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
         public virtual InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
 
@@ -3402,7 +3402,7 @@ namespace Amazon.Lambda
         [Obsolete("For .NET 3.5/4.5, API InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest) is deprecated, use InvokeResponse Invoke(InvokeRequest), or Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead. For .NET Core, Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest, CancellationToken) is deprecated, use Task<InvokeResponse> InvokeAsync(InvokeRequest, CancellationToken) instead.")]
         public virtual IAsyncResult BeginInvokeAsync(InvokeAsyncRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAsyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAsyncResponseUnmarshaller.Instance;
 
@@ -3556,7 +3556,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
         public virtual InvokeWithResponseStreamResponse InvokeWithResponseStream(InvokeWithResponseStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -3577,7 +3577,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
         public virtual IAsyncResult BeginInvokeWithResponseStream(InvokeWithResponseStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeWithResponseStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeWithResponseStreamResponseUnmarshaller.Instance;
 
@@ -3624,7 +3624,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -3645,7 +3645,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -3686,7 +3686,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
         public virtual ListCodeSigningConfigsResponse ListCodeSigningConfigs(ListCodeSigningConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
         public virtual IAsyncResult BeginListCodeSigningConfigs(ListCodeSigningConfigsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeSigningConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeSigningConfigsResponseUnmarshaller.Instance;
 
@@ -3754,7 +3754,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public virtual ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
@@ -3775,7 +3775,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public virtual IAsyncResult BeginListEventSourceMappings(ListEventSourceMappingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourceMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourceMappingsResponseUnmarshaller.Instance;
 
@@ -3826,7 +3826,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
         public virtual ListFunctionEventInvokeConfigsResponse ListFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionEventInvokeConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionEventInvokeConfigsResponseUnmarshaller.Instance;
 
@@ -3847,7 +3847,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">REST API Reference for ListFunctionEventInvokeConfigs Operation</seealso>
         public virtual IAsyncResult BeginListFunctionEventInvokeConfigs(ListFunctionEventInvokeConfigsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionEventInvokeConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionEventInvokeConfigsResponseUnmarshaller.Instance;
 
@@ -3943,7 +3943,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -3964,7 +3964,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public virtual IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
 
@@ -4008,7 +4008,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
         public virtual ListFunctionsByCodeSigningConfigResponse ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4029,7 +4029,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionsByCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionsByCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4075,7 +4075,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
         public virtual ListFunctionUrlConfigsResponse ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
 
@@ -4096,7 +4096,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs">REST API Reference for ListFunctionUrlConfigs Operation</seealso>
         public virtual IAsyncResult BeginListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFunctionUrlConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFunctionUrlConfigsResponseUnmarshaller.Instance;
 
@@ -4144,7 +4144,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
         public virtual ListLayersResponse ListLayers(ListLayersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayersResponseUnmarshaller.Instance;
 
@@ -4165,7 +4165,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
         public virtual IAsyncResult BeginListLayers(ListLayersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayersResponseUnmarshaller.Instance;
 
@@ -4215,7 +4215,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
         public virtual ListLayerVersionsResponse ListLayerVersions(ListLayerVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayerVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
 
@@ -4236,7 +4236,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
         public virtual IAsyncResult BeginListLayerVersions(ListLayerVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayerVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
 
@@ -4282,7 +4282,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
         public virtual ListProvisionedConcurrencyConfigsResponse ListProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedConcurrencyConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
 
@@ -4303,7 +4303,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs">REST API Reference for ListProvisionedConcurrencyConfigs Operation</seealso>
         public virtual IAsyncResult BeginListProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedConcurrencyConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedConcurrencyConfigsResponseUnmarshaller.Instance;
 
@@ -4350,7 +4350,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -4371,7 +4371,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -4419,7 +4419,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public virtual ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsByFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
 
@@ -4440,7 +4440,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public virtual IAsyncResult BeginListVersionsByFunction(ListVersionsByFunctionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVersionsByFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVersionsByFunctionResponseUnmarshaller.Instance;
 
@@ -4498,7 +4498,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
         public virtual PublishLayerVersionResponse PublishLayerVersion(PublishLayerVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
 
@@ -4519,7 +4519,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
         public virtual IAsyncResult BeginPublishLayerVersion(PublishLayerVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishLayerVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
 
@@ -4602,7 +4602,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public virtual PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishVersionResponseUnmarshaller.Instance;
 
@@ -4623,7 +4623,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public virtual IAsyncResult BeginPublishVersion(PublishVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishVersionResponseUnmarshaller.Instance;
 
@@ -4677,7 +4677,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
         public virtual PutFunctionCodeSigningConfigResponse PutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4698,7 +4698,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginPutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -4765,7 +4765,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         public virtual PutFunctionConcurrencyResponse PutFunctionConcurrency(PutFunctionConcurrencyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -4786,7 +4786,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         public virtual IAsyncResult BeginPutFunctionConcurrency(PutFunctionConcurrencyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionConcurrencyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
 
@@ -4861,7 +4861,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         public virtual PutFunctionEventInvokeConfigResponse PutFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -4882,7 +4882,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">REST API Reference for PutFunctionEventInvokeConfig Operation</seealso>
         public virtual IAsyncResult BeginPutFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -4947,7 +4947,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">REST API Reference for PutFunctionRecursionConfig Operation</seealso>
         public virtual PutFunctionRecursionConfigResponse PutFunctionRecursionConfig(PutFunctionRecursionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -4968,7 +4968,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">REST API Reference for PutFunctionRecursionConfig Operation</seealso>
         public virtual IAsyncResult BeginPutFunctionRecursionConfig(PutFunctionRecursionConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFunctionRecursionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFunctionRecursionConfigResponseUnmarshaller.Instance;
 
@@ -5017,7 +5017,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
         public virtual PutProvisionedConcurrencyConfigResponse PutProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -5038,7 +5038,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig">REST API Reference for PutProvisionedConcurrencyConfig Operation</seealso>
         public virtual IAsyncResult BeginPutProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProvisionedConcurrencyConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProvisionedConcurrencyConfigResponseUnmarshaller.Instance;
 
@@ -5089,7 +5089,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">REST API Reference for PutRuntimeManagementConfig Operation</seealso>
         public virtual PutRuntimeManagementConfigResponse PutRuntimeManagementConfig(PutRuntimeManagementConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -5110,7 +5110,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig">REST API Reference for PutRuntimeManagementConfig Operation</seealso>
         public virtual IAsyncResult BeginPutRuntimeManagementConfig(PutRuntimeManagementConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuntimeManagementConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuntimeManagementConfigResponseUnmarshaller.Instance;
 
@@ -5173,7 +5173,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
         public virtual RemoveLayerVersionPermissionResponse RemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -5194,7 +5194,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
         public virtual IAsyncResult BeginRemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
 
@@ -5257,7 +5257,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -5278,7 +5278,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -5328,7 +5328,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5349,7 +5349,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5399,7 +5399,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5420,7 +5420,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5485,7 +5485,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -5506,7 +5506,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -5549,7 +5549,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
         public virtual UpdateCodeSigningConfigResponse UpdateCodeSigningConfig(UpdateCodeSigningConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -5570,7 +5570,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateCodeSigningConfig(UpdateCodeSigningConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCodeSigningConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCodeSigningConfigResponseUnmarshaller.Instance;
 
@@ -5744,7 +5744,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public virtual UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -5765,7 +5765,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventSourceMapping(UpdateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourceMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourceMappingResponseUnmarshaller.Instance;
 
@@ -5879,7 +5879,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public virtual UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
 
@@ -5900,7 +5900,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public virtual IAsyncResult BeginUpdateFunctionCode(UpdateFunctionCodeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionCodeResponseUnmarshaller.Instance;
 
@@ -6000,7 +6000,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public virtual UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -6021,7 +6021,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionConfigurationResponseUnmarshaller.Instance;
 
@@ -6076,7 +6076,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         public virtual UpdateFunctionEventInvokeConfigResponse UpdateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -6097,7 +6097,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">REST API Reference for UpdateFunctionEventInvokeConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateFunctionEventInvokeConfig(UpdateFunctionEventInvokeConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionEventInvokeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionEventInvokeConfigResponseUnmarshaller.Instance;
 
@@ -6146,7 +6146,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
         public virtual UpdateFunctionUrlConfigResponse UpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
 
@@ -6167,7 +6167,7 @@ namespace Amazon.Lambda
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">REST API Reference for UpdateFunctionUrlConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateFunctionUrlConfig(UpdateFunctionUrlConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFunctionUrlConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFunctionUrlConfigResponseUnmarshaller.Instance;
 

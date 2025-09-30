@@ -298,7 +298,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CancelBatchJobExecution">REST API Reference for CancelBatchJobExecution Operation</seealso>
         public virtual CancelBatchJobExecutionResponse CancelBatchJobExecution(CancelBatchJobExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchJobExecutionResponseUnmarshaller.Instance;
 
@@ -319,7 +319,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CancelBatchJobExecution">REST API Reference for CancelBatchJobExecution Operation</seealso>
         public virtual IAsyncResult BeginCancelBatchJobExecution(CancelBatchJobExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelBatchJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelBatchJobExecutionResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">REST API Reference for CreateDataSetExportTask Operation</seealso>
         public virtual CreateDataSetExportTaskResponse CreateDataSetExportTask(CreateDataSetExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetExportTaskResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetExportTask">REST API Reference for CreateDataSetExportTask Operation</seealso>
         public virtual IAsyncResult BeginCreateDataSetExportTask(CreateDataSetExportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetExportTaskResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetImportTask">REST API Reference for CreateDataSetImportTask Operation</seealso>
         public virtual CreateDataSetImportTaskResponse CreateDataSetImportTask(CreateDataSetImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetImportTaskResponseUnmarshaller.Instance;
 
@@ -542,7 +542,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDataSetImportTask">REST API Reference for CreateDataSetImportTask Operation</seealso>
         public virtual IAsyncResult BeginCreateDataSetImportTask(CreateDataSetImportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetImportTaskResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -668,7 +668,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual IAsyncResult BeginCreateEnvironment(CreateEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplicationFromEnvironment">REST API Reference for DeleteApplicationFromEnvironment Operation</seealso>
         public virtual DeleteApplicationFromEnvironmentResponse DeleteApplicationFromEnvironment(DeleteApplicationFromEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationFromEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationFromEnvironmentResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteApplicationFromEnvironment">REST API Reference for DeleteApplicationFromEnvironment Operation</seealso>
         public virtual IAsyncResult BeginDeleteApplicationFromEnvironment(DeleteApplicationFromEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationFromEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationFromEnvironmentResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual IAsyncResult BeginDeleteEnvironment(DeleteEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -973,7 +973,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual IAsyncResult BeginGetApplication(GetApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplicationVersion">REST API Reference for GetApplicationVersion Operation</seealso>
         public virtual GetApplicationVersionResponse GetApplicationVersion(GetApplicationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationVersionResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetApplicationVersion">REST API Reference for GetApplicationVersion Operation</seealso>
         public virtual IAsyncResult BeginGetApplicationVersion(GetApplicationVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationVersionResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetBatchJobExecution">REST API Reference for GetBatchJobExecution Operation</seealso>
         public virtual GetBatchJobExecutionResponse GetBatchJobExecution(GetBatchJobExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchJobExecutionResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetBatchJobExecution">REST API Reference for GetBatchJobExecution Operation</seealso>
         public virtual IAsyncResult BeginGetBatchJobExecution(GetBatchJobExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBatchJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBatchJobExecutionResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetDetails">REST API Reference for GetDataSetDetails Operation</seealso>
         public virtual GetDataSetDetailsResponse GetDataSetDetails(GetDataSetDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetDetailsResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetDetails">REST API Reference for GetDataSetDetails Operation</seealso>
         public virtual IAsyncResult BeginGetDataSetDetails(GetDataSetDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetDetailsResponseUnmarshaller.Instance;
 
@@ -1238,7 +1238,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">REST API Reference for GetDataSetExportTask Operation</seealso>
         public virtual GetDataSetExportTaskResponse GetDataSetExportTask(GetDataSetExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetExportTaskResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetExportTask">REST API Reference for GetDataSetExportTask Operation</seealso>
         public virtual IAsyncResult BeginGetDataSetExportTask(GetDataSetExportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetExportTaskResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetImportTask">REST API Reference for GetDataSetImportTask Operation</seealso>
         public virtual GetDataSetImportTaskResponse GetDataSetImportTask(GetDataSetImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetImportTaskResponseUnmarshaller.Instance;
 
@@ -1329,7 +1329,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDataSetImportTask">REST API Reference for GetDataSetImportTask Operation</seealso>
         public virtual IAsyncResult BeginGetDataSetImportTask(GetDataSetImportTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataSetImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataSetImportTaskResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual IAsyncResult BeginGetEnvironment(GetEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
         public virtual GetSignedBluinsightsUrlResponse GetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignedBluinsightsUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignedBluinsightsUrlResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/GetSignedBluinsightsUrl">REST API Reference for GetSignedBluinsightsUrl Operation</seealso>
         public virtual IAsyncResult BeginGetSignedBluinsightsUrl(GetSignedBluinsightsUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignedBluinsightsUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignedBluinsightsUrlResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1598,7 +1598,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual ListApplicationVersionsResponse ListApplicationVersions(ListApplicationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
 
@@ -1667,7 +1667,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual IAsyncResult BeginListApplicationVersions(ListApplicationVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
 
@@ -1717,7 +1717,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobDefinitions">REST API Reference for ListBatchJobDefinitions Operation</seealso>
         public virtual ListBatchJobDefinitionsResponse ListBatchJobDefinitions(ListBatchJobDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobDefinitionsResponseUnmarshaller.Instance;
 
@@ -1738,7 +1738,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobDefinitions">REST API Reference for ListBatchJobDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListBatchJobDefinitions(ListBatchJobDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobDefinitionsResponseUnmarshaller.Instance;
 
@@ -1786,7 +1786,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobExecutions">REST API Reference for ListBatchJobExecutions Operation</seealso>
         public virtual ListBatchJobExecutionsResponse ListBatchJobExecutions(ListBatchJobExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobExecutionsResponseUnmarshaller.Instance;
 
@@ -1807,7 +1807,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobExecutions">REST API Reference for ListBatchJobExecutions Operation</seealso>
         public virtual IAsyncResult BeginListBatchJobExecutions(ListBatchJobExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobExecutionsResponseUnmarshaller.Instance;
 
@@ -1859,7 +1859,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints">REST API Reference for ListBatchJobRestartPoints Operation</seealso>
         public virtual ListBatchJobRestartPointsResponse ListBatchJobRestartPoints(ListBatchJobRestartPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobRestartPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobRestartPointsResponseUnmarshaller.Instance;
 
@@ -1880,7 +1880,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints">REST API Reference for ListBatchJobRestartPoints Operation</seealso>
         public virtual IAsyncResult BeginListBatchJobRestartPoints(ListBatchJobRestartPointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchJobRestartPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchJobRestartPointsResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">REST API Reference for ListDataSetExportHistory Operation</seealso>
         public virtual ListDataSetExportHistoryResponse ListDataSetExportHistory(ListDataSetExportHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetExportHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetExportHistoryResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetExportHistory">REST API Reference for ListDataSetExportHistory Operation</seealso>
         public virtual IAsyncResult BeginListDataSetExportHistory(ListDataSetExportHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetExportHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetExportHistoryResponseUnmarshaller.Instance;
 
@@ -1997,7 +1997,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetImportHistory">REST API Reference for ListDataSetImportHistory Operation</seealso>
         public virtual ListDataSetImportHistoryResponse ListDataSetImportHistory(ListDataSetImportHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetImportHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetImportHistoryResponseUnmarshaller.Instance;
 
@@ -2018,7 +2018,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSetImportHistory">REST API Reference for ListDataSetImportHistory Operation</seealso>
         public virtual IAsyncResult BeginListDataSetImportHistory(ListDataSetImportHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetImportHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetImportHistoryResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSets">REST API Reference for ListDataSets Operation</seealso>
         public virtual ListDataSetsResponse ListDataSets(ListDataSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
 
@@ -2099,7 +2099,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDataSets">REST API Reference for ListDataSets Operation</seealso>
         public virtual IAsyncResult BeginListDataSets(ListDataSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
 
@@ -2149,7 +2149,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -2170,7 +2170,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -2215,7 +2215,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
         public virtual ListEngineVersionsResponse ListEngineVersions(ListEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2236,7 +2236,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
         public virtual IAsyncResult BeginListEngineVersions(ListEngineVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2281,7 +2281,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual IAsyncResult BeginListEnvironments(ListEnvironmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2350,7 +2350,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2371,7 +2371,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2422,7 +2422,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
@@ -2443,7 +2443,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual IAsyncResult BeginStartApplication(StartApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
 
@@ -2495,7 +2495,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartBatchJob">REST API Reference for StartBatchJob Operation</seealso>
         public virtual StartBatchJobResponse StartBatchJob(StartBatchJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBatchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBatchJobResponseUnmarshaller.Instance;
 
@@ -2516,7 +2516,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StartBatchJob">REST API Reference for StartBatchJob Operation</seealso>
         public virtual IAsyncResult BeginStartBatchJob(StartBatchJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBatchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBatchJobResponseUnmarshaller.Instance;
 
@@ -2567,7 +2567,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
@@ -2588,7 +2588,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual IAsyncResult BeginStopApplication(StopApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
 
@@ -2639,7 +2639,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2708,7 +2708,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2729,7 +2729,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2780,7 +2780,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -2801,7 +2801,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -2855,7 +2855,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -2876,7 +2876,7 @@ namespace Amazon.MainframeModernization
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual IAsyncResult BeginUpdateEnvironment(UpdateEnvironmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 

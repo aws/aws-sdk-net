@@ -289,7 +289,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
         public virtual DeregisterSubscriptionProviderResponse DeregisterSubscriptionProvider(DeregisterSubscriptionProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -310,7 +310,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/DeregisterSubscriptionProvider">REST API Reference for DeregisterSubscriptionProvider Operation</seealso>
         public virtual IAsyncResult BeginDeregisterSubscriptionProvider(DeregisterSubscriptionProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
         public virtual GetRegisteredSubscriptionProviderResponse GetRegisteredSubscriptionProvider(GetRegisteredSubscriptionProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegisteredSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegisteredSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetRegisteredSubscriptionProvider">REST API Reference for GetRegisteredSubscriptionProvider Operation</seealso>
         public virtual IAsyncResult BeginGetRegisteredSubscriptionProvider(GetRegisteredSubscriptionProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegisteredSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegisteredSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetServiceSettings">REST API Reference for GetServiceSettings Operation</seealso>
         public virtual GetServiceSettingsResponse GetServiceSettings(GetServiceSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/GetServiceSettings">REST API Reference for GetServiceSettings Operation</seealso>
         public virtual IAsyncResult BeginGetServiceSettings(GetServiceSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSettingsResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptionInstances">REST API Reference for ListLinuxSubscriptionInstances Operation</seealso>
         public virtual ListLinuxSubscriptionInstancesResponse ListLinuxSubscriptionInstances(ListLinuxSubscriptionInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinuxSubscriptionInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinuxSubscriptionInstancesResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptionInstances">REST API Reference for ListLinuxSubscriptionInstances Operation</seealso>
         public virtual IAsyncResult BeginListLinuxSubscriptionInstances(ListLinuxSubscriptionInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinuxSubscriptionInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinuxSubscriptionInstancesResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptions">REST API Reference for ListLinuxSubscriptions Operation</seealso>
         public virtual ListLinuxSubscriptionsResponse ListLinuxSubscriptions(ListLinuxSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinuxSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinuxSubscriptionsResponseUnmarshaller.Instance;
 
@@ -568,7 +568,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListLinuxSubscriptions">REST API Reference for ListLinuxSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListLinuxSubscriptions(ListLinuxSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLinuxSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLinuxSubscriptionsResponseUnmarshaller.Instance;
 
@@ -610,7 +610,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
         public virtual ListRegisteredSubscriptionProvidersResponse ListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegisteredSubscriptionProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegisteredSubscriptionProvidersResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListRegisteredSubscriptionProviders">REST API Reference for ListRegisteredSubscriptionProviders Operation</seealso>
         public virtual IAsyncResult BeginListRegisteredSubscriptionProviders(ListRegisteredSubscriptionProvidersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegisteredSubscriptionProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegisteredSubscriptionProvidersResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
         public virtual RegisterSubscriptionProviderResponse RegisterSubscriptionProvider(RegisterSubscriptionProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/RegisterSubscriptionProvider">REST API Reference for RegisterSubscriptionProvider Operation</seealso>
         public virtual IAsyncResult BeginRegisterSubscriptionProvider(RegisterSubscriptionProviderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSubscriptionProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSubscriptionProviderResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -881,7 +881,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual UpdateServiceSettingsResponse UpdateServiceSettings(UpdateServiceSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-linux-subscriptions-2018-05-10/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceSettings(UpdateServiceSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSettingsResponseUnmarshaller.Instance;
 

@@ -328,7 +328,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
         public virtual BatchEvaluateFeatureResponse BatchEvaluateFeature(BatchEvaluateFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEvaluateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEvaluateFeatureResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/BatchEvaluateFeature">REST API Reference for BatchEvaluateFeature Operation</seealso>
         public virtual IAsyncResult BeginBatchEvaluateFeature(BatchEvaluateFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEvaluateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEvaluateFeatureResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
         public virtual CreateExperimentResponse CreateExperiment(CreateExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperimentResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateExperiment">REST API Reference for CreateExperiment Operation</seealso>
         public virtual IAsyncResult BeginCreateExperiment(CreateExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExperimentResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
         public virtual CreateFeatureResponse CreateFeature(CreateFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFeatureResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateFeature">REST API Reference for CreateFeature Operation</seealso>
         public virtual IAsyncResult BeginCreateFeature(CreateFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFeatureResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
         public virtual CreateLaunchResponse CreateLaunch(CreateLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchResponseUnmarshaller.Instance;
 
@@ -600,7 +600,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateLaunch">REST API Reference for CreateLaunch Operation</seealso>
         public virtual IAsyncResult BeginCreateLaunch(CreateLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -738,7 +738,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         public virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
@@ -759,7 +759,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
         public virtual IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         public virtual DeleteExperimentResponse DeleteExperiment(DeleteExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperimentResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         public virtual IAsyncResult BeginDeleteExperiment(DeleteExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExperimentResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
         public virtual DeleteFeatureResponse DeleteFeature(DeleteFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFeatureResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteFeature">REST API Reference for DeleteFeature Operation</seealso>
         public virtual IAsyncResult BeginDeleteFeature(DeleteFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFeatureResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
         public virtual DeleteLaunchResponse DeleteLaunch(DeleteLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchResponseUnmarshaller.Instance;
 
@@ -981,7 +981,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteLaunch">REST API Reference for DeleteLaunch Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunch(DeleteLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1051,7 +1051,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         public virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
         public virtual IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
         public virtual EvaluateFeatureResponse EvaluateFeature(EvaluateFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateFeatureResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">REST API Reference for EvaluateFeature Operation</seealso>
         public virtual IAsyncResult BeginEvaluateFeature(EvaluateFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateFeatureResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
         public virtual GetExperimentResponse GetExperiment(GetExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperiment">REST API Reference for GetExperiment Operation</seealso>
         public virtual IAsyncResult BeginGetExperiment(GetExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
         public virtual GetExperimentResultsResponse GetExperimentResults(GetExperimentResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResultsResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">REST API Reference for GetExperimentResults Operation</seealso>
         public virtual IAsyncResult BeginGetExperimentResults(GetExperimentResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExperimentResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExperimentResultsResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
         public virtual GetFeatureResponse GetFeature(GetFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFeatureResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetFeature">REST API Reference for GetFeature Operation</seealso>
         public virtual IAsyncResult BeginGetFeature(GetFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFeatureResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
         public virtual GetLaunchResponse GetLaunch(GetLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchResponseUnmarshaller.Instance;
 
@@ -1513,7 +1513,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetLaunch">REST API Reference for GetLaunch Operation</seealso>
         public virtual IAsyncResult BeginGetLaunch(GetLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual IAsyncResult BeginGetProject(GetProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         public virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
         public virtual IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
         public virtual ListExperimentsResponse ListExperiments(ListExperimentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
         public virtual IAsyncResult BeginListExperiments(ListExperimentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExperimentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
         public virtual ListFeaturesResponse ListFeatures(ListFeaturesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFeaturesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFeaturesResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListFeatures">REST API Reference for ListFeatures Operation</seealso>
         public virtual IAsyncResult BeginListFeatures(ListFeaturesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFeaturesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFeaturesResponseUnmarshaller.Instance;
 
@@ -1818,7 +1818,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
         public virtual ListLaunchesResponse ListLaunches(ListLaunchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLaunchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLaunchesResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListLaunches">REST API Reference for ListLaunches Operation</seealso>
         public virtual IAsyncResult BeginListLaunches(ListLaunchesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLaunchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLaunchesResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
         public virtual ListSegmentReferencesResponse ListSegmentReferences(ListSegmentReferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentReferencesResponseUnmarshaller.Instance;
 
@@ -1969,7 +1969,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
         public virtual IAsyncResult BeginListSegmentReferences(ListSegmentReferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentReferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentReferencesResponseUnmarshaller.Instance;
 
@@ -2012,7 +2012,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
         public virtual ListSegmentsResponse ListSegments(ListSegmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentsResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
         public virtual IAsyncResult BeginListSegments(ListSegmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSegmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSegmentsResponseUnmarshaller.Instance;
 
@@ -2075,7 +2075,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2096,7 +2096,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2142,7 +2142,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
         public virtual PutProjectEventsResponse PutProjectEvents(PutProjectEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectEventsResponseUnmarshaller.Instance;
 
@@ -2163,7 +2163,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/PutProjectEvents">REST API Reference for PutProjectEvents Operation</seealso>
         public virtual IAsyncResult BeginPutProjectEvents(PutProjectEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectEventsResponseUnmarshaller.Instance;
 
@@ -2214,7 +2214,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
         public virtual StartExperimentResponse StartExperiment(StartExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
 
@@ -2235,7 +2235,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartExperiment">REST API Reference for StartExperiment Operation</seealso>
         public virtual IAsyncResult BeginStartExperiment(StartExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExperimentResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
         public virtual StartLaunchResponse StartLaunch(StartLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLaunchResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StartLaunch">REST API Reference for StartLaunch Operation</seealso>
         public virtual IAsyncResult BeginStartLaunch(StartLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLaunchResponseUnmarshaller.Instance;
 
@@ -2359,7 +2359,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
         public virtual StopExperimentResponse StopExperiment(StopExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
 
@@ -2380,7 +2380,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopExperiment">REST API Reference for StopExperiment Operation</seealso>
         public virtual IAsyncResult BeginStopExperiment(StopExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopExperimentResponseUnmarshaller.Instance;
 
@@ -2429,7 +2429,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
         public virtual StopLaunchResponse StopLaunch(StopLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopLaunchResponseUnmarshaller.Instance;
 
@@ -2450,7 +2450,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/StopLaunch">REST API Reference for StopLaunch Operation</seealso>
         public virtual IAsyncResult BeginStopLaunch(StopLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopLaunchResponseUnmarshaller.Instance;
 
@@ -2522,7 +2522,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2543,7 +2543,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2586,7 +2586,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
         public virtual TestSegmentPatternResponse TestSegmentPattern(TestSegmentPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestSegmentPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestSegmentPatternResponseUnmarshaller.Instance;
 
@@ -2607,7 +2607,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
         public virtual IAsyncResult BeginTestSegmentPattern(TestSegmentPatternRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestSegmentPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestSegmentPatternResponseUnmarshaller.Instance;
 
@@ -2649,7 +2649,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2670,7 +2670,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2721,7 +2721,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         public virtual UpdateExperimentResponse UpdateExperiment(UpdateExperimentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperimentResponseUnmarshaller.Instance;
 
@@ -2742,7 +2742,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         public virtual IAsyncResult BeginUpdateExperiment(UpdateExperimentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExperimentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExperimentResponseUnmarshaller.Instance;
 
@@ -2797,7 +2797,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
         public virtual UpdateFeatureResponse UpdateFeature(UpdateFeatureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFeatureResponseUnmarshaller.Instance;
 
@@ -2818,7 +2818,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateFeature">REST API Reference for UpdateFeature Operation</seealso>
         public virtual IAsyncResult BeginUpdateFeature(UpdateFeatureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFeatureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFeatureResponseUnmarshaller.Instance;
 
@@ -2870,7 +2870,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
         public virtual UpdateLaunchResponse UpdateLaunch(UpdateLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchResponseUnmarshaller.Instance;
 
@@ -2891,7 +2891,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateLaunch">REST API Reference for UpdateLaunch Operation</seealso>
         public virtual IAsyncResult BeginUpdateLaunch(UpdateLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchResponseUnmarshaller.Instance;
 
@@ -2955,7 +2955,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -2976,7 +2976,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -3033,7 +3033,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
         public virtual UpdateProjectDataDeliveryResponse UpdateProjectDataDelivery(UpdateProjectDataDeliveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectDataDeliveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectDataDeliveryResponseUnmarshaller.Instance;
 
@@ -3054,7 +3054,7 @@ namespace Amazon.CloudWatchEvidently
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UpdateProjectDataDelivery">REST API Reference for UpdateProjectDataDelivery Operation</seealso>
         public virtual IAsyncResult BeginUpdateProjectDataDelivery(UpdateProjectDataDeliveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectDataDeliveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectDataDeliveryResponseUnmarshaller.Instance;
 

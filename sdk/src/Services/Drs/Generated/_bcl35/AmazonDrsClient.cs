@@ -299,7 +299,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
         public virtual AssociateSourceNetworkStackResponse AssociateSourceNetworkStack(AssociateSourceNetworkStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceNetworkStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceNetworkStackResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">REST API Reference for AssociateSourceNetworkStack Operation</seealso>
         public virtual IAsyncResult BeginAssociateSourceNetworkStack(AssociateSourceNetworkStackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceNetworkStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceNetworkStackResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">REST API Reference for CreateExtendedSourceServer Operation</seealso>
         public virtual CreateExtendedSourceServerResponse CreateExtendedSourceServer(CreateExtendedSourceServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtendedSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtendedSourceServerResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">REST API Reference for CreateExtendedSourceServer Operation</seealso>
         public virtual IAsyncResult BeginCreateExtendedSourceServer(CreateExtendedSourceServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtendedSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtendedSourceServerResponseUnmarshaller.Instance;
 
@@ -447,7 +447,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
         public virtual CreateLaunchConfigurationTemplateResponse CreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -468,7 +468,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateReplicationConfigurationTemplate">REST API Reference for CreateReplicationConfigurationTemplate Operation</seealso>
         public virtual CreateReplicationConfigurationTemplateResponse CreateReplicationConfigurationTemplate(CreateReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateReplicationConfigurationTemplate">REST API Reference for CreateReplicationConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicationConfigurationTemplate(CreateReplicationConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
         public virtual CreateSourceNetworkResponse CreateSourceNetwork(CreateSourceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceNetworkResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">REST API Reference for CreateSourceNetwork Operation</seealso>
         public virtual IAsyncResult BeginCreateSourceNetwork(CreateSourceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceNetworkResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteJob(DeleteJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
         public virtual DeleteLaunchActionResponse DeleteLaunchAction(DeleteLaunchActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchActionResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchAction">REST API Reference for DeleteLaunchAction Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunchAction(DeleteLaunchActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchActionResponseUnmarshaller.Instance;
 
@@ -804,7 +804,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
         public virtual DeleteLaunchConfigurationTemplateResponse DeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -876,7 +876,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryInstance">REST API Reference for DeleteRecoveryInstance Operation</seealso>
         public virtual DeleteRecoveryInstanceResponse DeleteRecoveryInstance(DeleteRecoveryInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryInstanceResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryInstance">REST API Reference for DeleteRecoveryInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteRecoveryInstance(DeleteRecoveryInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryInstanceResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         public virtual DeleteReplicationConfigurationTemplateResponse DeleteReplicationConfigurationTemplate(DeleteReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicationConfigurationTemplate(DeleteReplicationConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -1016,7 +1016,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
         public virtual DeleteSourceNetworkResponse DeleteSourceNetwork(DeleteSourceNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceNetworkResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">REST API Reference for DeleteSourceNetwork Operation</seealso>
         public virtual IAsyncResult BeginDeleteSourceNetwork(DeleteSourceNetworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceNetworkResponseUnmarshaller.Instance;
 
@@ -1086,7 +1086,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceServer">REST API Reference for DeleteSourceServer Operation</seealso>
         public virtual DeleteSourceServerResponse DeleteSourceServer(DeleteSourceServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceServerResponseUnmarshaller.Instance;
 
@@ -1107,7 +1107,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceServer">REST API Reference for DeleteSourceServer Operation</seealso>
         public virtual IAsyncResult BeginDeleteSourceServer(DeleteSourceServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceServerResponseUnmarshaller.Instance;
 
@@ -1152,7 +1152,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeJobLogItems">REST API Reference for DescribeJobLogItems Operation</seealso>
         public virtual DescribeJobLogItemsResponse DescribeJobLogItems(DescribeJobLogItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobLogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobLogItemsResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeJobLogItems">REST API Reference for DescribeJobLogItems Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobLogItems(DescribeJobLogItemsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobLogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobLogItemsResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobs(DescribeJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
@@ -1293,7 +1293,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
         public virtual DescribeLaunchConfigurationTemplatesResponse DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
         public virtual IAsyncResult BeginDescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoveryInstances">REST API Reference for DescribeRecoveryInstances Operation</seealso>
         public virtual DescribeRecoveryInstancesResponse DescribeRecoveryInstances(DescribeRecoveryInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoveryInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoveryInstancesResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoveryInstances">REST API Reference for DescribeRecoveryInstances Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecoveryInstances(DescribeRecoveryInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoveryInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoveryInstancesResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoverySnapshots">REST API Reference for DescribeRecoverySnapshots Operation</seealso>
         public virtual DescribeRecoverySnapshotsResponse DescribeRecoverySnapshots(DescribeRecoverySnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoverySnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoverySnapshotsResponseUnmarshaller.Instance;
 
@@ -1449,7 +1449,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoverySnapshots">REST API Reference for DescribeRecoverySnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecoverySnapshots(DescribeRecoverySnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecoverySnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecoverySnapshotsResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeReplicationConfigurationTemplates">REST API Reference for DescribeReplicationConfigurationTemplates Operation</seealso>
         public virtual DescribeReplicationConfigurationTemplatesResponse DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1518,7 +1518,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeReplicationConfigurationTemplates">REST API Reference for DescribeReplicationConfigurationTemplates Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1563,7 +1563,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
         public virtual DescribeSourceNetworksResponse DescribeSourceNetworks(DescribeSourceNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceNetworksResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">REST API Reference for DescribeSourceNetworks Operation</seealso>
         public virtual IAsyncResult BeginDescribeSourceNetworks(DescribeSourceNetworksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceNetworksResponseUnmarshaller.Instance;
 
@@ -1629,7 +1629,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceServers">REST API Reference for DescribeSourceServers Operation</seealso>
         public virtual DescribeSourceServersResponse DescribeSourceServers(DescribeSourceServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceServersResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceServers">REST API Reference for DescribeSourceServers Operation</seealso>
         public virtual IAsyncResult BeginDescribeSourceServers(DescribeSourceServersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceServersResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DisconnectRecoveryInstance">REST API Reference for DisconnectRecoveryInstance Operation</seealso>
         public virtual DisconnectRecoveryInstanceResponse DisconnectRecoveryInstance(DisconnectRecoveryInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectRecoveryInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectRecoveryInstanceResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DisconnectRecoveryInstance">REST API Reference for DisconnectRecoveryInstance Operation</seealso>
         public virtual IAsyncResult BeginDisconnectRecoveryInstance(DisconnectRecoveryInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectRecoveryInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectRecoveryInstanceResponseUnmarshaller.Instance;
 
@@ -1791,7 +1791,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DisconnectSourceServer">REST API Reference for DisconnectSourceServer Operation</seealso>
         public virtual DisconnectSourceServerResponse DisconnectSourceServer(DisconnectSourceServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectSourceServerResponseUnmarshaller.Instance;
 
@@ -1812,7 +1812,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DisconnectSourceServer">REST API Reference for DisconnectSourceServer Operation</seealso>
         public virtual IAsyncResult BeginDisconnectSourceServer(DisconnectSourceServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectSourceServerResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
         public virtual ExportSourceNetworkCfnTemplateResponse ExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSourceNetworkCfnTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSourceNetworkCfnTemplateResponseUnmarshaller.Instance;
 
@@ -1885,7 +1885,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">REST API Reference for ExportSourceNetworkCfnTemplate Operation</seealso>
         public virtual IAsyncResult BeginExportSourceNetworkCfnTemplate(ExportSourceNetworkCfnTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSourceNetworkCfnTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSourceNetworkCfnTemplateResponseUnmarshaller.Instance;
 
@@ -1930,7 +1930,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetFailbackReplicationConfiguration">REST API Reference for GetFailbackReplicationConfiguration Operation</seealso>
         public virtual GetFailbackReplicationConfigurationResponse GetFailbackReplicationConfiguration(GetFailbackReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFailbackReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFailbackReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -1951,7 +1951,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetFailbackReplicationConfiguration">REST API Reference for GetFailbackReplicationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetFailbackReplicationConfiguration(GetFailbackReplicationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFailbackReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFailbackReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -1996,7 +1996,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         public virtual GetLaunchConfigurationResponse GetLaunchConfiguration(GetLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetLaunchConfiguration(GetLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -2065,7 +2065,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetReplicationConfiguration">REST API Reference for GetReplicationConfiguration Operation</seealso>
         public virtual GetReplicationConfigurationResponse GetReplicationConfiguration(GetReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -2086,7 +2086,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetReplicationConfiguration">REST API Reference for GetReplicationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetReplicationConfiguration(GetReplicationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -2131,7 +2131,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual InitializeServiceResponse InitializeService(InitializeServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
 
@@ -2152,7 +2152,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual IAsyncResult BeginInitializeService(InitializeServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
 
@@ -2202,7 +2202,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">REST API Reference for ListExtensibleSourceServers Operation</seealso>
         public virtual ListExtensibleSourceServersResponse ListExtensibleSourceServers(ListExtensibleSourceServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensibleSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensibleSourceServersResponseUnmarshaller.Instance;
 
@@ -2223,7 +2223,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">REST API Reference for ListExtensibleSourceServers Operation</seealso>
         public virtual IAsyncResult BeginListExtensibleSourceServers(ListExtensibleSourceServersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensibleSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensibleSourceServersResponseUnmarshaller.Instance;
 
@@ -2271,7 +2271,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
         public virtual ListLaunchActionsResponse ListLaunchActions(ListLaunchActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLaunchActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLaunchActionsResponseUnmarshaller.Instance;
 
@@ -2292,7 +2292,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListLaunchActions">REST API Reference for ListLaunchActions Operation</seealso>
         public virtual IAsyncResult BeginListLaunchActions(ListLaunchActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLaunchActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLaunchActionsResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">REST API Reference for ListStagingAccounts Operation</seealso>
         public virtual ListStagingAccountsResponse ListStagingAccounts(ListStagingAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStagingAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStagingAccountsResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">REST API Reference for ListStagingAccounts Operation</seealso>
         public virtual IAsyncResult BeginListStagingAccounts(ListStagingAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStagingAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStagingAccountsResponseUnmarshaller.Instance;
 
@@ -2409,7 +2409,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2430,7 +2430,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2482,7 +2482,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
         public virtual PutLaunchActionResponse PutLaunchAction(PutLaunchActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLaunchActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLaunchActionResponseUnmarshaller.Instance;
 
@@ -2503,7 +2503,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/PutLaunchAction">REST API Reference for PutLaunchAction Operation</seealso>
         public virtual IAsyncResult BeginPutLaunchAction(PutLaunchActionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLaunchActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLaunchActionResponseUnmarshaller.Instance;
 
@@ -2555,7 +2555,7 @@ namespace Amazon.Drs
         [Obsolete("WARNING: RetryDataReplication is deprecated")]
         public virtual RetryDataReplicationResponse RetryDataReplication(RetryDataReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryDataReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryDataReplicationResponseUnmarshaller.Instance;
 
@@ -2577,7 +2577,7 @@ namespace Amazon.Drs
         [Obsolete("WARNING: RetryDataReplication is deprecated")]
         public virtual IAsyncResult BeginRetryDataReplication(RetryDataReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryDataReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryDataReplicationResponseUnmarshaller.Instance;
 
@@ -2636,7 +2636,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication">REST API Reference for ReverseReplication Operation</seealso>
         public virtual ReverseReplicationResponse ReverseReplication(ReverseReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReverseReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReverseReplicationResponseUnmarshaller.Instance;
 
@@ -2657,7 +2657,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication">REST API Reference for ReverseReplication Operation</seealso>
         public virtual IAsyncResult BeginReverseReplication(ReverseReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReverseReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReverseReplicationResponseUnmarshaller.Instance;
 
@@ -2711,7 +2711,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartFailbackLaunch">REST API Reference for StartFailbackLaunch Operation</seealso>
         public virtual StartFailbackLaunchResponse StartFailbackLaunch(StartFailbackLaunchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFailbackLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFailbackLaunchResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartFailbackLaunch">REST API Reference for StartFailbackLaunch Operation</seealso>
         public virtual IAsyncResult BeginStartFailbackLaunch(StartFailbackLaunchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFailbackLaunchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFailbackLaunchResponseUnmarshaller.Instance;
 
@@ -2782,7 +2782,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecovery">REST API Reference for StartRecovery Operation</seealso>
         public virtual StartRecoveryResponse StartRecovery(StartRecoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecoveryResponseUnmarshaller.Instance;
 
@@ -2803,7 +2803,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecovery">REST API Reference for StartRecovery Operation</seealso>
         public virtual IAsyncResult BeginStartRecovery(StartRecoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecoveryResponseUnmarshaller.Instance;
 
@@ -2853,7 +2853,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
         public virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
 
@@ -2874,7 +2874,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
         public virtual IAsyncResult BeginStartReplication(StartReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
 
@@ -2927,7 +2927,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
         public virtual StartSourceNetworkRecoveryResponse StartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSourceNetworkRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSourceNetworkRecoveryResponseUnmarshaller.Instance;
 
@@ -2948,7 +2948,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">REST API Reference for StartSourceNetworkRecovery Operation</seealso>
         public virtual IAsyncResult BeginStartSourceNetworkRecovery(StartSourceNetworkRecoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSourceNetworkRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSourceNetworkRecoveryResponseUnmarshaller.Instance;
 
@@ -2998,7 +2998,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
         public virtual StartSourceNetworkReplicationResponse StartSourceNetworkReplication(StartSourceNetworkReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSourceNetworkReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSourceNetworkReplicationResponseUnmarshaller.Instance;
 
@@ -3019,7 +3019,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">REST API Reference for StartSourceNetworkReplication Operation</seealso>
         public virtual IAsyncResult BeginStartSourceNetworkReplication(StartSourceNetworkReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSourceNetworkReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSourceNetworkReplicationResponseUnmarshaller.Instance;
 
@@ -3065,7 +3065,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopFailback">REST API Reference for StopFailback Operation</seealso>
         public virtual StopFailbackResponse StopFailback(StopFailbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFailbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFailbackResponseUnmarshaller.Instance;
 
@@ -3086,7 +3086,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopFailback">REST API Reference for StopFailback Operation</seealso>
         public virtual IAsyncResult BeginStopFailback(StopFailbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFailbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFailbackResponseUnmarshaller.Instance;
 
@@ -3136,7 +3136,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
         public virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
 
@@ -3157,7 +3157,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
         public virtual IAsyncResult BeginStopReplication(StopReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
 
@@ -3210,7 +3210,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
         public virtual StopSourceNetworkReplicationResponse StopSourceNetworkReplication(StopSourceNetworkReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSourceNetworkReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSourceNetworkReplicationResponseUnmarshaller.Instance;
 
@@ -3231,7 +3231,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">REST API Reference for StopSourceNetworkReplication Operation</seealso>
         public virtual IAsyncResult BeginStopSourceNetworkReplication(StopSourceNetworkReplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSourceNetworkReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSourceNetworkReplicationResponseUnmarshaller.Instance;
 
@@ -3282,7 +3282,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3303,7 +3303,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3354,7 +3354,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/TerminateRecoveryInstances">REST API Reference for TerminateRecoveryInstances Operation</seealso>
         public virtual TerminateRecoveryInstancesResponse TerminateRecoveryInstances(TerminateRecoveryInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateRecoveryInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateRecoveryInstancesResponseUnmarshaller.Instance;
 
@@ -3375,7 +3375,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/TerminateRecoveryInstances">REST API Reference for TerminateRecoveryInstances Operation</seealso>
         public virtual IAsyncResult BeginTerminateRecoveryInstances(TerminateRecoveryInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateRecoveryInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateRecoveryInstancesResponseUnmarshaller.Instance;
 
@@ -3424,7 +3424,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3445,7 +3445,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3494,7 +3494,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateFailbackReplicationConfiguration">REST API Reference for UpdateFailbackReplicationConfiguration Operation</seealso>
         public virtual UpdateFailbackReplicationConfigurationResponse UpdateFailbackReplicationConfiguration(UpdateFailbackReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFailbackReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFailbackReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3515,7 +3515,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateFailbackReplicationConfiguration">REST API Reference for UpdateFailbackReplicationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateFailbackReplicationConfiguration(UpdateFailbackReplicationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFailbackReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFailbackReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3567,7 +3567,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfiguration">REST API Reference for UpdateLaunchConfiguration Operation</seealso>
         public virtual UpdateLaunchConfigurationResponse UpdateLaunchConfiguration(UpdateLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -3588,7 +3588,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfiguration">REST API Reference for UpdateLaunchConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateLaunchConfiguration(UpdateLaunchConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -3639,7 +3639,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
         public virtual UpdateLaunchConfigurationTemplateResponse UpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -3660,7 +3660,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -3715,7 +3715,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateReplicationConfiguration">REST API Reference for UpdateReplicationConfiguration Operation</seealso>
         public virtual UpdateReplicationConfigurationResponse UpdateReplicationConfiguration(UpdateReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3736,7 +3736,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateReplicationConfiguration">REST API Reference for UpdateReplicationConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateReplicationConfiguration(UpdateReplicationConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -3787,7 +3787,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateReplicationConfigurationTemplate">REST API Reference for UpdateReplicationConfigurationTemplate Operation</seealso>
         public virtual UpdateReplicationConfigurationTemplateResponse UpdateReplicationConfigurationTemplate(UpdateReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -3808,7 +3808,7 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateReplicationConfigurationTemplate">REST API Reference for UpdateReplicationConfigurationTemplate Operation</seealso>
         public virtual IAsyncResult BeginUpdateReplicationConfigurationTemplate(UpdateReplicationConfigurationTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 

@@ -303,7 +303,7 @@ namespace Amazon.Keyspaces
 
         internal virtual CreateKeyspaceResponse CreateKeyspace(CreateKeyspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyspaceResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateKeyspace">REST API Reference for CreateKeyspace Operation</seealso>
         public virtual Task<CreateKeyspaceResponse> CreateKeyspaceAsync(CreateKeyspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyspaceResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.Keyspaces
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.Keyspaces
 
         internal virtual CreateTypeResponse CreateType(CreateTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
@@ -498,7 +498,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateType">REST API Reference for CreateType Operation</seealso>
         public virtual Task<CreateTypeResponse> CreateTypeAsync(CreateTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTypeResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.Keyspaces
 
         internal virtual DeleteKeyspaceResponse DeleteKeyspace(DeleteKeyspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyspaceResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/DeleteKeyspace">REST API Reference for DeleteKeyspace Operation</seealso>
         public virtual Task<DeleteKeyspaceResponse> DeleteKeyspaceAsync(DeleteKeyspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyspaceResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.Keyspaces
 
         internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.Keyspaces
 
         internal virtual DeleteTypeResponse DeleteType(DeleteTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/DeleteType">REST API Reference for DeleteType Operation</seealso>
         public virtual Task<DeleteTypeResponse> DeleteTypeAsync(DeleteTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTypeResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.Keyspaces
 
         internal virtual GetKeyspaceResponse GetKeyspace(GetKeyspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyspaceResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetKeyspace">REST API Reference for GetKeyspace Operation</seealso>
         public virtual Task<GetKeyspaceResponse> GetKeyspaceAsync(GetKeyspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyspaceResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.Keyspaces
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTable">REST API Reference for GetTable Operation</seealso>
         public virtual Task<GetTableResponse> GetTableAsync(GetTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.Keyspaces
 
         internal virtual GetTableAutoScalingSettingsResponse GetTableAutoScalingSettings(GetTableAutoScalingSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableAutoScalingSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableAutoScalingSettingsResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings">REST API Reference for GetTableAutoScalingSettings Operation</seealso>
         public virtual Task<GetTableAutoScalingSettingsResponse> GetTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableAutoScalingSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableAutoScalingSettingsResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.Keyspaces
 
         internal virtual GetTypeResponse GetType(GetTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetType">REST API Reference for GetType Operation</seealso>
         public virtual Task<GetTypeResponse> GetTypeAsync(GetTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTypeResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.Keyspaces
 
         internal virtual ListKeyspacesResponse ListKeyspaces(ListKeyspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyspacesResponseUnmarshaller.Instance;
 
@@ -998,7 +998,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListKeyspaces">REST API Reference for ListKeyspaces Operation</seealso>
         public virtual Task<ListKeyspacesResponse> ListKeyspacesAsync(ListKeyspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeyspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeyspacesResponseUnmarshaller.Instance;
 
@@ -1011,7 +1011,7 @@ namespace Amazon.Keyspaces
 
         internal virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -1057,7 +1057,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual Task<ListTablesResponse> ListTablesAsync(ListTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
 
@@ -1070,7 +1070,7 @@ namespace Amazon.Keyspaces
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1116,7 +1116,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.Keyspaces
 
         internal virtual ListTypesResponse ListTypes(ListTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTypes">REST API Reference for ListTypes Operation</seealso>
         public virtual Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTypesResponseUnmarshaller.Instance;
 
@@ -1191,7 +1191,7 @@ namespace Amazon.Keyspaces
 
         internal virtual RestoreTableResponse RestoreTable(RestoreTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/RestoreTable">REST API Reference for RestoreTable Operation</seealso>
         public virtual Task<RestoreTableResponse> RestoreTableAsync(RestoreTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreTableResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.Keyspaces
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1371,7 +1371,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.Keyspaces
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.Keyspaces
 
         internal virtual UpdateKeyspaceResponse UpdateKeyspace(UpdateKeyspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyspaceResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
         public virtual Task<UpdateKeyspaceResponse> UpdateKeyspaceAsync(UpdateKeyspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyspaceResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.Keyspaces
 
         internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.Keyspaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
 

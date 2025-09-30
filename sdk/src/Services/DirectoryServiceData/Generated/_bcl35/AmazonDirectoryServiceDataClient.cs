@@ -381,7 +381,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/AddGroupMember">REST API Reference for AddGroupMember Operation</seealso>
         public virtual AddGroupMemberResponse AddGroupMember(AddGroupMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddGroupMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddGroupMemberResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/AddGroupMember">REST API Reference for AddGroupMember Operation</seealso>
         public virtual IAsyncResult BeginAddGroupMember(AddGroupMemberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddGroupMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddGroupMemberResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -588,7 +588,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -663,7 +663,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -684,7 +684,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -759,7 +759,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -780,7 +780,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeGroup(DescribeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual IAsyncResult BeginDescribeUser(DescribeUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DisableUser">REST API Reference for DisableUser Operation</seealso>
         public virtual DisableUserResponse DisableUser(DisableUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/DisableUser">REST API Reference for DisableUser Operation</seealso>
         public virtual IAsyncResult BeginDisableUser(DisableUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual IAsyncResult BeginListGroupMembers(ListGroupMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
@@ -1212,7 +1212,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroupsForMember">REST API Reference for ListGroupsForMember Operation</seealso>
         public virtual ListGroupsForMemberResponse ListGroupsForMember(ListGroupsForMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsForMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsForMemberResponseUnmarshaller.Instance;
 
@@ -1329,7 +1329,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListGroupsForMember">REST API Reference for ListGroupsForMember Operation</seealso>
         public virtual IAsyncResult BeginListGroupsForMember(ListGroupsForMemberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsForMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsForMemberResponseUnmarshaller.Instance;
 
@@ -1401,7 +1401,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1422,7 +1422,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/RemoveGroupMember">REST API Reference for RemoveGroupMember Operation</seealso>
         public virtual RemoveGroupMemberResponse RemoveGroupMember(RemoveGroupMemberRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveGroupMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveGroupMemberResponseUnmarshaller.Instance;
 
@@ -1518,7 +1518,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/RemoveGroupMember">REST API Reference for RemoveGroupMember Operation</seealso>
         public virtual IAsyncResult BeginRemoveGroupMember(RemoveGroupMemberRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveGroupMemberRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveGroupMemberResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
         public virtual SearchGroupsResponse SearchGroups(SearchGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
         public virtual IAsyncResult BeginSearchGroups(SearchGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual SearchUsersResponse SearchUsers(SearchUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -1707,7 +1707,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual IAsyncResult BeginSearchUsers(SearchUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -1899,7 +1899,7 @@ namespace Amazon.DirectoryServiceData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directory-service-data-2023-05-31/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

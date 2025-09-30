@@ -315,7 +315,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ApprovePlanExecutionStep">REST API Reference for ApprovePlanExecutionStep Operation</seealso>
         public virtual ApprovePlanExecutionStepResponse ApprovePlanExecutionStep(ApprovePlanExecutionStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApprovePlanExecutionStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApprovePlanExecutionStepResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ApprovePlanExecutionStep">REST API Reference for ApprovePlanExecutionStep Operation</seealso>
         public virtual IAsyncResult BeginApprovePlanExecutionStep(ApprovePlanExecutionStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApprovePlanExecutionStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApprovePlanExecutionStepResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CancelPlanExecution">REST API Reference for CancelPlanExecution Operation</seealso>
         public virtual CancelPlanExecutionResponse CancelPlanExecution(CancelPlanExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPlanExecutionResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CancelPlanExecution">REST API Reference for CancelPlanExecution Operation</seealso>
         public virtual IAsyncResult BeginCancelPlanExecution(CancelPlanExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelPlanExecutionResponseUnmarshaller.Instance;
 
@@ -455,7 +455,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CreatePlan">REST API Reference for CreatePlan Operation</seealso>
         public virtual CreatePlanResponse CreatePlan(CreatePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlanResponseUnmarshaller.Instance;
 
@@ -476,7 +476,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/CreatePlan">REST API Reference for CreatePlan Operation</seealso>
         public virtual IAsyncResult BeginCreatePlan(CreatePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlanResponseUnmarshaller.Instance;
 
@@ -531,7 +531,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/DeletePlan">REST API Reference for DeletePlan Operation</seealso>
         public virtual DeletePlanResponse DeletePlan(DeletePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlanResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/DeletePlan">REST API Reference for DeletePlan Operation</seealso>
         public virtual IAsyncResult BeginDeletePlan(DeletePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlanResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlan">REST API Reference for GetPlan Operation</seealso>
         public virtual GetPlanResponse GetPlan(GetPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanResponseUnmarshaller.Instance;
 
@@ -615,7 +615,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlan">REST API Reference for GetPlan Operation</seealso>
         public virtual IAsyncResult BeginGetPlan(GetPlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanEvaluationStatus">REST API Reference for GetPlanEvaluationStatus Operation</seealso>
         public virtual GetPlanEvaluationStatusResponse GetPlanEvaluationStatus(GetPlanEvaluationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanEvaluationStatusResponseUnmarshaller.Instance;
 
@@ -687,7 +687,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanEvaluationStatus">REST API Reference for GetPlanEvaluationStatus Operation</seealso>
         public virtual IAsyncResult BeginGetPlanEvaluationStatus(GetPlanEvaluationStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanEvaluationStatusResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanExecution">REST API Reference for GetPlanExecution Operation</seealso>
         public virtual GetPlanExecutionResponse GetPlanExecution(GetPlanExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanExecutionResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanExecution">REST API Reference for GetPlanExecution Operation</seealso>
         public virtual IAsyncResult BeginGetPlanExecution(GetPlanExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanExecutionResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanInRegion">REST API Reference for GetPlanInRegion Operation</seealso>
         public virtual GetPlanInRegionResponse GetPlanInRegion(GetPlanInRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanInRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanInRegionResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GetPlanInRegion">REST API Reference for GetPlanInRegion Operation</seealso>
         public virtual IAsyncResult BeginGetPlanInRegion(GetPlanInRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanInRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanInRegionResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutionEvents">REST API Reference for ListPlanExecutionEvents Operation</seealso>
         public virtual ListPlanExecutionEventsResponse ListPlanExecutionEvents(ListPlanExecutionEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlanExecutionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlanExecutionEventsResponseUnmarshaller.Instance;
 
@@ -900,7 +900,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutionEvents">REST API Reference for ListPlanExecutionEvents Operation</seealso>
         public virtual IAsyncResult BeginListPlanExecutionEvents(ListPlanExecutionEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlanExecutionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlanExecutionEventsResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutions">REST API Reference for ListPlanExecutions Operation</seealso>
         public virtual ListPlanExecutionsResponse ListPlanExecutions(ListPlanExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlanExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlanExecutionsResponseUnmarshaller.Instance;
 
@@ -971,7 +971,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlanExecutions">REST API Reference for ListPlanExecutions Operation</seealso>
         public virtual IAsyncResult BeginListPlanExecutions(ListPlanExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlanExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlanExecutionsResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlans">REST API Reference for ListPlans Operation</seealso>
         public virtual ListPlansResponse ListPlans(ListPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlansResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlans">REST API Reference for ListPlans Operation</seealso>
         public virtual IAsyncResult BeginListPlans(ListPlansRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlansResponseUnmarshaller.Instance;
 
@@ -1067,7 +1067,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlansInRegion">REST API Reference for ListPlansInRegion Operation</seealso>
         public virtual ListPlansInRegionResponse ListPlansInRegion(ListPlansInRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlansInRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlansInRegionResponseUnmarshaller.Instance;
 
@@ -1088,7 +1088,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListPlansInRegion">REST API Reference for ListPlansInRegion Operation</seealso>
         public virtual IAsyncResult BeginListPlansInRegion(ListPlansInRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlansInRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlansInRegionResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecks">REST API Reference for ListRoute53HealthChecks Operation</seealso>
         public virtual ListRoute53HealthChecksResponse ListRoute53HealthChecks(ListRoute53HealthChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoute53HealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoute53HealthChecksResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecks">REST API Reference for ListRoute53HealthChecks Operation</seealso>
         public virtual IAsyncResult BeginListRoute53HealthChecks(ListRoute53HealthChecksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoute53HealthChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoute53HealthChecksResponseUnmarshaller.Instance;
 
@@ -1215,7 +1215,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1236,7 +1236,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/StartPlanExecution">REST API Reference for StartPlanExecution Operation</seealso>
         public virtual StartPlanExecutionResponse StartPlanExecution(StartPlanExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPlanExecutionResponseUnmarshaller.Instance;
 
@@ -1326,7 +1326,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/StartPlanExecution">REST API Reference for StartPlanExecution Operation</seealso>
         public virtual IAsyncResult BeginStartPlanExecution(StartPlanExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPlanExecutionResponseUnmarshaller.Instance;
 
@@ -1376,7 +1376,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1397,7 +1397,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
         public virtual UpdatePlanResponse UpdatePlan(UpdatePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlan">REST API Reference for UpdatePlan Operation</seealso>
         public virtual IAsyncResult BeginUpdatePlan(UpdatePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecution">REST API Reference for UpdatePlanExecution Operation</seealso>
         public virtual UpdatePlanExecutionResponse UpdatePlanExecution(UpdatePlanExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanExecutionResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecution">REST API Reference for UpdatePlanExecution Operation</seealso>
         public virtual IAsyncResult BeginUpdatePlanExecution(UpdatePlanExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanExecutionResponseUnmarshaller.Instance;
 
@@ -1660,7 +1660,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecutionStep">REST API Reference for UpdatePlanExecutionStep Operation</seealso>
         public virtual UpdatePlanExecutionStepResponse UpdatePlanExecutionStep(UpdatePlanExecutionStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanExecutionStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanExecutionStepResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.ARCRegionswitch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/UpdatePlanExecutionStep">REST API Reference for UpdatePlanExecutionStep Operation</seealso>
         public virtual IAsyncResult BeginUpdatePlanExecutionStep(UpdatePlanExecutionStepRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlanExecutionStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlanExecutionStepResponseUnmarshaller.Instance;
 

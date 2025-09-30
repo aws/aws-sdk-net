@@ -289,7 +289,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">REST API Reference for CreateFHIRDatastore Operation</seealso>
         public virtual CreateFHIRDatastoreResponse CreateFHIRDatastore(CreateFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -310,7 +310,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">REST API Reference for CreateFHIRDatastore Operation</seealso>
         public virtual IAsyncResult BeginCreateFHIRDatastore(CreateFHIRDatastoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">REST API Reference for DeleteFHIRDatastore Operation</seealso>
         public virtual DeleteFHIRDatastoreResponse DeleteFHIRDatastore(DeleteFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">REST API Reference for DeleteFHIRDatastore Operation</seealso>
         public virtual IAsyncResult BeginDeleteFHIRDatastore(DeleteFHIRDatastoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">REST API Reference for DescribeFHIRDatastore Operation</seealso>
         public virtual DescribeFHIRDatastoreResponse DescribeFHIRDatastore(DescribeFHIRDatastoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">REST API Reference for DescribeFHIRDatastore Operation</seealso>
         public virtual IAsyncResult BeginDescribeFHIRDatastore(DescribeFHIRDatastoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRDatastoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRDatastoreResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
         public virtual DescribeFHIRExportJobResponse DescribeFHIRExportJob(DescribeFHIRExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeFHIRExportJob(DescribeFHIRExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">REST API Reference for DescribeFHIRImportJob Operation</seealso>
         public virtual DescribeFHIRImportJobResponse DescribeFHIRImportJob(DescribeFHIRImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -580,7 +580,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">REST API Reference for DescribeFHIRImportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeFHIRImportJob(DescribeFHIRImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">REST API Reference for ListFHIRDatastores Operation</seealso>
         public virtual ListFHIRDatastoresResponse ListFHIRDatastores(ListFHIRDatastoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRDatastoresResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">REST API Reference for ListFHIRDatastores Operation</seealso>
         public virtual IAsyncResult BeginListFHIRDatastores(ListFHIRDatastoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRDatastoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRDatastoresResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs">REST API Reference for ListFHIRExportJobs Operation</seealso>
         public virtual ListFHIRExportJobsResponse ListFHIRExportJobs(ListFHIRExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRExportJobs">REST API Reference for ListFHIRExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListFHIRExportJobs(ListFHIRExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRExportJobsResponseUnmarshaller.Instance;
 
@@ -760,7 +760,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs">REST API Reference for ListFHIRImportJobs Operation</seealso>
         public virtual ListFHIRImportJobsResponse ListFHIRImportJobs(ListFHIRImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRImportJobs">REST API Reference for ListFHIRImportJobs Operation</seealso>
         public virtual IAsyncResult BeginListFHIRImportJobs(ListFHIRImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFHIRImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFHIRImportJobsResponseUnmarshaller.Instance;
 
@@ -820,7 +820,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
         public virtual StartFHIRExportJobResponse StartFHIRExportJob(StartFHIRExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
         public virtual IAsyncResult BeginStartFHIRExportJob(StartFHIRExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRExportJobResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRImportJob">REST API Reference for StartFHIRImportJob Operation</seealso>
         public virtual StartFHIRImportJobResponse StartFHIRImportJob(StartFHIRImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -981,7 +981,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRImportJob">REST API Reference for StartFHIRImportJob Operation</seealso>
         public virtual IAsyncResult BeginStartFHIRImportJob(StartFHIRImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFHIRImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFHIRImportJobResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.HealthLake
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

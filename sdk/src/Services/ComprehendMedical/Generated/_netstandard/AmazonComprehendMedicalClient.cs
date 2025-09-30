@@ -259,7 +259,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DescribeEntitiesDetectionV2JobResponse DescribeEntitiesDetectionV2Job(DescribeEntitiesDetectionV2JobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -297,7 +297,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeEntitiesDetectionV2Job">REST API Reference for DescribeEntitiesDetectionV2Job Operation</seealso>
         public virtual Task<DescribeEntitiesDetectionV2JobResponse> DescribeEntitiesDetectionV2JobAsync(DescribeEntitiesDetectionV2JobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -310,7 +310,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DescribeICD10CMInferenceJobResponse DescribeICD10CMInferenceJob(DescribeICD10CMInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob">REST API Reference for DescribeICD10CMInferenceJob Operation</seealso>
         public virtual Task<DescribeICD10CMInferenceJobResponse> DescribeICD10CMInferenceJobAsync(DescribeICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DescribePHIDetectionJobResponse DescribePHIDetectionJob(DescribePHIDetectionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -399,7 +399,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribePHIDetectionJob">REST API Reference for DescribePHIDetectionJob Operation</seealso>
         public virtual Task<DescribePHIDetectionJobResponse> DescribePHIDetectionJobAsync(DescribePHIDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DescribeRxNormInferenceJobResponse DescribeRxNormInferenceJob(DescribeRxNormInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob">REST API Reference for DescribeRxNormInferenceJob Operation</seealso>
         public virtual Task<DescribeRxNormInferenceJobResponse> DescribeRxNormInferenceJobAsync(DescribeRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DescribeSNOMEDCTInferenceJobResponse DescribeSNOMEDCTInferenceJob(DescribeSNOMEDCTInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeSNOMEDCTInferenceJob">REST API Reference for DescribeSNOMEDCTInferenceJob Operation</seealso>
         public virtual Task<DescribeSNOMEDCTInferenceJobResponse> DescribeSNOMEDCTInferenceJobAsync(DescribeSNOMEDCTInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.ComprehendMedical
         [Obsolete("This operation is deprecated, use DetectEntitiesV2 instead.")]
         internal virtual DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.ComprehendMedical
         [Obsolete("This operation is deprecated, use DetectEntitiesV2 instead.")]
         public virtual Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectEntitiesResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DetectEntitiesV2Response DetectEntitiesV2(DetectEntitiesV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectEntitiesV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectEntitiesV2ResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">REST API Reference for DetectEntitiesV2 Operation</seealso>
         public virtual Task<DetectEntitiesV2Response> DetectEntitiesV2Async(DetectEntitiesV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectEntitiesV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectEntitiesV2ResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual DetectPHIResponse DetectPHI(DetectPHIRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">REST API Reference for DetectPHI Operation</seealso>
         public virtual Task<DetectPHIResponse> DetectPHIAsync(DetectPHIRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectPHIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectPHIResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual InferICD10CMResponse InferICD10CM(InferICD10CMRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferICD10CMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferICD10CMResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">REST API Reference for InferICD10CM Operation</seealso>
         public virtual Task<InferICD10CMResponse> InferICD10CMAsync(InferICD10CMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferICD10CMRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferICD10CMResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual InferRxNormResponse InferRxNorm(InferRxNormRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferRxNormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferRxNormResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">REST API Reference for InferRxNorm Operation</seealso>
         public virtual Task<InferRxNormResponse> InferRxNormAsync(InferRxNormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferRxNormRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferRxNormResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual InferSNOMEDCTResponse InferSNOMEDCT(InferSNOMEDCTRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferSNOMEDCTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferSNOMEDCTResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferSNOMEDCT">REST API Reference for InferSNOMEDCT Operation</seealso>
         public virtual Task<InferSNOMEDCTResponse> InferSNOMEDCTAsync(InferSNOMEDCTRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InferSNOMEDCTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InferSNOMEDCTResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual ListEntitiesDetectionV2JobsResponse ListEntitiesDetectionV2Jobs(ListEntitiesDetectionV2JobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesDetectionV2JobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesDetectionV2JobsResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListEntitiesDetectionV2Jobs">REST API Reference for ListEntitiesDetectionV2Jobs Operation</seealso>
         public virtual Task<ListEntitiesDetectionV2JobsResponse> ListEntitiesDetectionV2JobsAsync(ListEntitiesDetectionV2JobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesDetectionV2JobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesDetectionV2JobsResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual ListICD10CMInferenceJobsResponse ListICD10CMInferenceJobs(ListICD10CMInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListICD10CMInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListICD10CMInferenceJobsResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs">REST API Reference for ListICD10CMInferenceJobs Operation</seealso>
         public virtual Task<ListICD10CMInferenceJobsResponse> ListICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListICD10CMInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListICD10CMInferenceJobsResponseUnmarshaller.Instance;
 
@@ -997,7 +997,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual ListPHIDetectionJobsResponse ListPHIDetectionJobs(ListPHIDetectionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPHIDetectionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPHIDetectionJobsResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListPHIDetectionJobs">REST API Reference for ListPHIDetectionJobs Operation</seealso>
         public virtual Task<ListPHIDetectionJobsResponse> ListPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPHIDetectionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPHIDetectionJobsResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual ListRxNormInferenceJobsResponse ListRxNormInferenceJobs(ListRxNormInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRxNormInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRxNormInferenceJobsResponseUnmarshaller.Instance;
 
@@ -1084,7 +1084,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs">REST API Reference for ListRxNormInferenceJobs Operation</seealso>
         public virtual Task<ListRxNormInferenceJobsResponse> ListRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRxNormInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRxNormInferenceJobsResponseUnmarshaller.Instance;
 
@@ -1097,7 +1097,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual ListSNOMEDCTInferenceJobsResponse ListSNOMEDCTInferenceJobs(ListSNOMEDCTInferenceJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSNOMEDCTInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSNOMEDCTInferenceJobsResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListSNOMEDCTInferenceJobs">REST API Reference for ListSNOMEDCTInferenceJobs Operation</seealso>
         public virtual Task<ListSNOMEDCTInferenceJobsResponse> ListSNOMEDCTInferenceJobsAsync(ListSNOMEDCTInferenceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSNOMEDCTInferenceJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSNOMEDCTInferenceJobsResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StartEntitiesDetectionV2JobResponse StartEntitiesDetectionV2Job(StartEntitiesDetectionV2JobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartEntitiesDetectionV2Job">REST API Reference for StartEntitiesDetectionV2Job Operation</seealso>
         public virtual Task<StartEntitiesDetectionV2JobResponse> StartEntitiesDetectionV2JobAsync(StartEntitiesDetectionV2JobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -1198,7 +1198,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StartICD10CMInferenceJobResponse StartICD10CMInferenceJob(StartICD10CMInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob">REST API Reference for StartICD10CMInferenceJob Operation</seealso>
         public virtual Task<StartICD10CMInferenceJobResponse> StartICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -1250,7 +1250,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StartPHIDetectionJobResponse StartPHIDetectionJob(StartPHIDetectionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartPHIDetectionJob">REST API Reference for StartPHIDetectionJob Operation</seealso>
         public virtual Task<StartPHIDetectionJobResponse> StartPHIDetectionJobAsync(StartPHIDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StartRxNormInferenceJobResponse StartRxNormInferenceJob(StartRxNormInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -1340,7 +1340,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob">REST API Reference for StartRxNormInferenceJob Operation</seealso>
         public virtual Task<StartRxNormInferenceJobResponse> StartRxNormInferenceJobAsync(StartRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -1353,7 +1353,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StartSNOMEDCTInferenceJobResponse StartSNOMEDCTInferenceJob(StartSNOMEDCTInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartSNOMEDCTInferenceJob">REST API Reference for StartSNOMEDCTInferenceJob Operation</seealso>
         public virtual Task<StartSNOMEDCTInferenceJobResponse> StartSNOMEDCTInferenceJobAsync(StartSNOMEDCTInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 
@@ -1405,7 +1405,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StopEntitiesDetectionV2JobResponse StopEntitiesDetectionV2Job(StopEntitiesDetectionV2JobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopEntitiesDetectionV2Job">REST API Reference for StopEntitiesDetectionV2Job Operation</seealso>
         public virtual Task<StopEntitiesDetectionV2JobResponse> StopEntitiesDetectionV2JobAsync(StopEntitiesDetectionV2JobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEntitiesDetectionV2JobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEntitiesDetectionV2JobResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StopICD10CMInferenceJobResponse StopICD10CMInferenceJob(StopICD10CMInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -1482,7 +1482,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob">REST API Reference for StopICD10CMInferenceJob Operation</seealso>
         public virtual Task<StopICD10CMInferenceJobResponse> StopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopICD10CMInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopICD10CMInferenceJobResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StopPHIDetectionJobResponse StopPHIDetectionJob(StopPHIDetectionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopPHIDetectionJob">REST API Reference for StopPHIDetectionJob Operation</seealso>
         public virtual Task<StopPHIDetectionJobResponse> StopPHIDetectionJobAsync(StopPHIDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopPHIDetectionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopPHIDetectionJobResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StopRxNormInferenceJobResponse StopRxNormInferenceJob(StopRxNormInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob">REST API Reference for StopRxNormInferenceJob Operation</seealso>
         public virtual Task<StopRxNormInferenceJobResponse> StopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRxNormInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRxNormInferenceJobResponseUnmarshaller.Instance;
 
@@ -1585,7 +1585,7 @@ namespace Amazon.ComprehendMedical
 
         internal virtual StopSNOMEDCTInferenceJobResponse StopSNOMEDCTInferenceJob(StopSNOMEDCTInferenceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 
@@ -1622,7 +1622,7 @@ namespace Amazon.ComprehendMedical
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopSNOMEDCTInferenceJob">REST API Reference for StopSNOMEDCTInferenceJob Operation</seealso>
         public virtual Task<StopSNOMEDCTInferenceJobResponse> StopSNOMEDCTInferenceJobAsync(StopSNOMEDCTInferenceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSNOMEDCTInferenceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSNOMEDCTInferenceJobResponseUnmarshaller.Instance;
 

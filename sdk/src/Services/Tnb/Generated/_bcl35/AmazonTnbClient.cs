@@ -300,7 +300,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CancelSolNetworkOperation">REST API Reference for CancelSolNetworkOperation Operation</seealso>
         public virtual CancelSolNetworkOperationResponse CancelSolNetworkOperation(CancelSolNetworkOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSolNetworkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSolNetworkOperationResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CancelSolNetworkOperation">REST API Reference for CancelSolNetworkOperation Operation</seealso>
         public virtual IAsyncResult BeginCancelSolNetworkOperation(CancelSolNetworkOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSolNetworkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSolNetworkOperationResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolFunctionPackage">REST API Reference for CreateSolFunctionPackage Operation</seealso>
         public virtual CreateSolFunctionPackageResponse CreateSolFunctionPackage(CreateSolFunctionPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolFunctionPackage">REST API Reference for CreateSolFunctionPackage Operation</seealso>
         public virtual IAsyncResult BeginCreateSolFunctionPackage(CreateSolFunctionPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkInstance">REST API Reference for CreateSolNetworkInstance Operation</seealso>
         public virtual CreateSolNetworkInstanceResponse CreateSolNetworkInstance(CreateSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkInstance">REST API Reference for CreateSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginCreateSolNetworkInstance(CreateSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkPackage">REST API Reference for CreateSolNetworkPackage Operation</seealso>
         public virtual CreateSolNetworkPackageResponse CreateSolNetworkPackage(CreateSolNetworkPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/CreateSolNetworkPackage">REST API Reference for CreateSolNetworkPackage Operation</seealso>
         public virtual IAsyncResult BeginCreateSolNetworkPackage(CreateSolNetworkPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolFunctionPackage">REST API Reference for DeleteSolFunctionPackage Operation</seealso>
         public virtual DeleteSolFunctionPackageResponse DeleteSolFunctionPackage(DeleteSolFunctionPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -669,7 +669,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolFunctionPackage">REST API Reference for DeleteSolFunctionPackage Operation</seealso>
         public virtual IAsyncResult BeginDeleteSolFunctionPackage(DeleteSolFunctionPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkInstance">REST API Reference for DeleteSolNetworkInstance Operation</seealso>
         public virtual DeleteSolNetworkInstanceResponse DeleteSolNetworkInstance(DeleteSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkInstance">REST API Reference for DeleteSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginDeleteSolNetworkInstance(DeleteSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkPackage">REST API Reference for DeleteSolNetworkPackage Operation</seealso>
         public virtual DeleteSolNetworkPackageResponse DeleteSolNetworkPackage(DeleteSolNetworkPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -833,7 +833,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/DeleteSolNetworkPackage">REST API Reference for DeleteSolNetworkPackage Operation</seealso>
         public virtual IAsyncResult BeginDeleteSolNetworkPackage(DeleteSolNetworkPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionInstance">REST API Reference for GetSolFunctionInstance Operation</seealso>
         public virtual GetSolFunctionInstanceResponse GetSolFunctionInstance(GetSolFunctionInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionInstanceResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionInstance">REST API Reference for GetSolFunctionInstance Operation</seealso>
         public virtual IAsyncResult BeginGetSolFunctionInstance(GetSolFunctionInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionInstanceResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackage">REST API Reference for GetSolFunctionPackage Operation</seealso>
         public virtual GetSolFunctionPackageResponse GetSolFunctionPackage(GetSolFunctionPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackage">REST API Reference for GetSolFunctionPackage Operation</seealso>
         public virtual IAsyncResult BeginGetSolFunctionPackage(GetSolFunctionPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -1045,7 +1045,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackageContent">REST API Reference for GetSolFunctionPackageContent Operation</seealso>
         public virtual GetSolFunctionPackageContentResponse GetSolFunctionPackageContent(GetSolFunctionPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackageContent">REST API Reference for GetSolFunctionPackageContent Operation</seealso>
         public virtual IAsyncResult BeginGetSolFunctionPackageContent(GetSolFunctionPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackageDescriptor">REST API Reference for GetSolFunctionPackageDescriptor Operation</seealso>
         public virtual GetSolFunctionPackageDescriptorResponse GetSolFunctionPackageDescriptor(GetSolFunctionPackageDescriptorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageDescriptorResponseUnmarshaller.Instance;
 
@@ -1150,7 +1150,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolFunctionPackageDescriptor">REST API Reference for GetSolFunctionPackageDescriptor Operation</seealso>
         public virtual IAsyncResult BeginGetSolFunctionPackageDescriptor(GetSolFunctionPackageDescriptorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolFunctionPackageDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolFunctionPackageDescriptorResponseUnmarshaller.Instance;
 
@@ -1206,7 +1206,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkInstance">REST API Reference for GetSolNetworkInstance Operation</seealso>
         public virtual GetSolNetworkInstanceResponse GetSolNetworkInstance(GetSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkInstance">REST API Reference for GetSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginGetSolNetworkInstance(GetSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkOperation">REST API Reference for GetSolNetworkOperation Operation</seealso>
         public virtual GetSolNetworkOperationResponse GetSolNetworkOperation(GetSolNetworkOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkOperationResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkOperation">REST API Reference for GetSolNetworkOperation Operation</seealso>
         public virtual IAsyncResult BeginGetSolNetworkOperation(GetSolNetworkOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkOperationResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackage">REST API Reference for GetSolNetworkPackage Operation</seealso>
         public virtual GetSolNetworkPackageResponse GetSolNetworkPackage(GetSolNetworkPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -1381,7 +1381,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackage">REST API Reference for GetSolNetworkPackage Operation</seealso>
         public virtual IAsyncResult BeginGetSolNetworkPackage(GetSolNetworkPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackageContent">REST API Reference for GetSolNetworkPackageContent Operation</seealso>
         public virtual GetSolNetworkPackageContentResponse GetSolNetworkPackageContent(GetSolNetworkPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageContentResponseUnmarshaller.Instance;
 
@@ -1458,7 +1458,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackageContent">REST API Reference for GetSolNetworkPackageContent Operation</seealso>
         public virtual IAsyncResult BeginGetSolNetworkPackageContent(GetSolNetworkPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageContentResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackageDescriptor">REST API Reference for GetSolNetworkPackageDescriptor Operation</seealso>
         public virtual GetSolNetworkPackageDescriptorResponse GetSolNetworkPackageDescriptor(GetSolNetworkPackageDescriptorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageDescriptorResponseUnmarshaller.Instance;
 
@@ -1535,7 +1535,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolNetworkPackageDescriptor">REST API Reference for GetSolNetworkPackageDescriptor Operation</seealso>
         public virtual IAsyncResult BeginGetSolNetworkPackageDescriptor(GetSolNetworkPackageDescriptorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSolNetworkPackageDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSolNetworkPackageDescriptorResponseUnmarshaller.Instance;
 
@@ -1599,7 +1599,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/InstantiateSolNetworkInstance">REST API Reference for InstantiateSolNetworkInstance Operation</seealso>
         public virtual InstantiateSolNetworkInstanceResponse InstantiateSolNetworkInstance(InstantiateSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InstantiateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InstantiateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/InstantiateSolNetworkInstance">REST API Reference for InstantiateSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginInstantiateSolNetworkInstance(InstantiateSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InstantiateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InstantiateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionInstances">REST API Reference for ListSolFunctionInstances Operation</seealso>
         public virtual ListSolFunctionInstancesResponse ListSolFunctionInstances(ListSolFunctionInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolFunctionInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolFunctionInstancesResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionInstances">REST API Reference for ListSolFunctionInstances Operation</seealso>
         public virtual IAsyncResult BeginListSolFunctionInstances(ListSolFunctionInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolFunctionInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolFunctionInstancesResponseUnmarshaller.Instance;
 
@@ -1746,7 +1746,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionPackages">REST API Reference for ListSolFunctionPackages Operation</seealso>
         public virtual ListSolFunctionPackagesResponse ListSolFunctionPackages(ListSolFunctionPackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolFunctionPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolFunctionPackagesResponseUnmarshaller.Instance;
 
@@ -1767,7 +1767,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolFunctionPackages">REST API Reference for ListSolFunctionPackages Operation</seealso>
         public virtual IAsyncResult BeginListSolFunctionPackages(ListSolFunctionPackagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolFunctionPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolFunctionPackagesResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkInstances">REST API Reference for ListSolNetworkInstances Operation</seealso>
         public virtual ListSolNetworkInstancesResponse ListSolNetworkInstances(ListSolNetworkInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkInstancesResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkInstances">REST API Reference for ListSolNetworkInstances Operation</seealso>
         public virtual IAsyncResult BeginListSolNetworkInstances(ListSolNetworkInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkInstancesResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkOperations">REST API Reference for ListSolNetworkOperations Operation</seealso>
         public virtual ListSolNetworkOperationsResponse ListSolNetworkOperations(ListSolNetworkOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkOperationsResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkOperations">REST API Reference for ListSolNetworkOperations Operation</seealso>
         public virtual IAsyncResult BeginListSolNetworkOperations(ListSolNetworkOperationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkOperationsResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkPackages">REST API Reference for ListSolNetworkPackages Operation</seealso>
         public virtual ListSolNetworkPackagesResponse ListSolNetworkPackages(ListSolNetworkPackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkPackagesResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListSolNetworkPackages">REST API Reference for ListSolNetworkPackages Operation</seealso>
         public virtual IAsyncResult BeginListSolNetworkPackages(ListSolNetworkPackagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSolNetworkPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSolNetworkPackagesResponseUnmarshaller.Instance;
 
@@ -2038,7 +2038,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2059,7 +2059,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2116,7 +2116,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/PutSolFunctionPackageContent">REST API Reference for PutSolFunctionPackageContent Operation</seealso>
         public virtual PutSolFunctionPackageContentResponse PutSolFunctionPackageContent(PutSolFunctionPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -2137,7 +2137,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/PutSolFunctionPackageContent">REST API Reference for PutSolFunctionPackageContent Operation</seealso>
         public virtual IAsyncResult BeginPutSolFunctionPackageContent(PutSolFunctionPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -2193,7 +2193,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/PutSolNetworkPackageContent">REST API Reference for PutSolNetworkPackageContent Operation</seealso>
         public virtual PutSolNetworkPackageContentResponse PutSolNetworkPackageContent(PutSolNetworkPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSolNetworkPackageContentResponseUnmarshaller.Instance;
 
@@ -2214,7 +2214,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/PutSolNetworkPackageContent">REST API Reference for PutSolNetworkPackageContent Operation</seealso>
         public virtual IAsyncResult BeginPutSolNetworkPackageContent(PutSolNetworkPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSolNetworkPackageContentResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2291,7 +2291,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2354,7 +2354,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/TerminateSolNetworkInstance">REST API Reference for TerminateSolNetworkInstance Operation</seealso>
         public virtual TerminateSolNetworkInstanceResponse TerminateSolNetworkInstance(TerminateSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -2375,7 +2375,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/TerminateSolNetworkInstance">REST API Reference for TerminateSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginTerminateSolNetworkInstance(TerminateSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2452,7 +2452,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolFunctionPackage">REST API Reference for UpdateSolFunctionPackage Operation</seealso>
         public virtual UpdateSolFunctionPackageResponse UpdateSolFunctionPackage(UpdateSolFunctionPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -2530,7 +2530,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolFunctionPackage">REST API Reference for UpdateSolFunctionPackage Operation</seealso>
         public virtual IAsyncResult BeginUpdateSolFunctionPackage(UpdateSolFunctionPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolFunctionPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolFunctionPackageResponseUnmarshaller.Instance;
 
@@ -2594,7 +2594,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolNetworkInstance">REST API Reference for UpdateSolNetworkInstance Operation</seealso>
         public virtual UpdateSolNetworkInstanceResponse UpdateSolNetworkInstance(UpdateSolNetworkInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -2615,7 +2615,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolNetworkInstance">REST API Reference for UpdateSolNetworkInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateSolNetworkInstance(UpdateSolNetworkInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolNetworkInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolNetworkInstanceResponseUnmarshaller.Instance;
 
@@ -2677,7 +2677,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolNetworkPackage">REST API Reference for UpdateSolNetworkPackage Operation</seealso>
         public virtual UpdateSolNetworkPackageResponse UpdateSolNetworkPackage(UpdateSolNetworkPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -2698,7 +2698,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/UpdateSolNetworkPackage">REST API Reference for UpdateSolNetworkPackage Operation</seealso>
         public virtual IAsyncResult BeginUpdateSolNetworkPackage(UpdateSolNetworkPackageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSolNetworkPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSolNetworkPackageResponseUnmarshaller.Instance;
 
@@ -2756,7 +2756,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ValidateSolFunctionPackageContent">REST API Reference for ValidateSolFunctionPackageContent Operation</seealso>
         public virtual ValidateSolFunctionPackageContentResponse ValidateSolFunctionPackageContent(ValidateSolFunctionPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -2777,7 +2777,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ValidateSolFunctionPackageContent">REST API Reference for ValidateSolFunctionPackageContent Operation</seealso>
         public virtual IAsyncResult BeginValidateSolFunctionPackageContent(ValidateSolFunctionPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateSolFunctionPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateSolFunctionPackageContentResponseUnmarshaller.Instance;
 
@@ -2834,7 +2834,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ValidateSolNetworkPackageContent">REST API Reference for ValidateSolNetworkPackageContent Operation</seealso>
         public virtual ValidateSolNetworkPackageContentResponse ValidateSolNetworkPackageContent(ValidateSolNetworkPackageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateSolNetworkPackageContentResponseUnmarshaller.Instance;
 
@@ -2855,7 +2855,7 @@ namespace Amazon.Tnb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/ValidateSolNetworkPackageContent">REST API Reference for ValidateSolNetworkPackageContent Operation</seealso>
         public virtual IAsyncResult BeginValidateSolNetworkPackageContent(ValidateSolNetworkPackageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateSolNetworkPackageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateSolNetworkPackageContentResponseUnmarshaller.Instance;
 

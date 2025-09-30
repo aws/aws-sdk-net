@@ -384,7 +384,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         public virtual AnalyzeDocumentResponse AnalyzeDocument(AnalyzeDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeDocumentResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
         public virtual Task<AnalyzeDocumentResponse> AnalyzeDocumentAsync(AnalyzeDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeDocumentResponseUnmarshaller.Instance;
             
@@ -588,7 +588,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
         public virtual AnalyzeExpenseResponse AnalyzeExpense(AnalyzeExpenseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeExpenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeExpenseResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeExpense">REST API Reference for AnalyzeExpense Operation</seealso>
         public virtual Task<AnalyzeExpenseResponse> AnalyzeExpenseAsync(AnalyzeExpenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeExpenseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeExpenseResponseUnmarshaller.Instance;
             
@@ -727,7 +727,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
         public virtual AnalyzeIDResponse AnalyzeID(AnalyzeIDRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeIDRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeIDResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeID">REST API Reference for AnalyzeID Operation</seealso>
         public virtual Task<AnalyzeIDResponse> AnalyzeIDAsync(AnalyzeIDRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AnalyzeIDRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AnalyzeIDResponseUnmarshaller.Instance;
             
@@ -853,7 +853,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">REST API Reference for CreateAdapter Operation</seealso>
         public virtual CreateAdapterResponse CreateAdapter(CreateAdapterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAdapterResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter">REST API Reference for CreateAdapter Operation</seealso>
         public virtual Task<CreateAdapterResponse> CreateAdapterAsync(CreateAdapterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAdapterResponseUnmarshaller.Instance;
             
@@ -992,7 +992,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">REST API Reference for CreateAdapterVersion Operation</seealso>
         public virtual CreateAdapterVersionResponse CreateAdapterVersion(CreateAdapterVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAdapterVersionResponseUnmarshaller.Instance;
 
@@ -1067,7 +1067,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion">REST API Reference for CreateAdapterVersion Operation</seealso>
         public virtual Task<CreateAdapterVersionResponse> CreateAdapterVersionAsync(CreateAdapterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAdapterVersionResponseUnmarshaller.Instance;
             
@@ -1118,7 +1118,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">REST API Reference for DeleteAdapter Operation</seealso>
         public virtual DeleteAdapterResponse DeleteAdapter(DeleteAdapterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdapterResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter">REST API Reference for DeleteAdapter Operation</seealso>
         public virtual Task<DeleteAdapterResponse> DeleteAdapterAsync(DeleteAdapterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdapterResponseUnmarshaller.Instance;
             
@@ -1220,7 +1220,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">REST API Reference for DeleteAdapterVersion Operation</seealso>
         public virtual DeleteAdapterVersionResponse DeleteAdapterVersion(DeleteAdapterVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdapterVersionResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion">REST API Reference for DeleteAdapterVersion Operation</seealso>
         public virtual Task<DeleteAdapterVersionResponse> DeleteAdapterVersionAsync(DeleteAdapterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAdapterVersionResponseUnmarshaller.Instance;
             
@@ -1352,7 +1352,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         public virtual DetectDocumentTextResponse DetectDocumentText(DetectDocumentTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectDocumentTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectDocumentTextResponseUnmarshaller.Instance;
 
@@ -1432,7 +1432,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
         public virtual Task<DetectDocumentTextResponse> DetectDocumentTextAsync(DetectDocumentTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectDocumentTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectDocumentTextResponseUnmarshaller.Instance;
             
@@ -1480,7 +1480,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">REST API Reference for GetAdapter Operation</seealso>
         public virtual GetAdapterResponse GetAdapter(GetAdapterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdapterResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter">REST API Reference for GetAdapter Operation</seealso>
         public virtual Task<GetAdapterResponse> GetAdapterAsync(GetAdapterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdapterResponseUnmarshaller.Instance;
             
@@ -1576,7 +1576,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">REST API Reference for GetAdapterVersion Operation</seealso>
         public virtual GetAdapterVersionResponse GetAdapterVersion(GetAdapterVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdapterVersionResponseUnmarshaller.Instance;
 
@@ -1624,7 +1624,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion">REST API Reference for GetAdapterVersion Operation</seealso>
         public virtual Task<GetAdapterVersionResponse> GetAdapterVersionAsync(GetAdapterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdapterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdapterVersionResponseUnmarshaller.Instance;
             
@@ -1750,7 +1750,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis">REST API Reference for GetDocumentAnalysis Operation</seealso>
         public virtual GetDocumentAnalysisResponse GetDocumentAnalysis(GetDocumentAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentAnalysisResponseUnmarshaller.Instance;
 
@@ -1875,7 +1875,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis">REST API Reference for GetDocumentAnalysis Operation</seealso>
         public virtual Task<GetDocumentAnalysisResponse> GetDocumentAnalysisAsync(GetDocumentAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentAnalysisResponseUnmarshaller.Instance;
             
@@ -1967,7 +1967,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection">REST API Reference for GetDocumentTextDetection Operation</seealso>
         public virtual GetDocumentTextDetectionResponse GetDocumentTextDetection(GetDocumentTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentTextDetectionResponseUnmarshaller.Instance;
 
@@ -2058,7 +2058,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection">REST API Reference for GetDocumentTextDetection Operation</seealso>
         public virtual Task<GetDocumentTextDetectionResponse> GetDocumentTextDetectionAsync(GetDocumentTextDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentTextDetectionResponseUnmarshaller.Instance;
             
@@ -2139,7 +2139,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">REST API Reference for GetExpenseAnalysis Operation</seealso>
         public virtual GetExpenseAnalysisResponse GetExpenseAnalysis(GetExpenseAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExpenseAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExpenseAnalysisResponseUnmarshaller.Instance;
 
@@ -2219,7 +2219,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetExpenseAnalysis">REST API Reference for GetExpenseAnalysis Operation</seealso>
         public virtual Task<GetExpenseAnalysisResponse> GetExpenseAnalysisAsync(GetExpenseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExpenseAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExpenseAnalysisResponseUnmarshaller.Instance;
             
@@ -2289,7 +2289,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">REST API Reference for GetLendingAnalysis Operation</seealso>
         public virtual GetLendingAnalysisResponse GetLendingAnalysis(GetLendingAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLendingAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLendingAnalysisResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis">REST API Reference for GetLendingAnalysis Operation</seealso>
         public virtual Task<GetLendingAnalysisResponse> GetLendingAnalysisAsync(GetLendingAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLendingAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLendingAnalysisResponseUnmarshaller.Instance;
             
@@ -2431,7 +2431,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">REST API Reference for GetLendingAnalysisSummary Operation</seealso>
         public virtual GetLendingAnalysisSummaryResponse GetLendingAnalysisSummary(GetLendingAnalysisSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLendingAnalysisSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLendingAnalysisSummaryResponseUnmarshaller.Instance;
 
@@ -2503,7 +2503,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary">REST API Reference for GetLendingAnalysisSummary Operation</seealso>
         public virtual Task<GetLendingAnalysisSummaryResponse> GetLendingAnalysisSummaryAsync(GetLendingAnalysisSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLendingAnalysisSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLendingAnalysisSummaryResponseUnmarshaller.Instance;
             
@@ -2547,7 +2547,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">REST API Reference for ListAdapters Operation</seealso>
         public virtual ListAdaptersResponse ListAdapters(ListAdaptersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdaptersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdaptersResponseUnmarshaller.Instance;
 
@@ -2590,7 +2590,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters">REST API Reference for ListAdapters Operation</seealso>
         public virtual Task<ListAdaptersResponse> ListAdaptersAsync(ListAdaptersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdaptersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdaptersResponseUnmarshaller.Instance;
             
@@ -2637,7 +2637,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">REST API Reference for ListAdapterVersions Operation</seealso>
         public virtual ListAdapterVersionsResponse ListAdapterVersions(ListAdapterVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdapterVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdapterVersionsResponseUnmarshaller.Instance;
 
@@ -2683,7 +2683,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions">REST API Reference for ListAdapterVersions Operation</seealso>
         public virtual Task<ListAdapterVersionsResponse> ListAdapterVersionsAsync(ListAdapterVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdapterVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdapterVersionsResponseUnmarshaller.Instance;
             
@@ -2730,7 +2730,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2776,7 +2776,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2873,7 +2873,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         public virtual StartDocumentAnalysisResponse StartDocumentAnalysis(StartDocumentAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDocumentAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDocumentAnalysisResponseUnmarshaller.Instance;
 
@@ -2969,7 +2969,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
         public virtual Task<StartDocumentAnalysisResponse> StartDocumentAnalysisAsync(StartDocumentAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDocumentAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDocumentAnalysisResponseUnmarshaller.Instance;
             
@@ -3066,7 +3066,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         public virtual StartDocumentTextDetectionResponse StartDocumentTextDetection(StartDocumentTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDocumentTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDocumentTextDetectionResponseUnmarshaller.Instance;
 
@@ -3162,7 +3162,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
         public virtual Task<StartDocumentTextDetectionResponse> StartDocumentTextDetectionAsync(StartDocumentTextDetectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDocumentTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDocumentTextDetectionResponseUnmarshaller.Instance;
             
@@ -3261,7 +3261,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         public virtual StartExpenseAnalysisResponse StartExpenseAnalysis(StartExpenseAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExpenseAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExpenseAnalysisResponseUnmarshaller.Instance;
 
@@ -3359,7 +3359,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartExpenseAnalysis">REST API Reference for StartExpenseAnalysis Operation</seealso>
         public virtual Task<StartExpenseAnalysisResponse> StartExpenseAnalysisAsync(StartExpenseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExpenseAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExpenseAnalysisResponseUnmarshaller.Instance;
             
@@ -3472,7 +3472,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">REST API Reference for StartLendingAnalysis Operation</seealso>
         public virtual StartLendingAnalysisResponse StartLendingAnalysis(StartLendingAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLendingAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLendingAnalysisResponseUnmarshaller.Instance;
 
@@ -3584,7 +3584,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis">REST API Reference for StartLendingAnalysis Operation</seealso>
         public virtual Task<StartLendingAnalysisResponse> StartLendingAnalysisAsync(StartLendingAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLendingAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLendingAnalysisResponseUnmarshaller.Instance;
             
@@ -3634,7 +3634,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3683,7 +3683,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3730,7 +3730,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3776,7 +3776,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -3827,7 +3827,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">REST API Reference for UpdateAdapter Operation</seealso>
         public virtual UpdateAdapterResponse UpdateAdapter(UpdateAdapterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAdapterResponseUnmarshaller.Instance;
 
@@ -3877,7 +3877,7 @@ namespace Amazon.Textract
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter">REST API Reference for UpdateAdapter Operation</seealso>
         public virtual Task<UpdateAdapterResponse> UpdateAdapterAsync(UpdateAdapterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAdapterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAdapterResponseUnmarshaller.Instance;
             

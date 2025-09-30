@@ -280,7 +280,7 @@ namespace Amazon.WellArchitected
 
         internal virtual AssociateLensesResponse AssociateLenses(AssociateLensesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLensesResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateLenses">REST API Reference for AssociateLenses Operation</seealso>
         public virtual Task<AssociateLensesResponse> AssociateLensesAsync(AssociateLensesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLensesResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.WellArchitected
 
         internal virtual AssociateProfilesResponse AssociateProfiles(AssociateProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProfilesResponseUnmarshaller.Instance;
 
@@ -389,7 +389,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles">REST API Reference for AssociateProfiles Operation</seealso>
         public virtual Task<AssociateProfilesResponse> AssociateProfilesAsync(AssociateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateProfilesResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateLensShareResponse CreateLensShare(CreateLensShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLensShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLensShareResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensShare">REST API Reference for CreateLensShare Operation</seealso>
         public virtual Task<CreateLensShareResponse> CreateLensShareAsync(CreateLensShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLensShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLensShareResponseUnmarshaller.Instance;
 
@@ -492,7 +492,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateLensVersionResponse CreateLensVersion(CreateLensVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLensVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLensVersionResponseUnmarshaller.Instance;
 
@@ -546,7 +546,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">REST API Reference for CreateLensVersion Operation</seealso>
         public virtual Task<CreateLensVersionResponse> CreateLensVersionAsync(CreateLensVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLensVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLensVersionResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateMilestoneResponse CreateMilestone(CreateMilestoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMilestoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMilestoneResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateMilestone">REST API Reference for CreateMilestone Operation</seealso>
         public virtual Task<CreateMilestoneResponse> CreateMilestoneAsync(CreateMilestoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMilestoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMilestoneResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateProfileShareResponse CreateProfileShare(CreateProfileShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileShareResponseUnmarshaller.Instance;
 
@@ -708,7 +708,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare">REST API Reference for CreateProfileShare Operation</seealso>
         public virtual Task<CreateProfileShareResponse> CreateProfileShareAsync(CreateProfileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileShareResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateReviewTemplateResponse CreateReviewTemplate(CreateReviewTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReviewTemplateResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateReviewTemplate">REST API Reference for CreateReviewTemplate Operation</seealso>
         public virtual Task<CreateReviewTemplateResponse> CreateReviewTemplateAsync(CreateReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReviewTemplateResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateTemplateShareResponse CreateTemplateShare(CreateTemplateShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateShareResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateTemplateShare">REST API Reference for CreateTemplateShare Operation</seealso>
         public virtual Task<CreateTemplateShareResponse> CreateTemplateShareAsync(CreateTemplateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateShareResponseUnmarshaller.Instance;
 
@@ -873,7 +873,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateWorkloadResponse CreateWorkload(CreateWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkload">REST API Reference for CreateWorkload Operation</seealso>
         public virtual Task<CreateWorkloadResponse> CreateWorkloadAsync(CreateWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.WellArchitected
 
         internal virtual CreateWorkloadShareResponse CreateWorkloadShare(CreateWorkloadShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadShareResponseUnmarshaller.Instance;
 
@@ -1031,7 +1031,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShare">REST API Reference for CreateWorkloadShare Operation</seealso>
         public virtual Task<CreateWorkloadShareResponse> CreateWorkloadShareAsync(CreateWorkloadShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkloadShareResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteLensResponse DeleteLens(DeleteLensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLensResponseUnmarshaller.Instance;
 
@@ -1103,7 +1103,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">REST API Reference for DeleteLens Operation</seealso>
         public virtual Task<DeleteLensResponse> DeleteLensAsync(DeleteLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLensResponseUnmarshaller.Instance;
 
@@ -1116,7 +1116,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteLensShareResponse DeleteLensShare(DeleteLensShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLensShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLensShareResponseUnmarshaller.Instance;
 
@@ -1175,7 +1175,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">REST API Reference for DeleteLensShare Operation</seealso>
         public virtual Task<DeleteLensShareResponse> DeleteLensShareAsync(DeleteLensShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLensShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLensShareResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual Task<DeleteProfileResponse> DeleteProfileAsync(DeleteProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteProfileShareResponse DeleteProfileShare(DeleteProfileShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileShareResponseUnmarshaller.Instance;
 
@@ -1293,7 +1293,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare">REST API Reference for DeleteProfileShare Operation</seealso>
         public virtual Task<DeleteProfileShareResponse> DeleteProfileShareAsync(DeleteProfileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileShareResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteReviewTemplateResponse DeleteReviewTemplate(DeleteReviewTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReviewTemplateResponseUnmarshaller.Instance;
 
@@ -1356,7 +1356,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteReviewTemplate">REST API Reference for DeleteReviewTemplate Operation</seealso>
         public virtual Task<DeleteReviewTemplateResponse> DeleteReviewTemplateAsync(DeleteReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReviewTemplateResponseUnmarshaller.Instance;
 
@@ -1369,7 +1369,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteTemplateShareResponse DeleteTemplateShare(DeleteTemplateShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateShareResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteTemplateShare">REST API Reference for DeleteTemplateShare Operation</seealso>
         public virtual Task<DeleteTemplateShareResponse> DeleteTemplateShareAsync(DeleteTemplateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateShareResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteWorkloadResponse DeleteWorkload(DeleteWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteWorkload">REST API Reference for DeleteWorkload Operation</seealso>
         public virtual Task<DeleteWorkloadResponse> DeleteWorkloadAsync(DeleteWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DeleteWorkloadShareResponse DeleteWorkloadShare(DeleteWorkloadShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadShareResponseUnmarshaller.Instance;
 
@@ -1519,7 +1519,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteWorkloadShare">REST API Reference for DeleteWorkloadShare Operation</seealso>
         public virtual Task<DeleteWorkloadShareResponse> DeleteWorkloadShareAsync(DeleteWorkloadShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkloadShareResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DisassociateLensesResponse DisassociateLenses(DisassociateLensesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLensesResponseUnmarshaller.Instance;
 
@@ -1582,7 +1582,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateLenses">REST API Reference for DisassociateLenses Operation</seealso>
         public virtual Task<DisassociateLensesResponse> DisassociateLensesAsync(DisassociateLensesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLensesResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.WellArchitected
 
         internal virtual DisassociateProfilesResponse DisassociateProfiles(DisassociateProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProfilesResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles">REST API Reference for DisassociateProfiles Operation</seealso>
         public virtual Task<DisassociateProfilesResponse> DisassociateProfilesAsync(DisassociateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateProfilesResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ExportLensResponse ExportLens(ExportLensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLensResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">REST API Reference for ExportLens Operation</seealso>
         public virtual Task<ExportLensResponse> ExportLensAsync(ExportLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLensResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetAnswerResponse GetAnswer(GetAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnswerResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAnswer">REST API Reference for GetAnswer Operation</seealso>
         public virtual Task<GetAnswerResponse> GetAnswerAsync(GetAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnswerResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetConsolidatedReportResponse GetConsolidatedReport(GetConsolidatedReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsolidatedReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsolidatedReportResponseUnmarshaller.Instance;
 
@@ -1811,7 +1811,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetConsolidatedReport">REST API Reference for GetConsolidatedReport Operation</seealso>
         public virtual Task<GetConsolidatedReportResponse> GetConsolidatedReportAsync(GetConsolidatedReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConsolidatedReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConsolidatedReportResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetGlobalSettingsResponse GetGlobalSettings(GetGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
         public virtual Task<GetGlobalSettingsResponse> GetGlobalSettingsAsync(GetGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -1870,7 +1870,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetLensResponse GetLens(GetLensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensResponseUnmarshaller.Instance;
 
@@ -1906,7 +1906,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLens">REST API Reference for GetLens Operation</seealso>
         public virtual Task<GetLensResponse> GetLensAsync(GetLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetLensReviewResponse GetLensReview(GetLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensReviewResponseUnmarshaller.Instance;
 
@@ -1955,7 +1955,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLensReview">REST API Reference for GetLensReview Operation</seealso>
         public virtual Task<GetLensReviewResponse> GetLensReviewAsync(GetLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensReviewResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetLensReviewReportResponse GetLensReviewReport(GetLensReviewReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensReviewReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensReviewReportResponseUnmarshaller.Instance;
 
@@ -2004,7 +2004,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLensReviewReport">REST API Reference for GetLensReviewReport Operation</seealso>
         public virtual Task<GetLensReviewReportResponse> GetLensReviewReportAsync(GetLensReviewReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensReviewReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensReviewReportResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetLensVersionDifferenceResponse GetLensVersionDifference(GetLensVersionDifferenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensVersionDifferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensVersionDifferenceResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLensVersionDifference">REST API Reference for GetLensVersionDifference Operation</seealso>
         public virtual Task<GetLensVersionDifferenceResponse> GetLensVersionDifferenceAsync(GetLensVersionDifferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLensVersionDifferenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLensVersionDifferenceResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetMilestoneResponse GetMilestone(GetMilestoneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMilestoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMilestoneResponseUnmarshaller.Instance;
 
@@ -2102,7 +2102,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetMilestone">REST API Reference for GetMilestone Operation</seealso>
         public virtual Task<GetMilestoneResponse> GetMilestoneAsync(GetMilestoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMilestoneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMilestoneResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -2151,7 +2151,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual Task<GetProfileResponse> GetProfileAsync(GetProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetProfileTemplateResponse GetProfileTemplate(GetProfileTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileTemplateResponseUnmarshaller.Instance;
 
@@ -2200,7 +2200,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate">REST API Reference for GetProfileTemplate Operation</seealso>
         public virtual Task<GetProfileTemplateResponse> GetProfileTemplateAsync(GetProfileTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileTemplateResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetReviewTemplateResponse GetReviewTemplate(GetReviewTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateResponseUnmarshaller.Instance;
 
@@ -2249,7 +2249,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplate">REST API Reference for GetReviewTemplate Operation</seealso>
         public virtual Task<GetReviewTemplateResponse> GetReviewTemplateAsync(GetReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateResponseUnmarshaller.Instance;
 
@@ -2262,7 +2262,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetReviewTemplateAnswerResponse GetReviewTemplateAnswer(GetReviewTemplateAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateAnswerResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateAnswer">REST API Reference for GetReviewTemplateAnswer Operation</seealso>
         public virtual Task<GetReviewTemplateAnswerResponse> GetReviewTemplateAnswerAsync(GetReviewTemplateAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateAnswerResponseUnmarshaller.Instance;
 
@@ -2311,7 +2311,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetReviewTemplateLensReviewResponse GetReviewTemplateLensReview(GetReviewTemplateLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateLensReviewResponseUnmarshaller.Instance;
 
@@ -2347,7 +2347,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetReviewTemplateLensReview">REST API Reference for GetReviewTemplateLensReview Operation</seealso>
         public virtual Task<GetReviewTemplateLensReviewResponse> GetReviewTemplateLensReviewAsync(GetReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReviewTemplateLensReviewResponseUnmarshaller.Instance;
 
@@ -2360,7 +2360,7 @@ namespace Amazon.WellArchitected
 
         internal virtual GetWorkloadResponse GetWorkload(GetWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadResponseUnmarshaller.Instance;
 
@@ -2396,7 +2396,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetWorkload">REST API Reference for GetWorkload Operation</seealso>
         public virtual Task<GetWorkloadResponse> GetWorkloadAsync(GetWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadResponseUnmarshaller.Instance;
 
@@ -2409,7 +2409,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ImportLensResponse ImportLens(ImportLensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportLensResponseUnmarshaller.Instance;
 
@@ -2486,7 +2486,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">REST API Reference for ImportLens Operation</seealso>
         public virtual Task<ImportLensResponse> ImportLensAsync(ImportLensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportLensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportLensResponseUnmarshaller.Instance;
 
@@ -2499,7 +2499,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListAnswersResponse ListAnswers(ListAnswersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnswersResponseUnmarshaller.Instance;
 
@@ -2535,7 +2535,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAnswers">REST API Reference for ListAnswers Operation</seealso>
         public virtual Task<ListAnswersResponse> ListAnswersAsync(ListAnswersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnswersResponseUnmarshaller.Instance;
 
@@ -2548,7 +2548,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListCheckDetailsResponse ListCheckDetails(ListCheckDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCheckDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCheckDetailsResponseUnmarshaller.Instance;
 
@@ -2584,7 +2584,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails">REST API Reference for ListCheckDetails Operation</seealso>
         public virtual Task<ListCheckDetailsResponse> ListCheckDetailsAsync(ListCheckDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCheckDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCheckDetailsResponseUnmarshaller.Instance;
 
@@ -2597,7 +2597,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListCheckSummariesResponse ListCheckSummaries(ListCheckSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCheckSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCheckSummariesResponseUnmarshaller.Instance;
 
@@ -2633,7 +2633,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries">REST API Reference for ListCheckSummaries Operation</seealso>
         public virtual Task<ListCheckSummariesResponse> ListCheckSummariesAsync(ListCheckSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCheckSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCheckSummariesResponseUnmarshaller.Instance;
 
@@ -2646,7 +2646,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListLensesResponse ListLenses(ListLensesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensesResponseUnmarshaller.Instance;
 
@@ -2679,7 +2679,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLenses">REST API Reference for ListLenses Operation</seealso>
         public virtual Task<ListLensesResponse> ListLensesAsync(ListLensesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensesResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListLensReviewImprovementsResponse ListLensReviewImprovements(ListLensReviewImprovementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensReviewImprovementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensReviewImprovementsResponseUnmarshaller.Instance;
 
@@ -2728,7 +2728,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensReviewImprovements">REST API Reference for ListLensReviewImprovements Operation</seealso>
         public virtual Task<ListLensReviewImprovementsResponse> ListLensReviewImprovementsAsync(ListLensReviewImprovementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensReviewImprovementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensReviewImprovementsResponseUnmarshaller.Instance;
 
@@ -2741,7 +2741,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListLensReviewsResponse ListLensReviews(ListLensReviewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensReviewsResponseUnmarshaller.Instance;
 
@@ -2777,7 +2777,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensReviews">REST API Reference for ListLensReviews Operation</seealso>
         public virtual Task<ListLensReviewsResponse> ListLensReviewsAsync(ListLensReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensReviewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensReviewsResponseUnmarshaller.Instance;
 
@@ -2790,7 +2790,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListLensSharesResponse ListLensShares(ListLensSharesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensSharesResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensShares">REST API Reference for ListLensShares Operation</seealso>
         public virtual Task<ListLensSharesResponse> ListLensSharesAsync(ListLensSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLensSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLensSharesResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListMilestonesResponse ListMilestones(ListMilestonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMilestonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMilestonesResponseUnmarshaller.Instance;
 
@@ -2875,7 +2875,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListMilestones">REST API Reference for ListMilestones Operation</seealso>
         public virtual Task<ListMilestonesResponse> ListMilestonesAsync(ListMilestonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMilestonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMilestonesResponseUnmarshaller.Instance;
 
@@ -2888,7 +2888,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -2921,7 +2921,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
         public virtual Task<ListNotificationsResponse> ListNotificationsAsync(ListNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -2934,7 +2934,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListProfileNotificationsResponse ListProfileNotifications(ListProfileNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileNotificationsResponseUnmarshaller.Instance;
 
@@ -2967,7 +2967,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications">REST API Reference for ListProfileNotifications Operation</seealso>
         public virtual Task<ListProfileNotificationsResponse> ListProfileNotificationsAsync(ListProfileNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileNotificationsResponseUnmarshaller.Instance;
 
@@ -2980,7 +2980,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -3013,7 +3013,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual Task<ListProfilesResponse> ListProfilesAsync(ListProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -3026,7 +3026,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListProfileSharesResponse ListProfileShares(ListProfileSharesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileSharesResponseUnmarshaller.Instance;
 
@@ -3062,7 +3062,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares">REST API Reference for ListProfileShares Operation</seealso>
         public virtual Task<ListProfileSharesResponse> ListProfileSharesAsync(ListProfileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfileSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfileSharesResponseUnmarshaller.Instance;
 
@@ -3075,7 +3075,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListReviewTemplateAnswersResponse ListReviewTemplateAnswers(ListReviewTemplateAnswersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReviewTemplateAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReviewTemplateAnswersResponseUnmarshaller.Instance;
 
@@ -3111,7 +3111,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplateAnswers">REST API Reference for ListReviewTemplateAnswers Operation</seealso>
         public virtual Task<ListReviewTemplateAnswersResponse> ListReviewTemplateAnswersAsync(ListReviewTemplateAnswersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReviewTemplateAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReviewTemplateAnswersResponseUnmarshaller.Instance;
 
@@ -3124,7 +3124,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListReviewTemplatesResponse ListReviewTemplates(ListReviewTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReviewTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReviewTemplatesResponseUnmarshaller.Instance;
 
@@ -3157,7 +3157,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListReviewTemplates">REST API Reference for ListReviewTemplates Operation</seealso>
         public virtual Task<ListReviewTemplatesResponse> ListReviewTemplatesAsync(ListReviewTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReviewTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReviewTemplatesResponseUnmarshaller.Instance;
 
@@ -3170,7 +3170,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListShareInvitationsResponse ListShareInvitations(ListShareInvitationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListShareInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListShareInvitationsResponseUnmarshaller.Instance;
 
@@ -3209,7 +3209,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListShareInvitations">REST API Reference for ListShareInvitations Operation</seealso>
         public virtual Task<ListShareInvitationsResponse> ListShareInvitationsAsync(ListShareInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListShareInvitationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListShareInvitationsResponseUnmarshaller.Instance;
 
@@ -3222,7 +3222,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3256,7 +3256,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3269,7 +3269,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListTemplateSharesResponse ListTemplateShares(ListTemplateSharesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateSharesResponseUnmarshaller.Instance;
 
@@ -3305,7 +3305,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTemplateShares">REST API Reference for ListTemplateShares Operation</seealso>
         public virtual Task<ListTemplateSharesResponse> ListTemplateSharesAsync(ListTemplateSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateSharesResponseUnmarshaller.Instance;
 
@@ -3318,7 +3318,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListWorkloadsResponse ListWorkloads(ListWorkloadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
 
@@ -3351,7 +3351,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
         public virtual Task<ListWorkloadsResponse> ListWorkloadsAsync(ListWorkloadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
 
@@ -3364,7 +3364,7 @@ namespace Amazon.WellArchitected
 
         internal virtual ListWorkloadSharesResponse ListWorkloadShares(ListWorkloadSharesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadSharesResponseUnmarshaller.Instance;
 
@@ -3400,7 +3400,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloadShares">REST API Reference for ListWorkloadShares Operation</seealso>
         public virtual Task<ListWorkloadSharesResponse> ListWorkloadSharesAsync(ListWorkloadSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadSharesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadSharesResponseUnmarshaller.Instance;
 
@@ -3413,7 +3413,7 @@ namespace Amazon.WellArchitected
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3447,7 +3447,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3460,7 +3460,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3501,7 +3501,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3514,7 +3514,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateAnswerResponse UpdateAnswer(UpdateAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnswerResponseUnmarshaller.Instance;
 
@@ -3553,7 +3553,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAnswer">REST API Reference for UpdateAnswer Operation</seealso>
         public virtual Task<UpdateAnswerResponse> UpdateAnswerAsync(UpdateAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnswerResponseUnmarshaller.Instance;
 
@@ -3566,7 +3566,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -3603,7 +3603,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         public virtual Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
 
@@ -3616,7 +3616,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
@@ -3655,7 +3655,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
@@ -3668,7 +3668,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateLensReviewResponse UpdateLensReview(UpdateLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLensReviewResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateLensReview">REST API Reference for UpdateLensReview Operation</seealso>
         public virtual Task<UpdateLensReviewResponse> UpdateLensReviewAsync(UpdateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLensReviewResponseUnmarshaller.Instance;
 
@@ -3720,7 +3720,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual Task<UpdateProfileResponse> UpdateProfileAsync(UpdateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -3772,7 +3772,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateReviewTemplateResponse UpdateReviewTemplate(UpdateReviewTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateResponseUnmarshaller.Instance;
 
@@ -3811,7 +3811,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplate">REST API Reference for UpdateReviewTemplate Operation</seealso>
         public virtual Task<UpdateReviewTemplateResponse> UpdateReviewTemplateAsync(UpdateReviewTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateResponseUnmarshaller.Instance;
 
@@ -3824,7 +3824,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateReviewTemplateAnswerResponse UpdateReviewTemplateAnswer(UpdateReviewTemplateAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateAnswerResponseUnmarshaller.Instance;
 
@@ -3863,7 +3863,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateAnswer">REST API Reference for UpdateReviewTemplateAnswer Operation</seealso>
         public virtual Task<UpdateReviewTemplateAnswerResponse> UpdateReviewTemplateAnswerAsync(UpdateReviewTemplateAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateAnswerResponseUnmarshaller.Instance;
 
@@ -3876,7 +3876,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateReviewTemplateLensReviewResponse UpdateReviewTemplateLensReview(UpdateReviewTemplateLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateLensReviewResponseUnmarshaller.Instance;
 
@@ -3915,7 +3915,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateReviewTemplateLensReview">REST API Reference for UpdateReviewTemplateLensReview Operation</seealso>
         public virtual Task<UpdateReviewTemplateLensReviewResponse> UpdateReviewTemplateLensReviewAsync(UpdateReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReviewTemplateLensReviewResponseUnmarshaller.Instance;
 
@@ -3928,7 +3928,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateShareInvitationResponse UpdateShareInvitation(UpdateShareInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateShareInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateShareInvitationResponseUnmarshaller.Instance;
 
@@ -3974,7 +3974,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateShareInvitation">REST API Reference for UpdateShareInvitation Operation</seealso>
         public virtual Task<UpdateShareInvitationResponse> UpdateShareInvitationAsync(UpdateShareInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateShareInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateShareInvitationResponseUnmarshaller.Instance;
 
@@ -3987,7 +3987,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateWorkloadResponse UpdateWorkload(UpdateWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
 
@@ -4026,7 +4026,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
         public virtual Task<UpdateWorkloadResponse> UpdateWorkloadAsync(UpdateWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
 
@@ -4039,7 +4039,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpdateWorkloadShareResponse UpdateWorkloadShare(UpdateWorkloadShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadShareResponseUnmarshaller.Instance;
 
@@ -4078,7 +4078,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateWorkloadShare">REST API Reference for UpdateWorkloadShare Operation</seealso>
         public virtual Task<UpdateWorkloadShareResponse> UpdateWorkloadShareAsync(UpdateWorkloadShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadShareResponseUnmarshaller.Instance;
 
@@ -4091,7 +4091,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpgradeLensReviewResponse UpgradeLensReview(UpgradeLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeLensReviewResponseUnmarshaller.Instance;
 
@@ -4133,7 +4133,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeLensReview">REST API Reference for UpgradeLensReview Operation</seealso>
         public virtual Task<UpgradeLensReviewResponse> UpgradeLensReviewAsync(UpgradeLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeLensReviewResponseUnmarshaller.Instance;
 
@@ -4146,7 +4146,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpgradeProfileVersionResponse UpgradeProfileVersion(UpgradeProfileVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeProfileVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeProfileVersionResponseUnmarshaller.Instance;
 
@@ -4188,7 +4188,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion">REST API Reference for UpgradeProfileVersion Operation</seealso>
         public virtual Task<UpgradeProfileVersionResponse> UpgradeProfileVersionAsync(UpgradeProfileVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeProfileVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeProfileVersionResponseUnmarshaller.Instance;
 
@@ -4201,7 +4201,7 @@ namespace Amazon.WellArchitected
 
         internal virtual UpgradeReviewTemplateLensReviewResponse UpgradeReviewTemplateLensReview(UpgradeReviewTemplateLensReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeReviewTemplateLensReviewResponseUnmarshaller.Instance;
 
@@ -4240,7 +4240,7 @@ namespace Amazon.WellArchitected
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeReviewTemplateLensReview">REST API Reference for UpgradeReviewTemplateLensReview Operation</seealso>
         public virtual Task<UpgradeReviewTemplateLensReviewResponse> UpgradeReviewTemplateLensReviewAsync(UpgradeReviewTemplateLensReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeReviewTemplateLensReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeReviewTemplateLensReviewResponseUnmarshaller.Instance;
 

@@ -315,7 +315,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/GetSearchJob">REST API Reference for GetSearchJob Operation</seealso>
         public virtual GetSearchJobResponse GetSearchJob(GetSearchJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSearchJobResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/GetSearchJob">REST API Reference for GetSearchJob Operation</seealso>
         public virtual IAsyncResult BeginGetSearchJob(GetSearchJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSearchJobResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/GetSearchResultExportJob">REST API Reference for GetSearchResultExportJob Operation</seealso>
         public virtual GetSearchResultExportJobResponse GetSearchResultExportJob(GetSearchResultExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSearchResultExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSearchResultExportJobResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/GetSearchResultExportJob">REST API Reference for GetSearchResultExportJob Operation</seealso>
         public virtual IAsyncResult BeginGetSearchResultExportJob(GetSearchResultExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSearchResultExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSearchResultExportJobResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobBackups">REST API Reference for ListSearchJobBackups Operation</seealso>
         public virtual ListSearchJobBackupsResponse ListSearchJobBackups(ListSearchJobBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobBackupsResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobBackups">REST API Reference for ListSearchJobBackups Operation</seealso>
         public virtual IAsyncResult BeginListSearchJobBackups(ListSearchJobBackupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobBackupsResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobResults">REST API Reference for ListSearchJobResults Operation</seealso>
         public virtual ListSearchJobResultsResponse ListSearchJobResults(ListSearchJobResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobResultsResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobResults">REST API Reference for ListSearchJobResults Operation</seealso>
         public virtual IAsyncResult BeginListSearchJobResults(ListSearchJobResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobResultsResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobs">REST API Reference for ListSearchJobs Operation</seealso>
         public virtual ListSearchJobsResponse ListSearchJobs(ListSearchJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobsResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchJobs">REST API Reference for ListSearchJobs Operation</seealso>
         public virtual IAsyncResult BeginListSearchJobs(ListSearchJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchJobsResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchResultExportJobs">REST API Reference for ListSearchResultExportJobs Operation</seealso>
         public virtual ListSearchResultExportJobsResponse ListSearchResultExportJobs(ListSearchResultExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchResultExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchResultExportJobsResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListSearchResultExportJobs">REST API Reference for ListSearchResultExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListSearchResultExportJobs(ListSearchResultExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSearchResultExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSearchResultExportJobsResponseUnmarshaller.Instance;
 
@@ -786,7 +786,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -807,7 +807,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -880,7 +880,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StartSearchJob">REST API Reference for StartSearchJob Operation</seealso>
         public virtual StartSearchJobResponse StartSearchJob(StartSearchJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSearchJobResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StartSearchJob">REST API Reference for StartSearchJob Operation</seealso>
         public virtual IAsyncResult BeginStartSearchJob(StartSearchJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSearchJobResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StartSearchResultExportJob">REST API Reference for StartSearchResultExportJob Operation</seealso>
         public virtual StartSearchResultExportJobResponse StartSearchResultExportJob(StartSearchResultExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSearchResultExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSearchResultExportJobResponseUnmarshaller.Instance;
 
@@ -990,7 +990,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StartSearchResultExportJob">REST API Reference for StartSearchResultExportJob Operation</seealso>
         public virtual IAsyncResult BeginStartSearchResultExportJob(StartSearchResultExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSearchResultExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSearchResultExportJobResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StopSearchJob">REST API Reference for StopSearchJob Operation</seealso>
         public virtual StopSearchJobResponse StopSearchJob(StopSearchJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSearchJobResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/StopSearchJob">REST API Reference for StopSearchJob Operation</seealso>
         public virtual IAsyncResult BeginStopSearchJob(StopSearchJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSearchJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSearchJobResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1155,7 +1155,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1209,7 +1209,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.BackupSearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backupsearch-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

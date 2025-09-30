@@ -283,7 +283,7 @@ namespace Amazon.Panorama
 
         internal virtual CreateApplicationInstanceResponse CreateApplicationInstance(CreateApplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateApplicationInstance">REST API Reference for CreateApplicationInstance Operation</seealso>
         public virtual Task<CreateApplicationInstanceResponse> CreateApplicationInstanceAsync(CreateApplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.Panorama
 
         internal virtual CreateJobForDevicesResponse CreateJobForDevices(CreateJobForDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobForDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobForDevicesResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateJobForDevices">REST API Reference for CreateJobForDevices Operation</seealso>
         public virtual Task<CreateJobForDevicesResponse> CreateJobForDevicesAsync(CreateJobForDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobForDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobForDevicesResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.Panorama
 
         internal virtual CreateNodeFromTemplateJobResponse CreateNodeFromTemplateJob(CreateNodeFromTemplateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeFromTemplateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeFromTemplateJobResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateNodeFromTemplateJob">REST API Reference for CreateNodeFromTemplateJob Operation</seealso>
         public virtual Task<CreateNodeFromTemplateJobResponse> CreateNodeFromTemplateJobAsync(CreateNodeFromTemplateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodeFromTemplateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodeFromTemplateJobResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.Panorama
 
         internal virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.Panorama
 
         internal virtual CreatePackageImportJobResponse CreatePackageImportJob(CreatePackageImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageImportJobResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreatePackageImportJob">REST API Reference for CreatePackageImportJob Operation</seealso>
         public virtual Task<CreatePackageImportJobResponse> CreatePackageImportJobAsync(CreatePackageImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageImportJobResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.Panorama
 
         internal virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
         public virtual Task<DeleteDeviceResponse> DeleteDeviceAsync(DeleteDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.Panorama
 
         internal virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.Panorama
 
         internal virtual DeregisterPackageVersionResponse DeregisterPackageVersion(DeregisterPackageVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterPackageVersionResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeregisterPackageVersion">REST API Reference for DeregisterPackageVersion Operation</seealso>
         public virtual Task<DeregisterPackageVersionResponse> DeregisterPackageVersionAsync(DeregisterPackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterPackageVersionResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeApplicationInstanceResponse DescribeApplicationInstance(DescribeApplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeApplicationInstance">REST API Reference for DescribeApplicationInstance Operation</seealso>
         public virtual Task<DescribeApplicationInstanceResponse> DescribeApplicationInstanceAsync(DescribeApplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeApplicationInstanceDetailsResponse DescribeApplicationInstanceDetails(DescribeApplicationInstanceDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationInstanceDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationInstanceDetailsResponseUnmarshaller.Instance;
 
@@ -755,7 +755,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeApplicationInstanceDetails">REST API Reference for DescribeApplicationInstanceDetails Operation</seealso>
         public virtual Task<DescribeApplicationInstanceDetailsResponse> DescribeApplicationInstanceDetailsAsync(DescribeApplicationInstanceDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationInstanceDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationInstanceDetailsResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
@@ -801,7 +801,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
         public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeDeviceJobResponse DescribeDeviceJob(DescribeDeviceJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceJobResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeDeviceJob">REST API Reference for DescribeDeviceJob Operation</seealso>
         public virtual Task<DescribeDeviceJobResponse> DescribeDeviceJobAsync(DescribeDeviceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDeviceJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDeviceJobResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeNodeResponse DescribeNode(DescribeNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeNode">REST API Reference for DescribeNode Operation</seealso>
         public virtual Task<DescribeNodeResponse> DescribeNodeAsync(DescribeNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeResponseUnmarshaller.Instance;
 
@@ -912,7 +912,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribeNodeFromTemplateJobResponse DescribeNodeFromTemplateJob(DescribeNodeFromTemplateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeFromTemplateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeFromTemplateJobResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribeNodeFromTemplateJob">REST API Reference for DescribeNodeFromTemplateJob Operation</seealso>
         public virtual Task<DescribeNodeFromTemplateJobResponse> DescribeNodeFromTemplateJobAsync(DescribeNodeFromTemplateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodeFromTemplateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodeFromTemplateJobResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribePackageResponse DescribePackage(DescribePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
         public virtual Task<DescribePackageResponse> DescribePackageAsync(DescribePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribePackageImportJobResponse DescribePackageImportJob(DescribePackageImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageImportJobResponseUnmarshaller.Instance;
 
@@ -1040,7 +1040,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackageImportJob">REST API Reference for DescribePackageImportJob Operation</seealso>
         public virtual Task<DescribePackageImportJobResponse> DescribePackageImportJobAsync(DescribePackageImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageImportJobResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.Panorama
 
         internal virtual DescribePackageVersionResponse DescribePackageVersion(DescribePackageVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageVersionResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DescribePackageVersion">REST API Reference for DescribePackageVersion Operation</seealso>
         public virtual Task<DescribePackageVersionResponse> DescribePackageVersionAsync(DescribePackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackageVersionResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.Panorama
 
         internal virtual ListApplicationInstanceDependenciesResponse ListApplicationInstanceDependencies(ListApplicationInstanceDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstanceDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstanceDependenciesResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListApplicationInstanceDependencies">REST API Reference for ListApplicationInstanceDependencies Operation</seealso>
         public virtual Task<ListApplicationInstanceDependenciesResponse> ListApplicationInstanceDependenciesAsync(ListApplicationInstanceDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstanceDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstanceDependenciesResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.Panorama
 
         internal virtual ListApplicationInstanceNodeInstancesResponse ListApplicationInstanceNodeInstances(ListApplicationInstanceNodeInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstanceNodeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListApplicationInstanceNodeInstances">REST API Reference for ListApplicationInstanceNodeInstances Operation</seealso>
         public virtual Task<ListApplicationInstanceNodeInstancesResponse> ListApplicationInstanceNodeInstancesAsync(ListApplicationInstanceNodeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstanceNodeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
 
@@ -1182,7 +1182,7 @@ namespace Amazon.Panorama
 
         internal virtual ListApplicationInstancesResponse ListApplicationInstances(ListApplicationInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstancesResponseUnmarshaller.Instance;
 
@@ -1209,7 +1209,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListApplicationInstances">REST API Reference for ListApplicationInstances Operation</seealso>
         public virtual Task<ListApplicationInstancesResponse> ListApplicationInstancesAsync(ListApplicationInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationInstancesResponseUnmarshaller.Instance;
 
@@ -1222,7 +1222,7 @@ namespace Amazon.Panorama
 
         internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -1268,7 +1268,7 @@ namespace Amazon.Panorama
 
         internal virtual ListDevicesJobsResponse ListDevicesJobs(ListDevicesJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesJobsResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListDevicesJobs">REST API Reference for ListDevicesJobs Operation</seealso>
         public virtual Task<ListDevicesJobsResponse> ListDevicesJobsAsync(ListDevicesJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesJobsResponseUnmarshaller.Instance;
 
@@ -1317,7 +1317,7 @@ namespace Amazon.Panorama
 
         internal virtual ListNodeFromTemplateJobsResponse ListNodeFromTemplateJobs(ListNodeFromTemplateJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodeFromTemplateJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodeFromTemplateJobsResponseUnmarshaller.Instance;
 
@@ -1350,7 +1350,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListNodeFromTemplateJobs">REST API Reference for ListNodeFromTemplateJobs Operation</seealso>
         public virtual Task<ListNodeFromTemplateJobsResponse> ListNodeFromTemplateJobsAsync(ListNodeFromTemplateJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodeFromTemplateJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodeFromTemplateJobsResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.Panorama
 
         internal virtual ListNodesResponse ListNodes(ListNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -1406,7 +1406,7 @@ namespace Amazon.Panorama
 
         internal virtual ListPackageImportJobsResponse ListPackageImportJobs(ListPackageImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageImportJobsResponseUnmarshaller.Instance;
 
@@ -1439,7 +1439,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListPackageImportJobs">REST API Reference for ListPackageImportJobs Operation</seealso>
         public virtual Task<ListPackageImportJobsResponse> ListPackageImportJobsAsync(ListPackageImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackageImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackageImportJobsResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.Panorama
 
         internal virtual ListPackagesResponse ListPackages(ListPackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
 
@@ -1488,7 +1488,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListPackages">REST API Reference for ListPackages Operation</seealso>
         public virtual Task<ListPackagesResponse> ListPackagesAsync(ListPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.Panorama
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1531,7 +1531,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.Panorama
 
         internal virtual ProvisionDeviceResponse ProvisionDevice(ProvisionDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionDeviceResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ProvisionDevice">REST API Reference for ProvisionDevice Operation</seealso>
         public virtual Task<ProvisionDeviceResponse> ProvisionDeviceAsync(ProvisionDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ProvisionDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ProvisionDeviceResponseUnmarshaller.Instance;
 
@@ -1597,7 +1597,7 @@ namespace Amazon.Panorama
 
         internal virtual RegisterPackageVersionResponse RegisterPackageVersion(RegisterPackageVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterPackageVersionResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/RegisterPackageVersion">REST API Reference for RegisterPackageVersion Operation</seealso>
         public virtual Task<RegisterPackageVersionResponse> RegisterPackageVersionAsync(RegisterPackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterPackageVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterPackageVersionResponseUnmarshaller.Instance;
 
@@ -1643,7 +1643,7 @@ namespace Amazon.Panorama
 
         internal virtual RemoveApplicationInstanceResponse RemoveApplicationInstance(RemoveApplicationInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/RemoveApplicationInstance">REST API Reference for RemoveApplicationInstance Operation</seealso>
         public virtual Task<RemoveApplicationInstanceResponse> RemoveApplicationInstanceAsync(RemoveApplicationInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveApplicationInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveApplicationInstanceResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.Panorama
 
         internal virtual SignalApplicationInstanceNodeInstancesResponse SignalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
 
@@ -1725,7 +1725,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
         public virtual Task<SignalApplicationInstanceNodeInstancesResponse> SignalApplicationInstanceNodeInstancesAsync(SignalApplicationInstanceNodeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
 
@@ -1738,7 +1738,7 @@ namespace Amazon.Panorama
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1768,7 +1768,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.Panorama
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1811,7 +1811,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.Panorama
 
         internal virtual UpdateDeviceMetadataResponse UpdateDeviceMetadata(UpdateDeviceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceMetadataResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.Panorama
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/UpdateDeviceMetadata">REST API Reference for UpdateDeviceMetadata Operation</seealso>
         public virtual Task<UpdateDeviceMetadataResponse> UpdateDeviceMetadataAsync(UpdateDeviceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceMetadataResponseUnmarshaller.Instance;
 

@@ -248,7 +248,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual DatetimeOffsetsResponse DatetimeOffsets(DatetimeOffsetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -269,7 +269,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual IAsyncResult BeginDatetimeOffsets(DatetimeOffsetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -308,7 +308,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual IAsyncResult BeginEmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual EndpointOperationResponse EndpointOperation(EndpointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual IAsyncResult BeginEndpointOperation(EndpointOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -416,7 +416,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual EndpointWithHostLabelOperationResponse EndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual IAsyncResult BeginEndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMap">REST API Reference for FlattenedXmlMap Operation</seealso>
         public virtual FlattenedXmlMapResponse FlattenedXmlMap(FlattenedXmlMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMap">REST API Reference for FlattenedXmlMap Operation</seealso>
         public virtual IAsyncResult BeginFlattenedXmlMap(FlattenedXmlMapRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMapWithXmlName">REST API Reference for FlattenedXmlMapWithXmlName Operation</seealso>
         public virtual FlattenedXmlMapWithXmlNameResponse FlattenedXmlMapWithXmlName(FlattenedXmlMapWithXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMapWithXmlName">REST API Reference for FlattenedXmlMapWithXmlName Operation</seealso>
         public virtual IAsyncResult BeginFlattenedXmlMapWithXmlName(FlattenedXmlMapWithXmlNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -578,7 +578,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMapWithXmlNamespace">REST API Reference for FlattenedXmlMapWithXmlNamespace Operation</seealso>
         public virtual FlattenedXmlMapWithXmlNamespaceResponse FlattenedXmlMapWithXmlNamespace(FlattenedXmlMapWithXmlNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FlattenedXmlMapWithXmlNamespace">REST API Reference for FlattenedXmlMapWithXmlNamespace Operation</seealso>
         public virtual IAsyncResult BeginFlattenedXmlMapWithXmlNamespace(FlattenedXmlMapWithXmlNamespaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual FractionalSecondsResponse FractionalSeconds(FractionalSecondsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual IAsyncResult BeginFractionalSeconds(FractionalSecondsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual IAsyncResult BeginGreetingWithErrors(GreetingWithErrorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual HostWithPathOperationResponse HostWithPathOperation(HostWithPathOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual IAsyncResult BeginHostWithPathOperation(HostWithPathOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/IgnoresWrappingXmlName">REST API Reference for IgnoresWrappingXmlName Operation</seealso>
         public virtual IgnoresWrappingXmlNameResponse IgnoresWrappingXmlName(IgnoresWrappingXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoresWrappingXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoresWrappingXmlNameResponseUnmarshaller.Instance;
 
@@ -833,7 +833,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/IgnoresWrappingXmlName">REST API Reference for IgnoresWrappingXmlName Operation</seealso>
         public virtual IAsyncResult BeginIgnoresWrappingXmlName(IgnoresWrappingXmlNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoresWrappingXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoresWrappingXmlNameResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/NoInputAndNoOutput">REST API Reference for NoInputAndNoOutput Operation</seealso>
         public virtual NoInputAndNoOutputResponse NoInputAndNoOutput(NoInputAndNoOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
 
@@ -893,7 +893,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/NoInputAndNoOutput">REST API Reference for NoInputAndNoOutput Operation</seealso>
         public virtual IAsyncResult BeginNoInputAndNoOutput(NoInputAndNoOutputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual NoInputAndOutputResponse NoInputAndOutput(NoInputAndOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual IAsyncResult BeginNoInputAndOutput(NoInputAndOutputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual PutWithContentEncodingResponse PutWithContentEncoding(PutWithContentEncodingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual IAsyncResult BeginPutWithContentEncoding(PutWithContentEncodingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -1040,7 +1040,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryIdempotencyTokenAutoFill">REST API Reference for QueryIdempotencyTokenAutoFill Operation</seealso>
         public virtual QueryIdempotencyTokenAutoFillResponse QueryIdempotencyTokenAutoFill(QueryIdempotencyTokenAutoFillRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
 
@@ -1061,7 +1061,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryIdempotencyTokenAutoFill">REST API Reference for QueryIdempotencyTokenAutoFill Operation</seealso>
         public virtual IAsyncResult BeginQueryIdempotencyTokenAutoFill(QueryIdempotencyTokenAutoFillRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
 
@@ -1094,7 +1094,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryLists">REST API Reference for QueryLists Operation</seealso>
         public virtual QueryListsResponse QueryLists(QueryListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryListsResponseUnmarshaller.Instance;
 
@@ -1115,7 +1115,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryLists">REST API Reference for QueryLists Operation</seealso>
         public virtual IAsyncResult BeginQueryLists(QueryListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryListsResponseUnmarshaller.Instance;
 
@@ -1148,7 +1148,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryMaps">REST API Reference for QueryMaps Operation</seealso>
         public virtual QueryMapsResponse QueryMaps(QueryMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryMapsResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryMaps">REST API Reference for QueryMaps Operation</seealso>
         public virtual IAsyncResult BeginQueryMaps(QueryMapsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryMapsResponseUnmarshaller.Instance;
 
@@ -1206,7 +1206,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryTimestamps">REST API Reference for QueryTimestamps Operation</seealso>
         public virtual QueryTimestampsResponse QueryTimestamps(QueryTimestampsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampsResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/QueryTimestamps">REST API Reference for QueryTimestamps Operation</seealso>
         public virtual IAsyncResult BeginQueryTimestamps(QueryTimestampsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryTimestampsResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/RecursiveXmlShapes">REST API Reference for RecursiveXmlShapes Operation</seealso>
         public virtual RecursiveXmlShapesResponse RecursiveXmlShapes(RecursiveXmlShapesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveXmlShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveXmlShapesResponseUnmarshaller.Instance;
 
@@ -1281,7 +1281,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/RecursiveXmlShapes">REST API Reference for RecursiveXmlShapes Operation</seealso>
         public virtual IAsyncResult BeginRecursiveXmlShapes(RecursiveXmlShapesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecursiveXmlShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecursiveXmlShapesResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/SimpleInputParams">REST API Reference for SimpleInputParams Operation</seealso>
         public virtual SimpleInputParamsResponse SimpleInputParams(SimpleInputParamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleInputParamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleInputParamsResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/SimpleInputParams">REST API Reference for SimpleInputParams Operation</seealso>
         public virtual IAsyncResult BeginSimpleInputParams(SimpleInputParamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleInputParamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleInputParamsResponseUnmarshaller.Instance;
 
@@ -1368,7 +1368,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/SimpleScalarXmlProperties">REST API Reference for SimpleScalarXmlProperties Operation</seealso>
         public virtual SimpleScalarXmlPropertiesResponse SimpleScalarXmlProperties(SimpleScalarXmlPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarXmlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarXmlPropertiesResponseUnmarshaller.Instance;
 
@@ -1389,7 +1389,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/SimpleScalarXmlProperties">REST API Reference for SimpleScalarXmlProperties Operation</seealso>
         public virtual IAsyncResult BeginSimpleScalarXmlProperties(SimpleScalarXmlPropertiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarXmlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarXmlPropertiesResponseUnmarshaller.Instance;
 
@@ -1422,7 +1422,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlBlobs">REST API Reference for XmlBlobs Operation</seealso>
         public virtual XmlBlobsResponse XmlBlobs(XmlBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlBlobs">REST API Reference for XmlBlobs Operation</seealso>
         public virtual IAsyncResult BeginXmlBlobs(XmlBlobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
 
@@ -1476,7 +1476,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyBlobs">REST API Reference for XmlEmptyBlobs Operation</seealso>
         public virtual XmlEmptyBlobsResponse XmlEmptyBlobs(XmlEmptyBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyBlobs">REST API Reference for XmlEmptyBlobs Operation</seealso>
         public virtual IAsyncResult BeginXmlEmptyBlobs(XmlEmptyBlobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyLists">REST API Reference for XmlEmptyLists Operation</seealso>
         public virtual XmlEmptyListsResponse XmlEmptyLists(XmlEmptyListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyLists">REST API Reference for XmlEmptyLists Operation</seealso>
         public virtual IAsyncResult BeginXmlEmptyLists(XmlEmptyListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyMaps">REST API Reference for XmlEmptyMaps Operation</seealso>
         public virtual XmlEmptyMapsResponse XmlEmptyMaps(XmlEmptyMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyMapsResponseUnmarshaller.Instance;
 
@@ -1605,7 +1605,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEmptyMaps">REST API Reference for XmlEmptyMaps Operation</seealso>
         public virtual IAsyncResult BeginXmlEmptyMaps(XmlEmptyMapsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyMapsResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEnums">REST API Reference for XmlEnums Operation</seealso>
         public virtual XmlEnumsResponse XmlEnums(XmlEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlEnums">REST API Reference for XmlEnums Operation</seealso>
         public virtual IAsyncResult BeginXmlEnums(XmlEnumsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlIntEnums">REST API Reference for XmlIntEnums Operation</seealso>
         public virtual XmlIntEnumsResponse XmlIntEnums(XmlIntEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlIntEnums">REST API Reference for XmlIntEnums Operation</seealso>
         public virtual IAsyncResult BeginXmlIntEnums(XmlIntEnumsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
 
@@ -1750,7 +1750,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlLists">REST API Reference for XmlLists Operation</seealso>
         public virtual XmlListsResponse XmlLists(XmlListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlLists">REST API Reference for XmlLists Operation</seealso>
         public virtual IAsyncResult BeginXmlLists(XmlListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlMaps">REST API Reference for XmlMaps Operation</seealso>
         public virtual XmlMapsResponse XmlMaps(XmlMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlMaps">REST API Reference for XmlMaps Operation</seealso>
         public virtual IAsyncResult BeginXmlMaps(XmlMapsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsResponseUnmarshaller.Instance;
 
@@ -1858,7 +1858,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlMapsXmlName">REST API Reference for XmlMapsXmlName Operation</seealso>
         public virtual XmlMapsXmlNameResponse XmlMapsXmlName(XmlMapsXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsXmlNameResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlMapsXmlName">REST API Reference for XmlMapsXmlName Operation</seealso>
         public virtual IAsyncResult BeginXmlMapsXmlName(XmlMapsXmlNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsXmlNameResponseUnmarshaller.Instance;
 
@@ -1912,7 +1912,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlNamespaces">REST API Reference for XmlNamespaces Operation</seealso>
         public virtual XmlNamespacesResponse XmlNamespaces(XmlNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
 
@@ -1933,7 +1933,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlNamespaces">REST API Reference for XmlNamespaces Operation</seealso>
         public virtual IAsyncResult BeginXmlNamespaces(XmlNamespacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
 
@@ -1967,7 +1967,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlTimestamps">REST API Reference for XmlTimestamps Operation</seealso>
         public virtual XmlTimestampsResponse XmlTimestamps(XmlTimestampsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.QueryProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/query-protocol-2020-01-08/XmlTimestamps">REST API Reference for XmlTimestamps Operation</seealso>
         public virtual IAsyncResult BeginXmlTimestamps(XmlTimestampsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
 

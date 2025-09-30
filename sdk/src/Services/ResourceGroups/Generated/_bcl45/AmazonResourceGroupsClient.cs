@@ -363,7 +363,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CancelTagSyncTask">REST API Reference for CancelTagSyncTask Operation</seealso>
         public virtual CancelTagSyncTaskResponse CancelTagSyncTask(CancelTagSyncTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTagSyncTaskResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CancelTagSyncTask">REST API Reference for CancelTagSyncTask Operation</seealso>
         public virtual Task<CancelTagSyncTaskResponse> CancelTagSyncTaskAsync(CancelTagSyncTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelTagSyncTaskResponseUnmarshaller.Instance;
             
@@ -476,7 +476,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -531,7 +531,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
             
@@ -585,7 +585,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
             
@@ -674,7 +674,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
             
@@ -762,7 +762,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual GetGroupResponse GetGroup(GetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
         public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupResponseUnmarshaller.Instance;
             
@@ -869,7 +869,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">REST API Reference for GetGroupConfiguration Operation</seealso>
         public virtual GetGroupConfigurationResponse GetGroupConfiguration(GetGroupConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupConfigurationResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration">REST API Reference for GetGroupConfiguration Operation</seealso>
         public virtual Task<GetGroupConfigurationResponse> GetGroupConfigurationAsync(GetGroupConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupConfigurationResponseUnmarshaller.Instance;
             
@@ -978,7 +978,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
         public virtual GetGroupQueryResponse GetGroupQuery(GetGroupQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupQueryResponseUnmarshaller.Instance;
 
@@ -1032,7 +1032,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
         public virtual Task<GetGroupQueryResponse> GetGroupQueryAsync(GetGroupQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGroupQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGroupQueryResponseUnmarshaller.Instance;
             
@@ -1086,7 +1086,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
             
@@ -1196,7 +1196,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTagSyncTask">REST API Reference for GetTagSyncTask Operation</seealso>
         public virtual GetTagSyncTaskResponse GetTagSyncTask(GetTagSyncTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagSyncTaskResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTagSyncTask">REST API Reference for GetTagSyncTask Operation</seealso>
         public virtual Task<GetTagSyncTaskResponse> GetTagSyncTaskAsync(GetTagSyncTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagSyncTaskResponseUnmarshaller.Instance;
             
@@ -1326,7 +1326,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">REST API Reference for GroupResources Operation</seealso>
         public virtual GroupResourcesResponse GroupResources(GroupResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GroupResourcesResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources">REST API Reference for GroupResources Operation</seealso>
         public virtual Task<GroupResourcesResponse> GroupResourcesAsync(GroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GroupResourcesResponseUnmarshaller.Instance;
             
@@ -1436,7 +1436,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupingStatuses">REST API Reference for ListGroupingStatuses Operation</seealso>
         public virtual ListGroupingStatusesResponse ListGroupingStatuses(ListGroupingStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupingStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupingStatusesResponseUnmarshaller.Instance;
 
@@ -1472,7 +1472,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupingStatuses">REST API Reference for ListGroupingStatuses Operation</seealso>
         public virtual Task<ListGroupingStatusesResponse> ListGroupingStatusesAsync(ListGroupingStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupingStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupingStatusesResponseUnmarshaller.Instance;
             
@@ -1542,7 +1542,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual ListGroupResourcesResponse ListGroupResources(ListGroupResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
 
@@ -1611,7 +1611,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
         public virtual Task<ListGroupResourcesResponse> ListGroupResourcesAsync(ListGroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupResourcesResponseUnmarshaller.Instance;
             
@@ -1661,7 +1661,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
             
@@ -1765,7 +1765,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListTagSyncTasks">REST API Reference for ListTagSyncTasks Operation</seealso>
         public virtual ListTagSyncTasksResponse ListTagSyncTasks(ListTagSyncTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagSyncTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagSyncTasksResponseUnmarshaller.Instance;
 
@@ -1819,7 +1819,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListTagSyncTasks">REST API Reference for ListTagSyncTasks Operation</seealso>
         public virtual Task<ListTagSyncTasksResponse> ListTagSyncTasksAsync(ListTagSyncTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagSyncTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagSyncTasksResponseUnmarshaller.Instance;
             
@@ -1874,7 +1874,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration">REST API Reference for PutGroupConfiguration Operation</seealso>
         public virtual PutGroupConfigurationResponse PutGroupConfiguration(PutGroupConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGroupConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGroupConfigurationResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration">REST API Reference for PutGroupConfiguration Operation</seealso>
         public virtual Task<PutGroupConfigurationResponse> PutGroupConfigurationAsync(PutGroupConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGroupConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGroupConfigurationResponseUnmarshaller.Instance;
             
@@ -1996,7 +1996,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
 
@@ -2063,7 +2063,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
         public virtual Task<SearchResourcesResponse> SearchResourcesAsync(SearchResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResourcesResponseUnmarshaller.Instance;
             
@@ -2138,7 +2138,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/StartTagSyncTask">REST API Reference for StartTagSyncTask Operation</seealso>
         public virtual StartTagSyncTaskResponse StartTagSyncTask(StartTagSyncTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTagSyncTaskResponseUnmarshaller.Instance;
 
@@ -2212,7 +2212,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/StartTagSyncTask">REST API Reference for StartTagSyncTask Operation</seealso>
         public virtual Task<StartTagSyncTaskResponse> StartTagSyncTaskAsync(StartTagSyncTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTagSyncTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTagSyncTaskResponseUnmarshaller.Instance;
             
@@ -2273,7 +2273,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
         public virtual TagResponse Tag(TagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResponseUnmarshaller.Instance;
 
@@ -2333,7 +2333,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
         public virtual Task<TagResponse> TagAsync(TagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResponseUnmarshaller.Instance;
             
@@ -2389,7 +2389,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources">REST API Reference for UngroupResources Operation</seealso>
         public virtual UngroupResourcesResponse UngroupResources(UngroupResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UngroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UngroupResourcesResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources">REST API Reference for UngroupResources Operation</seealso>
         public virtual Task<UngroupResourcesResponse> UngroupResourcesAsync(UngroupResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UngroupResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UngroupResourcesResponseUnmarshaller.Instance;
             
@@ -2497,7 +2497,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
         public virtual UntagResponse Untag(UntagRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
         public virtual Task<UntagResponse> UntagAsync(UntagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResponseUnmarshaller.Instance;
             
@@ -2592,7 +2592,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2634,7 +2634,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
             
@@ -2688,7 +2688,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -2741,7 +2741,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             
@@ -2796,7 +2796,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
         public virtual UpdateGroupQueryResponse UpdateGroupQuery(UpdateGroupQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupQueryResponseUnmarshaller.Instance;
 
@@ -2850,7 +2850,7 @@ namespace Amazon.ResourceGroups
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
         public virtual Task<UpdateGroupQueryResponse> UpdateGroupQueryAsync(UpdateGroupQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupQueryResponseUnmarshaller.Instance;
             

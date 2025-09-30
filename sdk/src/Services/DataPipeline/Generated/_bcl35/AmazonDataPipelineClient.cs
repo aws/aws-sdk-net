@@ -325,7 +325,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
         public virtual ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
 
@@ -346,7 +346,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ActivatePipeline">REST API Reference for ActivatePipeline Operation</seealso>
         public virtual IAsyncResult BeginActivatePipeline(ActivatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivatePipelineResponseUnmarshaller.Instance;
 
@@ -426,7 +426,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -447,7 +447,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -488,7 +488,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
         public virtual DeactivatePipelineResponse DeactivatePipeline(DeactivatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeactivatePipeline">REST API Reference for DeactivatePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeactivatePipeline(DeactivatePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivatePipelineResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
         public virtual DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribeObjects">REST API Reference for DescribeObjects Operation</seealso>
         public virtual IAsyncResult BeginDescribeObjects(DescribeObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObjectsResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         public virtual DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
 
@@ -853,7 +853,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/DescribePipelines">REST API Reference for DescribePipelines Operation</seealso>
         public virtual IAsyncResult BeginDescribePipelines(DescribePipelinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePipelinesResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
         public virtual EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
 
@@ -927,7 +927,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpression">REST API Reference for EvaluateExpression Operation</seealso>
         public virtual IAsyncResult BeginEvaluateExpression(EvaluateExpressionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateExpressionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateExpressionResponseUnmarshaller.Instance;
 
@@ -976,7 +976,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
         public virtual GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
 
@@ -997,7 +997,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinition">REST API Reference for GetPipelineDefinition Operation</seealso>
         public virtual IAsyncResult BeginGetPipelineDefinition(GetPipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPipelineDefinitionResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
@@ -1139,7 +1139,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
         public virtual PollForTaskResponse PollForTask(PollForTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForTaskResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTask">REST API Reference for PollForTask Operation</seealso>
         public virtual IAsyncResult BeginPollForTask(PollForTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForTaskResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
         public virtual PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinition">REST API Reference for PutPipelineDefinition Operation</seealso>
         public virtual IAsyncResult BeginPutPipelineDefinition(PutPipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPipelineDefinitionResponseUnmarshaller.Instance;
 
@@ -1293,7 +1293,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
         public virtual QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryObjectsResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/QueryObjects">REST API Reference for QueryObjects Operation</seealso>
         public virtual IAsyncResult BeginQueryObjects(QueryObjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryObjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryObjectsResponseUnmarshaller.Instance;
 
@@ -1394,7 +1394,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -1479,7 +1479,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
         public virtual ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportTaskProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
 
@@ -1500,7 +1500,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgress">REST API Reference for ReportTaskProgress Operation</seealso>
         public virtual IAsyncResult BeginReportTaskProgress(ReportTaskProgressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportTaskProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportTaskProgressResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
         public virtual ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportTaskRunnerHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
 
@@ -1565,7 +1565,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeat">REST API Reference for ReportTaskRunnerHeartbeat Operation</seealso>
         public virtual IAsyncResult BeginReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReportTaskRunnerHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReportTaskRunnerHeartbeatResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
         public virtual SetStatusResponse SetStatus(SetStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetStatusResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetStatus">REST API Reference for SetStatus Operation</seealso>
         public virtual IAsyncResult BeginSetStatus(SetStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetStatusResponseUnmarshaller.Instance;
 
@@ -1693,7 +1693,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
         public virtual SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTaskStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatus">REST API Reference for SetTaskStatus Operation</seealso>
         public virtual IAsyncResult BeginSetTaskStatus(SetTaskStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetTaskStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetTaskStatusResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
         public virtual ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;
 
@@ -1784,7 +1784,7 @@ namespace Amazon.DataPipeline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinition">REST API Reference for ValidatePipelineDefinition Operation</seealso>
         public virtual IAsyncResult BeginValidatePipelineDefinition(ValidatePipelineDefinitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidatePipelineDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidatePipelineDefinitionResponseUnmarshaller.Instance;
 

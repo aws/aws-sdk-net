@@ -334,7 +334,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual IAsyncResult BeginAssociateDelegateToResource(AssociateDelegateToResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateDelegateToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateDelegateToResourceResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateMemberToGroup">REST API Reference for AssociateMemberToGroup Operation</seealso>
         public virtual AssociateMemberToGroupResponse AssociateMemberToGroup(AssociateMemberToGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateMemberToGroup">REST API Reference for AssociateMemberToGroup Operation</seealso>
         public virtual IAsyncResult BeginAssociateMemberToGroup(AssociateMemberToGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">REST API Reference for AssumeImpersonationRole Operation</seealso>
         public virtual AssumeImpersonationRoleResponse AssumeImpersonationRole(AssumeImpersonationRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">REST API Reference for AssumeImpersonationRole Operation</seealso>
         public virtual IAsyncResult BeginAssumeImpersonationRole(AssumeImpersonationRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob">REST API Reference for CancelMailboxExportJob Operation</seealso>
         public virtual CancelMailboxExportJobResponse CancelMailboxExportJob(CancelMailboxExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob">REST API Reference for CancelMailboxExportJob Operation</seealso>
         public virtual IAsyncResult BeginCancelMailboxExportJob(CancelMailboxExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -644,7 +644,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
         public virtual CreateAvailabilityConfigurationResponse CreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateIdentityCenterApplication">REST API Reference for CreateIdentityCenterApplication Operation</seealso>
         public virtual CreateIdentityCenterApplicationResponse CreateIdentityCenterApplication(CreateIdentityCenterApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentityCenterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentityCenterApplicationResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateIdentityCenterApplication">REST API Reference for CreateIdentityCenterApplication Operation</seealso>
         public virtual IAsyncResult BeginCreateIdentityCenterApplication(CreateIdentityCenterApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentityCenterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentityCenterApplicationResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">REST API Reference for CreateImpersonationRole Operation</seealso>
         public virtual CreateImpersonationRoleResponse CreateImpersonationRole(CreateImpersonationRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">REST API Reference for CreateImpersonationRole Operation</seealso>
         public virtual IAsyncResult BeginCreateImpersonationRole(CreateImpersonationRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">REST API Reference for CreateMobileDeviceAccessRule Operation</seealso>
         public virtual CreateMobileDeviceAccessRuleResponse CreateMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -1027,7 +1027,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">REST API Reference for CreateMobileDeviceAccessRule Operation</seealso>
         public virtual IAsyncResult BeginCreateMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         public virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
         public virtual IAsyncResult BeginCreateOrganization(CreateOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -1197,7 +1197,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1330,7 +1330,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
         public virtual DeleteAccessControlRuleResponse DeleteAccessControlRule(DeleteAccessControlRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessControlRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessControlRuleResponseUnmarshaller.Instance;
 
@@ -1351,7 +1351,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteAccessControlRule(DeleteAccessControlRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessControlRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessControlRuleResponseUnmarshaller.Instance;
 
@@ -1402,7 +1402,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1465,7 +1465,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
         public virtual DeleteAvailabilityConfigurationResponse DeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -1486,7 +1486,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
         public virtual DeleteEmailMonitoringConfigurationResponse DeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -1551,7 +1551,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteEmailMonitoringConfiguration">REST API Reference for DeleteEmailMonitoringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteEmailMonitoringConfiguration(DeleteEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -1608,7 +1608,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -1629,7 +1629,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -1670,7 +1670,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteIdentityCenterApplication">REST API Reference for DeleteIdentityCenterApplication Operation</seealso>
         public virtual DeleteIdentityCenterApplicationResponse DeleteIdentityCenterApplication(DeleteIdentityCenterApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityCenterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityCenterApplicationResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteIdentityCenterApplication">REST API Reference for DeleteIdentityCenterApplication Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentityCenterApplication(DeleteIdentityCenterApplicationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityCenterApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityCenterApplicationResponseUnmarshaller.Instance;
 
@@ -1737,7 +1737,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteIdentityProviderConfiguration">REST API Reference for DeleteIdentityProviderConfiguration Operation</seealso>
         public virtual DeleteIdentityProviderConfigurationResponse DeleteIdentityProviderConfiguration(DeleteIdentityProviderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -1758,7 +1758,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteIdentityProviderConfiguration">REST API Reference for DeleteIdentityProviderConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdentityProviderConfiguration(DeleteIdentityProviderConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -1802,7 +1802,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">REST API Reference for DeleteImpersonationRole Operation</seealso>
         public virtual DeleteImpersonationRoleResponse DeleteImpersonationRole(DeleteImpersonationRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -1823,7 +1823,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">REST API Reference for DeleteImpersonationRole Operation</seealso>
         public virtual IAsyncResult BeginDeleteImpersonationRole(DeleteImpersonationRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -1874,7 +1874,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
         public virtual DeleteMailboxPermissionsResponse DeleteMailboxPermissions(DeleteMailboxPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -1895,7 +1895,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
         public virtual IAsyncResult BeginDeleteMailboxPermissions(DeleteMailboxPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessOverride">REST API Reference for DeleteMobileDeviceAccessOverride Operation</seealso>
         public virtual DeleteMobileDeviceAccessOverrideResponse DeleteMobileDeviceAccessOverride(DeleteMobileDeviceAccessOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -1971,7 +1971,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessOverride">REST API Reference for DeleteMobileDeviceAccessOverride Operation</seealso>
         public virtual IAsyncResult BeginDeleteMobileDeviceAccessOverride(DeleteMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -2022,7 +2022,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">REST API Reference for DeleteMobileDeviceAccessRule Operation</seealso>
         public virtual DeleteMobileDeviceAccessRuleResponse DeleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -2043,7 +2043,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule">REST API Reference for DeleteMobileDeviceAccessRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
         public virtual DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
 
@@ -2111,7 +2111,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
         public virtual IAsyncResult BeginDeleteOrganization(DeleteOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
 
@@ -2155,7 +2155,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeletePersonalAccessToken">REST API Reference for DeletePersonalAccessToken Operation</seealso>
         public virtual DeletePersonalAccessTokenResponse DeletePersonalAccessToken(DeletePersonalAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePersonalAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePersonalAccessTokenResponseUnmarshaller.Instance;
 
@@ -2176,7 +2176,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeletePersonalAccessToken">REST API Reference for DeletePersonalAccessToken Operation</seealso>
         public virtual IAsyncResult BeginDeletePersonalAccessToken(DeletePersonalAccessTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePersonalAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePersonalAccessTokenResponseUnmarshaller.Instance;
 
@@ -2227,7 +2227,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -2248,7 +2248,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -2292,7 +2292,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public virtual DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -2313,7 +2313,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2399,7 +2399,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2452,7 +2452,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual DeregisterFromWorkMailResponse DeregisterFromWorkMail(DeregisterFromWorkMailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
@@ -2473,7 +2473,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual IAsyncResult BeginDeregisterFromWorkMail(DeregisterFromWorkMailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterFromWorkMailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterFromWorkMailResponseUnmarshaller.Instance;
 
@@ -2528,7 +2528,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
         public virtual DeregisterMailDomainResponse DeregisterMailDomain(DeregisterMailDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterMailDomainResponseUnmarshaller.Instance;
 
@@ -2549,7 +2549,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">REST API Reference for DeregisterMailDomain Operation</seealso>
         public virtual IAsyncResult BeginDeregisterMailDomain(DeregisterMailDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterMailDomainResponseUnmarshaller.Instance;
 
@@ -2596,7 +2596,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
         public virtual DescribeEmailMonitoringConfigurationResponse DescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -2617,7 +2617,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEmailMonitoringConfiguration">REST API Reference for DescribeEmailMonitoringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeEmailMonitoringConfiguration(DescribeEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -2664,7 +2664,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
         public virtual DescribeEntityResponse DescribeEntity(DescribeEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityResponseUnmarshaller.Instance;
 
@@ -2685,7 +2685,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
         public virtual IAsyncResult BeginDescribeEntity(DescribeEntityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -2753,7 +2753,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeGroup(DescribeGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -2800,7 +2800,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
         public virtual DescribeIdentityProviderConfigurationResponse DescribeIdentityProviderConfiguration(DescribeIdentityProviderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -2821,7 +2821,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeIdentityProviderConfiguration">REST API Reference for DescribeIdentityProviderConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeIdentityProviderConfiguration(DescribeIdentityProviderConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -2862,7 +2862,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
         public virtual DescribeInboundDmarcSettingsResponse DescribeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
 
@@ -2883,7 +2883,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeInboundDmarcSettings">REST API Reference for DescribeInboundDmarcSettings Operation</seealso>
         public virtual IAsyncResult BeginDescribeInboundDmarcSettings(DescribeInboundDmarcSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundDmarcSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundDmarcSettingsResponseUnmarshaller.Instance;
 
@@ -2930,7 +2930,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob">REST API Reference for DescribeMailboxExportJob Operation</seealso>
         public virtual DescribeMailboxExportJobResponse DescribeMailboxExportJob(DescribeMailboxExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -2951,7 +2951,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob">REST API Reference for DescribeMailboxExportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeMailboxExportJob(DescribeMailboxExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -2991,7 +2991,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual DescribeOrganizationResponse DescribeOrganization(DescribeOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
@@ -3012,7 +3012,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeOrganization">REST API Reference for DescribeOrganization Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganization(DescribeOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResponseUnmarshaller.Instance;
 
@@ -3062,7 +3062,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual DescribeResourceResponse DescribeResource(DescribeResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
@@ -3083,7 +3083,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual IAsyncResult BeginDescribeResource(DescribeResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceResponseUnmarshaller.Instance;
 
@@ -3136,7 +3136,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -3157,7 +3157,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual IAsyncResult BeginDescribeUser(DescribeUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -3211,7 +3211,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
@@ -3232,7 +3232,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual IAsyncResult BeginDisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateDelegateFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateDelegateFromResourceResponseUnmarshaller.Instance;
 
@@ -3292,7 +3292,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateMemberFromGroup">REST API Reference for DisassociateMemberFromGroup Operation</seealso>
         public virtual DisassociateMemberFromGroupResponse DisassociateMemberFromGroup(DisassociateMemberFromGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
@@ -3313,7 +3313,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateMemberFromGroup">REST API Reference for DisassociateMemberFromGroup Operation</seealso>
         public virtual IAsyncResult BeginDisassociateMemberFromGroup(DisassociateMemberFromGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromGroupResponseUnmarshaller.Instance;
 
@@ -3366,7 +3366,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
         public virtual GetAccessControlEffectResponse GetAccessControlEffect(GetAccessControlEffectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessControlEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessControlEffectResponseUnmarshaller.Instance;
 
@@ -3387,7 +3387,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
         public virtual IAsyncResult BeginGetAccessControlEffect(GetAccessControlEffectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessControlEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessControlEffectResponseUnmarshaller.Instance;
 
@@ -3434,7 +3434,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
         public virtual GetDefaultRetentionPolicyResponse GetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -3455,7 +3455,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -3502,7 +3502,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">REST API Reference for GetImpersonationRole Operation</seealso>
         public virtual GetImpersonationRoleResponse GetImpersonationRole(GetImpersonationRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -3523,7 +3523,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">REST API Reference for GetImpersonationRole Operation</seealso>
         public virtual IAsyncResult BeginGetImpersonationRole(GetImpersonationRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -3577,7 +3577,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">REST API Reference for GetImpersonationRoleEffect Operation</seealso>
         public virtual GetImpersonationRoleEffectResponse GetImpersonationRoleEffect(GetImpersonationRoleEffectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImpersonationRoleEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImpersonationRoleEffectResponseUnmarshaller.Instance;
 
@@ -3598,7 +3598,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">REST API Reference for GetImpersonationRoleEffect Operation</seealso>
         public virtual IAsyncResult BeginGetImpersonationRoleEffect(GetImpersonationRoleEffectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImpersonationRoleEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImpersonationRoleEffectResponseUnmarshaller.Instance;
 
@@ -3645,7 +3645,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
         public virtual GetMailboxDetailsResponse GetMailboxDetails(GetMailboxDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
 
@@ -3666,7 +3666,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
         public virtual IAsyncResult BeginGetMailboxDetails(GetMailboxDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMailboxDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMailboxDetailsResponseUnmarshaller.Instance;
 
@@ -3714,7 +3714,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
         public virtual GetMailDomainResponse GetMailDomain(GetMailDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMailDomainResponseUnmarshaller.Instance;
 
@@ -3735,7 +3735,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailDomain">REST API Reference for GetMailDomain Operation</seealso>
         public virtual IAsyncResult BeginGetMailDomain(GetMailDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMailDomainResponseUnmarshaller.Instance;
 
@@ -3781,7 +3781,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">REST API Reference for GetMobileDeviceAccessEffect Operation</seealso>
         public virtual GetMobileDeviceAccessEffectResponse GetMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileDeviceAccessEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileDeviceAccessEffectResponseUnmarshaller.Instance;
 
@@ -3802,7 +3802,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">REST API Reference for GetMobileDeviceAccessEffect Operation</seealso>
         public virtual IAsyncResult BeginGetMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileDeviceAccessEffectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileDeviceAccessEffectResponseUnmarshaller.Instance;
 
@@ -3853,7 +3853,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessOverride">REST API Reference for GetMobileDeviceAccessOverride Operation</seealso>
         public virtual GetMobileDeviceAccessOverrideResponse GetMobileDeviceAccessOverride(GetMobileDeviceAccessOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -3874,7 +3874,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessOverride">REST API Reference for GetMobileDeviceAccessOverride Operation</seealso>
         public virtual IAsyncResult BeginGetMobileDeviceAccessOverride(GetMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -3921,7 +3921,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetPersonalAccessTokenMetadata">REST API Reference for GetPersonalAccessTokenMetadata Operation</seealso>
         public virtual GetPersonalAccessTokenMetadataResponse GetPersonalAccessTokenMetadata(GetPersonalAccessTokenMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonalAccessTokenMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonalAccessTokenMetadataResponseUnmarshaller.Instance;
 
@@ -3942,7 +3942,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetPersonalAccessTokenMetadata">REST API Reference for GetPersonalAccessTokenMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetPersonalAccessTokenMetadata(GetPersonalAccessTokenMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonalAccessTokenMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonalAccessTokenMetadataResponseUnmarshaller.Instance;
 
@@ -3983,7 +3983,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
         public virtual ListAccessControlRulesResponse ListAccessControlRules(ListAccessControlRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessControlRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessControlRulesResponseUnmarshaller.Instance;
 
@@ -4004,7 +4004,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
         public virtual IAsyncResult BeginListAccessControlRules(ListAccessControlRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessControlRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessControlRulesResponseUnmarshaller.Instance;
 
@@ -4055,7 +4055,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -4076,7 +4076,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -4120,7 +4120,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
         public virtual ListAvailabilityConfigurationsResponse ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
 
@@ -4141,7 +4141,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
 
@@ -4193,7 +4193,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
@@ -4214,7 +4214,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual IAsyncResult BeginListGroupMembers(ListGroupMembersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembersResponseUnmarshaller.Instance;
 
@@ -4261,7 +4261,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -4282,7 +4282,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -4333,7 +4333,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">REST API Reference for ListGroupsForEntity Operation</seealso>
         public virtual ListGroupsForEntityResponse ListGroupsForEntity(ListGroupsForEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsForEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsForEntityResponseUnmarshaller.Instance;
 
@@ -4354,7 +4354,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity">REST API Reference for ListGroupsForEntity Operation</seealso>
         public virtual IAsyncResult BeginListGroupsForEntity(ListGroupsForEntityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsForEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsForEntityResponseUnmarshaller.Instance;
 
@@ -4398,7 +4398,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">REST API Reference for ListImpersonationRoles Operation</seealso>
         public virtual ListImpersonationRolesResponse ListImpersonationRoles(ListImpersonationRolesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImpersonationRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImpersonationRolesResponseUnmarshaller.Instance;
 
@@ -4419,7 +4419,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">REST API Reference for ListImpersonationRoles Operation</seealso>
         public virtual IAsyncResult BeginListImpersonationRoles(ListImpersonationRolesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImpersonationRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImpersonationRolesResponseUnmarshaller.Instance;
 
@@ -4464,7 +4464,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs">REST API Reference for ListMailboxExportJobs Operation</seealso>
         public virtual ListMailboxExportJobsResponse ListMailboxExportJobs(ListMailboxExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailboxExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailboxExportJobsResponseUnmarshaller.Instance;
 
@@ -4485,7 +4485,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs">REST API Reference for ListMailboxExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListMailboxExportJobs(ListMailboxExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailboxExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailboxExportJobsResponseUnmarshaller.Instance;
 
@@ -4532,7 +4532,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         public virtual ListMailboxPermissionsResponse ListMailboxPermissions(ListMailboxPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -4553,7 +4553,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         public virtual IAsyncResult BeginListMailboxPermissions(ListMailboxPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -4597,7 +4597,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
         public virtual ListMailDomainsResponse ListMailDomains(ListMailDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailDomainsResponseUnmarshaller.Instance;
 
@@ -4618,7 +4618,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">REST API Reference for ListMailDomains Operation</seealso>
         public virtual IAsyncResult BeginListMailDomains(ListMailDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMailDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMailDomainsResponseUnmarshaller.Instance;
 
@@ -4666,7 +4666,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessOverrides">REST API Reference for ListMobileDeviceAccessOverrides Operation</seealso>
         public virtual ListMobileDeviceAccessOverridesResponse ListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileDeviceAccessOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileDeviceAccessOverridesResponseUnmarshaller.Instance;
 
@@ -4687,7 +4687,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessOverrides">REST API Reference for ListMobileDeviceAccessOverrides Operation</seealso>
         public virtual IAsyncResult BeginListMobileDeviceAccessOverrides(ListMobileDeviceAccessOverridesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileDeviceAccessOverridesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileDeviceAccessOverridesResponseUnmarshaller.Instance;
 
@@ -4731,7 +4731,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">REST API Reference for ListMobileDeviceAccessRules Operation</seealso>
         public virtual ListMobileDeviceAccessRulesResponse ListMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileDeviceAccessRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileDeviceAccessRulesResponseUnmarshaller.Instance;
 
@@ -4752,7 +4752,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">REST API Reference for ListMobileDeviceAccessRules Operation</seealso>
         public virtual IAsyncResult BeginListMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMobileDeviceAccessRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMobileDeviceAccessRulesResponseUnmarshaller.Instance;
 
@@ -4788,7 +4788,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">REST API Reference for ListOrganizations Operation</seealso>
         public virtual ListOrganizationsResponse ListOrganizations(ListOrganizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
@@ -4809,7 +4809,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">REST API Reference for ListOrganizations Operation</seealso>
         public virtual IAsyncResult BeginListOrganizations(ListOrganizationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationsResponseUnmarshaller.Instance;
 
@@ -4860,7 +4860,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListPersonalAccessTokens">REST API Reference for ListPersonalAccessTokens Operation</seealso>
         public virtual ListPersonalAccessTokensResponse ListPersonalAccessTokens(ListPersonalAccessTokensRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPersonalAccessTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPersonalAccessTokensResponseUnmarshaller.Instance;
 
@@ -4881,7 +4881,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListPersonalAccessTokens">REST API Reference for ListPersonalAccessTokens Operation</seealso>
         public virtual IAsyncResult BeginListPersonalAccessTokens(ListPersonalAccessTokensRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPersonalAccessTokensRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPersonalAccessTokensResponseUnmarshaller.Instance;
 
@@ -4936,7 +4936,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDelegatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
@@ -4957,7 +4957,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual IAsyncResult BeginListResourceDelegates(ListResourceDelegatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceDelegatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceDelegatesResponseUnmarshaller.Instance;
 
@@ -5004,7 +5004,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -5025,7 +5025,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual IAsyncResult BeginListResources(ListResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcesResponseUnmarshaller.Instance;
 
@@ -5061,7 +5061,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5082,7 +5082,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5126,7 +5126,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -5147,7 +5147,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -5203,7 +5203,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         public virtual PutAccessControlRuleResponse PutAccessControlRule(PutAccessControlRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessControlRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessControlRuleResponseUnmarshaller.Instance;
 
@@ -5224,7 +5224,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         public virtual IAsyncResult BeginPutAccessControlRule(PutAccessControlRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessControlRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessControlRuleResponseUnmarshaller.Instance;
 
@@ -5271,7 +5271,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
         public virtual PutEmailMonitoringConfigurationResponse PutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -5292,7 +5292,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutEmailMonitoringConfiguration">REST API Reference for PutEmailMonitoringConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutEmailMonitoringConfiguration(PutEmailMonitoringConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEmailMonitoringConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEmailMonitoringConfigurationResponseUnmarshaller.Instance;
 
@@ -5343,7 +5343,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutIdentityProviderConfiguration">REST API Reference for PutIdentityProviderConfiguration Operation</seealso>
         public virtual PutIdentityProviderConfigurationResponse PutIdentityProviderConfiguration(PutIdentityProviderConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -5364,7 +5364,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutIdentityProviderConfiguration">REST API Reference for PutIdentityProviderConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutIdentityProviderConfiguration(PutIdentityProviderConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIdentityProviderConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIdentityProviderConfigurationResponseUnmarshaller.Instance;
 
@@ -5405,7 +5405,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
         public virtual PutInboundDmarcSettingsResponse PutInboundDmarcSettings(PutInboundDmarcSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
 
@@ -5426,7 +5426,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutInboundDmarcSettings">REST API Reference for PutInboundDmarcSettings Operation</seealso>
         public virtual IAsyncResult BeginPutInboundDmarcSettings(PutInboundDmarcSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInboundDmarcSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInboundDmarcSettingsResponseUnmarshaller.Instance;
 
@@ -5477,7 +5477,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
         public virtual PutMailboxPermissionsResponse PutMailboxPermissions(PutMailboxPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -5498,7 +5498,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
         public virtual IAsyncResult BeginPutMailboxPermissions(PutMailboxPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMailboxPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMailboxPermissionsResponseUnmarshaller.Instance;
 
@@ -5550,7 +5550,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMobileDeviceAccessOverride">REST API Reference for PutMobileDeviceAccessOverride Operation</seealso>
         public virtual PutMobileDeviceAccessOverrideResponse PutMobileDeviceAccessOverride(PutMobileDeviceAccessOverrideRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -5571,7 +5571,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMobileDeviceAccessOverride">REST API Reference for PutMobileDeviceAccessOverride Operation</seealso>
         public virtual IAsyncResult BeginPutMobileDeviceAccessOverride(PutMobileDeviceAccessOverrideRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMobileDeviceAccessOverrideRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMobileDeviceAccessOverrideResponseUnmarshaller.Instance;
 
@@ -5618,7 +5618,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public virtual PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -5639,7 +5639,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRetentionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRetentionPolicyResponseUnmarshaller.Instance;
 
@@ -5693,7 +5693,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
         public virtual RegisterMailDomainResponse RegisterMailDomain(RegisterMailDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterMailDomainResponseUnmarshaller.Instance;
 
@@ -5714,7 +5714,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">REST API Reference for RegisterMailDomain Operation</seealso>
         public virtual IAsyncResult BeginRegisterMailDomain(RegisterMailDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterMailDomainResponseUnmarshaller.Instance;
 
@@ -5798,7 +5798,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual RegisterToWorkMailResponse RegisterToWorkMail(RegisterToWorkMailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterToWorkMailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
@@ -5819,7 +5819,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual IAsyncResult BeginRegisterToWorkMail(RegisterToWorkMailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterToWorkMailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterToWorkMailResponseUnmarshaller.Instance;
 
@@ -5883,7 +5883,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         public virtual ResetPasswordResponse ResetPassword(ResetPasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
@@ -5904,7 +5904,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ResetPassword">REST API Reference for ResetPassword Operation</seealso>
         public virtual IAsyncResult BeginResetPassword(ResetPasswordRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetPasswordResponseUnmarshaller.Instance;
 
@@ -5957,7 +5957,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob">REST API Reference for StartMailboxExportJob Operation</seealso>
         public virtual StartMailboxExportJobResponse StartMailboxExportJob(StartMailboxExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -5978,7 +5978,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob">REST API Reference for StartMailboxExportJob Operation</seealso>
         public virtual IAsyncResult BeginStartMailboxExportJob(StartMailboxExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMailboxExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMailboxExportJobResponseUnmarshaller.Instance;
 
@@ -6024,7 +6024,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6045,7 +6045,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6104,7 +6104,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
         public virtual TestAvailabilityConfigurationResponse TestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -6125,7 +6125,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginTestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -6161,7 +6161,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6182,7 +6182,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6230,7 +6230,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
         public virtual UpdateAvailabilityConfigurationResponse UpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -6251,7 +6251,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -6304,7 +6304,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
         public virtual UpdateDefaultMailDomainResponse UpdateDefaultMailDomain(UpdateDefaultMailDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultMailDomainResponseUnmarshaller.Instance;
 
@@ -6325,7 +6325,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateDefaultMailDomain">REST API Reference for UpdateDefaultMailDomain Operation</seealso>
         public virtual IAsyncResult BeginUpdateDefaultMailDomain(UpdateDefaultMailDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultMailDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultMailDomainResponseUnmarshaller.Instance;
 
@@ -6379,7 +6379,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -6400,7 +6400,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -6457,7 +6457,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">REST API Reference for UpdateImpersonationRole Operation</seealso>
         public virtual UpdateImpersonationRoleResponse UpdateImpersonationRole(UpdateImpersonationRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -6478,7 +6478,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">REST API Reference for UpdateImpersonationRole Operation</seealso>
         public virtual IAsyncResult BeginUpdateImpersonationRole(UpdateImpersonationRoleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImpersonationRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImpersonationRoleResponseUnmarshaller.Instance;
 
@@ -6529,7 +6529,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
         public virtual UpdateMailboxQuotaResponse UpdateMailboxQuota(UpdateMailboxQuotaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
 
@@ -6550,7 +6550,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
         public virtual IAsyncResult BeginUpdateMailboxQuota(UpdateMailboxQuotaRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMailboxQuotaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMailboxQuotaResponseUnmarshaller.Instance;
 
@@ -6597,7 +6597,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">REST API Reference for UpdateMobileDeviceAccessRule Operation</seealso>
         public virtual UpdateMobileDeviceAccessRuleResponse UpdateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -6618,7 +6618,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">REST API Reference for UpdateMobileDeviceAccessRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMobileDeviceAccessRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMobileDeviceAccessRuleResponseUnmarshaller.Instance;
 
@@ -6691,7 +6691,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdatePrimaryEmailAddress">REST API Reference for UpdatePrimaryEmailAddress Operation</seealso>
         public virtual UpdatePrimaryEmailAddressResponse UpdatePrimaryEmailAddress(UpdatePrimaryEmailAddressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
@@ -6712,7 +6712,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdatePrimaryEmailAddress">REST API Reference for UpdatePrimaryEmailAddress Operation</seealso>
         public virtual IAsyncResult BeginUpdatePrimaryEmailAddress(UpdatePrimaryEmailAddressRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePrimaryEmailAddressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePrimaryEmailAddressResponseUnmarshaller.Instance;
 
@@ -6789,7 +6789,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -6810,7 +6810,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -6872,7 +6872,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -6893,7 +6893,7 @@ namespace Amazon.WorkMail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

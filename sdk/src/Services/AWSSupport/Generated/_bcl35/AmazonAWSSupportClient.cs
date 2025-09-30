@@ -377,7 +377,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         public virtual AddAttachmentsToSetResponse AddAttachmentsToSet(AddAttachmentsToSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddAttachmentsToSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet">REST API Reference for AddAttachmentsToSet Operation</seealso>
         public virtual IAsyncResult BeginAddAttachmentsToSet(AddAttachmentsToSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddAttachmentsToSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddAttachmentsToSetResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         public virtual AddCommunicationToCaseResponse AddCommunicationToCase(AddCommunicationToCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddCommunicationToCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase">REST API Reference for AddCommunicationToCase Operation</seealso>
         public virtual IAsyncResult BeginAddCommunicationToCase(AddCommunicationToCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddCommunicationToCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         public virtual DescribeAttachmentResponse DescribeAttachment(DescribeAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
 
@@ -676,7 +676,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachment">REST API Reference for DescribeAttachment Operation</seealso>
         public virtual IAsyncResult BeginDescribeAttachment(DescribeAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         public virtual DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCasesResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCases">REST API Reference for DescribeCases Operation</seealso>
         public virtual IAsyncResult BeginDescribeCases(DescribeCasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCasesResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         public virtual DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCommunicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
 
@@ -859,7 +859,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunications">REST API Reference for DescribeCommunications Operation</seealso>
         public virtual IAsyncResult BeginDescribeCommunications(DescribeCommunicationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCommunicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCommunicationsResponseUnmarshaller.Instance;
 
@@ -914,7 +914,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">REST API Reference for DescribeCreateCaseOptions Operation</seealso>
         public virtual DescribeCreateCaseOptionsResponse DescribeCreateCaseOptions(DescribeCreateCaseOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCreateCaseOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCreateCaseOptionsResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">REST API Reference for DescribeCreateCaseOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeCreateCaseOptions(DescribeCreateCaseOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCreateCaseOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCreateCaseOptionsResponseUnmarshaller.Instance;
 
@@ -1035,7 +1035,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         public virtual DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSeverityLevelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
 
@@ -1159,7 +1159,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevels">REST API Reference for DescribeSeverityLevels Operation</seealso>
         public virtual IAsyncResult BeginDescribeSeverityLevels(DescribeSeverityLevelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSeverityLevelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSeverityLevelsResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">REST API Reference for DescribeSupportedLanguages Operation</seealso>
         public virtual DescribeSupportedLanguagesResponse DescribeSupportedLanguages(DescribeSupportedLanguagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSupportedLanguagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSupportedLanguagesResponseUnmarshaller.Instance;
 
@@ -1235,7 +1235,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">REST API Reference for DescribeSupportedLanguages Operation</seealso>
         public virtual IAsyncResult BeginDescribeSupportedLanguages(DescribeSupportedLanguagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSupportedLanguagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSupportedLanguagesResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         public virtual DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         public virtual DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         public virtual DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
 
@@ -1535,7 +1535,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         public virtual DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustedAdvisorCheckSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         public virtual RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshTrustedAdvisorCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
 
@@ -1712,7 +1712,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheck">REST API Reference for RefreshTrustedAdvisorCheck Operation</seealso>
         public virtual IAsyncResult BeginRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RefreshTrustedAdvisorCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.Instance;
 
@@ -1766,7 +1766,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         public virtual ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCaseResponseUnmarshaller.Instance;
 
@@ -1787,7 +1787,7 @@ namespace Amazon.AWSSupport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/ResolveCase">REST API Reference for ResolveCase Operation</seealso>
         public virtual IAsyncResult BeginResolveCase(ResolveCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCaseResponseUnmarshaller.Instance;
 

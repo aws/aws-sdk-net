@@ -301,7 +301,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual CreateApiKeyResponse CreateApiKey(CreateApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">REST API Reference for CreateApiKey Operation</seealso>
         public virtual IAsyncResult BeginCreateApiKey(CreateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiKeyResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginCreateAuthorizer(CreateAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
@@ -447,7 +447,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         public virtual CreateBasePathMappingResponse CreateBasePathMapping(CreateBasePathMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
 
@@ -468,7 +468,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">REST API Reference for CreateBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginCreateBasePathMapping(CreateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBasePathMappingResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         public virtual CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">REST API Reference for CreateDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         public virtual CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">REST API Reference for CreateDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainName(CreateDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainNameAccessAssociation">REST API Reference for CreateDomainNameAccessAssociation Operation</seealso>
         public virtual CreateDomainNameAccessAssociationResponse CreateDomainNameAccessAssociation(CreateDomainNameAccessAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainNameAccessAssociation">REST API Reference for CreateDomainNameAccessAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateDomainNameAccessAssociation(CreateDomainNameAccessAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -957,7 +957,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         public virtual CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
 
@@ -978,7 +978,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">REST API Reference for CreateRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual CreateResourceResponse CreateResource(CreateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -1051,7 +1051,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">REST API Reference for CreateResource Operation</seealso>
         public virtual IAsyncResult BeginCreateResource(CreateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         public virtual CreateRestApiResponse CreateRestApi(CreateRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestApiResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">REST API Reference for CreateRestApi Operation</seealso>
         public virtual IAsyncResult BeginCreateRestApi(CreateRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRestApiResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
@@ -1194,7 +1194,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual IAsyncResult BeginCreateStage(CreateStageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         public virtual CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
 
@@ -1268,7 +1268,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlan">REST API Reference for CreateUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
 
@@ -1320,7 +1320,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         public virtual CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateUsagePlanKey">REST API Reference for CreateUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcLink(CreateVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
 
@@ -1462,7 +1462,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual DeleteApiKeyResponse DeleteApiKey(DeleteApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
@@ -1483,7 +1483,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">REST API Reference for DeleteApiKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteApiKey(DeleteApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiKeyResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginDeleteAuthorizer(DeleteAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         public virtual DeleteBasePathMappingResponse DeleteBasePathMapping(DeleteBasePathMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">REST API Reference for DeleteBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteBasePathMapping(DeleteBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBasePathMappingResponseUnmarshaller.Instance;
 
@@ -1672,7 +1672,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         public virtual DeleteClientCertificateResponse DeleteClientCertificate(DeleteClientCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
 
@@ -1693,7 +1693,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">REST API Reference for DeleteClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginDeleteClientCertificate(DeleteClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientCertificateResponseUnmarshaller.Instance;
 
@@ -1746,7 +1746,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -1767,7 +1767,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual IAsyncResult BeginDeleteDeployment(DeleteDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         public virtual DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">REST API Reference for DeleteDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
 
@@ -1886,7 +1886,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         public virtual DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -1907,7 +1907,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">REST API Reference for DeleteDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -1956,7 +1956,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
@@ -1977,7 +1977,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainName(DeleteDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainNameAccessAssociation">REST API Reference for DeleteDomainNameAccessAssociation Operation</seealso>
         public virtual DeleteDomainNameAccessAssociationResponse DeleteDomainNameAccessAssociation(DeleteDomainNameAccessAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -2054,7 +2054,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainNameAccessAssociation">REST API Reference for DeleteDomainNameAccessAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteDomainNameAccessAssociation(DeleteDomainNameAccessAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -2104,7 +2104,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         public virtual DeleteGatewayResponseResponse DeleteGatewayResponse(DeleteGatewayResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
 
@@ -2125,7 +2125,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">REST API Reference for DeleteGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteGatewayResponse(DeleteGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegration(DeleteIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -2244,7 +2244,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -2265,7 +2265,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteIntegrationResponse(DeleteIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         public virtual DeleteMethodResponse DeleteMethod(DeleteMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMethodResponseUnmarshaller.Instance;
 
@@ -2331,7 +2331,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">REST API Reference for DeleteMethod Operation</seealso>
         public virtual IAsyncResult BeginDeleteMethod(DeleteMethodRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMethodResponseUnmarshaller.Instance;
 
@@ -2380,7 +2380,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         public virtual DeleteMethodResponseResponse DeleteMethodResponse(DeleteMethodResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
 
@@ -2401,7 +2401,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">REST API Reference for DeleteMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginDeleteMethodResponse(DeleteMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMethodResponseResponseUnmarshaller.Instance;
 
@@ -2450,7 +2450,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -2471,7 +2471,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -2520,7 +2520,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         public virtual DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
 
@@ -2541,7 +2541,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">REST API Reference for DeleteRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
 
@@ -2590,7 +2590,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -2611,7 +2611,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual IAsyncResult BeginDeleteResource(DeleteResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         public virtual DeleteRestApiResponse DeleteRestApi(DeleteRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
 
@@ -2681,7 +2681,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRestApi">REST API Reference for DeleteRestApi Operation</seealso>
         public virtual IAsyncResult BeginDeleteRestApi(DeleteRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRestApiResponseUnmarshaller.Instance;
 
@@ -2733,7 +2733,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
@@ -2754,7 +2754,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual IAsyncResult BeginDeleteStage(DeleteStageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
@@ -2803,7 +2803,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         public virtual DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
 
@@ -2824,7 +2824,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlan">REST API Reference for DeleteUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
 
@@ -2874,7 +2874,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         public virtual DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -2895,7 +2895,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteUsagePlanKey">REST API Reference for DeleteUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -2944,7 +2944,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcLink(DeleteVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
 
@@ -3017,7 +3017,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         public virtual FlushStageAuthorizersCacheResponse FlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlushStageAuthorizersCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
 
@@ -3038,7 +3038,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageAuthorizersCache">REST API Reference for FlushStageAuthorizersCache Operation</seealso>
         public virtual IAsyncResult BeginFlushStageAuthorizersCache(FlushStageAuthorizersCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlushStageAuthorizersCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlushStageAuthorizersCacheResponseUnmarshaller.Instance;
 
@@ -3090,7 +3090,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         public virtual FlushStageCacheResponse FlushStageCache(FlushStageCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlushStageCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
 
@@ -3111,7 +3111,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/FlushStageCache">REST API Reference for FlushStageCache Operation</seealso>
         public virtual IAsyncResult BeginFlushStageCache(FlushStageCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlushStageCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlushStageCacheResponseUnmarshaller.Instance;
 
@@ -3160,7 +3160,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         public virtual GenerateClientCertificateResponse GenerateClientCertificate(GenerateClientCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
 
@@ -3181,7 +3181,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">REST API Reference for GenerateClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginGenerateClientCertificate(GenerateClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateClientCertificateResponseUnmarshaller.Instance;
 
@@ -3227,7 +3227,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual GetAccountResponse GetAccount(GetAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
@@ -3248,7 +3248,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">REST API Reference for GetAccount Operation</seealso>
         public virtual IAsyncResult BeginGetAccount(GetAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountResponseUnmarshaller.Instance;
 
@@ -3294,7 +3294,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         public virtual GetApiKeyResponse GetApiKey(GetApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiKeyResponseUnmarshaller.Instance;
 
@@ -3315,7 +3315,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">REST API Reference for GetApiKey Operation</seealso>
         public virtual IAsyncResult BeginGetApiKey(GetApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiKeyResponseUnmarshaller.Instance;
 
@@ -3361,7 +3361,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         public virtual GetApiKeysResponse GetApiKeys(GetApiKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiKeysResponseUnmarshaller.Instance;
 
@@ -3382,7 +3382,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">REST API Reference for GetApiKeys Operation</seealso>
         public virtual IAsyncResult BeginGetApiKeys(GetApiKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiKeysResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
@@ -3449,7 +3449,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizer(GetAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
@@ -3495,7 +3495,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
@@ -3516,7 +3516,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual IAsyncResult BeginGetAuthorizers(GetAuthorizersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
@@ -3562,7 +3562,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         public virtual GetBasePathMappingResponse GetBasePathMapping(GetBasePathMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
 
@@ -3583,7 +3583,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">REST API Reference for GetBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginGetBasePathMapping(GetBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBasePathMappingResponseUnmarshaller.Instance;
 
@@ -3629,7 +3629,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         public virtual GetBasePathMappingsResponse GetBasePathMappings(GetBasePathMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBasePathMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
 
@@ -3650,7 +3650,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">REST API Reference for GetBasePathMappings Operation</seealso>
         public virtual IAsyncResult BeginGetBasePathMappings(GetBasePathMappingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBasePathMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBasePathMappingsResponseUnmarshaller.Instance;
 
@@ -3696,7 +3696,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         public virtual GetClientCertificateResponse GetClientCertificate(GetClientCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
 
@@ -3717,7 +3717,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">REST API Reference for GetClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginGetClientCertificate(GetClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClientCertificateResponseUnmarshaller.Instance;
 
@@ -3763,7 +3763,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         public virtual GetClientCertificatesResponse GetClientCertificates(GetClientCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClientCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
 
@@ -3784,7 +3784,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">REST API Reference for GetClientCertificates Operation</seealso>
         public virtual IAsyncResult BeginGetClientCertificates(GetClientCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClientCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClientCertificatesResponseUnmarshaller.Instance;
 
@@ -3834,7 +3834,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -3855,7 +3855,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -3905,7 +3905,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
@@ -3926,7 +3926,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
@@ -3972,7 +3972,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         public virtual GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
 
@@ -3993,7 +3993,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">REST API Reference for GetDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
 
@@ -4039,7 +4039,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         public virtual GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
 
@@ -4060,7 +4060,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">REST API Reference for GetDocumentationParts Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
 
@@ -4102,7 +4102,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         public virtual GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -4123,7 +4123,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">REST API Reference for GetDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -4169,7 +4169,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         public virtual GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
 
@@ -4190,7 +4190,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">REST API Reference for GetDocumentationVersions Operation</seealso>
         public virtual IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDocumentationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
 
@@ -4237,7 +4237,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
@@ -4258,7 +4258,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual IAsyncResult BeginGetDomainName(GetDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
@@ -4304,7 +4304,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNameAccessAssociations">REST API Reference for GetDomainNameAccessAssociations Operation</seealso>
         public virtual GetDomainNameAccessAssociationsResponse GetDomainNameAccessAssociations(GetDomainNameAccessAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameAccessAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameAccessAssociationsResponseUnmarshaller.Instance;
 
@@ -4325,7 +4325,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNameAccessAssociations">REST API Reference for GetDomainNameAccessAssociations Operation</seealso>
         public virtual IAsyncResult BeginGetDomainNameAccessAssociations(GetDomainNameAccessAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameAccessAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameAccessAssociationsResponseUnmarshaller.Instance;
 
@@ -4371,7 +4371,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
@@ -4392,7 +4392,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual IAsyncResult BeginGetDomainNames(GetDomainNamesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
@@ -4444,7 +4444,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportResponseUnmarshaller.Instance;
 
@@ -4465,7 +4465,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual IAsyncResult BeginGetExport(GetExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExportResponseUnmarshaller.Instance;
 
@@ -4511,7 +4511,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         public virtual GetGatewayResponseResponse GetGatewayResponse(GetGatewayResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
 
@@ -4532,7 +4532,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">REST API Reference for GetGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginGetGatewayResponse(GetGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponseResponseUnmarshaller.Instance;
 
@@ -4580,7 +4580,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         public virtual GetGatewayResponsesResponse GetGatewayResponses(GetGatewayResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
 
@@ -4601,7 +4601,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">REST API Reference for GetGatewayResponses Operation</seealso>
         public virtual IAsyncResult BeginGetGatewayResponses(GetGatewayResponsesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponsesResponseUnmarshaller.Instance;
 
@@ -4647,7 +4647,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -4668,7 +4668,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual IAsyncResult BeginGetIntegration(GetIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -4714,7 +4714,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -4735,7 +4735,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginGetIntegrationResponse(GetIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -4777,7 +4777,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         public virtual GetMethodResponse GetMethod(GetMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMethodResponseUnmarshaller.Instance;
 
@@ -4798,7 +4798,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">REST API Reference for GetMethod Operation</seealso>
         public virtual IAsyncResult BeginGetMethod(GetMethodRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMethodResponseUnmarshaller.Instance;
 
@@ -4840,7 +4840,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         public virtual GetMethodResponseResponse GetMethodResponse(GetMethodResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
 
@@ -4861,7 +4861,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">REST API Reference for GetMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginGetMethodResponse(GetMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMethodResponseResponseUnmarshaller.Instance;
 
@@ -4907,7 +4907,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
 
@@ -4928,7 +4928,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual IAsyncResult BeginGetModel(GetModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
 
@@ -4974,7 +4974,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
@@ -4995,7 +4995,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual IAsyncResult BeginGetModels(GetModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
@@ -5042,7 +5042,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
@@ -5063,7 +5063,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual IAsyncResult BeginGetModelTemplate(GetModelTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
@@ -5109,7 +5109,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         public virtual GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
 
@@ -5130,7 +5130,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">REST API Reference for GetRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
 
@@ -5176,7 +5176,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         public virtual GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestValidatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
 
@@ -5197,7 +5197,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">REST API Reference for GetRequestValidators Operation</seealso>
         public virtual IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRequestValidatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
 
@@ -5239,7 +5239,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual GetResourceResponse GetResource(GetResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceResponseUnmarshaller.Instance;
 
@@ -5260,7 +5260,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResource">REST API Reference for GetResource Operation</seealso>
         public virtual IAsyncResult BeginGetResource(GetResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceResponseUnmarshaller.Instance;
 
@@ -5306,7 +5306,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -5327,7 +5327,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">REST API Reference for GetResources Operation</seealso>
         public virtual IAsyncResult BeginGetResources(GetResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesResponseUnmarshaller.Instance;
 
@@ -5373,7 +5373,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         public virtual GetRestApiResponse GetRestApi(GetRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestApiResponseUnmarshaller.Instance;
 
@@ -5394,7 +5394,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">REST API Reference for GetRestApi Operation</seealso>
         public virtual IAsyncResult BeginGetRestApi(GetRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestApiResponseUnmarshaller.Instance;
 
@@ -5440,7 +5440,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         public virtual GetRestApisResponse GetRestApis(GetRestApisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestApisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestApisResponseUnmarshaller.Instance;
 
@@ -5461,7 +5461,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">REST API Reference for GetRestApis Operation</seealso>
         public virtual IAsyncResult BeginGetRestApis(GetRestApisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRestApisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRestApisResponseUnmarshaller.Instance;
 
@@ -5513,7 +5513,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         public virtual GetSdkResponse GetSdk(GetSdkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkResponseUnmarshaller.Instance;
 
@@ -5534,7 +5534,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">REST API Reference for GetSdk Operation</seealso>
         public virtual IAsyncResult BeginGetSdk(GetSdkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkResponseUnmarshaller.Instance;
 
@@ -5580,7 +5580,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         public virtual GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
 
@@ -5601,7 +5601,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">REST API Reference for GetSdkType Operation</seealso>
         public virtual IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
 
@@ -5647,7 +5647,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         public virtual GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
 
@@ -5668,7 +5668,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">REST API Reference for GetSdkTypes Operation</seealso>
         public virtual IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSdkTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
 
@@ -5720,7 +5720,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
@@ -5741,7 +5741,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual IAsyncResult BeginGetStage(GetStageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
@@ -5793,7 +5793,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
 
@@ -5814,7 +5814,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual IAsyncResult BeginGetStages(GetStagesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
 
@@ -5860,7 +5860,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -5881,7 +5881,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual IAsyncResult BeginGetTags(GetTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -5927,7 +5927,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         public virtual GetUsageResponse GetUsage(GetUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageResponseUnmarshaller.Instance;
 
@@ -5948,7 +5948,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsage">REST API Reference for GetUsage Operation</seealso>
         public virtual IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageResponseUnmarshaller.Instance;
 
@@ -5994,7 +5994,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         public virtual GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
 
@@ -6015,7 +6015,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlan">REST API Reference for GetUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
 
@@ -6061,7 +6061,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         public virtual GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -6082,7 +6082,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKey">REST API Reference for GetUsagePlanKey Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
 
@@ -6129,7 +6129,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         public virtual GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
 
@@ -6150,7 +6150,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlanKeys">REST API Reference for GetUsagePlanKeys Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlanKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
 
@@ -6196,7 +6196,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         public virtual GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
 
@@ -6217,7 +6217,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetUsagePlans">REST API Reference for GetUsagePlans Operation</seealso>
         public virtual IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsagePlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
 
@@ -6263,7 +6263,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
 
@@ -6284,7 +6284,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLink(GetVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
 
@@ -6330,7 +6330,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
 
@@ -6351,7 +6351,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual IAsyncResult BeginGetVpcLinks(GetVpcLinksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
 
@@ -6403,7 +6403,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         public virtual ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApiKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
 
@@ -6424,7 +6424,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportApiKeys">REST API Reference for ImportApiKeys Operation</seealso>
         public virtual IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApiKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
 
@@ -6476,7 +6476,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         public virtual ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDocumentationPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
 
@@ -6497,7 +6497,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">REST API Reference for ImportDocumentationParts Operation</seealso>
         public virtual IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDocumentationPartsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
 
@@ -6550,7 +6550,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         public virtual ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportRestApiResponseUnmarshaller.Instance;
 
@@ -6571,7 +6571,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportRestApi">REST API Reference for ImportRestApi Operation</seealso>
         public virtual IAsyncResult BeginImportRestApi(ImportRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportRestApiResponseUnmarshaller.Instance;
 
@@ -6624,7 +6624,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         public virtual PutGatewayResponseResponse PutGatewayResponse(PutGatewayResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
 
@@ -6645,7 +6645,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">REST API Reference for PutGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginPutGatewayResponse(PutGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGatewayResponseResponseUnmarshaller.Instance;
 
@@ -6697,7 +6697,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -6718,7 +6718,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
         public virtual IAsyncResult BeginPutIntegration(PutIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
 
@@ -6770,7 +6770,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         public virtual PutIntegrationResponseResponse PutIntegrationResponse(PutIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -6791,7 +6791,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutIntegrationResponse">REST API Reference for PutIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginPutIntegrationResponse(PutIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -6843,7 +6843,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         public virtual PutMethodResponse PutMethod(PutMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMethodResponseUnmarshaller.Instance;
 
@@ -6864,7 +6864,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">REST API Reference for PutMethod Operation</seealso>
         public virtual IAsyncResult BeginPutMethod(PutMethodRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMethodResponseUnmarshaller.Instance;
 
@@ -6916,7 +6916,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         public virtual PutMethodResponseResponse PutMethodResponse(PutMethodResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
@@ -6937,7 +6937,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">REST API Reference for PutMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginPutMethodResponse(PutMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMethodResponseResponseUnmarshaller.Instance;
 
@@ -6991,7 +6991,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         public virtual PutRestApiResponse PutRestApi(PutRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRestApiResponseUnmarshaller.Instance;
 
@@ -7012,7 +7012,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutRestApi">REST API Reference for PutRestApi Operation</seealso>
         public virtual IAsyncResult BeginPutRestApi(PutRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRestApiResponseUnmarshaller.Instance;
 
@@ -7069,7 +7069,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RejectDomainNameAccessAssociation">REST API Reference for RejectDomainNameAccessAssociation Operation</seealso>
         public virtual RejectDomainNameAccessAssociationResponse RejectDomainNameAccessAssociation(RejectDomainNameAccessAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -7090,7 +7090,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RejectDomainNameAccessAssociation">REST API Reference for RejectDomainNameAccessAssociation Operation</seealso>
         public virtual IAsyncResult BeginRejectDomainNameAccessAssociation(RejectDomainNameAccessAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectDomainNameAccessAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectDomainNameAccessAssociationResponseUnmarshaller.Instance;
 
@@ -7142,7 +7142,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7163,7 +7163,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7210,7 +7210,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual TestInvokeAuthorizerResponse TestInvokeAuthorizer(TestInvokeAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
@@ -7231,7 +7231,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">REST API Reference for TestInvokeAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginTestInvokeAuthorizer(TestInvokeAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestInvokeAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestInvokeAuthorizerResponseUnmarshaller.Instance;
 
@@ -7278,7 +7278,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         public virtual TestInvokeMethodResponse TestInvokeMethod(TestInvokeMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestInvokeMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
 
@@ -7299,7 +7299,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">REST API Reference for TestInvokeMethod Operation</seealso>
         public virtual IAsyncResult BeginTestInvokeMethod(TestInvokeMethodRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestInvokeMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestInvokeMethodResponseUnmarshaller.Instance;
 
@@ -7351,7 +7351,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7372,7 +7372,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7424,7 +7424,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual UpdateAccountResponse UpdateAccount(UpdateAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
@@ -7445,7 +7445,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">REST API Reference for UpdateAccount Operation</seealso>
         public virtual IAsyncResult BeginUpdateAccount(UpdateAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountResponseUnmarshaller.Instance;
 
@@ -7497,7 +7497,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual UpdateApiKeyResponse UpdateApiKey(UpdateApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
@@ -7518,7 +7518,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">REST API Reference for UpdateApiKey Operation</seealso>
         public virtual IAsyncResult BeginUpdateApiKey(UpdateApiKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiKeyResponseUnmarshaller.Instance;
 
@@ -7570,7 +7570,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
@@ -7591,7 +7591,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual IAsyncResult BeginUpdateAuthorizer(UpdateAuthorizerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
@@ -7643,7 +7643,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         public virtual UpdateBasePathMappingResponse UpdateBasePathMapping(UpdateBasePathMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
 
@@ -7664,7 +7664,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">REST API Reference for UpdateBasePathMapping Operation</seealso>
         public virtual IAsyncResult BeginUpdateBasePathMapping(UpdateBasePathMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBasePathMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBasePathMappingResponseUnmarshaller.Instance;
 
@@ -7716,7 +7716,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         public virtual UpdateClientCertificateResponse UpdateClientCertificate(UpdateClientCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
 
@@ -7737,7 +7737,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">REST API Reference for UpdateClientCertificate Operation</seealso>
         public virtual IAsyncResult BeginUpdateClientCertificate(UpdateClientCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClientCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClientCertificateResponseUnmarshaller.Instance;
 
@@ -7793,7 +7793,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
@@ -7814,7 +7814,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual IAsyncResult BeginUpdateDeployment(UpdateDeploymentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
@@ -7866,7 +7866,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         public virtual UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
 
@@ -7887,7 +7887,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">REST API Reference for UpdateDocumentationPart Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDocumentationPartRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
 
@@ -7939,7 +7939,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         public virtual UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -7960,7 +7960,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">REST API Reference for UpdateDocumentationVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDocumentationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
 
@@ -8012,7 +8012,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
@@ -8033,7 +8033,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual IAsyncResult BeginUpdateDomainName(UpdateDomainNameRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
@@ -8085,7 +8085,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         public virtual UpdateGatewayResponseResponse UpdateGatewayResponse(UpdateGatewayResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
 
@@ -8106,7 +8106,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">REST API Reference for UpdateGatewayResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateGatewayResponse(UpdateGatewayResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayResponseResponseUnmarshaller.Instance;
 
@@ -8158,7 +8158,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
@@ -8179,7 +8179,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegration(UpdateIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
@@ -8231,7 +8231,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -8252,7 +8252,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateIntegrationResponse(UpdateIntegrationResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -8301,7 +8301,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         public virtual UpdateMethodResponse UpdateMethod(UpdateMethodRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMethodResponseUnmarshaller.Instance;
 
@@ -8322,7 +8322,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">REST API Reference for UpdateMethod Operation</seealso>
         public virtual IAsyncResult BeginUpdateMethod(UpdateMethodRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMethodRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMethodResponseUnmarshaller.Instance;
 
@@ -8374,7 +8374,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         public virtual UpdateMethodResponseResponse UpdateMethodResponse(UpdateMethodResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
 
@@ -8395,7 +8395,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">REST API Reference for UpdateMethodResponse Operation</seealso>
         public virtual IAsyncResult BeginUpdateMethodResponse(UpdateMethodResponseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMethodResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMethodResponseResponseUnmarshaller.Instance;
 
@@ -8447,7 +8447,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -8468,7 +8468,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -8520,7 +8520,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         public virtual UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
 
@@ -8541,7 +8541,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">REST API Reference for UpdateRequestValidator Operation</seealso>
         public virtual IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRequestValidatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
 
@@ -8590,7 +8590,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -8611,7 +8611,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual IAsyncResult BeginUpdateResource(UpdateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceResponseUnmarshaller.Instance;
 
@@ -8663,7 +8663,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         public virtual UpdateRestApiResponse UpdateRestApi(UpdateRestApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
 
@@ -8684,7 +8684,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRestApi">REST API Reference for UpdateRestApi Operation</seealso>
         public virtual IAsyncResult BeginUpdateRestApi(UpdateRestApiRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRestApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRestApiResponseUnmarshaller.Instance;
 
@@ -8736,7 +8736,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
@@ -8757,7 +8757,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual IAsyncResult BeginUpdateStage(UpdateStageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
@@ -8810,7 +8810,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         public virtual UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageResponseUnmarshaller.Instance;
 
@@ -8831,7 +8831,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsage">REST API Reference for UpdateUsage Operation</seealso>
         public virtual IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageResponseUnmarshaller.Instance;
 
@@ -8883,7 +8883,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         public virtual UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
 
@@ -8904,7 +8904,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateUsagePlan">REST API Reference for UpdateUsagePlan Operation</seealso>
         public virtual IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsagePlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
 
@@ -8956,7 +8956,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
 
@@ -8977,7 +8977,7 @@ namespace Amazon.APIGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual IAsyncResult BeginUpdateVpcLink(UpdateVpcLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
 

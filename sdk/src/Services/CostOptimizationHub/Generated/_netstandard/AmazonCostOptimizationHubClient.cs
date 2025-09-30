@@ -284,7 +284,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual GetPreferencesResponse GetPreferences(GetPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreferencesResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/GetPreferences">REST API Reference for GetPreferences Operation</seealso>
         public virtual Task<GetPreferencesResponse> GetPreferencesAsync(GetPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreferencesResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual GetRecommendationResponse GetRecommendation(GetRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
         public virtual Task<GetRecommendationResponse> GetRecommendationAsync(GetRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationResponseUnmarshaller.Instance;
 
@@ -390,7 +390,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual ListEnrollmentStatusesResponse ListEnrollmentStatuses(ListEnrollmentStatusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnrollmentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnrollmentStatusesResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEnrollmentStatuses">REST API Reference for ListEnrollmentStatuses Operation</seealso>
         public virtual Task<ListEnrollmentStatusesResponse> ListEnrollmentStatusesAsync(ListEnrollmentStatusesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnrollmentStatusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnrollmentStatusesResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual ListRecommendationSummariesResponse ListRecommendationSummaries(ListRecommendationSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationSummariesResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListRecommendationSummaries">REST API Reference for ListRecommendationSummaries Operation</seealso>
         public virtual Task<ListRecommendationSummariesResponse> ListRecommendationSummariesAsync(ListRecommendationSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationSummariesResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual UpdateEnrollmentStatusResponse UpdateEnrollmentStatus(UpdateEnrollmentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnrollmentStatusResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/UpdateEnrollmentStatus">REST API Reference for UpdateEnrollmentStatus Operation</seealso>
         public virtual Task<UpdateEnrollmentStatusResponse> UpdateEnrollmentStatusAsync(UpdateEnrollmentStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnrollmentStatusResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.CostOptimizationHub
 
         internal virtual UpdatePreferencesResponse UpdatePreferences(UpdatePreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreferencesResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.CostOptimizationHub
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/UpdatePreferences">REST API Reference for UpdatePreferences Operation</seealso>
         public virtual Task<UpdatePreferencesResponse> UpdatePreferencesAsync(UpdatePreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreferencesResponseUnmarshaller.Instance;
 

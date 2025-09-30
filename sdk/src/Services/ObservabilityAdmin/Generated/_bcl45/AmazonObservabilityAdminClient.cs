@@ -315,7 +315,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateCentralizationRuleForOrganization">REST API Reference for CreateCentralizationRuleForOrganization Operation</seealso>
         public virtual CreateCentralizationRuleForOrganizationResponse CreateCentralizationRuleForOrganization(CreateCentralizationRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateCentralizationRuleForOrganization">REST API Reference for CreateCentralizationRuleForOrganization Operation</seealso>
         public virtual Task<CreateCentralizationRuleForOrganizationResponse> CreateCentralizationRuleForOrganizationAsync(CreateCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -409,7 +409,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">REST API Reference for CreateTelemetryRule Operation</seealso>
         public virtual CreateTelemetryRuleResponse CreateTelemetryRule(CreateTelemetryRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTelemetryRuleResponseUnmarshaller.Instance;
 
@@ -456,7 +456,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRule">REST API Reference for CreateTelemetryRule Operation</seealso>
         public virtual Task<CreateTelemetryRuleResponse> CreateTelemetryRuleAsync(CreateTelemetryRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTelemetryRuleResponseUnmarshaller.Instance;
             
@@ -503,7 +503,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">REST API Reference for CreateTelemetryRuleForOrganization Operation</seealso>
         public virtual CreateTelemetryRuleForOrganizationResponse CreateTelemetryRuleForOrganization(CreateTelemetryRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -549,7 +549,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryRuleForOrganization">REST API Reference for CreateTelemetryRuleForOrganization Operation</seealso>
         public virtual Task<CreateTelemetryRuleForOrganizationResponse> CreateTelemetryRuleForOrganizationAsync(CreateTelemetryRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -590,7 +590,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteCentralizationRuleForOrganization">REST API Reference for DeleteCentralizationRuleForOrganization Operation</seealso>
         public virtual DeleteCentralizationRuleForOrganizationResponse DeleteCentralizationRuleForOrganization(DeleteCentralizationRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteCentralizationRuleForOrganization">REST API Reference for DeleteCentralizationRuleForOrganization Operation</seealso>
         public virtual Task<DeleteCentralizationRuleForOrganizationResponse> DeleteCentralizationRuleForOrganizationAsync(DeleteCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -671,7 +671,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">REST API Reference for DeleteTelemetryRule Operation</seealso>
         public virtual DeleteTelemetryRuleResponse DeleteTelemetryRule(DeleteTelemetryRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTelemetryRuleResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRule">REST API Reference for DeleteTelemetryRule Operation</seealso>
         public virtual Task<DeleteTelemetryRuleResponse> DeleteTelemetryRuleAsync(DeleteTelemetryRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTelemetryRuleResponseUnmarshaller.Instance;
             
@@ -752,7 +752,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">REST API Reference for DeleteTelemetryRuleForOrganization Operation</seealso>
         public virtual DeleteTelemetryRuleForOrganizationResponse DeleteTelemetryRuleForOrganization(DeleteTelemetryRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -792,7 +792,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryRuleForOrganization">REST API Reference for DeleteTelemetryRuleForOrganization Operation</seealso>
         public virtual Task<DeleteTelemetryRuleForOrganizationResponse> DeleteTelemetryRuleForOrganizationAsync(DeleteTelemetryRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -834,7 +834,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetCentralizationRuleForOrganization">REST API Reference for GetCentralizationRuleForOrganization Operation</seealso>
         public virtual GetCentralizationRuleForOrganizationResponse GetCentralizationRuleForOrganization(GetCentralizationRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetCentralizationRuleForOrganization">REST API Reference for GetCentralizationRuleForOrganization Operation</seealso>
         public virtual Task<GetCentralizationRuleForOrganizationResponse> GetCentralizationRuleForOrganizationAsync(GetCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -910,7 +910,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatus">REST API Reference for GetTelemetryEvaluationStatus Operation</seealso>
         public virtual GetTelemetryEvaluationStatusResponse GetTelemetryEvaluationStatus(GetTelemetryEvaluationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryEvaluationStatusResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatus">REST API Reference for GetTelemetryEvaluationStatus Operation</seealso>
         public virtual Task<GetTelemetryEvaluationStatusResponse> GetTelemetryEvaluationStatusAsync(GetTelemetryEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryEvaluationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryEvaluationStatusResponseUnmarshaller.Instance;
             
@@ -984,7 +984,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatusForOrganization">REST API Reference for GetTelemetryEvaluationStatusForOrganization Operation</seealso>
         public virtual GetTelemetryEvaluationStatusForOrganizationResponse GetTelemetryEvaluationStatusForOrganization(GetTelemetryEvaluationStatusForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryEvaluationStatusForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryEvaluationStatusForOrganizationResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatusForOrganization">REST API Reference for GetTelemetryEvaluationStatusForOrganization Operation</seealso>
         public virtual Task<GetTelemetryEvaluationStatusForOrganizationResponse> GetTelemetryEvaluationStatusForOrganizationAsync(GetTelemetryEvaluationStatusForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryEvaluationStatusForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryEvaluationStatusForOrganizationResponseUnmarshaller.Instance;
             
@@ -1063,7 +1063,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">REST API Reference for GetTelemetryRule Operation</seealso>
         public virtual GetTelemetryRuleResponse GetTelemetryRule(GetTelemetryRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryRuleResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRule">REST API Reference for GetTelemetryRule Operation</seealso>
         public virtual Task<GetTelemetryRuleResponse> GetTelemetryRuleAsync(GetTelemetryRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryRuleResponseUnmarshaller.Instance;
             
@@ -1144,7 +1144,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">REST API Reference for GetTelemetryRuleForOrganization Operation</seealso>
         public virtual GetTelemetryRuleForOrganizationResponse GetTelemetryRuleForOrganization(GetTelemetryRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryRuleForOrganization">REST API Reference for GetTelemetryRuleForOrganization Operation</seealso>
         public virtual Task<GetTelemetryRuleForOrganizationResponse> GetTelemetryRuleForOrganizationAsync(GetTelemetryRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -1223,7 +1223,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListCentralizationRulesForOrganization">REST API Reference for ListCentralizationRulesForOrganization Operation</seealso>
         public virtual ListCentralizationRulesForOrganizationResponse ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCentralizationRulesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCentralizationRulesForOrganizationResponseUnmarshaller.Instance;
 
@@ -1260,7 +1260,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListCentralizationRulesForOrganization">REST API Reference for ListCentralizationRulesForOrganization Operation</seealso>
         public virtual Task<ListCentralizationRulesForOrganizationResponse> ListCentralizationRulesForOrganizationAsync(ListCentralizationRulesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCentralizationRulesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCentralizationRulesForOrganizationResponseUnmarshaller.Instance;
             
@@ -1299,7 +1299,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetry">REST API Reference for ListResourceTelemetry Operation</seealso>
         public virtual ListResourceTelemetryResponse ListResourceTelemetry(ListResourceTelemetryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTelemetryResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetry">REST API Reference for ListResourceTelemetry Operation</seealso>
         public virtual Task<ListResourceTelemetryResponse> ListResourceTelemetryAsync(ListResourceTelemetryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTelemetryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTelemetryResponseUnmarshaller.Instance;
             
@@ -1375,7 +1375,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetryForOrganization">REST API Reference for ListResourceTelemetryForOrganization Operation</seealso>
         public virtual ListResourceTelemetryForOrganizationResponse ListResourceTelemetryForOrganization(ListResourceTelemetryForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTelemetryForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTelemetryForOrganizationResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListResourceTelemetryForOrganization">REST API Reference for ListResourceTelemetryForOrganization Operation</seealso>
         public virtual Task<ListResourceTelemetryForOrganizationResponse> ListResourceTelemetryForOrganizationAsync(ListResourceTelemetryForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceTelemetryForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceTelemetryForOrganizationResponseUnmarshaller.Instance;
             
@@ -1452,7 +1452,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1491,7 +1491,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1529,7 +1529,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">REST API Reference for ListTelemetryRules Operation</seealso>
         public virtual ListTelemetryRulesResponse ListTelemetryRules(ListTelemetryRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTelemetryRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTelemetryRulesResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRules">REST API Reference for ListTelemetryRules Operation</seealso>
         public virtual Task<ListTelemetryRulesResponse> ListTelemetryRulesAsync(ListTelemetryRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTelemetryRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTelemetryRulesResponseUnmarshaller.Instance;
             
@@ -1604,7 +1604,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">REST API Reference for ListTelemetryRulesForOrganization Operation</seealso>
         public virtual ListTelemetryRulesForOrganizationResponse ListTelemetryRulesForOrganization(ListTelemetryRulesForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTelemetryRulesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTelemetryRulesForOrganizationResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryRulesForOrganization">REST API Reference for ListTelemetryRulesForOrganization Operation</seealso>
         public virtual Task<ListTelemetryRulesForOrganizationResponse> ListTelemetryRulesForOrganizationAsync(ListTelemetryRulesForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTelemetryRulesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTelemetryRulesForOrganizationResponseUnmarshaller.Instance;
             
@@ -1679,7 +1679,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluation">REST API Reference for StartTelemetryEvaluation Operation</seealso>
         public virtual StartTelemetryEvaluationResponse StartTelemetryEvaluation(StartTelemetryEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTelemetryEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTelemetryEvaluationResponseUnmarshaller.Instance;
 
@@ -1716,7 +1716,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluation">REST API Reference for StartTelemetryEvaluation Operation</seealso>
         public virtual Task<StartTelemetryEvaluationResponse> StartTelemetryEvaluationAsync(StartTelemetryEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTelemetryEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTelemetryEvaluationResponseUnmarshaller.Instance;
             
@@ -1754,7 +1754,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluationForOrganization">REST API Reference for StartTelemetryEvaluationForOrganization Operation</seealso>
         public virtual StartTelemetryEvaluationForOrganizationResponse StartTelemetryEvaluationForOrganization(StartTelemetryEvaluationForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTelemetryEvaluationForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTelemetryEvaluationForOrganizationResponseUnmarshaller.Instance;
 
@@ -1791,7 +1791,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StartTelemetryEvaluationForOrganization">REST API Reference for StartTelemetryEvaluationForOrganization Operation</seealso>
         public virtual Task<StartTelemetryEvaluationForOrganizationResponse> StartTelemetryEvaluationForOrganizationAsync(StartTelemetryEvaluationForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTelemetryEvaluationForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTelemetryEvaluationForOrganizationResponseUnmarshaller.Instance;
             
@@ -1829,7 +1829,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluation">REST API Reference for StopTelemetryEvaluation Operation</seealso>
         public virtual StopTelemetryEvaluationResponse StopTelemetryEvaluation(StopTelemetryEvaluationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTelemetryEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTelemetryEvaluationResponseUnmarshaller.Instance;
 
@@ -1866,7 +1866,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluation">REST API Reference for StopTelemetryEvaluation Operation</seealso>
         public virtual Task<StopTelemetryEvaluationResponse> StopTelemetryEvaluationAsync(StopTelemetryEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTelemetryEvaluationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTelemetryEvaluationResponseUnmarshaller.Instance;
             
@@ -1904,7 +1904,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluationForOrganization">REST API Reference for StopTelemetryEvaluationForOrganization Operation</seealso>
         public virtual StopTelemetryEvaluationForOrganizationResponse StopTelemetryEvaluationForOrganization(StopTelemetryEvaluationForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTelemetryEvaluationForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTelemetryEvaluationForOrganizationResponseUnmarshaller.Instance;
 
@@ -1941,7 +1941,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/StopTelemetryEvaluationForOrganization">REST API Reference for StopTelemetryEvaluationForOrganization Operation</seealso>
         public virtual Task<StopTelemetryEvaluationForOrganizationResponse> StopTelemetryEvaluationForOrganizationAsync(StopTelemetryEvaluationForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTelemetryEvaluationForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTelemetryEvaluationForOrganizationResponseUnmarshaller.Instance;
             
@@ -1985,7 +1985,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2028,7 +2028,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2068,7 +2068,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2107,7 +2107,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2153,7 +2153,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateCentralizationRuleForOrganization">REST API Reference for UpdateCentralizationRuleForOrganization Operation</seealso>
         public virtual UpdateCentralizationRuleForOrganizationResponse UpdateCentralizationRuleForOrganization(UpdateCentralizationRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateCentralizationRuleForOrganization">REST API Reference for UpdateCentralizationRuleForOrganization Operation</seealso>
         public virtual Task<UpdateCentralizationRuleForOrganizationResponse> UpdateCentralizationRuleForOrganizationAsync(UpdateCentralizationRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCentralizationRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
             
@@ -2242,7 +2242,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">REST API Reference for UpdateTelemetryRule Operation</seealso>
         public virtual UpdateTelemetryRuleResponse UpdateTelemetryRule(UpdateTelemetryRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTelemetryRuleResponseUnmarshaller.Instance;
 
@@ -2285,7 +2285,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRule">REST API Reference for UpdateTelemetryRule Operation</seealso>
         public virtual Task<UpdateTelemetryRuleResponse> UpdateTelemetryRuleAsync(UpdateTelemetryRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTelemetryRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTelemetryRuleResponseUnmarshaller.Instance;
             
@@ -2331,7 +2331,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
         public virtual UpdateTelemetryRuleForOrganizationResponse UpdateTelemetryRuleForOrganization(UpdateTelemetryRuleForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
 
@@ -2376,7 +2376,7 @@ namespace Amazon.ObservabilityAdmin
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
         public virtual Task<UpdateTelemetryRuleForOrganizationResponse> UpdateTelemetryRuleForOrganizationAsync(UpdateTelemetryRuleForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTelemetryRuleForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTelemetryRuleForOrganizationResponseUnmarshaller.Instance;
             

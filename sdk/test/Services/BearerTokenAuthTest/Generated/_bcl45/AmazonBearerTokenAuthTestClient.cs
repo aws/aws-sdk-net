@@ -251,7 +251,7 @@ namespace Amazon.BearerTokenAuthTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bearer-token-auth-test-2022-03-21/InheritBearerAuthOperation">REST API Reference for InheritBearerAuthOperation Operation</seealso>
         public virtual InheritBearerAuthOperationResponse InheritBearerAuthOperation(InheritBearerAuthOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InheritBearerAuthOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InheritBearerAuthOperationResponseUnmarshaller.Instance;
 
@@ -271,7 +271,7 @@ namespace Amazon.BearerTokenAuthTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bearer-token-auth-test-2022-03-21/InheritBearerAuthOperation">REST API Reference for InheritBearerAuthOperation Operation</seealso>
         public virtual Task<InheritBearerAuthOperationResponse> InheritBearerAuthOperationAsync(InheritBearerAuthOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InheritBearerAuthOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InheritBearerAuthOperationResponseUnmarshaller.Instance;
             
@@ -292,7 +292,7 @@ namespace Amazon.BearerTokenAuthTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bearer-token-auth-test-2022-03-21/OverrideAuthToSigV4Operation">REST API Reference for OverrideAuthToSigV4Operation Operation</seealso>
         public virtual OverrideAuthToSigV4OperationResponse OverrideAuthToSigV4Operation(OverrideAuthToSigV4OperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OverrideAuthToSigV4OperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OverrideAuthToSigV4OperationResponseUnmarshaller.Instance;
 
@@ -312,7 +312,7 @@ namespace Amazon.BearerTokenAuthTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bearer-token-auth-test-2022-03-21/OverrideAuthToSigV4Operation">REST API Reference for OverrideAuthToSigV4Operation Operation</seealso>
         public virtual Task<OverrideAuthToSigV4OperationResponse> OverrideAuthToSigV4OperationAsync(OverrideAuthToSigV4OperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OverrideAuthToSigV4OperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OverrideAuthToSigV4OperationResponseUnmarshaller.Instance;
             

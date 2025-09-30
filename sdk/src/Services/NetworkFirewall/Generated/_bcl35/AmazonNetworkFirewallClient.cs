@@ -449,7 +449,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">REST API Reference for AcceptNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual AcceptNetworkFirewallTransitGatewayAttachmentResponse AcceptNetworkFirewallTransitGatewayAttachment(AcceptNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AcceptNetworkFirewallTransitGatewayAttachment">REST API Reference for AcceptNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual IAsyncResult BeginAcceptNetworkFirewallTransitGatewayAttachment(AcceptNetworkFirewallTransitGatewayAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">REST API Reference for AssociateAvailabilityZones Operation</seealso>
         public virtual AssociateAvailabilityZonesResponse AssociateAvailabilityZones(AssociateAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateAvailabilityZones">REST API Reference for AssociateAvailabilityZones Operation</seealso>
         public virtual IAsyncResult BeginAssociateAvailabilityZones(AssociateAvailabilityZonesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -649,7 +649,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateFirewallPolicy">REST API Reference for AssociateFirewallPolicy Operation</seealso>
         public virtual AssociateFirewallPolicyResponse AssociateFirewallPolicy(AssociateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateFirewallPolicy">REST API Reference for AssociateFirewallPolicy Operation</seealso>
         public virtual IAsyncResult BeginAssociateFirewallPolicy(AssociateFirewallPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateSubnets">REST API Reference for AssociateSubnets Operation</seealso>
         public virtual AssociateSubnetsResponse AssociateSubnets(AssociateSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetsResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateSubnets">REST API Reference for AssociateSubnets Operation</seealso>
         public virtual IAsyncResult BeginAssociateSubnets(AssociateSubnetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSubnetsResponseUnmarshaller.Instance;
 
@@ -874,7 +874,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">REST API Reference for CreateFirewall Operation</seealso>
         public virtual CreateFirewallResponse CreateFirewall(CreateFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallResponseUnmarshaller.Instance;
 
@@ -895,7 +895,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewall">REST API Reference for CreateFirewall Operation</seealso>
         public virtual IAsyncResult BeginCreateFirewall(CreateFirewallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">REST API Reference for CreateFirewallPolicy Operation</seealso>
         public virtual CreateFirewallPolicyResponse CreateFirewallPolicy(CreateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">REST API Reference for CreateFirewallPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateFirewallPolicy(CreateFirewallPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateRuleGroup(CreateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
         public virtual CreateTLSInspectionConfigurationResponse CreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">REST API Reference for CreateTLSInspectionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateTLSInspectionConfiguration(CreateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateVpcEndpointAssociation">REST API Reference for CreateVpcEndpointAssociation Operation</seealso>
         public virtual CreateVpcEndpointAssociationResponse CreateVpcEndpointAssociation(CreateVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateVpcEndpointAssociation">REST API Reference for CreateVpcEndpointAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcEndpointAssociation(CreateVpcEndpointAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewall">REST API Reference for DeleteFirewall Operation</seealso>
         public virtual DeleteFirewallResponse DeleteFirewall(DeleteFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewall">REST API Reference for DeleteFirewall Operation</seealso>
         public virtual IAsyncResult BeginDeleteFirewall(DeleteFirewallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewallPolicy">REST API Reference for DeleteFirewallPolicy Operation</seealso>
         public virtual DeleteFirewallPolicyResponse DeleteFirewallPolicy(DeleteFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewallPolicy">REST API Reference for DeleteFirewallPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteFirewallPolicy(DeleteFirewallPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual DeleteNetworkFirewallTransitGatewayAttachmentResponse DeleteNetworkFirewallTransitGatewayAttachment(DeleteNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkFirewallTransitGatewayAttachment(DeleteNetworkFirewallTransitGatewayAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -1645,7 +1645,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1666,7 +1666,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteRuleGroup(DeleteRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
         public virtual DeleteTLSInspectionConfigurationResponse DeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">REST API Reference for DeleteTLSInspectionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteTLSInspectionConfiguration(DeleteTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -1917,7 +1917,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteVpcEndpointAssociation">REST API Reference for DeleteVpcEndpointAssociation Operation</seealso>
         public virtual DeleteVpcEndpointAssociationResponse DeleteVpcEndpointAssociation(DeleteVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1938,7 +1938,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteVpcEndpointAssociation">REST API Reference for DeleteVpcEndpointAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcEndpointAssociation(DeleteVpcEndpointAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -1999,7 +1999,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewall">REST API Reference for DescribeFirewall Operation</seealso>
         public virtual DescribeFirewallResponse DescribeFirewall(DescribeFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewall">REST API Reference for DescribeFirewall Operation</seealso>
         public virtual IAsyncResult BeginDescribeFirewall(DescribeFirewallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallResponseUnmarshaller.Instance;
 
@@ -2082,7 +2082,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallMetadata">REST API Reference for DescribeFirewallMetadata Operation</seealso>
         public virtual DescribeFirewallMetadataResponse DescribeFirewallMetadata(DescribeFirewallMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallMetadata">REST API Reference for DescribeFirewallMetadata Operation</seealso>
         public virtual IAsyncResult BeginDescribeFirewallMetadata(DescribeFirewallMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallMetadataResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy">REST API Reference for DescribeFirewallPolicy Operation</seealso>
         public virtual DescribeFirewallPolicyResponse DescribeFirewallPolicy(DescribeFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -2185,7 +2185,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicy">REST API Reference for DescribeFirewallPolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribeFirewallPolicy(DescribeFirewallPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">REST API Reference for DescribeFlowOperation Operation</seealso>
         public virtual DescribeFlowOperationResponse DescribeFlowOperation(DescribeFlowOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
 
@@ -2267,7 +2267,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFlowOperation">REST API Reference for DescribeFlowOperation Operation</seealso>
         public virtual IAsyncResult BeginDescribeFlowOperation(DescribeFlowOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowOperationResponseUnmarshaller.Instance;
 
@@ -2328,7 +2328,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual DescribeLoggingConfigurationResponse DescribeLoggingConfiguration(DescribeLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2349,7 +2349,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeLoggingConfiguration">REST API Reference for DescribeLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoggingConfiguration(DescribeLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2410,7 +2410,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribeResourcePolicy(DescribeResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2492,7 +2492,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup">REST API Reference for DescribeRuleGroup Operation</seealso>
         public virtual DescribeRuleGroupResponse DescribeRuleGroup(DescribeRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupResponseUnmarshaller.Instance;
 
@@ -2513,7 +2513,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroup">REST API Reference for DescribeRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeRuleGroup(DescribeRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupResponseUnmarshaller.Instance;
 
@@ -2576,7 +2576,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
         public virtual DescribeRuleGroupMetadataResponse DescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
 
@@ -2597,7 +2597,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupMetadata">REST API Reference for DescribeRuleGroupMetadata Operation</seealso>
         public virtual IAsyncResult BeginDescribeRuleGroupMetadata(DescribeRuleGroupMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupMetadataResponseUnmarshaller.Instance;
 
@@ -2671,7 +2671,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
         public virtual DescribeRuleGroupSummaryResponse DescribeRuleGroupSummary(DescribeRuleGroupSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeRuleGroupSummary">REST API Reference for DescribeRuleGroupSummary Operation</seealso>
         public virtual IAsyncResult BeginDescribeRuleGroupSummary(DescribeRuleGroupSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleGroupSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleGroupSummaryResponseUnmarshaller.Instance;
 
@@ -2753,7 +2753,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
         public virtual DescribeTLSInspectionConfigurationResponse DescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2774,7 +2774,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">REST API Reference for DescribeTLSInspectionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeTLSInspectionConfiguration(DescribeTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -2835,7 +2835,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">REST API Reference for DescribeVpcEndpointAssociation Operation</seealso>
         public virtual DescribeVpcEndpointAssociationResponse DescribeVpcEndpointAssociation(DescribeVpcEndpointAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -2856,7 +2856,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">REST API Reference for DescribeVpcEndpointAssociation Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcEndpointAssociation(DescribeVpcEndpointAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointAssociationResponseUnmarshaller.Instance;
 
@@ -2937,7 +2937,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">REST API Reference for DisassociateAvailabilityZones Operation</seealso>
         public virtual DisassociateAvailabilityZonesResponse DisassociateAvailabilityZones(DisassociateAvailabilityZonesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -2958,7 +2958,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateAvailabilityZones">REST API Reference for DisassociateAvailabilityZones Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAvailabilityZones(DisassociateAvailabilityZonesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAvailabilityZonesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAvailabilityZonesResponseUnmarshaller.Instance;
 
@@ -3028,7 +3028,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateSubnets">REST API Reference for DisassociateSubnets Operation</seealso>
         public virtual DisassociateSubnetsResponse DisassociateSubnets(DisassociateSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetsResponseUnmarshaller.Instance;
 
@@ -3049,7 +3049,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DisassociateSubnets">REST API Reference for DisassociateSubnets Operation</seealso>
         public virtual IAsyncResult BeginDisassociateSubnets(DisassociateSubnetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSubnetsResponseUnmarshaller.Instance;
 
@@ -3115,7 +3115,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
         public virtual GetAnalysisReportResultsResponse GetAnalysisReportResults(GetAnalysisReportResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
 
@@ -3136,7 +3136,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/GetAnalysisReportResults">REST API Reference for GetAnalysisReportResults Operation</seealso>
         public virtual IAsyncResult BeginGetAnalysisReportResults(GetAnalysisReportResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAnalysisReportResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAnalysisReportResultsResponseUnmarshaller.Instance;
 
@@ -3197,7 +3197,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
         public virtual ListAnalysisReportsResponse ListAnalysisReports(ListAnalysisReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListAnalysisReports">REST API Reference for ListAnalysisReports Operation</seealso>
         public virtual IAsyncResult BeginListAnalysisReports(ListAnalysisReportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysisReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
 
@@ -3278,7 +3278,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies">REST API Reference for ListFirewallPolicies Operation</seealso>
         public virtual ListFirewallPoliciesResponse ListFirewallPolicies(ListFirewallPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -3299,7 +3299,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPolicies">REST API Reference for ListFirewallPolicies Operation</seealso>
         public virtual IAsyncResult BeginListFirewallPolicies(ListFirewallPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -3364,7 +3364,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewalls">REST API Reference for ListFirewalls Operation</seealso>
         public virtual ListFirewallsResponse ListFirewalls(ListFirewallsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallsResponseUnmarshaller.Instance;
 
@@ -3385,7 +3385,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewalls">REST API Reference for ListFirewalls Operation</seealso>
         public virtual IAsyncResult BeginListFirewalls(ListFirewallsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFirewallsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFirewallsResponseUnmarshaller.Instance;
 
@@ -3458,7 +3458,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">REST API Reference for ListFlowOperationResults Operation</seealso>
         public virtual ListFlowOperationResultsResponse ListFlowOperationResults(ListFlowOperationResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
 
@@ -3479,7 +3479,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperationResults">REST API Reference for ListFlowOperationResults Operation</seealso>
         public virtual IAsyncResult BeginListFlowOperationResults(ListFlowOperationResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationResultsResponseUnmarshaller.Instance;
 
@@ -3554,7 +3554,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
         public virtual ListFlowOperationsResponse ListFlowOperations(ListFlowOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
 
@@ -3575,7 +3575,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
         public virtual IAsyncResult BeginListFlowOperations(ListFlowOperationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowOperationsResponseUnmarshaller.Instance;
 
@@ -3635,7 +3635,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3656,7 +3656,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual IAsyncResult BeginListRuleGroups(ListRuleGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -3727,7 +3727,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3748,7 +3748,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3808,7 +3808,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
         public virtual ListTLSInspectionConfigurationsResponse ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
 
@@ -3829,7 +3829,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">REST API Reference for ListTLSInspectionConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTLSInspectionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTLSInspectionConfigurationsResponseUnmarshaller.Instance;
 
@@ -3895,7 +3895,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListVpcEndpointAssociations">REST API Reference for ListVpcEndpointAssociations Operation</seealso>
         public virtual ListVpcEndpointAssociationsResponse ListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -3916,7 +3916,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListVpcEndpointAssociations">REST API Reference for ListVpcEndpointAssociations Operation</seealso>
         public virtual IAsyncResult BeginListVpcEndpointAssociations(ListVpcEndpointAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAssociationsResponseUnmarshaller.Instance;
 
@@ -4016,7 +4016,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4037,7 +4037,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4117,7 +4117,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">REST API Reference for RejectNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual RejectNetworkFirewallTransitGatewayAttachmentResponse RejectNetworkFirewallTransitGatewayAttachment(RejectNetworkFirewallTransitGatewayAttachmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -4138,7 +4138,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RejectNetworkFirewallTransitGatewayAttachment">REST API Reference for RejectNetworkFirewallTransitGatewayAttachment Operation</seealso>
         public virtual IAsyncResult BeginRejectNetworkFirewallTransitGatewayAttachment(RejectNetworkFirewallTransitGatewayAttachmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectNetworkFirewallTransitGatewayAttachmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectNetworkFirewallTransitGatewayAttachmentResponseUnmarshaller.Instance;
 
@@ -4204,7 +4204,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
         public virtual StartAnalysisReportResponse StartAnalysisReport(StartAnalysisReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
 
@@ -4225,7 +4225,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartAnalysisReport">REST API Reference for StartAnalysisReport Operation</seealso>
         public virtual IAsyncResult BeginStartAnalysisReport(StartAnalysisReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAnalysisReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAnalysisReportResponseUnmarshaller.Instance;
 
@@ -4303,7 +4303,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">REST API Reference for StartFlowCapture Operation</seealso>
         public virtual StartFlowCaptureResponse StartFlowCapture(StartFlowCaptureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
 
@@ -4324,7 +4324,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowCapture">REST API Reference for StartFlowCapture Operation</seealso>
         public virtual IAsyncResult BeginStartFlowCapture(StartFlowCaptureRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowCaptureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowCaptureResponseUnmarshaller.Instance;
 
@@ -4395,7 +4395,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">REST API Reference for StartFlowFlush Operation</seealso>
         public virtual StartFlowFlushResponse StartFlowFlush(StartFlowFlushRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
 
@@ -4416,7 +4416,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StartFlowFlush">REST API Reference for StartFlowFlush Operation</seealso>
         public virtual IAsyncResult BeginStartFlowFlush(StartFlowFlushRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowFlushRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowFlushResponseUnmarshaller.Instance;
 
@@ -4487,7 +4487,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4508,7 +4508,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4579,7 +4579,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4600,7 +4600,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4677,7 +4677,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">REST API Reference for UpdateAvailabilityZoneChangeProtection Operation</seealso>
         public virtual UpdateAvailabilityZoneChangeProtectionResponse UpdateAvailabilityZoneChangeProtection(UpdateAvailabilityZoneChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4698,7 +4698,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateAvailabilityZoneChangeProtection">REST API Reference for UpdateAvailabilityZoneChangeProtection Operation</seealso>
         public virtual IAsyncResult BeginUpdateAvailabilityZoneChangeProtection(UpdateAvailabilityZoneChangeProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAvailabilityZoneChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
 
@@ -4759,7 +4759,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
         public virtual UpdateFirewallAnalysisSettingsResponse UpdateFirewallAnalysisSettings(UpdateFirewallAnalysisSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
 
@@ -4780,7 +4780,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallAnalysisSettings">REST API Reference for UpdateFirewallAnalysisSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallAnalysisSettings(UpdateFirewallAnalysisSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallAnalysisSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallAnalysisSettingsResponseUnmarshaller.Instance;
 
@@ -4850,7 +4850,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDeleteProtection">REST API Reference for UpdateFirewallDeleteProtection Operation</seealso>
         public virtual UpdateFirewallDeleteProtectionResponse UpdateFirewallDeleteProtection(UpdateFirewallDeleteProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDeleteProtectionResponseUnmarshaller.Instance;
 
@@ -4871,7 +4871,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDeleteProtection">REST API Reference for UpdateFirewallDeleteProtection Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallDeleteProtection(UpdateFirewallDeleteProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDeleteProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDeleteProtectionResponseUnmarshaller.Instance;
 
@@ -4936,7 +4936,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDescription">REST API Reference for UpdateFirewallDescription Operation</seealso>
         public virtual UpdateFirewallDescriptionResponse UpdateFirewallDescription(UpdateFirewallDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDescriptionResponseUnmarshaller.Instance;
 
@@ -4957,7 +4957,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallDescription">REST API Reference for UpdateFirewallDescription Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallDescription(UpdateFirewallDescriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallDescriptionResponseUnmarshaller.Instance;
 
@@ -5024,7 +5024,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
         public virtual UpdateFirewallEncryptionConfigurationResponse UpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -5045,7 +5045,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallEncryptionConfiguration">REST API Reference for UpdateFirewallEncryptionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallEncryptionConfiguration(UpdateFirewallEncryptionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -5109,7 +5109,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicy">REST API Reference for UpdateFirewallPolicy Operation</seealso>
         public virtual UpdateFirewallPolicyResponse UpdateFirewallPolicy(UpdateFirewallPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -5130,7 +5130,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicy">REST API Reference for UpdateFirewallPolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallPolicy(UpdateFirewallPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyResponseUnmarshaller.Instance;
 
@@ -5200,7 +5200,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">REST API Reference for UpdateFirewallPolicyChangeProtection Operation</seealso>
         public virtual UpdateFirewallPolicyChangeProtectionResponse UpdateFirewallPolicyChangeProtection(UpdateFirewallPolicyChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyChangeProtectionResponseUnmarshaller.Instance;
 
@@ -5221,7 +5221,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyChangeProtection">REST API Reference for UpdateFirewallPolicyChangeProtection Operation</seealso>
         public virtual IAsyncResult BeginUpdateFirewallPolicyChangeProtection(UpdateFirewallPolicyChangeProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFirewallPolicyChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFirewallPolicyChangeProtectionResponseUnmarshaller.Instance;
 
@@ -5322,7 +5322,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5343,7 +5343,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5416,7 +5416,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -5437,7 +5437,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateRuleGroup(UpdateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -5504,7 +5504,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateSubnetChangeProtection">REST API Reference for UpdateSubnetChangeProtection Operation</seealso>
         public virtual UpdateSubnetChangeProtectionResponse UpdateSubnetChangeProtection(UpdateSubnetChangeProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetChangeProtectionResponseUnmarshaller.Instance;
 
@@ -5525,7 +5525,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateSubnetChangeProtection">REST API Reference for UpdateSubnetChangeProtection Operation</seealso>
         public virtual IAsyncResult BeginUpdateSubnetChangeProtection(UpdateSubnetChangeProtectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSubnetChangeProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSubnetChangeProtectionResponseUnmarshaller.Instance;
 
@@ -5599,7 +5599,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
         public virtual UpdateTLSInspectionConfigurationResponse UpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 
@@ -5620,7 +5620,7 @@ namespace Amazon.NetworkFirewall
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">REST API Reference for UpdateTLSInspectionConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateTLSInspectionConfiguration(UpdateTLSInspectionConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTLSInspectionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTLSInspectionConfigurationResponseUnmarshaller.Instance;
 

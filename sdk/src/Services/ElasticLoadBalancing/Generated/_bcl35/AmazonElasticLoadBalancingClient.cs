@@ -330,7 +330,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -351,7 +351,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         public virtual ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplySecurityGroupsToLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplySecurityGroupsToLoadBalancerResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         public virtual AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerToSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         public virtual IAsyncResult BeginAttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AttachLoadBalancerToSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AttachLoadBalancerToSubnetsResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         public virtual ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureHealthCheckResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         public virtual IAsyncResult BeginConfigureHealthCheck(ConfigureHealthCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureHealthCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureHealthCheckResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         public virtual CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppCookieStickinessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.Instance;
 
@@ -646,7 +646,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppCookieStickinessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppCookieStickinessPolicyResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         public virtual CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLBCookieStickinessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLBCookieStickinessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLBCookieStickinessPolicyResponseUnmarshaller.Instance;
 
@@ -828,7 +828,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
@@ -909,7 +909,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         public virtual CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         public virtual IAsyncResult BeginCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerListenersResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         public virtual CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerPolicyResponseUnmarshaller.Instance;
 
@@ -1051,7 +1051,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1108,7 +1108,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         public virtual DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerListenersResponseUnmarshaller.Instance;
 
@@ -1169,7 +1169,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         public virtual DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.Instance;
 
@@ -1190,7 +1190,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerPolicyResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         public virtual DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstancesFromLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterInstancesFromLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterInstancesFromLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         public virtual DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceHealthResponseUnmarshaller.Instance;
 
@@ -1386,7 +1386,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         public virtual IAsyncResult BeginDescribeInstanceHealth(DescribeInstanceHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInstanceHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInstanceHealthResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public virtual DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -1522,7 +1522,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public virtual DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.Instance;
 
@@ -1543,7 +1543,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerPoliciesResponseUnmarshaller.Instance;
 
@@ -1619,7 +1619,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public virtual DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerPolicyTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerPolicyTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerPolicyTypesResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -1778,7 +1778,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         public virtual DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancerFromSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.Instance;
 
@@ -1845,7 +1845,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         public virtual IAsyncResult BeginDetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachLoadBalancerFromSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachLoadBalancerFromSubnetsResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         public virtual DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAvailabilityZonesForLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginDisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableAvailabilityZonesForLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         public virtual EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAvailabilityZonesForLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginEnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableAvailabilityZonesForLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableAvailabilityZonesForLoadBalancerResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public virtual ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -2089,7 +2089,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public virtual IAsyncResult BeginModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -2159,7 +2159,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         public virtual RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstancesWithLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
 
@@ -2180,7 +2180,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         public virtual IAsyncResult BeginRegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterInstancesWithLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterInstancesWithLoadBalancerResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -2237,7 +2237,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -2296,7 +2296,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         public virtual SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerListenerSSLCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.Instance;
 
@@ -2317,7 +2317,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         public virtual IAsyncResult BeginSetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerListenerSSLCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerListenerSSLCertificateResponseUnmarshaller.Instance;
 
@@ -2380,7 +2380,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         public virtual SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerPoliciesForBackendServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.Instance;
 
@@ -2401,7 +2401,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         public virtual IAsyncResult BeginSetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerPoliciesForBackendServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerPoliciesForBackendServerResponseUnmarshaller.Instance;
 
@@ -2459,7 +2459,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         public virtual SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerPoliciesOfListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         public virtual IAsyncResult BeginSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetLoadBalancerPoliciesOfListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetLoadBalancerPoliciesOfListenerResponseUnmarshaller.Instance;
 

@@ -287,7 +287,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual CreateContainerResponse CreateContainer(CreateContainerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CreateContainer">REST API Reference for CreateContainer Operation</seealso>
         public virtual Task<CreateContainerResponse> CreateContainerAsync(CreateContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateContainerResponseUnmarshaller.Instance;
             
@@ -349,7 +349,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual DeleteContainerResponse DeleteContainer(DeleteContainerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainer">REST API Reference for DeleteContainer Operation</seealso>
         public virtual Task<DeleteContainerResponse> DeleteContainerAsync(DeleteContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerResponseUnmarshaller.Instance;
             
@@ -413,7 +413,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual DeleteContainerPolicyResponse DeleteContainerPolicy(DeleteContainerPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         public virtual Task<DeleteContainerPolicyResponse> DeleteContainerPolicyAsync(DeleteContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteContainerPolicyResponseUnmarshaller.Instance;
             
@@ -486,7 +486,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual DeleteCorsPolicyResponse DeleteCorsPolicy(DeleteCorsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">REST API Reference for DeleteCorsPolicy Operation</seealso>
         public virtual Task<DeleteCorsPolicyResponse> DeleteCorsPolicyAsync(DeleteCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCorsPolicyResponseUnmarshaller.Instance;
             
@@ -560,7 +560,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -593,7 +593,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -628,7 +628,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
         public virtual DeleteMetricPolicyResponse DeleteMetricPolicy(DeleteMetricPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricPolicyResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">REST API Reference for DeleteMetricPolicy Operation</seealso>
         public virtual Task<DeleteMetricPolicyResponse> DeleteMetricPolicyAsync(DeleteMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMetricPolicyResponseUnmarshaller.Instance;
             
@@ -694,7 +694,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual DescribeContainerResponse DescribeContainer(DescribeContainerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">REST API Reference for DescribeContainer Operation</seealso>
         public virtual Task<DescribeContainerResponse> DescribeContainerAsync(DescribeContainerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerResponseUnmarshaller.Instance;
             
@@ -760,7 +760,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual GetContainerPolicyResponse GetContainerPolicy(GetContainerPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         public virtual Task<GetContainerPolicyResponse> GetContainerPolicyAsync(GetContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContainerPolicyResponseUnmarshaller.Instance;
             
@@ -834,7 +834,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual GetCorsPolicyResponse GetCorsPolicy(GetCorsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
 
@@ -873,7 +873,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         public virtual Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCorsPolicyResponseUnmarshaller.Instance;
             
@@ -906,7 +906,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -938,7 +938,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
         public virtual Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -971,7 +971,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
         public virtual GetMetricPolicyResponse GetMetricPolicy(GetMetricPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricPolicyResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">REST API Reference for GetMetricPolicy Operation</seealso>
         public virtual Task<GetMetricPolicyResponse> GetMetricPolicyAsync(GetMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricPolicyResponseUnmarshaller.Instance;
             
@@ -1041,7 +1041,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual ListContainersResponse ListContainers(ListContainersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainersResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers">REST API Reference for ListContainers Operation</seealso>
         public virtual Task<ListContainersResponse> ListContainersAsync(ListContainersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainersResponseUnmarshaller.Instance;
             
@@ -1108,7 +1108,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1177,7 +1177,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual PutContainerPolicyResponse PutContainerPolicy(PutContainerPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutContainerPolicy">REST API Reference for PutContainerPolicy Operation</seealso>
         public virtual Task<PutContainerPolicyResponse> PutContainerPolicyAsync(PutContainerPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutContainerPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutContainerPolicyResponseUnmarshaller.Instance;
             
@@ -1263,7 +1263,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual PutCorsPolicyResponse PutCorsPolicy(PutCorsPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
 
@@ -1309,7 +1309,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         public virtual Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCorsPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCorsPolicyResponseUnmarshaller.Instance;
             
@@ -1347,7 +1347,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         public virtual PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         public virtual Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -1416,7 +1416,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
         public virtual PutMetricPolicyResponse PutMetricPolicy(PutMetricPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricPolicyResponseUnmarshaller.Instance;
 
@@ -1447,7 +1447,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">REST API Reference for PutMetricPolicy Operation</seealso>
         public virtual Task<PutMetricPolicyResponse> PutMetricPolicyAsync(PutMetricPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetricPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetricPolicyResponseUnmarshaller.Instance;
             
@@ -1479,7 +1479,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
         public virtual StartAccessLoggingResponse StartAccessLogging(StartAccessLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging">REST API Reference for StartAccessLogging Operation</seealso>
         public virtual Task<StartAccessLoggingResponse> StartAccessLoggingAsync(StartAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAccessLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAccessLoggingResponseUnmarshaller.Instance;
             
@@ -1542,7 +1542,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
         public virtual StopAccessLoggingResponse StopAccessLogging(StopAccessLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging">REST API Reference for StopAccessLogging Operation</seealso>
         public virtual Task<StopAccessLoggingResponse> StopAccessLoggingAsync(StopAccessLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAccessLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAccessLoggingResponseUnmarshaller.Instance;
             
@@ -1608,7 +1608,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1642,7 +1642,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1672,7 +1672,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.MediaStore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

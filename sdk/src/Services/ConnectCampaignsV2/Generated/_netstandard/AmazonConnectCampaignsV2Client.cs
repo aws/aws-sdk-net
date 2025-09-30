@@ -272,7 +272,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual Task<DeleteCampaignResponse> DeleteCampaignAsync(DeleteCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteCampaignChannelSubtypeConfigResponse DeleteCampaignChannelSubtypeConfig(DeleteCampaignChannelSubtypeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignChannelSubtypeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignChannelSubtypeConfigResponseUnmarshaller.Instance;
 
@@ -411,7 +411,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaignChannelSubtypeConfig">REST API Reference for DeleteCampaignChannelSubtypeConfig Operation</seealso>
         public virtual Task<DeleteCampaignChannelSubtypeConfigResponse> DeleteCampaignChannelSubtypeConfigAsync(DeleteCampaignChannelSubtypeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignChannelSubtypeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignChannelSubtypeConfigResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteCampaignCommunicationLimitsResponse DeleteCampaignCommunicationLimits(DeleteCampaignCommunicationLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaignCommunicationLimits">REST API Reference for DeleteCampaignCommunicationLimits Operation</seealso>
         public virtual Task<DeleteCampaignCommunicationLimitsResponse> DeleteCampaignCommunicationLimitsAsync(DeleteCampaignCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteCampaignCommunicationTimeResponse DeleteCampaignCommunicationTime(DeleteCampaignCommunicationTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignCommunicationTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignCommunicationTimeResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaignCommunicationTime">REST API Reference for DeleteCampaignCommunicationTime Operation</seealso>
         public virtual Task<DeleteCampaignCommunicationTimeResponse> DeleteCampaignCommunicationTimeAsync(DeleteCampaignCommunicationTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignCommunicationTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignCommunicationTimeResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteConnectInstanceConfigResponse DeleteConnectInstanceConfig(DeleteConnectInstanceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectInstanceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectInstanceConfigResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteConnectInstanceConfig">REST API Reference for DeleteConnectInstanceConfig Operation</seealso>
         public virtual Task<DeleteConnectInstanceConfigResponse> DeleteConnectInstanceConfigAsync(DeleteConnectInstanceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectInstanceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectInstanceConfigResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteConnectInstanceIntegrationResponse DeleteConnectInstanceIntegration(DeleteConnectInstanceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectInstanceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectInstanceIntegrationResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteConnectInstanceIntegration">REST API Reference for DeleteConnectInstanceIntegration Operation</seealso>
         public virtual Task<DeleteConnectInstanceIntegrationResponse> DeleteConnectInstanceIntegrationAsync(DeleteConnectInstanceIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectInstanceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectInstanceIntegrationResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DeleteInstanceOnboardingJobResponse DeleteInstanceOnboardingJob(DeleteInstanceOnboardingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceOnboardingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceOnboardingJobResponseUnmarshaller.Instance;
 
@@ -669,7 +669,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteInstanceOnboardingJob">REST API Reference for DeleteInstanceOnboardingJob Operation</seealso>
         public virtual Task<DeleteInstanceOnboardingJobResponse> DeleteInstanceOnboardingJobAsync(DeleteInstanceOnboardingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceOnboardingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceOnboardingJobResponseUnmarshaller.Instance;
 
@@ -682,7 +682,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual DescribeCampaignResponse DescribeCampaign(DescribeCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCampaignResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DescribeCampaign">REST API Reference for DescribeCampaign Operation</seealso>
         public virtual Task<DescribeCampaignResponse> DescribeCampaignAsync(DescribeCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCampaignResponseUnmarshaller.Instance;
 
@@ -728,7 +728,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual GetCampaignStateResponse GetCampaignState(GetCampaignStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignStateResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetCampaignState">REST API Reference for GetCampaignState Operation</seealso>
         public virtual Task<GetCampaignStateResponse> GetCampaignStateAsync(GetCampaignStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignStateResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual GetCampaignStateBatchResponse GetCampaignStateBatch(GetCampaignStateBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignStateBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignStateBatchResponseUnmarshaller.Instance;
 
@@ -810,7 +810,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetCampaignStateBatch">REST API Reference for GetCampaignStateBatch Operation</seealso>
         public virtual Task<GetCampaignStateBatchResponse> GetCampaignStateBatchAsync(GetCampaignStateBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignStateBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignStateBatchResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual GetConnectInstanceConfigResponse GetConnectInstanceConfig(GetConnectInstanceConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectInstanceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectInstanceConfigResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetConnectInstanceConfig">REST API Reference for GetConnectInstanceConfig Operation</seealso>
         public virtual Task<GetConnectInstanceConfigResponse> GetConnectInstanceConfigAsync(GetConnectInstanceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectInstanceConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectInstanceConfigResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual GetInstanceCommunicationLimitsResponse GetInstanceCommunicationLimits(GetInstanceCommunicationLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -902,7 +902,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetInstanceCommunicationLimits">REST API Reference for GetInstanceCommunicationLimits Operation</seealso>
         public virtual Task<GetInstanceCommunicationLimitsResponse> GetInstanceCommunicationLimitsAsync(GetInstanceCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -915,7 +915,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual GetInstanceOnboardingJobStatusResponse GetInstanceOnboardingJobStatus(GetInstanceOnboardingJobStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceOnboardingJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceOnboardingJobStatusResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/GetInstanceOnboardingJobStatus">REST API Reference for GetInstanceOnboardingJobStatus Operation</seealso>
         public virtual Task<GetInstanceOnboardingJobStatusResponse> GetInstanceOnboardingJobStatusAsync(GetInstanceOnboardingJobStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceOnboardingJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceOnboardingJobStatusResponseUnmarshaller.Instance;
 
@@ -961,7 +961,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual ListCampaignsResponse ListCampaigns(ListCampaignsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         public virtual Task<ListCampaignsResponse> ListCampaignsAsync(ListCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual ListConnectInstanceIntegrationsResponse ListConnectInstanceIntegrations(ListConnectInstanceIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectInstanceIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectInstanceIntegrationsResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/ListConnectInstanceIntegrations">REST API Reference for ListConnectInstanceIntegrations Operation</seealso>
         public virtual Task<ListConnectInstanceIntegrationsResponse> ListConnectInstanceIntegrationsAsync(ListConnectInstanceIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectInstanceIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectInstanceIntegrationsResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1103,7 +1103,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual PauseCampaignResponse PauseCampaign(PauseCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseCampaignResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PauseCampaign">REST API Reference for PauseCampaign Operation</seealso>
         public virtual Task<PauseCampaignResponse> PauseCampaignAsync(PauseCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseCampaignResponseUnmarshaller.Instance;
 
@@ -1160,7 +1160,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual PutConnectInstanceIntegrationResponse PutConnectInstanceIntegration(PutConnectInstanceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConnectInstanceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConnectInstanceIntegrationResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutConnectInstanceIntegration">REST API Reference for PutConnectInstanceIntegration Operation</seealso>
         public virtual Task<PutConnectInstanceIntegrationResponse> PutConnectInstanceIntegrationAsync(PutConnectInstanceIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutConnectInstanceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutConnectInstanceIntegrationResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual PutInstanceCommunicationLimitsResponse PutInstanceCommunicationLimits(PutInstanceCommunicationLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInstanceCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInstanceCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -1250,7 +1250,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutInstanceCommunicationLimits">REST API Reference for PutInstanceCommunicationLimits Operation</seealso>
         public virtual Task<PutInstanceCommunicationLimitsResponse> PutInstanceCommunicationLimitsAsync(PutInstanceCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInstanceCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInstanceCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual PutOutboundRequestBatchResponse PutOutboundRequestBatch(PutOutboundRequestBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOutboundRequestBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOutboundRequestBatchResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutOutboundRequestBatch">REST API Reference for PutOutboundRequestBatch Operation</seealso>
         public virtual Task<PutOutboundRequestBatchResponse> PutOutboundRequestBatchAsync(PutOutboundRequestBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOutboundRequestBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOutboundRequestBatchResponseUnmarshaller.Instance;
 
@@ -1321,7 +1321,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual PutProfileOutboundRequestBatchResponse PutProfileOutboundRequestBatch(PutProfileOutboundRequestBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileOutboundRequestBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileOutboundRequestBatchResponseUnmarshaller.Instance;
 
@@ -1366,7 +1366,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
         public virtual Task<PutProfileOutboundRequestBatchResponse> PutProfileOutboundRequestBatchAsync(PutProfileOutboundRequestBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProfileOutboundRequestBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProfileOutboundRequestBatchResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual ResumeCampaignResponse ResumeCampaign(ResumeCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeCampaignResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/ResumeCampaign">REST API Reference for ResumeCampaign Operation</seealso>
         public virtual Task<ResumeCampaignResponse> ResumeCampaignAsync(ResumeCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeCampaignResponseUnmarshaller.Instance;
 
@@ -1436,7 +1436,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual StartCampaignResponse StartCampaign(StartCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCampaignResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/StartCampaign">REST API Reference for StartCampaign Operation</seealso>
         public virtual Task<StartCampaignResponse> StartCampaignAsync(StartCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCampaignResponseUnmarshaller.Instance;
 
@@ -1493,7 +1493,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual StartInstanceOnboardingJobResponse StartInstanceOnboardingJob(StartInstanceOnboardingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceOnboardingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceOnboardingJobResponseUnmarshaller.Instance;
 
@@ -1533,7 +1533,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/StartInstanceOnboardingJob">REST API Reference for StartInstanceOnboardingJob Operation</seealso>
         public virtual Task<StartInstanceOnboardingJobResponse> StartInstanceOnboardingJobAsync(StartInstanceOnboardingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInstanceOnboardingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInstanceOnboardingJobResponseUnmarshaller.Instance;
 
@@ -1546,7 +1546,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual StopCampaignResponse StopCampaign(StopCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCampaignResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/StopCampaign">REST API Reference for StopCampaign Operation</seealso>
         public virtual Task<StopCampaignResponse> StopCampaignAsync(StopCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCampaignResponseUnmarshaller.Instance;
 
@@ -1603,7 +1603,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignChannelSubtypeConfigResponse UpdateCampaignChannelSubtypeConfig(UpdateCampaignChannelSubtypeConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignChannelSubtypeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignChannelSubtypeConfigResponseUnmarshaller.Instance;
 
@@ -1738,7 +1738,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignChannelSubtypeConfig">REST API Reference for UpdateCampaignChannelSubtypeConfig Operation</seealso>
         public virtual Task<UpdateCampaignChannelSubtypeConfigResponse> UpdateCampaignChannelSubtypeConfigAsync(UpdateCampaignChannelSubtypeConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignChannelSubtypeConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignChannelSubtypeConfigResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignCommunicationLimitsResponse UpdateCampaignCommunicationLimits(UpdateCampaignCommunicationLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -1792,7 +1792,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignCommunicationLimits">REST API Reference for UpdateCampaignCommunicationLimits Operation</seealso>
         public virtual Task<UpdateCampaignCommunicationLimitsResponse> UpdateCampaignCommunicationLimitsAsync(UpdateCampaignCommunicationLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignCommunicationLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignCommunicationLimitsResponseUnmarshaller.Instance;
 
@@ -1805,7 +1805,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignCommunicationTimeResponse UpdateCampaignCommunicationTime(UpdateCampaignCommunicationTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignCommunicationTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignCommunicationTimeResponseUnmarshaller.Instance;
 
@@ -1846,7 +1846,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignCommunicationTime">REST API Reference for UpdateCampaignCommunicationTime Operation</seealso>
         public virtual Task<UpdateCampaignCommunicationTimeResponse> UpdateCampaignCommunicationTimeAsync(UpdateCampaignCommunicationTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignCommunicationTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignCommunicationTimeResponseUnmarshaller.Instance;
 
@@ -1859,7 +1859,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignFlowAssociationResponse UpdateCampaignFlowAssociation(UpdateCampaignFlowAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignFlowAssociationResponseUnmarshaller.Instance;
 
@@ -1900,7 +1900,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignFlowAssociation">REST API Reference for UpdateCampaignFlowAssociation Operation</seealso>
         public virtual Task<UpdateCampaignFlowAssociationResponse> UpdateCampaignFlowAssociationAsync(UpdateCampaignFlowAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignFlowAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignFlowAssociationResponseUnmarshaller.Instance;
 
@@ -1913,7 +1913,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignNameResponse UpdateCampaignName(UpdateCampaignNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignNameResponseUnmarshaller.Instance;
 
@@ -1950,7 +1950,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignName">REST API Reference for UpdateCampaignName Operation</seealso>
         public virtual Task<UpdateCampaignNameResponse> UpdateCampaignNameAsync(UpdateCampaignNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignNameResponseUnmarshaller.Instance;
 
@@ -1963,7 +1963,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignScheduleResponse UpdateCampaignSchedule(UpdateCampaignScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignScheduleResponseUnmarshaller.Instance;
 
@@ -2004,7 +2004,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignSchedule">REST API Reference for UpdateCampaignSchedule Operation</seealso>
         public virtual Task<UpdateCampaignScheduleResponse> UpdateCampaignScheduleAsync(UpdateCampaignScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignScheduleResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.ConnectCampaignsV2
 
         internal virtual UpdateCampaignSourceResponse UpdateCampaignSource(UpdateCampaignSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignSourceResponseUnmarshaller.Instance;
 
@@ -2058,7 +2058,7 @@ namespace Amazon.ConnectCampaignsV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignSource">REST API Reference for UpdateCampaignSource Operation</seealso>
         public virtual Task<UpdateCampaignSourceResponse> UpdateCampaignSourceAsync(UpdateCampaignSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignSourceResponseUnmarshaller.Instance;
 

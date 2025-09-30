@@ -320,7 +320,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual AssociateAdminAccountResponse AssociateAdminAccount(AssociateAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
@@ -341,7 +341,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">REST API Reference for AssociateAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginAssociateAdminAccount(AssociateAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAdminAccountResponseUnmarshaller.Instance;
 
@@ -394,7 +394,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
         public virtual AssociateThirdPartyFirewallResponse AssociateThirdPartyFirewall(AssociateThirdPartyFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
 
@@ -415,7 +415,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateThirdPartyFirewall">REST API Reference for AssociateThirdPartyFirewall Operation</seealso>
         public virtual IAsyncResult BeginAssociateThirdPartyFirewall(AssociateThirdPartyFirewallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateThirdPartyFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateThirdPartyFirewallResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
         public virtual BatchAssociateResourceResponse BatchAssociateResource(BatchAssociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource">REST API Reference for BatchAssociateResource Operation</seealso>
         public virtual IAsyncResult BeginBatchAssociateResource(BatchAssociateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateResourceResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
         public virtual BatchDisassociateResourceResponse BatchDisassociateResource(BatchDisassociateResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource">REST API Reference for BatchDisassociateResource Operation</seealso>
         public virtual IAsyncResult BeginBatchDisassociateResource(BatchDisassociateResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateResourceResponseUnmarshaller.Instance;
 
@@ -613,7 +613,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">REST API Reference for DeleteAppsList Operation</seealso>
         public virtual DeleteAppsListResponse DeleteAppsList(DeleteAppsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppsListResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList">REST API Reference for DeleteAppsList Operation</seealso>
         public virtual IAsyncResult BeginDeleteAppsList(DeleteAppsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppsListResponseUnmarshaller.Instance;
 
@@ -683,7 +683,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual DeleteNotificationChannelResponse DeleteNotificationChannel(DeleteNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteNotificationChannel">REST API Reference for DeleteNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotificationChannel(DeleteNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotificationChannelResponseUnmarshaller.Instance;
 
@@ -761,7 +761,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">REST API Reference for DeleteProtocolsList Operation</seealso>
         public virtual DeleteProtocolsListResponse DeleteProtocolsList(DeleteProtocolsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtocolsListResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList">REST API Reference for DeleteProtocolsList Operation</seealso>
         public virtual IAsyncResult BeginDeleteProtocolsList(DeleteProtocolsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProtocolsListResponseUnmarshaller.Instance;
 
@@ -902,7 +902,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
         public virtual DeleteResourceSetResponse DeleteResourceSet(DeleteResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceSet(DeleteResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
 
@@ -982,7 +982,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual DisassociateAdminAccountResponse DisassociateAdminAccount(DisassociateAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateAdminAccount">REST API Reference for DisassociateAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAdminAccount(DisassociateAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAdminAccountResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
         public virtual DisassociateThirdPartyFirewallResponse DisassociateThirdPartyFirewall(DisassociateThirdPartyFirewallRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DisassociateThirdPartyFirewall">REST API Reference for DisassociateThirdPartyFirewall Operation</seealso>
         public virtual IAsyncResult BeginDisassociateThirdPartyFirewall(DisassociateThirdPartyFirewallRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateThirdPartyFirewallRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateThirdPartyFirewallResponseUnmarshaller.Instance;
 
@@ -1126,7 +1126,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual GetAdminAccountResponse GetAdminAccount(GetAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginGetAdminAccount(GetAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdminAccountResponseUnmarshaller.Instance;
 
@@ -1205,7 +1205,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
         public virtual GetAdminScopeResponse GetAdminScope(GetAdminScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
 
@@ -1226,7 +1226,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
         public virtual IAsyncResult BeginGetAdminScope(GetAdminScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAdminScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAdminScopeResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">REST API Reference for GetAppsList Operation</seealso>
         public virtual GetAppsListResponse GetAppsList(GetAppsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppsListResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList">REST API Reference for GetAppsList Operation</seealso>
         public virtual IAsyncResult BeginGetAppsList(GetAppsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppsListResponseUnmarshaller.Instance;
 
@@ -1353,7 +1353,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual GetComplianceDetailResponse GetComplianceDetail(GetComplianceDetailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail">REST API Reference for GetComplianceDetail Operation</seealso>
         public virtual IAsyncResult BeginGetComplianceDetail(GetComplianceDetailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComplianceDetailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComplianceDetailResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual GetNotificationChannelResponse GetNotificationChannel(GetNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1444,7 +1444,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetNotificationChannel">REST API Reference for GetNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginGetNotificationChannel(GetNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotificationChannelResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1516,7 +1516,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
         public virtual GetProtectionStatusResponse GetProtectionStatus(GetProtectionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectionStatusResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">REST API Reference for GetProtectionStatus Operation</seealso>
         public virtual IAsyncResult BeginGetProtectionStatus(GetProtectionStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtectionStatusResponseUnmarshaller.Instance;
 
@@ -1629,7 +1629,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">REST API Reference for GetProtocolsList Operation</seealso>
         public virtual GetProtocolsListResponse GetProtocolsList(GetProtocolsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtocolsListResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList">REST API Reference for GetProtocolsList Operation</seealso>
         public virtual IAsyncResult BeginGetProtocolsList(GetProtocolsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProtocolsListResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
         public virtual GetResourceSetResponse GetResourceSet(GetResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
 
@@ -1722,7 +1722,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
         public virtual IAsyncResult BeginGetResourceSet(GetResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
         public virtual GetThirdPartyFirewallAssociationStatusResponse GetThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
 
@@ -1795,7 +1795,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetThirdPartyFirewallAssociationStatus">REST API Reference for GetThirdPartyFirewallAssociationStatus Operation</seealso>
         public virtual IAsyncResult BeginGetThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThirdPartyFirewallAssociationStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThirdPartyFirewallAssociationStatusResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">REST API Reference for GetViolationDetails Operation</seealso>
         public virtual GetViolationDetailsResponse GetViolationDetails(GetViolationDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetViolationDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetViolationDetailsResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails">REST API Reference for GetViolationDetails Operation</seealso>
         public virtual IAsyncResult BeginGetViolationDetails(GetViolationDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetViolationDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetViolationDetailsResponseUnmarshaller.Instance;
 
@@ -1920,7 +1920,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
         public virtual ListAdminAccountsForOrganizationResponse ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
 
@@ -1941,7 +1941,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
         public virtual IAsyncResult BeginListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdminAccountsForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdminAccountsForOrganizationResponseUnmarshaller.Instance;
 
@@ -1987,7 +1987,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
         public virtual ListAdminsManagingAccountResponse ListAdminsManagingAccount(ListAdminsManagingAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
         public virtual IAsyncResult BeginListAdminsManagingAccount(ListAdminsManagingAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAdminsManagingAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAdminsManagingAccountResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists">REST API Reference for ListAppsLists Operation</seealso>
         public virtual ListAppsListsResponse ListAppsLists(ListAppsListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsListsResponseUnmarshaller.Instance;
 
@@ -2083,7 +2083,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists">REST API Reference for ListAppsLists Operation</seealso>
         public virtual IAsyncResult BeginListAppsLists(ListAppsListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppsListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppsListsResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual ListComplianceStatusResponse ListComplianceStatus(ListComplianceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListComplianceStatus">REST API Reference for ListComplianceStatus Operation</seealso>
         public virtual IAsyncResult BeginListComplianceStatus(ListComplianceStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComplianceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComplianceStatusResponseUnmarshaller.Instance;
 
@@ -2194,7 +2194,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -2215,7 +2215,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public virtual IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoveredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoveredResourcesResponseUnmarshaller.Instance;
 
@@ -2262,7 +2262,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual ListMemberAccountsResponse ListMemberAccounts(ListMemberAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
@@ -2283,7 +2283,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">REST API Reference for ListMemberAccounts Operation</seealso>
         public virtual IAsyncResult BeginListMemberAccounts(ListMemberAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemberAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemberAccountsResponseUnmarshaller.Instance;
 
@@ -2337,7 +2337,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
@@ -2406,7 +2406,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists">REST API Reference for ListProtocolsLists Operation</seealso>
         public virtual ListProtocolsListsResponse ListProtocolsLists(ListProtocolsListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtocolsListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtocolsListsResponseUnmarshaller.Instance;
 
@@ -2427,7 +2427,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists">REST API Reference for ListProtocolsLists Operation</seealso>
         public virtual IAsyncResult BeginListProtocolsLists(ListProtocolsListsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProtocolsListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProtocolsListsResponseUnmarshaller.Instance;
 
@@ -2478,7 +2478,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
         public virtual ListResourceSetResourcesResponse ListResourceSetResources(ListResourceSetResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
 
@@ -2499,7 +2499,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources">REST API Reference for ListResourceSetResources Operation</seealso>
         public virtual IAsyncResult BeginListResourceSetResources(ListResourceSetResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetResourcesResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
         public virtual ListResourceSetsResponse ListResourceSets(ListResourceSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
 
@@ -2568,7 +2568,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
         public virtual IAsyncResult BeginListResourceSets(ListResourceSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
 
@@ -2619,7 +2619,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2640,7 +2640,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
         public virtual ListThirdPartyFirewallFirewallPoliciesResponse ListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -2713,7 +2713,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListThirdPartyFirewallFirewallPolicies">REST API Reference for ListThirdPartyFirewallFirewallPolicies Operation</seealso>
         public virtual IAsyncResult BeginListThirdPartyFirewallFirewallPolicies(ListThirdPartyFirewallFirewallPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThirdPartyFirewallFirewallPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThirdPartyFirewallFirewallPoliciesResponseUnmarshaller.Instance;
 
@@ -2775,7 +2775,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
         public virtual PutAdminAccountResponse PutAdminAccount(PutAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginPutAdminAccount(PutAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAdminAccountResponseUnmarshaller.Instance;
 
@@ -2853,7 +2853,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">REST API Reference for PutAppsList Operation</seealso>
         public virtual PutAppsListResponse PutAppsList(PutAppsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppsListResponseUnmarshaller.Instance;
 
@@ -2874,7 +2874,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList">REST API Reference for PutAppsList Operation</seealso>
         public virtual IAsyncResult BeginPutAppsList(PutAppsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppsListResponseUnmarshaller.Instance;
 
@@ -2934,7 +2934,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual PutNotificationChannelResponse PutNotificationChannel(PutNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
 
@@ -2955,7 +2955,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutNotificationChannel">REST API Reference for PutNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginPutNotificationChannel(PutNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutNotificationChannelResponseUnmarshaller.Instance;
 
@@ -3085,7 +3085,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -3106,7 +3106,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutPolicy(PutPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -3163,7 +3163,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">REST API Reference for PutProtocolsList Operation</seealso>
         public virtual PutProtocolsListResponse PutProtocolsList(PutProtocolsListRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProtocolsListResponseUnmarshaller.Instance;
 
@@ -3184,7 +3184,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList">REST API Reference for PutProtocolsList Operation</seealso>
         public virtual IAsyncResult BeginPutProtocolsList(PutProtocolsListRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProtocolsListRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProtocolsListResponseUnmarshaller.Instance;
 
@@ -3244,7 +3244,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
         public virtual PutResourceSetResponse PutResourceSet(PutResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet">REST API Reference for PutResourceSet Operation</seealso>
         public virtual IAsyncResult BeginPutResourceSet(PutResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceSetResponseUnmarshaller.Instance;
 
@@ -3322,7 +3322,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3343,7 +3343,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3394,7 +3394,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3415,7 +3415,7 @@ namespace Amazon.FMS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

@@ -770,7 +770,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository">REST API Reference for AssociateApprovalRuleTemplateWithRepository Operation</seealso>
         public virtual AssociateApprovalRuleTemplateWithRepositoryResponse AssociateApprovalRuleTemplateWithRepository(AssociateApprovalRuleTemplateWithRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApprovalRuleTemplateWithRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApprovalRuleTemplateWithRepositoryResponseUnmarshaller.Instance;
 
@@ -846,7 +846,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/AssociateApprovalRuleTemplateWithRepository">REST API Reference for AssociateApprovalRuleTemplateWithRepository Operation</seealso>
         public virtual Task<AssociateApprovalRuleTemplateWithRepositoryResponse> AssociateApprovalRuleTemplateWithRepositoryAsync(AssociateApprovalRuleTemplateWithRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApprovalRuleTemplateWithRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApprovalRuleTemplateWithRepositoryResponseUnmarshaller.Instance;
             
@@ -904,7 +904,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories">REST API Reference for BatchAssociateApprovalRuleTemplateWithRepositories Operation</seealso>
         public virtual BatchAssociateApprovalRuleTemplateWithRepositoriesResponse BatchAssociateApprovalRuleTemplateWithRepositories(BatchAssociateApprovalRuleTemplateWithRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateApprovalRuleTemplateWithRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateApprovalRuleTemplateWithRepositoriesResponseUnmarshaller.Instance;
 
@@ -961,7 +961,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchAssociateApprovalRuleTemplateWithRepositories">REST API Reference for BatchAssociateApprovalRuleTemplateWithRepositories Operation</seealso>
         public virtual Task<BatchAssociateApprovalRuleTemplateWithRepositoriesResponse> BatchAssociateApprovalRuleTemplateWithRepositoriesAsync(BatchAssociateApprovalRuleTemplateWithRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateApprovalRuleTemplateWithRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateApprovalRuleTemplateWithRepositoriesResponseUnmarshaller.Instance;
             
@@ -1059,7 +1059,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
         public virtual BatchDescribeMergeConflictsResponse BatchDescribeMergeConflicts(BatchDescribeMergeConflictsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDescribeMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDescribeMergeConflictsResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
         public virtual Task<BatchDescribeMergeConflictsResponse> BatchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDescribeMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDescribeMergeConflictsResponseUnmarshaller.Instance;
             
@@ -1214,7 +1214,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories">REST API Reference for BatchDisassociateApprovalRuleTemplateFromRepositories Operation</seealso>
         public virtual BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse BatchDisassociateApprovalRuleTemplateFromRepositories(BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateApprovalRuleTemplateFromRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDisassociateApprovalRuleTemplateFromRepositories">REST API Reference for BatchDisassociateApprovalRuleTemplateFromRepositories Operation</seealso>
         public virtual Task<BatchDisassociateApprovalRuleTemplateFromRepositoriesResponse> BatchDisassociateApprovalRuleTemplateFromRepositoriesAsync(BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateApprovalRuleTemplateFromRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseUnmarshaller.Instance;
             
@@ -1331,7 +1331,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
         public virtual BatchGetCommitsResponse BatchGetCommits(BatchGetCommitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCommitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCommitsResponseUnmarshaller.Instance;
 
@@ -1390,7 +1390,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits">REST API Reference for BatchGetCommits Operation</seealso>
         public virtual Task<BatchGetCommitsResponse> BatchGetCommitsAsync(BatchGetCommitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCommitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCommitsResponseUnmarshaller.Instance;
             
@@ -1454,7 +1454,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         public virtual BatchGetRepositoriesResponse BatchGetRepositories(BatchGetRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
 
@@ -1517,7 +1517,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         public virtual Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRepositoriesResponseUnmarshaller.Instance;
             
@@ -1573,7 +1573,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate">REST API Reference for CreateApprovalRuleTemplate Operation</seealso>
         public virtual CreateApprovalRuleTemplateResponse CreateApprovalRuleTemplate(CreateApprovalRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApprovalRuleTemplateResponseUnmarshaller.Instance;
 
@@ -1628,7 +1628,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateApprovalRuleTemplate">REST API Reference for CreateApprovalRuleTemplate Operation</seealso>
         public virtual Task<CreateApprovalRuleTemplateResponse> CreateApprovalRuleTemplateAsync(CreateApprovalRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApprovalRuleTemplateResponseUnmarshaller.Instance;
             
@@ -1708,7 +1708,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual CreateBranchResponse CreateBranch(CreateBranchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBranchResponseUnmarshaller.Instance;
 
@@ -1787,7 +1787,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public virtual Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBranchResponseUnmarshaller.Instance;
             
@@ -1963,7 +1963,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">REST API Reference for CreateCommit Operation</seealso>
         public virtual CreateCommitResponse CreateCommit(CreateCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCommitResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">REST API Reference for CreateCommit Operation</seealso>
         public virtual Task<CreateCommitResponse> CreateCommitAsync(CreateCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCommitResponseUnmarshaller.Instance;
             
@@ -2261,7 +2261,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
         public virtual CreatePullRequestResponse CreatePullRequest(CreatePullRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullRequestResponseUnmarshaller.Instance;
 
@@ -2383,7 +2383,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest">REST API Reference for CreatePullRequest Operation</seealso>
         public virtual Task<CreatePullRequestResponse> CreatePullRequestAsync(CreatePullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullRequestResponseUnmarshaller.Instance;
             
@@ -2454,7 +2454,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule">REST API Reference for CreatePullRequestApprovalRule Operation</seealso>
         public virtual CreatePullRequestApprovalRuleResponse CreatePullRequestApprovalRule(CreatePullRequestApprovalRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullRequestApprovalRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullRequestApprovalRuleResponseUnmarshaller.Instance;
 
@@ -2524,7 +2524,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequestApprovalRule">REST API Reference for CreatePullRequestApprovalRule Operation</seealso>
         public virtual Task<CreatePullRequestApprovalRuleResponse> CreatePullRequestApprovalRuleAsync(CreatePullRequestApprovalRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePullRequestApprovalRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePullRequestApprovalRuleResponseUnmarshaller.Instance;
             
@@ -2605,7 +2605,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -2685,7 +2685,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
             
@@ -2852,7 +2852,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
         public virtual CreateUnreferencedMergeCommitResponse CreateUnreferencedMergeCommit(CreateUnreferencedMergeCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUnreferencedMergeCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUnreferencedMergeCommitResponseUnmarshaller.Instance;
 
@@ -3018,7 +3018,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
         public virtual Task<CreateUnreferencedMergeCommitResponse> CreateUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUnreferencedMergeCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUnreferencedMergeCommitResponseUnmarshaller.Instance;
             
@@ -3054,7 +3054,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate">REST API Reference for DeleteApprovalRuleTemplate Operation</seealso>
         public virtual DeleteApprovalRuleTemplateResponse DeleteApprovalRuleTemplate(DeleteApprovalRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApprovalRuleTemplateResponseUnmarshaller.Instance;
 
@@ -3089,7 +3089,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteApprovalRuleTemplate">REST API Reference for DeleteApprovalRuleTemplate Operation</seealso>
         public virtual Task<DeleteApprovalRuleTemplateResponse> DeleteApprovalRuleTemplateAsync(DeleteApprovalRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApprovalRuleTemplateResponseUnmarshaller.Instance;
             
@@ -3153,7 +3153,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual DeleteBranchResponse DeleteBranch(DeleteBranchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBranchResponseUnmarshaller.Instance;
 
@@ -3216,7 +3216,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch">REST API Reference for DeleteBranch Operation</seealso>
         public virtual Task<DeleteBranchResponse> DeleteBranchAsync(DeleteBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBranchResponseUnmarshaller.Instance;
             
@@ -3251,7 +3251,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent">REST API Reference for DeleteCommentContent Operation</seealso>
         public virtual DeleteCommentContentResponse DeleteCommentContent(DeleteCommentContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCommentContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCommentContentResponseUnmarshaller.Instance;
 
@@ -3285,7 +3285,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent">REST API Reference for DeleteCommentContent Operation</seealso>
         public virtual Task<DeleteCommentContentResponse> DeleteCommentContentAsync(DeleteCommentContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCommentContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCommentContentResponseUnmarshaller.Instance;
             
@@ -3392,7 +3392,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
         public virtual DeleteFileResponse DeleteFile(DeleteFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileResponseUnmarshaller.Instance;
 
@@ -3498,7 +3498,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">REST API Reference for DeleteFile Operation</seealso>
         public virtual Task<DeleteFileResponse> DeleteFileAsync(DeleteFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileResponseUnmarshaller.Instance;
             
@@ -3562,7 +3562,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule">REST API Reference for DeletePullRequestApprovalRule Operation</seealso>
         public virtual DeletePullRequestApprovalRuleResponse DeletePullRequestApprovalRule(DeletePullRequestApprovalRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePullRequestApprovalRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePullRequestApprovalRuleResponseUnmarshaller.Instance;
 
@@ -3625,7 +3625,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeletePullRequestApprovalRule">REST API Reference for DeletePullRequestApprovalRule Operation</seealso>
         public virtual Task<DeletePullRequestApprovalRuleResponse> DeletePullRequestApprovalRuleAsync(DeletePullRequestApprovalRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePullRequestApprovalRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePullRequestApprovalRuleResponseUnmarshaller.Instance;
             
@@ -3683,7 +3683,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -3740,7 +3740,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
             
@@ -3846,7 +3846,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">REST API Reference for DescribeMergeConflicts Operation</seealso>
         public virtual DescribeMergeConflictsResponse DescribeMergeConflicts(DescribeMergeConflictsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMergeConflictsResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">REST API Reference for DescribeMergeConflicts Operation</seealso>
         public virtual Task<DescribeMergeConflictsResponse> DescribeMergeConflictsAsync(DescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMergeConflictsResponseUnmarshaller.Instance;
             
@@ -4016,7 +4016,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents">REST API Reference for DescribePullRequestEvents Operation</seealso>
         public virtual DescribePullRequestEventsResponse DescribePullRequestEvents(DescribePullRequestEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePullRequestEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePullRequestEventsResponseUnmarshaller.Instance;
 
@@ -4080,7 +4080,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents">REST API Reference for DescribePullRequestEvents Operation</seealso>
         public virtual Task<DescribePullRequestEventsResponse> DescribePullRequestEventsAsync(DescribePullRequestEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePullRequestEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePullRequestEventsResponseUnmarshaller.Instance;
             
@@ -4150,7 +4150,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository">REST API Reference for DisassociateApprovalRuleTemplateFromRepository Operation</seealso>
         public virtual DisassociateApprovalRuleTemplateFromRepositoryResponse DisassociateApprovalRuleTemplateFromRepository(DisassociateApprovalRuleTemplateFromRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApprovalRuleTemplateFromRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApprovalRuleTemplateFromRepositoryResponseUnmarshaller.Instance;
 
@@ -4219,7 +4219,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DisassociateApprovalRuleTemplateFromRepository">REST API Reference for DisassociateApprovalRuleTemplateFromRepository Operation</seealso>
         public virtual Task<DisassociateApprovalRuleTemplateFromRepositoryResponse> DisassociateApprovalRuleTemplateFromRepositoryAsync(DisassociateApprovalRuleTemplateFromRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApprovalRuleTemplateFromRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApprovalRuleTemplateFromRepositoryResponseUnmarshaller.Instance;
             
@@ -4277,7 +4277,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules">REST API Reference for EvaluatePullRequestApprovalRules Operation</seealso>
         public virtual EvaluatePullRequestApprovalRulesResponse EvaluatePullRequestApprovalRules(EvaluatePullRequestApprovalRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluatePullRequestApprovalRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluatePullRequestApprovalRulesResponseUnmarshaller.Instance;
 
@@ -4334,7 +4334,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/EvaluatePullRequestApprovalRules">REST API Reference for EvaluatePullRequestApprovalRules Operation</seealso>
         public virtual Task<EvaluatePullRequestApprovalRulesResponse> EvaluatePullRequestApprovalRulesAsync(EvaluatePullRequestApprovalRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluatePullRequestApprovalRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluatePullRequestApprovalRulesResponseUnmarshaller.Instance;
             
@@ -4369,7 +4369,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate">REST API Reference for GetApprovalRuleTemplate Operation</seealso>
         public virtual GetApprovalRuleTemplateResponse GetApprovalRuleTemplate(GetApprovalRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApprovalRuleTemplateResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetApprovalRuleTemplate">REST API Reference for GetApprovalRuleTemplate Operation</seealso>
         public virtual Task<GetApprovalRuleTemplateResponse> GetApprovalRuleTemplateAsync(GetApprovalRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApprovalRuleTemplateResponseUnmarshaller.Instance;
             
@@ -4470,7 +4470,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         public virtual GetBlobResponse GetBlob(GetBlobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlobResponseUnmarshaller.Instance;
 
@@ -4536,7 +4536,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
         public virtual Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlobResponseUnmarshaller.Instance;
             
@@ -4599,7 +4599,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual GetBranchResponse GetBranch(GetBranchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBranchResponseUnmarshaller.Instance;
 
@@ -4661,7 +4661,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public virtual Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBranchResponseUnmarshaller.Instance;
             
@@ -4719,7 +4719,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">REST API Reference for GetComment Operation</seealso>
         public virtual GetCommentResponse GetComment(GetCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentResponseUnmarshaller.Instance;
 
@@ -4776,7 +4776,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment">REST API Reference for GetComment Operation</seealso>
         public virtual Task<GetCommentResponse> GetCommentAsync(GetCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentResponseUnmarshaller.Instance;
             
@@ -4821,7 +4821,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">REST API Reference for GetCommentReactions Operation</seealso>
         public virtual GetCommentReactionsResponse GetCommentReactions(GetCommentReactionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentReactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentReactionsResponseUnmarshaller.Instance;
 
@@ -4865,7 +4865,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions">REST API Reference for GetCommentReactions Operation</seealso>
         public virtual Task<GetCommentReactionsResponse> GetCommentReactionsAsync(GetCommentReactionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentReactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentReactionsResponseUnmarshaller.Instance;
             
@@ -4941,7 +4941,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         public virtual GetCommentsForComparedCommitResponse GetCommentsForComparedCommit(GetCommentsForComparedCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentsForComparedCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentsForComparedCommitResponseUnmarshaller.Instance;
 
@@ -5016,7 +5016,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit">REST API Reference for GetCommentsForComparedCommit Operation</seealso>
         public virtual Task<GetCommentsForComparedCommitResponse> GetCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentsForComparedCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentsForComparedCommitResponseUnmarshaller.Instance;
             
@@ -5107,7 +5107,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">REST API Reference for GetCommentsForPullRequest Operation</seealso>
         public virtual GetCommentsForPullRequestResponse GetCommentsForPullRequest(GetCommentsForPullRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentsForPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentsForPullRequestResponseUnmarshaller.Instance;
 
@@ -5197,7 +5197,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest">REST API Reference for GetCommentsForPullRequest Operation</seealso>
         public virtual Task<GetCommentsForPullRequestResponse> GetCommentsForPullRequestAsync(GetCommentsForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommentsForPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommentsForPullRequestResponseUnmarshaller.Instance;
             
@@ -5259,7 +5259,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         public virtual GetCommitResponse GetCommit(GetCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommitResponseUnmarshaller.Instance;
 
@@ -5320,7 +5320,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         public virtual Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCommitResponseUnmarshaller.Instance;
             
@@ -5400,7 +5400,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         public virtual GetDifferencesResponse GetDifferences(GetDifferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDifferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDifferencesResponseUnmarshaller.Instance;
 
@@ -5479,7 +5479,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
         public virtual Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDifferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDifferencesResponseUnmarshaller.Instance;
             
@@ -5554,7 +5554,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
         public virtual GetFileResponse GetFile(GetFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFileResponseUnmarshaller.Instance;
 
@@ -5628,7 +5628,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">REST API Reference for GetFile Operation</seealso>
         public virtual Task<GetFileResponse> GetFileAsync(GetFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFileResponseUnmarshaller.Instance;
             
@@ -5698,7 +5698,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
         public virtual GetFolderResponse GetFolder(GetFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFolderResponseUnmarshaller.Instance;
 
@@ -5767,7 +5767,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">REST API Reference for GetFolder Operation</seealso>
         public virtual Task<GetFolderResponse> GetFolderAsync(GetFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFolderResponseUnmarshaller.Instance;
             
@@ -5836,7 +5836,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
         public virtual GetMergeCommitResponse GetMergeCommit(GetMergeCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeCommitResponseUnmarshaller.Instance;
 
@@ -5904,7 +5904,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit">REST API Reference for GetMergeCommit Operation</seealso>
         public virtual Task<GetMergeCommitResponse> GetMergeCommitAsync(GetMergeCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeCommitResponseUnmarshaller.Instance;
             
@@ -6007,7 +6007,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
         public virtual GetMergeConflictsResponse GetMergeConflicts(GetMergeConflictsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeConflictsResponseUnmarshaller.Instance;
 
@@ -6109,7 +6109,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
         public virtual Task<GetMergeConflictsResponse> GetMergeConflictsAsync(GetMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeConflictsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeConflictsResponseUnmarshaller.Instance;
             
@@ -6191,7 +6191,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">REST API Reference for GetMergeOptions Operation</seealso>
         public virtual GetMergeOptionsResponse GetMergeOptions(GetMergeOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeOptionsResponseUnmarshaller.Instance;
 
@@ -6272,7 +6272,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">REST API Reference for GetMergeOptions Operation</seealso>
         public virtual Task<GetMergeOptionsResponse> GetMergeOptionsAsync(GetMergeOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMergeOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMergeOptionsResponseUnmarshaller.Instance;
             
@@ -6319,7 +6319,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest">REST API Reference for GetPullRequest Operation</seealso>
         public virtual GetPullRequestResponse GetPullRequest(GetPullRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestResponseUnmarshaller.Instance;
 
@@ -6365,7 +6365,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest">REST API Reference for GetPullRequest Operation</seealso>
         public virtual Task<GetPullRequestResponse> GetPullRequestAsync(GetPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestResponseUnmarshaller.Instance;
             
@@ -6420,7 +6420,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates">REST API Reference for GetPullRequestApprovalStates Operation</seealso>
         public virtual GetPullRequestApprovalStatesResponse GetPullRequestApprovalStates(GetPullRequestApprovalStatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestApprovalStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestApprovalStatesResponseUnmarshaller.Instance;
 
@@ -6474,7 +6474,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestApprovalStates">REST API Reference for GetPullRequestApprovalStates Operation</seealso>
         public virtual Task<GetPullRequestApprovalStatesResponse> GetPullRequestApprovalStatesAsync(GetPullRequestApprovalStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestApprovalStatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestApprovalStatesResponseUnmarshaller.Instance;
             
@@ -6529,7 +6529,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState">REST API Reference for GetPullRequestOverrideState Operation</seealso>
         public virtual GetPullRequestOverrideStateResponse GetPullRequestOverrideState(GetPullRequestOverrideStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestOverrideStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestOverrideStateResponseUnmarshaller.Instance;
 
@@ -6583,7 +6583,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequestOverrideState">REST API Reference for GetPullRequestOverrideState Operation</seealso>
         public virtual Task<GetPullRequestOverrideStateResponse> GetPullRequestOverrideStateAsync(GetPullRequestOverrideStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPullRequestOverrideStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPullRequestOverrideStateResponseUnmarshaller.Instance;
             
@@ -6646,7 +6646,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public virtual GetRepositoryResponse GetRepository(GetRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryResponseUnmarshaller.Instance;
 
@@ -6708,7 +6708,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryResponseUnmarshaller.Instance;
             
@@ -6761,7 +6761,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         public virtual GetRepositoryTriggersResponse GetRepositoryTriggers(GetRepositoryTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
 
@@ -6813,7 +6813,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         public virtual Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryTriggersResponseUnmarshaller.Instance;
             
@@ -6842,7 +6842,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates">REST API Reference for ListApprovalRuleTemplates Operation</seealso>
         public virtual ListApprovalRuleTemplatesResponse ListApprovalRuleTemplates(ListApprovalRuleTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovalRuleTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovalRuleTemplatesResponseUnmarshaller.Instance;
 
@@ -6870,7 +6870,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListApprovalRuleTemplates">REST API Reference for ListApprovalRuleTemplates Operation</seealso>
         public virtual Task<ListApprovalRuleTemplatesResponse> ListApprovalRuleTemplatesAsync(ListApprovalRuleTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovalRuleTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovalRuleTemplatesResponseUnmarshaller.Instance;
             
@@ -6929,7 +6929,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository">REST API Reference for ListAssociatedApprovalRuleTemplatesForRepository Operation</seealso>
         public virtual ListAssociatedApprovalRuleTemplatesForRepositoryResponse ListAssociatedApprovalRuleTemplatesForRepository(ListAssociatedApprovalRuleTemplatesForRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedApprovalRuleTemplatesForRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedApprovalRuleTemplatesForRepositoryResponseUnmarshaller.Instance;
 
@@ -6987,7 +6987,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListAssociatedApprovalRuleTemplatesForRepository">REST API Reference for ListAssociatedApprovalRuleTemplatesForRepository Operation</seealso>
         public virtual Task<ListAssociatedApprovalRuleTemplatesForRepositoryResponse> ListAssociatedApprovalRuleTemplatesForRepositoryAsync(ListAssociatedApprovalRuleTemplatesForRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedApprovalRuleTemplatesForRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedApprovalRuleTemplatesForRepositoryResponseUnmarshaller.Instance;
             
@@ -7043,7 +7043,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual ListBranchesResponse ListBranches(ListBranchesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBranchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBranchesResponseUnmarshaller.Instance;
 
@@ -7098,7 +7098,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public virtual Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBranchesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBranchesResponseUnmarshaller.Instance;
             
@@ -7172,7 +7172,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
         public virtual ListFileCommitHistoryResponse ListFileCommitHistory(ListFileCommitHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFileCommitHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFileCommitHistoryResponseUnmarshaller.Instance;
 
@@ -7245,7 +7245,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
         public virtual Task<ListFileCommitHistoryResponse> ListFileCommitHistoryAsync(ListFileCommitHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFileCommitHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFileCommitHistoryResponseUnmarshaller.Instance;
             
@@ -7316,7 +7316,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         public virtual ListPullRequestsResponse ListPullRequests(ListPullRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPullRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPullRequestsResponseUnmarshaller.Instance;
 
@@ -7386,7 +7386,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests">REST API Reference for ListPullRequests Operation</seealso>
         public virtual Task<ListPullRequestsResponse> ListPullRequestsAsync(ListPullRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPullRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPullRequestsResponseUnmarshaller.Instance;
             
@@ -7416,7 +7416,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
@@ -7445,7 +7445,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
             
@@ -7501,7 +7501,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate">REST API Reference for ListRepositoriesForApprovalRuleTemplate Operation</seealso>
         public virtual ListRepositoriesForApprovalRuleTemplateResponse ListRepositoriesForApprovalRuleTemplate(ListRepositoriesForApprovalRuleTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesForApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesForApprovalRuleTemplateResponseUnmarshaller.Instance;
 
@@ -7556,7 +7556,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositoriesForApprovalRuleTemplate">REST API Reference for ListRepositoriesForApprovalRuleTemplate Operation</seealso>
         public virtual Task<ListRepositoriesForApprovalRuleTemplateResponse> ListRepositoriesForApprovalRuleTemplateAsync(ListRepositoriesForApprovalRuleTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesForApprovalRuleTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesForApprovalRuleTemplateResponseUnmarshaller.Instance;
             
@@ -7603,7 +7603,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -7649,7 +7649,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -7742,7 +7742,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">REST API Reference for MergeBranchesByFastForward Operation</seealso>
         public virtual MergeBranchesByFastForwardResponse MergeBranchesByFastForward(MergeBranchesByFastForwardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesByFastForwardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesByFastForwardResponseUnmarshaller.Instance;
 
@@ -7834,7 +7834,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">REST API Reference for MergeBranchesByFastForward Operation</seealso>
         public virtual Task<MergeBranchesByFastForwardResponse> MergeBranchesByFastForwardAsync(MergeBranchesByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesByFastForwardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesByFastForwardResponseUnmarshaller.Instance;
             
@@ -7999,7 +7999,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">REST API Reference for MergeBranchesBySquash Operation</seealso>
         public virtual MergeBranchesBySquashResponse MergeBranchesBySquash(MergeBranchesBySquashRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesBySquashRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesBySquashResponseUnmarshaller.Instance;
 
@@ -8163,7 +8163,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">REST API Reference for MergeBranchesBySquash Operation</seealso>
         public virtual Task<MergeBranchesBySquashResponse> MergeBranchesBySquashAsync(MergeBranchesBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesBySquashRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesBySquashResponseUnmarshaller.Instance;
             
@@ -8328,7 +8328,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">REST API Reference for MergeBranchesByThreeWay Operation</seealso>
         public virtual MergeBranchesByThreeWayResponse MergeBranchesByThreeWay(MergeBranchesByThreeWayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesByThreeWayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesByThreeWayResponseUnmarshaller.Instance;
 
@@ -8492,7 +8492,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">REST API Reference for MergeBranchesByThreeWay Operation</seealso>
         public virtual Task<MergeBranchesByThreeWayResponse> MergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergeBranchesByThreeWayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergeBranchesByThreeWayResponseUnmarshaller.Instance;
             
@@ -8589,7 +8589,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">REST API Reference for MergePullRequestByFastForward Operation</seealso>
         public virtual MergePullRequestByFastForwardResponse MergePullRequestByFastForward(MergePullRequestByFastForwardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestByFastForwardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestByFastForwardResponseUnmarshaller.Instance;
 
@@ -8685,7 +8685,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward">REST API Reference for MergePullRequestByFastForward Operation</seealso>
         public virtual Task<MergePullRequestByFastForwardResponse> MergePullRequestByFastForwardAsync(MergePullRequestByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestByFastForwardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestByFastForwardResponseUnmarshaller.Instance;
             
@@ -8852,7 +8852,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">REST API Reference for MergePullRequestBySquash Operation</seealso>
         public virtual MergePullRequestBySquashResponse MergePullRequestBySquash(MergePullRequestBySquashRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestBySquashRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestBySquashResponseUnmarshaller.Instance;
 
@@ -9018,7 +9018,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">REST API Reference for MergePullRequestBySquash Operation</seealso>
         public virtual Task<MergePullRequestBySquashResponse> MergePullRequestBySquashAsync(MergePullRequestBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestBySquashRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestBySquashResponseUnmarshaller.Instance;
             
@@ -9185,7 +9185,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">REST API Reference for MergePullRequestByThreeWay Operation</seealso>
         public virtual MergePullRequestByThreeWayResponse MergePullRequestByThreeWay(MergePullRequestByThreeWayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestByThreeWayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestByThreeWayResponseUnmarshaller.Instance;
 
@@ -9351,7 +9351,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">REST API Reference for MergePullRequestByThreeWay Operation</seealso>
         public virtual Task<MergePullRequestByThreeWayResponse> MergePullRequestByThreeWayAsync(MergePullRequestByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MergePullRequestByThreeWayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MergePullRequestByThreeWayResponseUnmarshaller.Instance;
             
@@ -9421,7 +9421,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules">REST API Reference for OverridePullRequestApprovalRules Operation</seealso>
         public virtual OverridePullRequestApprovalRulesResponse OverridePullRequestApprovalRules(OverridePullRequestApprovalRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OverridePullRequestApprovalRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OverridePullRequestApprovalRulesResponseUnmarshaller.Instance;
 
@@ -9490,7 +9490,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OverridePullRequestApprovalRules">REST API Reference for OverridePullRequestApprovalRules Operation</seealso>
         public virtual Task<OverridePullRequestApprovalRulesResponse> OverridePullRequestApprovalRulesAsync(OverridePullRequestApprovalRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OverridePullRequestApprovalRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OverridePullRequestApprovalRulesResponseUnmarshaller.Instance;
             
@@ -9599,7 +9599,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         public virtual PostCommentForComparedCommitResponse PostCommentForComparedCommit(PostCommentForComparedCommitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentForComparedCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentForComparedCommitResponseUnmarshaller.Instance;
 
@@ -9707,7 +9707,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit">REST API Reference for PostCommentForComparedCommit Operation</seealso>
         public virtual Task<PostCommentForComparedCommitResponse> PostCommentForComparedCommitAsync(PostCommentForComparedCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentForComparedCommitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentForComparedCommitResponseUnmarshaller.Instance;
             
@@ -9831,7 +9831,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest">REST API Reference for PostCommentForPullRequest Operation</seealso>
         public virtual PostCommentForPullRequestResponse PostCommentForPullRequest(PostCommentForPullRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentForPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentForPullRequestResponseUnmarshaller.Instance;
 
@@ -9954,7 +9954,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest">REST API Reference for PostCommentForPullRequest Operation</seealso>
         public virtual Task<PostCommentForPullRequestResponse> PostCommentForPullRequestAsync(PostCommentForPullRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentForPullRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentForPullRequestResponseUnmarshaller.Instance;
             
@@ -10008,7 +10008,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         public virtual PostCommentReplyResponse PostCommentReply(PostCommentReplyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentReplyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentReplyResponseUnmarshaller.Instance;
 
@@ -10061,7 +10061,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply">REST API Reference for PostCommentReply Operation</seealso>
         public virtual Task<PostCommentReplyResponse> PostCommentReplyAsync(PostCommentReplyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostCommentReplyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostCommentReplyResponseUnmarshaller.Instance;
             
@@ -10109,7 +10109,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">REST API Reference for PutCommentReaction Operation</seealso>
         public virtual PutCommentReactionResponse PutCommentReaction(PutCommentReactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCommentReactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCommentReactionResponseUnmarshaller.Instance;
 
@@ -10156,7 +10156,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction">REST API Reference for PutCommentReaction Operation</seealso>
         public virtual Task<PutCommentReactionResponse> PutCommentReactionAsync(PutCommentReactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCommentReactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCommentReactionResponseUnmarshaller.Instance;
             
@@ -10297,7 +10297,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
         public virtual PutFileResponse PutFile(PutFileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFileResponseUnmarshaller.Instance;
 
@@ -10437,7 +10437,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">REST API Reference for PutFile Operation</seealso>
         public virtual Task<PutFileResponse> PutFileAsync(PutFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFileResponseUnmarshaller.Instance;
             
@@ -10535,7 +10535,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         public virtual PutRepositoryTriggersResponse PutRepositoryTriggers(PutRepositoryTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
 
@@ -10632,7 +10632,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         public virtual Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRepositoryTriggersResponseUnmarshaller.Instance;
             
@@ -10694,7 +10694,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -10755,7 +10755,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -10855,7 +10855,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         public virtual TestRepositoryTriggersResponse TestRepositoryTriggers(TestRepositoryTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
 
@@ -10954,7 +10954,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         public virtual Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRepositoryTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRepositoryTriggersResponseUnmarshaller.Instance;
             
@@ -11016,7 +11016,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -11077,7 +11077,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -11123,7 +11123,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent">REST API Reference for UpdateApprovalRuleTemplateContent Operation</seealso>
         public virtual UpdateApprovalRuleTemplateContentResponse UpdateApprovalRuleTemplateContent(UpdateApprovalRuleTemplateContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateContentResponseUnmarshaller.Instance;
 
@@ -11168,7 +11168,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateContent">REST API Reference for UpdateApprovalRuleTemplateContent Operation</seealso>
         public virtual Task<UpdateApprovalRuleTemplateContentResponse> UpdateApprovalRuleTemplateContentAsync(UpdateApprovalRuleTemplateContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateContentResponseUnmarshaller.Instance;
             
@@ -11209,7 +11209,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription">REST API Reference for UpdateApprovalRuleTemplateDescription Operation</seealso>
         public virtual UpdateApprovalRuleTemplateDescriptionResponse UpdateApprovalRuleTemplateDescription(UpdateApprovalRuleTemplateDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateDescriptionResponseUnmarshaller.Instance;
 
@@ -11249,7 +11249,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateDescription">REST API Reference for UpdateApprovalRuleTemplateDescription Operation</seealso>
         public virtual Task<UpdateApprovalRuleTemplateDescriptionResponse> UpdateApprovalRuleTemplateDescriptionAsync(UpdateApprovalRuleTemplateDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateDescriptionResponseUnmarshaller.Instance;
             
@@ -11289,7 +11289,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName">REST API Reference for UpdateApprovalRuleTemplateName Operation</seealso>
         public virtual UpdateApprovalRuleTemplateNameResponse UpdateApprovalRuleTemplateName(UpdateApprovalRuleTemplateNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateNameResponseUnmarshaller.Instance;
 
@@ -11328,7 +11328,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateApprovalRuleTemplateName">REST API Reference for UpdateApprovalRuleTemplateName Operation</seealso>
         public virtual Task<UpdateApprovalRuleTemplateNameResponse> UpdateApprovalRuleTemplateNameAsync(UpdateApprovalRuleTemplateNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalRuleTemplateNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalRuleTemplateNameResponseUnmarshaller.Instance;
             
@@ -11374,7 +11374,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment">REST API Reference for UpdateComment Operation</seealso>
         public virtual UpdateCommentResponse UpdateComment(UpdateCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCommentResponseUnmarshaller.Instance;
 
@@ -11419,7 +11419,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment">REST API Reference for UpdateComment Operation</seealso>
         public virtual Task<UpdateCommentResponse> UpdateCommentAsync(UpdateCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCommentResponseUnmarshaller.Instance;
             
@@ -11489,7 +11489,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         public virtual UpdateDefaultBranchResponse UpdateDefaultBranch(UpdateDefaultBranchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
 
@@ -11558,7 +11558,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         public virtual Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultBranchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultBranchResponseUnmarshaller.Instance;
             
@@ -11633,7 +11633,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent">REST API Reference for UpdatePullRequestApprovalRuleContent Operation</seealso>
         public virtual UpdatePullRequestApprovalRuleContentResponse UpdatePullRequestApprovalRuleContent(UpdatePullRequestApprovalRuleContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestApprovalRuleContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestApprovalRuleContentResponseUnmarshaller.Instance;
 
@@ -11707,7 +11707,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalRuleContent">REST API Reference for UpdatePullRequestApprovalRuleContent Operation</seealso>
         public virtual Task<UpdatePullRequestApprovalRuleContentResponse> UpdatePullRequestApprovalRuleContentAsync(UpdatePullRequestApprovalRuleContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestApprovalRuleContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestApprovalRuleContentResponseUnmarshaller.Instance;
             
@@ -11783,7 +11783,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState">REST API Reference for UpdatePullRequestApprovalState Operation</seealso>
         public virtual UpdatePullRequestApprovalStateResponse UpdatePullRequestApprovalState(UpdatePullRequestApprovalStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestApprovalStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestApprovalStateResponseUnmarshaller.Instance;
 
@@ -11858,7 +11858,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestApprovalState">REST API Reference for UpdatePullRequestApprovalState Operation</seealso>
         public virtual Task<UpdatePullRequestApprovalStateResponse> UpdatePullRequestApprovalStateAsync(UpdatePullRequestApprovalStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestApprovalStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestApprovalStateResponseUnmarshaller.Instance;
             
@@ -11897,7 +11897,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription">REST API Reference for UpdatePullRequestDescription Operation</seealso>
         public virtual UpdatePullRequestDescriptionResponse UpdatePullRequestDescription(UpdatePullRequestDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestDescriptionResponseUnmarshaller.Instance;
 
@@ -11935,7 +11935,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription">REST API Reference for UpdatePullRequestDescription Operation</seealso>
         public virtual Task<UpdatePullRequestDescriptionResponse> UpdatePullRequestDescriptionAsync(UpdatePullRequestDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestDescriptionResponseUnmarshaller.Instance;
             
@@ -11992,7 +11992,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus">REST API Reference for UpdatePullRequestStatus Operation</seealso>
         public virtual UpdatePullRequestStatusResponse UpdatePullRequestStatus(UpdatePullRequestStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestStatusResponseUnmarshaller.Instance;
 
@@ -12048,7 +12048,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus">REST API Reference for UpdatePullRequestStatus Operation</seealso>
         public virtual Task<UpdatePullRequestStatusResponse> UpdatePullRequestStatusAsync(UpdatePullRequestStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestStatusResponseUnmarshaller.Instance;
             
@@ -12090,7 +12090,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle">REST API Reference for UpdatePullRequestTitle Operation</seealso>
         public virtual UpdatePullRequestTitleResponse UpdatePullRequestTitle(UpdatePullRequestTitleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestTitleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestTitleResponseUnmarshaller.Instance;
 
@@ -12131,7 +12131,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle">REST API Reference for UpdatePullRequestTitle Operation</seealso>
         public virtual Task<UpdatePullRequestTitleResponse> UpdatePullRequestTitleAsync(UpdatePullRequestTitleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePullRequestTitleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePullRequestTitleResponseUnmarshaller.Instance;
             
@@ -12197,7 +12197,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         public virtual UpdateRepositoryDescriptionResponse UpdateRepositoryDescription(UpdateRepositoryDescriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
 
@@ -12262,7 +12262,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         public virtual Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryDescriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryDescriptionResponseUnmarshaller.Instance;
             
@@ -12326,7 +12326,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey">REST API Reference for UpdateRepositoryEncryptionKey Operation</seealso>
         public virtual UpdateRepositoryEncryptionKeyResponse UpdateRepositoryEncryptionKey(UpdateRepositoryEncryptionKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryEncryptionKeyResponseUnmarshaller.Instance;
 
@@ -12389,7 +12389,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey">REST API Reference for UpdateRepositoryEncryptionKey Operation</seealso>
         public virtual Task<UpdateRepositoryEncryptionKeyResponse> UpdateRepositoryEncryptionKeyAsync(UpdateRepositoryEncryptionKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryEncryptionKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryEncryptionKeyResponseUnmarshaller.Instance;
             
@@ -12434,7 +12434,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         public virtual UpdateRepositoryNameResponse UpdateRepositoryName(UpdateRepositoryNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;
 
@@ -12478,7 +12478,7 @@ namespace Amazon.CodeCommit
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         public virtual Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryNameResponseUnmarshaller.Instance;
             

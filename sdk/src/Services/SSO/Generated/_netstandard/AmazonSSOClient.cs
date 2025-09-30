@@ -297,7 +297,7 @@ namespace Amazon.SSO
 
         internal virtual GetRoleCredentialsResponse GetRoleCredentials(GetRoleCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoleCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoleCredentialsResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.SSO
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/GetRoleCredentials">REST API Reference for GetRoleCredentials Operation</seealso>
         public virtual Task<GetRoleCredentialsResponse> GetRoleCredentialsAsync(GetRoleCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoleCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoleCredentialsResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.SSO
 
         internal virtual ListAccountRolesResponse ListAccountRoles(ListAccountRolesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountRolesResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.SSO
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccountRoles">REST API Reference for ListAccountRoles Operation</seealso>
         public virtual Task<ListAccountRolesResponse> ListAccountRolesAsync(ListAccountRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountRolesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountRolesResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.SSO
 
         internal virtual ListAccountsResponse ListAccounts(ListAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.SSO
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual Task<ListAccountsResponse> ListAccountsAsync(ListAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountsResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.SSO
 
         internal virtual LogoutResponse Logout(LogoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LogoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LogoutResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.SSO
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/Logout">REST API Reference for Logout Operation</seealso>
         public virtual Task<LogoutResponse> LogoutAsync(LogoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LogoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LogoutResponseUnmarshaller.Instance;
 

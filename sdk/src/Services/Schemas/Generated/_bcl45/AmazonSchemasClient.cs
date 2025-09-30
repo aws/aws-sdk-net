@@ -294,7 +294,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscoverer">REST API Reference for CreateDiscoverer Operation</seealso>
         public virtual CreateDiscovererResponse CreateDiscoverer(CreateDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiscovererResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscoverer">REST API Reference for CreateDiscoverer Operation</seealso>
         public virtual Task<CreateDiscovererResponse> CreateDiscovererAsync(CreateDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDiscovererResponseUnmarshaller.Instance;
             
@@ -371,7 +371,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
         public virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
         public virtual Task<CreateRegistryResponse> CreateRegistryAsync(CreateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
             
@@ -448,7 +448,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
             
@@ -525,7 +525,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteDiscoverer">REST API Reference for DeleteDiscoverer Operation</seealso>
         public virtual DeleteDiscovererResponse DeleteDiscoverer(DeleteDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiscovererResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteDiscoverer">REST API Reference for DeleteDiscoverer Operation</seealso>
         public virtual Task<DeleteDiscovererResponse> DeleteDiscovererAsync(DeleteDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDiscovererResponseUnmarshaller.Instance;
             
@@ -602,7 +602,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
         public virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
         public virtual Task<DeleteRegistryResponse> DeleteRegistryAsync(DeleteRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
             
@@ -679,7 +679,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -717,7 +717,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             
@@ -756,7 +756,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
             
@@ -833,7 +833,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion">REST API Reference for DeleteSchemaVersion Operation</seealso>
         public virtual DeleteSchemaVersionResponse DeleteSchemaVersion(DeleteSchemaVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion">REST API Reference for DeleteSchemaVersion Operation</seealso>
         public virtual Task<DeleteSchemaVersionResponse> DeleteSchemaVersionAsync(DeleteSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionResponseUnmarshaller.Instance;
             
@@ -910,7 +910,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeCodeBinding">REST API Reference for DescribeCodeBinding Operation</seealso>
         public virtual DescribeCodeBindingResponse DescribeCodeBinding(DescribeCodeBindingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeBindingResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeCodeBinding">REST API Reference for DescribeCodeBinding Operation</seealso>
         public virtual Task<DescribeCodeBindingResponse> DescribeCodeBindingAsync(DescribeCodeBindingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCodeBindingResponseUnmarshaller.Instance;
             
@@ -987,7 +987,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeDiscoverer">REST API Reference for DescribeDiscoverer Operation</seealso>
         public virtual DescribeDiscovererResponse DescribeDiscoverer(DescribeDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDiscovererResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeDiscoverer">REST API Reference for DescribeDiscoverer Operation</seealso>
         public virtual Task<DescribeDiscovererResponse> DescribeDiscovererAsync(DescribeDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDiscovererResponseUnmarshaller.Instance;
             
@@ -1064,7 +1064,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual DescribeRegistryResponse DescribeRegistry(DescribeRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
         public virtual Task<DescribeRegistryResponse> DescribeRegistryAsync(DescribeRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegistryResponseUnmarshaller.Instance;
             
@@ -1141,7 +1141,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual DescribeSchemaResponse DescribeSchema(DescribeSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeSchema">REST API Reference for DescribeSchema Operation</seealso>
         public virtual Task<DescribeSchemaResponse> DescribeSchemaAsync(DescribeSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSchemaResponseUnmarshaller.Instance;
             
@@ -1221,7 +1221,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
         public virtual ExportSchemaResponse ExportSchema(ExportSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
         public virtual Task<ExportSchemaResponse> ExportSchemaAsync(ExportSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
             
@@ -1301,7 +1301,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetCodeBindingSource">REST API Reference for GetCodeBindingSource Operation</seealso>
         public virtual GetCodeBindingSourceResponse GetCodeBindingSource(GetCodeBindingSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeBindingSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeBindingSourceResponseUnmarshaller.Instance;
 
@@ -1339,7 +1339,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetCodeBindingSource">REST API Reference for GetCodeBindingSource Operation</seealso>
         public virtual Task<GetCodeBindingSourceResponse> GetCodeBindingSourceAsync(GetCodeBindingSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeBindingSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeBindingSourceResponseUnmarshaller.Instance;
             
@@ -1375,7 +1375,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetDiscoveredSchema">REST API Reference for GetDiscoveredSchema Operation</seealso>
         public virtual GetDiscoveredSchemaResponse GetDiscoveredSchema(GetDiscoveredSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredSchemaResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetDiscoveredSchema">REST API Reference for GetDiscoveredSchema Operation</seealso>
         public virtual Task<GetDiscoveredSchemaResponse> GetDiscoveredSchemaAsync(GetDiscoveredSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDiscoveredSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDiscoveredSchemaResponseUnmarshaller.Instance;
             
@@ -1449,7 +1449,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1523,7 +1523,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers">REST API Reference for ListDiscoverers Operation</seealso>
         public virtual ListDiscoverersResponse ListDiscoverers(ListDiscoverersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoverersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoverersResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers">REST API Reference for ListDiscoverers Operation</seealso>
         public virtual Task<ListDiscoverersResponse> ListDiscoverersAsync(ListDiscoverersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDiscoverersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDiscoverersResponseUnmarshaller.Instance;
             
@@ -1594,7 +1594,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
         public virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
 
@@ -1629,7 +1629,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
         public virtual Task<ListRegistriesResponse> ListRegistriesAsync(ListRegistriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
             
@@ -1665,7 +1665,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
             
@@ -1739,7 +1739,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         public virtual ListSchemaVersionsResponse ListSchemaVersions(ListSchemaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -1777,7 +1777,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         public virtual Task<ListSchemaVersionsResponse> ListSchemaVersionsAsync(ListSchemaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
             
@@ -1810,7 +1810,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1884,7 +1884,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding">REST API Reference for PutCodeBinding Operation</seealso>
         public virtual PutCodeBindingResponse PutCodeBinding(PutCodeBindingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding">REST API Reference for PutCodeBinding Operation</seealso>
         public virtual Task<PutCodeBindingResponse> PutCodeBindingAsync(PutCodeBindingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCodeBindingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCodeBindingResponseUnmarshaller.Instance;
             
@@ -1967,7 +1967,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             
@@ -2044,7 +2044,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas">REST API Reference for SearchSchemas Operation</seealso>
         public virtual SearchSchemasResponse SearchSchemas(SearchSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSchemasResponseUnmarshaller.Instance;
 
@@ -2079,7 +2079,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas">REST API Reference for SearchSchemas Operation</seealso>
         public virtual Task<SearchSchemasResponse> SearchSchemasAsync(SearchSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSchemasResponseUnmarshaller.Instance;
             
@@ -2118,7 +2118,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer">REST API Reference for StartDiscoverer Operation</seealso>
         public virtual StartDiscovererResponse StartDiscoverer(StartDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscovererResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer">REST API Reference for StartDiscoverer Operation</seealso>
         public virtual Task<StartDiscovererResponse> StartDiscovererAsync(StartDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDiscovererResponseUnmarshaller.Instance;
             
@@ -2195,7 +2195,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer">REST API Reference for StopDiscoverer Operation</seealso>
         public virtual StopDiscovererResponse StopDiscoverer(StopDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDiscovererResponseUnmarshaller.Instance;
 
@@ -2233,7 +2233,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer">REST API Reference for StopDiscoverer Operation</seealso>
         public virtual Task<StopDiscovererResponse> StopDiscovererAsync(StopDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDiscovererResponseUnmarshaller.Instance;
             
@@ -2266,7 +2266,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2298,7 +2298,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2331,7 +2331,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2363,7 +2363,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2402,7 +2402,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer">REST API Reference for UpdateDiscoverer Operation</seealso>
         public virtual UpdateDiscovererResponse UpdateDiscoverer(UpdateDiscovererRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDiscovererResponseUnmarshaller.Instance;
 
@@ -2440,7 +2440,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer">REST API Reference for UpdateDiscoverer Operation</seealso>
         public virtual Task<UpdateDiscovererResponse> UpdateDiscovererAsync(UpdateDiscovererRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDiscovererRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDiscovererResponseUnmarshaller.Instance;
             
@@ -2479,7 +2479,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
         public virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
 
@@ -2517,7 +2517,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
         public virtual Task<UpdateRegistryResponse> UpdateRegistryAsync(UpdateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
             
@@ -2559,7 +2559,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
@@ -2600,7 +2600,7 @@ namespace Amazon.Schemas
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
             

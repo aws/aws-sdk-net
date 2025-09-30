@@ -279,7 +279,7 @@ namespace Amazon.Repostspace
 
         internal virtual BatchAddChannelRoleToAccessorsResponse BatchAddChannelRoleToAccessors(BatchAddChannelRoleToAccessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddChannelRoleToAccessors">REST API Reference for BatchAddChannelRoleToAccessors Operation</seealso>
         public virtual Task<BatchAddChannelRoleToAccessorsResponse> BatchAddChannelRoleToAccessorsAsync(BatchAddChannelRoleToAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAddChannelRoleToAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAddChannelRoleToAccessorsResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.Repostspace
 
         internal virtual BatchAddRoleResponse BatchAddRole(BatchAddRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAddRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAddRoleResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddRole">REST API Reference for BatchAddRole Operation</seealso>
         public virtual Task<BatchAddRoleResponse> BatchAddRoleAsync(BatchAddRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAddRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAddRoleResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.Repostspace
 
         internal virtual BatchRemoveChannelRoleFromAccessorsResponse BatchRemoveChannelRoleFromAccessors(BatchRemoveChannelRoleFromAccessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveChannelRoleFromAccessors">REST API Reference for BatchRemoveChannelRoleFromAccessors Operation</seealso>
         public virtual Task<BatchRemoveChannelRoleFromAccessorsResponse> BatchRemoveChannelRoleFromAccessorsAsync(BatchRemoveChannelRoleFromAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRemoveChannelRoleFromAccessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRemoveChannelRoleFromAccessorsResponseUnmarshaller.Instance;
 
@@ -426,7 +426,7 @@ namespace Amazon.Repostspace
 
         internal virtual BatchRemoveRoleResponse BatchRemoveRole(BatchRemoveRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRemoveRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRemoveRoleResponseUnmarshaller.Instance;
 
@@ -462,7 +462,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveRole">REST API Reference for BatchRemoveRole Operation</seealso>
         public virtual Task<BatchRemoveRoleResponse> BatchRemoveRoleAsync(BatchRemoveRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchRemoveRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchRemoveRoleResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.Repostspace
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.Repostspace
 
         internal virtual CreateSpaceResponse CreateSpace(CreateSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpaceResponseUnmarshaller.Instance;
 
@@ -572,7 +572,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateSpace">REST API Reference for CreateSpace Operation</seealso>
         public virtual Task<CreateSpaceResponse> CreateSpaceAsync(CreateSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSpaceResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.Repostspace
 
         internal virtual DeleteSpaceResponse DeleteSpace(DeleteSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/DeleteSpace">REST API Reference for DeleteSpace Operation</seealso>
         public virtual Task<DeleteSpaceResponse> DeleteSpaceAsync(DeleteSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpaceResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.Repostspace
 
         internal virtual DeregisterAdminResponse DeregisterAdmin(DeregisterAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAdminResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/DeregisterAdmin">REST API Reference for DeregisterAdmin Operation</seealso>
         public virtual Task<DeregisterAdminResponse> DeregisterAdminAsync(DeregisterAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAdminResponseUnmarshaller.Instance;
 
@@ -683,7 +683,7 @@ namespace Amazon.Repostspace
 
         internal virtual GetChannelResponse GetChannel(GetChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual Task<GetChannelResponse> GetChannelAsync(GetChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.Repostspace
 
         internal virtual GetSpaceResponse GetSpace(GetSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpaceResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/GetSpace">REST API Reference for GetSpace Operation</seealso>
         public virtual Task<GetSpaceResponse> GetSpaceAsync(GetSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpaceResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.Repostspace
 
         internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -815,7 +815,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -828,7 +828,7 @@ namespace Amazon.Repostspace
 
         internal virtual ListSpacesResponse ListSpaces(ListSpacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListSpaces">REST API Reference for ListSpaces Operation</seealso>
         public virtual Task<ListSpacesResponse> ListSpacesAsync(ListSpacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpacesResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.Repostspace
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -912,7 +912,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.Repostspace
 
         internal virtual RegisterAdminResponse RegisterAdmin(RegisterAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAdminResponseUnmarshaller.Instance;
 
@@ -961,7 +961,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/RegisterAdmin">REST API Reference for RegisterAdmin Operation</seealso>
         public virtual Task<RegisterAdminResponse> RegisterAdminAsync(RegisterAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAdminResponseUnmarshaller.Instance;
 
@@ -974,7 +974,7 @@ namespace Amazon.Repostspace
 
         internal virtual SendInvitesResponse SendInvites(SendInvitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendInvitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendInvitesResponseUnmarshaller.Instance;
 
@@ -1010,7 +1010,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/SendInvites">REST API Reference for SendInvites Operation</seealso>
         public virtual Task<SendInvitesResponse> SendInvitesAsync(SendInvitesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendInvitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendInvitesResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.Repostspace
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.Repostspace
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.Repostspace
 
         internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.Repostspace
 
         internal virtual UpdateSpaceResponse UpdateSpace(UpdateSpaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.Repostspace
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/UpdateSpace">REST API Reference for UpdateSpace Operation</seealso>
         public virtual Task<UpdateSpaceResponse> UpdateSpaceAsync(UpdateSpaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSpaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSpaceResponseUnmarshaller.Instance;
 

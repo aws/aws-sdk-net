@@ -338,7 +338,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel">REST API Reference for AddNotificationChannel Operation</seealso>
         public virtual AddNotificationChannelResponse AddNotificationChannel(AddNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/AddNotificationChannel">REST API Reference for AddNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginAddNotificationChannel(AddNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddNotificationChannelResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         public virtual DeleteInsightResponse DeleteInsight(DeleteInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DeleteInsight">REST API Reference for DeleteInsight Operation</seealso>
         public virtual IAsyncResult BeginDeleteInsight(DeleteInsightRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInsightResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountHealth">REST API Reference for DescribeAccountHealth Operation</seealso>
         public virtual DescribeAccountHealthResponse DescribeAccountHealth(DescribeAccountHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountHealthResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountHealth">REST API Reference for DescribeAccountHealth Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountHealth(DescribeAccountHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountHealthResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountOverview">REST API Reference for DescribeAccountOverview Operation</seealso>
         public virtual DescribeAccountOverviewResponse DescribeAccountOverview(DescribeAccountOverviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountOverviewResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAccountOverview">REST API Reference for DescribeAccountOverview Operation</seealso>
         public virtual IAsyncResult BeginDescribeAccountOverview(DescribeAccountOverviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountOverviewResponseUnmarshaller.Instance;
 
@@ -631,7 +631,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAnomaly">REST API Reference for DescribeAnomaly Operation</seealso>
         public virtual DescribeAnomalyResponse DescribeAnomaly(DescribeAnomalyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeAnomaly">REST API Reference for DescribeAnomaly Operation</seealso>
         public virtual IAsyncResult BeginDescribeAnomaly(DescribeAnomalyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnomalyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnomalyResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
         public virtual DescribeEventSourcesConfigResponse DescribeEventSourcesConfig(DescribeEventSourcesConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeEventSourcesConfig">REST API Reference for DescribeEventSourcesConfig Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventSourcesConfig(DescribeEventSourcesConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback">REST API Reference for DescribeFeedback Operation</seealso>
         public virtual DescribeFeedbackResponse DescribeFeedback(DescribeFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeedbackResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeFeedback">REST API Reference for DescribeFeedback Operation</seealso>
         public virtual IAsyncResult BeginDescribeFeedback(DescribeFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFeedbackResponseUnmarshaller.Instance;
 
@@ -851,7 +851,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         public virtual DescribeInsightResponse DescribeInsight(DescribeInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         public virtual IAsyncResult BeginDescribeInsight(DescribeInsightRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationHealth">REST API Reference for DescribeOrganizationHealth Operation</seealso>
         public virtual DescribeOrganizationHealthResponse DescribeOrganizationHealth(DescribeOrganizationHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationHealthResponseUnmarshaller.Instance;
 
@@ -943,7 +943,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationHealth">REST API Reference for DescribeOrganizationHealth Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganizationHealth(DescribeOrganizationHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationHealthResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationOverview">REST API Reference for DescribeOrganizationOverview Operation</seealso>
         public virtual DescribeOrganizationOverviewResponse DescribeOrganizationOverview(DescribeOrganizationOverviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationOverviewResponseUnmarshaller.Instance;
 
@@ -1014,7 +1014,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationOverview">REST API Reference for DescribeOrganizationOverview Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganizationOverview(DescribeOrganizationOverviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationOverviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationOverviewResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationResourceCollectionHealth">REST API Reference for DescribeOrganizationResourceCollectionHealth Operation</seealso>
         public virtual DescribeOrganizationResourceCollectionHealthResponse DescribeOrganizationResourceCollectionHealth(DescribeOrganizationResourceCollectionHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeOrganizationResourceCollectionHealth">REST API Reference for DescribeOrganizationResourceCollectionHealth Operation</seealso>
         public virtual IAsyncResult BeginDescribeOrganizationResourceCollectionHealth(DescribeOrganizationResourceCollectionHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrganizationResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrganizationResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">REST API Reference for DescribeResourceCollectionHealth Operation</seealso>
         public virtual DescribeResourceCollectionHealthResponse DescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">REST API Reference for DescribeResourceCollectionHealth Operation</seealso>
         public virtual IAsyncResult BeginDescribeResourceCollectionHealth(DescribeResourceCollectionHealthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourceCollectionHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourceCollectionHealthResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeServiceIntegration">REST API Reference for DescribeServiceIntegration Operation</seealso>
         public virtual DescribeServiceIntegrationResponse DescribeServiceIntegration(DescribeServiceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeServiceIntegration">REST API Reference for DescribeServiceIntegration Operation</seealso>
         public virtual IAsyncResult BeginDescribeServiceIntegration(DescribeServiceIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">REST API Reference for GetCostEstimation Operation</seealso>
         public virtual GetCostEstimationResponse GetCostEstimation(GetCostEstimationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimationResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">REST API Reference for GetCostEstimation Operation</seealso>
         public virtual IAsyncResult BeginGetCostEstimation(GetCostEstimationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCostEstimationResponseUnmarshaller.Instance;
 
@@ -1371,7 +1371,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">REST API Reference for GetResourceCollection Operation</seealso>
         public virtual GetResourceCollectionResponse GetResourceCollection(GetResourceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">REST API Reference for GetResourceCollection Operation</seealso>
         public virtual IAsyncResult BeginGetResourceCollection(GetResourceCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceCollectionResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomaliesForInsight">REST API Reference for ListAnomaliesForInsight Operation</seealso>
         public virtual ListAnomaliesForInsightResponse ListAnomaliesForInsight(ListAnomaliesForInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomaliesForInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomaliesForInsightResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomaliesForInsight">REST API Reference for ListAnomaliesForInsight Operation</seealso>
         public virtual IAsyncResult BeginListAnomaliesForInsight(ListAnomaliesForInsightRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomaliesForInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomaliesForInsightResponseUnmarshaller.Instance;
 
@@ -1518,7 +1518,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
         public virtual ListAnomalousLogGroupsResponse ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
         public virtual IAsyncResult BeginListAnomalousLogGroups(ListAnomalousLogGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual ListEventsResponse ListEvents(ListEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual IAsyncResult BeginListEvents(ListEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         public virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
 
@@ -1685,7 +1685,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         public virtual IAsyncResult BeginListInsights(ListInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
 
@@ -1732,7 +1732,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
         public virtual ListMonitoredResourcesResponse ListMonitoredResources(ListMonitoredResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
 
@@ -1753,7 +1753,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
         public virtual IAsyncResult BeginListMonitoredResources(ListMonitoredResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
 
@@ -1805,7 +1805,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListNotificationChannels">REST API Reference for ListNotificationChannels Operation</seealso>
         public virtual ListNotificationChannelsResponse ListNotificationChannels(ListNotificationChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -1826,7 +1826,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListNotificationChannels">REST API Reference for ListNotificationChannels Operation</seealso>
         public virtual IAsyncResult BeginListNotificationChannels(ListNotificationChannelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationChannelsResponseUnmarshaller.Instance;
 
@@ -1875,7 +1875,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListOrganizationInsights">REST API Reference for ListOrganizationInsights Operation</seealso>
         public virtual ListOrganizationInsightsResponse ListOrganizationInsights(ListOrganizationInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListOrganizationInsights">REST API Reference for ListOrganizationInsights Operation</seealso>
         public virtual IAsyncResult BeginListOrganizationInsights(ListOrganizationInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -1949,7 +1949,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -1970,7 +1970,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         public virtual IAsyncResult BeginListRecommendations(ListRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
 
@@ -2025,7 +2025,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -2046,7 +2046,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
         public virtual IAsyncResult BeginPutFeedback(PutFeedbackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RemoveNotificationChannel">REST API Reference for RemoveNotificationChannel Operation</seealso>
         public virtual RemoveNotificationChannelResponse RemoveNotificationChannel(RemoveNotificationChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RemoveNotificationChannel">REST API Reference for RemoveNotificationChannel Operation</seealso>
         public virtual IAsyncResult BeginRemoveNotificationChannel(RemoveNotificationChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveNotificationChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveNotificationChannelResponseUnmarshaller.Instance;
 
@@ -2183,7 +2183,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsights">REST API Reference for SearchInsights Operation</seealso>
         public virtual SearchInsightsResponse SearchInsights(SearchInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchInsightsResponseUnmarshaller.Instance;
 
@@ -2204,7 +2204,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsights">REST API Reference for SearchInsights Operation</seealso>
         public virtual IAsyncResult BeginSearchInsights(SearchInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchInsightsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchOrganizationInsights">REST API Reference for SearchOrganizationInsights Operation</seealso>
         public virtual SearchOrganizationInsightsResponse SearchOrganizationInsights(SearchOrganizationInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchOrganizationInsights">REST API Reference for SearchOrganizationInsights Operation</seealso>
         public virtual IAsyncResult BeginSearchOrganizationInsights(SearchOrganizationInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchOrganizationInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchOrganizationInsightsResponseUnmarshaller.Instance;
 
@@ -2340,7 +2340,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
         public virtual StartCostEstimationResponse StartCostEstimation(StartCostEstimationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCostEstimationResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">REST API Reference for StartCostEstimation Operation</seealso>
         public virtual IAsyncResult BeginStartCostEstimation(StartCostEstimationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCostEstimationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCostEstimationResponseUnmarshaller.Instance;
 
@@ -2413,7 +2413,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
         public virtual UpdateEventSourcesConfigResponse UpdateEventSourcesConfig(UpdateEventSourcesConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -2434,7 +2434,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateEventSourcesConfig">REST API Reference for UpdateEventSourcesConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventSourcesConfig(UpdateEventSourcesConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventSourcesConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventSourcesConfigResponseUnmarshaller.Instance;
 
@@ -2492,7 +2492,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">REST API Reference for UpdateResourceCollection Operation</seealso>
         public virtual UpdateResourceCollectionResponse UpdateResourceCollection(UpdateResourceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceCollectionResponseUnmarshaller.Instance;
 
@@ -2513,7 +2513,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">REST API Reference for UpdateResourceCollection Operation</seealso>
         public virtual IAsyncResult BeginUpdateResourceCollection(UpdateResourceCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceCollectionResponseUnmarshaller.Instance;
 
@@ -2567,7 +2567,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegration">REST API Reference for UpdateServiceIntegration Operation</seealso>
         public virtual UpdateServiceIntegrationResponse UpdateServiceIntegration(UpdateServiceIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceIntegrationResponseUnmarshaller.Instance;
 
@@ -2588,7 +2588,7 @@ namespace Amazon.DevOpsGuru
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegration">REST API Reference for UpdateServiceIntegration Operation</seealso>
         public virtual IAsyncResult BeginUpdateServiceIntegration(UpdateServiceIntegrationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceIntegrationResponseUnmarshaller.Instance;
 

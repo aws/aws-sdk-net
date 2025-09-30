@@ -309,7 +309,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual CancelJobResponse CancelJob(CancelJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public virtual Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
             
@@ -408,7 +408,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
             
@@ -499,7 +499,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
             
@@ -597,7 +597,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual CreatePresetResponse CreatePreset(CreatePresetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CreatePreset">REST API Reference for CreatePreset Operation</seealso>
         public virtual Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresetResponseUnmarshaller.Instance;
             
@@ -702,7 +702,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
 
@@ -750,7 +750,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
             
@@ -794,7 +794,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual DeletePresetResponse DeletePreset(DeletePresetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePreset">REST API Reference for DeletePreset Operation</seealso>
         public virtual Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePresetResponseUnmarshaller.Instance;
             
@@ -881,7 +881,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
 
@@ -924,7 +924,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByPipeline">REST API Reference for ListJobsByPipeline Operation</seealso>
         public virtual Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByPipelineResponseUnmarshaller.Instance;
             
@@ -963,7 +963,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatus">REST API Reference for ListJobsByStatus Operation</seealso>
         public virtual Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsByStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsByStatusResponseUnmarshaller.Instance;
             
@@ -1062,7 +1062,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
 
@@ -1124,7 +1124,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
             
@@ -1185,7 +1185,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual ListPresetsResponse ListPresets(ListPresetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListPresets">REST API Reference for ListPresets Operation</seealso>
         public virtual Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPresetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPresetsResponseUnmarshaller.Instance;
             
@@ -1285,7 +1285,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual ReadJobResponse ReadJob(ReadJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadJob">REST API Reference for ReadJob Operation</seealso>
         public virtual Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadJobResponseUnmarshaller.Instance;
             
@@ -1360,7 +1360,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
 
@@ -1397,7 +1397,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPipeline">REST API Reference for ReadPipeline Operation</seealso>
         public virtual Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadPipelineResponseUnmarshaller.Instance;
             
@@ -1435,7 +1435,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual ReadPresetResponse ReadPreset(ReadPresetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
 
@@ -1472,7 +1472,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ReadPreset">REST API Reference for ReadPreset Operation</seealso>
         public virtual Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReadPresetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReadPresetResponseUnmarshaller.Instance;
             
@@ -1520,7 +1520,7 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual TestRoleResponse TestRole(TestRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
 
@@ -1567,7 +1567,7 @@ namespace Amazon.ElasticTranscoder
         [Obsolete("This API is deprecated and will be removed in a future release.")]
         public virtual Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestRoleResponseUnmarshaller.Instance;
             
@@ -1617,7 +1617,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
 
@@ -1666,7 +1666,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
             
@@ -1715,7 +1715,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineNotifications">REST API Reference for UpdatePipelineNotifications Operation</seealso>
         public virtual Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.Instance;
             
@@ -1814,7 +1814,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.ElasticTranscoder
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatus">REST API Reference for UpdatePipelineStatus Operation</seealso>
         public virtual Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePipelineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePipelineStatusResponseUnmarshaller.Instance;
             

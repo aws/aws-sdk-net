@@ -297,7 +297,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ActivateEventSource">REST API Reference for ActivateEventSource Operation</seealso>
         public virtual ActivateEventSourceResponse ActivateEventSource(ActivateEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEventSourceResponseUnmarshaller.Instance;
 
@@ -318,7 +318,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ActivateEventSource">REST API Reference for ActivateEventSource Operation</seealso>
         public virtual IAsyncResult BeginActivateEventSource(ActivateEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ActivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ActivateEventSourceResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
         public virtual CancelReplayResponse CancelReplay(CancelReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
         public virtual IAsyncResult BeginCancelReplay(CancelReplayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
         public virtual CreateApiDestinationResponse CreateApiDestination(CreateApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination">REST API Reference for CreateApiDestination Operation</seealso>
         public virtual IAsyncResult BeginCreateApiDestination(CreateApiDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiDestinationResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
         public virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
         public virtual IAsyncResult BeginCreateArchive(CreateArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
 
@@ -612,7 +612,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -681,7 +681,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -702,7 +702,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEndpointResponseUnmarshaller.Instance;
 
@@ -759,7 +759,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEventBus">REST API Reference for CreateEventBus Operation</seealso>
         public virtual CreateEventBusResponse CreateEventBus(CreateEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBusResponseUnmarshaller.Instance;
 
@@ -780,7 +780,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEventBus">REST API Reference for CreateEventBus Operation</seealso>
         public virtual IAsyncResult BeginCreateEventBus(CreateEventBusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventBusResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreatePartnerEventSource">REST API Reference for CreatePartnerEventSource Operation</seealso>
         public virtual CreatePartnerEventSourceResponse CreatePartnerEventSource(CreatePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreatePartnerEventSource">REST API Reference for CreatePartnerEventSource Operation</seealso>
         public virtual IAsyncResult BeginCreatePartnerEventSource(CreatePartnerEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeactivateEventSource">REST API Reference for DeactivateEventSource Operation</seealso>
         public virtual DeactivateEventSourceResponse DeactivateEventSource(DeactivateEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEventSourceResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeactivateEventSource">REST API Reference for DeactivateEventSource Operation</seealso>
         public virtual IAsyncResult BeginDeactivateEventSource(DeactivateEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeactivateEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeactivateEventSourceResponseUnmarshaller.Instance;
 
@@ -1027,7 +1027,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
         public virtual DeauthorizeConnectionResponse DeauthorizeConnection(DeauthorizeConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
 
@@ -1048,7 +1048,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection">REST API Reference for DeauthorizeConnection Operation</seealso>
         public virtual IAsyncResult BeginDeauthorizeConnection(DeauthorizeConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeauthorizeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeauthorizeConnectionResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
         public virtual DeleteApiDestinationResponse DeleteApiDestination(DeleteApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
 
@@ -1111,7 +1111,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination">REST API Reference for DeleteApiDestination Operation</seealso>
         public virtual IAsyncResult BeginDeleteApiDestination(DeleteApiDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiDestinationResponseUnmarshaller.Instance;
 
@@ -1153,7 +1153,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
         public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1237,7 +1237,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEndpointResponseUnmarshaller.Instance;
 
@@ -1344,7 +1344,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEventBus">REST API Reference for DeleteEventBus Operation</seealso>
         public virtual DeleteEventBusResponse DeleteEventBus(DeleteEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBusResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEventBus">REST API Reference for DeleteEventBus Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventBus(DeleteEventBusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventBusResponseUnmarshaller.Instance;
 
@@ -1414,7 +1414,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         public virtual DeletePartnerEventSourceResponse DeletePartnerEventSource(DeletePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeletePartnerEventSource">REST API Reference for DeletePartnerEventSource Operation</seealso>
         public virtual IAsyncResult BeginDeletePartnerEventSource(DeletePartnerEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1530,7 +1530,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
         public virtual DescribeApiDestinationResponse DescribeApiDestination(DescribeApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination">REST API Reference for DescribeApiDestination Operation</seealso>
         public virtual IAsyncResult BeginDescribeApiDestination(DescribeApiDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApiDestinationResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
         public virtual DescribeArchiveResponse DescribeArchive(DescribeArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
         public virtual IAsyncResult BeginDescribeArchive(DescribeArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
         public virtual DescribeConnectionResponse DescribeConnection(DescribeConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection">REST API Reference for DescribeConnection Operation</seealso>
         public virtual IAsyncResult BeginDescribeConnection(DescribeConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEndpoint">REST API Reference for DescribeEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpoint(DescribeEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointResponseUnmarshaller.Instance;
 
@@ -1828,7 +1828,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
         public virtual DescribeEventBusResponse DescribeEventBus(DescribeEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
 
@@ -1849,7 +1849,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventBus">REST API Reference for DescribeEventBus Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventBus(DescribeEventBusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventBusResponseUnmarshaller.Instance;
 
@@ -1892,7 +1892,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventSource">REST API Reference for DescribeEventSource Operation</seealso>
         public virtual DescribeEventSourceResponse DescribeEventSource(DescribeEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourceResponseUnmarshaller.Instance;
 
@@ -1913,7 +1913,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventSource">REST API Reference for DescribeEventSource Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventSource(DescribeEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSourceResponseUnmarshaller.Instance;
 
@@ -1958,7 +1958,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribePartnerEventSource">REST API Reference for DescribePartnerEventSource Operation</seealso>
         public virtual DescribePartnerEventSourceResponse DescribePartnerEventSource(DescribePartnerEventSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -1979,7 +1979,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribePartnerEventSource">REST API Reference for DescribePartnerEventSource Operation</seealso>
         public virtual IAsyncResult BeginDescribePartnerEventSource(DescribePartnerEventSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePartnerEventSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePartnerEventSourceResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
         public virtual DescribeReplayResponse DescribeReplay(DescribeReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
 
@@ -2047,7 +2047,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplay(DescribeReplayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
 
@@ -2092,7 +2092,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
@@ -2113,7 +2113,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         public virtual IAsyncResult BeginDescribeRule(DescribeRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRuleResponseUnmarshaller.Instance;
 
@@ -2170,7 +2170,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         public virtual DisableRuleResponse DisableRule(DisableRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRuleResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         public virtual IAsyncResult BeginDisableRule(DisableRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRuleResponseUnmarshaller.Instance;
 
@@ -2247,7 +2247,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         public virtual EnableRuleResponse EnableRule(EnableRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
@@ -2268,7 +2268,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         public virtual IAsyncResult BeginEnableRule(EnableRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
@@ -2304,7 +2304,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
         public virtual ListApiDestinationsResponse ListApiDestinations(ListApiDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
 
@@ -2325,7 +2325,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations">REST API Reference for ListApiDestinations Operation</seealso>
         public virtual IAsyncResult BeginListApiDestinations(ListApiDestinationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApiDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApiDestinationsResponseUnmarshaller.Instance;
 
@@ -2365,7 +2365,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
         public virtual ListArchivesResponse ListArchives(ListArchivesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
 
@@ -2386,7 +2386,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
         public virtual IAsyncResult BeginListArchives(ListArchivesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
 
@@ -2422,7 +2422,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -2443,7 +2443,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual IAsyncResult BeginListConnections(ListConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -2482,7 +2482,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual ListEndpointsResponse ListEndpoints(ListEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
@@ -2503,7 +2503,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEndpoints">REST API Reference for ListEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListEndpoints(ListEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEndpointsResponseUnmarshaller.Instance;
 
@@ -2540,7 +2540,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventBuses">REST API Reference for ListEventBuses Operation</seealso>
         public virtual ListEventBusesResponse ListEventBuses(ListEventBusesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBusesResponseUnmarshaller.Instance;
 
@@ -2561,7 +2561,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventBuses">REST API Reference for ListEventBuses Operation</seealso>
         public virtual IAsyncResult BeginListEventBuses(ListEventBusesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventBusesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventBusesResponseUnmarshaller.Instance;
 
@@ -2602,7 +2602,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         public virtual ListEventSourcesResponse ListEventSources(ListEventSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
 
@@ -2623,7 +2623,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources">REST API Reference for ListEventSources Operation</seealso>
         public virtual IAsyncResult BeginListEventSources(ListEventSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventSourcesResponseUnmarshaller.Instance;
 
@@ -2667,7 +2667,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSourceAccounts">REST API Reference for ListPartnerEventSourceAccounts Operation</seealso>
         public virtual ListPartnerEventSourceAccountsResponse ListPartnerEventSourceAccounts(ListPartnerEventSourceAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourceAccountsResponseUnmarshaller.Instance;
 
@@ -2688,7 +2688,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSourceAccounts">REST API Reference for ListPartnerEventSourceAccounts Operation</seealso>
         public virtual IAsyncResult BeginListPartnerEventSourceAccounts(ListPartnerEventSourceAccountsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourceAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourceAccountsResponseUnmarshaller.Instance;
 
@@ -2728,7 +2728,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         public virtual ListPartnerEventSourcesResponse ListPartnerEventSources(ListPartnerEventSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourcesResponseUnmarshaller.Instance;
 
@@ -2749,7 +2749,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSources">REST API Reference for ListPartnerEventSources Operation</seealso>
         public virtual IAsyncResult BeginListPartnerEventSources(ListPartnerEventSourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerEventSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerEventSourcesResponseUnmarshaller.Instance;
 
@@ -2786,7 +2786,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
         public virtual ListReplaysResponse ListReplays(ListReplaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
         public virtual IAsyncResult BeginListReplays(ListReplaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
 
@@ -2852,7 +2852,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         public virtual ListRuleNamesByTargetResponse ListRuleNamesByTarget(ListRuleNamesByTargetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
 
@@ -2873,7 +2873,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         public virtual IAsyncResult BeginListRuleNamesByTarget(ListRuleNamesByTargetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleNamesByTargetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleNamesByTargetResponseUnmarshaller.Instance;
 
@@ -2923,7 +2923,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -2944,7 +2944,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3005,7 +3005,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3049,7 +3049,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         public virtual ListTargetsByRuleResponse ListTargetsByRule(ListTargetsByRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsByRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
 
@@ -3070,7 +3070,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         public virtual IAsyncResult BeginListTargetsByRule(ListTargetsByRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTargetsByRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTargetsByRuleResponseUnmarshaller.Instance;
 
@@ -3125,7 +3125,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual PutEventsResponse PutEvents(PutEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -3146,7 +3146,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         public virtual IAsyncResult BeginPutEvents(PutEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
@@ -3192,7 +3192,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         public virtual PutPartnerEventsResponse PutPartnerEvents(PutPartnerEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPartnerEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPartnerEventsResponseUnmarshaller.Instance;
 
@@ -3213,7 +3213,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEvents">REST API Reference for PutPartnerEvents Operation</seealso>
         public virtual IAsyncResult BeginPutPartnerEvents(PutPartnerEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPartnerEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPartnerEventsResponseUnmarshaller.Instance;
 
@@ -3290,7 +3290,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual PutPermissionResponse PutPermission(PutPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
@@ -3311,7 +3311,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPermission">REST API Reference for PutPermission Operation</seealso>
         public virtual IAsyncResult BeginPutPermission(PutPermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionResponseUnmarshaller.Instance;
 
@@ -3446,7 +3446,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         public virtual PutRuleResponse PutRule(PutRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleResponseUnmarshaller.Instance;
 
@@ -3467,7 +3467,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         public virtual IAsyncResult BeginPutRule(PutRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRuleResponseUnmarshaller.Instance;
 
@@ -3669,7 +3669,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         public virtual PutTargetsResponse PutTargets(PutTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
@@ -3690,7 +3690,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         public virtual IAsyncResult BeginPutTargets(PutTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTargetsResponseUnmarshaller.Instance;
 
@@ -3738,7 +3738,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -3831,7 +3831,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         public virtual RemoveTargetsResponse RemoveTargets(RemoveTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
@@ -3852,7 +3852,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         public virtual IAsyncResult BeginRemoveTargets(RemoveTargetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
@@ -3909,7 +3909,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
         public virtual StartReplayResponse StartReplay(StartReplayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
 
@@ -3930,7 +3930,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
         public virtual IAsyncResult BeginStartReplay(StartReplayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
 
@@ -4000,7 +4000,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4021,7 +4021,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4068,7 +4068,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         public virtual TestEventPatternResponse TestEventPattern(TestEventPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestEventPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestEventPatternResponseUnmarshaller.Instance;
 
@@ -4089,7 +4089,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         public virtual IAsyncResult BeginTestEventPattern(TestEventPatternRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestEventPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestEventPatternResponseUnmarshaller.Instance;
 
@@ -4140,7 +4140,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4161,7 +4161,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4207,7 +4207,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
         public virtual UpdateApiDestinationResponse UpdateApiDestination(UpdateApiDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
 
@@ -4228,7 +4228,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination">REST API Reference for UpdateApiDestination Operation</seealso>
         public virtual IAsyncResult BeginUpdateApiDestination(UpdateApiDestinationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiDestinationResponseUnmarshaller.Instance;
 
@@ -4277,7 +4277,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
         public virtual UpdateArchiveResponse UpdateArchive(UpdateArchiveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
         public virtual IAsyncResult BeginUpdateArchive(UpdateArchiveRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
 
@@ -4350,7 +4350,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -4371,7 +4371,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual IAsyncResult BeginUpdateConnection(UpdateConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -4415,7 +4415,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
@@ -4436,7 +4436,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEndpoint">REST API Reference for UpdateEndpoint Operation</seealso>
         public virtual IAsyncResult BeginUpdateEndpoint(UpdateEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEndpointResponseUnmarshaller.Instance;
 
@@ -4481,7 +4481,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">REST API Reference for UpdateEventBus Operation</seealso>
         public virtual UpdateEventBusResponse UpdateEventBus(UpdateEventBusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBusResponseUnmarshaller.Instance;
 
@@ -4502,7 +4502,7 @@ namespace Amazon.EventBridge
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateEventBus">REST API Reference for UpdateEventBus Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventBus(UpdateEventBusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventBusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventBusResponseUnmarshaller.Instance;
 

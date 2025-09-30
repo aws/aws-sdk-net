@@ -293,7 +293,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/DeleteEarthObservationJob">REST API Reference for DeleteEarthObservationJob Operation</seealso>
         public virtual DeleteEarthObservationJobResponse DeleteEarthObservationJob(DeleteEarthObservationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/DeleteEarthObservationJob">REST API Reference for DeleteEarthObservationJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteEarthObservationJob(DeleteEarthObservationJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/DeleteVectorEnrichmentJob">REST API Reference for DeleteVectorEnrichmentJob Operation</seealso>
         public virtual DeleteVectorEnrichmentJobResponse DeleteVectorEnrichmentJob(DeleteVectorEnrichmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/DeleteVectorEnrichmentJob">REST API Reference for DeleteVectorEnrichmentJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteVectorEnrichmentJob(DeleteVectorEnrichmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportEarthObservationJob">REST API Reference for ExportEarthObservationJob Operation</seealso>
         public virtual ExportEarthObservationJobResponse ExportEarthObservationJob(ExportEarthObservationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -462,7 +462,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportEarthObservationJob">REST API Reference for ExportEarthObservationJob Operation</seealso>
         public virtual IAsyncResult BeginExportEarthObservationJob(ExportEarthObservationJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportVectorEnrichmentJob">REST API Reference for ExportVectorEnrichmentJob Operation</seealso>
         public virtual ExportVectorEnrichmentJobResponse ExportVectorEnrichmentJob(ExportVectorEnrichmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportVectorEnrichmentJob">REST API Reference for ExportVectorEnrichmentJob Operation</seealso>
         public virtual IAsyncResult BeginExportVectorEnrichmentJob(ExportVectorEnrichmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetEarthObservationJob">REST API Reference for GetEarthObservationJob Operation</seealso>
         public virtual GetEarthObservationJobResponse GetEarthObservationJob(GetEarthObservationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -606,7 +606,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetEarthObservationJob">REST API Reference for GetEarthObservationJob Operation</seealso>
         public virtual IAsyncResult BeginGetEarthObservationJob(GetEarthObservationJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetRasterDataCollection">REST API Reference for GetRasterDataCollection Operation</seealso>
         public virtual GetRasterDataCollectionResponse GetRasterDataCollection(GetRasterDataCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRasterDataCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRasterDataCollectionResponseUnmarshaller.Instance;
 
@@ -675,7 +675,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetRasterDataCollection">REST API Reference for GetRasterDataCollection Operation</seealso>
         public virtual IAsyncResult BeginGetRasterDataCollection(GetRasterDataCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRasterDataCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRasterDataCollectionResponseUnmarshaller.Instance;
 
@@ -723,7 +723,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetTile">REST API Reference for GetTile Operation</seealso>
         public virtual GetTileResponse GetTile(GetTileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTileResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetTile">REST API Reference for GetTile Operation</seealso>
         public virtual IAsyncResult BeginGetTile(GetTileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTileResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetVectorEnrichmentJob">REST API Reference for GetVectorEnrichmentJob Operation</seealso>
         public virtual GetVectorEnrichmentJobResponse GetVectorEnrichmentJob(GetVectorEnrichmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/GetVectorEnrichmentJob">REST API Reference for GetVectorEnrichmentJob Operation</seealso>
         public virtual IAsyncResult BeginGetVectorEnrichmentJob(GetVectorEnrichmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListEarthObservationJobs">REST API Reference for ListEarthObservationJobs Operation</seealso>
         public virtual ListEarthObservationJobsResponse ListEarthObservationJobs(ListEarthObservationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEarthObservationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEarthObservationJobsResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListEarthObservationJobs">REST API Reference for ListEarthObservationJobs Operation</seealso>
         public virtual IAsyncResult BeginListEarthObservationJobs(ListEarthObservationJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEarthObservationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEarthObservationJobsResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListRasterDataCollections">REST API Reference for ListRasterDataCollections Operation</seealso>
         public virtual ListRasterDataCollectionsResponse ListRasterDataCollections(ListRasterDataCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRasterDataCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRasterDataCollectionsResponseUnmarshaller.Instance;
 
@@ -953,7 +953,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListRasterDataCollections">REST API Reference for ListRasterDataCollections Operation</seealso>
         public virtual IAsyncResult BeginListRasterDataCollections(ListRasterDataCollectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRasterDataCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRasterDataCollectionsResponseUnmarshaller.Instance;
 
@@ -1001,7 +1001,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1022,7 +1022,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1070,7 +1070,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListVectorEnrichmentJobs">REST API Reference for ListVectorEnrichmentJobs Operation</seealso>
         public virtual ListVectorEnrichmentJobsResponse ListVectorEnrichmentJobs(ListVectorEnrichmentJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorEnrichmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorEnrichmentJobsResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListVectorEnrichmentJobs">REST API Reference for ListVectorEnrichmentJobs Operation</seealso>
         public virtual IAsyncResult BeginListVectorEnrichmentJobs(ListVectorEnrichmentJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVectorEnrichmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVectorEnrichmentJobsResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/SearchRasterDataCollection">REST API Reference for SearchRasterDataCollection Operation</seealso>
         public virtual SearchRasterDataCollectionResponse SearchRasterDataCollection(SearchRasterDataCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRasterDataCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRasterDataCollectionResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/SearchRasterDataCollection">REST API Reference for SearchRasterDataCollection Operation</seealso>
         public virtual IAsyncResult BeginSearchRasterDataCollection(SearchRasterDataCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRasterDataCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRasterDataCollectionResponseUnmarshaller.Instance;
 
@@ -1215,7 +1215,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StartEarthObservationJob">REST API Reference for StartEarthObservationJob Operation</seealso>
         public virtual StartEarthObservationJobResponse StartEarthObservationJob(StartEarthObservationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -1236,7 +1236,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StartEarthObservationJob">REST API Reference for StartEarthObservationJob Operation</seealso>
         public virtual IAsyncResult BeginStartEarthObservationJob(StartEarthObservationJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StartVectorEnrichmentJob">REST API Reference for StartVectorEnrichmentJob Operation</seealso>
         public virtual StartVectorEnrichmentJobResponse StartVectorEnrichmentJob(StartVectorEnrichmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StartVectorEnrichmentJob">REST API Reference for StartVectorEnrichmentJob Operation</seealso>
         public virtual IAsyncResult BeginStartVectorEnrichmentJob(StartVectorEnrichmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StopEarthObservationJob">REST API Reference for StopEarthObservationJob Operation</seealso>
         public virtual StopEarthObservationJobResponse StopEarthObservationJob(StopEarthObservationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StopEarthObservationJob">REST API Reference for StopEarthObservationJob Operation</seealso>
         public virtual IAsyncResult BeginStopEarthObservationJob(StopEarthObservationJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEarthObservationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEarthObservationJobResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StopVectorEnrichmentJob">REST API Reference for StopVectorEnrichmentJob Operation</seealso>
         public virtual StopVectorEnrichmentJobResponse StopVectorEnrichmentJob(StopVectorEnrichmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -1456,7 +1456,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StopVectorEnrichmentJob">REST API Reference for StopVectorEnrichmentJob Operation</seealso>
         public virtual IAsyncResult BeginStopVectorEnrichmentJob(StopVectorEnrichmentJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVectorEnrichmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVectorEnrichmentJobResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1573,7 +1573,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.SageMakerGeospatial
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

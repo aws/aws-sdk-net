@@ -284,7 +284,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
         public virtual CreateAlarmModelResponse CreateAlarmModel(CreateAlarmModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlarmModelResponseUnmarshaller.Instance;
 
@@ -305,7 +305,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel">REST API Reference for CreateAlarmModel Operation</seealso>
         public virtual IAsyncResult BeginCreateAlarmModel(CreateAlarmModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAlarmModelResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateDetectorModel">REST API Reference for CreateDetectorModel Operation</seealso>
         public virtual CreateDetectorModelResponse CreateDetectorModel(CreateDetectorModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDetectorModelResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateDetectorModel">REST API Reference for CreateDetectorModel Operation</seealso>
         public virtual IAsyncResult BeginCreateDetectorModel(CreateDetectorModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDetectorModelResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual CreateInputResponse CreateInput(CreateInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateInput">REST API Reference for CreateInput Operation</seealso>
         public virtual IAsyncResult BeginCreateInput(CreateInputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInputResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
         public virtual DeleteAlarmModelResponse DeleteAlarmModel(DeleteAlarmModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmModelResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel">REST API Reference for DeleteAlarmModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlarmModel(DeleteAlarmModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAlarmModelResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteDetectorModel">REST API Reference for DeleteDetectorModel Operation</seealso>
         public virtual DeleteDetectorModelResponse DeleteDetectorModel(DeleteDetectorModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorModelResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteDetectorModel">REST API Reference for DeleteDetectorModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteDetectorModel(DeleteDetectorModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDetectorModelResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual DeleteInputResponse DeleteInput(DeleteInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteInput">REST API Reference for DeleteInput Operation</seealso>
         public virtual IAsyncResult BeginDeleteInput(DeleteInputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInputResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
         public virtual DescribeAlarmModelResponse DescribeAlarmModel(DescribeAlarmModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmModelResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel">REST API Reference for DescribeAlarmModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeAlarmModel(DescribeAlarmModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAlarmModelResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">REST API Reference for DescribeDetectorModel Operation</seealso>
         public virtual DescribeDetectorModelResponse DescribeDetectorModel(DescribeDetectorModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorModelResponseUnmarshaller.Instance;
 
@@ -806,7 +806,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">REST API Reference for DescribeDetectorModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeDetectorModel(DescribeDetectorModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorModelResponseUnmarshaller.Instance;
 
@@ -861,7 +861,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
         public virtual DescribeDetectorModelAnalysisResponse DescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorModelAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorModelAnalysisResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis">REST API Reference for DescribeDetectorModelAnalysis Operation</seealso>
         public virtual IAsyncResult BeginDescribeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDetectorModelAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDetectorModelAnalysisResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual DescribeInputResponse DescribeInput(DescribeInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
@@ -951,7 +951,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeInput">REST API Reference for DescribeInput Operation</seealso>
         public virtual IAsyncResult BeginDescribeInput(DescribeInputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInputResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual DescribeLoggingOptionsResponse DescribeLoggingOptions(DescribeLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeLoggingOptions">REST API Reference for DescribeLoggingOptions Operation</seealso>
         public virtual IAsyncResult BeginDescribeLoggingOptions(DescribeLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
         public virtual GetDetectorModelAnalysisResultsResponse GetDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorModelAnalysisResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorModelAnalysisResultsResponseUnmarshaller.Instance;
 
@@ -1099,7 +1099,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults">REST API Reference for GetDetectorModelAnalysisResults Operation</seealso>
         public virtual IAsyncResult BeginGetDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDetectorModelAnalysisResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDetectorModelAnalysisResultsResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
         public virtual ListAlarmModelsResponse ListAlarmModels(ListAlarmModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmModelsResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels">REST API Reference for ListAlarmModels Operation</seealso>
         public virtual IAsyncResult BeginListAlarmModels(ListAlarmModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmModelsResponseUnmarshaller.Instance;
 
@@ -1215,7 +1215,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
         public virtual ListAlarmModelVersionsResponse ListAlarmModelVersions(ListAlarmModelVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmModelVersionsResponseUnmarshaller.Instance;
 
@@ -1236,7 +1236,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions">REST API Reference for ListAlarmModelVersions Operation</seealso>
         public virtual IAsyncResult BeginListAlarmModelVersions(ListAlarmModelVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlarmModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlarmModelVersionsResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModels">REST API Reference for ListDetectorModels Operation</seealso>
         public virtual ListDetectorModelsResponse ListDetectorModels(ListDetectorModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorModelsResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModels">REST API Reference for ListDetectorModels Operation</seealso>
         public virtual IAsyncResult BeginListDetectorModels(ListDetectorModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorModelsResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModelVersions">REST API Reference for ListDetectorModelVersions Operation</seealso>
         public virtual ListDetectorModelVersionsResponse ListDetectorModelVersions(ListDetectorModelVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorModelVersionsResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListDetectorModelVersions">REST API Reference for ListDetectorModelVersions Operation</seealso>
         public virtual IAsyncResult BeginListDetectorModelVersions(ListDetectorModelVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDetectorModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDetectorModelVersionsResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
         public virtual ListInputRoutingsResponse ListInputRoutings(ListInputRoutingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputRoutingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputRoutingsResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings">REST API Reference for ListInputRoutings Operation</seealso>
         public virtual IAsyncResult BeginListInputRoutings(ListInputRoutingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputRoutingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputRoutingsResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual ListInputsResponse ListInputs(ListInputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
@@ -1508,7 +1508,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputs">REST API Reference for ListInputs Operation</seealso>
         public virtual IAsyncResult BeginListInputs(ListInputsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInputsResponseUnmarshaller.Instance;
 
@@ -1556,7 +1556,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1657,7 +1657,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual IAsyncResult BeginPutLoggingOptions(PutLoggingOptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
         public virtual StartDetectorModelAnalysisResponse StartDetectorModelAnalysis(StartDetectorModelAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDetectorModelAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDetectorModelAnalysisResponseUnmarshaller.Instance;
 
@@ -1727,7 +1727,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis">REST API Reference for StartDetectorModelAnalysis Operation</seealso>
         public virtual IAsyncResult BeginStartDetectorModelAnalysis(StartDetectorModelAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDetectorModelAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDetectorModelAnalysisResponseUnmarshaller.Instance;
 
@@ -1779,7 +1779,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1869,7 +1869,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1921,7 +1921,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
         public virtual UpdateAlarmModelResponse UpdateAlarmModel(UpdateAlarmModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAlarmModelResponseUnmarshaller.Instance;
 
@@ -1942,7 +1942,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel">REST API Reference for UpdateAlarmModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateAlarmModel(UpdateAlarmModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAlarmModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAlarmModelResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">REST API Reference for UpdateDetectorModel Operation</seealso>
         public virtual UpdateDetectorModelResponse UpdateDetectorModel(UpdateDetectorModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorModelResponseUnmarshaller.Instance;
 
@@ -2015,7 +2015,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateDetectorModel">REST API Reference for UpdateDetectorModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateDetectorModel(UpdateDetectorModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDetectorModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDetectorModelResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         public virtual UpdateInputResponse UpdateInput(UpdateInputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 
@@ -2087,7 +2087,7 @@ namespace Amazon.IoTEvents
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateInput">REST API Reference for UpdateInput Operation</seealso>
         public virtual IAsyncResult BeginUpdateInput(UpdateInputRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInputResponseUnmarshaller.Instance;
 

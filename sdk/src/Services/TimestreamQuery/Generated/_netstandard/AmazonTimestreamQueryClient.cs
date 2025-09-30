@@ -304,7 +304,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual CancelQueryResponse CancelQuery(CancelQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CancelQueryEndpointDiscoveryMarshaller.Instance;
@@ -346,7 +346,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
         public virtual Task<CancelQueryResponse> CancelQueryAsync(CancelQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CancelQueryEndpointDiscoveryMarshaller.Instance;
@@ -361,7 +361,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual CreateScheduledQueryResponse CreateScheduledQuery(CreateScheduledQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -408,7 +408,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/CreateScheduledQuery">REST API Reference for CreateScheduledQuery Operation</seealso>
         public virtual Task<CreateScheduledQueryResponse> CreateScheduledQueryAsync(CreateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -423,7 +423,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual DeleteScheduledQueryResponse DeleteScheduledQuery(DeleteScheduledQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -464,7 +464,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DeleteScheduledQuery">REST API Reference for DeleteScheduledQuery Operation</seealso>
         public virtual Task<DeleteScheduledQueryResponse> DeleteScheduledQueryAsync(DeleteScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -479,7 +479,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeAccountSettingsEndpointDiscoveryMarshaller.Instance;
@@ -520,7 +520,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
         public virtual Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeAccountSettingsEndpointDiscoveryMarshaller.Instance;
@@ -535,7 +535,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -592,7 +592,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual DescribeScheduledQueryResponse DescribeScheduledQuery(DescribeScheduledQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -646,7 +646,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeScheduledQuery">REST API Reference for DescribeScheduledQuery Operation</seealso>
         public virtual Task<DescribeScheduledQueryResponse> DescribeScheduledQueryAsync(DescribeScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -661,7 +661,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual ExecuteScheduledQueryResponse ExecuteScheduledQuery(ExecuteScheduledQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ExecuteScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -711,7 +711,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ExecuteScheduledQuery">REST API Reference for ExecuteScheduledQuery Operation</seealso>
         public virtual Task<ExecuteScheduledQueryResponse> ExecuteScheduledQueryAsync(ExecuteScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ExecuteScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -726,7 +726,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual ListScheduledQueriesResponse ListScheduledQueries(ListScheduledQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledQueriesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListScheduledQueriesEndpointDiscoveryMarshaller.Instance;
@@ -765,7 +765,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ListScheduledQueries">REST API Reference for ListScheduledQueries Operation</seealso>
         public virtual Task<ListScheduledQueriesResponse> ListScheduledQueriesAsync(ListScheduledQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScheduledQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScheduledQueriesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListScheduledQueriesEndpointDiscoveryMarshaller.Instance;
@@ -780,7 +780,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsForResourceEndpointDiscoveryMarshaller.Instance;
@@ -815,7 +815,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsForResourceEndpointDiscoveryMarshaller.Instance;
@@ -830,7 +830,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual PrepareQueryResponse PrepareQuery(PrepareQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PrepareQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PrepareQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PrepareQueryEndpointDiscoveryMarshaller.Instance;
@@ -870,7 +870,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/PrepareQuery">REST API Reference for PrepareQuery Operation</seealso>
         public virtual Task<PrepareQueryResponse> PrepareQueryAsync(PrepareQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PrepareQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PrepareQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = PrepareQueryEndpointDiscoveryMarshaller.Instance;
@@ -885,7 +885,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual QueryResponse Query(QueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = QueryEndpointDiscoveryMarshaller.Instance;
@@ -982,7 +982,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/Query">REST API Reference for Query Operation</seealso>
         public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = QueryEndpointDiscoveryMarshaller.Instance;
@@ -997,7 +997,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1037,7 +1037,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1052,7 +1052,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1087,7 +1087,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1102,7 +1102,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateAccountSettingsEndpointDiscoveryMarshaller.Instance;
@@ -1149,7 +1149,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateAccountSettingsEndpointDiscoveryMarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.TimestreamQuery
 
         internal virtual UpdateScheduledQueryResponse UpdateScheduledQuery(UpdateScheduledQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateScheduledQueryEndpointDiscoveryMarshaller.Instance;
@@ -1205,7 +1205,7 @@ namespace Amazon.TimestreamQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateScheduledQuery">REST API Reference for UpdateScheduledQuery Operation</seealso>
         public virtual Task<UpdateScheduledQueryResponse> UpdateScheduledQueryAsync(UpdateScheduledQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduledQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduledQueryResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateScheduledQueryEndpointDiscoveryMarshaller.Instance;

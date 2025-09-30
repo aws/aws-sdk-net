@@ -311,7 +311,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">REST API Reference for BatchGetTokenBalance Operation</seealso>
         public virtual BatchGetTokenBalanceResponse BatchGetTokenBalance(BatchGetTokenBalanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/BatchGetTokenBalance">REST API Reference for BatchGetTokenBalance Operation</seealso>
         public virtual IAsyncResult BeginBatchGetTokenBalance(BatchGetTokenBalanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetAssetContract">REST API Reference for GetAssetContract Operation</seealso>
         public virtual GetAssetContractResponse GetAssetContract(GetAssetContractRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetContractRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetContractResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetAssetContract">REST API Reference for GetAssetContract Operation</seealso>
         public virtual IAsyncResult BeginGetAssetContract(GetAssetContractRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssetContractRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssetContractResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTokenBalance">REST API Reference for GetTokenBalance Operation</seealso>
         public virtual GetTokenBalanceResponse GetTokenBalance(GetTokenBalanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTokenBalance">REST API Reference for GetTokenBalance Operation</seealso>
         public virtual IAsyncResult BeginGetTokenBalance(GetTokenBalanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenBalanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenBalanceResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTransaction">REST API Reference for GetTransaction Operation</seealso>
         public virtual GetTransactionResponse GetTransaction(GetTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransactionResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/GetTransaction">REST API Reference for GetTransaction Operation</seealso>
         public virtual IAsyncResult BeginGetTransaction(GetTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransactionResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListAssetContracts">REST API Reference for ListAssetContracts Operation</seealso>
         public virtual ListAssetContractsResponse ListAssetContracts(ListAssetContractsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetContractsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetContractsResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListAssetContracts">REST API Reference for ListAssetContracts Operation</seealso>
         public virtual IAsyncResult BeginListAssetContracts(ListAssetContractsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetContractsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetContractsResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
         public virtual ListFilteredTransactionEventsResponse ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
         public virtual IAsyncResult BeginListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTokenBalances">REST API Reference for ListTokenBalances Operation</seealso>
         public virtual ListTokenBalancesResponse ListTokenBalances(ListTokenBalancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTokenBalancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTokenBalancesResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTokenBalances">REST API Reference for ListTokenBalances Operation</seealso>
         public virtual IAsyncResult BeginListTokenBalances(ListTokenBalancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTokenBalancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTokenBalancesResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactionEvents">REST API Reference for ListTransactionEvents Operation</seealso>
         public virtual ListTransactionEventsResponse ListTransactionEvents(ListTransactionEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionEventsResponseUnmarshaller.Instance;
 
@@ -912,7 +912,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactionEvents">REST API Reference for ListTransactionEvents Operation</seealso>
         public virtual IAsyncResult BeginListTransactionEvents(ListTransactionEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionEventsResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactions">REST API Reference for ListTransactions Operation</seealso>
         public virtual ListTransactionsResponse ListTransactions(ListTransactionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 
@@ -984,7 +984,7 @@ namespace Amazon.ManagedBlockchainQuery
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactions">REST API Reference for ListTransactions Operation</seealso>
         public virtual IAsyncResult BeginListTransactions(ListTransactionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransactionsResponseUnmarshaller.Instance;
 

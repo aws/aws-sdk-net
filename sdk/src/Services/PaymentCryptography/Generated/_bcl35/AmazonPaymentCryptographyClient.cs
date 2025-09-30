@@ -414,7 +414,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AddKeyReplicationRegions">REST API Reference for AddKeyReplicationRegions Operation</seealso>
         public virtual AddKeyReplicationRegionsResponse AddKeyReplicationRegions(AddKeyReplicationRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AddKeyReplicationRegions">REST API Reference for AddKeyReplicationRegions Operation</seealso>
         public virtual IAsyncResult BeginAddKeyReplicationRegions(AddKeyReplicationRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -615,7 +615,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual IAsyncResult BeginCreateKey(CreateKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
@@ -956,7 +956,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -977,7 +977,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         public virtual DeleteKeyResponse DeleteKey(DeleteKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteKey(DeleteKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisableDefaultKeyReplicationRegions">REST API Reference for DisableDefaultKeyReplicationRegions Operation</seealso>
         public virtual DisableDefaultKeyReplicationRegionsResponse DisableDefaultKeyReplicationRegions(DisableDefaultKeyReplicationRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisableDefaultKeyReplicationRegions">REST API Reference for DisableDefaultKeyReplicationRegions Operation</seealso>
         public virtual IAsyncResult BeginDisableDefaultKeyReplicationRegions(DisableDefaultKeyReplicationRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/EnableDefaultKeyReplicationRegions">REST API Reference for EnableDefaultKeyReplicationRegions Operation</seealso>
         public virtual EnableDefaultKeyReplicationRegionsResponse EnableDefaultKeyReplicationRegions(EnableDefaultKeyReplicationRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -1455,7 +1455,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/EnableDefaultKeyReplicationRegions">REST API Reference for EnableDefaultKeyReplicationRegions Operation</seealso>
         public virtual IAsyncResult BeginEnableDefaultKeyReplicationRegions(EnableDefaultKeyReplicationRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportKey">REST API Reference for ExportKey Operation</seealso>
         public virtual ExportKeyResponse ExportKey(ExportKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportKeyResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ExportKey">REST API Reference for ExportKey Operation</seealso>
         public virtual IAsyncResult BeginExportKey(ExportKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportKeyResponseUnmarshaller.Instance;
 
@@ -1969,7 +1969,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public virtual GetAliasResponse GetAlias(GetAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -1990,7 +1990,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public virtual IAsyncResult BeginGetAlias(GetAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAliasResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
         public virtual GetCertificateSigningRequestResponse GetCertificateSigningRequest(GetCertificateSigningRequestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCertificateSigningRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCertificateSigningRequestResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetCertificateSigningRequest">REST API Reference for GetCertificateSigningRequest Operation</seealso>
         public virtual IAsyncResult BeginGetCertificateSigningRequest(GetCertificateSigningRequestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCertificateSigningRequestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCertificateSigningRequestResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetDefaultKeyReplicationRegions">REST API Reference for GetDefaultKeyReplicationRegions Operation</seealso>
         public virtual GetDefaultKeyReplicationRegionsResponse GetDefaultKeyReplicationRegions(GetDefaultKeyReplicationRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -2251,7 +2251,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetDefaultKeyReplicationRegions">REST API Reference for GetDefaultKeyReplicationRegions Operation</seealso>
         public virtual IAsyncResult BeginGetDefaultKeyReplicationRegions(GetDefaultKeyReplicationRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDefaultKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -2370,7 +2370,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetKey">REST API Reference for GetKey Operation</seealso>
         public virtual GetKeyResponse GetKey(GetKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyResponseUnmarshaller.Instance;
 
@@ -2391,7 +2391,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetKey">REST API Reference for GetKey Operation</seealso>
         public virtual IAsyncResult BeginGetKey(GetKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetKeyResponseUnmarshaller.Instance;
 
@@ -2531,7 +2531,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForExport">REST API Reference for GetParametersForExport Operation</seealso>
         public virtual GetParametersForExportResponse GetParametersForExport(GetParametersForExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForExportResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForExport">REST API Reference for GetParametersForExport Operation</seealso>
         public virtual IAsyncResult BeginGetParametersForExport(GetParametersForExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForExportResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
 
@@ -2713,7 +2713,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public virtual IAsyncResult BeginGetParametersForImport(GetParametersForImportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetParametersForImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
 
@@ -2818,7 +2818,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetPublicKeyCertificate">REST API Reference for GetPublicKeyCertificate Operation</seealso>
         public virtual GetPublicKeyCertificateResponse GetPublicKeyCertificate(GetPublicKeyCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyCertificateResponseUnmarshaller.Instance;
 
@@ -2839,7 +2839,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetPublicKeyCertificate">REST API Reference for GetPublicKeyCertificate Operation</seealso>
         public virtual IAsyncResult BeginGetPublicKeyCertificate(GetPublicKeyCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicKeyCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicKeyCertificateResponseUnmarshaller.Instance;
 
@@ -3220,7 +3220,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKey">REST API Reference for ImportKey Operation</seealso>
         public virtual ImportKeyResponse ImportKey(ImportKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyResponseUnmarshaller.Instance;
 
@@ -3241,7 +3241,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ImportKey">REST API Reference for ImportKey Operation</seealso>
         public virtual IAsyncResult BeginImportKey(ImportKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportKeyResponseUnmarshaller.Instance;
 
@@ -3373,7 +3373,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -3394,7 +3394,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAliasesResponseUnmarshaller.Instance;
 
@@ -3519,7 +3519,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -3540,7 +3540,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual IAsyncResult BeginListKeys(ListKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -3659,7 +3659,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3680,7 +3680,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3815,7 +3815,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RemoveKeyReplicationRegions">REST API Reference for RemoveKeyReplicationRegions Operation</seealso>
         public virtual RemoveKeyReplicationRegionsResponse RemoveKeyReplicationRegions(RemoveKeyReplicationRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -3836,7 +3836,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RemoveKeyReplicationRegions">REST API Reference for RemoveKeyReplicationRegions Operation</seealso>
         public virtual IAsyncResult BeginRemoveKeyReplicationRegions(RemoveKeyReplicationRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveKeyReplicationRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveKeyReplicationRegionsResponseUnmarshaller.Instance;
 
@@ -3980,7 +3980,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RestoreKey">REST API Reference for RestoreKey Operation</seealso>
         public virtual RestoreKeyResponse RestoreKey(RestoreKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreKeyResponseUnmarshaller.Instance;
 
@@ -4001,7 +4001,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/RestoreKey">REST API Reference for RestoreKey Operation</seealso>
         public virtual IAsyncResult BeginRestoreKey(RestoreKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreKeyResponseUnmarshaller.Instance;
 
@@ -4128,7 +4128,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StartKeyUsage">REST API Reference for StartKeyUsage Operation</seealso>
         public virtual StartKeyUsageResponse StartKeyUsage(StartKeyUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartKeyUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartKeyUsageResponseUnmarshaller.Instance;
 
@@ -4149,7 +4149,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StartKeyUsage">REST API Reference for StartKeyUsage Operation</seealso>
         public virtual IAsyncResult BeginStartKeyUsage(StartKeyUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartKeyUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartKeyUsageResponseUnmarshaller.Instance;
 
@@ -4286,7 +4286,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StopKeyUsage">REST API Reference for StopKeyUsage Operation</seealso>
         public virtual StopKeyUsageResponse StopKeyUsage(StopKeyUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopKeyUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopKeyUsageResponseUnmarshaller.Instance;
 
@@ -4307,7 +4307,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/StopKeyUsage">REST API Reference for StopKeyUsage Operation</seealso>
         public virtual IAsyncResult BeginStopKeyUsage(StopKeyUsageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopKeyUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopKeyUsageResponseUnmarshaller.Instance;
 
@@ -4451,7 +4451,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4472,7 +4472,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4598,7 +4598,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4619,7 +4619,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4754,7 +4754,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 
@@ -4775,7 +4775,7 @@ namespace Amazon.PaymentCryptography
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public virtual IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAliasResponseUnmarshaller.Instance;
 

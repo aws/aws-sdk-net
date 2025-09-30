@@ -261,7 +261,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/GetRawMessageContent">REST API Reference for GetRawMessageContent Operation</seealso>
         public virtual GetRawMessageContentResponse GetRawMessageContent(GetRawMessageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRawMessageContentResponseUnmarshaller.Instance;
 
@@ -282,7 +282,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/GetRawMessageContent">REST API Reference for GetRawMessageContent Operation</seealso>
         public virtual IAsyncResult BeginGetRawMessageContent(GetRawMessageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRawMessageContentResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent">REST API Reference for PutRawMessageContent Operation</seealso>
         public virtual PutRawMessageContentResponse PutRawMessageContent(PutRawMessageContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRawMessageContentResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.WorkMailMessageFlow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmailmessageflow-2019-05-01/PutRawMessageContent">REST API Reference for PutRawMessageContent Operation</seealso>
         public virtual IAsyncResult BeginPutRawMessageContent(PutRawMessageContentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRawMessageContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRawMessageContentResponseUnmarshaller.Instance;
 

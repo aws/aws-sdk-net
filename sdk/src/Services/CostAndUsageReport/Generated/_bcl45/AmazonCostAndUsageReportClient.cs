@@ -306,7 +306,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual DeleteReportDefinitionResponse DeleteReportDefinition(DeleteReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">REST API Reference for DeleteReportDefinition Operation</seealso>
         public virtual Task<DeleteReportDefinitionResponse> DeleteReportDefinitionAsync(DeleteReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReportDefinitionResponseUnmarshaller.Instance;
             
@@ -356,7 +356,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual DescribeReportDefinitionsResponse DescribeReportDefinitions(DescribeReportDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">REST API Reference for DescribeReportDefinitions Operation</seealso>
         public virtual Task<DescribeReportDefinitionsResponse> DescribeReportDefinitionsAsync(DescribeReportDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReportDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReportDefinitionsResponseUnmarshaller.Instance;
             
@@ -409,7 +409,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -465,7 +465,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
         public virtual ModifyReportDefinitionResponse ModifyReportDefinition(ModifyReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReportDefinitionResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition">REST API Reference for ModifyReportDefinition Operation</seealso>
         public virtual Task<ModifyReportDefinitionResponse> ModifyReportDefinitionAsync(ModifyReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReportDefinitionResponseUnmarshaller.Instance;
             
@@ -529,7 +529,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual PutReportDefinitionResponse PutReportDefinition(PutReportDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">REST API Reference for PutReportDefinition Operation</seealso>
         public virtual Task<PutReportDefinitionResponse> PutReportDefinitionAsync(PutReportDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutReportDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutReportDefinitionResponseUnmarshaller.Instance;
             
@@ -596,7 +596,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -655,7 +655,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -684,7 +684,7 @@ namespace Amazon.CostAndUsageReport
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

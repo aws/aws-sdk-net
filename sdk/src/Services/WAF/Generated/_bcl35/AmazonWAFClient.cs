@@ -529,7 +529,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         public virtual CreateByteMatchSetResponse CreateByteMatchSet(CreateByteMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateByteMatchSet(CreateByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateByteMatchSetResponseUnmarshaller.Instance;
 
@@ -699,7 +699,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
         public virtual CreateGeoMatchSetResponse CreateGeoMatchSet(CreateGeoMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -720,7 +720,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">REST API Reference for CreateGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateGeoMatchSet(CreateGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual CreateIPSetResponse CreateIPSet(CreateIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         public virtual IAsyncResult BeginCreateIPSet(CreateIPSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIPSetResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         public virtual CreateRateBasedRuleResponse CreateRateBasedRule(CreateRateBasedRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -1265,7 +1265,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">REST API Reference for CreateRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRateBasedRule(CreateRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
         public virtual CreateRegexMatchSetResponse CreateRegexMatchSet(CreateRegexMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">REST API Reference for CreateRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateRegexMatchSet(CreateRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -1478,7 +1478,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         public virtual CreateRegexPatternSetResponse CreateRegexPatternSet(CreateRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -1499,7 +1499,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginCreateRegexPatternSet(CreateRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -1960,7 +1960,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual CreateRuleGroupResponse CreateRuleGroup(CreateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -1981,7 +1981,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">REST API Reference for CreateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateRuleGroup(CreateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleGroupResponseUnmarshaller.Instance;
 
@@ -2132,7 +2132,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         public virtual CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -2153,7 +2153,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginCreateSizeConstraintSet(CreateSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         public virtual CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -2452,7 +2452,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual CreateWebACLResponse CreateWebACL(CreateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
@@ -2646,7 +2646,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         public virtual IAsyncResult BeginCreateWebACL(CreateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLResponseUnmarshaller.Instance;
 
@@ -2816,7 +2816,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACLMigrationStack">REST API Reference for CreateWebACLMigrationStack Operation</seealso>
         public virtual CreateWebACLMigrationStackResponse CreateWebACLMigrationStack(CreateWebACLMigrationStackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLMigrationStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLMigrationStackResponseUnmarshaller.Instance;
 
@@ -2837,7 +2837,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACLMigrationStack">REST API Reference for CreateWebACLMigrationStack Operation</seealso>
         public virtual IAsyncResult BeginCreateWebACLMigrationStack(CreateWebACLMigrationStackRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWebACLMigrationStackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWebACLMigrationStackResponseUnmarshaller.Instance;
 
@@ -2984,7 +2984,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         public virtual CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
 
@@ -3005,7 +3005,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginCreateXssMatchSet(CreateXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateXssMatchSetResponseUnmarshaller.Instance;
 
@@ -3237,7 +3237,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         public virtual DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
 
@@ -3258,7 +3258,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteByteMatchSet(DeleteByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteByteMatchSetResponseUnmarshaller.Instance;
 
@@ -3380,7 +3380,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
         public virtual DeleteGeoMatchSetResponse DeleteGeoMatchSet(DeleteGeoMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -3401,7 +3401,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteGeoMatchSet">REST API Reference for DeleteGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteGeoMatchSet(DeleteGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -3631,7 +3631,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
@@ -3652,7 +3652,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteIPSet(DeleteIPSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIPSetResponseUnmarshaller.Instance;
 
@@ -3710,7 +3710,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3731,7 +3731,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3793,7 +3793,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
         public virtual DeletePermissionPolicyResponse DeletePermissionPolicy(DeletePermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
 
@@ -3814,7 +3814,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">REST API Reference for DeletePermissionPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePermissionPolicy(DeletePermissionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionPolicyResponseUnmarshaller.Instance;
 
@@ -3944,7 +3944,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         public virtual DeleteRateBasedRuleResponse DeleteRateBasedRule(DeleteRateBasedRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -3965,7 +3965,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule">REST API Reference for DeleteRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRateBasedRule(DeleteRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -4089,7 +4089,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
         public virtual DeleteRegexMatchSetResponse DeleteRegexMatchSet(DeleteRegexMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexMatchSet">REST API Reference for DeleteRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegexMatchSet(DeleteRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -4211,7 +4211,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         public virtual DeleteRegexPatternSetResponse DeleteRegexPatternSet(DeleteRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -4232,7 +4232,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteRegexPatternSet(DeleteRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -4474,7 +4474,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -4495,7 +4495,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -4649,7 +4649,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual DeleteRuleGroupResponse DeleteRuleGroup(DeleteRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -4670,7 +4670,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteRuleGroup(DeleteRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleGroupResponseUnmarshaller.Instance;
 
@@ -4794,7 +4794,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         public virtual DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -4815,7 +4815,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -5049,7 +5049,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         public virtual DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -5070,7 +5070,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -5304,7 +5304,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
@@ -5325,7 +5325,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         public virtual IAsyncResult BeginDeleteWebACL(DeleteWebACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
 
@@ -5449,7 +5449,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         public virtual DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
 
@@ -5470,7 +5470,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteXssMatchSet(DeleteXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteXssMatchSetResponseUnmarshaller.Instance;
 
@@ -5568,7 +5568,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         public virtual GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
 
@@ -5589,7 +5589,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetByteMatchSet(GetByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetByteMatchSetResponseUnmarshaller.Instance;
 
@@ -5701,7 +5701,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         public virtual GetChangeTokenResponse GetChangeToken(GetChangeTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
 
@@ -5722,7 +5722,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         public virtual IAsyncResult BeginGetChangeToken(GetChangeTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeTokenResponseUnmarshaller.Instance;
 
@@ -5844,7 +5844,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         public virtual GetChangeTokenStatusResponse GetChangeTokenStatus(GetChangeTokenStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeTokenStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
 
@@ -5865,7 +5865,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         public virtual IAsyncResult BeginGetChangeTokenStatus(GetChangeTokenStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeTokenStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeTokenStatusResponseUnmarshaller.Instance;
 
@@ -5923,7 +5923,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
         public virtual GetGeoMatchSetResponse GetGeoMatchSet(GetGeoMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -5944,7 +5944,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetGeoMatchSet">REST API Reference for GetGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetGeoMatchSet(GetGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -6042,7 +6042,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual GetIPSetResponse GetIPSet(GetIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
@@ -6063,7 +6063,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         public virtual IAsyncResult BeginGetIPSet(GetIPSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
@@ -6117,7 +6117,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         public virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -6138,7 +6138,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetLoggingConfiguration(GetLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -6192,7 +6192,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
         public virtual GetPermissionPolicyResponse GetPermissionPolicy(GetPermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -6213,7 +6213,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">REST API Reference for GetPermissionPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPermissionPolicy(GetPermissionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -6272,7 +6272,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
         public virtual GetRateBasedRuleResponse GetRateBasedRule(GetRateBasedRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -6293,7 +6293,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule">REST API Reference for GetRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginGetRateBasedRule(GetRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -6403,7 +6403,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
         public virtual GetRateBasedRuleManagedKeysResponse GetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedRuleManagedKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
 
@@ -6424,7 +6424,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys">REST API Reference for GetRateBasedRuleManagedKeys Operation</seealso>
         public virtual IAsyncResult BeginGetRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRateBasedRuleManagedKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRateBasedRuleManagedKeysResponseUnmarshaller.Instance;
 
@@ -6482,7 +6482,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
         public virtual GetRegexMatchSetResponse GetRegexMatchSet(GetRegexMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -6503,7 +6503,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexMatchSet">REST API Reference for GetRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetRegexMatchSet(GetRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -6561,7 +6561,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         public virtual GetRegexPatternSetResponse GetRegexPatternSet(GetRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -6582,7 +6582,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRegexPatternSet">REST API Reference for GetRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginGetRegexPatternSet(GetRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -6682,7 +6682,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual GetRuleResponse GetRule(GetRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -6703,7 +6703,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         public virtual IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
 
@@ -6762,7 +6762,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         public virtual GetRuleGroupResponse GetRuleGroup(GetRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
@@ -6783,7 +6783,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup">REST API Reference for GetRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginGetRuleGroup(GetRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRuleGroupResponseUnmarshaller.Instance;
 
@@ -6848,7 +6848,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         public virtual GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampledRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
@@ -6869,7 +6869,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         public virtual IAsyncResult BeginGetSampledRequests(GetSampledRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSampledRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSampledRequestsResponseUnmarshaller.Instance;
 
@@ -6927,7 +6927,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         public virtual GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -6948,7 +6948,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginGetSizeConstraintSet(GetSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -7046,7 +7046,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         public virtual GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -7067,7 +7067,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -7165,7 +7165,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         public virtual GetWebACLResponse GetWebACL(GetWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
@@ -7186,7 +7186,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         public virtual IAsyncResult BeginGetWebACL(GetWebACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWebACLResponseUnmarshaller.Instance;
 
@@ -7244,7 +7244,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         public virtual GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
 
@@ -7265,7 +7265,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginGetXssMatchSet(GetXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetXssMatchSetResponseUnmarshaller.Instance;
 
@@ -7368,7 +7368,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup">REST API Reference for ListActivatedRulesInRuleGroup Operation</seealso>
         public virtual ListActivatedRulesInRuleGroupResponse ListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActivatedRulesInRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
 
@@ -7389,7 +7389,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup">REST API Reference for ListActivatedRulesInRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActivatedRulesInRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActivatedRulesInRuleGroupResponseUnmarshaller.Instance;
 
@@ -7444,7 +7444,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         public virtual ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListByteMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
 
@@ -7465,7 +7465,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListByteMatchSets(ListByteMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListByteMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListByteMatchSetsResponseUnmarshaller.Instance;
 
@@ -7520,7 +7520,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
         public virtual ListGeoMatchSetsResponse ListGeoMatchSets(ListGeoMatchSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeoMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
 
@@ -7541,7 +7541,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListGeoMatchSets">REST API Reference for ListGeoMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListGeoMatchSets(ListGeoMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeoMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeoMatchSetsResponseUnmarshaller.Instance;
 
@@ -7596,7 +7596,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual ListIPSetsResponse ListIPSets(ListIPSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIPSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
@@ -7617,7 +7617,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         public virtual IAsyncResult BeginListIPSets(ListIPSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIPSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIPSetsResponseUnmarshaller.Instance;
 
@@ -7720,7 +7720,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         public virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -7741,7 +7741,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListLoggingConfigurations(ListLoggingConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
 
@@ -7796,7 +7796,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
         public virtual ListRateBasedRulesResponse ListRateBasedRules(ListRateBasedRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRateBasedRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
 
@@ -7817,7 +7817,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">REST API Reference for ListRateBasedRules Operation</seealso>
         public virtual IAsyncResult BeginListRateBasedRules(ListRateBasedRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRateBasedRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRateBasedRulesResponseUnmarshaller.Instance;
 
@@ -7872,7 +7872,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
         public virtual ListRegexMatchSetsResponse ListRegexMatchSets(ListRegexMatchSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
 
@@ -7893,7 +7893,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexMatchSets">REST API Reference for ListRegexMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListRegexMatchSets(ListRegexMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexMatchSetsResponseUnmarshaller.Instance;
 
@@ -7948,7 +7948,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
         public virtual ListRegexPatternSetsResponse ListRegexPatternSets(ListRegexPatternSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
@@ -7969,7 +7969,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRegexPatternSets">REST API Reference for ListRegexPatternSets Operation</seealso>
         public virtual IAsyncResult BeginListRegexPatternSets(ListRegexPatternSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegexPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegexPatternSetsResponseUnmarshaller.Instance;
 
@@ -8020,7 +8020,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual ListRuleGroupsResponse ListRuleGroups(ListRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -8041,7 +8041,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups">REST API Reference for ListRuleGroups Operation</seealso>
         public virtual IAsyncResult BeginListRuleGroups(ListRuleGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRuleGroupsResponseUnmarshaller.Instance;
 
@@ -8096,7 +8096,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -8117,7 +8117,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -8172,7 +8172,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         public virtual ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSizeConstraintSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
 
@@ -8193,7 +8193,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         public virtual IAsyncResult BeginListSizeConstraintSets(ListSizeConstraintSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSizeConstraintSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSizeConstraintSetsResponseUnmarshaller.Instance;
 
@@ -8248,7 +8248,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         public virtual ListSqlInjectionMatchSetsResponse ListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSqlInjectionMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
 
@@ -8269,7 +8269,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSqlInjectionMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSqlInjectionMatchSetsResponseUnmarshaller.Instance;
 
@@ -8323,7 +8323,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups">REST API Reference for ListSubscribedRuleGroups Operation</seealso>
         public virtual ListSubscribedRuleGroupsResponse ListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscribedRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
 
@@ -8344,7 +8344,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups">REST API Reference for ListSubscribedRuleGroups Operation</seealso>
         public virtual IAsyncResult BeginListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubscribedRuleGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubscribedRuleGroupsResponseUnmarshaller.Instance;
 
@@ -8466,7 +8466,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -8487,7 +8487,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -8542,7 +8542,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         public virtual ListWebACLsResponse ListWebACLs(ListWebACLsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
@@ -8563,7 +8563,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         public virtual IAsyncResult BeginListWebACLs(ListWebACLsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWebACLsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWebACLsResponseUnmarshaller.Instance;
 
@@ -8618,7 +8618,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         public virtual ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListXssMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
 
@@ -8639,7 +8639,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         public virtual IAsyncResult BeginListXssMatchSets(ListXssMatchSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListXssMatchSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListXssMatchSetsResponseUnmarshaller.Instance;
 
@@ -8736,7 +8736,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
         public virtual PutLoggingConfigurationResponse PutLoggingConfiguration(PutLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -8757,7 +8757,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">REST API Reference for PutLoggingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutLoggingConfiguration(PutLoggingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -8908,7 +8908,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
         public virtual PutPermissionPolicyResponse PutPermissionPolicy(PutPermissionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -8929,7 +8929,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">REST API Reference for PutPermissionPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutPermissionPolicy(PutPermissionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPermissionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPermissionPolicyResponseUnmarshaller.Instance;
 
@@ -9056,7 +9056,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -9077,7 +9077,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -9186,7 +9186,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -9207,7 +9207,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -9653,7 +9653,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         public virtual UpdateByteMatchSetResponse UpdateByteMatchSet(UpdateByteMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
 
@@ -9674,7 +9674,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateByteMatchSet(UpdateByteMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateByteMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateByteMatchSetResponseUnmarshaller.Instance;
 
@@ -9905,7 +9905,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
         public virtual UpdateGeoMatchSetResponse UpdateGeoMatchSet(UpdateGeoMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -9926,7 +9926,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">REST API Reference for UpdateGeoMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateGeoMatchSet(UpdateGeoMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeoMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeoMatchSetResponseUnmarshaller.Instance;
 
@@ -10454,7 +10454,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
@@ -10475,7 +10475,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateIPSet(UpdateIPSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIPSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
@@ -10722,7 +10722,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
         public virtual UpdateRateBasedRuleResponse UpdateRateBasedRule(UpdateRateBasedRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -10743,7 +10743,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule">REST API Reference for UpdateRateBasedRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRateBasedRule(UpdateRateBasedRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRateBasedRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRateBasedRuleResponseUnmarshaller.Instance;
 
@@ -10922,7 +10922,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
         public virtual UpdateRegexMatchSetResponse UpdateRegexMatchSet(UpdateRegexMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -10943,7 +10943,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">REST API Reference for UpdateRegexMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateRegexMatchSet(UpdateRegexMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexMatchSetResponseUnmarshaller.Instance;
 
@@ -11124,7 +11124,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
         public virtual UpdateRegexPatternSetResponse UpdateRegexPatternSet(UpdateRegexPatternSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -11145,7 +11145,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">REST API Reference for UpdateRegexPatternSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateRegexPatternSet(UpdateRegexPatternSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegexPatternSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegexPatternSetResponseUnmarshaller.Instance;
 
@@ -11617,7 +11617,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -11638,7 +11638,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         public virtual IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
 
@@ -11847,7 +11847,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual UpdateRuleGroupResponse UpdateRuleGroup(UpdateRuleGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -11868,7 +11868,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">REST API Reference for UpdateRuleGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateRuleGroup(UpdateRuleGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRuleGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRuleGroupResponseUnmarshaller.Instance;
 
@@ -12117,7 +12117,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         public virtual UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -12138,7 +12138,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSizeConstraintSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSizeConstraintSetResponseUnmarshaller.Instance;
 
@@ -12576,7 +12576,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         public virtual UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -12597,7 +12597,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSqlInjectionMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSqlInjectionMatchSetResponseUnmarshaller.Instance;
 
@@ -12869,7 +12869,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         public virtual UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
@@ -12890,7 +12890,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         public virtual IAsyncResult BeginUpdateWebACL(UpdateWebACLRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWebACLRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWebACLResponseUnmarshaller.Instance;
 
@@ -13115,7 +13115,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         public virtual UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
 
@@ -13136,7 +13136,7 @@ namespace Amazon.WAF
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateXssMatchSet(UpdateXssMatchSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateXssMatchSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateXssMatchSetResponseUnmarshaller.Instance;
 

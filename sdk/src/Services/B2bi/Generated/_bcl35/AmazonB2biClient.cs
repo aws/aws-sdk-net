@@ -327,7 +327,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
         public virtual CreateCapabilityResponse CreateCapability(CreateCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
         public virtual IAsyncResult BeginCreateCapability(CreateCapabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreatePartnership">REST API Reference for CreatePartnership Operation</seealso>
         public virtual CreatePartnershipResponse CreatePartnership(CreatePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnershipResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreatePartnership">REST API Reference for CreatePartnership Operation</seealso>
         public virtual IAsyncResult BeginCreatePartnership(CreatePartnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartnershipResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
         public virtual CreateStarterMappingTemplateResponse CreateStarterMappingTemplate(CreateStarterMappingTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStarterMappingTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStarterMappingTemplateResponseUnmarshaller.Instance;
 
@@ -615,7 +615,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateStarterMappingTemplate(CreateStarterMappingTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStarterMappingTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStarterMappingTemplateResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">REST API Reference for CreateTransformer Operation</seealso>
         public virtual CreateTransformerResponse CreateTransformer(CreateTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransformerResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">REST API Reference for CreateTransformer Operation</seealso>
         public virtual IAsyncResult BeginCreateTransformer(CreateTransformerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTransformerResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
         public virtual DeleteCapabilityResponse DeleteCapability(DeleteCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
         public virtual IAsyncResult BeginDeleteCapability(DeleteCapabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
 
@@ -878,7 +878,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeletePartnership">REST API Reference for DeletePartnership Operation</seealso>
         public virtual DeletePartnershipResponse DeletePartnership(DeletePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnershipResponseUnmarshaller.Instance;
 
@@ -899,7 +899,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeletePartnership">REST API Reference for DeletePartnership Operation</seealso>
         public virtual IAsyncResult BeginDeletePartnership(DeletePartnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartnershipResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -980,7 +980,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">REST API Reference for DeleteTransformer Operation</seealso>
         public virtual DeleteTransformerResponse DeleteTransformer(DeleteTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransformerResponseUnmarshaller.Instance;
 
@@ -1062,7 +1062,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">REST API Reference for DeleteTransformer Operation</seealso>
         public virtual IAsyncResult BeginDeleteTransformer(DeleteTransformerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTransformerResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
         public virtual GenerateMappingResponse GenerateMapping(GenerateMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMappingResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
         public virtual IAsyncResult BeginGenerateMapping(GenerateMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMappingResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetCapability">REST API Reference for GetCapability Operation</seealso>
         public virtual GetCapabilityResponse GetCapability(GetCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
 
@@ -1239,7 +1239,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetCapability">REST API Reference for GetCapability Operation</seealso>
         public virtual IAsyncResult BeginGetCapability(GetCapabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetPartnership">REST API Reference for GetPartnership Operation</seealso>
         public virtual GetPartnershipResponse GetPartnership(GetPartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnershipResponseUnmarshaller.Instance;
 
@@ -1317,7 +1317,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetPartnership">REST API Reference for GetPartnership Operation</seealso>
         public virtual IAsyncResult BeginGetPartnership(GetPartnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnershipResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual GetProfileResponse GetProfile(GetProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1394,7 +1394,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetProfile">REST API Reference for GetProfile Operation</seealso>
         public virtual IAsyncResult BeginGetProfile(GetProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">REST API Reference for GetTransformer Operation</seealso>
         public virtual GetTransformerResponse GetTransformer(GetTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">REST API Reference for GetTransformer Operation</seealso>
         public virtual IAsyncResult BeginGetTransformer(GetTransformerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerResponseUnmarshaller.Instance;
 
@@ -1537,7 +1537,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformerJob">REST API Reference for GetTransformerJob Operation</seealso>
         public virtual GetTransformerJobResponse GetTransformerJob(GetTransformerJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerJobResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformerJob">REST API Reference for GetTransformerJob Operation</seealso>
         public virtual IAsyncResult BeginGetTransformerJob(GetTransformerJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTransformerJobResponseUnmarshaller.Instance;
 
@@ -1611,7 +1611,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         public virtual ListCapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         public virtual IAsyncResult BeginListCapabilities(ListCapabilitiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">REST API Reference for ListPartnerships Operation</seealso>
         public virtual ListPartnershipsResponse ListPartnerships(ListPartnershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnershipsResponseUnmarshaller.Instance;
 
@@ -1710,7 +1710,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListPartnerships">REST API Reference for ListPartnerships Operation</seealso>
         public virtual IAsyncResult BeginListPartnerships(ListPartnershipsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnershipsResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1784,7 +1784,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
         public virtual IAsyncResult BeginListProfiles(ListProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1854,7 +1854,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1907,7 +1907,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         public virtual ListTransformersResponse ListTransformers(ListTransformersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransformersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransformersResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">REST API Reference for ListTransformers Operation</seealso>
         public virtual IAsyncResult BeginListTransformers(ListTransformersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTransformersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTransformersResponseUnmarshaller.Instance;
 
@@ -2003,7 +2003,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">REST API Reference for StartTransformerJob Operation</seealso>
         public virtual StartTransformerJobResponse StartTransformerJob(StartTransformerJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransformerJobResponseUnmarshaller.Instance;
 
@@ -2024,7 +2024,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/StartTransformerJob">REST API Reference for StartTransformerJob Operation</seealso>
         public virtual IAsyncResult BeginStartTransformerJob(StartTransformerJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTransformerJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTransformerJobResponseUnmarshaller.Instance;
 
@@ -2082,7 +2082,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2160,7 +2160,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
         public virtual TestConversionResponse TestConversion(TestConversionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConversionResponseUnmarshaller.Instance;
 
@@ -2181,7 +2181,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
         public virtual IAsyncResult BeginTestConversion(TestConversionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConversionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConversionResponseUnmarshaller.Instance;
 
@@ -2238,7 +2238,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestMapping">REST API Reference for TestMapping Operation</seealso>
         public virtual TestMappingResponse TestMapping(TestMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMappingResponseUnmarshaller.Instance;
 
@@ -2259,7 +2259,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestMapping">REST API Reference for TestMapping Operation</seealso>
         public virtual IAsyncResult BeginTestMapping(TestMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMappingResponseUnmarshaller.Instance;
 
@@ -2315,7 +2315,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestParsing">REST API Reference for TestParsing Operation</seealso>
         public virtual TestParsingResponse TestParsing(TestParsingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestParsingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestParsingResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestParsing">REST API Reference for TestParsing Operation</seealso>
         public virtual IAsyncResult BeginTestParsing(TestParsingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestParsingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestParsingResponseUnmarshaller.Instance;
 
@@ -2386,7 +2386,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2407,7 +2407,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2473,7 +2473,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
         public virtual UpdateCapabilityResponse UpdateCapability(UpdateCapabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
 
@@ -2494,7 +2494,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
         public virtual IAsyncResult BeginUpdateCapability(UpdateCapabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
 
@@ -2560,7 +2560,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdatePartnership">REST API Reference for UpdatePartnership Operation</seealso>
         public virtual UpdatePartnershipResponse UpdatePartnership(UpdatePartnershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnershipResponseUnmarshaller.Instance;
 
@@ -2581,7 +2581,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdatePartnership">REST API Reference for UpdatePartnership Operation</seealso>
         public virtual IAsyncResult BeginUpdatePartnership(UpdatePartnershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnershipResponseUnmarshaller.Instance;
 
@@ -2646,7 +2646,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -2667,7 +2667,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
@@ -2734,7 +2734,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">REST API Reference for UpdateTransformer Operation</seealso>
         public virtual UpdateTransformerResponse UpdateTransformer(UpdateTransformerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTransformerResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.B2bi
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">REST API Reference for UpdateTransformer Operation</seealso>
         public virtual IAsyncResult BeginUpdateTransformer(UpdateTransformerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTransformerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTransformerResponseUnmarshaller.Instance;
 

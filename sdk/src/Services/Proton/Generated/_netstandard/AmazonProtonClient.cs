@@ -512,7 +512,7 @@ namespace Amazon.Proton
 
         internal virtual AcceptEnvironmentAccountConnectionResponse AcceptEnvironmentAccountConnection(AcceptEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">REST API Reference for AcceptEnvironmentAccountConnection Operation</seealso>
         public virtual Task<AcceptEnvironmentAccountConnectionResponse> AcceptEnvironmentAccountConnectionAsync(AcceptEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.Proton
 
         internal virtual CancelComponentDeploymentResponse CancelComponentDeployment(CancelComponentDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelComponentDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelComponentDeploymentResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
         public virtual Task<CancelComponentDeploymentResponse> CancelComponentDeploymentAsync(CancelComponentDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelComponentDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelComponentDeploymentResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.Proton
 
         internal virtual CancelEnvironmentDeploymentResponse CancelEnvironmentDeployment(CancelEnvironmentDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelEnvironmentDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelEnvironmentDeploymentResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">REST API Reference for CancelEnvironmentDeployment Operation</seealso>
         public virtual Task<CancelEnvironmentDeploymentResponse> CancelEnvironmentDeploymentAsync(CancelEnvironmentDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelEnvironmentDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelEnvironmentDeploymentResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.Proton
 
         internal virtual CancelServiceInstanceDeploymentResponse CancelServiceInstanceDeployment(CancelServiceInstanceDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServiceInstanceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServiceInstanceDeploymentResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">REST API Reference for CancelServiceInstanceDeployment Operation</seealso>
         public virtual Task<CancelServiceInstanceDeploymentResponse> CancelServiceInstanceDeploymentAsync(CancelServiceInstanceDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServiceInstanceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServiceInstanceDeploymentResponseUnmarshaller.Instance;
 
@@ -780,7 +780,7 @@ namespace Amazon.Proton
 
         internal virtual CancelServicePipelineDeploymentResponse CancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServicePipelineDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServicePipelineDeploymentResponseUnmarshaller.Instance;
 
@@ -841,7 +841,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
         public virtual Task<CancelServicePipelineDeploymentResponse> CancelServicePipelineDeploymentAsync(CancelServicePipelineDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelServicePipelineDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelServicePipelineDeploymentResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.Proton
 
         internal virtual CreateComponentResponse CreateComponent(CreateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.Proton
 
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -996,7 +996,7 @@ namespace Amazon.Proton
 
         internal virtual CreateEnvironmentAccountConnectionResponse CreateEnvironmentAccountConnection(CreateEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">REST API Reference for CreateEnvironmentAccountConnection Operation</seealso>
         public virtual Task<CreateEnvironmentAccountConnectionResponse> CreateEnvironmentAccountConnectionAsync(CreateEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.Proton
 
         internal virtual CreateEnvironmentTemplateResponse CreateEnvironmentTemplate(CreateEnvironmentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -1121,7 +1121,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">REST API Reference for CreateEnvironmentTemplate Operation</seealso>
         public virtual Task<CreateEnvironmentTemplateResponse> CreateEnvironmentTemplateAsync(CreateEnvironmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.Proton
 
         internal virtual CreateEnvironmentTemplateVersionResponse CreateEnvironmentTemplateVersion(CreateEnvironmentTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1180,7 +1180,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplateVersion">REST API Reference for CreateEnvironmentTemplateVersion Operation</seealso>
         public virtual Task<CreateEnvironmentTemplateVersionResponse> CreateEnvironmentTemplateVersionAsync(CreateEnvironmentTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1193,7 +1193,7 @@ namespace Amazon.Proton
 
         internal virtual CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public virtual Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.Proton
 
         internal virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.Proton
 
         internal virtual CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
 
@@ -1357,7 +1357,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
         public virtual Task<CreateServiceInstanceResponse> CreateServiceInstanceAsync(CreateServiceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.Proton
 
         internal virtual CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
         public virtual Task<CreateServiceSyncConfigResponse> CreateServiceSyncConfigAsync(CreateServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.Proton
 
         internal virtual CreateServiceTemplateResponse CreateServiceTemplate(CreateServiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceTemplateResponseUnmarshaller.Instance;
 
@@ -1469,7 +1469,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">REST API Reference for CreateServiceTemplate Operation</seealso>
         public virtual Task<CreateServiceTemplateResponse> CreateServiceTemplateAsync(CreateServiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceTemplateResponseUnmarshaller.Instance;
 
@@ -1482,7 +1482,7 @@ namespace Amazon.Proton
 
         internal virtual CreateServiceTemplateVersionResponse CreateServiceTemplateVersion(CreateServiceTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplateVersion">REST API Reference for CreateServiceTemplateVersion Operation</seealso>
         public virtual Task<CreateServiceTemplateVersionResponse> CreateServiceTemplateVersionAsync(CreateServiceTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1540,7 +1540,7 @@ namespace Amazon.Proton
 
         internal virtual CreateTemplateSyncConfigResponse CreateTemplateSyncConfig(CreateTemplateSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -1591,7 +1591,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">REST API Reference for CreateTemplateSyncConfig Operation</seealso>
         public virtual Task<CreateTemplateSyncConfigResponse> CreateTemplateSyncConfigAsync(CreateTemplateSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -1604,7 +1604,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteComponentResponse DeleteComponent(DeleteComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
@@ -1649,7 +1649,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
@@ -1662,7 +1662,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -1698,7 +1698,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1750,7 +1750,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteEnvironmentAccountConnectionResponse DeleteEnvironmentAccountConnection(DeleteEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">REST API Reference for DeleteEnvironmentAccountConnection Operation</seealso>
         public virtual Task<DeleteEnvironmentAccountConnectionResponse> DeleteEnvironmentAccountConnectionAsync(DeleteEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -1829,7 +1829,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteEnvironmentTemplateResponse DeleteEnvironmentTemplate(DeleteEnvironmentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -1869,7 +1869,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplate">REST API Reference for DeleteEnvironmentTemplate Operation</seealso>
         public virtual Task<DeleteEnvironmentTemplateResponse> DeleteEnvironmentTemplateAsync(DeleteEnvironmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteEnvironmentTemplateVersionResponse DeleteEnvironmentTemplateVersion(DeleteEnvironmentTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1933,7 +1933,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentTemplateVersion">REST API Reference for DeleteEnvironmentTemplateVersion Operation</seealso>
         public virtual Task<DeleteEnvironmentTemplateVersionResponse> DeleteEnvironmentTemplateVersionAsync(DeleteEnvironmentTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -1946,7 +1946,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public virtual Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
@@ -1998,7 +1998,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -2049,7 +2049,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
         public virtual Task<DeleteServiceSyncConfigResponse> DeleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -2114,7 +2114,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteServiceTemplateResponse DeleteServiceTemplate(DeleteServiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceTemplateResponseUnmarshaller.Instance;
 
@@ -2154,7 +2154,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplate">REST API Reference for DeleteServiceTemplate Operation</seealso>
         public virtual Task<DeleteServiceTemplateResponse> DeleteServiceTemplateAsync(DeleteServiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceTemplateResponseUnmarshaller.Instance;
 
@@ -2167,7 +2167,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteServiceTemplateVersionResponse DeleteServiceTemplateVersion(DeleteServiceTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -2218,7 +2218,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceTemplateVersion">REST API Reference for DeleteServiceTemplateVersion Operation</seealso>
         public virtual Task<DeleteServiceTemplateVersionResponse> DeleteServiceTemplateVersionAsync(DeleteServiceTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -2231,7 +2231,7 @@ namespace Amazon.Proton
 
         internal virtual DeleteTemplateSyncConfigResponse DeleteTemplateSyncConfig(DeleteTemplateSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteTemplateSyncConfig">REST API Reference for DeleteTemplateSyncConfig Operation</seealso>
         public virtual Task<DeleteTemplateSyncConfigResponse> DeleteTemplateSyncConfigAsync(DeleteTemplateSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -2283,7 +2283,7 @@ namespace Amazon.Proton
 
         internal virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2319,7 +2319,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.Proton
 
         internal virtual GetComponentResponse GetComponent(GetComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -2374,7 +2374,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
         public virtual Task<GetComponentResponse> GetComponentAsync(GetComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.Proton
 
         internal virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -2423,7 +2423,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -2436,7 +2436,7 @@ namespace Amazon.Proton
 
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -2472,7 +2472,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -2485,7 +2485,7 @@ namespace Amazon.Proton
 
         internal virtual GetEnvironmentAccountConnectionResponse GetEnvironmentAccountConnection(GetEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -2527,7 +2527,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">REST API Reference for GetEnvironmentAccountConnection Operation</seealso>
         public virtual Task<GetEnvironmentAccountConnectionResponse> GetEnvironmentAccountConnectionAsync(GetEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -2540,7 +2540,7 @@ namespace Amazon.Proton
 
         internal virtual GetEnvironmentTemplateResponse GetEnvironmentTemplate(GetEnvironmentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -2576,7 +2576,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">REST API Reference for GetEnvironmentTemplate Operation</seealso>
         public virtual Task<GetEnvironmentTemplateResponse> GetEnvironmentTemplateAsync(GetEnvironmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -2589,7 +2589,7 @@ namespace Amazon.Proton
 
         internal virtual GetEnvironmentTemplateVersionResponse GetEnvironmentTemplateVersion(GetEnvironmentTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">REST API Reference for GetEnvironmentTemplateVersion Operation</seealso>
         public virtual Task<GetEnvironmentTemplateVersionResponse> GetEnvironmentTemplateVersionAsync(GetEnvironmentTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -2638,7 +2638,7 @@ namespace Amazon.Proton
 
         internal virtual GetRepositoryResponse GetRepository(GetRepositoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryResponseUnmarshaller.Instance;
 
@@ -2674,7 +2674,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public virtual Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryResponseUnmarshaller.Instance;
 
@@ -2687,7 +2687,7 @@ namespace Amazon.Proton
 
         internal virtual GetRepositorySyncStatusResponse GetRepositorySyncStatus(GetRepositorySyncStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
 
@@ -2738,7 +2738,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
         public virtual Task<GetRepositorySyncStatusResponse> GetRepositorySyncStatusAsync(GetRepositorySyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
 
@@ -2751,7 +2751,7 @@ namespace Amazon.Proton
 
         internal virtual GetResourcesSummaryResponse GetResourcesSummary(GetResourcesSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesSummaryResponseUnmarshaller.Instance;
 
@@ -2810,7 +2810,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetResourcesSummary">REST API Reference for GetResourcesSummary Operation</seealso>
         public virtual Task<GetResourcesSummaryResponse> GetResourcesSummaryAsync(GetResourcesSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcesSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcesSummaryResponseUnmarshaller.Instance;
 
@@ -2823,7 +2823,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceResponse GetService(GetServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -2859,7 +2859,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">REST API Reference for GetService Operation</seealso>
         public virtual Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -2872,7 +2872,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceInstanceResponse GetServiceInstance(GetServiceInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceInstanceResponseUnmarshaller.Instance;
 
@@ -2909,7 +2909,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">REST API Reference for GetServiceInstance Operation</seealso>
         public virtual Task<GetServiceInstanceResponse> GetServiceInstanceAsync(GetServiceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceInstanceResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
 
@@ -2958,7 +2958,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
         public virtual Task<GetServiceInstanceSyncStatusResponse> GetServiceInstanceSyncStatusAsync(GetServiceInstanceSyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
 
@@ -2971,7 +2971,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
 
@@ -3007,7 +3007,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
         public virtual Task<GetServiceSyncBlockerSummaryResponse> GetServiceSyncBlockerSummaryAsync(GetServiceSyncBlockerSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
 
@@ -3020,7 +3020,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -3056,7 +3056,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
         public virtual Task<GetServiceSyncConfigResponse> GetServiceSyncConfigAsync(GetServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -3069,7 +3069,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceTemplateResponse GetServiceTemplate(GetServiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceTemplateResponseUnmarshaller.Instance;
 
@@ -3105,7 +3105,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">REST API Reference for GetServiceTemplate Operation</seealso>
         public virtual Task<GetServiceTemplateResponse> GetServiceTemplateAsync(GetServiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceTemplateResponseUnmarshaller.Instance;
 
@@ -3118,7 +3118,7 @@ namespace Amazon.Proton
 
         internal virtual GetServiceTemplateVersionResponse GetServiceTemplateVersion(GetServiceTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -3154,7 +3154,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">REST API Reference for GetServiceTemplateVersion Operation</seealso>
         public virtual Task<GetServiceTemplateVersionResponse> GetServiceTemplateVersionAsync(GetServiceTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -3167,7 +3167,7 @@ namespace Amazon.Proton
 
         internal virtual GetTemplateSyncConfigResponse GetTemplateSyncConfig(GetTemplateSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -3203,7 +3203,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncConfig">REST API Reference for GetTemplateSyncConfig Operation</seealso>
         public virtual Task<GetTemplateSyncConfigResponse> GetTemplateSyncConfigAsync(GetTemplateSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -3216,7 +3216,7 @@ namespace Amazon.Proton
 
         internal virtual GetTemplateSyncStatusResponse GetTemplateSyncStatus(GetTemplateSyncStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSyncStatusResponseUnmarshaller.Instance;
 
@@ -3252,7 +3252,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
         public virtual Task<GetTemplateSyncStatusResponse> GetTemplateSyncStatusAsync(GetTemplateSyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateSyncStatusResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.Proton
 
         internal virtual ListComponentOutputsResponse ListComponentOutputs(ListComponentOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentOutputsResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
         public virtual Task<ListComponentOutputsResponse> ListComponentOutputsAsync(ListComponentOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentOutputsResponseUnmarshaller.Instance;
 
@@ -3320,7 +3320,7 @@ namespace Amazon.Proton
 
         internal virtual ListComponentProvisionedResourcesResponse ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3362,7 +3362,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
         public virtual Task<ListComponentProvisionedResourcesResponse> ListComponentProvisionedResourcesAsync(ListComponentProvisionedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3375,7 +3375,7 @@ namespace Amazon.Proton
 
         internal virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -3415,7 +3415,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.Proton
 
         internal virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -3465,7 +3465,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -3478,7 +3478,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentAccountConnectionsResponse ListEnvironmentAccountConnections(ListEnvironmentAccountConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentAccountConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentAccountConnectionsResponseUnmarshaller.Instance;
 
@@ -3517,7 +3517,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">REST API Reference for ListEnvironmentAccountConnections Operation</seealso>
         public virtual Task<ListEnvironmentAccountConnectionsResponse> ListEnvironmentAccountConnectionsAsync(ListEnvironmentAccountConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentAccountConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentAccountConnectionsResponseUnmarshaller.Instance;
 
@@ -3530,7 +3530,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentOutputsResponse ListEnvironmentOutputs(ListEnvironmentOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentOutputsResponseUnmarshaller.Instance;
 
@@ -3566,7 +3566,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentOutputs">REST API Reference for ListEnvironmentOutputs Operation</seealso>
         public virtual Task<ListEnvironmentOutputsResponse> ListEnvironmentOutputsAsync(ListEnvironmentOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentOutputsResponseUnmarshaller.Instance;
 
@@ -3579,7 +3579,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentProvisionedResourcesResponse ListEnvironmentProvisionedResources(ListEnvironmentProvisionedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3615,7 +3615,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentProvisionedResources">REST API Reference for ListEnvironmentProvisionedResources Operation</seealso>
         public virtual Task<ListEnvironmentProvisionedResourcesResponse> ListEnvironmentProvisionedResourcesAsync(ListEnvironmentProvisionedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3628,7 +3628,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -3664,7 +3664,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -3677,7 +3677,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentTemplatesResponse ListEnvironmentTemplates(ListEnvironmentTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentTemplatesResponseUnmarshaller.Instance;
 
@@ -3710,7 +3710,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplates">REST API Reference for ListEnvironmentTemplates Operation</seealso>
         public virtual Task<ListEnvironmentTemplatesResponse> ListEnvironmentTemplatesAsync(ListEnvironmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentTemplatesResponseUnmarshaller.Instance;
 
@@ -3723,7 +3723,7 @@ namespace Amazon.Proton
 
         internal virtual ListEnvironmentTemplateVersionsResponse ListEnvironmentTemplateVersions(ListEnvironmentTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentTemplateVersions">REST API Reference for ListEnvironmentTemplateVersions Operation</seealso>
         public virtual Task<ListEnvironmentTemplateVersionsResponse> ListEnvironmentTemplateVersionsAsync(ListEnvironmentTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -3772,7 +3772,7 @@ namespace Amazon.Proton
 
         internal virtual ListRepositoriesResponse ListRepositories(ListRepositoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
@@ -3808,7 +3808,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public virtual Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoriesResponseUnmarshaller.Instance;
 
@@ -3821,7 +3821,7 @@ namespace Amazon.Proton
 
         internal virtual ListRepositorySyncDefinitionsResponse ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
 
@@ -3854,7 +3854,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
         public virtual Task<ListRepositorySyncDefinitionsResponse> ListRepositorySyncDefinitionsAsync(ListRepositorySyncDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
 
@@ -3867,7 +3867,7 @@ namespace Amazon.Proton
 
         internal virtual ListServiceInstanceOutputsResponse ListServiceInstanceOutputs(ListServiceInstanceOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstanceOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstanceOutputsResponseUnmarshaller.Instance;
 
@@ -3903,7 +3903,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">REST API Reference for ListServiceInstanceOutputs Operation</seealso>
         public virtual Task<ListServiceInstanceOutputsResponse> ListServiceInstanceOutputsAsync(ListServiceInstanceOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstanceOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstanceOutputsResponseUnmarshaller.Instance;
 
@@ -3916,7 +3916,7 @@ namespace Amazon.Proton
 
         internal virtual ListServiceInstanceProvisionedResourcesResponse ListServiceInstanceProvisionedResources(ListServiceInstanceProvisionedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstanceProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstanceProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3952,7 +3952,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceProvisionedResources">REST API Reference for ListServiceInstanceProvisionedResources Operation</seealso>
         public virtual Task<ListServiceInstanceProvisionedResourcesResponse> ListServiceInstanceProvisionedResourcesAsync(ListServiceInstanceProvisionedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstanceProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstanceProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -3965,7 +3965,7 @@ namespace Amazon.Proton
 
         internal virtual ListServiceInstancesResponse ListServiceInstances(ListServiceInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstancesResponseUnmarshaller.Instance;
 
@@ -4002,7 +4002,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">REST API Reference for ListServiceInstances Operation</seealso>
         public virtual Task<ListServiceInstancesResponse> ListServiceInstancesAsync(ListServiceInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceInstancesResponseUnmarshaller.Instance;
 
@@ -4015,7 +4015,7 @@ namespace Amazon.Proton
 
         internal virtual ListServicePipelineOutputsResponse ListServicePipelineOutputs(ListServicePipelineOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePipelineOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePipelineOutputsResponseUnmarshaller.Instance;
 
@@ -4051,7 +4051,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">REST API Reference for ListServicePipelineOutputs Operation</seealso>
         public virtual Task<ListServicePipelineOutputsResponse> ListServicePipelineOutputsAsync(ListServicePipelineOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePipelineOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePipelineOutputsResponseUnmarshaller.Instance;
 
@@ -4064,7 +4064,7 @@ namespace Amazon.Proton
 
         internal virtual ListServicePipelineProvisionedResourcesResponse ListServicePipelineProvisionedResources(ListServicePipelineProvisionedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePipelineProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePipelineProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -4100,7 +4100,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineProvisionedResources">REST API Reference for ListServicePipelineProvisionedResources Operation</seealso>
         public virtual Task<ListServicePipelineProvisionedResourcesResponse> ListServicePipelineProvisionedResourcesAsync(ListServicePipelineProvisionedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePipelineProvisionedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePipelineProvisionedResourcesResponseUnmarshaller.Instance;
 
@@ -4113,7 +4113,7 @@ namespace Amazon.Proton
 
         internal virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -4146,7 +4146,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -4159,7 +4159,7 @@ namespace Amazon.Proton
 
         internal virtual ListServiceTemplatesResponse ListServiceTemplates(ListServiceTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceTemplatesResponseUnmarshaller.Instance;
 
@@ -4192,7 +4192,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplates">REST API Reference for ListServiceTemplates Operation</seealso>
         public virtual Task<ListServiceTemplatesResponse> ListServiceTemplatesAsync(ListServiceTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceTemplatesResponseUnmarshaller.Instance;
 
@@ -4205,7 +4205,7 @@ namespace Amazon.Proton
 
         internal virtual ListServiceTemplateVersionsResponse ListServiceTemplateVersions(ListServiceTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -4241,7 +4241,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceTemplateVersions">REST API Reference for ListServiceTemplateVersions Operation</seealso>
         public virtual Task<ListServiceTemplateVersionsResponse> ListServiceTemplateVersionsAsync(ListServiceTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -4254,7 +4254,7 @@ namespace Amazon.Proton
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4291,7 +4291,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4304,7 +4304,7 @@ namespace Amazon.Proton
 
         internal virtual NotifyResourceDeploymentStatusChangeResponse NotifyResourceDeploymentStatusChange(NotifyResourceDeploymentStatusChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyResourceDeploymentStatusChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyResourceDeploymentStatusChangeResponseUnmarshaller.Instance;
 
@@ -4354,7 +4354,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">REST API Reference for NotifyResourceDeploymentStatusChange Operation</seealso>
         public virtual Task<NotifyResourceDeploymentStatusChangeResponse> NotifyResourceDeploymentStatusChangeAsync(NotifyResourceDeploymentStatusChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NotifyResourceDeploymentStatusChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NotifyResourceDeploymentStatusChangeResponseUnmarshaller.Instance;
 
@@ -4367,7 +4367,7 @@ namespace Amazon.Proton
 
         internal virtual RejectEnvironmentAccountConnectionResponse RejectEnvironmentAccountConnection(RejectEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -4422,7 +4422,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">REST API Reference for RejectEnvironmentAccountConnection Operation</seealso>
         public virtual Task<RejectEnvironmentAccountConnectionResponse> RejectEnvironmentAccountConnectionAsync(RejectEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -4435,7 +4435,7 @@ namespace Amazon.Proton
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4481,7 +4481,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4494,7 +4494,7 @@ namespace Amazon.Proton
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4540,7 +4540,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4553,7 +4553,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -4590,7 +4590,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -4603,7 +4603,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateComponentResponse UpdateComponent(UpdateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
 
@@ -4662,7 +4662,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         public virtual Task<UpdateComponentResponse> UpdateComponentAsync(UpdateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
 
@@ -4675,7 +4675,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -4802,7 +4802,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -4815,7 +4815,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateEnvironmentAccountConnectionResponse UpdateEnvironmentAccountConnection(UpdateEnvironmentAccountConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -4861,7 +4861,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">REST API Reference for UpdateEnvironmentAccountConnection Operation</seealso>
         public virtual Task<UpdateEnvironmentAccountConnectionResponse> UpdateEnvironmentAccountConnectionAsync(UpdateEnvironmentAccountConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentAccountConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentAccountConnectionResponseUnmarshaller.Instance;
 
@@ -4874,7 +4874,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateEnvironmentTemplateResponse UpdateEnvironmentTemplate(UpdateEnvironmentTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -4913,7 +4913,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplate">REST API Reference for UpdateEnvironmentTemplate Operation</seealso>
         public virtual Task<UpdateEnvironmentTemplateResponse> UpdateEnvironmentTemplateAsync(UpdateEnvironmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentTemplateResponseUnmarshaller.Instance;
 
@@ -4926,7 +4926,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateEnvironmentTemplateVersionResponse UpdateEnvironmentTemplateVersion(UpdateEnvironmentTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -4965,7 +4965,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentTemplateVersion">REST API Reference for UpdateEnvironmentTemplateVersion Operation</seealso>
         public virtual Task<UpdateEnvironmentTemplateVersionResponse> UpdateEnvironmentTemplateVersionAsync(UpdateEnvironmentTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentTemplateVersionResponseUnmarshaller.Instance;
 
@@ -4978,7 +4978,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -5046,7 +5046,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -5059,7 +5059,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceInstanceResponse UpdateServiceInstance(UpdateServiceInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceInstanceResponseUnmarshaller.Instance;
 
@@ -5115,7 +5115,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">REST API Reference for UpdateServiceInstance Operation</seealso>
         public virtual Task<UpdateServiceInstanceResponse> UpdateServiceInstanceAsync(UpdateServiceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceInstanceResponseUnmarshaller.Instance;
 
@@ -5128,7 +5128,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServicePipelineResponse UpdateServicePipeline(UpdateServicePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePipelineResponseUnmarshaller.Instance;
 
@@ -5214,7 +5214,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServicePipeline">REST API Reference for UpdateServicePipeline Operation</seealso>
         public virtual Task<UpdateServicePipelineResponse> UpdateServicePipelineAsync(UpdateServicePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePipelineResponseUnmarshaller.Instance;
 
@@ -5227,7 +5227,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
 
@@ -5266,7 +5266,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
         public virtual Task<UpdateServiceSyncBlockerResponse> UpdateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
 
@@ -5279,7 +5279,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -5318,7 +5318,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
         public virtual Task<UpdateServiceSyncConfigResponse> UpdateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
 
@@ -5331,7 +5331,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceTemplateResponse UpdateServiceTemplate(UpdateServiceTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceTemplateResponseUnmarshaller.Instance;
 
@@ -5370,7 +5370,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplate">REST API Reference for UpdateServiceTemplate Operation</seealso>
         public virtual Task<UpdateServiceTemplateResponse> UpdateServiceTemplateAsync(UpdateServiceTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceTemplateResponseUnmarshaller.Instance;
 
@@ -5383,7 +5383,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateServiceTemplateVersionResponse UpdateServiceTemplateVersion(UpdateServiceTemplateVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -5422,7 +5422,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceTemplateVersion">REST API Reference for UpdateServiceTemplateVersion Operation</seealso>
         public virtual Task<UpdateServiceTemplateVersionResponse> UpdateServiceTemplateVersionAsync(UpdateServiceTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceTemplateVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceTemplateVersionResponseUnmarshaller.Instance;
 
@@ -5435,7 +5435,7 @@ namespace Amazon.Proton
 
         internal virtual UpdateTemplateSyncConfigResponse UpdateTemplateSyncConfig(UpdateTemplateSyncConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateSyncConfigResponseUnmarshaller.Instance;
 
@@ -5477,7 +5477,7 @@ namespace Amazon.Proton
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">REST API Reference for UpdateTemplateSyncConfig Operation</seealso>
         public virtual Task<UpdateTemplateSyncConfigResponse> UpdateTemplateSyncConfigAsync(UpdateTemplateSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateSyncConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateSyncConfigResponseUnmarshaller.Instance;
 

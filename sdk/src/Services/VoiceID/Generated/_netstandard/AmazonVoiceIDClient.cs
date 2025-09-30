@@ -273,7 +273,7 @@ namespace Amazon.VoiceID
 
         internal virtual AssociateFraudsterResponse AssociateFraudster(AssociateFraudsterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFraudsterResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">REST API Reference for AssociateFraudster Operation</seealso>
         public virtual Task<AssociateFraudsterResponse> AssociateFraudsterAsync(AssociateFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFraudsterResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.VoiceID
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.VoiceID
 
         internal virtual CreateWatchlistResponse CreateWatchlist(CreateWatchlistRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWatchlistResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">REST API Reference for CreateWatchlist Operation</seealso>
         public virtual Task<CreateWatchlistResponse> CreateWatchlistAsync(CreateWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWatchlistResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.VoiceID
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -502,7 +502,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -515,7 +515,7 @@ namespace Amazon.VoiceID
 
         internal virtual DeleteFraudsterResponse DeleteFraudster(DeleteFraudsterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFraudsterResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteFraudster">REST API Reference for DeleteFraudster Operation</seealso>
         public virtual Task<DeleteFraudsterResponse> DeleteFraudsterAsync(DeleteFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFraudsterResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.VoiceID
 
         internal virtual DeleteSpeakerResponse DeleteSpeaker(DeleteSpeakerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpeakerResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteSpeaker">REST API Reference for DeleteSpeaker Operation</seealso>
         public virtual Task<DeleteSpeakerResponse> DeleteSpeakerAsync(DeleteSpeakerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSpeakerResponseUnmarshaller.Instance;
 
@@ -630,7 +630,7 @@ namespace Amazon.VoiceID
 
         internal virtual DeleteWatchlistResponse DeleteWatchlist(DeleteWatchlistRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWatchlistResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">REST API Reference for DeleteWatchlist Operation</seealso>
         public virtual Task<DeleteWatchlistResponse> DeleteWatchlistAsync(DeleteWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWatchlistResponseUnmarshaller.Instance;
 
@@ -690,7 +690,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeFraudsterResponse DescribeFraudster(DescribeFraudsterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFraudsterResponseUnmarshaller.Instance;
 
@@ -783,7 +783,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeFraudster">REST API Reference for DescribeFraudster Operation</seealso>
         public virtual Task<DescribeFraudsterResponse> DescribeFraudsterAsync(DescribeFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFraudsterResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeFraudsterRegistrationJobResponse DescribeFraudsterRegistrationJob(DescribeFraudsterRegistrationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFraudsterRegistrationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFraudsterRegistrationJobResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeFraudsterRegistrationJob">REST API Reference for DescribeFraudsterRegistrationJob Operation</seealso>
         public virtual Task<DescribeFraudsterRegistrationJobResponse> DescribeFraudsterRegistrationJobAsync(DescribeFraudsterRegistrationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFraudsterRegistrationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFraudsterRegistrationJobResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeSpeakerResponse DescribeSpeaker(DescribeSpeakerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpeakerResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeSpeaker">REST API Reference for DescribeSpeaker Operation</seealso>
         public virtual Task<DescribeSpeakerResponse> DescribeSpeakerAsync(DescribeSpeakerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpeakerResponseUnmarshaller.Instance;
 
@@ -902,7 +902,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeSpeakerEnrollmentJobResponse DescribeSpeakerEnrollmentJob(DescribeSpeakerEnrollmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpeakerEnrollmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpeakerEnrollmentJobResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeSpeakerEnrollmentJob">REST API Reference for DescribeSpeakerEnrollmentJob Operation</seealso>
         public virtual Task<DescribeSpeakerEnrollmentJobResponse> DescribeSpeakerEnrollmentJobAsync(DescribeSpeakerEnrollmentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSpeakerEnrollmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSpeakerEnrollmentJobResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.VoiceID
 
         internal virtual DescribeWatchlistResponse DescribeWatchlist(DescribeWatchlistRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWatchlistResponseUnmarshaller.Instance;
 
@@ -995,7 +995,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">REST API Reference for DescribeWatchlist Operation</seealso>
         public virtual Task<DescribeWatchlistResponse> DescribeWatchlistAsync(DescribeWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWatchlistResponseUnmarshaller.Instance;
 
@@ -1008,7 +1008,7 @@ namespace Amazon.VoiceID
 
         internal virtual DisassociateFraudsterResponse DisassociateFraudster(DisassociateFraudsterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFraudsterResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">REST API Reference for DisassociateFraudster Operation</seealso>
         public virtual Task<DisassociateFraudsterResponse> DisassociateFraudsterAsync(DisassociateFraudsterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFraudsterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFraudsterResponseUnmarshaller.Instance;
 
@@ -1067,7 +1067,7 @@ namespace Amazon.VoiceID
 
         internal virtual EvaluateSessionResponse EvaluateSession(EvaluateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateSessionResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EvaluateSession">REST API Reference for EvaluateSession Operation</seealso>
         public virtual Task<EvaluateSessionResponse> EvaluateSessionAsync(EvaluateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EvaluateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EvaluateSessionResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListFraudsterRegistrationJobsResponse ListFraudsterRegistrationJobs(ListFraudsterRegistrationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFraudsterRegistrationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFraudsterRegistrationJobsResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsterRegistrationJobs">REST API Reference for ListFraudsterRegistrationJobs Operation</seealso>
         public virtual Task<ListFraudsterRegistrationJobsResponse> ListFraudsterRegistrationJobsAsync(ListFraudsterRegistrationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFraudsterRegistrationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFraudsterRegistrationJobsResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListFraudstersResponse ListFraudsters(ListFraudstersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFraudstersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFraudstersResponseUnmarshaller.Instance;
 
@@ -1269,7 +1269,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">REST API Reference for ListFraudsters Operation</seealso>
         public virtual Task<ListFraudstersResponse> ListFraudstersAsync(ListFraudstersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFraudstersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFraudstersResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListSpeakerEnrollmentJobsResponse ListSpeakerEnrollmentJobs(ListSpeakerEnrollmentJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeakerEnrollmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeakerEnrollmentJobsResponseUnmarshaller.Instance;
 
@@ -1324,7 +1324,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListSpeakerEnrollmentJobs">REST API Reference for ListSpeakerEnrollmentJobs Operation</seealso>
         public virtual Task<ListSpeakerEnrollmentJobsResponse> ListSpeakerEnrollmentJobsAsync(ListSpeakerEnrollmentJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeakerEnrollmentJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeakerEnrollmentJobsResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListSpeakersResponse ListSpeakers(ListSpeakersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeakersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeakersResponseUnmarshaller.Instance;
 
@@ -1377,7 +1377,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListSpeakers">REST API Reference for ListSpeakers Operation</seealso>
         public virtual Task<ListSpeakersResponse> ListSpeakersAsync(ListSpeakersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSpeakersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSpeakersResponseUnmarshaller.Instance;
 
@@ -1390,7 +1390,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.VoiceID
 
         internal virtual ListWatchlistsResponse ListWatchlists(ListWatchlistsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWatchlistsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWatchlistsResponseUnmarshaller.Instance;
 
@@ -1483,7 +1483,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">REST API Reference for ListWatchlists Operation</seealso>
         public virtual Task<ListWatchlistsResponse> ListWatchlistsAsync(ListWatchlistsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWatchlistsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWatchlistsResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.VoiceID
 
         internal virtual OptOutSpeakerResponse OptOutSpeaker(OptOutSpeakerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptOutSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptOutSpeakerResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/OptOutSpeaker">REST API Reference for OptOutSpeaker Operation</seealso>
         public virtual Task<OptOutSpeakerResponse> OptOutSpeakerAsync(OptOutSpeakerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OptOutSpeakerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OptOutSpeakerResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.VoiceID
 
         internal virtual StartFraudsterRegistrationJobResponse StartFraudsterRegistrationJob(StartFraudsterRegistrationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFraudsterRegistrationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFraudsterRegistrationJobResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/StartFraudsterRegistrationJob">REST API Reference for StartFraudsterRegistrationJob Operation</seealso>
         public virtual Task<StartFraudsterRegistrationJobResponse> StartFraudsterRegistrationJobAsync(StartFraudsterRegistrationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFraudsterRegistrationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFraudsterRegistrationJobResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.VoiceID
 
         internal virtual StartSpeakerEnrollmentJobResponse StartSpeakerEnrollmentJob(StartSpeakerEnrollmentJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerEnrollmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerEnrollmentJobResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/StartSpeakerEnrollmentJob">REST API Reference for StartSpeakerEnrollmentJob Operation</seealso>
         public virtual Task<StartSpeakerEnrollmentJobResponse> StartSpeakerEnrollmentJobAsync(StartSpeakerEnrollmentJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerEnrollmentJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerEnrollmentJobResponseUnmarshaller.Instance;
 
@@ -1684,7 +1684,7 @@ namespace Amazon.VoiceID
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1728,7 +1728,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1741,7 +1741,7 @@ namespace Amazon.VoiceID
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1785,7 +1785,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1798,7 +1798,7 @@ namespace Amazon.VoiceID
 
         internal virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateDomain">REST API Reference for UpdateDomain Operation</seealso>
         public virtual Task<UpdateDomainResponse> UpdateDomainAsync(UpdateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.VoiceID
 
         internal virtual UpdateWatchlistResponse UpdateWatchlist(UpdateWatchlistRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWatchlistResponseUnmarshaller.Instance;
 
@@ -1902,7 +1902,7 @@ namespace Amazon.VoiceID
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">REST API Reference for UpdateWatchlist Operation</seealso>
         public virtual Task<UpdateWatchlistResponse> UpdateWatchlistAsync(UpdateWatchlistRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWatchlistRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWatchlistResponseUnmarshaller.Instance;
 

@@ -292,7 +292,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual CreateApiResponse CreateApi(CreateApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApi">REST API Reference for CreateApi Operation</seealso>
         public virtual Task<CreateApiResponse> CreateApiAsync(CreateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiResponseUnmarshaller.Instance;
             
@@ -365,7 +365,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual CreateApiMappingResponse CreateApiMapping(CreateApiMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMapping">REST API Reference for CreateApiMapping Operation</seealso>
         public virtual Task<CreateApiMappingResponse> CreateApiMappingAsync(CreateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApiMappingResponseUnmarshaller.Instance;
             
@@ -438,7 +438,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual CreateAuthorizerResponse CreateAuthorizer(CreateAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
 
@@ -474,7 +474,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateAuthorizer">REST API Reference for CreateAuthorizer Operation</seealso>
         public virtual Task<CreateAuthorizerResponse> CreateAuthorizerAsync(CreateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAuthorizerResponseUnmarshaller.Instance;
             
@@ -511,7 +511,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
@@ -547,7 +547,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public virtual Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
             
@@ -587,7 +587,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateDomainName">REST API Reference for CreateDomainName Operation</seealso>
         public virtual Task<CreateDomainNameResponse> CreateDomainNameAsync(CreateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainNameResponseUnmarshaller.Instance;
             
@@ -663,7 +663,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
@@ -699,7 +699,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
             
@@ -736,7 +736,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual CreateIntegrationResponseResponse CreateIntegrationResponse(CreateIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateIntegrationResponse">REST API Reference for CreateIntegrationResponse Operation</seealso>
         public virtual Task<CreateIntegrationResponseResponse> CreateIntegrationResponseAsync(CreateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseResponseUnmarshaller.Instance;
             
@@ -809,7 +809,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -845,7 +845,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual Task<CreateModelResponse> CreateModelAsync(CreateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
             
@@ -882,7 +882,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -918,7 +918,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
             
@@ -955,7 +955,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual CreateRouteResponseResponse CreateRouteResponse(CreateRouteResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
 
@@ -991,7 +991,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteResponse">REST API Reference for CreateRouteResponse Operation</seealso>
         public virtual Task<CreateRouteResponseResponse> CreateRouteResponseAsync(CreateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseResponseUnmarshaller.Instance;
             
@@ -1028,7 +1028,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
         public virtual CreateRoutingRuleResponse CreateRoutingRule(CreateRoutingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRoutingRule">REST API Reference for CreateRoutingRule Operation</seealso>
         public virtual Task<CreateRoutingRuleResponse> CreateRoutingRuleAsync(CreateRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoutingRuleResponseUnmarshaller.Instance;
             
@@ -1101,7 +1101,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual CreateStageResponse CreateStage(CreateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStage">REST API Reference for CreateStage Operation</seealso>
         public virtual Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStageResponseUnmarshaller.Instance;
             
@@ -1165,7 +1165,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual CreateVpcLinkResponse CreateVpcLink(CreateVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateVpcLink">REST API Reference for CreateVpcLink Operation</seealso>
         public virtual Task<CreateVpcLinkResponse> CreateVpcLinkAsync(CreateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcLinkResponseUnmarshaller.Instance;
             
@@ -1221,7 +1221,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual DeleteAccessLogSettingsResponse DeleteAccessLogSettings(DeleteAccessLogSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAccessLogSettings">REST API Reference for DeleteAccessLogSettings Operation</seealso>
         public virtual Task<DeleteAccessLogSettingsResponse> DeleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessLogSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessLogSettingsResponseUnmarshaller.Instance;
             
@@ -1277,7 +1277,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual DeleteApiResponse DeleteApi(DeleteApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApi">REST API Reference for DeleteApi Operation</seealso>
         public virtual Task<DeleteApiResponse> DeleteApiAsync(DeleteApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiResponseUnmarshaller.Instance;
             
@@ -1336,7 +1336,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual DeleteApiMappingResponse DeleteApiMapping(DeleteApiMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
 
@@ -1367,7 +1367,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteApiMapping">REST API Reference for DeleteApiMapping Operation</seealso>
         public virtual Task<DeleteApiMappingResponse> DeleteApiMappingAsync(DeleteApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApiMappingResponseUnmarshaller.Instance;
             
@@ -1395,7 +1395,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual DeleteAuthorizerResponse DeleteAuthorizer(DeleteAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
 
@@ -1422,7 +1422,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteAuthorizer">REST API Reference for DeleteAuthorizer Operation</seealso>
         public virtual Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(DeleteAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAuthorizerResponseUnmarshaller.Instance;
             
@@ -1450,7 +1450,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual DeleteCorsConfigurationResponse DeleteCorsConfiguration(DeleteCorsConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCorsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCorsConfigurationResponseUnmarshaller.Instance;
 
@@ -1477,7 +1477,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteCorsConfiguration">REST API Reference for DeleteCorsConfiguration Operation</seealso>
         public virtual Task<DeleteCorsConfigurationResponse> DeleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCorsConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCorsConfigurationResponseUnmarshaller.Instance;
             
@@ -1505,7 +1505,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual DeleteDeploymentResponse DeleteDeployment(DeleteDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDeployment">REST API Reference for DeleteDeployment Operation</seealso>
         public virtual Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
             
@@ -1560,7 +1560,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual DeleteDomainNameResponse DeleteDomainName(DeleteDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
 
@@ -1587,7 +1587,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteDomainName">REST API Reference for DeleteDomainName Operation</seealso>
         public virtual Task<DeleteDomainNameResponse> DeleteDomainNameAsync(DeleteDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainNameResponseUnmarshaller.Instance;
             
@@ -1615,7 +1615,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -1642,7 +1642,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
             
@@ -1670,7 +1670,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual DeleteIntegrationResponseResponse DeleteIntegrationResponse(DeleteIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -1697,7 +1697,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteIntegrationResponse">REST API Reference for DeleteIntegrationResponse Operation</seealso>
         public virtual Task<DeleteIntegrationResponseResponse> DeleteIntegrationResponseAsync(DeleteIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseResponseUnmarshaller.Instance;
             
@@ -1725,7 +1725,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
             
@@ -1780,7 +1780,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -1807,7 +1807,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
             
@@ -1835,7 +1835,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual DeleteRouteRequestParameterResponse DeleteRouteRequestParameter(DeleteRouteRequestParameterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
 
@@ -1862,7 +1862,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">REST API Reference for DeleteRouteRequestParameter Operation</seealso>
         public virtual Task<DeleteRouteRequestParameterResponse> DeleteRouteRequestParameterAsync(DeleteRouteRequestParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestParameterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteRequestParameterResponseUnmarshaller.Instance;
             
@@ -1890,7 +1890,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual DeleteRouteResponseResponse DeleteRouteResponse(DeleteRouteResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
 
@@ -1917,7 +1917,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteResponse">REST API Reference for DeleteRouteResponse Operation</seealso>
         public virtual Task<DeleteRouteResponseResponse> DeleteRouteResponseAsync(DeleteRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseResponseUnmarshaller.Instance;
             
@@ -1945,7 +1945,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual DeleteRouteSettingsResponse DeleteRouteSettings(DeleteRouteSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteSettingsResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteSettings">REST API Reference for DeleteRouteSettings Operation</seealso>
         public virtual Task<DeleteRouteSettingsResponse> DeleteRouteSettingsAsync(DeleteRouteSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteSettingsResponseUnmarshaller.Instance;
             
@@ -2004,7 +2004,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
         public virtual DeleteRoutingRuleResponse DeleteRoutingRule(DeleteRoutingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRoutingRule">REST API Reference for DeleteRoutingRule Operation</seealso>
         public virtual Task<DeleteRoutingRuleResponse> DeleteRoutingRuleAsync(DeleteRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoutingRuleResponseUnmarshaller.Instance;
             
@@ -2063,7 +2063,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual DeleteStageResponse DeleteStage(DeleteStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
@@ -2090,7 +2090,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         public virtual Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStageResponseUnmarshaller.Instance;
             
@@ -2118,7 +2118,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual DeleteVpcLinkResponse DeleteVpcLink(DeleteVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteVpcLink">REST API Reference for DeleteVpcLink Operation</seealso>
         public virtual Task<DeleteVpcLinkResponse> DeleteVpcLinkAsync(DeleteVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
             
@@ -2177,7 +2177,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual ExportApiResponse ExportApi(ExportApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportApiResponseUnmarshaller.Instance;
 
@@ -2208,7 +2208,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ExportApi">REST API Reference for ExportApi Operation</seealso>
         public virtual Task<ExportApiResponse> ExportApiAsync(ExportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportApiResponseUnmarshaller.Instance;
             
@@ -2236,7 +2236,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual GetApiResponse GetApi(GetApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApi">REST API Reference for GetApi Operation</seealso>
         public virtual Task<GetApiResponse> GetApiAsync(GetApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiResponseUnmarshaller.Instance;
             
@@ -2295,7 +2295,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual GetApiMappingResponse GetApiMapping(GetApiMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiMappingResponseUnmarshaller.Instance;
 
@@ -2326,7 +2326,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMapping">REST API Reference for GetApiMapping Operation</seealso>
         public virtual Task<GetApiMappingResponse> GetApiMappingAsync(GetApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiMappingResponseUnmarshaller.Instance;
             
@@ -2358,7 +2358,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual GetApiMappingsResponse GetApiMappings(GetApiMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
 
@@ -2389,7 +2389,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApiMappings">REST API Reference for GetApiMappings Operation</seealso>
         public virtual Task<GetApiMappingsResponse> GetApiMappingsAsync(GetApiMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApiMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApiMappingsResponseUnmarshaller.Instance;
             
@@ -2421,7 +2421,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual GetApisResponse GetApis(GetApisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApisResponseUnmarshaller.Instance;
 
@@ -2452,7 +2452,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetApis">REST API Reference for GetApis Operation</seealso>
         public virtual Task<GetApisResponse> GetApisAsync(GetApisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApisResponseUnmarshaller.Instance;
             
@@ -2480,7 +2480,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual GetAuthorizerResponse GetAuthorizer(GetAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
 
@@ -2507,7 +2507,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizer">REST API Reference for GetAuthorizer Operation</seealso>
         public virtual Task<GetAuthorizerResponse> GetAuthorizerAsync(GetAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizerResponseUnmarshaller.Instance;
             
@@ -2539,7 +2539,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual GetAuthorizersResponse GetAuthorizers(GetAuthorizersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
 
@@ -2570,7 +2570,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetAuthorizers">REST API Reference for GetAuthorizers Operation</seealso>
         public virtual Task<GetAuthorizersResponse> GetAuthorizersAsync(GetAuthorizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAuthorizersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAuthorizersResponseUnmarshaller.Instance;
             
@@ -2598,7 +2598,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -2625,7 +2625,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
             
@@ -2657,7 +2657,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
@@ -2688,7 +2688,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
             
@@ -2716,7 +2716,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
 
@@ -2743,7 +2743,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainName">REST API Reference for GetDomainName Operation</seealso>
         public virtual Task<GetDomainNameResponse> GetDomainNameAsync(GetDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNameResponseUnmarshaller.Instance;
             
@@ -2775,7 +2775,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual GetDomainNamesResponse GetDomainNames(GetDomainNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
 
@@ -2806,7 +2806,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetDomainNames">REST API Reference for GetDomainNames Operation</seealso>
         public virtual Task<GetDomainNamesResponse> GetDomainNamesAsync(GetDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainNamesResponseUnmarshaller.Instance;
             
@@ -2834,7 +2834,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
 
@@ -2861,7 +2861,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
             
@@ -2889,7 +2889,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual GetIntegrationResponseResponse GetIntegrationResponse(GetIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -2916,7 +2916,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponse">REST API Reference for GetIntegrationResponse Operation</seealso>
         public virtual Task<GetIntegrationResponseResponse> GetIntegrationResponseAsync(GetIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponseResponseUnmarshaller.Instance;
             
@@ -2948,7 +2948,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual GetIntegrationResponsesResponse GetIntegrationResponses(GetIntegrationResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
 
@@ -2979,7 +2979,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrationResponses">REST API Reference for GetIntegrationResponses Operation</seealso>
         public virtual Task<GetIntegrationResponsesResponse> GetIntegrationResponsesAsync(GetIntegrationResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResponsesResponseUnmarshaller.Instance;
             
@@ -3011,7 +3011,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual GetIntegrationsResponse GetIntegrations(GetIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
 
@@ -3042,7 +3042,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetIntegrations">REST API Reference for GetIntegrations Operation</seealso>
         public virtual Task<GetIntegrationsResponse> GetIntegrationsAsync(GetIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationsResponseUnmarshaller.Instance;
             
@@ -3070,7 +3070,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual GetModelResponse GetModel(GetModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
 
@@ -3097,7 +3097,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModel">REST API Reference for GetModel Operation</seealso>
         public virtual Task<GetModelResponse> GetModelAsync(GetModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelResponseUnmarshaller.Instance;
             
@@ -3129,7 +3129,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual GetModelsResponse GetModels(GetModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
 
@@ -3160,7 +3160,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModels">REST API Reference for GetModels Operation</seealso>
         public virtual Task<GetModelsResponse> GetModelsAsync(GetModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelsResponseUnmarshaller.Instance;
             
@@ -3188,7 +3188,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual GetModelTemplateResponse GetModelTemplate(GetModelTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
@@ -3215,7 +3215,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetModelTemplate">REST API Reference for GetModelTemplate Operation</seealso>
         public virtual Task<GetModelTemplateResponse> GetModelTemplateAsync(GetModelTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
             
@@ -3243,7 +3243,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual GetRouteResponse GetRoute(GetRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
 
@@ -3270,7 +3270,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual Task<GetRouteResponse> GetRouteAsync(GetRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
             
@@ -3298,7 +3298,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual GetRouteResponseResponse GetRouteResponse(GetRouteResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
 
@@ -3325,7 +3325,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponse">REST API Reference for GetRouteResponse Operation</seealso>
         public virtual Task<GetRouteResponseResponse> GetRouteResponseAsync(GetRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseResponseUnmarshaller.Instance;
             
@@ -3357,7 +3357,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual GetRouteResponsesResponse GetRouteResponses(GetRouteResponsesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
 
@@ -3388,7 +3388,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRouteResponses">REST API Reference for GetRouteResponses Operation</seealso>
         public virtual Task<GetRouteResponsesResponse> GetRouteResponsesAsync(GetRouteResponsesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteResponsesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponsesResponseUnmarshaller.Instance;
             
@@ -3420,7 +3420,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual GetRoutesResponse GetRoutes(GetRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoutesResponseUnmarshaller.Instance;
 
@@ -3451,7 +3451,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutes">REST API Reference for GetRoutes Operation</seealso>
         public virtual Task<GetRoutesResponse> GetRoutesAsync(GetRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoutesResponseUnmarshaller.Instance;
             
@@ -3483,7 +3483,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
         public virtual GetRoutingRuleResponse GetRoutingRule(GetRoutingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
 
@@ -3514,7 +3514,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetRoutingRule">REST API Reference for GetRoutingRule Operation</seealso>
         public virtual Task<GetRoutingRuleResponse> GetRoutingRuleAsync(GetRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRoutingRuleResponseUnmarshaller.Instance;
             
@@ -3542,7 +3542,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual GetStageResponse GetStage(GetStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
@@ -3569,7 +3569,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStage">REST API Reference for GetStage Operation</seealso>
         public virtual Task<GetStageResponse> GetStageAsync(GetStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
             
@@ -3601,7 +3601,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual GetStagesResponse GetStages(GetStagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
 
@@ -3632,7 +3632,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetStages">REST API Reference for GetStages Operation</seealso>
         public virtual Task<GetStagesResponse> GetStagesAsync(GetStagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStagesResponseUnmarshaller.Instance;
             
@@ -3669,7 +3669,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -3705,7 +3705,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
             
@@ -3733,7 +3733,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual GetVpcLinkResponse GetVpcLink(GetVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
 
@@ -3760,7 +3760,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLink">REST API Reference for GetVpcLink Operation</seealso>
         public virtual Task<GetVpcLinkResponse> GetVpcLinkAsync(GetVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinkResponseUnmarshaller.Instance;
             
@@ -3788,7 +3788,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual GetVpcLinksResponse GetVpcLinks(GetVpcLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
 
@@ -3815,7 +3815,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetVpcLinks">REST API Reference for GetVpcLinks Operation</seealso>
         public virtual Task<GetVpcLinksResponse> GetVpcLinksAsync(GetVpcLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVpcLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVpcLinksResponseUnmarshaller.Instance;
             
@@ -3852,7 +3852,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual ImportApiResponse ImportApi(ImportApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApiResponseUnmarshaller.Instance;
 
@@ -3888,7 +3888,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ImportApi">REST API Reference for ImportApi Operation</seealso>
         public virtual Task<ImportApiResponse> ImportApiAsync(ImportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportApiResponseUnmarshaller.Instance;
             
@@ -3920,7 +3920,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
         public virtual ListRoutingRulesResponse ListRoutingRules(ListRoutingRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
 
@@ -3951,7 +3951,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListRoutingRules">REST API Reference for ListRoutingRules Operation</seealso>
         public virtual Task<ListRoutingRulesResponse> ListRoutingRulesAsync(ListRoutingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutingRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
             
@@ -3988,7 +3988,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
         public virtual PutRoutingRuleResponse PutRoutingRule(PutRoutingRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
 
@@ -4024,7 +4024,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutRoutingRule">REST API Reference for PutRoutingRule Operation</seealso>
         public virtual Task<PutRoutingRuleResponse> PutRoutingRuleAsync(PutRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRoutingRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRoutingRuleResponseUnmarshaller.Instance;
             
@@ -4061,7 +4061,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual ReimportApiResponse ReimportApi(ReimportApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReimportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReimportApiResponseUnmarshaller.Instance;
 
@@ -4097,7 +4097,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         public virtual Task<ReimportApiResponse> ReimportApiAsync(ReimportApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReimportApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReimportApiResponseUnmarshaller.Instance;
             
@@ -4125,7 +4125,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">REST API Reference for ResetAuthorizersCache Operation</seealso>
         public virtual ResetAuthorizersCacheResponse ResetAuthorizersCache(ResetAuthorizersCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAuthorizersCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAuthorizersCacheResponseUnmarshaller.Instance;
 
@@ -4152,7 +4152,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">REST API Reference for ResetAuthorizersCache Operation</seealso>
         public virtual Task<ResetAuthorizersCacheResponse> ResetAuthorizersCacheAsync(ResetAuthorizersCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAuthorizersCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAuthorizersCacheResponseUnmarshaller.Instance;
             
@@ -4189,7 +4189,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4225,7 +4225,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4262,7 +4262,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4335,7 +4335,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual UpdateApiResponse UpdateApi(UpdateApiRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiResponseUnmarshaller.Instance;
 
@@ -4371,7 +4371,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApi">REST API Reference for UpdateApi Operation</seealso>
         public virtual Task<UpdateApiResponse> UpdateApiAsync(UpdateApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiResponseUnmarshaller.Instance;
             
@@ -4408,7 +4408,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual UpdateApiMappingResponse UpdateApiMapping(UpdateApiMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
 
@@ -4444,7 +4444,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMapping">REST API Reference for UpdateApiMapping Operation</seealso>
         public virtual Task<UpdateApiMappingResponse> UpdateApiMappingAsync(UpdateApiMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApiMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApiMappingResponseUnmarshaller.Instance;
             
@@ -4481,7 +4481,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual UpdateAuthorizerResponse UpdateAuthorizer(UpdateAuthorizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
 
@@ -4517,7 +4517,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizer">REST API Reference for UpdateAuthorizer Operation</seealso>
         public virtual Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(UpdateAuthorizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAuthorizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAuthorizerResponseUnmarshaller.Instance;
             
@@ -4554,7 +4554,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual UpdateDeploymentResponse UpdateDeployment(UpdateDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
@@ -4590,7 +4590,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeployment">REST API Reference for UpdateDeployment Operation</seealso>
         public virtual Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
             
@@ -4627,7 +4627,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual UpdateDomainNameResponse UpdateDomainName(UpdateDomainNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
 
@@ -4663,7 +4663,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainName">REST API Reference for UpdateDomainName Operation</seealso>
         public virtual Task<UpdateDomainNameResponse> UpdateDomainNameAsync(UpdateDomainNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDomainNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDomainNameResponseUnmarshaller.Instance;
             
@@ -4700,7 +4700,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
 
@@ -4736,7 +4736,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
         public virtual Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseUnmarshaller.Instance;
             
@@ -4773,7 +4773,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual UpdateIntegrationResponseResponse UpdateIntegrationResponse(UpdateIntegrationResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
 
@@ -4809,7 +4809,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateIntegrationResponse">REST API Reference for UpdateIntegrationResponse Operation</seealso>
         public virtual Task<UpdateIntegrationResponseResponse> UpdateIntegrationResponseAsync(UpdateIntegrationResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResponseResponseUnmarshaller.Instance;
             
@@ -4846,7 +4846,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -4882,7 +4882,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual Task<UpdateModelResponse> UpdateModelAsync(UpdateModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
             
@@ -4919,7 +4919,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
@@ -4955,7 +4955,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
             
@@ -4992,7 +4992,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual UpdateRouteResponseResponse UpdateRouteResponse(UpdateRouteResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
 
@@ -5028,7 +5028,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateRouteResponse">REST API Reference for UpdateRouteResponse Operation</seealso>
         public virtual Task<UpdateRouteResponseResponse> UpdateRouteResponseAsync(UpdateRouteResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseResponseUnmarshaller.Instance;
             
@@ -5065,7 +5065,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual UpdateStageResponse UpdateStage(UpdateStageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
@@ -5101,7 +5101,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         public virtual Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStageResponseUnmarshaller.Instance;
             
@@ -5133,7 +5133,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual UpdateVpcLinkResponse UpdateVpcLink(UpdateVpcLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
 
@@ -5164,7 +5164,7 @@ namespace Amazon.ApiGatewayV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateVpcLink">REST API Reference for UpdateVpcLink Operation</seealso>
         public virtual Task<UpdateVpcLinkResponse> UpdateVpcLinkAsync(UpdateVpcLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcLinkResponseUnmarshaller.Instance;
             

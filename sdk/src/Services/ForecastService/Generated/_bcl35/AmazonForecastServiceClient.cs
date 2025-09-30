@@ -350,7 +350,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
         public virtual CreateAutoPredictorResponse CreateAutoPredictor(CreateAutoPredictorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoPredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoPredictorResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateAutoPredictor">REST API Reference for CreateAutoPredictor Operation</seealso>
         public virtual IAsyncResult BeginCreateAutoPredictor(CreateAutoPredictorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoPredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoPredictorResponseUnmarshaller.Instance;
 
@@ -459,7 +459,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         public virtual CreateDatasetGroupResponse CreateDatasetGroup(CreateDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetGroupResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetGroup">REST API Reference for CreateDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateDatasetGroup(CreateDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetGroupResponseUnmarshaller.Instance;
 
@@ -658,7 +658,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         public virtual CreateDatasetImportJobResponse CreateDatasetImportJob(CreateDatasetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateDatasetImportJob">REST API Reference for CreateDatasetImportJob Operation</seealso>
         public virtual IAsyncResult BeginCreateDatasetImportJob(CreateDatasetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -861,7 +861,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
         public virtual CreateExplainabilityResponse CreateExplainability(CreateExplainabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExplainabilityResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainability">REST API Reference for CreateExplainability Operation</seealso>
         public virtual IAsyncResult BeginCreateExplainability(CreateExplainabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExplainabilityResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
         public virtual CreateExplainabilityExportResponse CreateExplainabilityExport(CreateExplainabilityExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -968,7 +968,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateExplainabilityExport">REST API Reference for CreateExplainabilityExport Operation</seealso>
         public virtual IAsyncResult BeginCreateExplainabilityExport(CreateExplainabilityExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -1055,7 +1055,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecast">REST API Reference for CreateForecast Operation</seealso>
         public virtual CreateForecastResponse CreateForecast(CreateForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateForecastResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecast">REST API Reference for CreateForecast Operation</seealso>
         public virtual IAsyncResult BeginCreateForecast(CreateForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateForecastResponseUnmarshaller.Instance;
 
@@ -1159,7 +1159,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecastExportJob">REST API Reference for CreateForecastExportJob Operation</seealso>
         public virtual CreateForecastExportJobResponse CreateForecastExportJob(CreateForecastExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateForecastExportJobResponseUnmarshaller.Instance;
 
@@ -1180,7 +1180,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateForecastExportJob">REST API Reference for CreateForecastExportJob Operation</seealso>
         public virtual IAsyncResult BeginCreateForecastExportJob(CreateForecastExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateForecastExportJobResponseUnmarshaller.Instance;
 
@@ -1233,7 +1233,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual IAsyncResult BeginCreateMonitor(CreateMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">REST API Reference for CreatePredictor Operation</seealso>
         public virtual CreatePredictorResponse CreatePredictor(CreatePredictorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredictorResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">REST API Reference for CreatePredictor Operation</seealso>
         public virtual IAsyncResult BeginCreatePredictor(CreatePredictorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredictorResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob">REST API Reference for CreatePredictorBacktestExportJob Operation</seealso>
         public virtual CreatePredictorBacktestExportJobResponse CreatePredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob">REST API Reference for CreatePredictorBacktestExportJob Operation</seealso>
         public virtual IAsyncResult BeginCreatePredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">REST API Reference for CreateWhatIfAnalysis Operation</seealso>
         public virtual CreateWhatIfAnalysisResponse CreateWhatIfAnalysis(CreateWhatIfAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfAnalysis">REST API Reference for CreateWhatIfAnalysis Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatIfAnalysis(CreateWhatIfAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -1665,7 +1665,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast">REST API Reference for CreateWhatIfForecast Operation</seealso>
         public virtual CreateWhatIfForecastResponse CreateWhatIfForecast(CreateWhatIfForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecast">REST API Reference for CreateWhatIfForecast Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatIfForecast(CreateWhatIfForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport">REST API Reference for CreateWhatIfForecastExport Operation</seealso>
         public virtual CreateWhatIfForecastExportResponse CreateWhatIfForecastExport(CreateWhatIfForecastExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -1791,7 +1791,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreateWhatIfForecastExport">REST API Reference for CreateWhatIfForecastExport Operation</seealso>
         public virtual IAsyncResult BeginCreateWhatIfForecastExport(CreateWhatIfForecastExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -1846,7 +1846,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -1867,7 +1867,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDatasetGroup">REST API Reference for DeleteDatasetGroup Operation</seealso>
         public virtual DeleteDatasetGroupResponse DeleteDatasetGroup(DeleteDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetGroupResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDatasetGroup">REST API Reference for DeleteDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteDatasetGroup(DeleteDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetGroupResponseUnmarshaller.Instance;
 
@@ -1987,7 +1987,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDatasetImportJob">REST API Reference for DeleteDatasetImportJob Operation</seealso>
         public virtual DeleteDatasetImportJobResponse DeleteDatasetImportJob(DeleteDatasetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteDatasetImportJob">REST API Reference for DeleteDatasetImportJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteDatasetImportJob(DeleteDatasetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -2058,7 +2058,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
         public virtual DeleteExplainabilityResponse DeleteExplainability(DeleteExplainabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExplainabilityResponseUnmarshaller.Instance;
 
@@ -2079,7 +2079,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainability">REST API Reference for DeleteExplainability Operation</seealso>
         public virtual IAsyncResult BeginDeleteExplainability(DeleteExplainabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExplainabilityResponseUnmarshaller.Instance;
 
@@ -2123,7 +2123,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
         public virtual DeleteExplainabilityExportResponse DeleteExplainabilityExport(DeleteExplainabilityExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -2144,7 +2144,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteExplainabilityExport">REST API Reference for DeleteExplainabilityExport Operation</seealso>
         public virtual IAsyncResult BeginDeleteExplainabilityExport(DeleteExplainabilityExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -2196,7 +2196,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteForecast">REST API Reference for DeleteForecast Operation</seealso>
         public virtual DeleteForecastResponse DeleteForecast(DeleteForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteForecastResponseUnmarshaller.Instance;
 
@@ -2217,7 +2217,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteForecast">REST API Reference for DeleteForecast Operation</seealso>
         public virtual IAsyncResult BeginDeleteForecast(DeleteForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteForecastResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteForecastExportJob">REST API Reference for DeleteForecastExportJob Operation</seealso>
         public virtual DeleteForecastExportJobResponse DeleteForecastExportJob(DeleteForecastExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteForecastExportJobResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteForecastExportJob">REST API Reference for DeleteForecastExportJob Operation</seealso>
         public virtual IAsyncResult BeginDeleteForecastExportJob(DeleteForecastExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteForecastExportJobResponseUnmarshaller.Instance;
 
@@ -2329,7 +2329,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -2350,7 +2350,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual IAsyncResult BeginDeleteMonitor(DeleteMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -2396,7 +2396,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">REST API Reference for DeletePredictor Operation</seealso>
         public virtual DeletePredictorResponse DeletePredictor(DeletePredictorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredictorResponseUnmarshaller.Instance;
 
@@ -2417,7 +2417,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">REST API Reference for DeletePredictor Operation</seealso>
         public virtual IAsyncResult BeginDeletePredictor(DeletePredictorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredictorResponseUnmarshaller.Instance;
 
@@ -2461,7 +2461,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob">REST API Reference for DeletePredictorBacktestExportJob Operation</seealso>
         public virtual DeletePredictorBacktestExportJobResponse DeletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -2482,7 +2482,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob">REST API Reference for DeletePredictorBacktestExportJob Operation</seealso>
         public virtual IAsyncResult BeginDeletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -2561,7 +2561,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
         public virtual DeleteResourceTreeResponse DeleteResourceTree(DeleteResourceTreeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceTreeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceTreeResponseUnmarshaller.Instance;
 
@@ -2582,7 +2582,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">REST API Reference for DeleteResourceTree Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceTree(DeleteResourceTreeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceTreeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceTreeResponseUnmarshaller.Instance;
 
@@ -2633,7 +2633,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis">REST API Reference for DeleteWhatIfAnalysis Operation</seealso>
         public virtual DeleteWhatIfAnalysisResponse DeleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -2654,7 +2654,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfAnalysis">REST API Reference for DeleteWhatIfAnalysis Operation</seealso>
         public virtual IAsyncResult BeginDeleteWhatIfAnalysis(DeleteWhatIfAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -2706,7 +2706,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast">REST API Reference for DeleteWhatIfForecast Operation</seealso>
         public virtual DeleteWhatIfForecastResponse DeleteWhatIfForecast(DeleteWhatIfForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -2727,7 +2727,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecast">REST API Reference for DeleteWhatIfForecast Operation</seealso>
         public virtual IAsyncResult BeginDeleteWhatIfForecast(DeleteWhatIfForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -2774,7 +2774,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport">REST API Reference for DeleteWhatIfForecastExport Operation</seealso>
         public virtual DeleteWhatIfForecastExportResponse DeleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteWhatIfForecastExport">REST API Reference for DeleteWhatIfForecastExport Operation</seealso>
         public virtual IAsyncResult BeginDeleteWhatIfForecastExport(DeleteWhatIfForecastExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -2836,7 +2836,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
         public virtual DescribeAutoPredictorResponse DescribeAutoPredictor(DescribeAutoPredictorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoPredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoPredictorResponseUnmarshaller.Instance;
 
@@ -2857,7 +2857,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeAutoPredictor">REST API Reference for DescribeAutoPredictor Operation</seealso>
         public virtual IAsyncResult BeginDescribeAutoPredictor(DescribeAutoPredictorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoPredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoPredictorResponseUnmarshaller.Instance;
 
@@ -2918,7 +2918,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -2939,7 +2939,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -3004,7 +3004,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDatasetGroup">REST API Reference for DescribeDatasetGroup Operation</seealso>
         public virtual DescribeDatasetGroupResponse DescribeDatasetGroup(DescribeDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetGroupResponseUnmarshaller.Instance;
 
@@ -3025,7 +3025,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDatasetGroup">REST API Reference for DescribeDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatasetGroup(DescribeDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetGroupResponseUnmarshaller.Instance;
 
@@ -3098,7 +3098,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDatasetImportJob">REST API Reference for DescribeDatasetImportJob Operation</seealso>
         public virtual DescribeDatasetImportJobResponse DescribeDatasetImportJob(DescribeDatasetImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeDatasetImportJob">REST API Reference for DescribeDatasetImportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatasetImportJob(DescribeDatasetImportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetImportJobResponseUnmarshaller.Instance;
 
@@ -3161,7 +3161,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
         public virtual DescribeExplainabilityResponse DescribeExplainability(DescribeExplainabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExplainabilityResponseUnmarshaller.Instance;
 
@@ -3182,7 +3182,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainability">REST API Reference for DescribeExplainability Operation</seealso>
         public virtual IAsyncResult BeginDescribeExplainability(DescribeExplainabilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExplainabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExplainabilityResponseUnmarshaller.Instance;
 
@@ -3224,7 +3224,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
         public virtual DescribeExplainabilityExportResponse DescribeExplainabilityExport(DescribeExplainabilityExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -3245,7 +3245,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeExplainabilityExport">REST API Reference for DescribeExplainabilityExport Operation</seealso>
         public virtual IAsyncResult BeginDescribeExplainabilityExport(DescribeExplainabilityExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExplainabilityExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExplainabilityExportResponseUnmarshaller.Instance;
 
@@ -3313,7 +3313,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeForecast">REST API Reference for DescribeForecast Operation</seealso>
         public virtual DescribeForecastResponse DescribeForecast(DescribeForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeForecastResponseUnmarshaller.Instance;
 
@@ -3334,7 +3334,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeForecast">REST API Reference for DescribeForecast Operation</seealso>
         public virtual IAsyncResult BeginDescribeForecast(DescribeForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeForecastResponseUnmarshaller.Instance;
 
@@ -3398,7 +3398,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeForecastExportJob">REST API Reference for DescribeForecastExportJob Operation</seealso>
         public virtual DescribeForecastExportJobResponse DescribeForecastExportJob(DescribeForecastExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeForecastExportJobResponseUnmarshaller.Instance;
 
@@ -3419,7 +3419,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeForecastExportJob">REST API Reference for DescribeForecastExportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeForecastExportJob(DescribeForecastExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeForecastExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeForecastExportJobResponseUnmarshaller.Instance;
 
@@ -3491,7 +3491,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
         public virtual DescribeMonitorResponse DescribeMonitor(DescribeMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMonitorResponseUnmarshaller.Instance;
 
@@ -3512,7 +3512,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeMonitor">REST API Reference for DescribeMonitor Operation</seealso>
         public virtual IAsyncResult BeginDescribeMonitor(DescribeMonitorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMonitorResponseUnmarshaller.Instance;
 
@@ -3591,7 +3591,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictor">REST API Reference for DescribePredictor Operation</seealso>
         public virtual DescribePredictorResponse DescribePredictor(DescribePredictorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredictorResponseUnmarshaller.Instance;
 
@@ -3612,7 +3612,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictor">REST API Reference for DescribePredictor Operation</seealso>
         public virtual IAsyncResult BeginDescribePredictor(DescribePredictorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredictorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredictorResponseUnmarshaller.Instance;
 
@@ -3677,7 +3677,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob">REST API Reference for DescribePredictorBacktestExportJob Operation</seealso>
         public virtual DescribePredictorBacktestExportJobResponse DescribePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -3698,7 +3698,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob">REST API Reference for DescribePredictorBacktestExportJob Operation</seealso>
         public virtual IAsyncResult BeginDescribePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePredictorBacktestExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePredictorBacktestExportJobResponseUnmarshaller.Instance;
 
@@ -3762,7 +3762,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis">REST API Reference for DescribeWhatIfAnalysis Operation</seealso>
         public virtual DescribeWhatIfAnalysisResponse DescribeWhatIfAnalysis(DescribeWhatIfAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -3783,7 +3783,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfAnalysis">REST API Reference for DescribeWhatIfAnalysis Operation</seealso>
         public virtual IAsyncResult BeginDescribeWhatIfAnalysis(DescribeWhatIfAnalysisRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfAnalysisResponseUnmarshaller.Instance;
 
@@ -3847,7 +3847,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast">REST API Reference for DescribeWhatIfForecast Operation</seealso>
         public virtual DescribeWhatIfForecastResponse DescribeWhatIfForecast(DescribeWhatIfForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -3868,7 +3868,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecast">REST API Reference for DescribeWhatIfForecast Operation</seealso>
         public virtual IAsyncResult BeginDescribeWhatIfForecast(DescribeWhatIfForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -3933,7 +3933,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport">REST API Reference for DescribeWhatIfForecastExport Operation</seealso>
         public virtual DescribeWhatIfForecastExportResponse DescribeWhatIfForecastExport(DescribeWhatIfForecastExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -3954,7 +3954,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribeWhatIfForecastExport">REST API Reference for DescribeWhatIfForecastExport Operation</seealso>
         public virtual IAsyncResult BeginDescribeWhatIfForecastExport(DescribeWhatIfForecastExportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWhatIfForecastExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWhatIfForecastExportResponseUnmarshaller.Instance;
 
@@ -4024,7 +4024,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/GetAccuracyMetrics">REST API Reference for GetAccuracyMetrics Operation</seealso>
         public virtual GetAccuracyMetricsResponse GetAccuracyMetrics(GetAccuracyMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccuracyMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccuracyMetricsResponseUnmarshaller.Instance;
 
@@ -4045,7 +4045,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/GetAccuracyMetrics">REST API Reference for GetAccuracyMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetAccuracyMetrics(GetAccuracyMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccuracyMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccuracyMetricsResponseUnmarshaller.Instance;
 
@@ -4085,7 +4085,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetGroups">REST API Reference for ListDatasetGroups Operation</seealso>
         public virtual ListDatasetGroupsResponse ListDatasetGroups(ListDatasetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetGroupsResponseUnmarshaller.Instance;
 
@@ -4106,7 +4106,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetGroups">REST API Reference for ListDatasetGroups Operation</seealso>
         public virtual IAsyncResult BeginListDatasetGroups(ListDatasetGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetGroupsResponseUnmarshaller.Instance;
 
@@ -4151,7 +4151,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetImportJobs">REST API Reference for ListDatasetImportJobs Operation</seealso>
         public virtual ListDatasetImportJobsResponse ListDatasetImportJobs(ListDatasetImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetImportJobsResponseUnmarshaller.Instance;
 
@@ -4172,7 +4172,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasetImportJobs">REST API Reference for ListDatasetImportJobs Operation</seealso>
         public virtual IAsyncResult BeginListDatasetImportJobs(ListDatasetImportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetImportJobsResponseUnmarshaller.Instance;
 
@@ -4212,7 +4212,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -4233,7 +4233,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -4281,7 +4281,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
         public virtual ListExplainabilitiesResponse ListExplainabilities(ListExplainabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExplainabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExplainabilitiesResponseUnmarshaller.Instance;
 
@@ -4302,7 +4302,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilities">REST API Reference for ListExplainabilities Operation</seealso>
         public virtual IAsyncResult BeginListExplainabilities(ListExplainabilitiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExplainabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExplainabilitiesResponseUnmarshaller.Instance;
 
@@ -4350,7 +4350,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
         public virtual ListExplainabilityExportsResponse ListExplainabilityExports(ListExplainabilityExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExplainabilityExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExplainabilityExportsResponseUnmarshaller.Instance;
 
@@ -4371,7 +4371,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListExplainabilityExports">REST API Reference for ListExplainabilityExports Operation</seealso>
         public virtual IAsyncResult BeginListExplainabilityExports(ListExplainabilityExportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExplainabilityExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExplainabilityExportsResponseUnmarshaller.Instance;
 
@@ -4415,7 +4415,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecastExportJobs">REST API Reference for ListForecastExportJobs Operation</seealso>
         public virtual ListForecastExportJobsResponse ListForecastExportJobs(ListForecastExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListForecastExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListForecastExportJobsResponseUnmarshaller.Instance;
 
@@ -4436,7 +4436,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecastExportJobs">REST API Reference for ListForecastExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListForecastExportJobs(ListForecastExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListForecastExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListForecastExportJobsResponseUnmarshaller.Instance;
 
@@ -4480,7 +4480,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecasts">REST API Reference for ListForecasts Operation</seealso>
         public virtual ListForecastsResponse ListForecasts(ListForecastsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListForecastsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListForecastsResponseUnmarshaller.Instance;
 
@@ -4501,7 +4501,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecasts">REST API Reference for ListForecasts Operation</seealso>
         public virtual IAsyncResult BeginListForecasts(ListForecastsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListForecastsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListForecastsResponseUnmarshaller.Instance;
 
@@ -4553,7 +4553,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
         public virtual ListMonitorEvaluationsResponse ListMonitorEvaluations(ListMonitorEvaluationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorEvaluationsResponseUnmarshaller.Instance;
 
@@ -4574,7 +4574,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitorEvaluations">REST API Reference for ListMonitorEvaluations Operation</seealso>
         public virtual IAsyncResult BeginListMonitorEvaluations(ListMonitorEvaluationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorEvaluationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorEvaluationsResponseUnmarshaller.Instance;
 
@@ -4617,7 +4617,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -4638,7 +4638,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual IAsyncResult BeginListMonitors(ListMonitorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -4686,7 +4686,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs">REST API Reference for ListPredictorBacktestExportJobs Operation</seealso>
         public virtual ListPredictorBacktestExportJobsResponse ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredictorBacktestExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredictorBacktestExportJobsResponseUnmarshaller.Instance;
 
@@ -4707,7 +4707,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs">REST API Reference for ListPredictorBacktestExportJobs Operation</seealso>
         public virtual IAsyncResult BeginListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredictorBacktestExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredictorBacktestExportJobsResponseUnmarshaller.Instance;
 
@@ -4756,7 +4756,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">REST API Reference for ListPredictors Operation</seealso>
         public virtual ListPredictorsResponse ListPredictors(ListPredictorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredictorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredictorsResponseUnmarshaller.Instance;
 
@@ -4777,7 +4777,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictors">REST API Reference for ListPredictors Operation</seealso>
         public virtual IAsyncResult BeginListPredictors(ListPredictorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPredictorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPredictorsResponseUnmarshaller.Instance;
 
@@ -4818,7 +4818,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4839,7 +4839,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4882,7 +4882,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">REST API Reference for ListWhatIfAnalyses Operation</seealso>
         public virtual ListWhatIfAnalysesResponse ListWhatIfAnalyses(ListWhatIfAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfAnalysesResponseUnmarshaller.Instance;
 
@@ -4903,7 +4903,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfAnalyses">REST API Reference for ListWhatIfAnalyses Operation</seealso>
         public virtual IAsyncResult BeginListWhatIfAnalyses(ListWhatIfAnalysesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfAnalysesResponseUnmarshaller.Instance;
 
@@ -4947,7 +4947,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">REST API Reference for ListWhatIfForecastExports Operation</seealso>
         public virtual ListWhatIfForecastExportsResponse ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfForecastExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfForecastExportsResponseUnmarshaller.Instance;
 
@@ -4968,7 +4968,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecastExports">REST API Reference for ListWhatIfForecastExports Operation</seealso>
         public virtual IAsyncResult BeginListWhatIfForecastExports(ListWhatIfForecastExportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfForecastExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfForecastExportsResponseUnmarshaller.Instance;
 
@@ -5011,7 +5011,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">REST API Reference for ListWhatIfForecasts Operation</seealso>
         public virtual ListWhatIfForecastsResponse ListWhatIfForecasts(ListWhatIfForecastsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfForecastsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfForecastsResponseUnmarshaller.Instance;
 
@@ -5032,7 +5032,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListWhatIfForecasts">REST API Reference for ListWhatIfForecasts Operation</seealso>
         public virtual IAsyncResult BeginListWhatIfForecasts(ListWhatIfForecastsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWhatIfForecastsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWhatIfForecastsResponseUnmarshaller.Instance;
 
@@ -5079,7 +5079,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
         public virtual ResumeResourceResponse ResumeResource(ResumeResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeResourceResponseUnmarshaller.Instance;
 
@@ -5100,7 +5100,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ResumeResource">REST API Reference for ResumeResource Operation</seealso>
         public virtual IAsyncResult BeginResumeResource(ResumeResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeResourceResponseUnmarshaller.Instance;
 
@@ -5184,7 +5184,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">REST API Reference for StopResource Operation</seealso>
         public virtual StopResourceResponse StopResource(StopResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceResponseUnmarshaller.Instance;
 
@@ -5205,7 +5205,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource">REST API Reference for StopResource Operation</seealso>
         public virtual IAsyncResult BeginStopResource(StopResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopResourceResponseUnmarshaller.Instance;
 
@@ -5252,7 +5252,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5273,7 +5273,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5314,7 +5314,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5335,7 +5335,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5387,7 +5387,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UpdateDatasetGroup">REST API Reference for UpdateDatasetGroup Operation</seealso>
         public virtual UpdateDatasetGroupResponse UpdateDatasetGroup(UpdateDatasetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetGroupResponseUnmarshaller.Instance;
 
@@ -5408,7 +5408,7 @@ namespace Amazon.ForecastService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UpdateDatasetGroup">REST API Reference for UpdateDatasetGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateDatasetGroup(UpdateDatasetGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetGroupResponseUnmarshaller.Instance;
 

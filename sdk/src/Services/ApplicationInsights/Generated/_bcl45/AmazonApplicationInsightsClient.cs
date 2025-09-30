@@ -304,7 +304,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
         public virtual AddWorkloadResponse AddWorkload(AddWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddWorkloadResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload">REST API Reference for AddWorkload Operation</seealso>
         public virtual Task<AddWorkloadResponse> AddWorkloadAsync(AddWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddWorkloadResponseUnmarshaller.Instance;
             
@@ -375,7 +375,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -446,7 +446,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual CreateComponentResponse CreateComponent(CreateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
         public virtual Task<CreateComponentResponse> CreateComponentAsync(CreateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentResponseUnmarshaller.Instance;
             
@@ -511,7 +511,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
         public virtual CreateLogPatternResponse CreateLogPattern(CreateLogPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogPatternResponseUnmarshaller.Instance;
 
@@ -543,7 +543,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateLogPattern">REST API Reference for CreateLogPattern Operation</seealso>
         public virtual Task<CreateLogPatternResponse> CreateLogPatternAsync(CreateLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogPatternResponseUnmarshaller.Instance;
             
@@ -576,7 +576,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -640,7 +640,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual DeleteComponentResponse DeleteComponent(DeleteComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
@@ -671,7 +671,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
         public virtual Task<DeleteComponentResponse> DeleteComponentAsync(DeleteComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
             
@@ -704,7 +704,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
         public virtual DeleteLogPatternResponse DeleteLogPattern(DeleteLogPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLogPatternResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DeleteLogPattern">REST API Reference for DeleteLogPattern Operation</seealso>
         public virtual Task<DeleteLogPatternResponse> DeleteLogPatternAsync(DeleteLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLogPatternResponseUnmarshaller.Instance;
             
@@ -766,7 +766,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual Task<DescribeApplicationResponse> DescribeApplicationAsync(DescribeApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationResponseUnmarshaller.Instance;
             
@@ -825,7 +825,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponent">REST API Reference for DescribeComponent Operation</seealso>
         public virtual DescribeComponentResponse DescribeComponent(DescribeComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentResponseUnmarshaller.Instance;
 
@@ -854,7 +854,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponent">REST API Reference for DescribeComponent Operation</seealso>
         public virtual Task<DescribeComponentResponse> DescribeComponentAsync(DescribeComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentResponseUnmarshaller.Instance;
             
@@ -884,7 +884,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponentConfiguration">REST API Reference for DescribeComponentConfiguration Operation</seealso>
         public virtual DescribeComponentConfigurationResponse DescribeComponentConfiguration(DescribeComponentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentConfigurationResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponentConfiguration">REST API Reference for DescribeComponentConfiguration Operation</seealso>
         public virtual Task<DescribeComponentConfigurationResponse> DescribeComponentConfigurationAsync(DescribeComponentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentConfigurationResponseUnmarshaller.Instance;
             
@@ -943,7 +943,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponentConfigurationRecommendation">REST API Reference for DescribeComponentConfigurationRecommendation Operation</seealso>
         public virtual DescribeComponentConfigurationRecommendationResponse DescribeComponentConfigurationRecommendation(DescribeComponentConfigurationRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentConfigurationRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentConfigurationRecommendationResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeComponentConfigurationRecommendation">REST API Reference for DescribeComponentConfigurationRecommendation Operation</seealso>
         public virtual Task<DescribeComponentConfigurationRecommendationResponse> DescribeComponentConfigurationRecommendationAsync(DescribeComponentConfigurationRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeComponentConfigurationRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeComponentConfigurationRecommendationResponseUnmarshaller.Instance;
             
@@ -1002,7 +1002,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
         public virtual DescribeLogPatternResponse DescribeLogPattern(DescribeLogPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLogPatternResponseUnmarshaller.Instance;
 
@@ -1031,7 +1031,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeLogPattern">REST API Reference for DescribeLogPattern Operation</seealso>
         public virtual Task<DescribeLogPatternResponse> DescribeLogPatternAsync(DescribeLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLogPatternResponseUnmarshaller.Instance;
             
@@ -1061,7 +1061,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeObservation">REST API Reference for DescribeObservation Operation</seealso>
         public virtual DescribeObservationResponse DescribeObservation(DescribeObservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObservationResponseUnmarshaller.Instance;
 
@@ -1090,7 +1090,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeObservation">REST API Reference for DescribeObservation Operation</seealso>
         public virtual Task<DescribeObservationResponse> DescribeObservationAsync(DescribeObservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObservationResponseUnmarshaller.Instance;
             
@@ -1120,7 +1120,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeProblem">REST API Reference for DescribeProblem Operation</seealso>
         public virtual DescribeProblemResponse DescribeProblem(DescribeProblemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProblemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProblemResponseUnmarshaller.Instance;
 
@@ -1149,7 +1149,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeProblem">REST API Reference for DescribeProblem Operation</seealso>
         public virtual Task<DescribeProblemResponse> DescribeProblemAsync(DescribeProblemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProblemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProblemResponseUnmarshaller.Instance;
             
@@ -1179,7 +1179,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeProblemObservations">REST API Reference for DescribeProblemObservations Operation</seealso>
         public virtual DescribeProblemObservationsResponse DescribeProblemObservations(DescribeProblemObservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProblemObservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProblemObservationsResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeProblemObservations">REST API Reference for DescribeProblemObservations Operation</seealso>
         public virtual Task<DescribeProblemObservationsResponse> DescribeProblemObservationsAsync(DescribeProblemObservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProblemObservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProblemObservationsResponseUnmarshaller.Instance;
             
@@ -1238,7 +1238,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
         public virtual DescribeWorkloadResponse DescribeWorkload(DescribeWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkloadResponseUnmarshaller.Instance;
 
@@ -1267,7 +1267,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload">REST API Reference for DescribeWorkload Operation</seealso>
         public virtual Task<DescribeWorkloadResponse> DescribeWorkloadAsync(DescribeWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkloadResponseUnmarshaller.Instance;
             
@@ -1294,7 +1294,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1320,7 +1320,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -1350,7 +1350,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
             
@@ -1424,7 +1424,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">REST API Reference for ListConfigurationHistory Operation</seealso>
         public virtual ListConfigurationHistoryResponse ListConfigurationHistory(ListConfigurationHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationHistoryResponseUnmarshaller.Instance;
 
@@ -1468,7 +1468,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">REST API Reference for ListConfigurationHistory Operation</seealso>
         public virtual Task<ListConfigurationHistoryResponse> ListConfigurationHistoryAsync(ListConfigurationHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationHistoryResponseUnmarshaller.Instance;
             
@@ -1498,7 +1498,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
         public virtual ListLogPatternsResponse ListLogPatterns(ListLogPatternsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogPatternsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogPatternsResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatterns">REST API Reference for ListLogPatterns Operation</seealso>
         public virtual Task<ListLogPatternsResponse> ListLogPatternsAsync(ListLogPatternsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogPatternsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogPatternsResponseUnmarshaller.Instance;
             
@@ -1557,7 +1557,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
         public virtual ListLogPatternSetsResponse ListLogPatternSets(ListLogPatternSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogPatternSetsResponseUnmarshaller.Instance;
 
@@ -1586,7 +1586,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">REST API Reference for ListLogPatternSets Operation</seealso>
         public virtual Task<ListLogPatternSetsResponse> ListLogPatternSetsAsync(ListLogPatternSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogPatternSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogPatternSetsResponseUnmarshaller.Instance;
             
@@ -1616,7 +1616,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListProblems">REST API Reference for ListProblems Operation</seealso>
         public virtual ListProblemsResponse ListProblems(ListProblemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProblemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProblemsResponseUnmarshaller.Instance;
 
@@ -1645,7 +1645,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListProblems">REST API Reference for ListProblems Operation</seealso>
         public virtual Task<ListProblemsResponse> ListProblemsAsync(ListProblemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProblemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProblemsResponseUnmarshaller.Instance;
             
@@ -1676,7 +1676,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1736,7 +1736,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
         public virtual ListWorkloadsResponse ListWorkloads(ListWorkloadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads">REST API Reference for ListWorkloads Operation</seealso>
         public virtual Task<ListWorkloadsResponse> ListWorkloadsAsync(ListWorkloadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkloadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkloadsResponseUnmarshaller.Instance;
             
@@ -1795,7 +1795,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
         public virtual RemoveWorkloadResponse RemoveWorkload(RemoveWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveWorkloadResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload">REST API Reference for RemoveWorkload Operation</seealso>
         public virtual Task<RemoveWorkloadResponse> RemoveWorkloadAsync(RemoveWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveWorkloadResponseUnmarshaller.Instance;
             
@@ -1865,7 +1865,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1932,7 +1932,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1958,7 +1958,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1988,7 +1988,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -2017,7 +2017,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -2050,7 +2050,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         public virtual UpdateComponentResponse UpdateComponent(UpdateComponentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
 
@@ -2082,7 +2082,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
         public virtual Task<UpdateComponentResponse> UpdateComponentAsync(UpdateComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
             
@@ -2117,7 +2117,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponentConfiguration">REST API Reference for UpdateComponentConfiguration Operation</seealso>
         public virtual UpdateComponentConfigurationResponse UpdateComponentConfiguration(UpdateComponentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentConfigurationResponseUnmarshaller.Instance;
 
@@ -2151,7 +2151,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponentConfiguration">REST API Reference for UpdateComponentConfiguration Operation</seealso>
         public virtual Task<UpdateComponentConfigurationResponse> UpdateComponentConfigurationAsync(UpdateComponentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentConfigurationResponseUnmarshaller.Instance;
             
@@ -2184,7 +2184,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
         public virtual UpdateLogPatternResponse UpdateLogPattern(UpdateLogPatternRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLogPatternResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateLogPattern">REST API Reference for UpdateLogPattern Operation</seealso>
         public virtual Task<UpdateLogPatternResponse> UpdateLogPatternAsync(UpdateLogPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLogPatternRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLogPatternResponseUnmarshaller.Instance;
             
@@ -2246,7 +2246,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
         public virtual UpdateProblemResponse UpdateProblem(UpdateProblemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProblemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProblemResponseUnmarshaller.Instance;
 
@@ -2275,7 +2275,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem">REST API Reference for UpdateProblem Operation</seealso>
         public virtual Task<UpdateProblemResponse> UpdateProblemAsync(UpdateProblemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProblemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProblemResponseUnmarshaller.Instance;
             
@@ -2305,7 +2305,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
         public virtual UpdateWorkloadResponse UpdateWorkload(UpdateWorkloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
 
@@ -2334,7 +2334,7 @@ namespace Amazon.ApplicationInsights
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload">REST API Reference for UpdateWorkload Operation</seealso>
         public virtual Task<UpdateWorkloadResponse> UpdateWorkloadAsync(UpdateWorkloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkloadResponseUnmarshaller.Instance;
             

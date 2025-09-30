@@ -299,7 +299,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaCapturePipeline">REST API Reference for CreateMediaCapturePipeline Operation</seealso>
         public virtual CreateMediaCapturePipelineResponse CreateMediaCapturePipeline(CreateMediaCapturePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaCapturePipeline">REST API Reference for CreateMediaCapturePipeline Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaCapturePipeline(CreateMediaCapturePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline">REST API Reference for CreateMediaConcatenationPipeline Operation</seealso>
         public virtual CreateMediaConcatenationPipelineResponse CreateMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaConcatenationPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaConcatenationPipelineResponseUnmarshaller.Instance;
 
@@ -395,7 +395,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline">REST API Reference for CreateMediaConcatenationPipeline Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaConcatenationPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaConcatenationPipelineResponseUnmarshaller.Instance;
 
@@ -452,7 +452,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipeline">REST API Reference for CreateMediaInsightsPipeline Operation</seealso>
         public virtual CreateMediaInsightsPipelineResponse CreateMediaInsightsPipeline(CreateMediaInsightsPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaInsightsPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaInsightsPipelineResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipeline">REST API Reference for CreateMediaInsightsPipeline Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaInsightsPipeline(CreateMediaInsightsPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaInsightsPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaInsightsPipelineResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipelineConfiguration">REST API Reference for CreateMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual CreateMediaInsightsPipelineConfigurationResponse CreateMediaInsightsPipelineConfiguration(CreateMediaInsightsPipelineConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaInsightsPipelineConfiguration">REST API Reference for CreateMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaInsightsPipelineConfiguration(CreateMediaInsightsPipelineConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">REST API Reference for CreateMediaLiveConnectorPipeline Operation</seealso>
         public virtual CreateMediaLiveConnectorPipelineResponse CreateMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaLiveConnectorPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaLiveConnectorPipelineResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">REST API Reference for CreateMediaLiveConnectorPipeline Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaLiveConnectorPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaLiveConnectorPipelineResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual CreateMediaPipelineKinesisVideoStreamPoolResponse CreateMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">REST API Reference for CreateMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
         public virtual CreateMediaStreamPipelineResponse CreateMediaStreamPipeline(CreateMediaStreamPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">REST API Reference for CreateMediaStreamPipeline Operation</seealso>
         public virtual IAsyncResult BeginCreateMediaStreamPipeline(CreateMediaStreamPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMediaStreamPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMediaStreamPipelineResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaCapturePipeline">REST API Reference for DeleteMediaCapturePipeline Operation</seealso>
         public virtual DeleteMediaCapturePipelineResponse DeleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaCapturePipeline">REST API Reference for DeleteMediaCapturePipeline Operation</seealso>
         public virtual IAsyncResult BeginDeleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -941,7 +941,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaInsightsPipelineConfiguration">REST API Reference for DeleteMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual DeleteMediaInsightsPipelineConfigurationResponse DeleteMediaInsightsPipelineConfiguration(DeleteMediaInsightsPipelineConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaInsightsPipelineConfiguration">REST API Reference for DeleteMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteMediaInsightsPipelineConfiguration(DeleteMediaInsightsPipelineConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline">REST API Reference for DeleteMediaPipeline Operation</seealso>
         public virtual DeleteMediaPipelineResponse DeleteMediaPipeline(DeleteMediaPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaPipelineResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline">REST API Reference for DeleteMediaPipeline Operation</seealso>
         public virtual IAsyncResult BeginDeleteMediaPipeline(DeleteMediaPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaPipelineResponseUnmarshaller.Instance;
 
@@ -1099,7 +1099,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual DeleteMediaPipelineKinesisVideoStreamPoolResponse DeleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -1120,7 +1120,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">REST API Reference for DeleteMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual IAsyncResult BeginDeleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaCapturePipeline">REST API Reference for GetMediaCapturePipeline Operation</seealso>
         public virtual GetMediaCapturePipelineResponse GetMediaCapturePipeline(GetMediaCapturePipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaCapturePipeline">REST API Reference for GetMediaCapturePipeline Operation</seealso>
         public virtual IAsyncResult BeginGetMediaCapturePipeline(GetMediaCapturePipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaCapturePipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaCapturePipelineResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaInsightsPipelineConfiguration">REST API Reference for GetMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual GetMediaInsightsPipelineConfigurationResponse GetMediaInsightsPipelineConfiguration(GetMediaInsightsPipelineConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -1270,7 +1270,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaInsightsPipelineConfiguration">REST API Reference for GetMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetMediaInsightsPipelineConfiguration(GetMediaInsightsPipelineConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -1324,7 +1324,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">REST API Reference for GetMediaPipeline Operation</seealso>
         public virtual GetMediaPipelineResponse GetMediaPipeline(GetMediaPipelineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaPipelineResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">REST API Reference for GetMediaPipeline Operation</seealso>
         public virtual IAsyncResult BeginGetMediaPipeline(GetMediaPipelineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaPipelineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaPipelineResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual GetMediaPipelineKinesisVideoStreamPoolResponse GetMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -1420,7 +1420,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">REST API Reference for GetMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual IAsyncResult BeginGetMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
         public virtual GetSpeakerSearchTaskResponse GetSpeakerSearchTask(GetSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetSpeakerSearchTask">REST API Reference for GetSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginGetSpeakerSearchTask(GetSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
         public virtual GetVoiceToneAnalysisTaskResponse GetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -1570,7 +1570,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetVoiceToneAnalysisTask">REST API Reference for GetVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginGetVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -1624,7 +1624,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaCapturePipelines">REST API Reference for ListMediaCapturePipelines Operation</seealso>
         public virtual ListMediaCapturePipelinesResponse ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaCapturePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaCapturePipelinesResponseUnmarshaller.Instance;
 
@@ -1645,7 +1645,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaCapturePipelines">REST API Reference for ListMediaCapturePipelines Operation</seealso>
         public virtual IAsyncResult BeginListMediaCapturePipelines(ListMediaCapturePipelinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaCapturePipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaCapturePipelinesResponseUnmarshaller.Instance;
 
@@ -1699,7 +1699,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaInsightsPipelineConfigurations">REST API Reference for ListMediaInsightsPipelineConfigurations Operation</seealso>
         public virtual ListMediaInsightsPipelineConfigurationsResponse ListMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaInsightsPipelineConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaInsightsPipelineConfigurationsResponseUnmarshaller.Instance;
 
@@ -1720,7 +1720,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaInsightsPipelineConfigurations">REST API Reference for ListMediaInsightsPipelineConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaInsightsPipelineConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaInsightsPipelineConfigurationsResponseUnmarshaller.Instance;
 
@@ -1774,7 +1774,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
         public virtual ListMediaPipelineKinesisVideoStreamPoolsResponse ListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
 
@@ -1795,7 +1795,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">REST API Reference for ListMediaPipelineKinesisVideoStreamPools Operation</seealso>
         public virtual IAsyncResult BeginListMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaPipelineKinesisVideoStreamPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaPipelineKinesisVideoStreamPoolsResponseUnmarshaller.Instance;
 
@@ -1849,7 +1849,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">REST API Reference for ListMediaPipelines Operation</seealso>
         public virtual ListMediaPipelinesResponse ListMediaPipelines(ListMediaPipelinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaPipelinesResponseUnmarshaller.Instance;
 
@@ -1870,7 +1870,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">REST API Reference for ListMediaPipelines Operation</seealso>
         public virtual IAsyncResult BeginListMediaPipelines(ListMediaPipelinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaPipelinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaPipelinesResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1945,7 +1945,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2012,7 +2012,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
         public virtual StartSpeakerSearchTaskResponse StartSpeakerSearchTask(StartSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartSpeakerSearchTask">REST API Reference for StartSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginStartSpeakerSearchTask(StartSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -2102,7 +2102,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
         public virtual StartVoiceToneAnalysisTaskResponse StartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -2123,7 +2123,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartVoiceToneAnalysisTask">REST API Reference for StartVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginStartVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -2181,7 +2181,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
         public virtual StopSpeakerSearchTaskResponse StopSpeakerSearchTask(StopSpeakerSearchTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -2202,7 +2202,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopSpeakerSearchTask">REST API Reference for StopSpeakerSearchTask Operation</seealso>
         public virtual IAsyncResult BeginStopSpeakerSearchTask(StopSpeakerSearchTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSpeakerSearchTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSpeakerSearchTaskResponseUnmarshaller.Instance;
 
@@ -2260,7 +2260,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
         public virtual StopVoiceToneAnalysisTaskResponse StopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -2281,7 +2281,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopVoiceToneAnalysisTask">REST API Reference for StopVoiceToneAnalysisTask Operation</seealso>
         public virtual IAsyncResult BeginStopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopVoiceToneAnalysisTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2411,7 +2411,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2490,7 +2490,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineConfiguration">REST API Reference for UpdateMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual UpdateMediaInsightsPipelineConfigurationResponse UpdateMediaInsightsPipelineConfiguration(UpdateMediaInsightsPipelineConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -2511,7 +2511,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineConfiguration">REST API Reference for UpdateMediaInsightsPipelineConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateMediaInsightsPipelineConfiguration(UpdateMediaInsightsPipelineConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaInsightsPipelineConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaInsightsPipelineConfigurationResponseUnmarshaller.Instance;
 
@@ -2569,7 +2569,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineStatus">REST API Reference for UpdateMediaInsightsPipelineStatus Operation</seealso>
         public virtual UpdateMediaInsightsPipelineStatusResponse UpdateMediaInsightsPipelineStatus(UpdateMediaInsightsPipelineStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaInsightsPipelineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaInsightsPipelineStatusResponseUnmarshaller.Instance;
 
@@ -2590,7 +2590,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaInsightsPipelineStatus">REST API Reference for UpdateMediaInsightsPipelineStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateMediaInsightsPipelineStatus(UpdateMediaInsightsPipelineStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaInsightsPipelineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaInsightsPipelineStatusResponseUnmarshaller.Instance;
 
@@ -2648,7 +2648,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual UpdateMediaPipelineKinesisVideoStreamPoolResponse UpdateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 
@@ -2669,7 +2669,7 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">REST API Reference for UpdateMediaPipelineKinesisVideoStreamPool Operation</seealso>
         public virtual IAsyncResult BeginUpdateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaPipelineKinesisVideoStreamPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaPipelineKinesisVideoStreamPoolResponseUnmarshaller.Instance;
 

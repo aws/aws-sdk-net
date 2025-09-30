@@ -312,7 +312,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/AssociateGatewayToServer">REST API Reference for AssociateGatewayToServer Operation</seealso>
         public virtual AssociateGatewayToServerResponse AssociateGatewayToServer(AssociateGatewayToServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateGatewayToServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateGatewayToServerResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/AssociateGatewayToServer">REST API Reference for AssociateGatewayToServer Operation</seealso>
         public virtual IAsyncResult BeginAssociateGatewayToServer(AssociateGatewayToServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateGatewayToServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateGatewayToServerResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual IAsyncResult BeginCreateGateway(CreateGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual IAsyncResult BeginDeleteGateway(DeleteGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteHypervisor">REST API Reference for DeleteHypervisor Operation</seealso>
         public virtual DeleteHypervisorResponse DeleteHypervisor(DeleteHypervisorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHypervisorResponseUnmarshaller.Instance;
 
@@ -538,7 +538,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DeleteHypervisor">REST API Reference for DeleteHypervisor Operation</seealso>
         public virtual IAsyncResult BeginDeleteHypervisor(DeleteHypervisorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHypervisorResponseUnmarshaller.Instance;
 
@@ -588,7 +588,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DisassociateGatewayFromServer">REST API Reference for DisassociateGatewayFromServer Operation</seealso>
         public virtual DisassociateGatewayFromServerResponse DisassociateGatewayFromServer(DisassociateGatewayFromServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGatewayFromServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGatewayFromServerResponseUnmarshaller.Instance;
 
@@ -609,7 +609,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/DisassociateGatewayFromServer">REST API Reference for DisassociateGatewayFromServer Operation</seealso>
         public virtual IAsyncResult BeginDisassociateGatewayFromServer(DisassociateGatewayFromServerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGatewayFromServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGatewayFromServerResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
         public virtual GetBandwidthRateLimitScheduleResponse GetBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBandwidthRateLimitScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
 
@@ -678,7 +678,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">REST API Reference for GetBandwidthRateLimitSchedule Operation</seealso>
         public virtual IAsyncResult BeginGetBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBandwidthRateLimitScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
         public virtual GetGatewayResponse GetGateway(GetGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
         public virtual IAsyncResult BeginGetGateway(GetGatewayRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGatewayResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
         public virtual GetHypervisorResponse GetHypervisor(GetHypervisorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHypervisorResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">REST API Reference for GetHypervisor Operation</seealso>
         public virtual IAsyncResult BeginGetHypervisor(GetHypervisorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHypervisorResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
         public virtual GetHypervisorPropertyMappingsResponse GetHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHypervisorPropertyMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHypervisorPropertyMappingsResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">REST API Reference for GetHypervisorPropertyMappings Operation</seealso>
         public virtual IAsyncResult BeginGetHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHypervisorPropertyMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHypervisorPropertyMappingsResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
         public virtual GetVirtualMachineResponse GetVirtualMachine(GetVirtualMachineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVirtualMachineResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
         public virtual IAsyncResult BeginGetVirtualMachine(GetVirtualMachineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVirtualMachineResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ImportHypervisorConfiguration">REST API Reference for ImportHypervisorConfiguration Operation</seealso>
         public virtual ImportHypervisorConfigurationResponse ImportHypervisorConfiguration(ImportHypervisorConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportHypervisorConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportHypervisorConfigurationResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ImportHypervisorConfiguration">REST API Reference for ImportHypervisorConfiguration Operation</seealso>
         public virtual IAsyncResult BeginImportHypervisorConfiguration(ImportHypervisorConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportHypervisorConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportHypervisorConfigurationResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual IAsyncResult BeginListGateways(ListGatewaysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1128,7 +1128,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListHypervisors">REST API Reference for ListHypervisors Operation</seealso>
         public virtual ListHypervisorsResponse ListHypervisors(ListHypervisorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHypervisorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHypervisorsResponseUnmarshaller.Instance;
 
@@ -1149,7 +1149,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListHypervisors">REST API Reference for ListHypervisors Operation</seealso>
         public virtual IAsyncResult BeginListHypervisors(ListHypervisorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHypervisorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHypervisorsResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1216,7 +1216,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListVirtualMachines">REST API Reference for ListVirtualMachines Operation</seealso>
         public virtual ListVirtualMachinesResponse ListVirtualMachines(ListVirtualMachinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualMachinesResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ListVirtualMachines">REST API Reference for ListVirtualMachines Operation</seealso>
         public virtual IAsyncResult BeginListVirtualMachines(ListVirtualMachinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualMachinesResponseUnmarshaller.Instance;
 
@@ -1328,7 +1328,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
         public virtual PutBandwidthRateLimitScheduleResponse PutBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBandwidthRateLimitScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
 
@@ -1349,7 +1349,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">REST API Reference for PutBandwidthRateLimitSchedule Operation</seealso>
         public virtual IAsyncResult BeginPutBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBandwidthRateLimitScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
         public virtual PutHypervisorPropertyMappingsResponse PutHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutHypervisorPropertyMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutHypervisorPropertyMappingsResponseUnmarshaller.Instance;
 
@@ -1424,7 +1424,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">REST API Reference for PutHypervisorPropertyMappings Operation</seealso>
         public virtual IAsyncResult BeginPutHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutHypervisorPropertyMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutHypervisorPropertyMappingsResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime">REST API Reference for PutMaintenanceStartTime Operation</seealso>
         public virtual PutMaintenanceStartTimeResponse PutMaintenanceStartTime(PutMaintenanceStartTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMaintenanceStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMaintenanceStartTimeResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime">REST API Reference for PutMaintenanceStartTime Operation</seealso>
         public virtual IAsyncResult BeginPutMaintenanceStartTime(PutMaintenanceStartTimeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMaintenanceStartTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMaintenanceStartTimeResponseUnmarshaller.Instance;
 
@@ -1543,7 +1543,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
         public virtual StartVirtualMachinesMetadataSyncResponse StartVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVirtualMachinesMetadataSyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVirtualMachinesMetadataSyncResponseUnmarshaller.Instance;
 
@@ -1564,7 +1564,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">REST API Reference for StartVirtualMachinesMetadataSync Operation</seealso>
         public virtual IAsyncResult BeginStartVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartVirtualMachinesMetadataSyncRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartVirtualMachinesMetadataSyncResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1631,7 +1631,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TestHypervisorConfiguration">REST API Reference for TestHypervisorConfiguration Operation</seealso>
         public virtual TestHypervisorConfigurationResponse TestHypervisorConfiguration(TestHypervisorConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestHypervisorConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestHypervisorConfigurationResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/TestHypervisorConfiguration">REST API Reference for TestHypervisorConfiguration Operation</seealso>
         public virtual IAsyncResult BeginTestHypervisorConfiguration(TestHypervisorConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestHypervisorConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestHypervisorConfigurationResponseUnmarshaller.Instance;
 
@@ -1748,7 +1748,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1819,7 +1819,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public virtual UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInformationResponseUnmarshaller.Instance;
 
@@ -1840,7 +1840,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public virtual IAsyncResult BeginUpdateGatewayInformation(UpdateGatewayInformationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInformationResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public virtual UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public virtual IAsyncResult BeginUpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewaySoftwareNowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.Instance;
 
@@ -1969,7 +1969,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateHypervisor">REST API Reference for UpdateHypervisor Operation</seealso>
         public virtual UpdateHypervisorResponse UpdateHypervisor(UpdateHypervisorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHypervisorResponseUnmarshaller.Instance;
 
@@ -1990,7 +1990,7 @@ namespace Amazon.BackupGateway
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateHypervisor">REST API Reference for UpdateHypervisor Operation</seealso>
         public virtual IAsyncResult BeginUpdateHypervisor(UpdateHypervisorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHypervisorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHypervisorResponseUnmarshaller.Instance;
 

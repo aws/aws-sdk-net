@@ -352,7 +352,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         public virtual CountClosedWorkflowExecutionsResponse CountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -373,7 +373,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions">REST API Reference for CountClosedWorkflowExecutions Operation</seealso>
         public virtual IAsyncResult BeginCountClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountClosedWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         public virtual CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions">REST API Reference for CountOpenWorkflowExecutions Operation</seealso>
         public virtual IAsyncResult BeginCountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountOpenWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         public virtual CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountPendingActivityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
 
@@ -581,7 +581,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks">REST API Reference for CountPendingActivityTasks Operation</seealso>
         public virtual IAsyncResult BeginCountPendingActivityTasks(CountPendingActivityTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountPendingActivityTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountPendingActivityTasksResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         public virtual CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks">REST API Reference for CountPendingDecisionTasks Operation</seealso>
         public virtual IAsyncResult BeginCountPendingDecisionTasks(CountPendingDecisionTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CountPendingDecisionTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CountPendingDecisionTasksResponseUnmarshaller.Instance;
 
@@ -770,7 +770,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteActivityType">REST API Reference for DeleteActivityType Operation</seealso>
         public virtual DeleteActivityTypeResponse DeleteActivityType(DeleteActivityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteActivityTypeResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteActivityType">REST API Reference for DeleteActivityType Operation</seealso>
         public virtual IAsyncResult BeginDeleteActivityType(DeleteActivityTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteActivityTypeResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteWorkflowType">REST API Reference for DeleteWorkflowType Operation</seealso>
         public virtual DeleteWorkflowTypeResponse DeleteWorkflowType(DeleteWorkflowTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeleteWorkflowType">REST API Reference for DeleteWorkflowType Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkflowType(DeleteWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -991,7 +991,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         public virtual DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
 
@@ -1012,7 +1012,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType">REST API Reference for DeprecateActivityType Operation</seealso>
         public virtual IAsyncResult BeginDeprecateActivityType(DeprecateActivityTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateActivityTypeResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         public virtual DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
 
@@ -1117,7 +1117,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain">REST API Reference for DeprecateDomain Operation</seealso>
         public virtual IAsyncResult BeginDeprecateDomain(DeprecateDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateDomainResponseUnmarshaller.Instance;
 
@@ -1209,7 +1209,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         public virtual DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType">REST API Reference for DeprecateWorkflowType Operation</seealso>
         public virtual IAsyncResult BeginDeprecateWorkflowType(DeprecateWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeprecateWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         public virtual DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
 
@@ -1334,7 +1334,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType">REST API Reference for DescribeActivityType Operation</seealso>
         public virtual IAsyncResult BeginDescribeActivityType(DescribeActivityTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeActivityTypeResponseUnmarshaller.Instance;
 
@@ -1406,7 +1406,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -1427,7 +1427,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomain(DescribeDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
@@ -1505,7 +1505,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         public virtual DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -1526,7 +1526,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution">REST API Reference for DescribeWorkflowExecution Operation</seealso>
         public virtual IAsyncResult BeginDescribeWorkflowExecution(DescribeWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         public virtual DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType">REST API Reference for DescribeWorkflowType Operation</seealso>
         public virtual IAsyncResult BeginDescribeWorkflowType(DescribeWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -1709,7 +1709,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         public virtual GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
 
@@ -1730,7 +1730,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory">REST API Reference for GetWorkflowExecutionHistory Operation</seealso>
         public virtual IAsyncResult BeginGetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowExecutionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.Instance;
 
@@ -1806,7 +1806,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         public virtual ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActivityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes">REST API Reference for ListActivityTypes Operation</seealso>
         public virtual IAsyncResult BeginListActivityTypes(ListActivityTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActivityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActivityTypesResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         public virtual ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions">REST API Reference for ListClosedWorkflowExecutions Operation</seealso>
         public virtual IAsyncResult BeginListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClosedWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -2015,7 +2015,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -2036,7 +2036,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -2128,7 +2128,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         public virtual ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -2149,7 +2149,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions">REST API Reference for ListOpenWorkflowExecutions Operation</seealso>
         public virtual IAsyncResult BeginListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpenWorkflowExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2289,7 +2289,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         public virtual ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes">REST API Reference for ListWorkflowTypes Operation</seealso>
         public virtual IAsyncResult BeginListWorkflowTypes(ListWorkflowTypesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowTypesResponseUnmarshaller.Instance;
 
@@ -2399,7 +2399,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         public virtual PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForActivityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
 
@@ -2420,7 +2420,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask">REST API Reference for PollForActivityTask Operation</seealso>
         public virtual IAsyncResult BeginPollForActivityTask(PollForActivityTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForActivityTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForActivityTaskResponseUnmarshaller.Instance;
 
@@ -2524,7 +2524,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         public virtual PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForDecisionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
 
@@ -2545,7 +2545,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask">REST API Reference for PollForDecisionTask Operation</seealso>
         public virtual IAsyncResult BeginPollForDecisionTask(PollForDecisionTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PollForDecisionTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PollForDecisionTaskResponseUnmarshaller.Instance;
 
@@ -2652,7 +2652,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         public virtual RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
 
@@ -2673,7 +2673,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat">REST API Reference for RecordActivityTaskHeartbeat Operation</seealso>
         public virtual IAsyncResult BeginRecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecordActivityTaskHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.Instance;
 
@@ -2775,7 +2775,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         public virtual RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType">REST API Reference for RegisterActivityType Operation</seealso>
         public virtual IAsyncResult BeginRegisterActivityType(RegisterActivityTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterActivityTypeResponseUnmarshaller.Instance;
 
@@ -2876,7 +2876,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         public virtual RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
@@ -2897,7 +2897,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         public virtual IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDomainResponseUnmarshaller.Instance;
 
@@ -3004,7 +3004,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         public virtual RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -3025,7 +3025,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType">REST API Reference for RegisterWorkflowType Operation</seealso>
         public virtual IAsyncResult BeginRegisterWorkflowType(RegisterWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -3111,7 +3111,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         public virtual RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3132,7 +3132,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution">REST API Reference for RequestCancelWorkflowExecution Operation</seealso>
         public virtual IAsyncResult BeginRequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RequestCancelWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3224,7 +3224,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         public virtual RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
 
@@ -3245,7 +3245,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled">REST API Reference for RespondActivityTaskCanceled Operation</seealso>
         public virtual IAsyncResult BeginRespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskCanceledRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.Instance;
 
@@ -3334,7 +3334,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         public virtual RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
 
@@ -3355,7 +3355,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted">REST API Reference for RespondActivityTaskCompleted Operation</seealso>
         public virtual IAsyncResult BeginRespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskCompletedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.Instance;
 
@@ -3438,7 +3438,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         public virtual RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
 
@@ -3459,7 +3459,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed">REST API Reference for RespondActivityTaskFailed Operation</seealso>
         public virtual IAsyncResult BeginRespondActivityTaskFailed(RespondActivityTaskFailedRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondActivityTaskFailedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondActivityTaskFailedResponseUnmarshaller.Instance;
 
@@ -3522,7 +3522,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         public virtual RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
 
@@ -3543,7 +3543,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted">REST API Reference for RespondDecisionTaskCompleted Operation</seealso>
         public virtual IAsyncResult BeginRespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RespondDecisionTaskCompletedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.Instance;
 
@@ -3627,7 +3627,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         public virtual SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3648,7 +3648,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution">REST API Reference for SignalWorkflowExecution Operation</seealso>
         public virtual IAsyncResult BeginSignalWorkflowExecution(SignalWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SignalWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SignalWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3789,7 +3789,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         public virtual StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3810,7 +3810,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution">REST API Reference for StartWorkflowExecution Operation</seealso>
         public virtual IAsyncResult BeginStartWorkflowExecution(StartWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3865,7 +3865,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3886,7 +3886,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3976,7 +3976,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         public virtual TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -3997,7 +3997,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution">REST API Reference for TerminateWorkflowExecution Operation</seealso>
         public virtual IAsyncResult BeginTerminateWorkflowExecution(TerminateWorkflowExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkflowExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.Instance;
 
@@ -4089,7 +4089,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">REST API Reference for UndeprecateActivityType Operation</seealso>
         public virtual UndeprecateActivityTypeResponse UndeprecateActivityType(UndeprecateActivityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateActivityTypeResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateActivityType">REST API Reference for UndeprecateActivityType Operation</seealso>
         public virtual IAsyncResult BeginUndeprecateActivityType(UndeprecateActivityTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateActivityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateActivityTypeResponseUnmarshaller.Instance;
 
@@ -4193,7 +4193,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">REST API Reference for UndeprecateDomain Operation</seealso>
         public virtual UndeprecateDomainResponse UndeprecateDomain(UndeprecateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateDomainResponseUnmarshaller.Instance;
 
@@ -4214,7 +4214,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateDomain">REST API Reference for UndeprecateDomain Operation</seealso>
         public virtual IAsyncResult BeginUndeprecateDomain(UndeprecateDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateDomainResponseUnmarshaller.Instance;
 
@@ -4306,7 +4306,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">REST API Reference for UndeprecateWorkflowType Operation</seealso>
         public virtual UndeprecateWorkflowTypeResponse UndeprecateWorkflowType(UndeprecateWorkflowTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -4327,7 +4327,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UndeprecateWorkflowType">REST API Reference for UndeprecateWorkflowType Operation</seealso>
         public virtual IAsyncResult BeginUndeprecateWorkflowType(UndeprecateWorkflowTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UndeprecateWorkflowTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UndeprecateWorkflowTypeResponseUnmarshaller.Instance;
 
@@ -4373,7 +4373,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4394,7 +4394,7 @@ namespace Amazon.SimpleWorkflow
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

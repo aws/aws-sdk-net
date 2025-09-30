@@ -270,7 +270,7 @@ namespace Amazon.EC2InstanceConnect
 
         internal virtual SendSerialConsoleSSHPublicKeyResponse SendSerialConsoleSSHPublicKey(SendSerialConsoleSSHPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendSerialConsoleSSHPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendSerialConsoleSSHPublicKeyResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.EC2InstanceConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey">REST API Reference for SendSerialConsoleSSHPublicKey Operation</seealso>
         public virtual Task<SendSerialConsoleSSHPublicKeyResponse> SendSerialConsoleSSHPublicKeyAsync(SendSerialConsoleSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendSerialConsoleSSHPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendSerialConsoleSSHPublicKeyResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.EC2InstanceConnect
 
         internal virtual SendSSHPublicKeyResponse SendSSHPublicKey(SendSSHPublicKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendSSHPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendSSHPublicKeyResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.EC2InstanceConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">REST API Reference for SendSSHPublicKey Operation</seealso>
         public virtual Task<SendSSHPublicKeyResponse> SendSSHPublicKeyAsync(SendSSHPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendSSHPublicKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendSSHPublicKeyResponseUnmarshaller.Instance;
 

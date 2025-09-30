@@ -311,7 +311,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CancelJobRun">REST API Reference for CancelJobRun Operation</seealso>
         public virtual CancelJobRunResponse CancelJobRun(CancelJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobRunResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CancelJobRun">REST API Reference for CancelJobRun Operation</seealso>
         public virtual IAsyncResult BeginCancelJobRun(CancelJobRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelJobRunResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
         public virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginCreateJobTemplate(CreateJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateManagedEndpoint">REST API Reference for CreateManagedEndpoint Operation</seealso>
         public virtual CreateManagedEndpointResponse CreateManagedEndpoint(CreateManagedEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedEndpointResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateManagedEndpoint">REST API Reference for CreateManagedEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateManagedEndpoint(CreateManagedEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateManagedEndpointResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateSecurityConfiguration(CreateSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster">REST API Reference for CreateVirtualCluster Operation</seealso>
         public virtual CreateVirtualClusterResponse CreateVirtualCluster(CreateVirtualClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualClusterResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateVirtualCluster">REST API Reference for CreateVirtualCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateVirtualCluster(CreateVirtualClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualClusterResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
         public virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginDeleteJobTemplate(DeleteJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteManagedEndpoint">REST API Reference for DeleteManagedEndpoint Operation</seealso>
         public virtual DeleteManagedEndpointResponse DeleteManagedEndpoint(DeleteManagedEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedEndpointResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteManagedEndpoint">REST API Reference for DeleteManagedEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteManagedEndpoint(DeleteManagedEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteManagedEndpointResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteVirtualCluster">REST API Reference for DeleteVirtualCluster Operation</seealso>
         public virtual DeleteVirtualClusterResponse DeleteVirtualCluster(DeleteVirtualClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualClusterResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteVirtualCluster">REST API Reference for DeleteVirtualCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteVirtualCluster(DeleteVirtualClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualClusterResponseUnmarshaller.Instance;
 
@@ -828,7 +828,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
         public virtual DescribeJobRunResponse DescribeJobRun(DescribeJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobRun(DescribeJobRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
 
@@ -894,7 +894,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
         public virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
 
@@ -915,7 +915,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
         public virtual IAsyncResult BeginDescribeJobTemplate(DescribeJobTemplateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeManagedEndpoint">REST API Reference for DescribeManagedEndpoint Operation</seealso>
         public virtual DescribeManagedEndpointResponse DescribeManagedEndpoint(DescribeManagedEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedEndpointResponseUnmarshaller.Instance;
 
@@ -980,7 +980,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeManagedEndpoint">REST API Reference for DescribeManagedEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDescribeManagedEndpoint(DescribeManagedEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeManagedEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeManagedEndpointResponseUnmarshaller.Instance;
 
@@ -1026,7 +1026,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public virtual DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -1093,7 +1093,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeVirtualCluster">REST API Reference for DescribeVirtualCluster Operation</seealso>
         public virtual DescribeVirtualClusterResponse DescribeVirtualCluster(DescribeVirtualClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualClusterResponseUnmarshaller.Instance;
 
@@ -1114,7 +1114,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeVirtualCluster">REST API Reference for DescribeVirtualCluster Operation</seealso>
         public virtual IAsyncResult BeginDescribeVirtualCluster(DescribeVirtualClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualClusterResponseUnmarshaller.Instance;
 
@@ -1159,7 +1159,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
         public virtual GetManagedEndpointSessionCredentialsResponse GetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
 
@@ -1180,7 +1180,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
         public virtual IAsyncResult BeginGetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual IAsyncResult BeginListJobRuns(ListJobRunsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
         public virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
 
@@ -1304,7 +1304,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
         public virtual IAsyncResult BeginListJobTemplates(ListJobTemplatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListManagedEndpoints">REST API Reference for ListManagedEndpoints Operation</seealso>
         public virtual ListManagedEndpointsResponse ListManagedEndpoints(ListManagedEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedEndpointsResponseUnmarshaller.Instance;
 
@@ -1366,7 +1366,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListManagedEndpoints">REST API Reference for ListManagedEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListManagedEndpoints(ListManagedEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedEndpointsResponseUnmarshaller.Instance;
 
@@ -1409,7 +1409,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public virtual ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
@@ -1430,7 +1430,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListSecurityConfigurations(ListSecurityConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
@@ -1472,7 +1472,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1493,7 +1493,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">REST API Reference for ListVirtualClusters Operation</seealso>
         public virtual ListVirtualClustersResponse ListVirtualClusters(ListVirtualClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualClustersResponseUnmarshaller.Instance;
 
@@ -1557,7 +1557,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListVirtualClusters">REST API Reference for ListVirtualClusters Operation</seealso>
         public virtual IAsyncResult BeginListVirtualClusters(ListVirtualClustersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualClustersResponseUnmarshaller.Instance;
 
@@ -1600,7 +1600,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual StartJobRunResponse StartJobRun(StartJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual IAsyncResult BeginStartJobRun(StartJobRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -1671,7 +1671,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.EMRContainers
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

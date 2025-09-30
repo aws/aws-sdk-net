@@ -295,7 +295,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/CloseTunnel">REST API Reference for CloseTunnel Operation</seealso>
         public virtual CloseTunnelResponse CloseTunnel(CloseTunnelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseTunnelResponseUnmarshaller.Instance;
 
@@ -326,7 +326,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/CloseTunnel">REST API Reference for CloseTunnel Operation</seealso>
         public virtual Task<CloseTunnelResponse> CloseTunnelAsync(CloseTunnelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseTunnelResponseUnmarshaller.Instance;
             
@@ -356,7 +356,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/DescribeTunnel">REST API Reference for DescribeTunnel Operation</seealso>
         public virtual DescribeTunnelResponse DescribeTunnel(DescribeTunnelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTunnelResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/DescribeTunnel">REST API Reference for DescribeTunnel Operation</seealso>
         public virtual Task<DescribeTunnelResponse> DescribeTunnelAsync(DescribeTunnelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTunnelResponseUnmarshaller.Instance;
             
@@ -409,7 +409,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -460,7 +460,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ListTunnels">REST API Reference for ListTunnels Operation</seealso>
         public virtual ListTunnelsResponse ListTunnels(ListTunnelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTunnelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTunnelsResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/ListTunnels">REST API Reference for ListTunnels Operation</seealso>
         public virtual Task<ListTunnelsResponse> ListTunnelsAsync(ListTunnelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTunnelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTunnelsResponseUnmarshaller.Instance;
             
@@ -518,7 +518,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">REST API Reference for OpenTunnel Operation</seealso>
         public virtual OpenTunnelResponse OpenTunnel(OpenTunnelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OpenTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OpenTunnelResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/OpenTunnel">REST API Reference for OpenTunnel Operation</seealso>
         public virtual Task<OpenTunnelResponse> OpenTunnelAsync(OpenTunnelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OpenTunnelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OpenTunnelResponseUnmarshaller.Instance;
             
@@ -587,7 +587,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken">REST API Reference for RotateTunnelAccessToken Operation</seealso>
         public virtual RotateTunnelAccessTokenResponse RotateTunnelAccessToken(RotateTunnelAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateTunnelAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateTunnelAccessTokenResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/RotateTunnelAccessToken">REST API Reference for RotateTunnelAccessToken Operation</seealso>
         public virtual Task<RotateTunnelAccessTokenResponse> RotateTunnelAccessTokenAsync(RotateTunnelAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RotateTunnelAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RotateTunnelAccessTokenResponseUnmarshaller.Instance;
             
@@ -649,7 +649,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -696,7 +696,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -719,7 +719,7 @@ namespace Amazon.IoTSecureTunneling
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             

@@ -290,7 +290,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCell">REST API Reference for CreateCell Operation</seealso>
         public virtual CreateCellResponse CreateCell(CreateCellRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCellResponseUnmarshaller.Instance;
 
@@ -311,7 +311,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCell">REST API Reference for CreateCell Operation</seealso>
         public virtual IAsyncResult BeginCreateCell(CreateCellRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCellResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCrossAccountAuthorization">REST API Reference for CreateCrossAccountAuthorization Operation</seealso>
         public virtual CreateCrossAccountAuthorizationResponse CreateCrossAccountAuthorization(CreateCrossAccountAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrossAccountAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrossAccountAuthorizationResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateCrossAccountAuthorization">REST API Reference for CreateCrossAccountAuthorization Operation</seealso>
         public virtual IAsyncResult BeginCreateCrossAccountAuthorization(CreateCrossAccountAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrossAccountAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrossAccountAuthorizationResponseUnmarshaller.Instance;
 
@@ -433,7 +433,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateReadinessCheck">REST API Reference for CreateReadinessCheck Operation</seealso>
         public virtual CreateReadinessCheckResponse CreateReadinessCheck(CreateReadinessCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReadinessCheckResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateReadinessCheck">REST API Reference for CreateReadinessCheck Operation</seealso>
         public virtual IAsyncResult BeginCreateReadinessCheck(CreateReadinessCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReadinessCheckResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateRecoveryGroup">REST API Reference for CreateRecoveryGroup Operation</seealso>
         public virtual CreateRecoveryGroupResponse CreateRecoveryGroup(CreateRecoveryGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -524,7 +524,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateRecoveryGroup">REST API Reference for CreateRecoveryGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateRecoveryGroup(CreateRecoveryGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateResourceSet">REST API Reference for CreateResourceSet Operation</seealso>
         public virtual CreateResourceSetResponse CreateResourceSet(CreateResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSetResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CreateResourceSet">REST API Reference for CreateResourceSet Operation</seealso>
         public virtual IAsyncResult BeginCreateResourceSet(CreateResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateResourceSetResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteCell">REST API Reference for DeleteCell Operation</seealso>
         public virtual DeleteCellResponse DeleteCell(DeleteCellRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCellResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteCell">REST API Reference for DeleteCell Operation</seealso>
         public virtual IAsyncResult BeginDeleteCell(DeleteCellRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCellResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteCrossAccountAuthorization">REST API Reference for DeleteCrossAccountAuthorization Operation</seealso>
         public virtual DeleteCrossAccountAuthorizationResponse DeleteCrossAccountAuthorization(DeleteCrossAccountAuthorizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrossAccountAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrossAccountAuthorizationResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteCrossAccountAuthorization">REST API Reference for DeleteCrossAccountAuthorization Operation</seealso>
         public virtual IAsyncResult BeginDeleteCrossAccountAuthorization(DeleteCrossAccountAuthorizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrossAccountAuthorizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrossAccountAuthorizationResponseUnmarshaller.Instance;
 
@@ -778,7 +778,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteReadinessCheck">REST API Reference for DeleteReadinessCheck Operation</seealso>
         public virtual DeleteReadinessCheckResponse DeleteReadinessCheck(DeleteReadinessCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReadinessCheckResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteReadinessCheck">REST API Reference for DeleteReadinessCheck Operation</seealso>
         public virtual IAsyncResult BeginDeleteReadinessCheck(DeleteReadinessCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReadinessCheckResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteRecoveryGroup">REST API Reference for DeleteRecoveryGroup Operation</seealso>
         public virtual DeleteRecoveryGroupResponse DeleteRecoveryGroup(DeleteRecoveryGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -868,7 +868,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteRecoveryGroup">REST API Reference for DeleteRecoveryGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteRecoveryGroup(DeleteRecoveryGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
         public virtual DeleteResourceSetResponse DeleteResourceSet(DeleteResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
 
@@ -937,7 +937,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/DeleteResourceSet">REST API Reference for DeleteResourceSet Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourceSet(DeleteResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourceSetResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetArchitectureRecommendations">REST API Reference for GetArchitectureRecommendations Operation</seealso>
         public virtual GetArchitectureRecommendationsResponse GetArchitectureRecommendations(GetArchitectureRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetArchitectureRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetArchitectureRecommendationsResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetArchitectureRecommendations">REST API Reference for GetArchitectureRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetArchitectureRecommendations(GetArchitectureRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetArchitectureRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetArchitectureRecommendationsResponseUnmarshaller.Instance;
 
@@ -1057,7 +1057,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetCell">REST API Reference for GetCell Operation</seealso>
         public virtual GetCellResponse GetCell(GetCellRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCellResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetCell">REST API Reference for GetCell Operation</seealso>
         public virtual IAsyncResult BeginGetCell(GetCellRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCellResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetCellReadinessSummary">REST API Reference for GetCellReadinessSummary Operation</seealso>
         public virtual GetCellReadinessSummaryResponse GetCellReadinessSummary(GetCellReadinessSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCellReadinessSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCellReadinessSummaryResponseUnmarshaller.Instance;
 
@@ -1148,7 +1148,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetCellReadinessSummary">REST API Reference for GetCellReadinessSummary Operation</seealso>
         public virtual IAsyncResult BeginGetCellReadinessSummary(GetCellReadinessSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCellReadinessSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCellReadinessSummaryResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheck">REST API Reference for GetReadinessCheck Operation</seealso>
         public virtual GetReadinessCheckResponse GetReadinessCheck(GetReadinessCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckResponseUnmarshaller.Instance;
 
@@ -1217,7 +1217,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheck">REST API Reference for GetReadinessCheck Operation</seealso>
         public virtual IAsyncResult BeginGetReadinessCheck(GetReadinessCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckResponseUnmarshaller.Instance;
 
@@ -1267,7 +1267,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheckResourceStatus">REST API Reference for GetReadinessCheckResourceStatus Operation</seealso>
         public virtual GetReadinessCheckResourceStatusResponse GetReadinessCheckResourceStatus(GetReadinessCheckResourceStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckResourceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckResourceStatusResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheckResourceStatus">REST API Reference for GetReadinessCheckResourceStatus Operation</seealso>
         public virtual IAsyncResult BeginGetReadinessCheckResourceStatus(GetReadinessCheckResourceStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckResourceStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckResourceStatusResponseUnmarshaller.Instance;
 
@@ -1338,7 +1338,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheckStatus">REST API Reference for GetReadinessCheckStatus Operation</seealso>
         public virtual GetReadinessCheckStatusResponse GetReadinessCheckStatus(GetReadinessCheckStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckStatusResponseUnmarshaller.Instance;
 
@@ -1359,7 +1359,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetReadinessCheckStatus">REST API Reference for GetReadinessCheckStatus Operation</seealso>
         public virtual IAsyncResult BeginGetReadinessCheckStatus(GetReadinessCheckStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReadinessCheckStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReadinessCheckStatusResponseUnmarshaller.Instance;
 
@@ -1408,7 +1408,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetRecoveryGroup">REST API Reference for GetRecoveryGroup Operation</seealso>
         public virtual GetRecoveryGroupResponse GetRecoveryGroup(GetRecoveryGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetRecoveryGroup">REST API Reference for GetRecoveryGroup Operation</seealso>
         public virtual IAsyncResult BeginGetRecoveryGroup(GetRecoveryGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -1479,7 +1479,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetRecoveryGroupReadinessSummary">REST API Reference for GetRecoveryGroupReadinessSummary Operation</seealso>
         public virtual GetRecoveryGroupReadinessSummaryResponse GetRecoveryGroupReadinessSummary(GetRecoveryGroupReadinessSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryGroupReadinessSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryGroupReadinessSummaryResponseUnmarshaller.Instance;
 
@@ -1500,7 +1500,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetRecoveryGroupReadinessSummary">REST API Reference for GetRecoveryGroupReadinessSummary Operation</seealso>
         public virtual IAsyncResult BeginGetRecoveryGroupReadinessSummary(GetRecoveryGroupReadinessSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecoveryGroupReadinessSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecoveryGroupReadinessSummaryResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
         public virtual GetResourceSetResponse GetResourceSet(GetResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
 
@@ -1570,7 +1570,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/GetResourceSet">REST API Reference for GetResourceSet Operation</seealso>
         public virtual IAsyncResult BeginGetResourceSet(GetResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSetResponseUnmarshaller.Instance;
 
@@ -1615,7 +1615,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListCells">REST API Reference for ListCells Operation</seealso>
         public virtual ListCellsResponse ListCells(ListCellsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCellsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCellsResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListCells">REST API Reference for ListCells Operation</seealso>
         public virtual IAsyncResult BeginListCells(ListCellsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCellsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCellsResponseUnmarshaller.Instance;
 
@@ -1681,7 +1681,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListCrossAccountAuthorizations">REST API Reference for ListCrossAccountAuthorizations Operation</seealso>
         public virtual ListCrossAccountAuthorizationsResponse ListCrossAccountAuthorizations(ListCrossAccountAuthorizationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountAuthorizationsResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListCrossAccountAuthorizations">REST API Reference for ListCrossAccountAuthorizations Operation</seealso>
         public virtual IAsyncResult BeginListCrossAccountAuthorizations(ListCrossAccountAuthorizationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrossAccountAuthorizationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrossAccountAuthorizationsResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListReadinessChecks">REST API Reference for ListReadinessChecks Operation</seealso>
         public virtual ListReadinessChecksResponse ListReadinessChecks(ListReadinessChecksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadinessChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadinessChecksResponseUnmarshaller.Instance;
 
@@ -1768,7 +1768,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListReadinessChecks">REST API Reference for ListReadinessChecks Operation</seealso>
         public virtual IAsyncResult BeginListReadinessChecks(ListReadinessChecksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReadinessChecksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReadinessChecksResponseUnmarshaller.Instance;
 
@@ -1813,7 +1813,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRecoveryGroups">REST API Reference for ListRecoveryGroups Operation</seealso>
         public virtual ListRecoveryGroupsResponse ListRecoveryGroups(ListRecoveryGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryGroupsResponseUnmarshaller.Instance;
 
@@ -1834,7 +1834,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRecoveryGroups">REST API Reference for ListRecoveryGroups Operation</seealso>
         public virtual IAsyncResult BeginListRecoveryGroups(ListRecoveryGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecoveryGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecoveryGroupsResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
         public virtual ListResourceSetsResponse ListResourceSets(ListResourceSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
 
@@ -1900,7 +1900,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListResourceSets">REST API Reference for ListResourceSets Operation</seealso>
         public virtual IAsyncResult BeginListResourceSets(ListResourceSetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourceSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourceSetsResponseUnmarshaller.Instance;
 
@@ -1945,7 +1945,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual ListRulesResponse ListRules(ListRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -1966,7 +1966,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRules">REST API Reference for ListRules Operation</seealso>
         public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
 
@@ -2008,7 +2008,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public virtual ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
 
@@ -2029,7 +2029,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResources(ListTagsForResourcesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
 
@@ -2071,7 +2071,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2092,7 +2092,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2134,7 +2134,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2155,7 +2155,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateCell">REST API Reference for UpdateCell Operation</seealso>
         public virtual UpdateCellResponse UpdateCell(UpdateCellRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCellResponseUnmarshaller.Instance;
 
@@ -2224,7 +2224,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateCell">REST API Reference for UpdateCell Operation</seealso>
         public virtual IAsyncResult BeginUpdateCell(UpdateCellRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCellRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCellResponseUnmarshaller.Instance;
 
@@ -2272,7 +2272,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateReadinessCheck">REST API Reference for UpdateReadinessCheck Operation</seealso>
         public virtual UpdateReadinessCheckResponse UpdateReadinessCheck(UpdateReadinessCheckRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReadinessCheckResponseUnmarshaller.Instance;
 
@@ -2293,7 +2293,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateReadinessCheck">REST API Reference for UpdateReadinessCheck Operation</seealso>
         public virtual IAsyncResult BeginUpdateReadinessCheck(UpdateReadinessCheckRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReadinessCheckRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReadinessCheckResponseUnmarshaller.Instance;
 
@@ -2341,7 +2341,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateRecoveryGroup">REST API Reference for UpdateRecoveryGroup Operation</seealso>
         public virtual UpdateRecoveryGroupResponse UpdateRecoveryGroup(UpdateRecoveryGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -2362,7 +2362,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateRecoveryGroup">REST API Reference for UpdateRecoveryGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateRecoveryGroup(UpdateRecoveryGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecoveryGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecoveryGroupResponseUnmarshaller.Instance;
 
@@ -2410,7 +2410,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateResourceSet">REST API Reference for UpdateResourceSet Operation</seealso>
         public virtual UpdateResourceSetResponse UpdateResourceSet(UpdateResourceSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceSetResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateResourceSet">REST API Reference for UpdateResourceSet Operation</seealso>
         public virtual IAsyncResult BeginUpdateResourceSet(UpdateResourceSetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceSetResponseUnmarshaller.Instance;
 

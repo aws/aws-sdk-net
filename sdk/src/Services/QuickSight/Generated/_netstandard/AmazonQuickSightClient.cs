@@ -278,7 +278,7 @@ namespace Amazon.QuickSight
 
         internal virtual BatchCreateTopicReviewedAnswerResponse BatchCreateTopicReviewedAnswer(BatchCreateTopicReviewedAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateTopicReviewedAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateTopicReviewedAnswerResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchCreateTopicReviewedAnswer">REST API Reference for BatchCreateTopicReviewedAnswer Operation</seealso>
         public virtual Task<BatchCreateTopicReviewedAnswerResponse> BatchCreateTopicReviewedAnswerAsync(BatchCreateTopicReviewedAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateTopicReviewedAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateTopicReviewedAnswerResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.QuickSight
 
         internal virtual BatchDeleteTopicReviewedAnswerResponse BatchDeleteTopicReviewedAnswer(BatchDeleteTopicReviewedAnswerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTopicReviewedAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTopicReviewedAnswerResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteTopicReviewedAnswer">REST API Reference for BatchDeleteTopicReviewedAnswer Operation</seealso>
         public virtual Task<BatchDeleteTopicReviewedAnswerResponse> BatchDeleteTopicReviewedAnswerAsync(BatchDeleteTopicReviewedAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTopicReviewedAnswerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTopicReviewedAnswerResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.QuickSight
 
         internal virtual CancelIngestionResponse CancelIngestion(CancelIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelIngestionResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CancelIngestion">REST API Reference for CancelIngestion Operation</seealso>
         public virtual Task<CancelIngestionResponse> CancelIngestionAsync(CancelIngestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelIngestionResponseUnmarshaller.Instance;
 
@@ -440,7 +440,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateAccountCustomizationResponse CreateAccountCustomization(CreateAccountCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization">REST API Reference for CreateAccountCustomization Operation</seealso>
         public virtual Task<CreateAccountCustomizationResponse> CreateAccountCustomizationAsync(CreateAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateAccountSubscriptionResponse CreateAccountSubscription(CreateAccountSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -609,7 +609,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">REST API Reference for CreateAccountSubscription Operation</seealso>
         public virtual Task<CreateAccountSubscriptionResponse> CreateAccountSubscriptionAsync(CreateAccountSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -622,7 +622,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateAnalysisResponse CreateAnalysis(CreateAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalysisResponseUnmarshaller.Instance;
 
@@ -671,7 +671,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis">REST API Reference for CreateAnalysis Operation</seealso>
         public virtual Task<CreateAnalysisResponse> CreateAnalysisAsync(CreateAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAnalysisResponseUnmarshaller.Instance;
 
@@ -684,7 +684,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateBrandResponse CreateBrand(CreateBrandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrandResponseUnmarshaller.Instance;
 
@@ -727,7 +727,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateBrand">REST API Reference for CreateBrand Operation</seealso>
         public virtual Task<CreateBrandResponse> CreateBrandAsync(CreateBrandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBrandResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateCustomPermissionsResponse CreateCustomPermissions(CreateCustomPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateCustomPermissions">REST API Reference for CreateCustomPermissions Operation</seealso>
         public virtual Task<CreateCustomPermissionsResponse> CreateCustomPermissionsAsync(CreateCustomPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -807,7 +807,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateDashboardResponse CreateDashboard(CreateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual Task<CreateDashboardResponse> CreateDashboardAsync(CreateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateDataSetResponse CreateDataSet(CreateDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSet">REST API Reference for CreateDataSet Operation</seealso>
         public virtual Task<CreateDataSetResponse> CreateDataSetAsync(CreateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSetResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateDataSourceResponse CreateDataSource(CreateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -998,7 +998,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDataSource">REST API Reference for CreateDataSource Operation</seealso>
         public virtual Task<CreateDataSourceResponse> CreateDataSourceAsync(CreateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
@@ -1011,7 +1011,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateFolderResponse CreateFolder(CreateFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
@@ -1065,7 +1065,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">REST API Reference for CreateFolder Operation</seealso>
         public virtual Task<CreateFolderResponse> CreateFolderAsync(CreateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFolderResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateFolderMembershipResponse CreateFolderMembership(CreateFolderMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFolderMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFolderMembershipResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">REST API Reference for CreateFolderMembership Operation</seealso>
         public virtual Task<CreateFolderMembershipResponse> CreateFolderMembershipAsync(CreateFolderMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFolderMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFolderMembershipResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -1205,7 +1205,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateGroupMembershipResponse CreateGroupMembership(CreateGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">REST API Reference for CreateGroupMembership Operation</seealso>
         public virtual Task<CreateGroupMembershipResponse> CreateGroupMembershipAsync(CreateGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGroupMembershipResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateIAMPolicyAssignmentResponse CreateIAMPolicyAssignment(CreateIAMPolicyAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -1325,7 +1325,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">REST API Reference for CreateIAMPolicyAssignment Operation</seealso>
         public virtual Task<CreateIAMPolicyAssignmentResponse> CreateIAMPolicyAssignmentAsync(CreateIAMPolicyAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -1338,7 +1338,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateIngestionResponse CreateIngestion(CreateIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionResponseUnmarshaller.Instance;
 
@@ -1395,7 +1395,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIngestion">REST API Reference for CreateIngestion Operation</seealso>
         public virtual Task<CreateIngestionResponse> CreateIngestionAsync(CreateIngestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIngestionResponseUnmarshaller.Instance;
 
@@ -1408,7 +1408,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         public virtual Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamespaceResponseUnmarshaller.Instance;
 
@@ -1486,7 +1486,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateRefreshScheduleResponse CreateRefreshSchedule(CreateRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -1535,7 +1535,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule">REST API Reference for CreateRefreshSchedule Operation</seealso>
         public virtual Task<CreateRefreshScheduleResponse> CreateRefreshScheduleAsync(CreateRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -1548,7 +1548,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateRoleMembershipResponse CreateRoleMembership(CreateRoleMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoleMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoleMembershipResponseUnmarshaller.Instance;
 
@@ -1594,7 +1594,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership">REST API Reference for CreateRoleMembership Operation</seealso>
         public virtual Task<CreateRoleMembershipResponse> CreateRoleMembershipAsync(CreateRoleMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRoleMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRoleMembershipResponseUnmarshaller.Instance;
 
@@ -1607,7 +1607,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -1673,7 +1673,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateTemplateAliasResponse CreateTemplateAlias(CreateTemplateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateAliasResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplateAlias">REST API Reference for CreateTemplateAlias Operation</seealso>
         public virtual Task<CreateTemplateAliasResponse> CreateTemplateAliasAsync(CreateTemplateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateAliasResponseUnmarshaller.Instance;
 
@@ -1744,7 +1744,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateThemeResponse CreateTheme(CreateThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
 
@@ -1802,7 +1802,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme">REST API Reference for CreateTheme Operation</seealso>
         public virtual Task<CreateThemeResponse> CreateThemeAsync(CreateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeResponseUnmarshaller.Instance;
 
@@ -1815,7 +1815,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateThemeAliasResponse CreateThemeAlias(CreateThemeAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias">REST API Reference for CreateThemeAlias Operation</seealso>
         public virtual Task<CreateThemeAliasResponse> CreateThemeAliasAsync(CreateThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateThemeAliasResponseUnmarshaller.Instance;
 
@@ -1876,7 +1876,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateTopicResponse CreateTopic(CreateTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopic">REST API Reference for CreateTopic Operation</seealso>
         public virtual Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicResponseUnmarshaller.Instance;
 
@@ -1937,7 +1937,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateTopicRefreshScheduleResponse CreateTopicRefreshSchedule(CreateTopicRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -1985,7 +1985,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicRefreshSchedule">REST API Reference for CreateTopicRefreshSchedule Operation</seealso>
         public virtual Task<CreateTopicRefreshScheduleResponse> CreateTopicRefreshScheduleAsync(CreateTopicRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -1998,7 +1998,7 @@ namespace Amazon.QuickSight
 
         internal virtual CreateVPCConnectionResponse CreateVPCConnection(CreateVPCConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCConnectionResponseUnmarshaller.Instance;
 
@@ -2049,7 +2049,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection">REST API Reference for CreateVPCConnection Operation</seealso>
         public virtual Task<CreateVPCConnectionResponse> CreateVPCConnectionAsync(CreateVPCConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCConnectionResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteAccountCustomizationResponse DeleteAccountCustomization(DeleteAccountCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -2114,7 +2114,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization">REST API Reference for DeleteAccountCustomization Operation</seealso>
         public virtual Task<DeleteAccountCustomizationResponse> DeleteAccountCustomizationAsync(DeleteAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteAccountCustomPermissionResponse DeleteAccountCustomPermission(DeleteAccountCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -2166,7 +2166,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomPermission">REST API Reference for DeleteAccountCustomPermission Operation</seealso>
         public virtual Task<DeleteAccountCustomPermissionResponse> DeleteAccountCustomPermissionAsync(DeleteAccountCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -2179,7 +2179,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteAccountSubscriptionResponse DeleteAccountSubscription(DeleteAccountSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription">REST API Reference for DeleteAccountSubscription Operation</seealso>
         public virtual Task<DeleteAccountSubscriptionResponse> DeleteAccountSubscriptionAsync(DeleteAccountSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteAnalysisResponse DeleteAnalysis(DeleteAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis">REST API Reference for DeleteAnalysis Operation</seealso>
         public virtual Task<DeleteAnalysisResponse> DeleteAnalysisAsync(DeleteAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAnalysisResponseUnmarshaller.Instance;
 
@@ -2315,7 +2315,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteBrandResponse DeleteBrand(DeleteBrandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrandResponseUnmarshaller.Instance;
 
@@ -2358,7 +2358,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteBrand">REST API Reference for DeleteBrand Operation</seealso>
         public virtual Task<DeleteBrandResponse> DeleteBrandAsync(DeleteBrandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrandResponseUnmarshaller.Instance;
 
@@ -2371,7 +2371,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteBrandAssignmentResponse DeleteBrandAssignment(DeleteBrandAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -2414,7 +2414,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteBrandAssignment">REST API Reference for DeleteBrandAssignment Operation</seealso>
         public virtual Task<DeleteBrandAssignmentResponse> DeleteBrandAssignmentAsync(DeleteBrandAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -2427,7 +2427,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteCustomPermissionsResponse DeleteCustomPermissions(DeleteCustomPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -2478,7 +2478,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteCustomPermissions">REST API Reference for DeleteCustomPermissions Operation</seealso>
         public virtual Task<DeleteCustomPermissionsResponse> DeleteCustomPermissionsAsync(DeleteCustomPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -2491,7 +2491,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -2533,7 +2533,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual Task<DeleteDashboardResponse> DeleteDashboardAsync(DeleteDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -2546,7 +2546,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteDataSetResponse DeleteDataSet(DeleteDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetResponseUnmarshaller.Instance;
 
@@ -2585,7 +2585,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSet">REST API Reference for DeleteDataSet Operation</seealso>
         public virtual Task<DeleteDataSetResponse> DeleteDataSetAsync(DeleteDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetResponseUnmarshaller.Instance;
 
@@ -2598,7 +2598,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteDataSetRefreshPropertiesResponse DeleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -2643,7 +2643,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties">REST API Reference for DeleteDataSetRefreshProperties Operation</seealso>
         public virtual Task<DeleteDataSetRefreshPropertiesResponse> DeleteDataSetRefreshPropertiesAsync(DeleteDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -2656,7 +2656,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteDataSourceResponse DeleteDataSource(DeleteDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -2696,7 +2696,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         public virtual Task<DeleteDataSourceResponse> DeleteDataSourceAsync(DeleteDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataSourceResponseUnmarshaller.Instance;
 
@@ -2709,7 +2709,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteDefaultQBusinessApplicationResponse DeleteDefaultQBusinessApplication(DeleteDefaultQBusinessApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDefaultQBusinessApplication">REST API Reference for DeleteDefaultQBusinessApplication Operation</seealso>
         public virtual Task<DeleteDefaultQBusinessApplicationResponse> DeleteDefaultQBusinessApplicationAsync(DeleteDefaultQBusinessApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -2761,7 +2761,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteFolderResponse DeleteFolder(DeleteFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
@@ -2812,7 +2812,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">REST API Reference for DeleteFolder Operation</seealso>
         public virtual Task<DeleteFolderResponse> DeleteFolderAsync(DeleteFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFolderResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteFolderMembershipResponse DeleteFolderMembership(DeleteFolderMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFolderMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFolderMembershipResponseUnmarshaller.Instance;
 
@@ -2870,7 +2870,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">REST API Reference for DeleteFolderMembership Operation</seealso>
         public virtual Task<DeleteFolderMembershipResponse> DeleteFolderMembershipAsync(DeleteFolderMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFolderMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFolderMembershipResponseUnmarshaller.Instance;
 
@@ -2883,7 +2883,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -2928,7 +2928,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupResponseUnmarshaller.Instance;
 
@@ -2941,7 +2941,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteGroupMembershipResponse DeleteGroupMembership(DeleteGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
 
@@ -2986,7 +2986,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">REST API Reference for DeleteGroupMembership Operation</seealso>
         public virtual Task<DeleteGroupMembershipResponse> DeleteGroupMembershipAsync(DeleteGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGroupMembershipResponseUnmarshaller.Instance;
 
@@ -2999,7 +2999,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteIAMPolicyAssignmentResponse DeleteIAMPolicyAssignment(DeleteIAMPolicyAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -3045,7 +3045,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">REST API Reference for DeleteIAMPolicyAssignment Operation</seealso>
         public virtual Task<DeleteIAMPolicyAssignmentResponse> DeleteIAMPolicyAssignmentAsync(DeleteIAMPolicyAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -3058,7 +3058,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteIdentityPropagationConfigResponse DeleteIdentityPropagationConfig(DeleteIdentityPropagationConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityPropagationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityPropagationConfigResponseUnmarshaller.Instance;
 
@@ -3103,7 +3103,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig">REST API Reference for DeleteIdentityPropagationConfig Operation</seealso>
         public virtual Task<DeleteIdentityPropagationConfigResponse> DeleteIdentityPropagationConfigAsync(DeleteIdentityPropagationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentityPropagationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentityPropagationConfigResponseUnmarshaller.Instance;
 
@@ -3116,7 +3116,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -3164,7 +3164,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
@@ -3177,7 +3177,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteRefreshScheduleResponse DeleteRefreshSchedule(DeleteRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -3219,7 +3219,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule">REST API Reference for DeleteRefreshSchedule Operation</seealso>
         public virtual Task<DeleteRefreshScheduleResponse> DeleteRefreshScheduleAsync(DeleteRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -3232,7 +3232,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteRoleCustomPermissionResponse DeleteRoleCustomPermission(DeleteRoleCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -3277,7 +3277,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission">REST API Reference for DeleteRoleCustomPermission Operation</seealso>
         public virtual Task<DeleteRoleCustomPermissionResponse> DeleteRoleCustomPermissionAsync(DeleteRoleCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -3290,7 +3290,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteRoleMembershipResponse DeleteRoleMembership(DeleteRoleMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoleMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoleMembershipResponseUnmarshaller.Instance;
 
@@ -3335,7 +3335,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership">REST API Reference for DeleteRoleMembership Operation</seealso>
         public virtual Task<DeleteRoleMembershipResponse> DeleteRoleMembershipAsync(DeleteRoleMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRoleMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRoleMembershipResponseUnmarshaller.Instance;
 
@@ -3348,7 +3348,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -3393,7 +3393,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -3406,7 +3406,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteTemplateAliasResponse DeleteTemplateAlias(DeleteTemplateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateAliasResponseUnmarshaller.Instance;
 
@@ -3446,7 +3446,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">REST API Reference for DeleteTemplateAlias Operation</seealso>
         public virtual Task<DeleteTemplateAliasResponse> DeleteTemplateAliasAsync(DeleteTemplateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateAliasResponseUnmarshaller.Instance;
 
@@ -3459,7 +3459,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteThemeResponse DeleteTheme(DeleteThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
 
@@ -3507,7 +3507,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme">REST API Reference for DeleteTheme Operation</seealso>
         public virtual Task<DeleteThemeResponse> DeleteThemeAsync(DeleteThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeResponseUnmarshaller.Instance;
 
@@ -3520,7 +3520,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteThemeAliasResponse DeleteThemeAlias(DeleteThemeAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
 
@@ -3564,7 +3564,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias">REST API Reference for DeleteThemeAlias Operation</seealso>
         public virtual Task<DeleteThemeAliasResponse> DeleteThemeAliasAsync(DeleteThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThemeAliasResponseUnmarshaller.Instance;
 
@@ -3577,7 +3577,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
@@ -3619,7 +3619,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopic">REST API Reference for DeleteTopic Operation</seealso>
         public virtual Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicResponseUnmarshaller.Instance;
 
@@ -3632,7 +3632,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteTopicRefreshScheduleResponse DeleteTopicRefreshSchedule(DeleteTopicRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -3680,7 +3680,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicRefreshSchedule">REST API Reference for DeleteTopicRefreshSchedule Operation</seealso>
         public virtual Task<DeleteTopicRefreshScheduleResponse> DeleteTopicRefreshScheduleAsync(DeleteTopicRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -3693,7 +3693,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -3740,7 +3740,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -3753,7 +3753,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteUserByPrincipalIdResponse DeleteUserByPrincipalId(DeleteUserByPrincipalIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
 
@@ -3798,7 +3798,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">REST API Reference for DeleteUserByPrincipalId Operation</seealso>
         public virtual Task<DeleteUserByPrincipalIdResponse> DeleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserByPrincipalIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserByPrincipalIdResponseUnmarshaller.Instance;
 
@@ -3811,7 +3811,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteUserCustomPermissionResponse DeleteUserCustomPermission(DeleteUserCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserCustomPermissionResponseUnmarshaller.Instance;
 
@@ -3859,7 +3859,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserCustomPermission">REST API Reference for DeleteUserCustomPermission Operation</seealso>
         public virtual Task<DeleteUserCustomPermissionResponse> DeleteUserCustomPermissionAsync(DeleteUserCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserCustomPermissionResponseUnmarshaller.Instance;
 
@@ -3872,7 +3872,7 @@ namespace Amazon.QuickSight
 
         internal virtual DeleteVPCConnectionResponse DeleteVPCConnection(DeleteVPCConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCConnectionResponseUnmarshaller.Instance;
 
@@ -3920,7 +3920,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection">REST API Reference for DeleteVPCConnection Operation</seealso>
         public virtual Task<DeleteVPCConnectionResponse> DeleteVPCConnectionAsync(DeleteVPCConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCConnectionResponseUnmarshaller.Instance;
 
@@ -3933,7 +3933,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAccountCustomizationResponse DescribeAccountCustomization(DescribeAccountCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -4042,7 +4042,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization">REST API Reference for DescribeAccountCustomization Operation</seealso>
         public virtual Task<DescribeAccountCustomizationResponse> DescribeAccountCustomizationAsync(DescribeAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -4055,7 +4055,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAccountCustomPermissionResponse DescribeAccountCustomPermission(DescribeAccountCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -4094,7 +4094,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomPermission">REST API Reference for DescribeAccountCustomPermission Operation</seealso>
         public virtual Task<DescribeAccountCustomPermissionResponse> DescribeAccountCustomPermissionAsync(DescribeAccountCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -4107,7 +4107,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAccountSettingsResponse DescribeAccountSettings(DescribeAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
 
@@ -4150,7 +4150,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
         public virtual Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSettingsResponseUnmarshaller.Instance;
 
@@ -4163,7 +4163,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAccountSubscriptionResponse DescribeAccountSubscription(DescribeAccountSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -4208,7 +4208,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription">REST API Reference for DescribeAccountSubscription Operation</seealso>
         public virtual Task<DescribeAccountSubscriptionResponse> DescribeAccountSubscriptionAsync(DescribeAccountSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountSubscriptionResponseUnmarshaller.Instance;
 
@@ -4221,7 +4221,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAnalysisResponse DescribeAnalysis(DescribeAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisResponseUnmarshaller.Instance;
 
@@ -4266,7 +4266,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis">REST API Reference for DescribeAnalysis Operation</seealso>
         public virtual Task<DescribeAnalysisResponse> DescribeAnalysisAsync(DescribeAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisResponseUnmarshaller.Instance;
 
@@ -4279,7 +4279,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAnalysisDefinitionResponse DescribeAnalysisDefinition(DescribeAnalysisDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisDefinitionResponseUnmarshaller.Instance;
 
@@ -4339,7 +4339,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition">REST API Reference for DescribeAnalysisDefinition Operation</seealso>
         public virtual Task<DescribeAnalysisDefinitionResponse> DescribeAnalysisDefinitionAsync(DescribeAnalysisDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisDefinitionResponseUnmarshaller.Instance;
 
@@ -4352,7 +4352,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAnalysisPermissionsResponse DescribeAnalysisPermissions(DescribeAnalysisPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisPermissionsResponseUnmarshaller.Instance;
 
@@ -4391,7 +4391,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions">REST API Reference for DescribeAnalysisPermissions Operation</seealso>
         public virtual Task<DescribeAnalysisPermissionsResponse> DescribeAnalysisPermissionsAsync(DescribeAnalysisPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAnalysisPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAnalysisPermissionsResponseUnmarshaller.Instance;
 
@@ -4404,7 +4404,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAssetBundleExportJobResponse DescribeAssetBundleExportJob(DescribeAssetBundleExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetBundleExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetBundleExportJobResponseUnmarshaller.Instance;
 
@@ -4449,7 +4449,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob">REST API Reference for DescribeAssetBundleExportJob Operation</seealso>
         public virtual Task<DescribeAssetBundleExportJobResponse> DescribeAssetBundleExportJobAsync(DescribeAssetBundleExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetBundleExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetBundleExportJobResponseUnmarshaller.Instance;
 
@@ -4462,7 +4462,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeAssetBundleImportJobResponse DescribeAssetBundleImportJob(DescribeAssetBundleImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetBundleImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetBundleImportJobResponseUnmarshaller.Instance;
 
@@ -4501,7 +4501,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob">REST API Reference for DescribeAssetBundleImportJob Operation</seealso>
         public virtual Task<DescribeAssetBundleImportJobResponse> DescribeAssetBundleImportJobAsync(DescribeAssetBundleImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAssetBundleImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAssetBundleImportJobResponseUnmarshaller.Instance;
 
@@ -4514,7 +4514,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeBrandResponse DescribeBrand(DescribeBrandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandResponseUnmarshaller.Instance;
 
@@ -4557,7 +4557,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrand">REST API Reference for DescribeBrand Operation</seealso>
         public virtual Task<DescribeBrandResponse> DescribeBrandAsync(DescribeBrandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandResponseUnmarshaller.Instance;
 
@@ -4570,7 +4570,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeBrandAssignmentResponse DescribeBrandAssignment(DescribeBrandAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -4613,7 +4613,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrandAssignment">REST API Reference for DescribeBrandAssignment Operation</seealso>
         public virtual Task<DescribeBrandAssignmentResponse> DescribeBrandAssignmentAsync(DescribeBrandAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -4626,7 +4626,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeBrandPublishedVersionResponse DescribeBrandPublishedVersion(DescribeBrandPublishedVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandPublishedVersionResponseUnmarshaller.Instance;
 
@@ -4669,7 +4669,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrandPublishedVersion">REST API Reference for DescribeBrandPublishedVersion Operation</seealso>
         public virtual Task<DescribeBrandPublishedVersionResponse> DescribeBrandPublishedVersionAsync(DescribeBrandPublishedVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBrandPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBrandPublishedVersionResponseUnmarshaller.Instance;
 
@@ -4682,7 +4682,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeCustomPermissionsResponse DescribeCustomPermissions(DescribeCustomPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -4727,7 +4727,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeCustomPermissions">REST API Reference for DescribeCustomPermissions Operation</seealso>
         public virtual Task<DescribeCustomPermissionsResponse> DescribeCustomPermissionsAsync(DescribeCustomPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -4740,7 +4740,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardResponse DescribeDashboard(DescribeDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
 
@@ -4785,7 +4785,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         public virtual Task<DescribeDashboardResponse> DescribeDashboardAsync(DescribeDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardResponseUnmarshaller.Instance;
 
@@ -4798,7 +4798,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardDefinitionResponse DescribeDashboardDefinition(DescribeDashboardDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardDefinitionResponseUnmarshaller.Instance;
 
@@ -4858,7 +4858,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition">REST API Reference for DescribeDashboardDefinition Operation</seealso>
         public virtual Task<DescribeDashboardDefinitionResponse> DescribeDashboardDefinitionAsync(DescribeDashboardDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardDefinitionResponseUnmarshaller.Instance;
 
@@ -4871,7 +4871,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardPermissionsResponse DescribeDashboardPermissions(DescribeDashboardPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardPermissionsResponseUnmarshaller.Instance;
 
@@ -4910,7 +4910,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">REST API Reference for DescribeDashboardPermissions Operation</seealso>
         public virtual Task<DescribeDashboardPermissionsResponse> DescribeDashboardPermissionsAsync(DescribeDashboardPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardPermissionsResponseUnmarshaller.Instance;
 
@@ -4923,7 +4923,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardSnapshotJobResponse DescribeDashboardSnapshotJob(DescribeDashboardSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResponseUnmarshaller.Instance;
 
@@ -4971,7 +4971,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">REST API Reference for DescribeDashboardSnapshotJob Operation</seealso>
         public virtual Task<DescribeDashboardSnapshotJobResponse> DescribeDashboardSnapshotJobAsync(DescribeDashboardSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResponseUnmarshaller.Instance;
 
@@ -4984,7 +4984,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardSnapshotJobResultResponse DescribeDashboardSnapshotJobResult(DescribeDashboardSnapshotJobResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardSnapshotJobResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResultResponseUnmarshaller.Instance;
 
@@ -5043,7 +5043,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">REST API Reference for DescribeDashboardSnapshotJobResult Operation</seealso>
         public virtual Task<DescribeDashboardSnapshotJobResultResponse> DescribeDashboardSnapshotJobResultAsync(DescribeDashboardSnapshotJobResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardSnapshotJobResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardSnapshotJobResultResponseUnmarshaller.Instance;
 
@@ -5056,7 +5056,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDashboardsQAConfigurationResponse DescribeDashboardsQAConfiguration(DescribeDashboardsQAConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardsQAConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardsQAConfigurationResponseUnmarshaller.Instance;
 
@@ -5098,7 +5098,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardsQAConfiguration">REST API Reference for DescribeDashboardsQAConfiguration Operation</seealso>
         public virtual Task<DescribeDashboardsQAConfigurationResponse> DescribeDashboardsQAConfigurationAsync(DescribeDashboardsQAConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDashboardsQAConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDashboardsQAConfigurationResponseUnmarshaller.Instance;
 
@@ -5111,7 +5111,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDataSetResponse DescribeDataSet(DescribeDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetResponseUnmarshaller.Instance;
 
@@ -5151,7 +5151,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">REST API Reference for DescribeDataSet Operation</seealso>
         public virtual Task<DescribeDataSetResponse> DescribeDataSetAsync(DescribeDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetResponseUnmarshaller.Instance;
 
@@ -5164,7 +5164,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDataSetPermissionsResponse DescribeDataSetPermissions(DescribeDataSetPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetPermissionsResponseUnmarshaller.Instance;
 
@@ -5208,7 +5208,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetPermissions">REST API Reference for DescribeDataSetPermissions Operation</seealso>
         public virtual Task<DescribeDataSetPermissionsResponse> DescribeDataSetPermissionsAsync(DescribeDataSetPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetPermissionsResponseUnmarshaller.Instance;
 
@@ -5221,7 +5221,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDataSetRefreshPropertiesResponse DescribeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -5266,7 +5266,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties">REST API Reference for DescribeDataSetRefreshProperties Operation</seealso>
         public virtual Task<DescribeDataSetRefreshPropertiesResponse> DescribeDataSetRefreshPropertiesAsync(DescribeDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -5279,7 +5279,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDataSourceResponse DescribeDataSource(DescribeDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourceResponseUnmarshaller.Instance;
 
@@ -5318,7 +5318,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSource">REST API Reference for DescribeDataSource Operation</seealso>
         public virtual Task<DescribeDataSourceResponse> DescribeDataSourceAsync(DescribeDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourceResponseUnmarshaller.Instance;
 
@@ -5331,7 +5331,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDataSourcePermissionsResponse DescribeDataSourcePermissions(DescribeDataSourcePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourcePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourcePermissionsResponseUnmarshaller.Instance;
 
@@ -5370,7 +5370,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSourcePermissions">REST API Reference for DescribeDataSourcePermissions Operation</seealso>
         public virtual Task<DescribeDataSourcePermissionsResponse> DescribeDataSourcePermissionsAsync(DescribeDataSourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataSourcePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataSourcePermissionsResponseUnmarshaller.Instance;
 
@@ -5383,7 +5383,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeDefaultQBusinessApplicationResponse DescribeDefaultQBusinessApplication(DescribeDefaultQBusinessApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -5422,7 +5422,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDefaultQBusinessApplication">REST API Reference for DescribeDefaultQBusinessApplication Operation</seealso>
         public virtual Task<DescribeDefaultQBusinessApplicationResponse> DescribeDefaultQBusinessApplicationAsync(DescribeDefaultQBusinessApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -5435,7 +5435,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeFolderResponse DescribeFolder(DescribeFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderResponseUnmarshaller.Instance;
 
@@ -5480,7 +5480,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">REST API Reference for DescribeFolder Operation</seealso>
         public virtual Task<DescribeFolderResponse> DescribeFolderAsync(DescribeFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderResponseUnmarshaller.Instance;
 
@@ -5493,7 +5493,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeFolderPermissionsResponse DescribeFolderPermissions(DescribeFolderPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderPermissionsResponseUnmarshaller.Instance;
 
@@ -5541,7 +5541,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">REST API Reference for DescribeFolderPermissions Operation</seealso>
         public virtual Task<DescribeFolderPermissionsResponse> DescribeFolderPermissionsAsync(DescribeFolderPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderPermissionsResponseUnmarshaller.Instance;
 
@@ -5554,7 +5554,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeFolderResolvedPermissionsResponse DescribeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderResolvedPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderResolvedPermissionsResponseUnmarshaller.Instance;
 
@@ -5603,7 +5603,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">REST API Reference for DescribeFolderResolvedPermissions Operation</seealso>
         public virtual Task<DescribeFolderResolvedPermissionsResponse> DescribeFolderResolvedPermissionsAsync(DescribeFolderResolvedPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFolderResolvedPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFolderResolvedPermissionsResponseUnmarshaller.Instance;
 
@@ -5616,7 +5616,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -5661,7 +5661,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
 
@@ -5674,7 +5674,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeGroupMembershipResponse DescribeGroupMembership(DescribeGroupMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
 
@@ -5721,7 +5721,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroupMembership">REST API Reference for DescribeGroupMembership Operation</seealso>
         public virtual Task<DescribeGroupMembershipResponse> DescribeGroupMembershipAsync(DescribeGroupMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGroupMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGroupMembershipResponseUnmarshaller.Instance;
 
@@ -5734,7 +5734,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeIAMPolicyAssignmentResponse DescribeIAMPolicyAssignment(DescribeIAMPolicyAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -5776,7 +5776,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">REST API Reference for DescribeIAMPolicyAssignment Operation</seealso>
         public virtual Task<DescribeIAMPolicyAssignmentResponse> DescribeIAMPolicyAssignmentAsync(DescribeIAMPolicyAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -5789,7 +5789,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeIngestionResponse DescribeIngestion(DescribeIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIngestionResponseUnmarshaller.Instance;
 
@@ -5831,7 +5831,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIngestion">REST API Reference for DescribeIngestion Operation</seealso>
         public virtual Task<DescribeIngestionResponse> DescribeIngestionAsync(DescribeIngestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIngestionResponseUnmarshaller.Instance;
 
@@ -5844,7 +5844,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeIpRestrictionResponse DescribeIpRestriction(DescribeIpRestrictionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpRestrictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpRestrictionResponseUnmarshaller.Instance;
 
@@ -5883,7 +5883,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIpRestriction">REST API Reference for DescribeIpRestriction Operation</seealso>
         public virtual Task<DescribeIpRestrictionResponse> DescribeIpRestrictionAsync(DescribeIpRestrictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpRestrictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpRestrictionResponseUnmarshaller.Instance;
 
@@ -5896,7 +5896,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeKeyRegistrationResponse DescribeKeyRegistration(DescribeKeyRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyRegistrationResponseUnmarshaller.Instance;
 
@@ -5932,7 +5932,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration">REST API Reference for DescribeKeyRegistration Operation</seealso>
         public virtual Task<DescribeKeyRegistrationResponse> DescribeKeyRegistrationAsync(DescribeKeyRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyRegistrationResponseUnmarshaller.Instance;
 
@@ -5945,7 +5945,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeNamespaceResponse DescribeNamespace(DescribeNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
 
@@ -5987,7 +5987,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
         public virtual Task<DescribeNamespaceResponse> DescribeNamespaceAsync(DescribeNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNamespaceResponseUnmarshaller.Instance;
 
@@ -6000,7 +6000,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeQPersonalizationConfigurationResponse DescribeQPersonalizationConfiguration(DescribeQPersonalizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQPersonalizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQPersonalizationConfigurationResponseUnmarshaller.Instance;
 
@@ -6042,7 +6042,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeQPersonalizationConfiguration">REST API Reference for DescribeQPersonalizationConfiguration Operation</seealso>
         public virtual Task<DescribeQPersonalizationConfigurationResponse> DescribeQPersonalizationConfigurationAsync(DescribeQPersonalizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQPersonalizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQPersonalizationConfigurationResponseUnmarshaller.Instance;
 
@@ -6055,7 +6055,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeQuickSightQSearchConfigurationResponse DescribeQuickSightQSearchConfiguration(DescribeQuickSightQSearchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuickSightQSearchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuickSightQSearchConfigurationResponseUnmarshaller.Instance;
 
@@ -6097,7 +6097,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeQuickSightQSearchConfiguration">REST API Reference for DescribeQuickSightQSearchConfiguration Operation</seealso>
         public virtual Task<DescribeQuickSightQSearchConfigurationResponse> DescribeQuickSightQSearchConfigurationAsync(DescribeQuickSightQSearchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQuickSightQSearchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQuickSightQSearchConfigurationResponseUnmarshaller.Instance;
 
@@ -6110,7 +6110,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeRefreshScheduleResponse DescribeRefreshSchedule(DescribeRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -6152,7 +6152,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule">REST API Reference for DescribeRefreshSchedule Operation</seealso>
         public virtual Task<DescribeRefreshScheduleResponse> DescribeRefreshScheduleAsync(DescribeRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -6165,7 +6165,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeRoleCustomPermissionResponse DescribeRoleCustomPermission(DescribeRoleCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -6210,7 +6210,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission">REST API Reference for DescribeRoleCustomPermission Operation</seealso>
         public virtual Task<DescribeRoleCustomPermissionResponse> DescribeRoleCustomPermissionAsync(DescribeRoleCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -6223,7 +6223,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTemplateResponse DescribeTemplate(DescribeTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateResponseUnmarshaller.Instance;
 
@@ -6274,7 +6274,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplate">REST API Reference for DescribeTemplate Operation</seealso>
         public virtual Task<DescribeTemplateResponse> DescribeTemplateAsync(DescribeTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateResponseUnmarshaller.Instance;
 
@@ -6287,7 +6287,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTemplateAliasResponse DescribeTemplateAlias(DescribeTemplateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateAliasResponseUnmarshaller.Instance;
 
@@ -6323,7 +6323,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">REST API Reference for DescribeTemplateAlias Operation</seealso>
         public virtual Task<DescribeTemplateAliasResponse> DescribeTemplateAliasAsync(DescribeTemplateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateAliasResponseUnmarshaller.Instance;
 
@@ -6336,7 +6336,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTemplateDefinitionResponse DescribeTemplateDefinition(DescribeTemplateDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateDefinitionResponseUnmarshaller.Instance;
 
@@ -6396,7 +6396,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition">REST API Reference for DescribeTemplateDefinition Operation</seealso>
         public virtual Task<DescribeTemplateDefinitionResponse> DescribeTemplateDefinitionAsync(DescribeTemplateDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplateDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplateDefinitionResponseUnmarshaller.Instance;
 
@@ -6409,7 +6409,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTemplatePermissionsResponse DescribeTemplatePermissions(DescribeTemplatePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplatePermissionsResponseUnmarshaller.Instance;
 
@@ -6451,7 +6451,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplatePermissions">REST API Reference for DescribeTemplatePermissions Operation</seealso>
         public virtual Task<DescribeTemplatePermissionsResponse> DescribeTemplatePermissionsAsync(DescribeTemplatePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTemplatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTemplatePermissionsResponseUnmarshaller.Instance;
 
@@ -6464,7 +6464,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeThemeResponse DescribeTheme(DescribeThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
 
@@ -6512,7 +6512,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme">REST API Reference for DescribeTheme Operation</seealso>
         public virtual Task<DescribeThemeResponse> DescribeThemeAsync(DescribeThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemeResponseUnmarshaller.Instance;
 
@@ -6525,7 +6525,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeThemeAliasResponse DescribeThemeAlias(DescribeThemeAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
 
@@ -6567,7 +6567,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias">REST API Reference for DescribeThemeAlias Operation</seealso>
         public virtual Task<DescribeThemeAliasResponse> DescribeThemeAliasAsync(DescribeThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemeAliasResponseUnmarshaller.Instance;
 
@@ -6580,7 +6580,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeThemePermissionsResponse DescribeThemePermissions(DescribeThemePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
 
@@ -6625,7 +6625,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions">REST API Reference for DescribeThemePermissions Operation</seealso>
         public virtual Task<DescribeThemePermissionsResponse> DescribeThemePermissionsAsync(DescribeThemePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeThemePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeThemePermissionsResponseUnmarshaller.Instance;
 
@@ -6638,7 +6638,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTopicResponse DescribeTopic(DescribeTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicResponseUnmarshaller.Instance;
 
@@ -6677,7 +6677,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopic">REST API Reference for DescribeTopic Operation</seealso>
         public virtual Task<DescribeTopicResponse> DescribeTopicAsync(DescribeTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicResponseUnmarshaller.Instance;
 
@@ -6690,7 +6690,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTopicPermissionsResponse DescribeTopicPermissions(DescribeTopicPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicPermissionsResponseUnmarshaller.Instance;
 
@@ -6729,7 +6729,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissions">REST API Reference for DescribeTopicPermissions Operation</seealso>
         public virtual Task<DescribeTopicPermissionsResponse> DescribeTopicPermissionsAsync(DescribeTopicPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicPermissionsResponseUnmarshaller.Instance;
 
@@ -6742,7 +6742,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTopicRefreshResponse DescribeTopicRefresh(DescribeTopicRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicRefreshResponseUnmarshaller.Instance;
 
@@ -6781,7 +6781,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefresh">REST API Reference for DescribeTopicRefresh Operation</seealso>
         public virtual Task<DescribeTopicRefreshResponse> DescribeTopicRefreshAsync(DescribeTopicRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicRefreshResponseUnmarshaller.Instance;
 
@@ -6794,7 +6794,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeTopicRefreshScheduleResponse DescribeTopicRefreshSchedule(DescribeTopicRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -6842,7 +6842,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefreshSchedule">REST API Reference for DescribeTopicRefreshSchedule Operation</seealso>
         public virtual Task<DescribeTopicRefreshScheduleResponse> DescribeTopicRefreshScheduleAsync(DescribeTopicRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -6855,7 +6855,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -6900,7 +6900,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
@@ -6913,7 +6913,7 @@ namespace Amazon.QuickSight
 
         internal virtual DescribeVPCConnectionResponse DescribeVPCConnection(DescribeVPCConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVPCConnectionResponseUnmarshaller.Instance;
 
@@ -6958,7 +6958,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeVPCConnection">REST API Reference for DescribeVPCConnection Operation</seealso>
         public virtual Task<DescribeVPCConnectionResponse> DescribeVPCConnectionAsync(DescribeVPCConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVPCConnectionResponseUnmarshaller.Instance;
 
@@ -6971,7 +6971,7 @@ namespace Amazon.QuickSight
 
         internal virtual GenerateEmbedUrlForAnonymousUserResponse GenerateEmbedUrlForAnonymousUser(GenerateEmbedUrlForAnonymousUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForAnonymousUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForAnonymousUserResponseUnmarshaller.Instance;
 
@@ -7066,7 +7066,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForAnonymousUser">REST API Reference for GenerateEmbedUrlForAnonymousUser Operation</seealso>
         public virtual Task<GenerateEmbedUrlForAnonymousUserResponse> GenerateEmbedUrlForAnonymousUserAsync(GenerateEmbedUrlForAnonymousUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForAnonymousUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForAnonymousUserResponseUnmarshaller.Instance;
 
@@ -7079,7 +7079,7 @@ namespace Amazon.QuickSight
 
         internal virtual GenerateEmbedUrlForRegisteredUserResponse GenerateEmbedUrlForRegisteredUser(GenerateEmbedUrlForRegisteredUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForRegisteredUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForRegisteredUserResponseUnmarshaller.Instance;
 
@@ -7184,7 +7184,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUser">REST API Reference for GenerateEmbedUrlForRegisteredUser Operation</seealso>
         public virtual Task<GenerateEmbedUrlForRegisteredUserResponse> GenerateEmbedUrlForRegisteredUserAsync(GenerateEmbedUrlForRegisteredUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForRegisteredUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForRegisteredUserResponseUnmarshaller.Instance;
 
@@ -7197,7 +7197,7 @@ namespace Amazon.QuickSight
 
         internal virtual GenerateEmbedUrlForRegisteredUserWithIdentityResponse GenerateEmbedUrlForRegisteredUserWithIdentity(GenerateEmbedUrlForRegisteredUserWithIdentityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForRegisteredUserWithIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForRegisteredUserWithIdentityResponseUnmarshaller.Instance;
 
@@ -7277,7 +7277,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GenerateEmbedUrlForRegisteredUserWithIdentity">REST API Reference for GenerateEmbedUrlForRegisteredUserWithIdentity Operation</seealso>
         public virtual Task<GenerateEmbedUrlForRegisteredUserWithIdentityResponse> GenerateEmbedUrlForRegisteredUserWithIdentityAsync(GenerateEmbedUrlForRegisteredUserWithIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateEmbedUrlForRegisteredUserWithIdentityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateEmbedUrlForRegisteredUserWithIdentityResponseUnmarshaller.Instance;
 
@@ -7290,7 +7290,7 @@ namespace Amazon.QuickSight
 
         internal virtual GetDashboardEmbedUrlResponse GetDashboardEmbedUrl(GetDashboardEmbedUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
 
@@ -7409,7 +7409,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">REST API Reference for GetDashboardEmbedUrl Operation</seealso>
         public virtual Task<GetDashboardEmbedUrlResponse> GetDashboardEmbedUrlAsync(GetDashboardEmbedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardEmbedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardEmbedUrlResponseUnmarshaller.Instance;
 
@@ -7422,7 +7422,7 @@ namespace Amazon.QuickSight
 
         internal virtual GetSessionEmbedUrlResponse GetSessionEmbedUrl(GetSessionEmbedUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionEmbedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionEmbedUrlResponseUnmarshaller.Instance;
 
@@ -7500,7 +7500,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl">REST API Reference for GetSessionEmbedUrl Operation</seealso>
         public virtual Task<GetSessionEmbedUrlResponse> GetSessionEmbedUrlAsync(GetSessionEmbedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionEmbedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionEmbedUrlResponseUnmarshaller.Instance;
 
@@ -7513,7 +7513,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListAnalysesResponse ListAnalyses(ListAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysesResponseUnmarshaller.Instance;
 
@@ -7549,7 +7549,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses">REST API Reference for ListAnalyses Operation</seealso>
         public virtual Task<ListAnalysesResponse> ListAnalysesAsync(ListAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalysesResponseUnmarshaller.Instance;
 
@@ -7562,7 +7562,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListAssetBundleExportJobsResponse ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetBundleExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetBundleExportJobsResponseUnmarshaller.Instance;
 
@@ -7607,7 +7607,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs">REST API Reference for ListAssetBundleExportJobs Operation</seealso>
         public virtual Task<ListAssetBundleExportJobsResponse> ListAssetBundleExportJobsAsync(ListAssetBundleExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetBundleExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetBundleExportJobsResponseUnmarshaller.Instance;
 
@@ -7620,7 +7620,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListAssetBundleImportJobsResponse ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetBundleImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetBundleImportJobsResponseUnmarshaller.Instance;
 
@@ -7665,7 +7665,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs">REST API Reference for ListAssetBundleImportJobs Operation</seealso>
         public virtual Task<ListAssetBundleImportJobsResponse> ListAssetBundleImportJobsAsync(ListAssetBundleImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssetBundleImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssetBundleImportJobsResponseUnmarshaller.Instance;
 
@@ -7678,7 +7678,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListBrandsResponse ListBrands(ListBrandsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrandsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrandsResponseUnmarshaller.Instance;
 
@@ -7715,7 +7715,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListBrands">REST API Reference for ListBrands Operation</seealso>
         public virtual Task<ListBrandsResponse> ListBrandsAsync(ListBrandsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrandsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrandsResponseUnmarshaller.Instance;
 
@@ -7728,7 +7728,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListCustomPermissionsResponse ListCustomPermissions(ListCustomPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -7773,7 +7773,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListCustomPermissions">REST API Reference for ListCustomPermissions Operation</seealso>
         public virtual Task<ListCustomPermissionsResponse> ListCustomPermissionsAsync(ListCustomPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -7786,7 +7786,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -7822,7 +7822,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual Task<ListDashboardsResponse> ListDashboardsAsync(ListDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -7835,7 +7835,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListDashboardVersionsResponse ListDashboardVersions(ListDashboardVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardVersionsResponseUnmarshaller.Instance;
 
@@ -7877,7 +7877,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">REST API Reference for ListDashboardVersions Operation</seealso>
         public virtual Task<ListDashboardVersionsResponse> ListDashboardVersionsAsync(ListDashboardVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardVersionsResponseUnmarshaller.Instance;
 
@@ -7890,7 +7890,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListDataSetsResponse ListDataSets(ListDataSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
 
@@ -7935,7 +7935,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">REST API Reference for ListDataSets Operation</seealso>
         public virtual Task<ListDataSetsResponse> ListDataSetsAsync(ListDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSetsResponseUnmarshaller.Instance;
 
@@ -7948,7 +7948,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListDataSourcesResponse ListDataSources(ListDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -7988,7 +7988,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSources">REST API Reference for ListDataSources Operation</seealso>
         public virtual Task<ListDataSourcesResponse> ListDataSourcesAsync(ListDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
@@ -8001,7 +8001,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListFolderMembersResponse ListFolderMembers(ListFolderMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFolderMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFolderMembersResponseUnmarshaller.Instance;
 
@@ -8049,7 +8049,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">REST API Reference for ListFolderMembers Operation</seealso>
         public virtual Task<ListFolderMembersResponse> ListFolderMembersAsync(ListFolderMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFolderMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFolderMembersResponseUnmarshaller.Instance;
 
@@ -8062,7 +8062,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListFoldersResponse ListFolders(ListFoldersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoldersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoldersResponseUnmarshaller.Instance;
 
@@ -8110,7 +8110,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">REST API Reference for ListFolders Operation</seealso>
         public virtual Task<ListFoldersResponse> ListFoldersAsync(ListFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoldersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoldersResponseUnmarshaller.Instance;
 
@@ -8123,7 +8123,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListFoldersForResourceResponse ListFoldersForResource(ListFoldersForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoldersForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoldersForResourceResponseUnmarshaller.Instance;
 
@@ -8171,7 +8171,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFoldersForResource">REST API Reference for ListFoldersForResource Operation</seealso>
         public virtual Task<ListFoldersForResourceResponse> ListFoldersForResourceAsync(ListFoldersForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoldersForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoldersForResourceResponseUnmarshaller.Instance;
 
@@ -8184,7 +8184,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListGroupMembershipsResponse ListGroupMemberships(ListGroupMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
 
@@ -8232,7 +8232,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">REST API Reference for ListGroupMemberships Operation</seealso>
         public virtual Task<ListGroupMembershipsResponse> ListGroupMembershipsAsync(ListGroupMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupMembershipsResponseUnmarshaller.Instance;
 
@@ -8245,7 +8245,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -8293,7 +8293,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
 
@@ -8306,7 +8306,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListIAMPolicyAssignmentsResponse ListIAMPolicyAssignments(ListIAMPolicyAssignmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIAMPolicyAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIAMPolicyAssignmentsResponseUnmarshaller.Instance;
 
@@ -8348,7 +8348,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">REST API Reference for ListIAMPolicyAssignments Operation</seealso>
         public virtual Task<ListIAMPolicyAssignmentsResponse> ListIAMPolicyAssignmentsAsync(ListIAMPolicyAssignmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIAMPolicyAssignmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIAMPolicyAssignmentsResponseUnmarshaller.Instance;
 
@@ -8361,7 +8361,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListIAMPolicyAssignmentsForUserResponse ListIAMPolicyAssignmentsForUser(ListIAMPolicyAssignmentsForUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIAMPolicyAssignmentsForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIAMPolicyAssignmentsForUserResponseUnmarshaller.Instance;
 
@@ -8409,7 +8409,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">REST API Reference for ListIAMPolicyAssignmentsForUser Operation</seealso>
         public virtual Task<ListIAMPolicyAssignmentsForUserResponse> ListIAMPolicyAssignmentsForUserAsync(ListIAMPolicyAssignmentsForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIAMPolicyAssignmentsForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIAMPolicyAssignmentsForUserResponseUnmarshaller.Instance;
 
@@ -8422,7 +8422,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListIdentityPropagationConfigsResponse ListIdentityPropagationConfigs(ListIdentityPropagationConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityPropagationConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityPropagationConfigsResponseUnmarshaller.Instance;
 
@@ -8467,7 +8467,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs">REST API Reference for ListIdentityPropagationConfigs Operation</seealso>
         public virtual Task<ListIdentityPropagationConfigsResponse> ListIdentityPropagationConfigsAsync(ListIdentityPropagationConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityPropagationConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityPropagationConfigsResponseUnmarshaller.Instance;
 
@@ -8480,7 +8480,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListIngestionsResponse ListIngestions(ListIngestionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionsResponseUnmarshaller.Instance;
 
@@ -8526,7 +8526,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIngestions">REST API Reference for ListIngestions Operation</seealso>
         public virtual Task<ListIngestionsResponse> ListIngestionsAsync(ListIngestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIngestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIngestionsResponseUnmarshaller.Instance;
 
@@ -8539,7 +8539,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -8588,7 +8588,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
@@ -8601,7 +8601,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListRefreshSchedulesResponse ListRefreshSchedules(ListRefreshSchedulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRefreshSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRefreshSchedulesResponseUnmarshaller.Instance;
 
@@ -8643,7 +8643,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules">REST API Reference for ListRefreshSchedules Operation</seealso>
         public virtual Task<ListRefreshSchedulesResponse> ListRefreshSchedulesAsync(ListRefreshSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRefreshSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRefreshSchedulesResponseUnmarshaller.Instance;
 
@@ -8656,7 +8656,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListRoleMembershipsResponse ListRoleMemberships(ListRoleMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoleMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoleMembershipsResponseUnmarshaller.Instance;
 
@@ -8707,7 +8707,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships">REST API Reference for ListRoleMemberships Operation</seealso>
         public virtual Task<ListRoleMembershipsResponse> ListRoleMembershipsAsync(ListRoleMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoleMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoleMembershipsResponseUnmarshaller.Instance;
 
@@ -8720,7 +8720,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -8759,7 +8759,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -8772,7 +8772,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTemplateAliasesResponse ListTemplateAliases(ListTemplateAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateAliasesResponseUnmarshaller.Instance;
 
@@ -8811,7 +8811,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateAliases">REST API Reference for ListTemplateAliases Operation</seealso>
         public virtual Task<ListTemplateAliasesResponse> ListTemplateAliasesAsync(ListTemplateAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateAliasesResponseUnmarshaller.Instance;
 
@@ -8824,7 +8824,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -8866,7 +8866,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -8879,7 +8879,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTemplateVersionsResponse ListTemplateVersions(ListTemplateVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -8921,7 +8921,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">REST API Reference for ListTemplateVersions Operation</seealso>
         public virtual Task<ListTemplateVersionsResponse> ListTemplateVersionsAsync(ListTemplateVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateVersionsResponseUnmarshaller.Instance;
 
@@ -8934,7 +8934,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListThemeAliasesResponse ListThemeAliases(ListThemeAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
 
@@ -8979,7 +8979,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases">REST API Reference for ListThemeAliases Operation</seealso>
         public virtual Task<ListThemeAliasesResponse> ListThemeAliasesAsync(ListThemeAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemeAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemeAliasesResponseUnmarshaller.Instance;
 
@@ -8992,7 +8992,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListThemesResponse ListThemes(ListThemesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
 
@@ -9040,7 +9040,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes">REST API Reference for ListThemes Operation</seealso>
         public virtual Task<ListThemesResponse> ListThemesAsync(ListThemesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
 
@@ -9053,7 +9053,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListThemeVersionsResponse ListThemeVersions(ListThemeVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
 
@@ -9101,7 +9101,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions">REST API Reference for ListThemeVersions Operation</seealso>
         public virtual Task<ListThemeVersionsResponse> ListThemeVersionsAsync(ListThemeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListThemeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListThemeVersionsResponseUnmarshaller.Instance;
 
@@ -9114,7 +9114,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTopicRefreshSchedulesResponse ListTopicRefreshSchedules(ListTopicRefreshSchedulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicRefreshSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicRefreshSchedulesResponseUnmarshaller.Instance;
 
@@ -9162,7 +9162,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicRefreshSchedules">REST API Reference for ListTopicRefreshSchedules Operation</seealso>
         public virtual Task<ListTopicRefreshSchedulesResponse> ListTopicRefreshSchedulesAsync(ListTopicRefreshSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicRefreshSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicRefreshSchedulesResponseUnmarshaller.Instance;
 
@@ -9175,7 +9175,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTopicReviewedAnswersResponse ListTopicReviewedAnswers(ListTopicReviewedAnswersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicReviewedAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicReviewedAnswersResponseUnmarshaller.Instance;
 
@@ -9214,7 +9214,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicReviewedAnswers">REST API Reference for ListTopicReviewedAnswers Operation</seealso>
         public virtual Task<ListTopicReviewedAnswersResponse> ListTopicReviewedAnswersAsync(ListTopicReviewedAnswersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicReviewedAnswersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicReviewedAnswersResponseUnmarshaller.Instance;
 
@@ -9227,7 +9227,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListTopicsResponse ListTopics(ListTopicsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
@@ -9266,7 +9266,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics">REST API Reference for ListTopics Operation</seealso>
         public virtual Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTopicsResponseUnmarshaller.Instance;
 
@@ -9279,7 +9279,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListUserGroupsResponse ListUserGroups(ListUserGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
 
@@ -9324,7 +9324,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">REST API Reference for ListUserGroups Operation</seealso>
         public virtual Task<ListUserGroupsResponse> ListUserGroupsAsync(ListUserGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUserGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUserGroupsResponseUnmarshaller.Instance;
 
@@ -9337,7 +9337,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -9385,7 +9385,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -9398,7 +9398,7 @@ namespace Amazon.QuickSight
 
         internal virtual ListVPCConnectionsResponse ListVPCConnections(ListVPCConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCConnectionsResponseUnmarshaller.Instance;
 
@@ -9444,7 +9444,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListVPCConnections">REST API Reference for ListVPCConnections Operation</seealso>
         public virtual Task<ListVPCConnectionsResponse> ListVPCConnectionsAsync(ListVPCConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCConnectionsResponseUnmarshaller.Instance;
 
@@ -9457,7 +9457,7 @@ namespace Amazon.QuickSight
 
         internal virtual PredictQAResultsResponse PredictQAResults(PredictQAResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PredictQAResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PredictQAResultsResponseUnmarshaller.Instance;
 
@@ -9512,7 +9512,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PredictQAResults">REST API Reference for PredictQAResults Operation</seealso>
         public virtual Task<PredictQAResultsResponse> PredictQAResultsAsync(PredictQAResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PredictQAResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PredictQAResultsResponseUnmarshaller.Instance;
 
@@ -9525,7 +9525,7 @@ namespace Amazon.QuickSight
 
         internal virtual PutDataSetRefreshPropertiesResponse PutDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -9573,7 +9573,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties">REST API Reference for PutDataSetRefreshProperties Operation</seealso>
         public virtual Task<PutDataSetRefreshPropertiesResponse> PutDataSetRefreshPropertiesAsync(PutDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataSetRefreshPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataSetRefreshPropertiesResponseUnmarshaller.Instance;
 
@@ -9586,7 +9586,7 @@ namespace Amazon.QuickSight
 
         internal virtual RegisterUserResponse RegisterUser(RegisterUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUserResponseUnmarshaller.Instance;
 
@@ -9645,7 +9645,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">REST API Reference for RegisterUser Operation</seealso>
         public virtual Task<RegisterUserResponse> RegisterUserAsync(RegisterUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUserResponseUnmarshaller.Instance;
 
@@ -9658,7 +9658,7 @@ namespace Amazon.QuickSight
 
         internal virtual RestoreAnalysisResponse RestoreAnalysis(RestoreAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAnalysisResponseUnmarshaller.Instance;
 
@@ -9706,7 +9706,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis">REST API Reference for RestoreAnalysis Operation</seealso>
         public virtual Task<RestoreAnalysisResponse> RestoreAnalysisAsync(RestoreAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreAnalysisResponseUnmarshaller.Instance;
 
@@ -9719,7 +9719,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchAnalysesResponse SearchAnalyses(SearchAnalysesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAnalysesResponseUnmarshaller.Instance;
 
@@ -9768,7 +9768,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses">REST API Reference for SearchAnalyses Operation</seealso>
         public virtual Task<SearchAnalysesResponse> SearchAnalysesAsync(SearchAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAnalysesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAnalysesResponseUnmarshaller.Instance;
 
@@ -9781,7 +9781,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchDashboardsResponse SearchDashboards(SearchDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDashboardsResponseUnmarshaller.Instance;
 
@@ -9830,7 +9830,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">REST API Reference for SearchDashboards Operation</seealso>
         public virtual Task<SearchDashboardsResponse> SearchDashboardsAsync(SearchDashboardsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDashboardsResponseUnmarshaller.Instance;
 
@@ -9843,7 +9843,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchDataSetsResponse SearchDataSets(SearchDataSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDataSetsResponseUnmarshaller.Instance;
 
@@ -9885,7 +9885,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets">REST API Reference for SearchDataSets Operation</seealso>
         public virtual Task<SearchDataSetsResponse> SearchDataSetsAsync(SearchDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDataSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDataSetsResponseUnmarshaller.Instance;
 
@@ -9898,7 +9898,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchDataSourcesResponse SearchDataSources(SearchDataSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDataSourcesResponseUnmarshaller.Instance;
 
@@ -9941,7 +9941,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources">REST API Reference for SearchDataSources Operation</seealso>
         public virtual Task<SearchDataSourcesResponse> SearchDataSourcesAsync(SearchDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchDataSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchDataSourcesResponseUnmarshaller.Instance;
 
@@ -9954,7 +9954,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchFoldersResponse SearchFolders(SearchFoldersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFoldersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFoldersResponseUnmarshaller.Instance;
 
@@ -10006,7 +10006,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">REST API Reference for SearchFolders Operation</seealso>
         public virtual Task<SearchFoldersResponse> SearchFoldersAsync(SearchFoldersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFoldersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFoldersResponseUnmarshaller.Instance;
 
@@ -10019,7 +10019,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchGroupsResponse SearchGroups(SearchGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
 
@@ -10068,7 +10068,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchGroups">REST API Reference for SearchGroups Operation</seealso>
         public virtual Task<SearchGroupsResponse> SearchGroupsAsync(SearchGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
 
@@ -10081,7 +10081,7 @@ namespace Amazon.QuickSight
 
         internal virtual SearchTopicsResponse SearchTopics(SearchTopicsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTopicsResponseUnmarshaller.Instance;
 
@@ -10123,7 +10123,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchTopics">REST API Reference for SearchTopics Operation</seealso>
         public virtual Task<SearchTopicsResponse> SearchTopicsAsync(SearchTopicsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTopicsResponseUnmarshaller.Instance;
 
@@ -10136,7 +10136,7 @@ namespace Amazon.QuickSight
 
         internal virtual StartAssetBundleExportJobResponse StartAssetBundleExportJob(StartAssetBundleExportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssetBundleExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssetBundleExportJobResponseUnmarshaller.Instance;
 
@@ -10199,7 +10199,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">REST API Reference for StartAssetBundleExportJob Operation</seealso>
         public virtual Task<StartAssetBundleExportJobResponse> StartAssetBundleExportJobAsync(StartAssetBundleExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssetBundleExportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssetBundleExportJobResponseUnmarshaller.Instance;
 
@@ -10212,7 +10212,7 @@ namespace Amazon.QuickSight
 
         internal virtual StartAssetBundleImportJobResponse StartAssetBundleImportJob(StartAssetBundleImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssetBundleImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssetBundleImportJobResponseUnmarshaller.Instance;
 
@@ -10275,7 +10275,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">REST API Reference for StartAssetBundleImportJob Operation</seealso>
         public virtual Task<StartAssetBundleImportJobResponse> StartAssetBundleImportJobAsync(StartAssetBundleImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssetBundleImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssetBundleImportJobResponseUnmarshaller.Instance;
 
@@ -10288,7 +10288,7 @@ namespace Amazon.QuickSight
 
         internal virtual StartDashboardSnapshotJobResponse StartDashboardSnapshotJob(StartDashboardSnapshotJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardSnapshotJobResponseUnmarshaller.Instance;
 
@@ -10466,7 +10466,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">REST API Reference for StartDashboardSnapshotJob Operation</seealso>
         public virtual Task<StartDashboardSnapshotJobResponse> StartDashboardSnapshotJobAsync(StartDashboardSnapshotJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardSnapshotJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardSnapshotJobResponseUnmarshaller.Instance;
 
@@ -10479,7 +10479,7 @@ namespace Amazon.QuickSight
 
         internal virtual StartDashboardSnapshotJobScheduleResponse StartDashboardSnapshotJobSchedule(StartDashboardSnapshotJobScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardSnapshotJobScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardSnapshotJobScheduleResponseUnmarshaller.Instance;
 
@@ -10541,7 +10541,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJobSchedule">REST API Reference for StartDashboardSnapshotJobSchedule Operation</seealso>
         public virtual Task<StartDashboardSnapshotJobScheduleResponse> StartDashboardSnapshotJobScheduleAsync(StartDashboardSnapshotJobScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardSnapshotJobScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardSnapshotJobScheduleResponseUnmarshaller.Instance;
 
@@ -10554,7 +10554,7 @@ namespace Amazon.QuickSight
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -10628,7 +10628,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -10641,7 +10641,7 @@ namespace Amazon.QuickSight
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -10680,7 +10680,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -10693,7 +10693,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateAccountCustomizationResponse UpdateAccountCustomization(UpdateAccountCustomizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -10748,7 +10748,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">REST API Reference for UpdateAccountCustomization Operation</seealso>
         public virtual Task<UpdateAccountCustomizationResponse> UpdateAccountCustomizationAsync(UpdateAccountCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountCustomizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountCustomizationResponseUnmarshaller.Instance;
 
@@ -10761,7 +10761,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateAccountCustomPermissionResponse UpdateAccountCustomPermission(UpdateAccountCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -10800,7 +10800,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomPermission">REST API Reference for UpdateAccountCustomPermission Operation</seealso>
         public virtual Task<UpdateAccountCustomPermissionResponse> UpdateAccountCustomPermissionAsync(UpdateAccountCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountCustomPermissionResponseUnmarshaller.Instance;
 
@@ -10813,7 +10813,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -10855,7 +10855,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -10868,7 +10868,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateAnalysisResponse UpdateAnalysis(UpdateAnalysisRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisResponseUnmarshaller.Instance;
 
@@ -10913,7 +10913,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis">REST API Reference for UpdateAnalysis Operation</seealso>
         public virtual Task<UpdateAnalysisResponse> UpdateAnalysisAsync(UpdateAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisResponseUnmarshaller.Instance;
 
@@ -10926,7 +10926,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateAnalysisPermissionsResponse UpdateAnalysisPermissions(UpdateAnalysisPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisPermissionsResponseUnmarshaller.Instance;
 
@@ -10971,7 +10971,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions">REST API Reference for UpdateAnalysisPermissions Operation</seealso>
         public virtual Task<UpdateAnalysisPermissionsResponse> UpdateAnalysisPermissionsAsync(UpdateAnalysisPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAnalysisPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAnalysisPermissionsResponseUnmarshaller.Instance;
 
@@ -10984,7 +10984,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateApplicationWithTokenExchangeGrantResponse UpdateApplicationWithTokenExchangeGrant(UpdateApplicationWithTokenExchangeGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationWithTokenExchangeGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationWithTokenExchangeGrantResponseUnmarshaller.Instance;
 
@@ -11031,7 +11031,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateApplicationWithTokenExchangeGrant">REST API Reference for UpdateApplicationWithTokenExchangeGrant Operation</seealso>
         public virtual Task<UpdateApplicationWithTokenExchangeGrantResponse> UpdateApplicationWithTokenExchangeGrantAsync(UpdateApplicationWithTokenExchangeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationWithTokenExchangeGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationWithTokenExchangeGrantResponseUnmarshaller.Instance;
 
@@ -11044,7 +11044,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateBrandResponse UpdateBrand(UpdateBrandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandResponseUnmarshaller.Instance;
 
@@ -11087,7 +11087,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrand">REST API Reference for UpdateBrand Operation</seealso>
         public virtual Task<UpdateBrandResponse> UpdateBrandAsync(UpdateBrandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandResponseUnmarshaller.Instance;
 
@@ -11100,7 +11100,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateBrandAssignmentResponse UpdateBrandAssignment(UpdateBrandAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -11143,7 +11143,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrandAssignment">REST API Reference for UpdateBrandAssignment Operation</seealso>
         public virtual Task<UpdateBrandAssignmentResponse> UpdateBrandAssignmentAsync(UpdateBrandAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandAssignmentResponseUnmarshaller.Instance;
 
@@ -11156,7 +11156,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateBrandPublishedVersionResponse UpdateBrandPublishedVersion(UpdateBrandPublishedVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandPublishedVersionResponseUnmarshaller.Instance;
 
@@ -11199,7 +11199,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrandPublishedVersion">REST API Reference for UpdateBrandPublishedVersion Operation</seealso>
         public virtual Task<UpdateBrandPublishedVersionResponse> UpdateBrandPublishedVersionAsync(UpdateBrandPublishedVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrandPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrandPublishedVersionResponseUnmarshaller.Instance;
 
@@ -11212,7 +11212,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateCustomPermissionsResponse UpdateCustomPermissions(UpdateCustomPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -11260,7 +11260,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateCustomPermissions">REST API Reference for UpdateCustomPermissions Operation</seealso>
         public virtual Task<UpdateCustomPermissionsResponse> UpdateCustomPermissionsAsync(UpdateCustomPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCustomPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCustomPermissionsResponseUnmarshaller.Instance;
 
@@ -11273,7 +11273,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -11327,7 +11327,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual Task<UpdateDashboardResponse> UpdateDashboardAsync(UpdateDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -11340,7 +11340,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDashboardLinksResponse UpdateDashboardLinks(UpdateDashboardLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardLinksResponseUnmarshaller.Instance;
 
@@ -11388,7 +11388,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks">REST API Reference for UpdateDashboardLinks Operation</seealso>
         public virtual Task<UpdateDashboardLinksResponse> UpdateDashboardLinksAsync(UpdateDashboardLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardLinksResponseUnmarshaller.Instance;
 
@@ -11401,7 +11401,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDashboardPermissionsResponse UpdateDashboardPermissions(UpdateDashboardPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardPermissionsResponseUnmarshaller.Instance;
 
@@ -11446,7 +11446,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPermissions">REST API Reference for UpdateDashboardPermissions Operation</seealso>
         public virtual Task<UpdateDashboardPermissionsResponse> UpdateDashboardPermissionsAsync(UpdateDashboardPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardPermissionsResponseUnmarshaller.Instance;
 
@@ -11459,7 +11459,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDashboardPublishedVersionResponse UpdateDashboardPublishedVersion(UpdateDashboardPublishedVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardPublishedVersionResponseUnmarshaller.Instance;
 
@@ -11501,7 +11501,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardPublishedVersion">REST API Reference for UpdateDashboardPublishedVersion Operation</seealso>
         public virtual Task<UpdateDashboardPublishedVersionResponse> UpdateDashboardPublishedVersionAsync(UpdateDashboardPublishedVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardPublishedVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardPublishedVersionResponseUnmarshaller.Instance;
 
@@ -11514,7 +11514,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDashboardsQAConfigurationResponse UpdateDashboardsQAConfiguration(UpdateDashboardsQAConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardsQAConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardsQAConfigurationResponseUnmarshaller.Instance;
 
@@ -11556,7 +11556,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardsQAConfiguration">REST API Reference for UpdateDashboardsQAConfiguration Operation</seealso>
         public virtual Task<UpdateDashboardsQAConfigurationResponse> UpdateDashboardsQAConfigurationAsync(UpdateDashboardsQAConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardsQAConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardsQAConfigurationResponseUnmarshaller.Instance;
 
@@ -11569,7 +11569,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDataSetResponse UpdateDataSet(UpdateDataSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetResponseUnmarshaller.Instance;
 
@@ -11621,7 +11621,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSet">REST API Reference for UpdateDataSet Operation</seealso>
         public virtual Task<UpdateDataSetResponse> UpdateDataSetAsync(UpdateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetResponseUnmarshaller.Instance;
 
@@ -11634,7 +11634,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDataSetPermissionsResponse UpdateDataSetPermissions(UpdateDataSetPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetPermissionsResponseUnmarshaller.Instance;
 
@@ -11681,7 +11681,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSetPermissions">REST API Reference for UpdateDataSetPermissions Operation</seealso>
         public virtual Task<UpdateDataSetPermissionsResponse> UpdateDataSetPermissionsAsync(UpdateDataSetPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSetPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSetPermissionsResponseUnmarshaller.Instance;
 
@@ -11694,7 +11694,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDataSourceResponse UpdateDataSource(UpdateDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -11739,7 +11739,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         public virtual Task<UpdateDataSourceResponse> UpdateDataSourceAsync(UpdateDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
@@ -11752,7 +11752,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDataSourcePermissionsResponse UpdateDataSourcePermissions(UpdateDataSourcePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourcePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourcePermissionsResponseUnmarshaller.Instance;
 
@@ -11794,7 +11794,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDataSourcePermissions">REST API Reference for UpdateDataSourcePermissions Operation</seealso>
         public virtual Task<UpdateDataSourcePermissionsResponse> UpdateDataSourcePermissionsAsync(UpdateDataSourcePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataSourcePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataSourcePermissionsResponseUnmarshaller.Instance;
 
@@ -11807,7 +11807,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateDefaultQBusinessApplicationResponse UpdateDefaultQBusinessApplication(UpdateDefaultQBusinessApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -11849,7 +11849,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDefaultQBusinessApplication">REST API Reference for UpdateDefaultQBusinessApplication Operation</seealso>
         public virtual Task<UpdateDefaultQBusinessApplicationResponse> UpdateDefaultQBusinessApplicationAsync(UpdateDefaultQBusinessApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultQBusinessApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
@@ -11862,7 +11862,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateFolderResponse UpdateFolder(UpdateFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
@@ -11913,7 +11913,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">REST API Reference for UpdateFolder Operation</seealso>
         public virtual Task<UpdateFolderResponse> UpdateFolderAsync(UpdateFolderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFolderResponseUnmarshaller.Instance;
 
@@ -11926,7 +11926,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateFolderPermissionsResponse UpdateFolderPermissions(UpdateFolderPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFolderPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFolderPermissionsResponseUnmarshaller.Instance;
 
@@ -11974,7 +11974,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">REST API Reference for UpdateFolderPermissions Operation</seealso>
         public virtual Task<UpdateFolderPermissionsResponse> UpdateFolderPermissionsAsync(UpdateFolderPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFolderPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFolderPermissionsResponseUnmarshaller.Instance;
 
@@ -11987,7 +11987,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -12032,7 +12032,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
 
@@ -12045,7 +12045,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateIAMPolicyAssignmentResponse UpdateIAMPolicyAssignment(UpdateIAMPolicyAssignmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -12093,7 +12093,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">REST API Reference for UpdateIAMPolicyAssignment Operation</seealso>
         public virtual Task<UpdateIAMPolicyAssignmentResponse> UpdateIAMPolicyAssignmentAsync(UpdateIAMPolicyAssignmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIAMPolicyAssignmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIAMPolicyAssignmentResponseUnmarshaller.Instance;
 
@@ -12106,7 +12106,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateIdentityPropagationConfigResponse UpdateIdentityPropagationConfig(UpdateIdentityPropagationConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdentityPropagationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdentityPropagationConfigResponseUnmarshaller.Instance;
 
@@ -12151,7 +12151,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig">REST API Reference for UpdateIdentityPropagationConfig Operation</seealso>
         public virtual Task<UpdateIdentityPropagationConfigResponse> UpdateIdentityPropagationConfigAsync(UpdateIdentityPropagationConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdentityPropagationConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdentityPropagationConfigResponseUnmarshaller.Instance;
 
@@ -12164,7 +12164,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateIpRestrictionResponse UpdateIpRestriction(UpdateIpRestrictionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIpRestrictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIpRestrictionResponseUnmarshaller.Instance;
 
@@ -12210,7 +12210,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">REST API Reference for UpdateIpRestriction Operation</seealso>
         public virtual Task<UpdateIpRestrictionResponse> UpdateIpRestrictionAsync(UpdateIpRestrictionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIpRestrictionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIpRestrictionResponseUnmarshaller.Instance;
 
@@ -12223,7 +12223,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateKeyRegistrationResponse UpdateKeyRegistration(UpdateKeyRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyRegistrationResponseUnmarshaller.Instance;
 
@@ -12259,7 +12259,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration">REST API Reference for UpdateKeyRegistration Operation</seealso>
         public virtual Task<UpdateKeyRegistrationResponse> UpdateKeyRegistrationAsync(UpdateKeyRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyRegistrationResponseUnmarshaller.Instance;
 
@@ -12272,7 +12272,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdatePublicSharingSettingsResponse UpdatePublicSharingSettings(UpdatePublicSharingSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePublicSharingSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePublicSharingSettingsResponseUnmarshaller.Instance;
 
@@ -12336,7 +12336,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">REST API Reference for UpdatePublicSharingSettings Operation</seealso>
         public virtual Task<UpdatePublicSharingSettingsResponse> UpdatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePublicSharingSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePublicSharingSettingsResponseUnmarshaller.Instance;
 
@@ -12349,7 +12349,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateQPersonalizationConfigurationResponse UpdateQPersonalizationConfiguration(UpdateQPersonalizationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQPersonalizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQPersonalizationConfigurationResponseUnmarshaller.Instance;
 
@@ -12394,7 +12394,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateQPersonalizationConfiguration">REST API Reference for UpdateQPersonalizationConfiguration Operation</seealso>
         public virtual Task<UpdateQPersonalizationConfigurationResponse> UpdateQPersonalizationConfigurationAsync(UpdateQPersonalizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQPersonalizationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQPersonalizationConfigurationResponseUnmarshaller.Instance;
 
@@ -12407,7 +12407,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateQuickSightQSearchConfigurationResponse UpdateQuickSightQSearchConfiguration(UpdateQuickSightQSearchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickSightQSearchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickSightQSearchConfigurationResponseUnmarshaller.Instance;
 
@@ -12449,7 +12449,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateQuickSightQSearchConfiguration">REST API Reference for UpdateQuickSightQSearchConfiguration Operation</seealso>
         public virtual Task<UpdateQuickSightQSearchConfigurationResponse> UpdateQuickSightQSearchConfigurationAsync(UpdateQuickSightQSearchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQuickSightQSearchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQuickSightQSearchConfigurationResponseUnmarshaller.Instance;
 
@@ -12462,7 +12462,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateRefreshScheduleResponse UpdateRefreshSchedule(UpdateRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -12507,7 +12507,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule">REST API Reference for UpdateRefreshSchedule Operation</seealso>
         public virtual Task<UpdateRefreshScheduleResponse> UpdateRefreshScheduleAsync(UpdateRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -12520,7 +12520,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateRoleCustomPermissionResponse UpdateRoleCustomPermission(UpdateRoleCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -12565,7 +12565,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission">REST API Reference for UpdateRoleCustomPermission Operation</seealso>
         public virtual Task<UpdateRoleCustomPermissionResponse> UpdateRoleCustomPermissionAsync(UpdateRoleCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRoleCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRoleCustomPermissionResponseUnmarshaller.Instance;
 
@@ -12578,7 +12578,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateSPICECapacityConfigurationResponse UpdateSPICECapacityConfiguration(UpdateSPICECapacityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSPICECapacityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSPICECapacityConfigurationResponseUnmarshaller.Instance;
 
@@ -12617,7 +12617,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration">REST API Reference for UpdateSPICECapacityConfiguration Operation</seealso>
         public virtual Task<UpdateSPICECapacityConfigurationResponse> UpdateSPICECapacityConfigurationAsync(UpdateSPICECapacityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSPICECapacityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSPICECapacityConfigurationResponseUnmarshaller.Instance;
 
@@ -12630,7 +12630,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -12678,7 +12678,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -12691,7 +12691,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTemplateAliasResponse UpdateTemplateAlias(UpdateTemplateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateAliasResponseUnmarshaller.Instance;
 
@@ -12730,7 +12730,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplateAlias">REST API Reference for UpdateTemplateAlias Operation</seealso>
         public virtual Task<UpdateTemplateAliasResponse> UpdateTemplateAliasAsync(UpdateTemplateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateAliasResponseUnmarshaller.Instance;
 
@@ -12743,7 +12743,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTemplatePermissionsResponse UpdateTemplatePermissions(UpdateTemplatePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplatePermissionsResponseUnmarshaller.Instance;
 
@@ -12788,7 +12788,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">REST API Reference for UpdateTemplatePermissions Operation</seealso>
         public virtual Task<UpdateTemplatePermissionsResponse> UpdateTemplatePermissionsAsync(UpdateTemplatePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplatePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplatePermissionsResponseUnmarshaller.Instance;
 
@@ -12801,7 +12801,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateThemeResponse UpdateTheme(UpdateThemeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
 
@@ -12852,7 +12852,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme">REST API Reference for UpdateTheme Operation</seealso>
         public virtual Task<UpdateThemeResponse> UpdateThemeAsync(UpdateThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeResponseUnmarshaller.Instance;
 
@@ -12865,7 +12865,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateThemeAliasResponse UpdateThemeAlias(UpdateThemeAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
 
@@ -12910,7 +12910,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias">REST API Reference for UpdateThemeAlias Operation</seealso>
         public virtual Task<UpdateThemeAliasResponse> UpdateThemeAliasAsync(UpdateThemeAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemeAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemeAliasResponseUnmarshaller.Instance;
 
@@ -12923,7 +12923,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateThemePermissionsResponse UpdateThemePermissions(UpdateThemePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
 
@@ -13051,7 +13051,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions">REST API Reference for UpdateThemePermissions Operation</seealso>
         public virtual Task<UpdateThemePermissionsResponse> UpdateThemePermissionsAsync(UpdateThemePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThemePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThemePermissionsResponseUnmarshaller.Instance;
 
@@ -13064,7 +13064,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTopicResponse UpdateTopic(UpdateTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicResponseUnmarshaller.Instance;
 
@@ -13112,7 +13112,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopic">REST API Reference for UpdateTopic Operation</seealso>
         public virtual Task<UpdateTopicResponse> UpdateTopicAsync(UpdateTopicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicResponseUnmarshaller.Instance;
 
@@ -13125,7 +13125,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTopicPermissionsResponse UpdateTopicPermissions(UpdateTopicPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicPermissionsResponseUnmarshaller.Instance;
 
@@ -13176,7 +13176,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissions">REST API Reference for UpdateTopicPermissions Operation</seealso>
         public virtual Task<UpdateTopicPermissionsResponse> UpdateTopicPermissionsAsync(UpdateTopicPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicPermissionsResponseUnmarshaller.Instance;
 
@@ -13189,7 +13189,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateTopicRefreshScheduleResponse UpdateTopicRefreshSchedule(UpdateTopicRefreshScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -13237,7 +13237,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicRefreshSchedule">REST API Reference for UpdateTopicRefreshSchedule Operation</seealso>
         public virtual Task<UpdateTopicRefreshScheduleResponse> UpdateTopicRefreshScheduleAsync(UpdateTopicRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTopicRefreshScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTopicRefreshScheduleResponseUnmarshaller.Instance;
 
@@ -13250,7 +13250,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -13295,7 +13295,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -13308,7 +13308,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateUserCustomPermissionResponse UpdateUserCustomPermission(UpdateUserCustomPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserCustomPermissionResponseUnmarshaller.Instance;
 
@@ -13356,7 +13356,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUserCustomPermission">REST API Reference for UpdateUserCustomPermission Operation</seealso>
         public virtual Task<UpdateUserCustomPermissionResponse> UpdateUserCustomPermissionAsync(UpdateUserCustomPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserCustomPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserCustomPermissionResponseUnmarshaller.Instance;
 
@@ -13369,7 +13369,7 @@ namespace Amazon.QuickSight
 
         internal virtual UpdateVPCConnectionResponse UpdateVPCConnection(UpdateVPCConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVPCConnectionResponseUnmarshaller.Instance;
 
@@ -13420,7 +13420,7 @@ namespace Amazon.QuickSight
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateVPCConnection">REST API Reference for UpdateVPCConnection Operation</seealso>
         public virtual Task<UpdateVPCConnectionResponse> UpdateVPCConnectionAsync(UpdateVPCConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVPCConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVPCConnectionResponseUnmarshaller.Instance;
 

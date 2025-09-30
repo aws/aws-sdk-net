@@ -294,7 +294,7 @@ namespace Amazon.Neptune
 
         internal virtual AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
@@ -342,7 +342,7 @@ namespace Amazon.Neptune
 
         internal virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.Neptune
 
         internal virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.Neptune
 
         internal virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -464,7 +464,7 @@ namespace Amazon.Neptune
 
         internal virtual CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.Neptune
 
         internal virtual CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual Task<CopyDBClusterSnapshotResponse> CopyDBClusterSnapshotAsync(CopyDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.Neptune
 
         internal virtual CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -595,7 +595,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual Task<CopyDBParameterGroupResponse> CopyDBParameterGroupAsync(CopyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBClusterEndpointResponse CreateDBClusterEndpoint(CreateDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
         public virtual Task<CreateDBClusterEndpointResponse> CreateDBClusterEndpointAsync(CreateDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual Task<CreateDBClusterParameterGroupResponse> CreateDBClusterParameterGroupAsync(CreateDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual Task<CreateDBClusterSnapshotResponse> CreateDBClusterSnapshotAsync(CreateDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1087,7 +1087,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.Neptune
 
         internal virtual CreateGlobalClusterResponse CreateGlobalCluster(CreateGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
         public virtual Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
@@ -1278,7 +1278,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBClusterEndpointResponse DeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -1322,7 +1322,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
         public virtual Task<DeleteDBClusterEndpointResponse> DeleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual Task<DeleteDBClusterParameterGroupResponse> DeleteDBClusterParameterGroupAsync(DeleteDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual Task<DeleteDBClusterSnapshotResponse> DeleteDBClusterSnapshotAsync(DeleteDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -1425,7 +1425,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
@@ -1483,7 +1483,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1526,7 +1526,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1615,7 +1615,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -1628,7 +1628,7 @@ namespace Amazon.Neptune
 
         internal virtual DeleteGlobalClusterResponse DeleteGlobalCluster(DeleteGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
 
@@ -1656,7 +1656,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         public virtual Task<DeleteGlobalClusterResponse> DeleteGlobalClusterAsync(DeleteGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
 
@@ -1669,7 +1669,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClusterEndpointsResponse DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
         public virtual Task<DescribeDBClusterEndpointsResponse> DescribeDBClusterEndpointsAsync(DescribeDBClusterEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
@@ -1776,7 +1776,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
@@ -1789,7 +1789,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -1873,7 +1873,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotAttributesResponse> DescribeDBClusterSnapshotAttributesAsync(DescribeDBClusterSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -1886,7 +1886,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -1910,7 +1910,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -1923,7 +1923,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
@@ -1944,7 +1944,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
@@ -1957,7 +1957,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
@@ -2001,7 +2001,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
@@ -2027,7 +2027,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
@@ -2040,7 +2040,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
@@ -2064,7 +2064,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
@@ -2077,7 +2077,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -2121,7 +2121,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
@@ -2143,7 +2143,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultClusterParametersResponse> DescribeEngineDefaultClusterParametersAsync(DescribeEngineDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -2178,7 +2178,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -2226,7 +2226,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -2250,7 +2250,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2294,7 +2294,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
 
@@ -2331,7 +2331,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
         public virtual Task<DescribeGlobalClustersResponse> DescribeGlobalClustersAsync(DescribeGlobalClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
 
@@ -2344,7 +2344,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -2365,7 +2365,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -2416,7 +2416,7 @@ namespace Amazon.Neptune
 
         internal virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual Task<DescribeValidDBInstanceModificationsResponse> DescribeValidDBInstanceModificationsAsync(DescribeValidDBInstanceModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
@@ -2457,7 +2457,7 @@ namespace Amazon.Neptune
 
         internal virtual FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
@@ -2501,7 +2501,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.Neptune
 
         internal virtual FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -2564,7 +2564,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
         public virtual Task<FailoverGlobalClusterResponse> FailoverGlobalClusterAsync(FailoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -2577,7 +2577,7 @@ namespace Amazon.Neptune
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2607,7 +2607,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
@@ -2682,7 +2682,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
@@ -2695,7 +2695,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBClusterEndpointResponse ModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
         public virtual Task<ModifyDBClusterEndpointResponse> ModifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual Task<ModifyDBClusterParameterGroupResponse> ModifyDBClusterParameterGroupAsync(ModifyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -2809,7 +2809,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -2861,7 +2861,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual Task<ModifyDBClusterSnapshotAttributeResponse> ModifyDBClusterSnapshotAttributeAsync(ModifyDBClusterSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -2874,7 +2874,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
@@ -2954,7 +2954,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
@@ -2967,7 +2967,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3018,7 +3018,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3031,7 +3031,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -3071,7 +3071,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -3084,7 +3084,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -3132,7 +3132,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -3145,7 +3145,7 @@ namespace Amazon.Neptune
 
         internal virtual ModifyGlobalClusterResponse ModifyGlobalCluster(ModifyGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3174,7 +3174,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
         public virtual Task<ModifyGlobalClusterResponse> ModifyGlobalClusterAsync(ModifyGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3187,7 +3187,7 @@ namespace Amazon.Neptune
 
         internal virtual PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
@@ -3214,7 +3214,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual Task<PromoteReadReplicaDBClusterResponse> PromoteReadReplicaDBClusterAsync(PromoteReadReplicaDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
@@ -3227,7 +3227,7 @@ namespace Amazon.Neptune
 
         internal virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
@@ -3262,7 +3262,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
@@ -3275,7 +3275,7 @@ namespace Amazon.Neptune
 
         internal virtual RemoveFromGlobalClusterResponse RemoveFromGlobalCluster(RemoveFromGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3307,7 +3307,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
         public virtual Task<RemoveFromGlobalClusterResponse> RemoveFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3320,7 +3320,7 @@ namespace Amazon.Neptune
 
         internal virtual RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
@@ -3351,7 +3351,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
@@ -3364,7 +3364,7 @@ namespace Amazon.Neptune
 
         internal virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
@@ -3391,7 +3391,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
@@ -3404,7 +3404,7 @@ namespace Amazon.Neptune
 
         internal virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -3434,7 +3434,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -3447,7 +3447,7 @@ namespace Amazon.Neptune
 
         internal virtual ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -3488,7 +3488,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual Task<ResetDBClusterParameterGroupResponse> ResetDBClusterParameterGroupAsync(ResetDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -3501,7 +3501,7 @@ namespace Amazon.Neptune
 
         internal virtual ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3535,7 +3535,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3548,7 +3548,7 @@ namespace Amazon.Neptune
 
         internal virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -3636,7 +3636,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -3649,7 +3649,7 @@ namespace Amazon.Neptune
 
         internal virtual RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
@@ -3742,7 +3742,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
@@ -3755,7 +3755,7 @@ namespace Amazon.Neptune
 
         internal virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
 
@@ -3786,7 +3786,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         public virtual Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
 
@@ -3799,7 +3799,7 @@ namespace Amazon.Neptune
 
         internal virtual StopDBClusterResponse StopDBCluster(StopDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
 
@@ -3836,7 +3836,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
         public virtual Task<StopDBClusterResponse> StopDBClusterAsync(StopDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
 
@@ -3849,7 +3849,7 @@ namespace Amazon.Neptune
 
         internal virtual SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3900,7 +3900,7 @@ namespace Amazon.Neptune
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
         public virtual Task<SwitchoverGlobalClusterResponse> SwitchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
 

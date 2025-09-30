@@ -156,7 +156,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -193,7 +193,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
             
@@ -249,7 +249,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
@@ -304,7 +304,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
             
@@ -362,7 +362,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">REST API Reference for GetRetainedMessage Operation</seealso>
         public virtual GetRetainedMessageResponse GetRetainedMessage(GetRetainedMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetainedMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetainedMessageResponseUnmarshaller.Instance;
 
@@ -419,7 +419,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">REST API Reference for GetRetainedMessage Operation</seealso>
         public virtual Task<GetRetainedMessageResponse> GetRetainedMessageAsync(GetRetainedMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetainedMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetainedMessageResponseUnmarshaller.Instance;
             
@@ -475,7 +475,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
             
@@ -578,7 +578,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
         public virtual ListNamedShadowsForThingResponse ListNamedShadowsForThing(ListNamedShadowsForThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedShadowsForThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedShadowsForThingResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
         public virtual Task<ListNamedShadowsForThingResponse> ListNamedShadowsForThingAsync(ListNamedShadowsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedShadowsForThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedShadowsForThingResponseUnmarshaller.Instance;
             
@@ -686,7 +686,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">REST API Reference for ListRetainedMessages Operation</seealso>
         public virtual ListRetainedMessagesResponse ListRetainedMessages(ListRetainedMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetainedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetainedMessagesResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">REST API Reference for ListRetainedMessages Operation</seealso>
         public virtual Task<ListRetainedMessagesResponse> ListRetainedMessagesAsync(ListRetainedMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetainedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetainedMessagesResponseUnmarshaller.Instance;
             
@@ -798,7 +798,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
             
@@ -908,7 +908,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
             

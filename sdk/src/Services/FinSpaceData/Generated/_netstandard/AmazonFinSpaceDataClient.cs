@@ -273,7 +273,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
 
@@ -328,7 +328,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual CreateChangesetResponse CreateChangeset(CreateChangesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChangesetResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateChangesetResponse> CreateChangesetAsync(CreateChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChangesetResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual CreateDataViewResponse CreateDataView(CreateDataViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
 
@@ -482,7 +482,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateDataViewResponse> CreateDataViewAsync(CreateDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataViewResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual CreatePermissionGroupResponse CreatePermissionGroup(CreatePermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePermissionGroupResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreatePermissionGroupResponse> CreatePermissionGroupAsync(CreatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePermissionGroupResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual DeletePermissionGroupResponse DeletePermissionGroup(DeletePermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionGroupResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(DeletePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePermissionGroupResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual DisableUserResponse DisableUser(DisableUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<DisableUserResponse> DisableUserAsync(DisableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableUserResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(DisassociateUserFromPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
 
@@ -826,7 +826,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual EnableUserResponse EnableUser(EnableUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<EnableUserResponse> EnableUserAsync(EnableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableUserResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetChangesetResponse GetChangeset(GetChangesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetChangesetResponse> GetChangesetAsync(GetChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangesetResponseUnmarshaller.Instance;
 
@@ -937,7 +937,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
 
@@ -977,7 +977,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
 
@@ -991,7 +991,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetDataViewResponse GetDataView(GetDataViewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataViewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataViewResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetExternalDataViewAccessDetailsResponse GetExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(GetExternalDataViewAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
 
@@ -1142,7 +1142,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetPermissionGroupResponse> GetPermissionGroupAsync(GetPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetProgrammaticAccessCredentialsResponse GetProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProgrammaticAccessCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProgrammaticAccessCredentialsResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(GetProgrammaticAccessCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProgrammaticAccessCredentialsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProgrammaticAccessCredentialsResponseUnmarshaller.Instance;
 
@@ -1206,7 +1206,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetUserResponse GetUser(GetUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserResponseUnmarshaller.Instance;
 
@@ -1257,7 +1257,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual GetWorkingLocationResponse GetWorkingLocation(GetWorkingLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkingLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkingLocationResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<GetWorkingLocationResponse> GetWorkingLocationAsync(GetWorkingLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkingLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkingLocationResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListChangesetsResponse ListChangesets(ListChangesetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListChangesetsResponse> ListChangesetsAsync(ListChangesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChangesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChangesetsResponseUnmarshaller.Instance;
 
@@ -1360,7 +1360,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -1397,7 +1397,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListDataViewsResponse ListDataViews(ListDataViewsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
 
@@ -1448,7 +1448,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListDataViewsResponse> ListDataViewsAsync(ListDataViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataViewsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataViewsResponseUnmarshaller.Instance;
 
@@ -1462,7 +1462,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListPermissionGroupsResponse ListPermissionGroups(ListPermissionGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionGroupsResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListPermissionGroupsResponse> ListPermissionGroupsAsync(ListPermissionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionGroupsResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
 
@@ -1547,7 +1547,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
 
@@ -1561,7 +1561,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1595,7 +1595,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
 
@@ -1660,7 +1660,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
 
@@ -1702,7 +1702,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<ResetUserPasswordResponse> ResetUserPasswordAsync(ResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
 
@@ -1716,7 +1716,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual UpdateChangesetResponse UpdateChangeset(UpdateChangesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
 
@@ -1756,7 +1756,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateChangesetResponse> UpdateChangesetAsync(UpdateChangesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChangesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChangesetResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual UpdatePermissionGroupResponse UpdatePermissionGroup(UpdatePermissionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionGroupResponseUnmarshaller.Instance;
 
@@ -1864,7 +1864,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(UpdatePermissionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePermissionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePermissionGroupResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         internal virtual UpdateUserResponse UpdateUser(UpdateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.FinSpaceData
         [Obsolete("This method will be discontinued.")]
         public virtual Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 

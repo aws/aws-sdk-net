@@ -310,7 +310,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/BatchGetMemberAccountDetails">REST API Reference for BatchGetMemberAccountDetails Operation</seealso>
         public virtual BatchGetMemberAccountDetailsResponse BatchGetMemberAccountDetails(BatchGetMemberAccountDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberAccountDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberAccountDetailsResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/BatchGetMemberAccountDetails">REST API Reference for BatchGetMemberAccountDetails Operation</seealso>
         public virtual IAsyncResult BeginBatchGetMemberAccountDetails(BatchGetMemberAccountDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberAccountDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberAccountDetailsResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CancelMembership">REST API Reference for CancelMembership Operation</seealso>
         public virtual CancelMembershipResponse CancelMembership(CancelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMembershipResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CancelMembership">REST API Reference for CancelMembership Operation</seealso>
         public virtual IAsyncResult BeginCancelMembership(CancelMembershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMembershipResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CloseCase">REST API Reference for CloseCase Operation</seealso>
         public virtual CloseCaseResponse CloseCase(CloseCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseCaseResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CloseCase">REST API Reference for CloseCase Operation</seealso>
         public virtual IAsyncResult BeginCloseCase(CloseCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseCaseResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual IAsyncResult BeginCreateCase(CreateCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -634,7 +634,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCaseComment">REST API Reference for CreateCaseComment Operation</seealso>
         public virtual CreateCaseCommentResponse CreateCaseComment(CreateCaseCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseCommentResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCaseComment">REST API Reference for CreateCaseComment Operation</seealso>
         public virtual IAsyncResult BeginCreateCaseComment(CreateCaseCommentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseCommentResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual CreateMembershipResponse CreateMembership(CreateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual IAsyncResult BeginCreateMembership(CreateMembershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCase">REST API Reference for GetCase Operation</seealso>
         public virtual GetCaseResponse GetCase(GetCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCase">REST API Reference for GetCase Operation</seealso>
         public virtual IAsyncResult BeginGetCase(GetCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentDownloadUrl">REST API Reference for GetCaseAttachmentDownloadUrl Operation</seealso>
         public virtual GetCaseAttachmentDownloadUrlResponse GetCaseAttachmentDownloadUrl(GetCaseAttachmentDownloadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentDownloadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentDownloadUrlResponseUnmarshaller.Instance;
 
@@ -898,7 +898,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentDownloadUrl">REST API Reference for GetCaseAttachmentDownloadUrl Operation</seealso>
         public virtual IAsyncResult BeginGetCaseAttachmentDownloadUrl(GetCaseAttachmentDownloadUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentDownloadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentDownloadUrlResponseUnmarshaller.Instance;
 
@@ -958,7 +958,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentUploadUrl">REST API Reference for GetCaseAttachmentUploadUrl Operation</seealso>
         public virtual GetCaseAttachmentUploadUrlResponse GetCaseAttachmentUploadUrl(GetCaseAttachmentUploadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentUploadUrlResponseUnmarshaller.Instance;
 
@@ -979,7 +979,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentUploadUrl">REST API Reference for GetCaseAttachmentUploadUrl Operation</seealso>
         public virtual IAsyncResult BeginGetCaseAttachmentUploadUrl(GetCaseAttachmentUploadUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentUploadUrlResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual GetMembershipResponse GetMembership(GetMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual IAsyncResult BeginGetMembership(GetMembershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
 
@@ -1120,7 +1120,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCaseEdits">REST API Reference for ListCaseEdits Operation</seealso>
         public virtual ListCaseEditsResponse ListCaseEdits(ListCaseEditsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseEditsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseEditsResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCaseEdits">REST API Reference for ListCaseEdits Operation</seealso>
         public virtual IAsyncResult BeginListCaseEdits(ListCaseEditsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseEditsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseEditsResponseUnmarshaller.Instance;
 
@@ -1201,7 +1201,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCases">REST API Reference for ListCases Operation</seealso>
         public virtual ListCasesResponse ListCases(ListCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesResponseUnmarshaller.Instance;
 
@@ -1222,7 +1222,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCases">REST API Reference for ListCases Operation</seealso>
         public virtual IAsyncResult BeginListCases(ListCasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListComments">REST API Reference for ListComments Operation</seealso>
         public virtual ListCommentsResponse ListComments(ListCommentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommentsResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListComments">REST API Reference for ListComments Operation</seealso>
         public virtual IAsyncResult BeginListComments(ListCommentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommentsResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual ListMembershipsResponse ListMemberships(ListMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
 
@@ -1384,7 +1384,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual IAsyncResult BeginListMemberships(ListMembershipsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
 
@@ -1444,7 +1444,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1465,7 +1465,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1546,7 +1546,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1606,7 +1606,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1627,7 +1627,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1687,7 +1687,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCase">REST API Reference for UpdateCase Operation</seealso>
         public virtual UpdateCaseResponse UpdateCase(UpdateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCase">REST API Reference for UpdateCase Operation</seealso>
         public virtual IAsyncResult BeginUpdateCase(UpdateCaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
 
@@ -1768,7 +1768,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseComment">REST API Reference for UpdateCaseComment Operation</seealso>
         public virtual UpdateCaseCommentResponse UpdateCaseComment(UpdateCaseCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseCommentResponseUnmarshaller.Instance;
 
@@ -1789,7 +1789,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseComment">REST API Reference for UpdateCaseComment Operation</seealso>
         public virtual IAsyncResult BeginUpdateCaseComment(UpdateCaseCommentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseCommentResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseStatus">REST API Reference for UpdateCaseStatus Operation</seealso>
         public virtual UpdateCaseStatusResponse UpdateCaseStatus(UpdateCaseStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseStatusResponseUnmarshaller.Instance;
 
@@ -1911,7 +1911,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseStatus">REST API Reference for UpdateCaseStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateCaseStatus(UpdateCaseStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseStatusResponseUnmarshaller.Instance;
 
@@ -1971,7 +1971,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual UpdateMembershipResponse UpdateMembership(UpdateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
 
@@ -1992,7 +1992,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual IAsyncResult BeginUpdateMembership(UpdateMembershipRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
 
@@ -2058,7 +2058,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateResolverType">REST API Reference for UpdateResolverType Operation</seealso>
         public virtual UpdateResolverTypeResponse UpdateResolverType(UpdateResolverTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResolverTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResolverTypeResponseUnmarshaller.Instance;
 
@@ -2079,7 +2079,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateResolverType">REST API Reference for UpdateResolverType Operation</seealso>
         public virtual IAsyncResult BeginUpdateResolverType(UpdateResolverTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResolverTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResolverTypeResponseUnmarshaller.Instance;
 

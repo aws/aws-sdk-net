@@ -318,7 +318,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">REST API Reference for DeleteRecommendationPreferences Operation</seealso>
         public virtual DeleteRecommendationPreferencesResponse DeleteRecommendationPreferences(DeleteRecommendationPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DeleteRecommendationPreferences">REST API Reference for DeleteRecommendationPreferences Operation</seealso>
         public virtual IAsyncResult BeginDeleteRecommendationPreferences(DeleteRecommendationPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">REST API Reference for DescribeRecommendationExportJobs Operation</seealso>
         public virtual DescribeRecommendationExportJobsResponse DescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationExportJobsResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/DescribeRecommendationExportJobs">REST API Reference for DescribeRecommendationExportJobs Operation</seealso>
         public virtual IAsyncResult BeginDescribeRecommendationExportJobs(DescribeRecommendationExportJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecommendationExportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecommendationExportJobsResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">REST API Reference for ExportAutoScalingGroupRecommendations Operation</seealso>
         public virtual ExportAutoScalingGroupRecommendationsResponse ExportAutoScalingGroupRecommendations(ExportAutoScalingGroupRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportAutoScalingGroupRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportAutoScalingGroupRecommendations">REST API Reference for ExportAutoScalingGroupRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportAutoScalingGroupRecommendations(ExportAutoScalingGroupRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportAutoScalingGroupRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">REST API Reference for ExportEBSVolumeRecommendations Operation</seealso>
         public virtual ExportEBSVolumeRecommendationsResponse ExportEBSVolumeRecommendations(ExportEBSVolumeRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEBSVolumeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEBSVolumeRecommendationsResponseUnmarshaller.Instance;
 
@@ -611,7 +611,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">REST API Reference for ExportEBSVolumeRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportEBSVolumeRecommendations(ExportEBSVolumeRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEBSVolumeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEBSVolumeRecommendationsResponseUnmarshaller.Instance;
 
@@ -683,7 +683,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
         public virtual ExportEC2InstanceRecommendationsResponse ExportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEC2InstanceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEC2InstanceRecommendations">REST API Reference for ExportEC2InstanceRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportEC2InstanceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportEC2InstanceRecommendationsResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportECSServiceRecommendations">REST API Reference for ExportECSServiceRecommendations Operation</seealso>
         public virtual ExportECSServiceRecommendationsResponse ExportECSServiceRecommendations(ExportECSServiceRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportECSServiceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportECSServiceRecommendationsResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportECSServiceRecommendations">REST API Reference for ExportECSServiceRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportECSServiceRecommendations(ExportECSServiceRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportECSServiceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportECSServiceRecommendationsResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportIdleRecommendations">REST API Reference for ExportIdleRecommendations Operation</seealso>
         public virtual ExportIdleRecommendationsResponse ExportIdleRecommendations(ExportIdleRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportIdleRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportIdleRecommendationsResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportIdleRecommendations">REST API Reference for ExportIdleRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportIdleRecommendations(ExportIdleRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportIdleRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportIdleRecommendationsResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">REST API Reference for ExportLambdaFunctionRecommendations Operation</seealso>
         public virtual ExportLambdaFunctionRecommendationsResponse ExportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLambdaFunctionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
 
@@ -981,7 +981,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">REST API Reference for ExportLambdaFunctionRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLambdaFunctionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
 
@@ -1051,7 +1051,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">REST API Reference for ExportLicenseRecommendations Operation</seealso>
         public virtual ExportLicenseRecommendationsResponse ExportLicenseRecommendations(ExportLicenseRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLicenseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLicenseRecommendationsResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">REST API Reference for ExportLicenseRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportLicenseRecommendations(ExportLicenseRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportLicenseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportLicenseRecommendationsResponseUnmarshaller.Instance;
 
@@ -1144,7 +1144,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">REST API Reference for ExportRDSDatabaseRecommendations Operation</seealso>
         public virtual ExportRDSDatabaseRecommendationsResponse ExportRDSDatabaseRecommendations(ExportRDSDatabaseRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportRDSDatabaseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
 
@@ -1165,7 +1165,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportRDSDatabaseRecommendations">REST API Reference for ExportRDSDatabaseRecommendations Operation</seealso>
         public virtual IAsyncResult BeginExportRDSDatabaseRecommendations(ExportRDSDatabaseRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportRDSDatabaseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
 
@@ -1230,7 +1230,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">REST API Reference for GetAutoScalingGroupRecommendations Operation</seealso>
         public virtual GetAutoScalingGroupRecommendationsResponse GetAutoScalingGroupRecommendations(GetAutoScalingGroupRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoScalingGroupRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetAutoScalingGroupRecommendations">REST API Reference for GetAutoScalingGroupRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetAutoScalingGroupRecommendations(GetAutoScalingGroupRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAutoScalingGroupRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAutoScalingGroupRecommendationsResponseUnmarshaller.Instance;
 
@@ -1316,7 +1316,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">REST API Reference for GetEBSVolumeRecommendations Operation</seealso>
         public virtual GetEBSVolumeRecommendationsResponse GetEBSVolumeRecommendations(GetEBSVolumeRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEBSVolumeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">REST API Reference for GetEBSVolumeRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetEBSVolumeRecommendations(GetEBSVolumeRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEBSVolumeRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">REST API Reference for GetEC2InstanceRecommendations Operation</seealso>
         public virtual GetEC2InstanceRecommendationsResponse GetEC2InstanceRecommendations(GetEC2InstanceRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEC2InstanceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEC2InstanceRecommendationsResponseUnmarshaller.Instance;
 
@@ -1424,7 +1424,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2InstanceRecommendations">REST API Reference for GetEC2InstanceRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetEC2InstanceRecommendations(GetEC2InstanceRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEC2InstanceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEC2InstanceRecommendationsResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2RecommendationProjectedMetrics">REST API Reference for GetEC2RecommendationProjectedMetrics Operation</seealso>
         public virtual GetEC2RecommendationProjectedMetricsResponse GetEC2RecommendationProjectedMetrics(GetEC2RecommendationProjectedMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEC2RecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEC2RecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -1513,7 +1513,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEC2RecommendationProjectedMetrics">REST API Reference for GetEC2RecommendationProjectedMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetEC2RecommendationProjectedMetrics(GetEC2RecommendationProjectedMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEC2RecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEC2RecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -1571,7 +1571,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendationProjectedMetrics">REST API Reference for GetECSServiceRecommendationProjectedMetrics Operation</seealso>
         public virtual GetECSServiceRecommendationProjectedMetricsResponse GetECSServiceRecommendationProjectedMetrics(GetECSServiceRecommendationProjectedMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetECSServiceRecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetECSServiceRecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendationProjectedMetrics">REST API Reference for GetECSServiceRecommendationProjectedMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetECSServiceRecommendationProjectedMetrics(GetECSServiceRecommendationProjectedMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetECSServiceRecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetECSServiceRecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -1657,7 +1657,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendations">REST API Reference for GetECSServiceRecommendations Operation</seealso>
         public virtual GetECSServiceRecommendationsResponse GetECSServiceRecommendations(GetECSServiceRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetECSServiceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetECSServiceRecommendationsResponseUnmarshaller.Instance;
 
@@ -1678,7 +1678,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendations">REST API Reference for GetECSServiceRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetECSServiceRecommendations(GetECSServiceRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetECSServiceRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetECSServiceRecommendationsResponseUnmarshaller.Instance;
 
@@ -1745,7 +1745,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">REST API Reference for GetEffectiveRecommendationPreferences Operation</seealso>
         public virtual GetEffectiveRecommendationPreferencesResponse GetEffectiveRecommendationPreferences(GetEffectiveRecommendationPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectiveRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -1766,7 +1766,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEffectiveRecommendationPreferences">REST API Reference for GetEffectiveRecommendationPreferences Operation</seealso>
         public virtual IAsyncResult BeginGetEffectiveRecommendationPreferences(GetEffectiveRecommendationPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEffectiveRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEffectiveRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -1826,7 +1826,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">REST API Reference for GetEnrollmentStatus Operation</seealso>
         public virtual GetEnrollmentStatusResponse GetEnrollmentStatus(GetEnrollmentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnrollmentStatusResponseUnmarshaller.Instance;
 
@@ -1847,7 +1847,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">REST API Reference for GetEnrollmentStatus Operation</seealso>
         public virtual IAsyncResult BeginGetEnrollmentStatus(GetEnrollmentStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnrollmentStatusResponseUnmarshaller.Instance;
 
@@ -1906,7 +1906,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">REST API Reference for GetEnrollmentStatusesForOrganization Operation</seealso>
         public virtual GetEnrollmentStatusesForOrganizationResponse GetEnrollmentStatusesForOrganization(GetEnrollmentStatusesForOrganizationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnrollmentStatusesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance;
 
@@ -1927,7 +1927,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatusesForOrganization">REST API Reference for GetEnrollmentStatusesForOrganization Operation</seealso>
         public virtual IAsyncResult BeginGetEnrollmentStatusesForOrganization(GetEnrollmentStatusesForOrganizationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnrollmentStatusesForOrganizationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnrollmentStatusesForOrganizationResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetIdleRecommendations">REST API Reference for GetIdleRecommendations Operation</seealso>
         public virtual GetIdleRecommendationsResponse GetIdleRecommendations(GetIdleRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdleRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdleRecommendationsResponseUnmarshaller.Instance;
 
@@ -2009,7 +2009,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetIdleRecommendations">REST API Reference for GetIdleRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetIdleRecommendations(GetIdleRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdleRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdleRecommendationsResponseUnmarshaller.Instance;
 
@@ -2074,7 +2074,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
         public virtual GetLambdaFunctionRecommendationsResponse GetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLambdaFunctionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
 
@@ -2095,7 +2095,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLambdaFunctionRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
 
@@ -2160,7 +2160,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">REST API Reference for GetLicenseRecommendations Operation</seealso>
         public virtual GetLicenseRecommendationsResponse GetLicenseRecommendations(GetLicenseRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseRecommendationsResponseUnmarshaller.Instance;
 
@@ -2181,7 +2181,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">REST API Reference for GetLicenseRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetLicenseRecommendations(GetLicenseRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseRecommendationsResponseUnmarshaller.Instance;
 
@@ -2239,7 +2239,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">REST API Reference for GetRDSDatabaseRecommendationProjectedMetrics Operation</seealso>
         public virtual GetRDSDatabaseRecommendationProjectedMetricsResponse GetRDSDatabaseRecommendationProjectedMetrics(GetRDSDatabaseRecommendationProjectedMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDSDatabaseRecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -2260,7 +2260,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendationProjectedMetrics">REST API Reference for GetRDSDatabaseRecommendationProjectedMetrics Operation</seealso>
         public virtual IAsyncResult BeginGetRDSDatabaseRecommendationProjectedMetrics(GetRDSDatabaseRecommendationProjectedMetricsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDSDatabaseRecommendationProjectedMetricsResponseUnmarshaller.Instance;
 
@@ -2325,7 +2325,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">REST API Reference for GetRDSDatabaseRecommendations Operation</seealso>
         public virtual GetRDSDatabaseRecommendationsResponse GetRDSDatabaseRecommendations(GetRDSDatabaseRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDSDatabaseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
 
@@ -2346,7 +2346,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRDSDatabaseRecommendations">REST API Reference for GetRDSDatabaseRecommendations Operation</seealso>
         public virtual IAsyncResult BeginGetRDSDatabaseRecommendations(GetRDSDatabaseRecommendationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDSDatabaseRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDSDatabaseRecommendationsResponseUnmarshaller.Instance;
 
@@ -2416,7 +2416,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">REST API Reference for GetRecommendationPreferences Operation</seealso>
         public virtual GetRecommendationPreferencesResponse GetRecommendationPreferences(GetRecommendationPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationPreferences">REST API Reference for GetRecommendationPreferences Operation</seealso>
         public virtual IAsyncResult BeginGetRecommendationPreferences(GetRecommendationPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -2530,7 +2530,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">REST API Reference for GetRecommendationSummaries Operation</seealso>
         public virtual GetRecommendationSummariesResponse GetRecommendationSummaries(GetRecommendationSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationSummariesResponseUnmarshaller.Instance;
 
@@ -2551,7 +2551,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetRecommendationSummaries">REST API Reference for GetRecommendationSummaries Operation</seealso>
         public virtual IAsyncResult BeginGetRecommendationSummaries(GetRecommendationSummariesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationSummariesResponseUnmarshaller.Instance;
 
@@ -2616,7 +2616,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">REST API Reference for PutRecommendationPreferences Operation</seealso>
         public virtual PutRecommendationPreferencesResponse PutRecommendationPreferences(PutRecommendationPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -2637,7 +2637,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/PutRecommendationPreferences">REST API Reference for PutRecommendationPreferences Operation</seealso>
         public virtual IAsyncResult BeginPutRecommendationPreferences(PutRecommendationPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecommendationPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecommendationPreferencesResponseUnmarshaller.Instance;
 
@@ -2709,7 +2709,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">REST API Reference for UpdateEnrollmentStatus Operation</seealso>
         public virtual UpdateEnrollmentStatusResponse UpdateEnrollmentStatus(UpdateEnrollmentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnrollmentStatusResponseUnmarshaller.Instance;
 
@@ -2730,7 +2730,7 @@ namespace Amazon.ComputeOptimizer
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">REST API Reference for UpdateEnrollmentStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateEnrollmentStatus(UpdateEnrollmentStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnrollmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnrollmentStatusResponseUnmarshaller.Instance;
 

@@ -143,7 +143,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual SearchResponse Search(SearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -164,7 +164,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Search">REST API Reference for Search Operation</seealso>
         public virtual IAsyncResult BeginSearch(SearchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchResponseUnmarshaller.Instance;
 
@@ -220,7 +220,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuggestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuggestResponseUnmarshaller.Instance;
 
@@ -241,7 +241,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual IAsyncResult BeginSuggest(SuggestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuggestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuggestResponseUnmarshaller.Instance;
 
@@ -301,7 +301,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual UploadDocumentsResponse UploadDocuments(UploadDocumentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.CloudSearchDomain
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocuments">REST API Reference for UploadDocuments Operation</seealso>
         public virtual IAsyncResult BeginUploadDocuments(UploadDocumentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UploadDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UploadDocumentsResponseUnmarshaller.Instance;
 

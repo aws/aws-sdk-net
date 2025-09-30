@@ -331,7 +331,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CancelSession">REST API Reference for CancelSession Operation</seealso>
         public virtual CancelSessionResponse CancelSession(CancelSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSessionResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CancelSession">REST API Reference for CancelSession Operation</seealso>
         public virtual Task<CancelSessionResponse> CancelSessionAsync(CancelSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSessionResponseUnmarshaller.Instance;
             
@@ -415,7 +415,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CreateApprovalTeam">REST API Reference for CreateApprovalTeam Operation</seealso>
         public virtual CreateApprovalTeamResponse CreateApprovalTeam(CreateApprovalTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApprovalTeamResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CreateApprovalTeam">REST API Reference for CreateApprovalTeam Operation</seealso>
         public virtual Task<CreateApprovalTeamResponse> CreateApprovalTeamAsync(CreateApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApprovalTeamResponseUnmarshaller.Instance;
             
@@ -497,7 +497,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CreateIdentitySource">REST API Reference for CreateIdentitySource Operation</seealso>
         public virtual CreateIdentitySourceResponse CreateIdentitySource(CreateIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentitySourceResponseUnmarshaller.Instance;
 
@@ -536,7 +536,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/CreateIdentitySource">REST API Reference for CreateIdentitySource Operation</seealso>
         public virtual Task<CreateIdentitySourceResponse> CreateIdentitySourceAsync(CreateIdentitySourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdentitySourceResponseUnmarshaller.Instance;
             
@@ -575,7 +575,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/DeleteIdentitySource">REST API Reference for DeleteIdentitySource Operation</seealso>
         public virtual DeleteIdentitySourceResponse DeleteIdentitySource(DeleteIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentitySourceResponseUnmarshaller.Instance;
 
@@ -613,7 +613,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/DeleteIdentitySource">REST API Reference for DeleteIdentitySource Operation</seealso>
         public virtual Task<DeleteIdentitySourceResponse> DeleteIdentitySourceAsync(DeleteIdentitySourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdentitySourceResponseUnmarshaller.Instance;
             
@@ -662,7 +662,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/DeleteInactiveApprovalTeamVersion">REST API Reference for DeleteInactiveApprovalTeamVersion Operation</seealso>
         public virtual DeleteInactiveApprovalTeamVersionResponse DeleteInactiveApprovalTeamVersion(DeleteInactiveApprovalTeamVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInactiveApprovalTeamVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInactiveApprovalTeamVersionResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/DeleteInactiveApprovalTeamVersion">REST API Reference for DeleteInactiveApprovalTeamVersion Operation</seealso>
         public virtual Task<DeleteInactiveApprovalTeamVersionResponse> DeleteInactiveApprovalTeamVersionAsync(DeleteInactiveApprovalTeamVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInactiveApprovalTeamVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInactiveApprovalTeamVersionResponseUnmarshaller.Instance;
             
@@ -748,7 +748,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetApprovalTeam">REST API Reference for GetApprovalTeam Operation</seealso>
         public virtual GetApprovalTeamResponse GetApprovalTeam(GetApprovalTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApprovalTeamResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetApprovalTeam">REST API Reference for GetApprovalTeam Operation</seealso>
         public virtual Task<GetApprovalTeamResponse> GetApprovalTeamAsync(GetApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApprovalTeamResponseUnmarshaller.Instance;
             
@@ -824,7 +824,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetIdentitySource">REST API Reference for GetIdentitySource Operation</seealso>
         public virtual GetIdentitySourceResponse GetIdentitySource(GetIdentitySourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentitySourceResponseUnmarshaller.Instance;
 
@@ -862,7 +862,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetIdentitySource">REST API Reference for GetIdentitySource Operation</seealso>
         public virtual Task<GetIdentitySourceResponse> GetIdentitySourceAsync(GetIdentitySourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdentitySourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdentitySourceResponseUnmarshaller.Instance;
             
@@ -909,7 +909,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public virtual GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         public virtual Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyVersionResponseUnmarshaller.Instance;
             
@@ -992,7 +992,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1067,7 +1067,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
             
@@ -1140,7 +1140,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListApprovalTeams">REST API Reference for ListApprovalTeams Operation</seealso>
         public virtual ListApprovalTeamsResponse ListApprovalTeams(ListApprovalTeamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovalTeamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovalTeamsResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListApprovalTeams">REST API Reference for ListApprovalTeams Operation</seealso>
         public virtual Task<ListApprovalTeamsResponse> ListApprovalTeamsAsync(ListApprovalTeamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApprovalTeamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApprovalTeamsResponseUnmarshaller.Instance;
             
@@ -1210,7 +1210,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListIdentitySources">REST API Reference for ListIdentitySources Operation</seealso>
         public virtual ListIdentitySourcesResponse ListIdentitySources(ListIdentitySourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitySourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitySourcesResponseUnmarshaller.Instance;
 
@@ -1245,7 +1245,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListIdentitySources">REST API Reference for ListIdentitySources Operation</seealso>
         public virtual Task<ListIdentitySourcesResponse> ListIdentitySourcesAsync(ListIdentitySourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentitySourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentitySourcesResponseUnmarshaller.Instance;
             
@@ -1288,7 +1288,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual ListPoliciesResponse ListPolicies(ListPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
 
@@ -1330,7 +1330,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         public virtual Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
             
@@ -1377,7 +1377,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public virtual ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
 
@@ -1423,7 +1423,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         public virtual Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPolicyVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPolicyVersionsResponseUnmarshaller.Instance;
             
@@ -1461,7 +1461,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
         public virtual ListResourcePoliciesResponse ListResourcePolicies(ListResourcePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -1498,7 +1498,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
         public virtual Task<ListResourcePoliciesResponse> ListResourcePoliciesAsync(ListResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListResourcePoliciesResponseUnmarshaller.Instance;
             
@@ -1537,7 +1537,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
             
@@ -1613,7 +1613,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1701,7 +1701,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartActiveApprovalTeamDeletion">REST API Reference for StartActiveApprovalTeamDeletion Operation</seealso>
         public virtual StartActiveApprovalTeamDeletionResponse StartActiveApprovalTeamDeletion(StartActiveApprovalTeamDeletionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartActiveApprovalTeamDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartActiveApprovalTeamDeletionResponseUnmarshaller.Instance;
 
@@ -1751,7 +1751,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartActiveApprovalTeamDeletion">REST API Reference for StartActiveApprovalTeamDeletion Operation</seealso>
         public virtual Task<StartActiveApprovalTeamDeletionResponse> StartActiveApprovalTeamDeletionAsync(StartActiveApprovalTeamDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartActiveApprovalTeamDeletionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartActiveApprovalTeamDeletionResponseUnmarshaller.Instance;
             
@@ -1795,7 +1795,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1838,7 +1838,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1877,7 +1877,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1915,7 +1915,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1971,7 +1971,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/UpdateApprovalTeam">REST API Reference for UpdateApprovalTeam Operation</seealso>
         public virtual UpdateApprovalTeamResponse UpdateApprovalTeam(UpdateApprovalTeamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalTeamResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.MPA
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/UpdateApprovalTeam">REST API Reference for UpdateApprovalTeam Operation</seealso>
         public virtual Task<UpdateApprovalTeamResponse> UpdateApprovalTeamAsync(UpdateApprovalTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApprovalTeamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApprovalTeamResponseUnmarshaller.Instance;
             

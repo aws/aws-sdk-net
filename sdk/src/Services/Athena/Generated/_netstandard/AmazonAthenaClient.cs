@@ -286,7 +286,7 @@ namespace Amazon.Athena
 
         internal virtual BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual Task<BatchGetNamedQueryResponse> BatchGetNamedQueryAsync(BatchGetNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
@@ -334,7 +334,7 @@ namespace Amazon.Athena
 
         internal virtual BatchGetPreparedStatementResponse BatchGetPreparedStatement(BatchGetPreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
         public virtual Task<BatchGetPreparedStatementResponse> BatchGetPreparedStatementAsync(BatchGetPreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.Athena
 
         internal virtual BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual Task<BatchGetQueryExecutionResponse> BatchGetQueryExecutionAsync(BatchGetQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.Athena
 
         internal virtual CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual Task<CancelCapacityReservationResponse> CancelCapacityReservationAsync(CancelCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.Athena
 
         internal virtual CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.Athena
 
         internal virtual CreateDataCatalogResponse CreateDataCatalog(CreateDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
 
@@ -559,7 +559,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
         public virtual Task<CreateDataCatalogResponse> CreateDataCatalogAsync(CreateDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
 
@@ -572,7 +572,7 @@ namespace Amazon.Athena
 
         internal virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
@@ -601,7 +601,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual Task<CreateNamedQueryResponse> CreateNamedQueryAsync(CreateNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.Athena
 
         internal virtual CreateNotebookResponse CreateNotebook(CreateNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
 
@@ -646,7 +646,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
         public virtual Task<CreateNotebookResponse> CreateNotebookAsync(CreateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.Athena
 
         internal virtual CreatePreparedStatementResponse CreatePreparedStatement(CreatePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -687,7 +687,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
         public virtual Task<CreatePreparedStatementResponse> CreatePreparedStatementAsync(CreatePreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.Athena
 
         internal virtual CreatePresignedNotebookUrlResponse CreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedNotebookUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedNotebookUrlResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
         public virtual Task<CreatePresignedNotebookUrlResponse> CreatePresignedNotebookUrlAsync(CreatePresignedNotebookUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedNotebookUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedNotebookUrlResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.Athena
 
         internal virtual CreateWorkGroupResponse CreateWorkGroup(CreateWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
 
@@ -777,7 +777,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
         public virtual Task<CreateWorkGroupResponse> CreateWorkGroupAsync(CreateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
 
@@ -790,7 +790,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteCapacityReservationResponse DeleteCapacityReservation(DeleteCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
 
@@ -822,7 +822,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
         public virtual Task<DeleteCapacityReservationResponse> DeleteCapacityReservationAsync(DeleteCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
 
@@ -835,7 +835,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteDataCatalogResponse DeleteDataCatalog(DeleteDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
         public virtual Task<DeleteDataCatalogResponse> DeleteDataCatalogAsync(DeleteDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
 
@@ -876,7 +876,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual Task<DeleteNamedQueryResponse> DeleteNamedQueryAsync(DeleteNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
@@ -918,7 +918,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteNotebookResponse DeleteNotebook(DeleteNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
         public virtual Task<DeleteNotebookResponse> DeleteNotebookAsync(DeleteNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.Athena
 
         internal virtual DeletePreparedStatementResponse DeletePreparedStatement(DeletePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePreparedStatementResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
         public virtual Task<DeletePreparedStatementResponse> DeletePreparedStatementAsync(DeletePreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePreparedStatementResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.Athena
 
         internal virtual DeleteWorkGroupResponse DeleteWorkGroup(DeleteWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
         public virtual Task<DeleteWorkGroupResponse> DeleteWorkGroupAsync(DeleteWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.Athena
 
         internal virtual ExportNotebookResponse ExportNotebook(ExportNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportNotebookResponseUnmarshaller.Instance;
 
@@ -1078,7 +1078,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
         public virtual Task<ExportNotebookResponse> ExportNotebookAsync(ExportNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportNotebookResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.Athena
 
         internal virtual GetCalculationExecutionResponse GetCalculationExecution(GetCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -1122,7 +1122,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
         public virtual Task<GetCalculationExecutionResponse> GetCalculationExecutionAsync(GetCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -1135,7 +1135,7 @@ namespace Amazon.Athena
 
         internal virtual GetCalculationExecutionCodeResponse GetCalculationExecutionCode(GetCalculationExecutionCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionCodeResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
         public virtual Task<GetCalculationExecutionCodeResponse> GetCalculationExecutionCodeAsync(GetCalculationExecutionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionCodeResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.Athena
 
         internal virtual GetCalculationExecutionStatusResponse GetCalculationExecutionStatus(GetCalculationExecutionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -1210,7 +1210,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
         public virtual Task<GetCalculationExecutionStatusResponse> GetCalculationExecutionStatusAsync(GetCalculationExecutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -1223,7 +1223,7 @@ namespace Amazon.Athena
 
         internal virtual GetCapacityAssignmentConfigurationResponse GetCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -1251,7 +1251,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
         public virtual Task<GetCapacityAssignmentConfigurationResponse> GetCapacityAssignmentConfigurationAsync(GetCapacityAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -1264,7 +1264,7 @@ namespace Amazon.Athena
 
         internal virtual GetCapacityReservationResponse GetCapacityReservation(GetCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1292,7 +1292,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
         public virtual Task<GetCapacityReservationResponse> GetCapacityReservationAsync(GetCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1305,7 +1305,7 @@ namespace Amazon.Athena
 
         internal virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -1339,7 +1339,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual Task<GetDatabaseResponse> GetDatabaseAsync(GetDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -1352,7 +1352,7 @@ namespace Amazon.Athena
 
         internal virtual GetDataCatalogResponse GetDataCatalog(GetDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
         public virtual Task<GetDataCatalogResponse> GetDataCatalogAsync(GetDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.Athena
 
         internal virtual GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
@@ -1422,7 +1422,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual Task<GetNamedQueryResponse> GetNamedQueryAsync(GetNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.Athena
 
         internal virtual GetNotebookMetadataResponse GetNotebookMetadata(GetNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
         public virtual Task<GetNotebookMetadataResponse> GetNotebookMetadataAsync(GetNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -1479,7 +1479,7 @@ namespace Amazon.Athena
 
         internal virtual GetPreparedStatementResponse GetPreparedStatement(GetPreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -1510,7 +1510,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
         public virtual Task<GetPreparedStatementResponse> GetPreparedStatementAsync(GetPreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.Athena
 
         internal virtual GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -1553,7 +1553,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual Task<GetQueryExecutionResponse> GetQueryExecutionAsync(GetQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -1566,7 +1566,7 @@ namespace Amazon.Athena
 
         internal virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -1617,7 +1617,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.Athena
 
         internal virtual GetQueryRuntimeStatisticsResponse GetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
         public virtual Task<GetQueryRuntimeStatisticsResponse> GetQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
 
@@ -1677,7 +1677,7 @@ namespace Amazon.Athena
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -1709,7 +1709,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -1722,7 +1722,7 @@ namespace Amazon.Athena
 
         internal virtual GetSessionStatusResponse GetSessionStatus(GetSessionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionStatusResponseUnmarshaller.Instance;
 
@@ -1753,7 +1753,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
         public virtual Task<GetSessionStatusResponse> GetSessionStatusAsync(GetSessionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionStatusResponseUnmarshaller.Instance;
 
@@ -1766,7 +1766,7 @@ namespace Amazon.Athena
 
         internal virtual GetTableMetadataResponse GetTableMetadata(GetTableMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
         public virtual Task<GetTableMetadataResponse> GetTableMetadataAsync(GetTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
 
@@ -1813,7 +1813,7 @@ namespace Amazon.Athena
 
         internal virtual GetWorkGroupResponse GetWorkGroup(GetWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
         public virtual Task<GetWorkGroupResponse> GetWorkGroupAsync(GetWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
 
@@ -1854,7 +1854,7 @@ namespace Amazon.Athena
 
         internal virtual ImportNotebookResponse ImportNotebook(ImportNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportNotebookResponseUnmarshaller.Instance;
 
@@ -1889,7 +1889,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
         public virtual Task<ImportNotebookResponse> ImportNotebookAsync(ImportNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportNotebookResponseUnmarshaller.Instance;
 
@@ -1902,7 +1902,7 @@ namespace Amazon.Athena
 
         internal virtual ListApplicationDPUSizesResponse ListApplicationDPUSizes(ListApplicationDPUSizesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDPUSizesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDPUSizesResponseUnmarshaller.Instance;
 
@@ -1934,7 +1934,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
         public virtual Task<ListApplicationDPUSizesResponse> ListApplicationDPUSizesAsync(ListApplicationDPUSizesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDPUSizesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDPUSizesResponseUnmarshaller.Instance;
 
@@ -1947,7 +1947,7 @@ namespace Amazon.Athena
 
         internal virtual ListCalculationExecutionsResponse ListCalculationExecutions(ListCalculationExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculationExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculationExecutionsResponseUnmarshaller.Instance;
 
@@ -1979,7 +1979,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
         public virtual Task<ListCalculationExecutionsResponse> ListCalculationExecutionsAsync(ListCalculationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculationExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculationExecutionsResponseUnmarshaller.Instance;
 
@@ -1992,7 +1992,7 @@ namespace Amazon.Athena
 
         internal virtual ListCapacityReservationsResponse ListCapacityReservations(ListCapacityReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
         public virtual Task<ListCapacityReservationsResponse> ListCapacityReservationsAsync(ListCapacityReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -2033,7 +2033,7 @@ namespace Amazon.Athena
 
         internal virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -2067,7 +2067,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual Task<ListDatabasesResponse> ListDatabasesAsync(ListDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.Athena
 
         internal virtual ListDataCatalogsResponse ListDataCatalogs(ListDataCatalogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
 
@@ -2115,7 +2115,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
         public virtual Task<ListDataCatalogsResponse> ListDataCatalogsAsync(ListDataCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
 
@@ -2128,7 +2128,7 @@ namespace Amazon.Athena
 
         internal virtual ListEngineVersionsResponse ListEngineVersions(ListEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2157,7 +2157,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
         public virtual Task<ListEngineVersionsResponse> ListEngineVersionsAsync(ListEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2170,7 +2170,7 @@ namespace Amazon.Athena
 
         internal virtual ListExecutorsResponse ListExecutors(ListExecutorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutorsResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
         public virtual Task<ListExecutorsResponse> ListExecutorsAsync(ListExecutorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutorsResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.Athena
 
         internal virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual Task<ListNamedQueriesResponse> ListNamedQueriesAsync(ListNamedQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
@@ -2259,7 +2259,7 @@ namespace Amazon.Athena
 
         internal virtual ListNotebookMetadataResponse ListNotebookMetadata(ListNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -2290,7 +2290,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
         public virtual Task<ListNotebookMetadataResponse> ListNotebookMetadataAsync(ListNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -2303,7 +2303,7 @@ namespace Amazon.Athena
 
         internal virtual ListNotebookSessionsResponse ListNotebookSessions(ListNotebookSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookSessionsResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
         public virtual Task<ListNotebookSessionsResponse> ListNotebookSessionsAsync(ListNotebookSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookSessionsResponseUnmarshaller.Instance;
 
@@ -2349,7 +2349,7 @@ namespace Amazon.Athena
 
         internal virtual ListPreparedStatementsResponse ListPreparedStatements(ListPreparedStatementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreparedStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreparedStatementsResponseUnmarshaller.Instance;
 
@@ -2377,7 +2377,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
         public virtual Task<ListPreparedStatementsResponse> ListPreparedStatementsAsync(ListPreparedStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreparedStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreparedStatementsResponseUnmarshaller.Instance;
 
@@ -2390,7 +2390,7 @@ namespace Amazon.Athena
 
         internal virtual ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
@@ -2421,7 +2421,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual Task<ListQueryExecutionsResponse> ListQueryExecutionsAsync(ListQueryExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
@@ -2434,7 +2434,7 @@ namespace Amazon.Athena
 
         internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -2467,7 +2467,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.Athena
 
         internal virtual ListTableMetadataResponse ListTableMetadata(ListTableMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
         public virtual Task<ListTableMetadataResponse> ListTableMetadataAsync(ListTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
 
@@ -2527,7 +2527,7 @@ namespace Amazon.Athena
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2558,7 +2558,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.Athena
 
         internal virtual ListWorkGroupsResponse ListWorkGroups(ListWorkGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
 
@@ -2599,7 +2599,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
         public virtual Task<ListWorkGroupsResponse> ListWorkGroupsAsync(ListWorkGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
 
@@ -2612,7 +2612,7 @@ namespace Amazon.Athena
 
         internal virtual PutCapacityAssignmentConfigurationResponse PutCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -2642,7 +2642,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
         public virtual Task<PutCapacityAssignmentConfigurationResponse> PutCapacityAssignmentConfigurationAsync(PutCapacityAssignmentConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -2655,7 +2655,7 @@ namespace Amazon.Athena
 
         internal virtual StartCalculationExecutionResponse StartCalculationExecution(StartCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -2696,7 +2696,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
         public virtual Task<StartCalculationExecutionResponse> StartCalculationExecutionAsync(StartCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -2709,7 +2709,7 @@ namespace Amazon.Athena
 
         internal virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2744,7 +2744,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual Task<StartQueryExecutionResponse> StartQueryExecutionAsync(StartQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2757,7 +2757,7 @@ namespace Amazon.Athena
 
         internal virtual StartSessionResponse StartSession(StartSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
@@ -2808,7 +2808,7 @@ namespace Amazon.Athena
 
         internal virtual StopCalculationExecutionResponse StopCalculationExecution(StopCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -2850,7 +2850,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
         public virtual Task<StopCalculationExecutionResponse> StopCalculationExecutionAsync(StopCalculationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -2863,7 +2863,7 @@ namespace Amazon.Athena
 
         internal virtual StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2892,7 +2892,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual Task<StopQueryExecutionResponse> StopQueryExecutionAsync(StopQueryExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2905,7 +2905,7 @@ namespace Amazon.Athena
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2946,7 +2946,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2959,7 +2959,7 @@ namespace Amazon.Athena
 
         internal virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
@@ -2993,7 +2993,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
@@ -3006,7 +3006,7 @@ namespace Amazon.Athena
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3037,7 +3037,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3050,7 +3050,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateCapacityReservationResponse UpdateCapacityReservation(UpdateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3079,7 +3079,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
         public virtual Task<UpdateCapacityReservationResponse> UpdateCapacityReservationAsync(UpdateCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3092,7 +3092,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateDataCatalogResponse UpdateDataCatalog(UpdateDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
 
@@ -3120,7 +3120,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         public virtual Task<UpdateDataCatalogResponse> UpdateDataCatalogAsync(UpdateDataCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
 
@@ -3133,7 +3133,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateNamedQueryResponse UpdateNamedQuery(UpdateNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
 
@@ -3161,7 +3161,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
         public virtual Task<UpdateNamedQueryResponse> UpdateNamedQueryAsync(UpdateNamedQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
 
@@ -3174,7 +3174,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateNotebookResponse UpdateNotebook(UpdateNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
 
@@ -3205,7 +3205,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
         public virtual Task<UpdateNotebookResponse> UpdateNotebookAsync(UpdateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateNotebookMetadataResponse UpdateNotebookMetadata(UpdateNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -3249,7 +3249,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
         public virtual Task<UpdateNotebookMetadataResponse> UpdateNotebookMetadataAsync(UpdateNotebookMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -3262,7 +3262,7 @@ namespace Amazon.Athena
 
         internal virtual UpdatePreparedStatementResponse UpdatePreparedStatement(UpdatePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -3293,7 +3293,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
         public virtual Task<UpdatePreparedStatementResponse> UpdatePreparedStatementAsync(UpdatePreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -3306,7 +3306,7 @@ namespace Amazon.Athena
 
         internal virtual UpdateWorkGroupResponse UpdateWorkGroup(UpdateWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
 
@@ -3335,7 +3335,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
         public virtual Task<UpdateWorkGroupResponse> UpdateWorkGroupAsync(UpdateWorkGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
 

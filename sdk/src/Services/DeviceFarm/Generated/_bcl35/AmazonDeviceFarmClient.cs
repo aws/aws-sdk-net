@@ -310,7 +310,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
         public virtual CreateDevicePoolResponse CreateDevicePool(CreateDevicePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
 
@@ -331,7 +331,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool">REST API Reference for CreateDevicePool Operation</seealso>
         public virtual IAsyncResult BeginCreateDevicePool(CreateDevicePoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevicePoolResponseUnmarshaller.Instance;
 
@@ -376,7 +376,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         public virtual CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -442,7 +442,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
         public virtual CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
         public virtual IAsyncResult BeginCreateNetworkProfile(CreateNetworkProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkProfileResponseUnmarshaller.Instance;
 
@@ -541,7 +541,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
         public virtual CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -628,7 +628,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSession">REST API Reference for CreateRemoteAccessSession Operation</seealso>
         public virtual IAsyncResult BeginCreateRemoteAccessSession(CreateRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -672,7 +672,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">REST API Reference for CreateTestGridProject Operation</seealso>
         public virtual CreateTestGridProjectResponse CreateTestGridProject(CreateTestGridProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestGridProjectResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">REST API Reference for CreateTestGridProject Operation</seealso>
         public virtual IAsyncResult BeginCreateTestGridProject(CreateTestGridProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestGridProjectResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">REST API Reference for CreateTestGridUrl Operation</seealso>
         public virtual CreateTestGridUrlResponse CreateTestGridUrl(CreateTestGridUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestGridUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestGridUrlResponseUnmarshaller.Instance;
 
@@ -758,7 +758,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">REST API Reference for CreateTestGridUrl Operation</seealso>
         public virtual IAsyncResult BeginCreateTestGridUrl(CreateTestGridUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTestGridUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTestGridUrlResponseUnmarshaller.Instance;
 
@@ -803,7 +803,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
         public virtual CreateUploadResponse CreateUpload(CreateUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateUpload">REST API Reference for CreateUpload Operation</seealso>
         public virtual IAsyncResult BeginCreateUpload(CreateUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUploadResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
         public virtual CreateVPCEConfigurationResponse CreateVPCEConfiguration(CreateVPCEConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration">REST API Reference for CreateVPCEConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateVPCEConfiguration(CreateVPCEConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
         public virtual DeleteDevicePoolResponse DeleteDevicePool(DeleteDevicePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePool">REST API Reference for DeleteDevicePool Operation</seealso>
         public virtual IAsyncResult BeginDeleteDevicePool(DeleteDevicePoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevicePoolResponseUnmarshaller.Instance;
 
@@ -1000,7 +1000,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         public virtual DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1066,7 +1066,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
         public virtual DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
 
@@ -1087,7 +1087,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
         public virtual IAsyncResult BeginDeleteNetworkProfile(DeleteNetworkProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkProfileResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1158,7 +1158,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -1203,7 +1203,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
         public virtual DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -1224,7 +1224,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRemoteAccessSession">REST API Reference for DeleteRemoteAccessSession Operation</seealso>
         public virtual IAsyncResult BeginDeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual DeleteRunResponse DeleteRun(DeleteRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual IAsyncResult BeginDeleteRun(DeleteRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRunResponseUnmarshaller.Instance;
 
@@ -1351,7 +1351,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">REST API Reference for DeleteTestGridProject Operation</seealso>
         public virtual DeleteTestGridProjectResponse DeleteTestGridProject(DeleteTestGridProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestGridProjectResponseUnmarshaller.Instance;
 
@@ -1372,7 +1372,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">REST API Reference for DeleteTestGridProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteTestGridProject(DeleteTestGridProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTestGridProjectResponseUnmarshaller.Instance;
 
@@ -1417,7 +1417,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
         public virtual DeleteUploadResponse DeleteUpload(DeleteUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUploadResponseUnmarshaller.Instance;
 
@@ -1438,7 +1438,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUpload">REST API Reference for DeleteUpload Operation</seealso>
         public virtual IAsyncResult BeginDeleteUpload(DeleteUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUploadResponseUnmarshaller.Instance;
 
@@ -1484,7 +1484,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
         public virtual DeleteVPCEConfigurationResponse DeleteVPCEConfiguration(DeleteVPCEConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -1505,7 +1505,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration">REST API Reference for DeleteVPCEConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteVPCEConfiguration(DeleteVPCEConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1596,7 +1596,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1668,7 +1668,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
@@ -1689,7 +1689,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public virtual IAsyncResult BeginGetDevice(GetDeviceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
         public virtual GetDeviceInstanceResponse GetDeviceInstance(GetDeviceInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">REST API Reference for GetDeviceInstance Operation</seealso>
         public virtual IAsyncResult BeginGetDeviceInstance(GetDeviceInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceInstanceResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
         public virtual GetDevicePoolResponse GetDevicePool(GetDevicePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
 
@@ -1848,7 +1848,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePool">REST API Reference for GetDevicePool Operation</seealso>
         public virtual IAsyncResult BeginGetDevicePool(GetDevicePoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePoolResponseUnmarshaller.Instance;
 
@@ -1893,7 +1893,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
         public virtual GetDevicePoolCompatibilityResponse GetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePoolCompatibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
 
@@ -1914,7 +1914,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibility">REST API Reference for GetDevicePoolCompatibility Operation</seealso>
         public virtual IAsyncResult BeginGetDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePoolCompatibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePoolCompatibilityResponseUnmarshaller.Instance;
 
@@ -1959,7 +1959,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         public virtual GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginGetInstanceProfile(GetInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInstanceProfileResponseUnmarshaller.Instance;
 
@@ -2052,7 +2052,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -2073,7 +2073,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual IAsyncResult BeginGetJob(GetJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -2118,7 +2118,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
         public virtual GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
 
@@ -2139,7 +2139,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
         public virtual IAsyncResult BeginGetNetworkProfile(GetNetworkProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkProfileResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
         public virtual GetOfferingStatusResponse GetOfferingStatus(GetOfferingStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOfferingStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
 
@@ -2212,7 +2212,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">REST API Reference for GetOfferingStatus Operation</seealso>
         public virtual IAsyncResult BeginGetOfferingStatus(GetOfferingStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOfferingStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOfferingStatusResponseUnmarshaller.Instance;
 
@@ -2284,7 +2284,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual GetProjectResponse GetProject(GetProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -2305,7 +2305,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetProject">REST API Reference for GetProject Operation</seealso>
         public virtual IAsyncResult BeginGetProject(GetProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProjectResponseUnmarshaller.Instance;
 
@@ -2350,7 +2350,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
         public virtual GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -2371,7 +2371,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSession">REST API Reference for GetRemoteAccessSession Operation</seealso>
         public virtual IAsyncResult BeginGetRemoteAccessSession(GetRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -2443,7 +2443,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual GetRunResponse GetRun(GetRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunResponseUnmarshaller.Instance;
 
@@ -2464,7 +2464,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual IAsyncResult BeginGetRun(GetRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRunResponseUnmarshaller.Instance;
 
@@ -2536,7 +2536,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
         public virtual GetSuiteResponse GetSuite(GetSuiteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteResponseUnmarshaller.Instance;
 
@@ -2557,7 +2557,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetSuite">REST API Reference for GetSuite Operation</seealso>
         public virtual IAsyncResult BeginGetSuite(GetSuiteRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSuiteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSuiteResponseUnmarshaller.Instance;
 
@@ -2629,7 +2629,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
         public virtual GetTestResponse GetTest(GetTestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestResponseUnmarshaller.Instance;
 
@@ -2650,7 +2650,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTest">REST API Reference for GetTest Operation</seealso>
         public virtual IAsyncResult BeginGetTest(GetTestRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">REST API Reference for GetTestGridProject Operation</seealso>
         public virtual GetTestGridProjectResponse GetTestGridProject(GetTestGridProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestGridProjectResponseUnmarshaller.Instance;
 
@@ -2714,7 +2714,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">REST API Reference for GetTestGridProject Operation</seealso>
         public virtual IAsyncResult BeginGetTestGridProject(GetTestGridProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestGridProjectResponseUnmarshaller.Instance;
 
@@ -2770,7 +2770,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">REST API Reference for GetTestGridSession Operation</seealso>
         public virtual GetTestGridSessionResponse GetTestGridSession(GetTestGridSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestGridSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestGridSessionResponseUnmarshaller.Instance;
 
@@ -2791,7 +2791,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">REST API Reference for GetTestGridSession Operation</seealso>
         public virtual IAsyncResult BeginGetTestGridSession(GetTestGridSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTestGridSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTestGridSessionResponseUnmarshaller.Instance;
 
@@ -2863,7 +2863,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
         public virtual GetUploadResponse GetUpload(GetUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadResponseUnmarshaller.Instance;
 
@@ -2884,7 +2884,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetUpload">REST API Reference for GetUpload Operation</seealso>
         public virtual IAsyncResult BeginGetUpload(GetUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUploadResponseUnmarshaller.Instance;
 
@@ -2927,7 +2927,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
         public virtual GetVPCEConfigurationResponse GetVPCEConfiguration(GetVPCEConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -2948,7 +2948,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration">REST API Reference for GetVPCEConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetVPCEConfiguration(GetVPCEConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
         public virtual InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InstallToRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -3015,7 +3015,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/InstallToRemoteAccessSession">REST API Reference for InstallToRemoteAccessSession Operation</seealso>
         public virtual IAsyncResult BeginInstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InstallToRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InstallToRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
 
@@ -3081,7 +3081,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual IAsyncResult BeginListArtifacts(ListArtifactsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
 
@@ -3127,7 +3127,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
         public virtual ListDeviceInstancesResponse ListDeviceInstances(ListDeviceInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
 
@@ -3148,7 +3148,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances">REST API Reference for ListDeviceInstances Operation</seealso>
         public virtual IAsyncResult BeginListDeviceInstances(ListDeviceInstancesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceInstancesResponseUnmarshaller.Instance;
 
@@ -3193,7 +3193,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
         public virtual ListDevicePoolsResponse ListDevicePools(ListDevicePoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicePoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
 
@@ -3214,7 +3214,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevicePools">REST API Reference for ListDevicePools Operation</seealso>
         public virtual IAsyncResult BeginListDevicePools(ListDevicePoolsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicePoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicePoolsResponseUnmarshaller.Instance;
 
@@ -3259,7 +3259,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -3280,7 +3280,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual IAsyncResult BeginListDevices(ListDevicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -3325,7 +3325,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         public virtual ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
 
@@ -3346,7 +3346,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         public virtual IAsyncResult BeginListInstanceProfiles(ListInstanceProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInstanceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInstanceProfilesResponseUnmarshaller.Instance;
 
@@ -3391,7 +3391,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -3412,7 +3412,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -3457,7 +3457,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
         public virtual ListNetworkProfilesResponse ListNetworkProfiles(ListNetworkProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworkProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
 
@@ -3478,7 +3478,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles">REST API Reference for ListNetworkProfiles Operation</seealso>
         public virtual IAsyncResult BeginListNetworkProfiles(ListNetworkProfilesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworkProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworkProfilesResponseUnmarshaller.Instance;
 
@@ -3529,7 +3529,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
         public virtual ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingPromotionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
 
@@ -3550,7 +3550,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
         public virtual IAsyncResult BeginListOfferingPromotions(ListOfferingPromotionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingPromotionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
 
@@ -3602,7 +3602,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -3623,7 +3623,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual IAsyncResult BeginListOfferings(ListOfferingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -3675,7 +3675,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
         public virtual ListOfferingTransactionsResponse ListOfferingTransactions(ListOfferingTransactionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
 
@@ -3696,7 +3696,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">REST API Reference for ListOfferingTransactions Operation</seealso>
         public virtual IAsyncResult BeginListOfferingTransactions(ListOfferingTransactionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingTransactionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingTransactionsResponseUnmarshaller.Instance;
 
@@ -3741,7 +3741,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -3762,7 +3762,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -3807,7 +3807,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
         public virtual ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRemoteAccessSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
 
@@ -3828,7 +3828,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessions">REST API Reference for ListRemoteAccessSessions Operation</seealso>
         public virtual IAsyncResult BeginListRemoteAccessSessions(ListRemoteAccessSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRemoteAccessSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRemoteAccessSessionsResponseUnmarshaller.Instance;
 
@@ -3873,7 +3873,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual ListRunsResponse ListRuns(ListRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunsResponseUnmarshaller.Instance;
 
@@ -3894,7 +3894,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual IAsyncResult BeginListRuns(ListRunsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRunsResponseUnmarshaller.Instance;
 
@@ -3939,7 +3939,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
         public virtual ListSamplesResponse ListSamples(ListSamplesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSamplesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSamplesResponseUnmarshaller.Instance;
 
@@ -3960,7 +3960,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">REST API Reference for ListSamples Operation</seealso>
         public virtual IAsyncResult BeginListSamples(ListSamplesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSamplesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSamplesResponseUnmarshaller.Instance;
 
@@ -4005,7 +4005,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
         public virtual ListSuitesResponse ListSuites(ListSuitesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuitesResponseUnmarshaller.Instance;
 
@@ -4026,7 +4026,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSuites">REST API Reference for ListSuites Operation</seealso>
         public virtual IAsyncResult BeginListSuites(ListSuitesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSuitesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSuitesResponseUnmarshaller.Instance;
 
@@ -4068,7 +4068,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4089,7 +4089,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4129,7 +4129,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">REST API Reference for ListTestGridProjects Operation</seealso>
         public virtual ListTestGridProjectsResponse ListTestGridProjects(ListTestGridProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridProjectsResponseUnmarshaller.Instance;
 
@@ -4150,7 +4150,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">REST API Reference for ListTestGridProjects Operation</seealso>
         public virtual IAsyncResult BeginListTestGridProjects(ListTestGridProjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridProjectsResponseUnmarshaller.Instance;
 
@@ -4193,7 +4193,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">REST API Reference for ListTestGridSessionActions Operation</seealso>
         public virtual ListTestGridSessionActionsResponse ListTestGridSessionActions(ListTestGridSessionActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionActionsResponseUnmarshaller.Instance;
 
@@ -4214,7 +4214,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">REST API Reference for ListTestGridSessionActions Operation</seealso>
         public virtual IAsyncResult BeginListTestGridSessionActions(ListTestGridSessionActionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionActionsResponseUnmarshaller.Instance;
 
@@ -4257,7 +4257,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">REST API Reference for ListTestGridSessionArtifacts Operation</seealso>
         public virtual ListTestGridSessionArtifactsResponse ListTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionArtifactsResponseUnmarshaller.Instance;
 
@@ -4278,7 +4278,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">REST API Reference for ListTestGridSessionArtifacts Operation</seealso>
         public virtual IAsyncResult BeginListTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionArtifactsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionArtifactsResponseUnmarshaller.Instance;
 
@@ -4321,7 +4321,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">REST API Reference for ListTestGridSessions Operation</seealso>
         public virtual ListTestGridSessionsResponse ListTestGridSessions(ListTestGridSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionsResponseUnmarshaller.Instance;
 
@@ -4342,7 +4342,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">REST API Reference for ListTestGridSessions Operation</seealso>
         public virtual IAsyncResult BeginListTestGridSessions(ListTestGridSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestGridSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestGridSessionsResponseUnmarshaller.Instance;
 
@@ -4387,7 +4387,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
         public virtual ListTestsResponse ListTests(ListTestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestsResponseUnmarshaller.Instance;
 
@@ -4408,7 +4408,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">REST API Reference for ListTests Operation</seealso>
         public virtual IAsyncResult BeginListTests(ListTestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTestsResponseUnmarshaller.Instance;
 
@@ -4461,7 +4461,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
         public virtual ListUniqueProblemsResponse ListUniqueProblems(ListUniqueProblemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUniqueProblemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
 
@@ -4482,7 +4482,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">REST API Reference for ListUniqueProblems Operation</seealso>
         public virtual IAsyncResult BeginListUniqueProblems(ListUniqueProblemsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUniqueProblemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUniqueProblemsResponseUnmarshaller.Instance;
 
@@ -4527,7 +4527,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
         public virtual ListUploadsResponse ListUploads(ListUploadsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadsResponseUnmarshaller.Instance;
 
@@ -4548,7 +4548,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUploads">REST API Reference for ListUploads Operation</seealso>
         public virtual IAsyncResult BeginListUploads(ListUploadsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUploadsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUploadsResponseUnmarshaller.Instance;
 
@@ -4588,7 +4588,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
         public virtual ListVPCEConfigurationsResponse ListVPCEConfigurations(ListVPCEConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
 
@@ -4609,7 +4609,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations">REST API Reference for ListVPCEConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListVPCEConfigurations(ListVPCEConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVPCEConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVPCEConfigurationsResponseUnmarshaller.Instance;
 
@@ -4660,7 +4660,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -4681,7 +4681,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual IAsyncResult BeginPurchaseOffering(PurchaseOfferingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -4732,7 +4732,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
         public virtual RenewOfferingResponse RenewOffering(RenewOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenewOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenewOfferingResponseUnmarshaller.Instance;
 
@@ -4753,7 +4753,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">REST API Reference for RenewOffering Operation</seealso>
         public virtual IAsyncResult BeginRenewOffering(RenewOfferingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RenewOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RenewOfferingResponseUnmarshaller.Instance;
 
@@ -4801,7 +4801,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
         public virtual ScheduleRunResponse ScheduleRun(ScheduleRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScheduleRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScheduleRunResponseUnmarshaller.Instance;
 
@@ -4822,7 +4822,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRun">REST API Reference for ScheduleRun Operation</seealso>
         public virtual IAsyncResult BeginScheduleRun(ScheduleRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ScheduleRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ScheduleRunResponseUnmarshaller.Instance;
 
@@ -4871,7 +4871,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
         public virtual StopJobResponse StopJob(StopJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
 
@@ -4892,7 +4892,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">REST API Reference for StopJob Operation</seealso>
         public virtual IAsyncResult BeginStopJob(StopJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
 
@@ -4937,7 +4937,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
         public virtual StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -4958,7 +4958,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRemoteAccessSession">REST API Reference for StopRemoteAccessSession Operation</seealso>
         public virtual IAsyncResult BeginStopRemoteAccessSession(StopRemoteAccessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRemoteAccessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRemoteAccessSessionResponseUnmarshaller.Instance;
 
@@ -5007,7 +5007,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
         public virtual StopRunResponse StopRun(StopRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRunResponseUnmarshaller.Instance;
 
@@ -5028,7 +5028,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">REST API Reference for StopRun Operation</seealso>
         public virtual IAsyncResult BeginStopRun(StopRunRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRunResponseUnmarshaller.Instance;
 
@@ -5081,7 +5081,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5102,7 +5102,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5144,7 +5144,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5165,7 +5165,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5210,7 +5210,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
         public virtual UpdateDeviceInstanceResponse UpdateDeviceInstance(UpdateDeviceInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
 
@@ -5231,7 +5231,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">REST API Reference for UpdateDeviceInstance Operation</seealso>
         public virtual IAsyncResult BeginUpdateDeviceInstance(UpdateDeviceInstanceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceInstanceResponseUnmarshaller.Instance;
 
@@ -5278,7 +5278,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
         public virtual UpdateDevicePoolResponse UpdateDevicePool(UpdateDevicePoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
 
@@ -5299,7 +5299,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDevicePool">REST API Reference for UpdateDevicePool Operation</seealso>
         public virtual IAsyncResult BeginUpdateDevicePool(UpdateDevicePoolRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevicePoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevicePoolResponseUnmarshaller.Instance;
 
@@ -5344,7 +5344,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
         public virtual UpdateInstanceProfileResponse UpdateInstanceProfile(UpdateInstanceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -5365,7 +5365,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile">REST API Reference for UpdateInstanceProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateInstanceProfile(UpdateInstanceProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInstanceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInstanceProfileResponseUnmarshaller.Instance;
 
@@ -5410,7 +5410,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
         public virtual UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
 
@@ -5431,7 +5431,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
         public virtual IAsyncResult BeginUpdateNetworkProfile(UpdateNetworkProfileRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkProfileResponseUnmarshaller.Instance;
 
@@ -5476,7 +5476,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -5497,7 +5497,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -5543,7 +5543,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">REST API Reference for UpdateTestGridProject Operation</seealso>
         public virtual UpdateTestGridProjectResponse UpdateTestGridProject(UpdateTestGridProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestGridProjectResponseUnmarshaller.Instance;
 
@@ -5564,7 +5564,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">REST API Reference for UpdateTestGridProject Operation</seealso>
         public virtual IAsyncResult BeginUpdateTestGridProject(UpdateTestGridProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTestGridProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTestGridProjectResponseUnmarshaller.Instance;
 
@@ -5609,7 +5609,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
         public virtual UpdateUploadResponse UpdateUpload(UpdateUploadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUploadResponseUnmarshaller.Instance;
 
@@ -5630,7 +5630,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">REST API Reference for UpdateUpload Operation</seealso>
         public virtual IAsyncResult BeginUpdateUpload(UpdateUploadRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUploadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUploadResponseUnmarshaller.Instance;
 
@@ -5676,7 +5676,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
         public virtual UpdateVPCEConfigurationResponse UpdateVPCEConfiguration(UpdateVPCEConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
 
@@ -5697,7 +5697,7 @@ namespace Amazon.DeviceFarm
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">REST API Reference for UpdateVPCEConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateVPCEConfiguration(UpdateVPCEConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVPCEConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVPCEConfigurationResponseUnmarshaller.Instance;
 

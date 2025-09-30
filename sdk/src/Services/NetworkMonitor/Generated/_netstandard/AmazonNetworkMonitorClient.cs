@@ -293,7 +293,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -368,7 +368,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual Task<CreateMonitorResponse> CreateMonitorAsync(CreateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -381,7 +381,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual CreateProbeResponse CreateProbe(CreateProbeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProbeResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/CreateProbe">REST API Reference for CreateProbe Operation</seealso>
         public virtual Task<CreateProbeResponse> CreateProbeAsync(CreateProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProbeResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual Task<DeleteMonitorResponse> DeleteMonitorAsync(DeleteMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual DeleteProbeResponse DeleteProbe(DeleteProbeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProbeResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/DeleteProbe">REST API Reference for DeleteProbe Operation</seealso>
         public virtual Task<DeleteProbeResponse> DeleteProbeAsync(DeleteProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProbeResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual GetMonitorResponse GetMonitor(GetMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -594,7 +594,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual Task<GetMonitorResponse> GetMonitorAsync(GetMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual GetProbeResponse GetProbe(GetProbeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProbeResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/GetProbe">REST API Reference for GetProbe Operation</seealso>
         public virtual Task<GetProbeResponse> GetProbeAsync(GetProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProbeResponseUnmarshaller.Instance;
 
@@ -658,7 +658,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual Task<ListMonitorsResponse> ListMonitorsAsync(ListMonitorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -795,7 +795,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -808,7 +808,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual UpdateMonitorResponse UpdateMonitor(UpdateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual Task<UpdateMonitorResponse> UpdateMonitorAsync(UpdateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -914,7 +914,7 @@ namespace Amazon.NetworkMonitor
 
         internal virtual UpdateProbeResponse UpdateProbe(UpdateProbeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProbeResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.NetworkMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmonitor-2023-08-01/UpdateProbe">REST API Reference for UpdateProbe Operation</seealso>
         public virtual Task<UpdateProbeResponse> UpdateProbeAsync(UpdateProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProbeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProbeResponseUnmarshaller.Instance;
 

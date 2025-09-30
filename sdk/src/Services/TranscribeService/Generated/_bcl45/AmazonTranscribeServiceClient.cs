@@ -342,7 +342,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">REST API Reference for CreateCallAnalyticsCategory Operation</seealso>
         public virtual CreateCallAnalyticsCategoryResponse CreateCallAnalyticsCategory(CreateCallAnalyticsCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCallAnalyticsCategoryResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateCallAnalyticsCategory">REST API Reference for CreateCallAnalyticsCategory Operation</seealso>
         public virtual Task<CreateCallAnalyticsCategoryResponse> CreateCallAnalyticsCategoryAsync(CreateCallAnalyticsCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCallAnalyticsCategoryResponseUnmarshaller.Instance;
             
@@ -470,7 +470,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel">REST API Reference for CreateLanguageModel Operation</seealso>
         public virtual CreateLanguageModelResponse CreateLanguageModel(CreateLanguageModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLanguageModelResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel">REST API Reference for CreateLanguageModel Operation</seealso>
         public virtual Task<CreateLanguageModelResponse> CreateLanguageModelAsync(CreateLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLanguageModelResponseUnmarshaller.Instance;
             
@@ -589,7 +589,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
         public virtual CreateMedicalVocabularyResponse CreateMedicalVocabulary(CreateMedicalVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMedicalVocabularyResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">REST API Reference for CreateMedicalVocabulary Operation</seealso>
         public virtual Task<CreateMedicalVocabularyResponse> CreateMedicalVocabularyAsync(CreateMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMedicalVocabularyResponseUnmarshaller.Instance;
             
@@ -705,7 +705,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
         public virtual CreateVocabularyResponse CreateVocabulary(CreateVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
         public virtual Task<CreateVocabularyResponse> CreateVocabularyAsync(CreateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyResponseUnmarshaller.Instance;
             
@@ -819,7 +819,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">REST API Reference for CreateVocabularyFilter Operation</seealso>
         public virtual CreateVocabularyFilterResponse CreateVocabularyFilter(CreateVocabularyFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyFilterResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter">REST API Reference for CreateVocabularyFilter Operation</seealso>
         public virtual Task<CreateVocabularyFilterResponse> CreateVocabularyFilterAsync(CreateVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVocabularyFilterResponseUnmarshaller.Instance;
             
@@ -914,7 +914,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">REST API Reference for DeleteCallAnalyticsCategory Operation</seealso>
         public virtual DeleteCallAnalyticsCategoryResponse DeleteCallAnalyticsCategory(DeleteCallAnalyticsCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCallAnalyticsCategoryResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsCategory">REST API Reference for DeleteCallAnalyticsCategory Operation</seealso>
         public virtual Task<DeleteCallAnalyticsCategoryResponse> DeleteCallAnalyticsCategoryAsync(DeleteCallAnalyticsCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCallAnalyticsCategoryResponseUnmarshaller.Instance;
             
@@ -987,7 +987,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">REST API Reference for DeleteCallAnalyticsJob Operation</seealso>
         public virtual DeleteCallAnalyticsJobResponse DeleteCallAnalyticsJob(DeleteCallAnalyticsJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCallAnalyticsJobResponseUnmarshaller.Instance;
 
@@ -1021,7 +1021,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteCallAnalyticsJob">REST API Reference for DeleteCallAnalyticsJob Operation</seealso>
         public virtual Task<DeleteCallAnalyticsJobResponse> DeleteCallAnalyticsJobAsync(DeleteCallAnalyticsJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCallAnalyticsJobResponseUnmarshaller.Instance;
             
@@ -1057,7 +1057,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel">REST API Reference for DeleteLanguageModel Operation</seealso>
         public virtual DeleteLanguageModelResponse DeleteLanguageModel(DeleteLanguageModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLanguageModelResponseUnmarshaller.Instance;
 
@@ -1092,7 +1092,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel">REST API Reference for DeleteLanguageModel Operation</seealso>
         public virtual Task<DeleteLanguageModelResponse> DeleteLanguageModelAsync(DeleteLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLanguageModelResponseUnmarshaller.Instance;
             
@@ -1127,7 +1127,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">REST API Reference for DeleteMedicalScribeJob Operation</seealso>
         public virtual DeleteMedicalScribeJobResponse DeleteMedicalScribeJob(DeleteMedicalScribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalScribeJobResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalScribeJob">REST API Reference for DeleteMedicalScribeJob Operation</seealso>
         public virtual Task<DeleteMedicalScribeJobResponse> DeleteMedicalScribeJobAsync(DeleteMedicalScribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalScribeJobResponseUnmarshaller.Instance;
             
@@ -1197,7 +1197,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">REST API Reference for DeleteMedicalTranscriptionJob Operation</seealso>
         public virtual DeleteMedicalTranscriptionJobResponse DeleteMedicalTranscriptionJob(DeleteMedicalTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalTranscriptionJob">REST API Reference for DeleteMedicalTranscriptionJob Operation</seealso>
         public virtual Task<DeleteMedicalTranscriptionJobResponse> DeleteMedicalTranscriptionJobAsync(DeleteMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -1272,7 +1272,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
         public virtual DeleteMedicalVocabularyResponse DeleteMedicalVocabulary(DeleteMedicalVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalVocabularyResponseUnmarshaller.Instance;
 
@@ -1311,7 +1311,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">REST API Reference for DeleteMedicalVocabulary Operation</seealso>
         public virtual Task<DeleteMedicalVocabularyResponse> DeleteMedicalVocabularyAsync(DeleteMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMedicalVocabularyResponseUnmarshaller.Instance;
             
@@ -1346,7 +1346,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">REST API Reference for DeleteTranscriptionJob Operation</seealso>
         public virtual DeleteTranscriptionJobResponse DeleteTranscriptionJob(DeleteTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -1380,7 +1380,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">REST API Reference for DeleteTranscriptionJob Operation</seealso>
         public virtual Task<DeleteTranscriptionJobResponse> DeleteTranscriptionJobAsync(DeleteTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -1420,7 +1420,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
         public virtual DeleteVocabularyResponse DeleteVocabulary(DeleteVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
 
@@ -1459,7 +1459,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
         public virtual Task<DeleteVocabularyResponse> DeleteVocabularyAsync(DeleteVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyResponseUnmarshaller.Instance;
             
@@ -1499,7 +1499,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">REST API Reference for DeleteVocabularyFilter Operation</seealso>
         public virtual DeleteVocabularyFilterResponse DeleteVocabularyFilter(DeleteVocabularyFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyFilterResponseUnmarshaller.Instance;
 
@@ -1538,7 +1538,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter">REST API Reference for DeleteVocabularyFilter Operation</seealso>
         public virtual Task<DeleteVocabularyFilterResponse> DeleteVocabularyFilterAsync(DeleteVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVocabularyFilterResponseUnmarshaller.Instance;
             
@@ -1588,7 +1588,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel">REST API Reference for DescribeLanguageModel Operation</seealso>
         public virtual DescribeLanguageModelResponse DescribeLanguageModel(DescribeLanguageModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLanguageModelResponseUnmarshaller.Instance;
 
@@ -1637,7 +1637,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel">REST API Reference for DescribeLanguageModel Operation</seealso>
         public virtual Task<DescribeLanguageModelResponse> DescribeLanguageModelAsync(DescribeLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLanguageModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLanguageModelResponseUnmarshaller.Instance;
             
@@ -1680,7 +1680,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">REST API Reference for GetCallAnalyticsCategory Operation</seealso>
         public virtual GetCallAnalyticsCategoryResponse GetCallAnalyticsCategory(GetCallAnalyticsCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCallAnalyticsCategoryResponseUnmarshaller.Instance;
 
@@ -1722,7 +1722,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsCategory">REST API Reference for GetCallAnalyticsCategory Operation</seealso>
         public virtual Task<GetCallAnalyticsCategoryResponse> GetCallAnalyticsCategoryAsync(GetCallAnalyticsCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCallAnalyticsCategoryResponseUnmarshaller.Instance;
             
@@ -1782,7 +1782,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
         public virtual GetCallAnalyticsJobResponse GetCallAnalyticsJob(GetCallAnalyticsJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCallAnalyticsJobResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetCallAnalyticsJob">REST API Reference for GetCallAnalyticsJob Operation</seealso>
         public virtual Task<GetCallAnalyticsJobResponse> GetCallAnalyticsJobAsync(GetCallAnalyticsJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCallAnalyticsJobResponseUnmarshaller.Instance;
             
@@ -1891,7 +1891,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">REST API Reference for GetMedicalScribeJob Operation</seealso>
         public virtual GetMedicalScribeJobResponse GetMedicalScribeJob(GetMedicalScribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeJobResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalScribeJob">REST API Reference for GetMedicalScribeJob Operation</seealso>
         public virtual Task<GetMedicalScribeJobResponse> GetMedicalScribeJobAsync(GetMedicalScribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeJobResponseUnmarshaller.Instance;
             
@@ -1990,7 +1990,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">REST API Reference for GetMedicalTranscriptionJob Operation</seealso>
         public virtual GetMedicalTranscriptionJobResponse GetMedicalTranscriptionJob(GetMedicalTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -2039,7 +2039,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalTranscriptionJob">REST API Reference for GetMedicalTranscriptionJob Operation</seealso>
         public virtual Task<GetMedicalTranscriptionJobResponse> GetMedicalTranscriptionJobAsync(GetMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -2089,7 +2089,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
         public virtual GetMedicalVocabularyResponse GetMedicalVocabulary(GetMedicalVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalVocabularyResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">REST API Reference for GetMedicalVocabulary Operation</seealso>
         public virtual Task<GetMedicalVocabularyResponse> GetMedicalVocabularyAsync(GetMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalVocabularyResponseUnmarshaller.Instance;
             
@@ -2193,7 +2193,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual GetTranscriptionJobResponse GetTranscriptionJob(GetTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -2247,7 +2247,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
         public virtual Task<GetTranscriptionJobResponse> GetTranscriptionJobAsync(GetTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -2297,7 +2297,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
         public virtual GetVocabularyResponse GetVocabulary(GetVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVocabularyResponseUnmarshaller.Instance;
 
@@ -2346,7 +2346,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
         public virtual Task<GetVocabularyResponse> GetVocabularyAsync(GetVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVocabularyResponseUnmarshaller.Instance;
             
@@ -2389,7 +2389,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">REST API Reference for GetVocabularyFilter Operation</seealso>
         public virtual GetVocabularyFilterResponse GetVocabularyFilter(GetVocabularyFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVocabularyFilterResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter">REST API Reference for GetVocabularyFilter Operation</seealso>
         public virtual Task<GetVocabularyFilterResponse> GetVocabularyFilterAsync(GetVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVocabularyFilterResponseUnmarshaller.Instance;
             
@@ -2471,7 +2471,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">REST API Reference for ListCallAnalyticsCategories Operation</seealso>
         public virtual ListCallAnalyticsCategoriesResponse ListCallAnalyticsCategories(ListCallAnalyticsCategoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallAnalyticsCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallAnalyticsCategoriesResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsCategories">REST API Reference for ListCallAnalyticsCategories Operation</seealso>
         public virtual Task<ListCallAnalyticsCategoriesResponse> ListCallAnalyticsCategoriesAsync(ListCallAnalyticsCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallAnalyticsCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallAnalyticsCategoriesResponseUnmarshaller.Instance;
             
@@ -2550,7 +2550,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">REST API Reference for ListCallAnalyticsJobs Operation</seealso>
         public virtual ListCallAnalyticsJobsResponse ListCallAnalyticsJobs(ListCallAnalyticsJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallAnalyticsJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallAnalyticsJobsResponseUnmarshaller.Instance;
 
@@ -2589,7 +2589,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListCallAnalyticsJobs">REST API Reference for ListCallAnalyticsJobs Operation</seealso>
         public virtual Task<ListCallAnalyticsJobsResponse> ListCallAnalyticsJobsAsync(ListCallAnalyticsJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallAnalyticsJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallAnalyticsJobsResponseUnmarshaller.Instance;
             
@@ -2629,7 +2629,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels">REST API Reference for ListLanguageModels Operation</seealso>
         public virtual ListLanguageModelsResponse ListLanguageModels(ListLanguageModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLanguageModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLanguageModelsResponseUnmarshaller.Instance;
 
@@ -2668,7 +2668,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels">REST API Reference for ListLanguageModels Operation</seealso>
         public virtual Task<ListLanguageModelsResponse> ListLanguageModelsAsync(ListLanguageModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLanguageModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLanguageModelsResponseUnmarshaller.Instance;
             
@@ -2708,7 +2708,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">REST API Reference for ListMedicalScribeJobs Operation</seealso>
         public virtual ListMedicalScribeJobsResponse ListMedicalScribeJobs(ListMedicalScribeJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalScribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalScribeJobsResponseUnmarshaller.Instance;
 
@@ -2747,7 +2747,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalScribeJobs">REST API Reference for ListMedicalScribeJobs Operation</seealso>
         public virtual Task<ListMedicalScribeJobsResponse> ListMedicalScribeJobsAsync(ListMedicalScribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalScribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalScribeJobsResponseUnmarshaller.Instance;
             
@@ -2787,7 +2787,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">REST API Reference for ListMedicalTranscriptionJobs Operation</seealso>
         public virtual ListMedicalTranscriptionJobsResponse ListMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalTranscriptionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalTranscriptionJobsResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalTranscriptionJobs">REST API Reference for ListMedicalTranscriptionJobs Operation</seealso>
         public virtual Task<ListMedicalTranscriptionJobsResponse> ListMedicalTranscriptionJobsAsync(ListMedicalTranscriptionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalTranscriptionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalTranscriptionJobsResponseUnmarshaller.Instance;
             
@@ -2866,7 +2866,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
         public virtual ListMedicalVocabulariesResponse ListMedicalVocabularies(ListMedicalVocabulariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalVocabulariesResponseUnmarshaller.Instance;
 
@@ -2905,7 +2905,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">REST API Reference for ListMedicalVocabularies Operation</seealso>
         public virtual Task<ListMedicalVocabulariesResponse> ListMedicalVocabulariesAsync(ListMedicalVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMedicalVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMedicalVocabulariesResponseUnmarshaller.Instance;
             
@@ -2950,7 +2950,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -3034,7 +3034,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual ListTranscriptionJobsResponse ListTranscriptionJobs(ListTranscriptionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
 
@@ -3073,7 +3073,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
         public virtual Task<ListTranscriptionJobsResponse> ListTranscriptionJobsAsync(ListTranscriptionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTranscriptionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTranscriptionJobsResponseUnmarshaller.Instance;
             
@@ -3113,7 +3113,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
         public virtual ListVocabulariesResponse ListVocabularies(ListVocabulariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVocabulariesResponseUnmarshaller.Instance;
 
@@ -3152,7 +3152,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
         public virtual Task<ListVocabulariesResponse> ListVocabulariesAsync(ListVocabulariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVocabulariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVocabulariesResponseUnmarshaller.Instance;
             
@@ -3192,7 +3192,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters">REST API Reference for ListVocabularyFilters Operation</seealso>
         public virtual ListVocabularyFiltersResponse ListVocabularyFilters(ListVocabularyFiltersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVocabularyFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVocabularyFiltersResponseUnmarshaller.Instance;
 
@@ -3231,7 +3231,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters">REST API Reference for ListVocabularyFilters Operation</seealso>
         public virtual Task<ListVocabularyFiltersResponse> ListVocabularyFiltersAsync(ListVocabularyFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVocabularyFiltersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVocabularyFiltersResponseUnmarshaller.Instance;
             
@@ -3330,7 +3330,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">REST API Reference for StartCallAnalyticsJob Operation</seealso>
         public virtual StartCallAnalyticsJobResponse StartCallAnalyticsJob(StartCallAnalyticsJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCallAnalyticsJobResponseUnmarshaller.Instance;
 
@@ -3428,7 +3428,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartCallAnalyticsJob">REST API Reference for StartCallAnalyticsJob Operation</seealso>
         public virtual Task<StartCallAnalyticsJobResponse> StartCallAnalyticsJobAsync(StartCallAnalyticsJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCallAnalyticsJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCallAnalyticsJobResponseUnmarshaller.Instance;
             
@@ -3519,7 +3519,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">REST API Reference for StartMedicalScribeJob Operation</seealso>
         public virtual StartMedicalScribeJobResponse StartMedicalScribeJob(StartMedicalScribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalScribeJobResponseUnmarshaller.Instance;
 
@@ -3609,7 +3609,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalScribeJob">REST API Reference for StartMedicalScribeJob Operation</seealso>
         public virtual Task<StartMedicalScribeJobResponse> StartMedicalScribeJobAsync(StartMedicalScribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalScribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalScribeJobResponseUnmarshaller.Instance;
             
@@ -3703,7 +3703,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">REST API Reference for StartMedicalTranscriptionJob Operation</seealso>
         public virtual StartMedicalTranscriptionJobResponse StartMedicalTranscriptionJob(StartMedicalTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -3796,7 +3796,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob">REST API Reference for StartMedicalTranscriptionJob Operation</seealso>
         public virtual Task<StartMedicalTranscriptionJobResponse> StartMedicalTranscriptionJobAsync(StartMedicalTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -3872,7 +3872,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual StartTranscriptionJobResponse StartTranscriptionJob(StartTranscriptionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
 
@@ -3947,7 +3947,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
         public virtual Task<StartTranscriptionJobResponse> StartTranscriptionJobAsync(StartTranscriptionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTranscriptionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTranscriptionJobResponseUnmarshaller.Instance;
             
@@ -3996,7 +3996,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4044,7 +4044,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4092,7 +4092,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4139,7 +4139,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4188,7 +4188,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">REST API Reference for UpdateCallAnalyticsCategory Operation</seealso>
         public virtual UpdateCallAnalyticsCategoryResponse UpdateCallAnalyticsCategory(UpdateCallAnalyticsCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCallAnalyticsCategoryResponseUnmarshaller.Instance;
 
@@ -4236,7 +4236,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateCallAnalyticsCategory">REST API Reference for UpdateCallAnalyticsCategory Operation</seealso>
         public virtual Task<UpdateCallAnalyticsCategoryResponse> UpdateCallAnalyticsCategoryAsync(UpdateCallAnalyticsCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCallAnalyticsCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCallAnalyticsCategoryResponseUnmarshaller.Instance;
             
@@ -4280,7 +4280,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
         public virtual UpdateMedicalVocabularyResponse UpdateMedicalVocabulary(UpdateMedicalVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMedicalVocabularyResponseUnmarshaller.Instance;
 
@@ -4323,7 +4323,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">REST API Reference for UpdateMedicalVocabulary Operation</seealso>
         public virtual Task<UpdateMedicalVocabularyResponse> UpdateMedicalVocabularyAsync(UpdateMedicalVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMedicalVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMedicalVocabularyResponseUnmarshaller.Instance;
             
@@ -4367,7 +4367,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
         public virtual UpdateVocabularyResponse UpdateVocabulary(UpdateVocabularyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVocabularyResponseUnmarshaller.Instance;
 
@@ -4410,7 +4410,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
         public virtual Task<UpdateVocabularyResponse> UpdateVocabularyAsync(UpdateVocabularyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVocabularyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVocabularyResponseUnmarshaller.Instance;
             
@@ -4450,7 +4450,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">REST API Reference for UpdateVocabularyFilter Operation</seealso>
         public virtual UpdateVocabularyFilterResponse UpdateVocabularyFilter(UpdateVocabularyFilterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVocabularyFilterResponseUnmarshaller.Instance;
 
@@ -4489,7 +4489,7 @@ namespace Amazon.TranscribeService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter">REST API Reference for UpdateVocabularyFilter Operation</seealso>
         public virtual Task<UpdateVocabularyFilterResponse> UpdateVocabularyFilterAsync(UpdateVocabularyFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVocabularyFilterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVocabularyFilterResponseUnmarshaller.Instance;
             

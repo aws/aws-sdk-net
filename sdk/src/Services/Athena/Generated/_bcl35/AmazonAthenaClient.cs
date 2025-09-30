@@ -303,7 +303,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual BatchGetNamedQueryResponse BatchGetNamedQuery(BatchGetNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
@@ -324,7 +324,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetNamedQuery">REST API Reference for BatchGetNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginBatchGetNamedQuery(BatchGetNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetNamedQueryResponseUnmarshaller.Instance;
 
@@ -367,7 +367,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
         public virtual BatchGetPreparedStatementResponse BatchGetPreparedStatement(BatchGetPreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
         public virtual IAsyncResult BeginBatchGetPreparedStatement(BatchGetPreparedStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual BatchGetQueryExecutionResponse BatchGetQueryExecution(BatchGetQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -453,7 +453,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetQueryExecution">REST API Reference for BatchGetQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginBatchGetQueryExecution(BatchGetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual CancelCapacityReservationResponse CancelCapacityReservation(CancelCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">REST API Reference for CancelCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginCancelCapacityReservation(CancelCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelCapacityReservationResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual CreateCapacityReservationResponse CreateCapacityReservation(CreateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -579,7 +579,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginCreateCapacityReservation(CreateCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
         public virtual CreateDataCatalogResponse CreateDataCatalog(CreateDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">REST API Reference for CreateDataCatalog Operation</seealso>
         public virtual IAsyncResult BeginCreateDataCatalog(CreateDataCatalogRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataCatalogResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual CreateNamedQueryResponse CreateNamedQuery(CreateNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
@@ -724,7 +724,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNamedQuery">REST API Reference for CreateNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginCreateNamedQuery(CreateNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNamedQueryResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
         public virtual CreateNotebookResponse CreateNotebook(CreateNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
         public virtual IAsyncResult BeginCreateNotebook(CreateNotebookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
         public virtual CreatePreparedStatementResponse CreatePreparedStatement(CreatePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement">REST API Reference for CreatePreparedStatement Operation</seealso>
         public virtual IAsyncResult BeginCreatePreparedStatement(CreatePreparedStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
         public virtual CreatePresignedNotebookUrlResponse CreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedNotebookUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedNotebookUrlResponseUnmarshaller.Instance;
 
@@ -918,7 +918,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">REST API Reference for CreatePresignedNotebookUrl Operation</seealso>
         public virtual IAsyncResult BeginCreatePresignedNotebookUrl(CreatePresignedNotebookUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedNotebookUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedNotebookUrlResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
         public virtual CreateWorkGroupResponse CreateWorkGroup(CreateWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
 
@@ -980,7 +980,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">REST API Reference for CreateWorkGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateWorkGroup(CreateWorkGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
 
@@ -1024,7 +1024,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
         public virtual DeleteCapacityReservationResponse DeleteCapacityReservation(DeleteCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1045,7 +1045,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginDeleteCapacityReservation(DeleteCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
         public virtual DeleteDataCatalogResponse DeleteDataCatalog(DeleteDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog">REST API Reference for DeleteDataCatalog Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataCatalog(DeleteDataCatalogRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataCatalogResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual DeleteNamedQueryResponse DeleteNamedQuery(DeleteNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNamedQuery">REST API Reference for DeleteNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginDeleteNamedQuery(DeleteNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNamedQueryResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
         public virtual DeleteNotebookResponse DeleteNotebook(DeleteNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
         public virtual IAsyncResult BeginDeleteNotebook(DeleteNotebookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
 
@@ -1275,7 +1275,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
         public virtual DeletePreparedStatementResponse DeletePreparedStatement(DeletePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePreparedStatementResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement">REST API Reference for DeletePreparedStatement Operation</seealso>
         public virtual IAsyncResult BeginDeletePreparedStatement(DeletePreparedStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePreparedStatementResponseUnmarshaller.Instance;
 
@@ -1336,7 +1336,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
         public virtual DeleteWorkGroupResponse DeleteWorkGroup(DeleteWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
 
@@ -1357,7 +1357,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup">REST API Reference for DeleteWorkGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteWorkGroup(DeleteWorkGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkGroupResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
         public virtual ExportNotebookResponse ExportNotebook(ExportNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportNotebookResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook">REST API Reference for ExportNotebook Operation</seealso>
         public virtual IAsyncResult BeginExportNotebook(ExportNotebookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportNotebookResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
         public virtual GetCalculationExecutionResponse GetCalculationExecution(GetCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -1485,7 +1485,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution">REST API Reference for GetCalculationExecution Operation</seealso>
         public virtual IAsyncResult BeginGetCalculationExecution(GetCalculationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -1528,7 +1528,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
         public virtual GetCalculationExecutionCodeResponse GetCalculationExecutionCode(GetCalculationExecutionCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionCodeResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">REST API Reference for GetCalculationExecutionCode Operation</seealso>
         public virtual IAsyncResult BeginGetCalculationExecutionCode(GetCalculationExecutionCodeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionCodeResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
         public virtual GetCalculationExecutionStatusResponse GetCalculationExecutionStatus(GetCalculationExecutionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus">REST API Reference for GetCalculationExecutionStatus Operation</seealso>
         public virtual IAsyncResult BeginGetCalculationExecutionStatus(GetCalculationExecutionStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCalculationExecutionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCalculationExecutionStatusResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
         public virtual GetCapacityAssignmentConfigurationResponse GetCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -1674,7 +1674,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration">REST API Reference for GetCapacityAssignmentConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -1714,7 +1714,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
         public virtual GetCapacityReservationResponse GetCapacityReservation(GetCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation">REST API Reference for GetCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginGetCapacityReservation(GetCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -1802,7 +1802,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual IAsyncResult BeginGetDatabase(GetDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
         public virtual GetDataCatalogResponse GetDataCatalog(GetDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog">REST API Reference for GetDataCatalog Operation</seealso>
         public virtual IAsyncResult BeginGetDataCatalog(GetDataCatalogRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogResponseUnmarshaller.Instance;
 
@@ -1904,7 +1904,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual GetNamedQueryResponse GetNamedQuery(GetNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
@@ -1925,7 +1925,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNamedQuery">REST API Reference for GetNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginGetNamedQuery(GetNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNamedQueryResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
         public virtual GetNotebookMetadataResponse GetNotebookMetadata(GetNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata">REST API Reference for GetNotebookMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetNotebookMetadata(GetNotebookMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
         public virtual GetPreparedStatementResponse GetPreparedStatement(GetPreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement">REST API Reference for GetPreparedStatement Operation</seealso>
         public virtual IAsyncResult BeginGetPreparedStatement(GetPreparedStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPreparedStatementResponseUnmarshaller.Instance;
 
@@ -2095,7 +2095,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual GetQueryExecutionResponse GetQueryExecution(GetQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2116,7 +2116,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryExecution">REST API Reference for GetQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginGetQueryExecution(GetQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryExecutionResponseUnmarshaller.Instance;
 
@@ -2179,7 +2179,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -2200,7 +2200,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResults(GetQueryResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -2246,7 +2246,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
         public virtual GetQueryRuntimeStatisticsResponse GetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
 
@@ -2267,7 +2267,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
         public virtual IAsyncResult BeginGetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
 
@@ -2311,7 +2311,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual IAsyncResult BeginGetSession(GetSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -2375,7 +2375,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
         public virtual GetSessionStatusResponse GetSessionStatus(GetSessionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionStatusResponseUnmarshaller.Instance;
 
@@ -2396,7 +2396,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus">REST API Reference for GetSessionStatus Operation</seealso>
         public virtual IAsyncResult BeginGetSessionStatus(GetSessionStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionStatusResponseUnmarshaller.Instance;
 
@@ -2442,7 +2442,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
         public virtual GetTableMetadataResponse GetTableMetadata(GetTableMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
 
@@ -2463,7 +2463,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">REST API Reference for GetTableMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetTableMetadata(GetTableMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableMetadataResponseUnmarshaller.Instance;
 
@@ -2503,7 +2503,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
         public virtual GetWorkGroupResponse GetWorkGroup(GetWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
 
@@ -2524,7 +2524,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">REST API Reference for GetWorkGroup Operation</seealso>
         public virtual IAsyncResult BeginGetWorkGroup(GetWorkGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkGroupResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
         public virtual ImportNotebookResponse ImportNotebook(ImportNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportNotebookResponseUnmarshaller.Instance;
 
@@ -2592,7 +2592,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook">REST API Reference for ImportNotebook Operation</seealso>
         public virtual IAsyncResult BeginImportNotebook(ImportNotebookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportNotebookResponseUnmarshaller.Instance;
 
@@ -2636,7 +2636,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
         public virtual ListApplicationDPUSizesResponse ListApplicationDPUSizes(ListApplicationDPUSizesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDPUSizesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDPUSizesResponseUnmarshaller.Instance;
 
@@ -2657,7 +2657,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">REST API Reference for ListApplicationDPUSizes Operation</seealso>
         public virtual IAsyncResult BeginListApplicationDPUSizes(ListApplicationDPUSizesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDPUSizesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDPUSizesResponseUnmarshaller.Instance;
 
@@ -2701,7 +2701,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
         public virtual ListCalculationExecutionsResponse ListCalculationExecutions(ListCalculationExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculationExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculationExecutionsResponseUnmarshaller.Instance;
 
@@ -2722,7 +2722,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions">REST API Reference for ListCalculationExecutions Operation</seealso>
         public virtual IAsyncResult BeginListCalculationExecutions(ListCalculationExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCalculationExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCalculationExecutionsResponseUnmarshaller.Instance;
 
@@ -2762,7 +2762,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
         public virtual ListCapacityReservationsResponse ListCapacityReservations(ListCapacityReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -2783,7 +2783,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations">REST API Reference for ListCapacityReservations Operation</seealso>
         public virtual IAsyncResult BeginListCapacityReservations(ListCapacityReservationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCapacityReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCapacityReservationsResponseUnmarshaller.Instance;
 
@@ -2829,7 +2829,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -2850,7 +2850,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual IAsyncResult BeginListDatabases(ListDatabasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
 
@@ -2897,7 +2897,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
         public virtual ListDataCatalogsResponse ListDataCatalogs(ListDataCatalogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
 
@@ -2918,7 +2918,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
         public virtual IAsyncResult BeginListDataCatalogs(ListDataCatalogsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataCatalogsResponseUnmarshaller.Instance;
 
@@ -2959,7 +2959,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
         public virtual ListEngineVersionsResponse ListEngineVersions(ListEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2980,7 +2980,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
         public virtual IAsyncResult BeginListEngineVersions(ListEngineVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEngineVersionsResponseUnmarshaller.Instance;
 
@@ -3025,7 +3025,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
         public virtual ListExecutorsResponse ListExecutors(ListExecutorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutorsResponseUnmarshaller.Instance;
 
@@ -3046,7 +3046,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">REST API Reference for ListExecutors Operation</seealso>
         public virtual IAsyncResult BeginListExecutors(ListExecutorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExecutorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExecutorsResponseUnmarshaller.Instance;
 
@@ -3088,7 +3088,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual ListNamedQueriesResponse ListNamedQueries(ListNamedQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
@@ -3109,7 +3109,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNamedQueries">REST API Reference for ListNamedQueries Operation</seealso>
         public virtual IAsyncResult BeginListNamedQueries(ListNamedQueriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedQueriesResponseUnmarshaller.Instance;
 
@@ -3152,7 +3152,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
         public virtual ListNotebookMetadataResponse ListNotebookMetadata(ListNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -3173,7 +3173,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata">REST API Reference for ListNotebookMetadata Operation</seealso>
         public virtual IAsyncResult BeginListNotebookMetadata(ListNotebookMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
         public virtual ListNotebookSessionsResponse ListNotebookSessions(ListNotebookSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookSessionsResponseUnmarshaller.Instance;
 
@@ -3239,7 +3239,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions">REST API Reference for ListNotebookSessions Operation</seealso>
         public virtual IAsyncResult BeginListNotebookSessions(ListNotebookSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotebookSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotebookSessionsResponseUnmarshaller.Instance;
 
@@ -3279,7 +3279,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
         public virtual ListPreparedStatementsResponse ListPreparedStatements(ListPreparedStatementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreparedStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreparedStatementsResponseUnmarshaller.Instance;
 
@@ -3300,7 +3300,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">REST API Reference for ListPreparedStatements Operation</seealso>
         public virtual IAsyncResult BeginListPreparedStatements(ListPreparedStatementsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPreparedStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPreparedStatementsResponseUnmarshaller.Instance;
 
@@ -3343,7 +3343,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual ListQueryExecutionsResponse ListQueryExecutions(ListQueryExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
@@ -3364,7 +3364,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListQueryExecutions">REST API Reference for ListQueryExecutions Operation</seealso>
         public virtual IAsyncResult BeginListQueryExecutions(ListQueryExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueryExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueryExecutionsResponseUnmarshaller.Instance;
 
@@ -3409,7 +3409,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -3430,7 +3430,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual IAsyncResult BeginListSessions(ListSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -3476,7 +3476,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
         public virtual ListTableMetadataResponse ListTableMetadata(ListTableMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
 
@@ -3497,7 +3497,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata">REST API Reference for ListTableMetadata Operation</seealso>
         public virtual IAsyncResult BeginListTableMetadata(ListTableMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableMetadataResponseUnmarshaller.Instance;
 
@@ -3540,7 +3540,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3561,7 +3561,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3601,7 +3601,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
         public virtual ListWorkGroupsResponse ListWorkGroups(ListWorkGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups">REST API Reference for ListWorkGroups Operation</seealso>
         public virtual IAsyncResult BeginListWorkGroups(ListWorkGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkGroupsResponseUnmarshaller.Instance;
 
@@ -3664,7 +3664,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
         public virtual PutCapacityAssignmentConfigurationResponse PutCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -3685,7 +3685,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration">REST API Reference for PutCapacityAssignmentConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCapacityAssignmentConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCapacityAssignmentConfigurationResponseUnmarshaller.Instance;
 
@@ -3738,7 +3738,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
         public virtual StartCalculationExecutionResponse StartCalculationExecution(StartCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -3759,7 +3759,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">REST API Reference for StartCalculationExecution Operation</seealso>
         public virtual IAsyncResult BeginStartCalculationExecution(StartCalculationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -3806,7 +3806,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual StartQueryExecutionResponse StartQueryExecution(StartQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
@@ -3827,7 +3827,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution">REST API Reference for StartQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginStartQueryExecution(StartQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryExecutionResponseUnmarshaller.Instance;
 
@@ -3877,7 +3877,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual StartSessionResponse StartSession(StartSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
@@ -3898,7 +3898,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession">REST API Reference for StartSession Operation</seealso>
         public virtual IAsyncResult BeginStartSession(StartSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
 
@@ -3952,7 +3952,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
         public virtual StopCalculationExecutionResponse StopCalculationExecution(StopCalculationExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -3973,7 +3973,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution">REST API Reference for StopCalculationExecution Operation</seealso>
         public virtual IAsyncResult BeginStopCalculationExecution(StopCalculationExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCalculationExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCalculationExecutionResponseUnmarshaller.Instance;
 
@@ -4014,7 +4014,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual StopQueryExecutionResponse StopQueryExecution(StopQueryExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
@@ -4035,7 +4035,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopQueryExecution">REST API Reference for StopQueryExecution Operation</seealso>
         public virtual IAsyncResult BeginStopQueryExecution(StopQueryExecutionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryExecutionResponseUnmarshaller.Instance;
 
@@ -4088,7 +4088,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4109,7 +4109,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4155,7 +4155,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
@@ -4176,7 +4176,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
         public virtual IAsyncResult BeginTerminateSession(TerminateSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
 
@@ -4219,7 +4219,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4240,7 +4240,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4281,7 +4281,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
         public virtual UpdateCapacityReservationResponse UpdateCapacityReservation(UpdateCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -4302,7 +4302,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation">REST API Reference for UpdateCapacityReservation Operation</seealso>
         public virtual IAsyncResult BeginUpdateCapacityReservation(UpdateCapacityReservationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityReservationResponseUnmarshaller.Instance;
 
@@ -4342,7 +4342,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         public virtual UpdateDataCatalogResponse UpdateDataCatalog(UpdateDataCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
 
@@ -4363,7 +4363,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog">REST API Reference for UpdateDataCatalog Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataCatalog(UpdateDataCatalogRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataCatalogResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
         public virtual UpdateNamedQueryResponse UpdateNamedQuery(UpdateNamedQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
 
@@ -4424,7 +4424,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNamedQuery">REST API Reference for UpdateNamedQuery Operation</seealso>
         public virtual IAsyncResult BeginUpdateNamedQuery(UpdateNamedQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNamedQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNamedQueryResponseUnmarshaller.Instance;
 
@@ -4467,7 +4467,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
         public virtual UpdateNotebookResponse UpdateNotebook(UpdateNotebookRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
 
@@ -4488,7 +4488,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
         public virtual IAsyncResult BeginUpdateNotebook(UpdateNotebookRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
 
@@ -4531,7 +4531,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
         public virtual UpdateNotebookMetadataResponse UpdateNotebookMetadata(UpdateNotebookMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -4552,7 +4552,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata">REST API Reference for UpdateNotebookMetadata Operation</seealso>
         public virtual IAsyncResult BeginUpdateNotebookMetadata(UpdateNotebookMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotebookMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotebookMetadataResponseUnmarshaller.Instance;
 
@@ -4595,7 +4595,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
         public virtual UpdatePreparedStatementResponse UpdatePreparedStatement(UpdatePreparedStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -4616,7 +4616,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement">REST API Reference for UpdatePreparedStatement Operation</seealso>
         public virtual IAsyncResult BeginUpdatePreparedStatement(UpdatePreparedStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePreparedStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePreparedStatementResponseUnmarshaller.Instance;
 
@@ -4657,7 +4657,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
         public virtual UpdateWorkGroupResponse UpdateWorkGroup(UpdateWorkGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
 
@@ -4678,7 +4678,7 @@ namespace Amazon.Athena
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">REST API Reference for UpdateWorkGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateWorkGroup(UpdateWorkGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkGroupResponseUnmarshaller.Instance;
 

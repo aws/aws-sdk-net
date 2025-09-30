@@ -370,7 +370,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
         public virtual IAsyncResult BeginBatchExecuteStatement(BatchExecuteStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
 
@@ -505,7 +505,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">REST API Reference for BeginTransaction Operation</seealso>
         public virtual BeginTransactionResponse BeginTransaction(BeginTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BeginTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BeginTransactionResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">REST API Reference for BeginTransaction Operation</seealso>
         public virtual IAsyncResult BeginBeginTransaction(BeginTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BeginTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BeginTransactionResponseUnmarshaller.Instance;
 
@@ -621,7 +621,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         public virtual CommitTransactionResponse CommitTransaction(CommitTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
 
@@ -642,7 +642,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/CommitTransaction">REST API Reference for CommitTransaction Operation</seealso>
         public virtual IAsyncResult BeginCommitTransaction(CommitTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CommitTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CommitTransactionResponseUnmarshaller.Instance;
 
@@ -700,7 +700,7 @@ namespace Amazon.RDSDataService
         [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
         public virtual ExecuteSqlResponse ExecuteSql(ExecuteSqlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteSqlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.RDSDataService
         [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
         public virtual IAsyncResult BeginExecuteSql(ExecuteSqlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteSqlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteSqlResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
 
@@ -868,7 +868,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
         public virtual IAsyncResult BeginExecuteStatement(ExecuteStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
         public virtual RollbackTransactionResponse RollbackTransaction(RollbackTransactionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackTransactionResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.RDSDataService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransaction">REST API Reference for RollbackTransaction Operation</seealso>
         public virtual IAsyncResult BeginRollbackTransaction(RollbackTransactionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RollbackTransactionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RollbackTransactionResponseUnmarshaller.Instance;
 

@@ -347,7 +347,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual Task<CreateMonitorResponse> CreateMonitorAsync(CreateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
             
@@ -437,7 +437,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -469,7 +469,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual Task<DeleteMonitorResponse> DeleteMonitorAsync(DeleteMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
             
@@ -515,7 +515,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetHealthEvent">REST API Reference for GetHealthEvent Operation</seealso>
         public virtual GetHealthEventResponse GetHealthEvent(GetHealthEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthEventResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetHealthEvent">REST API Reference for GetHealthEvent Operation</seealso>
         public virtual Task<GetHealthEventResponse> GetHealthEventAsync(GetHealthEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHealthEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHealthEventResponseUnmarshaller.Instance;
             
@@ -603,7 +603,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
         public virtual GetInternetEventResponse GetInternetEvent(GetInternetEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInternetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInternetEventResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
         public virtual Task<GetInternetEventResponse> GetInternetEventAsync(GetInternetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInternetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInternetEventResponseUnmarshaller.Instance;
             
@@ -680,7 +680,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual GetMonitorResponse GetMonitor(GetMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual Task<GetMonitorResponse> GetMonitorAsync(GetMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
             
@@ -759,7 +759,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -803,7 +803,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
             
@@ -863,7 +863,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryStatus">REST API Reference for GetQueryStatus Operation</seealso>
         public virtual GetQueryStatusResponse GetQueryStatus(GetQueryStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetQueryStatus">REST API Reference for GetQueryStatus Operation</seealso>
         public virtual Task<GetQueryStatusResponse> GetQueryStatusAsync(GetQueryStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryStatusResponseUnmarshaller.Instance;
             
@@ -963,7 +963,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents">REST API Reference for ListHealthEvents Operation</seealso>
         public virtual ListHealthEventsResponse ListHealthEvents(ListHealthEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHealthEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHealthEventsResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents">REST API Reference for ListHealthEvents Operation</seealso>
         public virtual Task<ListHealthEventsResponse> ListHealthEventsAsync(ListHealthEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHealthEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHealthEventsResponseUnmarshaller.Instance;
             
@@ -1052,7 +1052,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
         public virtual ListInternetEventsResponse ListInternetEvents(ListInternetEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInternetEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInternetEventsResponseUnmarshaller.Instance;
 
@@ -1100,7 +1100,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
         public virtual Task<ListInternetEventsResponse> ListInternetEventsAsync(ListInternetEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInternetEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInternetEventsResponseUnmarshaller.Instance;
             
@@ -1134,7 +1134,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual Task<ListMonitorsResponse> ListMonitorsAsync(ListMonitorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
             
@@ -1204,7 +1204,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1240,7 +1240,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1286,7 +1286,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StartQuery">REST API Reference for StartQuery Operation</seealso>
         public virtual StartQueryResponse StartQuery(StartQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryResponseUnmarshaller.Instance;
 
@@ -1331,7 +1331,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StartQuery">REST API Reference for StartQuery Operation</seealso>
         public virtual Task<StartQueryResponse> StartQueryAsync(StartQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryResponseUnmarshaller.Instance;
             
@@ -1367,7 +1367,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StopQuery">REST API Reference for StopQuery Operation</seealso>
         public virtual StopQueryResponse StopQuery(StopQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryResponseUnmarshaller.Instance;
 
@@ -1402,7 +1402,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/StopQuery">REST API Reference for StopQuery Operation</seealso>
         public virtual Task<StopQueryResponse> StopQueryAsync(StopQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQueryResponseUnmarshaller.Instance;
             
@@ -1445,7 +1445,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1523,7 +1523,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1607,7 +1607,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual UpdateMonitorResponse UpdateMonitor(UpdateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -1655,7 +1655,7 @@ namespace Amazon.InternetMonitor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual Task<UpdateMonitorResponse> UpdateMonitorAsync(UpdateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
             

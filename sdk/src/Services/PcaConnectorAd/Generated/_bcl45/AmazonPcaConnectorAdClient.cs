@@ -310,7 +310,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -360,7 +360,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
             
@@ -408,7 +408,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateDirectoryRegistration">REST API Reference for CreateDirectoryRegistration Operation</seealso>
         public virtual CreateDirectoryRegistrationResponse CreateDirectoryRegistration(CreateDirectoryRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectoryRegistrationResponseUnmarshaller.Instance;
 
@@ -455,7 +455,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateDirectoryRegistration">REST API Reference for CreateDirectoryRegistration Operation</seealso>
         public virtual Task<CreateDirectoryRegistrationResponse> CreateDirectoryRegistrationAsync(CreateDirectoryRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectoryRegistrationResponseUnmarshaller.Instance;
             
@@ -504,7 +504,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateServicePrincipalName">REST API Reference for CreateServicePrincipalName Operation</seealso>
         public virtual CreateServicePrincipalNameResponse CreateServicePrincipalName(CreateServicePrincipalNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServicePrincipalNameResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateServicePrincipalName">REST API Reference for CreateServicePrincipalName Operation</seealso>
         public virtual Task<CreateServicePrincipalNameResponse> CreateServicePrincipalNameAsync(CreateServicePrincipalNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServicePrincipalNameResponseUnmarshaller.Instance;
             
@@ -604,7 +604,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
             
@@ -706,7 +706,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateTemplateGroupAccessControlEntry">REST API Reference for CreateTemplateGroupAccessControlEntry Operation</seealso>
         public virtual CreateTemplateGroupAccessControlEntryResponse CreateTemplateGroupAccessControlEntry(CreateTemplateGroupAccessControlEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
 
@@ -756,7 +756,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/CreateTemplateGroupAccessControlEntry">REST API Reference for CreateTemplateGroupAccessControlEntry Operation</seealso>
         public virtual Task<CreateTemplateGroupAccessControlEntryResponse> CreateTemplateGroupAccessControlEntryAsync(CreateTemplateGroupAccessControlEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
             
@@ -808,7 +808,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -859,7 +859,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
             
@@ -903,7 +903,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteDirectoryRegistration">REST API Reference for DeleteDirectoryRegistration Operation</seealso>
         public virtual DeleteDirectoryRegistrationResponse DeleteDirectoryRegistration(DeleteDirectoryRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectoryRegistrationResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteDirectoryRegistration">REST API Reference for DeleteDirectoryRegistration Operation</seealso>
         public virtual Task<DeleteDirectoryRegistrationResponse> DeleteDirectoryRegistrationAsync(DeleteDirectoryRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectoryRegistrationResponseUnmarshaller.Instance;
             
@@ -990,7 +990,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteServicePrincipalName">REST API Reference for DeleteServicePrincipalName Operation</seealso>
         public virtual DeleteServicePrincipalNameResponse DeleteServicePrincipalName(DeleteServicePrincipalNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServicePrincipalNameResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteServicePrincipalName">REST API Reference for DeleteServicePrincipalName Operation</seealso>
         public virtual Task<DeleteServicePrincipalNameResponse> DeleteServicePrincipalNameAsync(DeleteServicePrincipalNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServicePrincipalNameResponseUnmarshaller.Instance;
             
@@ -1081,7 +1081,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -1128,7 +1128,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
             
@@ -1175,7 +1175,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteTemplateGroupAccessControlEntry">REST API Reference for DeleteTemplateGroupAccessControlEntry Operation</seealso>
         public virtual DeleteTemplateGroupAccessControlEntryResponse DeleteTemplateGroupAccessControlEntry(DeleteTemplateGroupAccessControlEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
 
@@ -1221,7 +1221,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/DeleteTemplateGroupAccessControlEntry">REST API Reference for DeleteTemplateGroupAccessControlEntry Operation</seealso>
         public virtual Task<DeleteTemplateGroupAccessControlEntryResponse> DeleteTemplateGroupAccessControlEntryAsync(DeleteTemplateGroupAccessControlEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
             
@@ -1265,7 +1265,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
         public virtual GetConnectorResponse GetConnector(GetConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
         public virtual Task<GetConnectorResponse> GetConnectorAsync(GetConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
             
@@ -1351,7 +1351,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetDirectoryRegistration">REST API Reference for GetDirectoryRegistration Operation</seealso>
         public virtual GetDirectoryRegistrationResponse GetDirectoryRegistration(GetDirectoryRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectoryRegistrationResponseUnmarshaller.Instance;
 
@@ -1393,7 +1393,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetDirectoryRegistration">REST API Reference for GetDirectoryRegistration Operation</seealso>
         public virtual Task<GetDirectoryRegistrationResponse> GetDirectoryRegistrationAsync(GetDirectoryRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectoryRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectoryRegistrationResponseUnmarshaller.Instance;
             
@@ -1437,7 +1437,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetServicePrincipalName">REST API Reference for GetServicePrincipalName Operation</seealso>
         public virtual GetServicePrincipalNameResponse GetServicePrincipalName(GetServicePrincipalNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServicePrincipalNameResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetServicePrincipalName">REST API Reference for GetServicePrincipalName Operation</seealso>
         public virtual Task<GetServicePrincipalNameResponse> GetServicePrincipalNameAsync(GetServicePrincipalNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServicePrincipalNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServicePrincipalNameResponseUnmarshaller.Instance;
             
@@ -1524,7 +1524,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -1567,7 +1567,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
             
@@ -1610,7 +1610,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetTemplateGroupAccessControlEntry">REST API Reference for GetTemplateGroupAccessControlEntry Operation</seealso>
         public virtual GetTemplateGroupAccessControlEntryResponse GetTemplateGroupAccessControlEntry(GetTemplateGroupAccessControlEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/GetTemplateGroupAccessControlEntry">REST API Reference for GetTemplateGroupAccessControlEntry Operation</seealso>
         public virtual Task<GetTemplateGroupAccessControlEntryResponse> GetTemplateGroupAccessControlEntryAsync(GetTemplateGroupAccessControlEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
             
@@ -1692,7 +1692,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -1731,7 +1731,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
             
@@ -1771,7 +1771,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListDirectoryRegistrations">REST API Reference for ListDirectoryRegistrations Operation</seealso>
         public virtual ListDirectoryRegistrationsResponse ListDirectoryRegistrations(ListDirectoryRegistrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryRegistrationsResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListDirectoryRegistrations">REST API Reference for ListDirectoryRegistrations Operation</seealso>
         public virtual Task<ListDirectoryRegistrationsResponse> ListDirectoryRegistrationsAsync(ListDirectoryRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDirectoryRegistrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDirectoryRegistrationsResponseUnmarshaller.Instance;
             
@@ -1854,7 +1854,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListServicePrincipalNames">REST API Reference for ListServicePrincipalNames Operation</seealso>
         public virtual ListServicePrincipalNamesResponse ListServicePrincipalNames(ListServicePrincipalNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePrincipalNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePrincipalNamesResponseUnmarshaller.Instance;
 
@@ -1897,7 +1897,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListServicePrincipalNames">REST API Reference for ListServicePrincipalNames Operation</seealso>
         public virtual Task<ListServicePrincipalNamesResponse> ListServicePrincipalNamesAsync(ListServicePrincipalNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicePrincipalNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicePrincipalNamesResponseUnmarshaller.Instance;
             
@@ -1940,7 +1940,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1982,7 +1982,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2025,7 +2025,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTemplateGroupAccessControlEntries">REST API Reference for ListTemplateGroupAccessControlEntries Operation</seealso>
         public virtual ListTemplateGroupAccessControlEntriesResponse ListTemplateGroupAccessControlEntries(ListTemplateGroupAccessControlEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateGroupAccessControlEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateGroupAccessControlEntriesResponseUnmarshaller.Instance;
 
@@ -2067,7 +2067,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTemplateGroupAccessControlEntries">REST API Reference for ListTemplateGroupAccessControlEntries Operation</seealso>
         public virtual Task<ListTemplateGroupAccessControlEntriesResponse> ListTemplateGroupAccessControlEntriesAsync(ListTemplateGroupAccessControlEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateGroupAccessControlEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateGroupAccessControlEntriesResponseUnmarshaller.Instance;
             
@@ -2110,7 +2110,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -2152,7 +2152,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
             
@@ -2195,7 +2195,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2237,7 +2237,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2280,7 +2280,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2322,7 +2322,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2369,7 +2369,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -2415,7 +2415,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
             
@@ -2462,7 +2462,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UpdateTemplateGroupAccessControlEntry">REST API Reference for UpdateTemplateGroupAccessControlEntry Operation</seealso>
         public virtual UpdateTemplateGroupAccessControlEntryResponse UpdateTemplateGroupAccessControlEntry(UpdateTemplateGroupAccessControlEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
 
@@ -2508,7 +2508,7 @@ namespace Amazon.PcaConnectorAd
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-ad-2018-05-10/UpdateTemplateGroupAccessControlEntry">REST API Reference for UpdateTemplateGroupAccessControlEntry Operation</seealso>
         public virtual Task<UpdateTemplateGroupAccessControlEntryResponse> UpdateTemplateGroupAccessControlEntryAsync(UpdateTemplateGroupAccessControlEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateGroupAccessControlEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateGroupAccessControlEntryResponseUnmarshaller.Instance;
             

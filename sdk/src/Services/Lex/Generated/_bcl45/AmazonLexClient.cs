@@ -285,7 +285,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
         public virtual DeleteSessionResponse DeleteSession(DeleteSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
         public virtual Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
             
@@ -355,7 +355,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
             
@@ -540,7 +540,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         public virtual PostContentResponse PostContent(PostContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostContentResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         public virtual Task<PostContentResponse> PostContentAsync(PostContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostContentResponseUnmarshaller.Instance;
             
@@ -829,7 +829,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         public virtual PostTextResponse PostText(PostTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostTextResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText">REST API Reference for PostText Operation</seealso>
         public virtual Task<PostTextResponse> PostTextAsync(PostTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PostTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PostTextResponseUnmarshaller.Instance;
             
@@ -1036,7 +1036,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
         public virtual PutSessionResponse PutSession(PutSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
 
@@ -1105,7 +1105,7 @@ namespace Amazon.Lex
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PutSession">REST API Reference for PutSession Operation</seealso>
         public virtual Task<PutSessionResponse> PutSessionAsync(PutSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSessionResponseUnmarshaller.Instance;
             

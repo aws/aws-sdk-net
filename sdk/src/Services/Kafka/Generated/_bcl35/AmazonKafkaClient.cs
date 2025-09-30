@@ -296,7 +296,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
         public virtual BatchAssociateScramSecretResponse BatchAssociateScramSecret(BatchAssociateScramSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
 
@@ -317,7 +317,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
         public virtual IAsyncResult BeginBatchAssociateScramSecret(BatchAssociateScramSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
 
@@ -371,7 +371,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
         public virtual BatchDisassociateScramSecretResponse BatchDisassociateScramSecret(BatchDisassociateScramSecretRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
         public virtual IAsyncResult BeginBatchDisassociateScramSecret(BatchDisassociateScramSecretRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
         public virtual CreateClusterV2Response CreateClusterV2(CreateClusterV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterV2ResponseUnmarshaller.Instance;
 
@@ -542,7 +542,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateClusterV2">REST API Reference for CreateClusterV2 Operation</seealso>
         public virtual IAsyncResult BeginCreateClusterV2(CreateClusterV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterV2ResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -617,7 +617,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateConfiguration(CreateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">REST API Reference for CreateReplicator Operation</seealso>
         public virtual CreateReplicatorResponse CreateReplicator(CreateReplicatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicatorResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateReplicator">REST API Reference for CreateReplicator Operation</seealso>
         public virtual IAsyncResult BeginCreateReplicator(CreateReplicatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicatorResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
         public virtual CreateVpcConnectionResponse CreateVpcConnection(CreateVpcConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcConnectionResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateVpcConnection(CreateVpcConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcConnectionResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -833,7 +833,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
         public virtual DeleteClusterPolicyResponse DeleteClusterPolicy(DeleteClusterPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
 
@@ -900,7 +900,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteClusterPolicy(DeleteClusterPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
 
@@ -945,7 +945,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -966,7 +966,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteConfiguration(DeleteConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
         public virtual DeleteReplicatorResponse DeleteReplicator(DeleteReplicatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicatorResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteReplicator">REST API Reference for DeleteReplicator Operation</seealso>
         public virtual IAsyncResult BeginDeleteReplicator(DeleteReplicatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicatorResponseUnmarshaller.Instance;
 
@@ -1086,7 +1086,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
         public virtual DeleteVpcConnectionResponse DeleteVpcConnection(DeleteVpcConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcConnectionResponseUnmarshaller.Instance;
 
@@ -1107,7 +1107,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteVpcConnection(DeleteVpcConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcConnectionResponseUnmarshaller.Instance;
 
@@ -1156,7 +1156,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -1225,7 +1225,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
         public virtual DescribeClusterOperationResponse DescribeClusterOperation(DescribeClusterOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
 
@@ -1246,7 +1246,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperation">REST API Reference for DescribeClusterOperation Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusterOperation(DescribeClusterOperationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterOperationResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
         public virtual DescribeClusterOperationV2Response DescribeClusterOperationV2(DescribeClusterOperationV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
 
@@ -1321,7 +1321,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">REST API Reference for DescribeClusterOperationV2 Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusterOperationV2(DescribeClusterOperationV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterOperationV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterOperationV2ResponseUnmarshaller.Instance;
 
@@ -1370,7 +1370,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
         public virtual DescribeClusterV2Response DescribeClusterV2(DescribeClusterV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterV2ResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterV2">REST API Reference for DescribeClusterV2 Operation</seealso>
         public virtual IAsyncResult BeginDescribeClusterV2(DescribeClusterV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterV2ResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual DescribeConfigurationResponse DescribeConfiguration(DescribeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -1463,7 +1463,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfiguration">REST API Reference for DescribeConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfiguration(DescribeConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual DescribeConfigurationRevisionResponse DescribeConfigurationRevision(DescribeConfigurationRevisionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -1535,7 +1535,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeConfigurationRevision">REST API Reference for DescribeConfigurationRevision Operation</seealso>
         public virtual IAsyncResult BeginDescribeConfigurationRevision(DescribeConfigurationRevisionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConfigurationRevisionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConfigurationRevisionResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">REST API Reference for DescribeReplicator Operation</seealso>
         public virtual DescribeReplicatorResponse DescribeReplicator(DescribeReplicatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicatorResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeReplicator">REST API Reference for DescribeReplicator Operation</seealso>
         public virtual IAsyncResult BeginDescribeReplicator(DescribeReplicatorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicatorResponseUnmarshaller.Instance;
 
@@ -1661,7 +1661,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
         public virtual DescribeVpcConnectionResponse DescribeVpcConnection(DescribeVpcConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcConnectionResponseUnmarshaller.Instance;
 
@@ -1682,7 +1682,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
         public virtual IAsyncResult BeginDescribeVpcConnection(DescribeVpcConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcConnectionResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetBootstrapBrokers">REST API Reference for GetBootstrapBrokers Operation</seealso>
         public virtual GetBootstrapBrokersResponse GetBootstrapBrokers(GetBootstrapBrokersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBootstrapBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBootstrapBrokersResponseUnmarshaller.Instance;
 
@@ -1755,7 +1755,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetBootstrapBrokers">REST API Reference for GetBootstrapBrokers Operation</seealso>
         public virtual IAsyncResult BeginGetBootstrapBrokers(GetBootstrapBrokersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBootstrapBrokersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBootstrapBrokersResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
         public virtual GetClusterPolicyResponse GetClusterPolicy(GetClusterPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
 
@@ -1821,7 +1821,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetClusterPolicy(GetClusterPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
 
@@ -1875,7 +1875,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
         public virtual GetCompatibleKafkaVersionsResponse GetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
         public virtual IAsyncResult BeginGetCompatibleKafkaVersions(GetCompatibleKafkaVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleKafkaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
 
@@ -1944,7 +1944,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
         public virtual ListClientVpcConnectionsResponse ListClientVpcConnections(ListClientVpcConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClientVpcConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClientVpcConnectionsResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
         public virtual IAsyncResult BeginListClientVpcConnections(ListClientVpcConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClientVpcConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClientVpcConnectionsResponseUnmarshaller.Instance;
 
@@ -2011,7 +2011,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
         public virtual ListClusterOperationsResponse ListClusterOperations(ListClusterOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperations">REST API Reference for ListClusterOperations Operation</seealso>
         public virtual IAsyncResult BeginListClusterOperations(ListClusterOperationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterOperationsResponseUnmarshaller.Instance;
 
@@ -2087,7 +2087,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
         public virtual ListClusterOperationsV2Response ListClusterOperationsV2(ListClusterOperationsV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">REST API Reference for ListClusterOperationsV2 Operation</seealso>
         public virtual IAsyncResult BeginListClusterOperationsV2(ListClusterOperationsV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterOperationsV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterOperationsV2ResponseUnmarshaller.Instance;
 
@@ -2153,7 +2153,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -2219,7 +2219,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
         public virtual ListClustersV2Response ListClustersV2(ListClustersV2Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersV2ResponseUnmarshaller.Instance;
 
@@ -2240,7 +2240,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClustersV2">REST API Reference for ListClustersV2 Operation</seealso>
         public virtual IAsyncResult BeginListClustersV2(ListClustersV2Request request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersV2RequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersV2ResponseUnmarshaller.Instance;
 
@@ -2291,7 +2291,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual ListConfigurationRevisionsResponse ListConfigurationRevisions(ListConfigurationRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -2312,7 +2312,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurationRevisions">REST API Reference for ListConfigurationRevisions Operation</seealso>
         public virtual IAsyncResult BeginListConfigurationRevisions(ListConfigurationRevisionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationRevisionsResponseUnmarshaller.Instance;
 
@@ -2360,7 +2360,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -2381,7 +2381,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
@@ -2426,7 +2426,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">REST API Reference for ListKafkaVersions Operation</seealso>
         public virtual ListKafkaVersionsResponse ListKafkaVersions(ListKafkaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKafkaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKafkaVersionsResponseUnmarshaller.Instance;
 
@@ -2447,7 +2447,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListKafkaVersions">REST API Reference for ListKafkaVersions Operation</seealso>
         public virtual IAsyncResult BeginListKafkaVersions(ListKafkaVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKafkaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKafkaVersionsResponseUnmarshaller.Instance;
 
@@ -2492,7 +2492,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual ListNodesResponse ListNodes(ListNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -2513,7 +2513,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListNodes">REST API Reference for ListNodes Operation</seealso>
         public virtual IAsyncResult BeginListNodes(ListNodesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
@@ -2567,7 +2567,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">REST API Reference for ListReplicators Operation</seealso>
         public virtual ListReplicatorsResponse ListReplicators(ListReplicatorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplicatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplicatorsResponseUnmarshaller.Instance;
 
@@ -2588,7 +2588,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListReplicators">REST API Reference for ListReplicators Operation</seealso>
         public virtual IAsyncResult BeginListReplicators(ListReplicatorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReplicatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReplicatorsResponseUnmarshaller.Instance;
 
@@ -2642,7 +2642,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
         public virtual ListScramSecretsResponse ListScramSecrets(ListScramSecretsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
 
@@ -2663,7 +2663,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
         public virtual IAsyncResult BeginListScramSecrets(ListScramSecretsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
 
@@ -2705,7 +2705,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2726,7 +2726,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2774,7 +2774,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
         public virtual ListVpcConnectionsResponse ListVpcConnections(ListVpcConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcConnectionsResponseUnmarshaller.Instance;
 
@@ -2795,7 +2795,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
         public virtual IAsyncResult BeginListVpcConnections(ListVpcConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcConnectionsResponseUnmarshaller.Instance;
 
@@ -2838,7 +2838,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
         public virtual PutClusterPolicyResponse PutClusterPolicy(PutClusterPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
 
@@ -2859,7 +2859,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutClusterPolicy(PutClusterPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
 
@@ -2913,7 +2913,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual RebootBrokerResponse RebootBroker(RebootBrokerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -2934,7 +2934,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         public virtual IAsyncResult BeginRebootBroker(RebootBrokerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootBrokerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
@@ -2982,7 +2982,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
         public virtual RejectClientVpcConnectionResponse RejectClientVpcConnection(RejectClientVpcConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectClientVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectClientVpcConnectionResponseUnmarshaller.Instance;
 
@@ -3003,7 +3003,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
         public virtual IAsyncResult BeginRejectClientVpcConnection(RejectClientVpcConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectClientVpcConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectClientVpcConnectionResponseUnmarshaller.Instance;
 
@@ -3045,7 +3045,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3066,7 +3066,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3108,7 +3108,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3129,7 +3129,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3177,7 +3177,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerCount">REST API Reference for UpdateBrokerCount Operation</seealso>
         public virtual UpdateBrokerCountResponse UpdateBrokerCount(UpdateBrokerCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerCountResponseUnmarshaller.Instance;
 
@@ -3198,7 +3198,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerCount">REST API Reference for UpdateBrokerCount Operation</seealso>
         public virtual IAsyncResult BeginUpdateBrokerCount(UpdateBrokerCountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerCountResponseUnmarshaller.Instance;
 
@@ -3246,7 +3246,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
         public virtual UpdateBrokerStorageResponse UpdateBrokerStorage(UpdateBrokerStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
 
@@ -3267,7 +3267,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerStorage">REST API Reference for UpdateBrokerStorage Operation</seealso>
         public virtual IAsyncResult BeginUpdateBrokerStorage(UpdateBrokerStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerStorageResponseUnmarshaller.Instance;
 
@@ -3321,7 +3321,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType">REST API Reference for UpdateBrokerType Operation</seealso>
         public virtual UpdateBrokerTypeResponse UpdateBrokerType(UpdateBrokerTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerTypeResponseUnmarshaller.Instance;
 
@@ -3342,7 +3342,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateBrokerType">REST API Reference for UpdateBrokerType Operation</seealso>
         public virtual IAsyncResult BeginUpdateBrokerType(UpdateBrokerTypeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrokerTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrokerTypeResponseUnmarshaller.Instance;
 
@@ -3393,7 +3393,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
         public virtual UpdateClusterConfigurationResponse UpdateClusterConfiguration(UpdateClusterConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
 
@@ -3414,7 +3414,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterConfiguration">REST API Reference for UpdateClusterConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateClusterConfiguration(UpdateClusterConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterConfigurationResponseUnmarshaller.Instance;
 
@@ -3468,7 +3468,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
         public virtual UpdateClusterKafkaVersionResponse UpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
 
@@ -3489,7 +3489,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateClusterKafkaVersion">REST API Reference for UpdateClusterKafkaVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterKafkaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterKafkaVersionResponseUnmarshaller.Instance;
 
@@ -3540,7 +3540,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -3561,7 +3561,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateConfiguration(UpdateConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
@@ -3612,7 +3612,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
         public virtual UpdateConnectivityResponse UpdateConnectivity(UpdateConnectivityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectivityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectivityResponseUnmarshaller.Instance;
 
@@ -3633,7 +3633,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConnectivity">REST API Reference for UpdateConnectivity Operation</seealso>
         public virtual IAsyncResult BeginUpdateConnectivity(UpdateConnectivityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectivityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectivityResponseUnmarshaller.Instance;
 
@@ -3683,7 +3683,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
         public virtual UpdateMonitoringResponse UpdateMonitoring(UpdateMonitoringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitoringResponseUnmarshaller.Instance;
 
@@ -3704,7 +3704,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring">REST API Reference for UpdateMonitoring Operation</seealso>
         public virtual IAsyncResult BeginUpdateMonitoring(UpdateMonitoringRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitoringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitoringResponseUnmarshaller.Instance;
 
@@ -3758,7 +3758,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">REST API Reference for UpdateReplicationInfo Operation</seealso>
         public virtual UpdateReplicationInfoResponse UpdateReplicationInfo(UpdateReplicationInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationInfoResponseUnmarshaller.Instance;
 
@@ -3779,7 +3779,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateReplicationInfo">REST API Reference for UpdateReplicationInfo Operation</seealso>
         public virtual IAsyncResult BeginUpdateReplicationInfo(UpdateReplicationInfoRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationInfoResponseUnmarshaller.Instance;
 
@@ -3834,7 +3834,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">REST API Reference for UpdateSecurity Operation</seealso>
         public virtual UpdateSecurityResponse UpdateSecurity(UpdateSecurityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityResponseUnmarshaller.Instance;
 
@@ -3855,7 +3855,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateSecurity">REST API Reference for UpdateSecurity Operation</seealso>
         public virtual IAsyncResult BeginUpdateSecurity(UpdateSecurityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityResponseUnmarshaller.Instance;
 
@@ -3909,7 +3909,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateStorage">REST API Reference for UpdateStorage Operation</seealso>
         public virtual UpdateStorageResponse UpdateStorage(UpdateStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageResponseUnmarshaller.Instance;
 
@@ -3930,7 +3930,7 @@ namespace Amazon.Kafka
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateStorage">REST API Reference for UpdateStorage Operation</seealso>
         public virtual IAsyncResult BeginUpdateStorage(UpdateStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageResponseUnmarshaller.Instance;
 

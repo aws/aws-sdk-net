@@ -333,7 +333,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
         public virtual GetControlResponse GetControl(GetControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/GetControl">REST API Reference for GetControl Operation</seealso>
         public virtual Task<GetControlResponse> GetControlAsync(GetControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
             
@@ -420,7 +420,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListCommonControls">REST API Reference for ListCommonControls Operation</seealso>
         public virtual ListCommonControlsResponse ListCommonControls(ListCommonControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommonControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommonControlsResponseUnmarshaller.Instance;
 
@@ -459,7 +459,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListCommonControls">REST API Reference for ListCommonControls Operation</seealso>
         public virtual Task<ListCommonControlsResponse> ListCommonControlsAsync(ListCommonControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommonControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommonControlsResponseUnmarshaller.Instance;
             
@@ -495,7 +495,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">REST API Reference for ListControlMappings Operation</seealso>
         public virtual ListControlMappingsResponse ListControlMappings(ListControlMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlMappingsResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControlMappings">REST API Reference for ListControlMappings Operation</seealso>
         public virtual Task<ListControlMappingsResponse> ListControlMappingsAsync(ListControlMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlMappingsResponseUnmarshaller.Instance;
             
@@ -567,7 +567,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
         public virtual ListControlsResponse ListControls(ListControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListControls">REST API Reference for ListControls Operation</seealso>
         public virtual Task<ListControlsResponse> ListControlsAsync(ListControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
             
@@ -637,7 +637,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -670,7 +670,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
             
@@ -710,7 +710,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListObjectives">REST API Reference for ListObjectives Operation</seealso>
         public virtual ListObjectivesResponse ListObjectives(ListObjectivesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectivesResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.ControlCatalog
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/controlcatalog-2018-05-10/ListObjectives">REST API Reference for ListObjectives Operation</seealso>
         public virtual Task<ListObjectivesResponse> ListObjectivesAsync(ListObjectivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObjectivesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObjectivesResponseUnmarshaller.Instance;
             

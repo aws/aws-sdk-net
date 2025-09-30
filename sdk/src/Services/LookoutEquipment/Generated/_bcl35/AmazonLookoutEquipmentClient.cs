@@ -299,7 +299,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -381,7 +381,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
         public virtual CreateInferenceSchedulerResponse CreateInferenceScheduler(CreateInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -402,7 +402,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateInferenceScheduler">REST API Reference for CreateInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginCreateInferenceScheduler(CreateInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -459,7 +459,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
         public virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
         public virtual IAsyncResult BeginCreateLabel(CreateLabelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
         public virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateLabelGroup(CreateLabelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual CreateModelResponse CreateModel(CreateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -647,7 +647,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateModel">REST API Reference for CreateModel Operation</seealso>
         public virtual IAsyncResult BeginCreateModel(CreateModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
         public virtual CreateRetrainingSchedulerResponse CreateRetrainingScheduler(CreateRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler">REST API Reference for CreateRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginCreateRetrainingScheduler(CreateRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -780,7 +780,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -801,7 +801,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -856,7 +856,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
         public virtual DeleteInferenceSchedulerResponse DeleteInferenceScheduler(DeleteInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteInferenceScheduler">REST API Reference for DeleteInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginDeleteInferenceScheduler(DeleteInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -931,7 +931,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         public virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
         public virtual IAsyncResult BeginDeleteLabel(DeleteLabelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         public virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
 
@@ -1027,7 +1027,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteLabelGroup(DeleteLabelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
         public virtual IAsyncResult BeginDeleteModel(DeleteModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
@@ -1158,7 +1158,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
         public virtual DeleteRetrainingSchedulerResponse DeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler">REST API Reference for DeleteRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginDeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
         public virtual DescribeDataIngestionJobResponse DescribeDataIngestionJob(DescribeDataIngestionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataIngestionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataIngestionJobResponseUnmarshaller.Instance;
 
@@ -1327,7 +1327,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">REST API Reference for DescribeDataIngestionJob Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataIngestionJob(DescribeDataIngestionJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataIngestionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataIngestionJobResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
         public virtual DescribeInferenceSchedulerResponse DescribeInferenceScheduler(DescribeInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -1471,7 +1471,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler">REST API Reference for DescribeInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginDescribeInferenceScheduler(DescribeInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
         public virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
 
@@ -1542,7 +1542,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
         public virtual IAsyncResult BeginDescribeLabel(DescribeLabelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
         public virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
 
@@ -1613,7 +1613,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
         public virtual IAsyncResult BeginDescribeLabelGroup(DescribeLabelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
 
@@ -1665,7 +1665,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModel">REST API Reference for DescribeModel Operation</seealso>
         public virtual IAsyncResult BeginDescribeModel(DescribeModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
@@ -1736,7 +1736,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
         public virtual DescribeModelVersionResponse DescribeModelVersion(DescribeModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelVersionResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">REST API Reference for DescribeModelVersion Operation</seealso>
         public virtual IAsyncResult BeginDescribeModelVersion(DescribeModelVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeModelVersionResponseUnmarshaller.Instance;
 
@@ -1807,7 +1807,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual DescribeResourcePolicyResponse DescribeResourcePolicy(DescribeResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1828,7 +1828,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">REST API Reference for DescribeResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribeResourcePolicy(DescribeResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
         public virtual DescribeRetrainingSchedulerResponse DescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -1900,7 +1900,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler">REST API Reference for DescribeRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginDescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -1957,7 +1957,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
         public virtual ImportDatasetResponse ImportDataset(ImportDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDatasetResponseUnmarshaller.Instance;
 
@@ -1978,7 +1978,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">REST API Reference for ImportDataset Operation</seealso>
         public virtual IAsyncResult BeginImportDataset(ImportDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDatasetResponseUnmarshaller.Instance;
 
@@ -2035,7 +2035,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
         public virtual ImportModelVersionResponse ImportModelVersion(ImportModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportModelVersionResponseUnmarshaller.Instance;
 
@@ -2056,7 +2056,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">REST API Reference for ImportModelVersion Operation</seealso>
         public virtual IAsyncResult BeginImportModelVersion(ImportModelVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportModelVersionResponseUnmarshaller.Instance;
 
@@ -2103,7 +2103,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
         public virtual ListDataIngestionJobsResponse ListDataIngestionJobs(ListDataIngestionJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIngestionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIngestionJobsResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDataIngestionJobs">REST API Reference for ListDataIngestionJobs Operation</seealso>
         public virtual IAsyncResult BeginListDataIngestionJobs(ListDataIngestionJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataIngestionJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataIngestionJobsResponseUnmarshaller.Instance;
 
@@ -2170,7 +2170,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual IAsyncResult BeginListDatasets(ListDatasetsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -2241,7 +2241,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
         public virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
 
@@ -2262,7 +2262,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
         public virtual IAsyncResult BeginListInferenceEvents(ListInferenceEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
 
@@ -2313,7 +2313,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
         public virtual ListInferenceExecutionsResponse ListInferenceExecutions(ListInferenceExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceExecutionsResponseUnmarshaller.Instance;
 
@@ -2334,7 +2334,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">REST API Reference for ListInferenceExecutions Operation</seealso>
         public virtual IAsyncResult BeginListInferenceExecutions(ListInferenceExecutionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceExecutionsResponseUnmarshaller.Instance;
 
@@ -2380,7 +2380,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
         public virtual ListInferenceSchedulersResponse ListInferenceSchedulers(ListInferenceSchedulersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceSchedulersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceSchedulersResponseUnmarshaller.Instance;
 
@@ -2401,7 +2401,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceSchedulers">REST API Reference for ListInferenceSchedulers Operation</seealso>
         public virtual IAsyncResult BeginListInferenceSchedulers(ListInferenceSchedulersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceSchedulersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceSchedulersResponseUnmarshaller.Instance;
 
@@ -2447,7 +2447,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
         public virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
 
@@ -2468,7 +2468,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
         public virtual IAsyncResult BeginListLabelGroups(ListLabelGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
         public virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
 
@@ -2535,7 +2535,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
         public virtual IAsyncResult BeginListLabels(ListLabelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
 
@@ -2582,7 +2582,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual ListModelsResponse ListModels(ListModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
 
@@ -2603,7 +2603,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">REST API Reference for ListModels Operation</seealso>
         public virtual IAsyncResult BeginListModels(ListModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelsResponseUnmarshaller.Instance;
 
@@ -2655,7 +2655,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
         public virtual ListModelVersionsResponse ListModelVersions(ListModelVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelVersionsResponseUnmarshaller.Instance;
 
@@ -2676,7 +2676,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">REST API Reference for ListModelVersions Operation</seealso>
         public virtual IAsyncResult BeginListModelVersions(ListModelVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelVersionsResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
         public virtual ListRetrainingSchedulersResponse ListRetrainingSchedulers(ListRetrainingSchedulersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrainingSchedulersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrainingSchedulersResponseUnmarshaller.Instance;
 
@@ -2744,7 +2744,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers">REST API Reference for ListRetrainingSchedulers Operation</seealso>
         public virtual IAsyncResult BeginListRetrainingSchedulers(ListRetrainingSchedulersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetrainingSchedulersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetrainingSchedulersResponseUnmarshaller.Instance;
 
@@ -2796,7 +2796,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
         public virtual ListSensorStatisticsResponse ListSensorStatistics(ListSensorStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
 
@@ -2817,7 +2817,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListSensorStatistics">REST API Reference for ListSensorStatistics Operation</seealso>
         public virtual IAsyncResult BeginListSensorStatistics(ListSensorStatisticsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSensorStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSensorStatisticsResponseUnmarshaller.Instance;
 
@@ -2867,7 +2867,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2888,7 +2888,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2945,7 +2945,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2966,7 +2966,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3023,7 +3023,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
         public virtual StartDataIngestionJobResponse StartDataIngestionJob(StartDataIngestionJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataIngestionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataIngestionJobResponseUnmarshaller.Instance;
 
@@ -3044,7 +3044,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartDataIngestionJob">REST API Reference for StartDataIngestionJob Operation</seealso>
         public virtual IAsyncResult BeginStartDataIngestionJob(StartDataIngestionJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataIngestionJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataIngestionJobResponseUnmarshaller.Instance;
 
@@ -3098,7 +3098,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
         public virtual StartInferenceSchedulerResponse StartInferenceScheduler(StartInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3119,7 +3119,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartInferenceScheduler">REST API Reference for StartInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginStartInferenceScheduler(StartInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3173,7 +3173,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
         public virtual StartRetrainingSchedulerResponse StartRetrainingScheduler(StartRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -3194,7 +3194,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler">REST API Reference for StartRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginStartRetrainingScheduler(StartRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -3248,7 +3248,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
         public virtual StopInferenceSchedulerResponse StopInferenceScheduler(StopInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3269,7 +3269,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopInferenceScheduler">REST API Reference for StopInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginStopInferenceScheduler(StopInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3323,7 +3323,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
         public virtual StopRetrainingSchedulerResponse StopRetrainingScheduler(StopRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -3344,7 +3344,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler">REST API Reference for StopRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginStopRetrainingScheduler(StopRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -3401,7 +3401,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3422,7 +3422,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3472,7 +3472,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3493,7 +3493,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3547,7 +3547,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
         public virtual UpdateActiveModelVersionResponse UpdateActiveModelVersion(UpdateActiveModelVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateActiveModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateActiveModelVersionResponseUnmarshaller.Instance;
 
@@ -3568,7 +3568,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">REST API Reference for UpdateActiveModelVersion Operation</seealso>
         public virtual IAsyncResult BeginUpdateActiveModelVersion(UpdateActiveModelVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateActiveModelVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateActiveModelVersionResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
         public virtual UpdateInferenceSchedulerResponse UpdateInferenceScheduler(UpdateInferenceSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3643,7 +3643,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateInferenceScheduler">REST API Reference for UpdateInferenceScheduler Operation</seealso>
         public virtual IAsyncResult BeginUpdateInferenceScheduler(UpdateInferenceSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInferenceSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInferenceSchedulerResponseUnmarshaller.Instance;
 
@@ -3697,7 +3697,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
         public virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
 
@@ -3718,7 +3718,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateLabelGroup(UpdateLabelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
 
@@ -3772,7 +3772,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual UpdateModelResponse UpdateModel(UpdateModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -3793,7 +3793,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel">REST API Reference for UpdateModel Operation</seealso>
         public virtual IAsyncResult BeginUpdateModel(UpdateModelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
@@ -3847,7 +3847,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
         public virtual UpdateRetrainingSchedulerResponse UpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRetrainingSchedulerResponseUnmarshaller.Instance;
 
@@ -3868,7 +3868,7 @@ namespace Amazon.LookoutEquipment
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler">REST API Reference for UpdateRetrainingScheduler Operation</seealso>
         public virtual IAsyncResult BeginUpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRetrainingSchedulerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRetrainingSchedulerResponseUnmarshaller.Instance;
 

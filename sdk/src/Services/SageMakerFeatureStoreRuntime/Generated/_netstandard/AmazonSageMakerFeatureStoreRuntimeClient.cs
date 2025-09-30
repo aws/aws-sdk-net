@@ -282,7 +282,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
         internal virtual BatchGetRecordResponse BatchGetRecord(BatchGetRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRecordResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">REST API Reference for BatchGetRecord Operation</seealso>
         public virtual Task<BatchGetRecordResponse> BatchGetRecordAsync(BatchGetRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetRecordResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
         internal virtual DeleteRecordResponse DeleteRecord(DeleteRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecordResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/DeleteRecord">REST API Reference for DeleteRecord Operation</seealso>
         public virtual Task<DeleteRecordResponse> DeleteRecordAsync(DeleteRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecordResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
         internal virtual GetRecordResponse GetRecord(GetRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/GetRecord">REST API Reference for GetRecord Operation</seealso>
         public virtual Task<GetRecordResponse> GetRecordAsync(GetRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordResponseUnmarshaller.Instance;
 
@@ -462,7 +462,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
         internal virtual PutRecordResponse PutRecord(PutRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
 
@@ -519,7 +519,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public virtual Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutRecordResponseUnmarshaller.Instance;
 

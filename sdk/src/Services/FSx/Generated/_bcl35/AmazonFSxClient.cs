@@ -299,7 +299,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">REST API Reference for AssociateFileSystemAliases Operation</seealso>
         public virtual AssociateFileSystemAliasesResponse AssociateFileSystemAliases(AssociateFileSystemAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -320,7 +320,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">REST API Reference for AssociateFileSystemAliases Operation</seealso>
         public virtual IAsyncResult BeginAssociateFileSystemAliases(AssociateFileSystemAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -389,7 +389,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">REST API Reference for CancelDataRepositoryTask Operation</seealso>
         public virtual CancelDataRepositoryTaskResponse CancelDataRepositoryTask(CancelDataRepositoryTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataRepositoryTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataRepositoryTaskResponseUnmarshaller.Instance;
 
@@ -410,7 +410,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">REST API Reference for CancelDataRepositoryTask Operation</seealso>
         public virtual IAsyncResult BeginCancelDataRepositoryTask(CancelDataRepositoryTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataRepositoryTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataRepositoryTaskResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">REST API Reference for CopyBackup Operation</seealso>
         public virtual CopyBackupResponse CopyBackup(CopyBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyBackupResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">REST API Reference for CopyBackup Operation</seealso>
         public virtual IAsyncResult BeginCopyBackup(CopyBackupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyBackupResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">REST API Reference for CopySnapshotAndUpdateVolume Operation</seealso>
         public virtual CopySnapshotAndUpdateVolumeResponse CopySnapshotAndUpdateVolume(CopySnapshotAndUpdateVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotAndUpdateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotAndUpdateVolumeResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopySnapshotAndUpdateVolume">REST API Reference for CopySnapshotAndUpdateVolume Operation</seealso>
         public virtual IAsyncResult BeginCopySnapshotAndUpdateVolume(CopySnapshotAndUpdateVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotAndUpdateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotAndUpdateVolumeResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateAndAttachS3AccessPoint">REST API Reference for CreateAndAttachS3AccessPoint Operation</seealso>
         public virtual CreateAndAttachS3AccessPointResponse CreateAndAttachS3AccessPoint(CreateAndAttachS3AccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAndAttachS3AccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAndAttachS3AccessPointResponseUnmarshaller.Instance;
 
@@ -737,7 +737,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateAndAttachS3AccessPoint">REST API Reference for CreateAndAttachS3AccessPoint Operation</seealso>
         public virtual IAsyncResult BeginCreateAndAttachS3AccessPoint(CreateAndAttachS3AccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAndAttachS3AccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAndAttachS3AccessPointResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
@@ -892,7 +892,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public virtual IAsyncResult BeginCreateBackup(CreateBackupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackupResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryAssociation">REST API Reference for CreateDataRepositoryAssociation Operation</seealso>
         public virtual CreateDataRepositoryAssociationResponse CreateDataRepositoryAssociation(CreateDataRepositoryAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryAssociation">REST API Reference for CreateDataRepositoryAssociation Operation</seealso>
         public virtual IAsyncResult BeginCreateDataRepositoryAssociation(CreateDataRepositoryAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -1068,7 +1068,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">REST API Reference for CreateDataRepositoryTask Operation</seealso>
         public virtual CreateDataRepositoryTaskResponse CreateDataRepositoryTask(CreateDataRepositoryTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataRepositoryTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataRepositoryTaskResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">REST API Reference for CreateDataRepositoryTask Operation</seealso>
         public virtual IAsyncResult BeginCreateDataRepositoryTask(CreateDataRepositoryTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataRepositoryTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataRepositoryTaskResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
         public virtual CreateFileCacheResponse CreateFileCache(CreateFileCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileCacheResponseUnmarshaller.Instance;
 
@@ -1195,7 +1195,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileCache">REST API Reference for CreateFileCache Operation</seealso>
         public virtual IAsyncResult BeginCreateFileCache(CreateFileCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileCacheResponseUnmarshaller.Instance;
 
@@ -1318,7 +1318,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
@@ -1339,7 +1339,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public virtual IAsyncResult BeginCreateFileSystem(CreateFileSystemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileSystemResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         public virtual CreateFileSystemFromBackupResponse CreateFileSystemFromBackup(CreateFileSystemFromBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
 
@@ -1467,7 +1467,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup">REST API Reference for CreateFileSystemFromBackup Operation</seealso>
         public virtual IAsyncResult BeginCreateFileSystemFromBackup(CreateFileSystemFromBackupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFileSystemFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFileSystemFromBackupResponseUnmarshaller.Instance;
 
@@ -1548,7 +1548,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1626,7 +1626,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">REST API Reference for CreateStorageVirtualMachine Operation</seealso>
         public virtual CreateStorageVirtualMachineResponse CreateStorageVirtualMachine(CreateStorageVirtualMachineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -1647,7 +1647,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateStorageVirtualMachine">REST API Reference for CreateStorageVirtualMachine Operation</seealso>
         public virtual IAsyncResult BeginCreateStorageVirtualMachine(CreateStorageVirtualMachineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -1707,7 +1707,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public virtual CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -1728,7 +1728,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public virtual IAsyncResult BeginCreateVolume(CreateVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeResponseUnmarshaller.Instance;
 
@@ -1789,7 +1789,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
         public virtual CreateVolumeFromBackupResponse CreateVolumeFromBackup(CreateVolumeFromBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeFromBackupResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateVolumeFromBackup">REST API Reference for CreateVolumeFromBackup Operation</seealso>
         public virtual IAsyncResult BeginCreateVolumeFromBackup(CreateVolumeFromBackupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVolumeFromBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVolumeFromBackupResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
@@ -1900,7 +1900,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackup(DeleteBackupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackupResponseUnmarshaller.Instance;
 
@@ -1956,7 +1956,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
         public virtual DeleteDataRepositoryAssociationResponse DeleteDataRepositoryAssociation(DeleteDataRepositoryAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -1977,7 +1977,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">REST API Reference for DeleteDataRepositoryAssociation Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataRepositoryAssociation(DeleteDataRepositoryAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -2043,7 +2043,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
         public virtual DeleteFileCacheResponse DeleteFileCache(DeleteFileCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileCacheResponseUnmarshaller.Instance;
 
@@ -2064,7 +2064,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileCache">REST API Reference for DeleteFileCache Operation</seealso>
         public virtual IAsyncResult BeginDeleteFileCache(DeleteFileCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileCacheResponseUnmarshaller.Instance;
 
@@ -2171,7 +2171,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual DeleteFileSystemResponse DeleteFileSystem(DeleteFileSystemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
@@ -2192,7 +2192,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public virtual IAsyncResult BeginDeleteFileSystem(DeleteFileSystemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFileSystemResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -2312,7 +2312,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         public virtual DeleteStorageVirtualMachineResponse DeleteStorageVirtualMachine(DeleteStorageVirtualMachineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -2333,7 +2333,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteStorageVirtualMachine">REST API Reference for DeleteStorageVirtualMachine Operation</seealso>
         public virtual IAsyncResult BeginDeleteStorageVirtualMachine(DeleteStorageVirtualMachineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -2384,7 +2384,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -2405,7 +2405,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public virtual IAsyncResult BeginDeleteVolume(DeleteVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
 
@@ -2488,7 +2488,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
@@ -2509,7 +2509,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public virtual IAsyncResult BeginDescribeBackups(DescribeBackupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBackupsResponseUnmarshaller.Instance;
 
@@ -2581,7 +2581,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">REST API Reference for DescribeDataRepositoryAssociations Operation</seealso>
         public virtual DescribeDataRepositoryAssociationsResponse DescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -2602,7 +2602,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryAssociations">REST API Reference for DescribeDataRepositoryAssociations Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataRepositoryAssociations(DescribeDataRepositoryAssociationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataRepositoryAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataRepositoryAssociationsResponseUnmarshaller.Instance;
 
@@ -2662,7 +2662,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">REST API Reference for DescribeDataRepositoryTasks Operation</seealso>
         public virtual DescribeDataRepositoryTasksResponse DescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataRepositoryTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataRepositoryTasksResponseUnmarshaller.Instance;
 
@@ -2683,7 +2683,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">REST API Reference for DescribeDataRepositoryTasks Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDataRepositoryTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDataRepositoryTasksResponseUnmarshaller.Instance;
 
@@ -2760,7 +2760,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">REST API Reference for DescribeFileCaches Operation</seealso>
         public virtual DescribeFileCachesResponse DescribeFileCaches(DescribeFileCachesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileCachesResponseUnmarshaller.Instance;
 
@@ -2781,7 +2781,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileCaches">REST API Reference for DescribeFileCaches Operation</seealso>
         public virtual IAsyncResult BeginDescribeFileCaches(DescribeFileCachesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileCachesResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">REST API Reference for DescribeFileSystemAliases Operation</seealso>
         public virtual DescribeFileSystemAliasesResponse DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -2847,7 +2847,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">REST API Reference for DescribeFileSystemAliases Operation</seealso>
         public virtual IAsyncResult BeginDescribeFileSystemAliases(DescribeFileSystemAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -2924,7 +2924,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public virtual DescribeFileSystemsResponse DescribeFileSystems(DescribeFileSystemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileSystemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
@@ -2945,7 +2945,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public virtual IAsyncResult BeginDescribeFileSystems(DescribeFileSystemsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFileSystemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFileSystemsResponseUnmarshaller.Instance;
 
@@ -3000,7 +3000,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeS3AccessPointAttachments">REST API Reference for DescribeS3AccessPointAttachments Operation</seealso>
         public virtual DescribeS3AccessPointAttachmentsResponse DescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeS3AccessPointAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeS3AccessPointAttachmentsResponseUnmarshaller.Instance;
 
@@ -3021,7 +3021,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeS3AccessPointAttachments">REST API Reference for DescribeS3AccessPointAttachments Operation</seealso>
         public virtual IAsyncResult BeginDescribeS3AccessPointAttachments(DescribeS3AccessPointAttachmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeS3AccessPointAttachmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeS3AccessPointAttachmentsResponseUnmarshaller.Instance;
 
@@ -3063,7 +3063,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration">REST API Reference for DescribeSharedVpcConfiguration Operation</seealso>
         public virtual DescribeSharedVpcConfigurationResponse DescribeSharedVpcConfiguration(DescribeSharedVpcConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSharedVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSharedVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -3084,7 +3084,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSharedVpcConfiguration">REST API Reference for DescribeSharedVpcConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDescribeSharedVpcConfiguration(DescribeSharedVpcConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSharedVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSharedVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -3161,7 +3161,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3182,7 +3182,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3224,7 +3224,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
         public virtual DescribeStorageVirtualMachinesResponse DescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageVirtualMachinesResponseUnmarshaller.Instance;
 
@@ -3245,7 +3245,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeStorageVirtualMachines">REST API Reference for DescribeStorageVirtualMachines Operation</seealso>
         public virtual IAsyncResult BeginDescribeStorageVirtualMachines(DescribeStorageVirtualMachinesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStorageVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStorageVirtualMachinesResponseUnmarshaller.Instance;
 
@@ -3287,7 +3287,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -3308,7 +3308,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public virtual IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVolumesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVolumesResponseUnmarshaller.Instance;
 
@@ -3372,7 +3372,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DetachAndDeleteS3AccessPoint">REST API Reference for DetachAndDeleteS3AccessPoint Operation</seealso>
         public virtual DetachAndDeleteS3AccessPointResponse DetachAndDeleteS3AccessPoint(DetachAndDeleteS3AccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachAndDeleteS3AccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachAndDeleteS3AccessPointResponseUnmarshaller.Instance;
 
@@ -3393,7 +3393,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DetachAndDeleteS3AccessPoint">REST API Reference for DetachAndDeleteS3AccessPoint Operation</seealso>
         public virtual IAsyncResult BeginDetachAndDeleteS3AccessPoint(DetachAndDeleteS3AccessPointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetachAndDeleteS3AccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetachAndDeleteS3AccessPointResponseUnmarshaller.Instance;
 
@@ -3446,7 +3446,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">REST API Reference for DisassociateFileSystemAliases Operation</seealso>
         public virtual DisassociateFileSystemAliasesResponse DisassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -3467,7 +3467,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">REST API Reference for DisassociateFileSystemAliases Operation</seealso>
         public virtual IAsyncResult BeginDisassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFileSystemAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFileSystemAliasesResponseUnmarshaller.Instance;
 
@@ -3547,7 +3547,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3568,7 +3568,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3619,7 +3619,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
         public virtual ReleaseFileSystemNfsV3LocksResponse ReleaseFileSystemNfsV3Locks(ReleaseFileSystemNfsV3LocksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseFileSystemNfsV3LocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseFileSystemNfsV3LocksResponseUnmarshaller.Instance;
 
@@ -3640,7 +3640,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ReleaseFileSystemNfsV3Locks">REST API Reference for ReleaseFileSystemNfsV3Locks Operation</seealso>
         public virtual IAsyncResult BeginReleaseFileSystemNfsV3Locks(ReleaseFileSystemNfsV3LocksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReleaseFileSystemNfsV3LocksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReleaseFileSystemNfsV3LocksResponseUnmarshaller.Instance;
 
@@ -3682,7 +3682,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         public virtual RestoreVolumeFromSnapshotResponse RestoreVolumeFromSnapshot(RestoreVolumeFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreVolumeFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreVolumeFromSnapshotResponseUnmarshaller.Instance;
 
@@ -3703,7 +3703,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/RestoreVolumeFromSnapshot">REST API Reference for RestoreVolumeFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginRestoreVolumeFromSnapshot(RestoreVolumeFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreVolumeFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreVolumeFromSnapshotResponseUnmarshaller.Instance;
 
@@ -3747,7 +3747,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
         public virtual StartMisconfiguredStateRecoveryResponse StartMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMisconfiguredStateRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMisconfiguredStateRecoveryResponseUnmarshaller.Instance;
 
@@ -3768,7 +3768,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StartMisconfiguredStateRecovery">REST API Reference for StartMisconfiguredStateRecovery Operation</seealso>
         public virtual IAsyncResult BeginStartMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMisconfiguredStateRecoveryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMisconfiguredStateRecoveryResponseUnmarshaller.Instance;
 
@@ -3817,7 +3817,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3838,7 +3838,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3887,7 +3887,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3908,7 +3908,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3961,7 +3961,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
         public virtual UpdateDataRepositoryAssociationResponse UpdateDataRepositoryAssociation(UpdateDataRepositoryAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -3982,7 +3982,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">REST API Reference for UpdateDataRepositoryAssociation Operation</seealso>
         public virtual IAsyncResult BeginUpdateDataRepositoryAssociation(UpdateDataRepositoryAssociationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataRepositoryAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataRepositoryAssociationResponseUnmarshaller.Instance;
 
@@ -4040,7 +4040,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">REST API Reference for UpdateFileCache Operation</seealso>
         public virtual UpdateFileCacheResponse UpdateFileCache(UpdateFileCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFileCacheResponseUnmarshaller.Instance;
 
@@ -4061,7 +4061,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileCache">REST API Reference for UpdateFileCache Operation</seealso>
         public virtual IAsyncResult BeginUpdateFileCache(UpdateFileCacheRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFileCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFileCacheResponseUnmarshaller.Instance;
 
@@ -4320,7 +4320,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         public virtual UpdateFileSystemResponse UpdateFileSystem(UpdateFileSystemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
 
@@ -4341,7 +4341,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">REST API Reference for UpdateFileSystem Operation</seealso>
         public virtual IAsyncResult BeginUpdateFileSystem(UpdateFileSystemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFileSystemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFileSystemResponseUnmarshaller.Instance;
 
@@ -4398,7 +4398,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration">REST API Reference for UpdateSharedVpcConfiguration Operation</seealso>
         public virtual UpdateSharedVpcConfigurationResponse UpdateSharedVpcConfiguration(UpdateSharedVpcConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSharedVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSharedVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -4419,7 +4419,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSharedVpcConfiguration">REST API Reference for UpdateSharedVpcConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateSharedVpcConfiguration(UpdateSharedVpcConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSharedVpcConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSharedVpcConfigurationResponseUnmarshaller.Instance;
 
@@ -4461,7 +4461,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         public virtual UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotResponseUnmarshaller.Instance;
 
@@ -4482,7 +4482,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         public virtual IAsyncResult BeginUpdateSnapshot(UpdateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSnapshotResponseUnmarshaller.Instance;
 
@@ -4532,7 +4532,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">REST API Reference for UpdateStorageVirtualMachine Operation</seealso>
         public virtual UpdateStorageVirtualMachineResponse UpdateStorageVirtualMachine(UpdateStorageVirtualMachineRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -4553,7 +4553,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">REST API Reference for UpdateStorageVirtualMachine Operation</seealso>
         public virtual IAsyncResult BeginUpdateStorageVirtualMachine(UpdateStorageVirtualMachineRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageVirtualMachineRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageVirtualMachineResponseUnmarshaller.Instance;
 
@@ -4604,7 +4604,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
 
@@ -4625,7 +4625,7 @@ namespace Amazon.FSx
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         public virtual IAsyncResult BeginUpdateVolume(UpdateVolumeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVolumeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVolumeResponseUnmarshaller.Instance;
 

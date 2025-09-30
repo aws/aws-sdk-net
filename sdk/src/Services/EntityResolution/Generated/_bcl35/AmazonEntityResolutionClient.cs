@@ -317,7 +317,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
         public virtual AddPolicyStatementResponse AddPolicyStatement(AddPolicyStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
 
@@ -338,7 +338,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
         public virtual IAsyncResult BeginAddPolicyStatement(AddPolicyStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
         public virtual BatchDeleteUniqueIdResponse BatchDeleteUniqueId(BatchDeleteUniqueIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
 
@@ -401,7 +401,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteUniqueId(BatchDeleteUniqueIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
 
@@ -463,7 +463,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
         public virtual CreateIdMappingWorkflowResponse CreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -484,7 +484,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginCreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
         public virtual CreateIdNamespaceResponse CreateIdNamespace(CreateIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
         public virtual IAsyncResult BeginCreateIdNamespace(CreateIdNamespaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
         public virtual CreateMatchingWorkflowResponse CreateMatchingWorkflow(CreateMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginCreateMatchingWorkflow(CreateMatchingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
         public virtual CreateSchemaMappingResponse CreateSchemaMapping(CreateSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
         public virtual IAsyncResult BeginCreateSchemaMapping(CreateSchemaMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -773,7 +773,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
         public virtual DeleteIdMappingWorkflowResponse DeleteIdMappingWorkflow(DeleteIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -794,7 +794,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdMappingWorkflow(DeleteIdMappingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
         public virtual DeleteIdNamespaceResponse DeleteIdNamespace(DeleteIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
 
@@ -860,7 +860,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
         public virtual IAsyncResult BeginDeleteIdNamespace(DeleteIdNamespaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
 
@@ -911,7 +911,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
         public virtual DeleteMatchingWorkflowResponse DeleteMatchingWorkflow(DeleteMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -932,7 +932,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginDeleteMatchingWorkflow(DeleteMatchingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
         public virtual DeletePolicyStatementResponse DeletePolicyStatement(DeletePolicyStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
         public virtual IAsyncResult BeginDeletePolicyStatement(DeletePolicyStatementRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
         public virtual DeleteSchemaMappingResponse DeleteSchemaMapping(DeleteSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1080,7 +1080,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
         public virtual IAsyncResult BeginDeleteSchemaMapping(DeleteSchemaMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
         public virtual GenerateMatchIdResponse GenerateMatchId(GenerateMatchIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
         public virtual IAsyncResult BeginGenerateMatchId(GenerateMatchIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
 
@@ -1210,7 +1210,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
         public virtual GetIdMappingJobResponse GetIdMappingJob(GetIdMappingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
         public virtual IAsyncResult BeginGetIdMappingJob(GetIdMappingJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
 
@@ -1279,7 +1279,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
         public virtual GetIdMappingWorkflowResponse GetIdMappingWorkflow(GetIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginGetIdMappingWorkflow(GetIdMappingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -1348,7 +1348,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
         public virtual GetIdNamespaceResponse GetIdNamespace(GetIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
 
@@ -1369,7 +1369,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
         public virtual IAsyncResult BeginGetIdNamespace(GetIdNamespaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
 
@@ -1424,7 +1424,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
         public virtual GetMatchIdResponse GetMatchId(GetMatchIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchIdResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
         public virtual IAsyncResult BeginGetMatchId(GetMatchIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchIdResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
         public virtual GetMatchingJobResponse GetMatchingJob(GetMatchingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingJobResponseUnmarshaller.Instance;
 
@@ -1515,7 +1515,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
         public virtual IAsyncResult BeginGetMatchingJob(GetMatchingJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingJobResponseUnmarshaller.Instance;
 
@@ -1563,7 +1563,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
         public virtual GetMatchingWorkflowResponse GetMatchingWorkflow(GetMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginGetMatchingWorkflow(GetMatchingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -1632,7 +1632,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
         public virtual GetProviderServiceResponse GetProviderService(GetProviderServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
 
@@ -1722,7 +1722,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
         public virtual IAsyncResult BeginGetProviderService(GetProviderServiceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
         public virtual GetSchemaMappingResponse GetSchemaMapping(GetSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1791,7 +1791,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
         public virtual IAsyncResult BeginGetSchemaMapping(GetSchemaMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1839,7 +1839,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
         public virtual ListIdMappingJobsResponse ListIdMappingJobs(ListIdMappingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
 
@@ -1860,7 +1860,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
         public virtual IAsyncResult BeginListIdMappingJobs(ListIdMappingJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
 
@@ -1906,7 +1906,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
         public virtual ListIdMappingWorkflowsResponse ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1927,7 +1927,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
         public virtual IAsyncResult BeginListIdMappingWorkflows(ListIdMappingWorkflowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1972,7 +1972,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
         public virtual ListIdNamespacesResponse ListIdNamespaces(ListIdNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
         public virtual IAsyncResult BeginListIdNamespaces(ListIdNamespacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
         public virtual ListMatchingJobsResponse ListMatchingJobs(ListMatchingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingJobsResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
         public virtual IAsyncResult BeginListMatchingJobs(ListMatchingJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingJobsResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
         public virtual ListMatchingWorkflowsResponse ListMatchingWorkflows(ListMatchingWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingWorkflowsResponseUnmarshaller.Instance;
 
@@ -2129,7 +2129,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
         public virtual IAsyncResult BeginListMatchingWorkflows(ListMatchingWorkflowsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingWorkflowsResponseUnmarshaller.Instance;
 
@@ -2175,7 +2175,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
         public virtual ListProviderServicesResponse ListProviderServices(ListProviderServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
 
@@ -2196,7 +2196,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
         public virtual IAsyncResult BeginListProviderServices(ListProviderServicesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
         public virtual ListSchemaMappingsResponse ListSchemaMappings(ListSchemaMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaMappingsResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
         public virtual IAsyncResult BeginListSchemaMappings(ListSchemaMappingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaMappingsResponseUnmarshaller.Instance;
 
@@ -2306,7 +2306,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2327,7 +2327,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2380,7 +2380,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -2401,7 +2401,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutPolicy(PutPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -2459,7 +2459,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
         public virtual StartIdMappingJobResponse StartIdMappingJob(StartIdMappingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
         public virtual IAsyncResult BeginStartIdMappingJob(StartIdMappingJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
 
@@ -2538,7 +2538,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
         public virtual StartMatchingJobResponse StartMatchingJob(StartMatchingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchingJobResponseUnmarshaller.Instance;
 
@@ -2559,7 +2559,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
         public virtual IAsyncResult BeginStartMatchingJob(StartMatchingJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchingJobResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2631,7 +2631,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2671,7 +2671,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2692,7 +2692,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2748,7 +2748,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
         public virtual UpdateIdMappingWorkflowResponse UpdateIdMappingWorkflow(UpdateIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -2769,7 +2769,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginUpdateIdMappingWorkflow(UpdateIdMappingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -2817,7 +2817,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
         public virtual UpdateIdNamespaceResponse UpdateIdNamespace(UpdateIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -2838,7 +2838,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
         public virtual IAsyncResult BeginUpdateIdNamespace(UpdateIdNamespaceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -2894,7 +2894,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>
         public virtual UpdateMatchingWorkflowResponse UpdateMatchingWorkflow(UpdateMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -2915,7 +2915,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>
         public virtual IAsyncResult BeginUpdateMatchingWorkflow(UpdateMatchingWorkflowRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -2975,7 +2975,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
         public virtual UpdateSchemaMappingResponse UpdateSchemaMapping(UpdateSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -2996,7 +2996,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
         public virtual IAsyncResult BeginUpdateSchemaMapping(UpdateSchemaMappingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
 

@@ -306,7 +306,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
             
@@ -407,7 +407,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateCustomPlugin">REST API Reference for CreateCustomPlugin Operation</seealso>
         public virtual CreateCustomPluginResponse CreateCustomPlugin(CreateCustomPluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomPluginResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateCustomPlugin">REST API Reference for CreateCustomPlugin Operation</seealso>
         public virtual Task<CreateCustomPluginResponse> CreateCustomPluginAsync(CreateCustomPluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomPluginResponseUnmarshaller.Instance;
             
@@ -508,7 +508,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateWorkerConfiguration">REST API Reference for CreateWorkerConfiguration Operation</seealso>
         public virtual CreateWorkerConfigurationResponse CreateWorkerConfiguration(CreateWorkerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerConfigurationResponseUnmarshaller.Instance;
 
@@ -558,7 +558,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateWorkerConfiguration">REST API Reference for CreateWorkerConfiguration Operation</seealso>
         public virtual Task<CreateWorkerConfigurationResponse> CreateWorkerConfigurationAsync(CreateWorkerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerConfigurationResponseUnmarshaller.Instance;
             
@@ -605,7 +605,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
             
@@ -698,7 +698,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin">REST API Reference for DeleteCustomPlugin Operation</seealso>
         public virtual DeleteCustomPluginResponse DeleteCustomPlugin(DeleteCustomPluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomPluginResponseUnmarshaller.Instance;
 
@@ -744,7 +744,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin">REST API Reference for DeleteCustomPlugin Operation</seealso>
         public virtual Task<DeleteCustomPluginResponse> DeleteCustomPluginAsync(DeleteCustomPluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomPluginResponseUnmarshaller.Instance;
             
@@ -791,7 +791,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
         public virtual DeleteWorkerConfigurationResponse DeleteWorkerConfiguration(DeleteWorkerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerConfigurationResponseUnmarshaller.Instance;
 
@@ -837,7 +837,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration">REST API Reference for DeleteWorkerConfiguration Operation</seealso>
         public virtual Task<DeleteWorkerConfigurationResponse> DeleteWorkerConfigurationAsync(DeleteWorkerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerConfigurationResponseUnmarshaller.Instance;
             
@@ -884,7 +884,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
         public virtual DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
         public virtual Task<DescribeConnectorResponse> DescribeConnectorAsync(DescribeConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
             
@@ -977,7 +977,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
         public virtual DescribeConnectorOperationResponse DescribeConnectorOperation(DescribeConnectorOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorOperationResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnectorOperation">REST API Reference for DescribeConnectorOperation Operation</seealso>
         public virtual Task<DescribeConnectorOperationResponse> DescribeConnectorOperationAsync(DescribeConnectorOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectorOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectorOperationResponseUnmarshaller.Instance;
             
@@ -1070,7 +1070,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeCustomPlugin">REST API Reference for DescribeCustomPlugin Operation</seealso>
         public virtual DescribeCustomPluginResponse DescribeCustomPlugin(DescribeCustomPluginRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomPluginResponseUnmarshaller.Instance;
 
@@ -1116,7 +1116,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeCustomPlugin">REST API Reference for DescribeCustomPlugin Operation</seealso>
         public virtual Task<DescribeCustomPluginResponse> DescribeCustomPluginAsync(DescribeCustomPluginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomPluginRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomPluginResponseUnmarshaller.Instance;
             
@@ -1163,7 +1163,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration">REST API Reference for DescribeWorkerConfiguration Operation</seealso>
         public virtual DescribeWorkerConfigurationResponse DescribeWorkerConfiguration(DescribeWorkerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkerConfigurationResponseUnmarshaller.Instance;
 
@@ -1209,7 +1209,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration">REST API Reference for DescribeWorkerConfiguration Operation</seealso>
         public virtual Task<DescribeWorkerConfigurationResponse> DescribeWorkerConfigurationAsync(DescribeWorkerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkerConfigurationResponseUnmarshaller.Instance;
             
@@ -1256,7 +1256,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
         public virtual ListConnectorOperationsResponse ListConnectorOperations(ListConnectorOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorOperationsResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectorOperations">REST API Reference for ListConnectorOperations Operation</seealso>
         public virtual Task<ListConnectorOperationsResponse> ListConnectorOperationsAsync(ListConnectorOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorOperationsResponseUnmarshaller.Instance;
             
@@ -1351,7 +1351,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
             
@@ -1446,7 +1446,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListCustomPlugins">REST API Reference for ListCustomPlugins Operation</seealso>
         public virtual ListCustomPluginsResponse ListCustomPlugins(ListCustomPluginsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomPluginsResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListCustomPlugins">REST API Reference for ListCustomPlugins Operation</seealso>
         public virtual Task<ListCustomPluginsResponse> ListCustomPluginsAsync(ListCustomPluginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomPluginsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomPluginsResponseUnmarshaller.Instance;
             
@@ -1539,7 +1539,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1585,7 +1585,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1632,7 +1632,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations">REST API Reference for ListWorkerConfigurations Operation</seealso>
         public virtual ListWorkerConfigurationsResponse ListWorkerConfigurations(ListWorkerConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkerConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkerConfigurationsResponseUnmarshaller.Instance;
 
@@ -1678,7 +1678,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations">REST API Reference for ListWorkerConfigurations Operation</seealso>
         public virtual Task<ListWorkerConfigurationsResponse> ListWorkerConfigurationsAsync(ListWorkerConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkerConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkerConfigurationsResponseUnmarshaller.Instance;
             
@@ -1729,7 +1729,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1779,7 +1779,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1826,7 +1826,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1872,7 +1872,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1919,7 +1919,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.KafkaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
             

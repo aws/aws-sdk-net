@@ -262,7 +262,7 @@ namespace Amazon.SageMakerMetrics
 
         internal virtual BatchGetMetricsResponse BatchGetMetrics(BatchGetMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMetricsResponseUnmarshaller.Instance;
 
@@ -283,7 +283,7 @@ namespace Amazon.SageMakerMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
         public virtual Task<BatchGetMetricsResponse> BatchGetMetricsAsync(BatchGetMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMetricsResponseUnmarshaller.Instance;
 
@@ -296,7 +296,7 @@ namespace Amazon.SageMakerMetrics
 
         internal virtual BatchPutMetricsResponse BatchPutMetrics(BatchPutMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutMetricsResponseUnmarshaller.Instance;
 
@@ -318,7 +318,7 @@ namespace Amazon.SageMakerMetrics
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchPutMetrics">REST API Reference for BatchPutMetrics Operation</seealso>
         public virtual Task<BatchPutMetricsResponse> BatchPutMetricsAsync(BatchPutMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutMetricsResponseUnmarshaller.Instance;
 

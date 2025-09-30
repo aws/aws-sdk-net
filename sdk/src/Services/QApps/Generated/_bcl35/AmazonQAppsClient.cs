@@ -323,7 +323,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/AssociateLibraryItemReview">REST API Reference for AssociateLibraryItemReview Operation</seealso>
         public virtual AssociateLibraryItemReviewResponse AssociateLibraryItemReview(AssociateLibraryItemReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLibraryItemReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLibraryItemReviewResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/AssociateLibraryItemReview">REST API Reference for AssociateLibraryItemReview Operation</seealso>
         public virtual IAsyncResult BeginAssociateLibraryItemReview(AssociateLibraryItemReviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateLibraryItemReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateLibraryItemReviewResponseUnmarshaller.Instance;
 
@@ -403,7 +403,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/AssociateQAppWithUser">REST API Reference for AssociateQAppWithUser Operation</seealso>
         public virtual AssociateQAppWithUserResponse AssociateQAppWithUser(AssociateQAppWithUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateQAppWithUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateQAppWithUserResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/AssociateQAppWithUser">REST API Reference for AssociateQAppWithUser Operation</seealso>
         public virtual IAsyncResult BeginAssociateQAppWithUser(AssociateQAppWithUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateQAppWithUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateQAppWithUserResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
         public virtual BatchCreateCategoryResponse BatchCreateCategory(BatchCreateCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
         public virtual IAsyncResult BeginBatchCreateCategory(BatchCreateCategoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
 
@@ -563,7 +563,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
         public virtual BatchDeleteCategoryResponse BatchDeleteCategory(BatchDeleteCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteCategory(BatchDeleteCategoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
         public virtual BatchUpdateCategoryResponse BatchUpdateCategory(BatchUpdateCategoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
         public virtual IAsyncResult BeginBatchUpdateCategory(BatchUpdateCategoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreateLibraryItem">REST API Reference for CreateLibraryItem Operation</seealso>
         public virtual CreateLibraryItemResponse CreateLibraryItem(CreateLibraryItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLibraryItemResponseUnmarshaller.Instance;
 
@@ -742,7 +742,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreateLibraryItem">REST API Reference for CreateLibraryItem Operation</seealso>
         public virtual IAsyncResult BeginCreateLibraryItem(CreateLibraryItemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLibraryItemResponseUnmarshaller.Instance;
 
@@ -802,7 +802,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
         public virtual CreatePresignedUrlResponse CreatePresignedUrl(CreatePresignedUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
         public virtual IAsyncResult BeginCreatePresignedUrl(CreatePresignedUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
 
@@ -886,7 +886,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreateQApp">REST API Reference for CreateQApp Operation</seealso>
         public virtual CreateQAppResponse CreateQApp(CreateQAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQAppResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreateQApp">REST API Reference for CreateQApp Operation</seealso>
         public virtual IAsyncResult BeginCreateQApp(CreateQAppRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQAppResponseUnmarshaller.Instance;
 
@@ -964,7 +964,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DeleteLibraryItem">REST API Reference for DeleteLibraryItem Operation</seealso>
         public virtual DeleteLibraryItemResponse DeleteLibraryItem(DeleteLibraryItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLibraryItemResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DeleteLibraryItem">REST API Reference for DeleteLibraryItem Operation</seealso>
         public virtual IAsyncResult BeginDeleteLibraryItem(DeleteLibraryItemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLibraryItemResponseUnmarshaller.Instance;
 
@@ -1038,7 +1038,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DeleteQApp">REST API Reference for DeleteQApp Operation</seealso>
         public virtual DeleteQAppResponse DeleteQApp(DeleteQAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQAppResponseUnmarshaller.Instance;
 
@@ -1059,7 +1059,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DeleteQApp">REST API Reference for DeleteQApp Operation</seealso>
         public virtual IAsyncResult BeginDeleteQApp(DeleteQAppRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQAppResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
         public virtual DescribeQAppPermissionsResponse DescribeQAppPermissions(DescribeQAppPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
         public virtual IAsyncResult BeginDescribeQAppPermissions(DescribeQAppPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
 
@@ -1193,7 +1193,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateLibraryItemReview">REST API Reference for DisassociateLibraryItemReview Operation</seealso>
         public virtual DisassociateLibraryItemReviewResponse DisassociateLibraryItemReview(DisassociateLibraryItemReviewRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLibraryItemReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLibraryItemReviewResponseUnmarshaller.Instance;
 
@@ -1214,7 +1214,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateLibraryItemReview">REST API Reference for DisassociateLibraryItemReview Operation</seealso>
         public virtual IAsyncResult BeginDisassociateLibraryItemReview(DisassociateLibraryItemReviewRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateLibraryItemReviewRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateLibraryItemReviewResponseUnmarshaller.Instance;
 
@@ -1266,7 +1266,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateQAppFromUser">REST API Reference for DisassociateQAppFromUser Operation</seealso>
         public virtual DisassociateQAppFromUserResponse DisassociateQAppFromUser(DisassociateQAppFromUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateQAppFromUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateQAppFromUserResponseUnmarshaller.Instance;
 
@@ -1287,7 +1287,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateQAppFromUser">REST API Reference for DisassociateQAppFromUser Operation</seealso>
         public virtual IAsyncResult BeginDisassociateQAppFromUser(DisassociateQAppFromUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateQAppFromUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateQAppFromUserResponseUnmarshaller.Instance;
 
@@ -1347,7 +1347,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
         public virtual ExportQAppSessionDataResponse ExportQAppSessionData(ExportQAppSessionDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
 
@@ -1368,7 +1368,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
         public virtual IAsyncResult BeginExportQAppSessionData(ExportQAppSessionDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetLibraryItem">REST API Reference for GetLibraryItem Operation</seealso>
         public virtual GetLibraryItemResponse GetLibraryItem(GetLibraryItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLibraryItemResponseUnmarshaller.Instance;
 
@@ -1442,7 +1442,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetLibraryItem">REST API Reference for GetLibraryItem Operation</seealso>
         public virtual IAsyncResult BeginGetLibraryItem(GetLibraryItemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLibraryItemResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQApp">REST API Reference for GetQApp Operation</seealso>
         public virtual GetQAppResponse GetQApp(GetQAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppResponseUnmarshaller.Instance;
 
@@ -1516,7 +1516,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQApp">REST API Reference for GetQApp Operation</seealso>
         public virtual IAsyncResult BeginGetQApp(GetQAppRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppResponseUnmarshaller.Instance;
 
@@ -1572,7 +1572,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSession">REST API Reference for GetQAppSession Operation</seealso>
         public virtual GetQAppSessionResponse GetQAppSession(GetQAppSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppSessionResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSession">REST API Reference for GetQAppSession Operation</seealso>
         public virtual IAsyncResult BeginGetQAppSession(GetQAppSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppSessionResponseUnmarshaller.Instance;
 
@@ -1649,7 +1649,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
         public virtual GetQAppSessionMetadataResponse GetQAppSessionMetadata(GetQAppSessionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
 
@@ -1670,7 +1670,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetQAppSessionMetadata(GetQAppSessionMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
 
@@ -1733,7 +1733,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ImportDocument">REST API Reference for ImportDocument Operation</seealso>
         public virtual ImportDocumentResponse ImportDocument(ImportDocumentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDocumentResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ImportDocument">REST API Reference for ImportDocument Operation</seealso>
         public virtual IAsyncResult BeginImportDocument(ImportDocumentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDocumentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDocumentResponseUnmarshaller.Instance;
 
@@ -1808,7 +1808,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
         public virtual ListCategoriesResponse ListCategories(ListCategoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
 
@@ -1829,7 +1829,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
         public virtual IAsyncResult BeginListCategories(ListCategoriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListLibraryItems">REST API Reference for ListLibraryItems Operation</seealso>
         public virtual ListLibraryItemsResponse ListLibraryItems(ListLibraryItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLibraryItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLibraryItemsResponseUnmarshaller.Instance;
 
@@ -1903,7 +1903,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListLibraryItems">REST API Reference for ListLibraryItems Operation</seealso>
         public virtual IAsyncResult BeginListLibraryItems(ListLibraryItemsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLibraryItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLibraryItemsResponseUnmarshaller.Instance;
 
@@ -1954,7 +1954,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQApps">REST API Reference for ListQApps Operation</seealso>
         public virtual ListQAppsResponse ListQApps(ListQAppsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQAppsResponseUnmarshaller.Instance;
 
@@ -1975,7 +1975,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQApps">REST API Reference for ListQApps Operation</seealso>
         public virtual IAsyncResult BeginListQApps(ListQAppsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQAppsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQAppsResponseUnmarshaller.Instance;
 
@@ -2031,7 +2031,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
         public virtual ListQAppSessionDataResponse ListQAppSessionData(ListQAppSessionDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
 
@@ -2052,7 +2052,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
         public virtual IAsyncResult BeginListQAppSessionData(ListQAppSessionDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
 
@@ -2101,7 +2101,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2122,7 +2122,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2173,7 +2173,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/PredictQApp">REST API Reference for PredictQApp Operation</seealso>
         public virtual PredictQAppResponse PredictQApp(PredictQAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PredictQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PredictQAppResponseUnmarshaller.Instance;
 
@@ -2194,7 +2194,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/PredictQApp">REST API Reference for PredictQApp Operation</seealso>
         public virtual IAsyncResult BeginPredictQApp(PredictQAppRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PredictQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PredictQAppResponseUnmarshaller.Instance;
 
@@ -2257,7 +2257,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/StartQAppSession">REST API Reference for StartQAppSession Operation</seealso>
         public virtual StartQAppSessionResponse StartQAppSession(StartQAppSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQAppSessionResponseUnmarshaller.Instance;
 
@@ -2278,7 +2278,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/StartQAppSession">REST API Reference for StartQAppSession Operation</seealso>
         public virtual IAsyncResult BeginStartQAppSession(StartQAppSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQAppSessionResponseUnmarshaller.Instance;
 
@@ -2336,7 +2336,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/StopQAppSession">REST API Reference for StopQAppSession Operation</seealso>
         public virtual StopQAppSessionResponse StopQAppSession(StopQAppSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQAppSessionResponseUnmarshaller.Instance;
 
@@ -2357,7 +2357,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/StopQAppSession">REST API Reference for StopQAppSession Operation</seealso>
         public virtual IAsyncResult BeginStopQAppSession(StopQAppSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopQAppSessionResponseUnmarshaller.Instance;
 
@@ -2410,7 +2410,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2431,7 +2431,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2480,7 +2480,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2501,7 +2501,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2557,7 +2557,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItem">REST API Reference for UpdateLibraryItem Operation</seealso>
         public virtual UpdateLibraryItemResponse UpdateLibraryItem(UpdateLibraryItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLibraryItemResponseUnmarshaller.Instance;
 
@@ -2578,7 +2578,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItem">REST API Reference for UpdateLibraryItem Operation</seealso>
         public virtual IAsyncResult BeginUpdateLibraryItem(UpdateLibraryItemRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLibraryItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLibraryItemResponseUnmarshaller.Instance;
 
@@ -2634,7 +2634,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">REST API Reference for UpdateLibraryItemMetadata Operation</seealso>
         public virtual UpdateLibraryItemMetadataResponse UpdateLibraryItemMetadata(UpdateLibraryItemMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLibraryItemMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLibraryItemMetadataResponseUnmarshaller.Instance;
 
@@ -2655,7 +2655,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateLibraryItemMetadata">REST API Reference for UpdateLibraryItemMetadata Operation</seealso>
         public virtual IAsyncResult BeginUpdateLibraryItemMetadata(UpdateLibraryItemMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLibraryItemMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLibraryItemMetadataResponseUnmarshaller.Instance;
 
@@ -2712,7 +2712,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQApp">REST API Reference for UpdateQApp Operation</seealso>
         public virtual UpdateQAppResponse UpdateQApp(UpdateQAppRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppResponseUnmarshaller.Instance;
 
@@ -2733,7 +2733,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQApp">REST API Reference for UpdateQApp Operation</seealso>
         public virtual IAsyncResult BeginUpdateQApp(UpdateQAppRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppResponseUnmarshaller.Instance;
 
@@ -2786,7 +2786,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
         public virtual UpdateQAppPermissionsResponse UpdateQAppPermissions(UpdateQAppPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
         public virtual IAsyncResult BeginUpdateQAppPermissions(UpdateQAppPermissionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
 
@@ -2867,7 +2867,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSession">REST API Reference for UpdateQAppSession Operation</seealso>
         public virtual UpdateQAppSessionResponse UpdateQAppSession(UpdateQAppSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppSessionResponseUnmarshaller.Instance;
 
@@ -2888,7 +2888,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSession">REST API Reference for UpdateQAppSession Operation</seealso>
         public virtual IAsyncResult BeginUpdateQAppSession(UpdateQAppSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppSessionResponseUnmarshaller.Instance;
 
@@ -2944,7 +2944,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
         public virtual UpdateQAppSessionMetadataResponse UpdateQAppSessionMetadata(UpdateQAppSessionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
 
@@ -2965,7 +2965,7 @@ namespace Amazon.QApps
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
         public virtual IAsyncResult BeginUpdateQAppSessionMetadata(UpdateQAppSessionMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
 

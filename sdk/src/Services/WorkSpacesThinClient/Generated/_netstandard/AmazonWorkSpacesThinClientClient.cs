@@ -289,7 +289,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -332,7 +332,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -345,7 +345,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
         public virtual Task<DeleteDeviceResponse> DeleteDeviceAsync(DeleteDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceResponseUnmarshaller.Instance;
 
@@ -398,7 +398,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual DeregisterDeviceResponse DeregisterDevice(DeregisterDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDeviceResponseUnmarshaller.Instance;
 
@@ -491,7 +491,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/DeregisterDevice">REST API Reference for DeregisterDevice Operation</seealso>
         public virtual Task<DeregisterDeviceResponse> DeregisterDeviceAsync(DeregisterDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDeviceResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public virtual Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -589,7 +589,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -602,7 +602,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual GetSoftwareSetResponse GetSoftwareSet(GetSoftwareSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSoftwareSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSoftwareSetResponseUnmarshaller.Instance;
 
@@ -638,7 +638,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/GetSoftwareSet">REST API Reference for GetSoftwareSet Operation</seealso>
         public virtual Task<GetSoftwareSetResponse> GetSoftwareSetAsync(GetSoftwareSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSoftwareSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSoftwareSetResponseUnmarshaller.Instance;
 
@@ -651,7 +651,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -684,7 +684,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
@@ -697,7 +697,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual ListSoftwareSetsResponse ListSoftwareSets(ListSoftwareSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSoftwareSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSoftwareSetsResponseUnmarshaller.Instance;
 
@@ -776,7 +776,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListSoftwareSets">REST API Reference for ListSoftwareSets Operation</seealso>
         public virtual Task<ListSoftwareSetsResponse> ListSoftwareSetsAsync(ListSoftwareSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSoftwareSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSoftwareSetsResponseUnmarshaller.Instance;
 
@@ -789,7 +789,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -878,7 +878,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -931,7 +931,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceResponseUnmarshaller.Instance;
 
@@ -980,7 +980,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
         public virtual Task<UpdateDeviceResponse> UpdateDeviceAsync(UpdateDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeviceResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.WorkSpacesThinClient
 
         internal virtual UpdateSoftwareSetResponse UpdateSoftwareSet(UpdateSoftwareSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSoftwareSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSoftwareSetResponseUnmarshaller.Instance;
 
@@ -1082,7 +1082,7 @@ namespace Amazon.WorkSpacesThinClient
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-thin-client-2023-08-22/UpdateSoftwareSet">REST API Reference for UpdateSoftwareSet Operation</seealso>
         public virtual Task<UpdateSoftwareSetResponse> UpdateSoftwareSetAsync(UpdateSoftwareSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSoftwareSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSoftwareSetResponseUnmarshaller.Instance;
 

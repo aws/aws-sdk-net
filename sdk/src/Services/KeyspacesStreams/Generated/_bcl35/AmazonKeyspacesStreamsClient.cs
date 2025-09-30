@@ -362,7 +362,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public virtual GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public virtual IAsyncResult BeginGetRecords(GetRecordsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordsResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public virtual GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public virtual IAsyncResult BeginGetShardIterator(GetShardIteratorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetShardIteratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetShardIteratorResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetStream">REST API Reference for GetStream Operation</seealso>
         public virtual GetStreamResponse GetStream(GetStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/GetStream">REST API Reference for GetStream Operation</seealso>
         public virtual IAsyncResult BeginGetStream(GetStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -712,7 +712,7 @@ namespace Amazon.KeyspacesStreams
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspacesstreams-2024-09-09/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 

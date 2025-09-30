@@ -360,7 +360,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateBatchLoadTask">REST API Reference for CreateBatchLoadTask Operation</seealso>
         public virtual CreateBatchLoadTaskResponse CreateBatchLoadTask(CreateBatchLoadTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -383,7 +383,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateBatchLoadTask">REST API Reference for CreateBatchLoadTask Operation</seealso>
         public virtual IAsyncResult BeginCreateBatchLoadTask(CreateBatchLoadTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -447,7 +447,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
         public virtual CreateDatabaseResponse CreateDatabase(CreateDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -470,7 +470,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
         public virtual IAsyncResult BeginCreateDatabase(CreateDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -539,7 +539,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateTableEndpointDiscoveryMarshaller.Instance;
@@ -562,7 +562,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual IAsyncResult BeginCreateTable(CreateTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = CreateTableEndpointDiscoveryMarshaller.Instance;
@@ -636,7 +636,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
         public virtual DeleteDatabaseResponse DeleteDatabase(DeleteDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -659,7 +659,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
         public virtual IAsyncResult BeginDeleteDatabase(DeleteDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -728,7 +728,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteTableEndpointDiscoveryMarshaller.Instance;
@@ -751,7 +751,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual IAsyncResult BeginDeleteTable(DeleteTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DeleteTableEndpointDiscoveryMarshaller.Instance;
@@ -807,7 +807,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeBatchLoadTask">REST API Reference for DescribeBatchLoadTask Operation</seealso>
         public virtual DescribeBatchLoadTaskResponse DescribeBatchLoadTask(DescribeBatchLoadTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -830,7 +830,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeBatchLoadTask">REST API Reference for DescribeBatchLoadTask Operation</seealso>
         public virtual IAsyncResult BeginDescribeBatchLoadTask(DescribeBatchLoadTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -890,7 +890,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeDatabase">REST API Reference for DescribeDatabase Operation</seealso>
         public virtual DescribeDatabaseResponse DescribeDatabase(DescribeDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -913,7 +913,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeDatabase">REST API Reference for DescribeDatabase Operation</seealso>
         public virtual IAsyncResult BeginDescribeDatabase(DescribeDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -986,7 +986,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public virtual IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
@@ -1064,7 +1064,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual DescribeTableResponse DescribeTable(DescribeTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTableEndpointDiscoveryMarshaller.Instance;
@@ -1087,7 +1087,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual IAsyncResult BeginDescribeTable(DescribeTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = DescribeTableEndpointDiscoveryMarshaller.Instance;
@@ -1141,7 +1141,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListBatchLoadTasks">REST API Reference for ListBatchLoadTasks Operation</seealso>
         public virtual ListBatchLoadTasksResponse ListBatchLoadTasks(ListBatchLoadTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchLoadTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchLoadTasksResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListBatchLoadTasksEndpointDiscoveryMarshaller.Instance;
@@ -1164,7 +1164,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListBatchLoadTasks">REST API Reference for ListBatchLoadTasks Operation</seealso>
         public virtual IAsyncResult BeginListBatchLoadTasks(ListBatchLoadTasksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBatchLoadTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBatchLoadTasksResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListBatchLoadTasksEndpointDiscoveryMarshaller.Instance;
@@ -1218,7 +1218,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual ListDatabasesResponse ListDatabases(ListDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListDatabasesEndpointDiscoveryMarshaller.Instance;
@@ -1241,7 +1241,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListDatabases">REST API Reference for ListDatabases Operation</seealso>
         public virtual IAsyncResult BeginListDatabases(ListDatabasesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatabasesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListDatabasesEndpointDiscoveryMarshaller.Instance;
@@ -1299,7 +1299,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual ListTablesResponse ListTables(ListTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTablesEndpointDiscoveryMarshaller.Instance;
@@ -1322,7 +1322,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTables">REST API Reference for ListTables Operation</seealso>
         public virtual IAsyncResult BeginListTables(ListTablesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTablesEndpointDiscoveryMarshaller.Instance;
@@ -1371,7 +1371,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsForResourceEndpointDiscoveryMarshaller.Instance;
@@ -1394,7 +1394,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ListTagsForResourceEndpointDiscoveryMarshaller.Instance;
@@ -1450,7 +1450,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ResumeBatchLoadTask">REST API Reference for ResumeBatchLoadTask Operation</seealso>
         public virtual ResumeBatchLoadTaskResponse ResumeBatchLoadTask(ResumeBatchLoadTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ResumeBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -1473,7 +1473,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/ResumeBatchLoadTask">REST API Reference for ResumeBatchLoadTask Operation</seealso>
         public virtual IAsyncResult BeginResumeBatchLoadTask(ResumeBatchLoadTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeBatchLoadTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeBatchLoadTaskResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = ResumeBatchLoadTaskEndpointDiscoveryMarshaller.Instance;
@@ -1527,7 +1527,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1550,7 +1550,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = TagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1602,7 +1602,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1625,7 +1625,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UntagResourceEndpointDiscoveryMarshaller.Instance;
@@ -1692,7 +1692,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
         public virtual UpdateDatabaseResponse UpdateDatabase(UpdateDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -1715,7 +1715,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
         public virtual IAsyncResult BeginUpdateDatabase(UpdateDatabaseRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateDatabaseEndpointDiscoveryMarshaller.Instance;
@@ -1782,7 +1782,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTableEndpointDiscoveryMarshaller.Instance;
@@ -1805,7 +1805,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual IAsyncResult BeginUpdateTable(UpdateTableRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = UpdateTableEndpointDiscoveryMarshaller.Instance;
@@ -1955,7 +1955,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/WriteRecords">REST API Reference for WriteRecords Operation</seealso>
         public virtual WriteRecordsResponse WriteRecords(WriteRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteRecordsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = WriteRecordsEndpointDiscoveryMarshaller.Instance;
@@ -1978,7 +1978,7 @@ namespace Amazon.TimestreamWrite
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/WriteRecords">REST API Reference for WriteRecords Operation</seealso>
         public virtual IAsyncResult BeginWriteRecords(WriteRecordsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = WriteRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = WriteRecordsResponseUnmarshaller.Instance;
             options.EndpointDiscoveryMarshaller = WriteRecordsEndpointDiscoveryMarshaller.Instance;

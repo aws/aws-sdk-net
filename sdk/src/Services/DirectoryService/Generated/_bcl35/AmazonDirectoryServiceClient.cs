@@ -309,7 +309,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         public virtual AcceptSharedDirectoryResponse AcceptSharedDirectory(AcceptSharedDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory">REST API Reference for AcceptSharedDirectory Operation</seealso>
         public virtual IAsyncResult BeginAcceptSharedDirectory(AcceptSharedDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptSharedDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptSharedDirectoryResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual AddIpRoutesResponse AddIpRoutes(AddIpRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginAddIpRoutes(AddIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddIpRoutesResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
         public virtual AddRegionResponse AddRegion(AddRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
 
@@ -504,7 +504,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
         public virtual IAsyncResult BeginAddRegion(AddRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRegionResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -575,7 +575,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSchemaExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
 
@@ -641,7 +641,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CancelSchemaExtension">REST API Reference for CancelSchemaExtension Operation</seealso>
         public virtual IAsyncResult BeginCancelSchemaExtension(CancelSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelSchemaExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
 
@@ -716,7 +716,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectory">REST API Reference for ConnectDirectory Operation</seealso>
         public virtual IAsyncResult BeginConnectDirectory(ConnectDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConnectDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConnectDirectoryResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
@@ -850,7 +850,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual CreateComputerResponse CreateComputer(CreateComputerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputerResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateComputer">REST API Reference for CreateComputer Operation</seealso>
         public virtual IAsyncResult BeginCreateComputer(CreateComputerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComputerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComputerResponseUnmarshaller.Instance;
 
@@ -927,7 +927,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual CreateConditionalForwarderResponse CreateConditionalForwarder(CreateConditionalForwarderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateConditionalForwarder">REST API Reference for CreateConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginCreateConditionalForwarder(CreateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual CreateDirectoryResponse CreateDirectory(CreateDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
@@ -1024,7 +1024,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateDirectory">REST API Reference for CreateDirectory Operation</seealso>
         public virtual IAsyncResult BeginCreateDirectory(CreateDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDirectoryResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
         public virtual CreateHybridADResponse CreateHybridAD(CreateHybridADRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateHybridAD">REST API Reference for CreateHybridAD Operation</seealso>
         public virtual IAsyncResult BeginCreateHybridAD(CreateHybridADRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHybridADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHybridADResponseUnmarshaller.Instance;
 
@@ -1179,7 +1179,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
         public virtual CreateLogSubscriptionResponse CreateLogSubscription(CreateLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1200,7 +1200,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">REST API Reference for CreateLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginCreateLogSubscription(CreateLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1259,7 +1259,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual CreateMicrosoftADResponse CreateMicrosoftAD(CreateMicrosoftADRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMicrosoftADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD">REST API Reference for CreateMicrosoftAD Operation</seealso>
         public virtual IAsyncResult BeginCreateMicrosoftAD(CreateMicrosoftADRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMicrosoftADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMicrosoftADResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1420,7 +1420,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual CreateTrustResponse CreateTrust(CreateTrustRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustResponseUnmarshaller.Instance;
 
@@ -1441,7 +1441,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">REST API Reference for CreateTrust Operation</seealso>
         public virtual IAsyncResult BeginCreateTrust(CreateTrustRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustResponseUnmarshaller.Instance;
 
@@ -1496,7 +1496,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
         public virtual DeleteADAssessmentResponse DeleteADAssessment(DeleteADAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
 
@@ -1517,7 +1517,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteADAssessment">REST API Reference for DeleteADAssessment Operation</seealso>
         public virtual IAsyncResult BeginDeleteADAssessment(DeleteADAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteADAssessmentResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual DeleteConditionalForwarderResponse DeleteConditionalForwarder(DeleteConditionalForwarderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -1590,7 +1590,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarder">REST API Reference for DeleteConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginDeleteConditionalForwarder(DeleteConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual DeleteDirectoryResponse DeleteDirectory(DeleteDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
@@ -1661,7 +1661,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteDirectory">REST API Reference for DeleteDirectory Operation</seealso>
         public virtual IAsyncResult BeginDeleteDirectory(DeleteDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDirectoryResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
         public virtual DeleteLogSubscriptionResponse DeleteLogSubscription(DeleteLogSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1727,7 +1727,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">REST API Reference for DeleteLogSubscription Operation</seealso>
         public virtual IAsyncResult BeginDeleteLogSubscription(DeleteLogSubscriptionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLogSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLogSubscriptionResponseUnmarshaller.Instance;
 
@@ -1772,7 +1772,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1793,7 +1793,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual DeleteTrustResponse DeleteTrust(DeleteTrustRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustResponseUnmarshaller.Instance;
 
@@ -1863,7 +1863,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">REST API Reference for DeleteTrust Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrust(DeleteTrustRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustResponseUnmarshaller.Instance;
 
@@ -1922,7 +1922,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">REST API Reference for DeregisterCertificate Operation</seealso>
         public virtual DeregisterCertificateResponse DeregisterCertificate(DeregisterCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterCertificateResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterCertificate">REST API Reference for DeregisterCertificate Operation</seealso>
         public virtual IAsyncResult BeginDeregisterCertificate(DeregisterCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterCertificateResponseUnmarshaller.Instance;
 
@@ -1988,7 +1988,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual DeregisterEventTopicResponse DeregisterEventTopic(DeregisterEventTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterEventTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
@@ -2009,7 +2009,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopic">REST API Reference for DeregisterEventTopic Operation</seealso>
         public virtual IAsyncResult BeginDeregisterEventTopic(DeregisterEventTopicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterEventTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterEventTopicResponseUnmarshaller.Instance;
 
@@ -2059,7 +2059,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
         public virtual DescribeADAssessmentResponse DescribeADAssessment(DescribeADAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeADAssessment">REST API Reference for DescribeADAssessment Operation</seealso>
         public virtual IAsyncResult BeginDescribeADAssessment(DescribeADAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeADAssessmentResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">REST API Reference for DescribeCAEnrollmentPolicy Operation</seealso>
         public virtual DescribeCAEnrollmentPolicyResponse DescribeCAEnrollmentPolicy(DescribeCAEnrollmentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCAEnrollmentPolicy">REST API Reference for DescribeCAEnrollmentPolicy Operation</seealso>
         public virtual IAsyncResult BeginDescribeCAEnrollmentPolicy(DescribeCAEnrollmentPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -2200,7 +2200,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
@@ -2221,7 +2221,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public virtual IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
 
@@ -2275,7 +2275,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">REST API Reference for DescribeClientAuthenticationSettings Operation</seealso>
         public virtual DescribeClientAuthenticationSettingsResponse DescribeClientAuthenticationSettings(DescribeClientAuthenticationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientAuthenticationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientAuthenticationSettingsResponseUnmarshaller.Instance;
 
@@ -2296,7 +2296,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeClientAuthenticationSettings">REST API Reference for DescribeClientAuthenticationSettings Operation</seealso>
         public virtual IAsyncResult BeginDescribeClientAuthenticationSettings(DescribeClientAuthenticationSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientAuthenticationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientAuthenticationSettingsResponseUnmarshaller.Instance;
 
@@ -2353,7 +2353,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual DescribeConditionalForwardersResponse DescribeConditionalForwarders(DescribeConditionalForwardersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
 
@@ -2374,7 +2374,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeConditionalForwarders">REST API Reference for DescribeConditionalForwarders Operation</seealso>
         public virtual IAsyncResult BeginDescribeConditionalForwarders(DescribeConditionalForwardersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConditionalForwardersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConditionalForwardersResponseUnmarshaller.Instance;
 
@@ -2484,7 +2484,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual DescribeDirectoriesResponse DescribeDirectories(DescribeDirectoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
@@ -2505,7 +2505,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectories">REST API Reference for DescribeDirectories Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectories(DescribeDirectoriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectoriesResponseUnmarshaller.Instance;
 
@@ -2554,7 +2554,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">REST API Reference for DescribeDirectoryDataAccess Operation</seealso>
         public virtual DescribeDirectoryDataAccessResponse DescribeDirectoryDataAccess(DescribeDirectoryDataAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -2575,7 +2575,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">REST API Reference for DescribeDirectoryDataAccess Operation</seealso>
         public virtual IAsyncResult BeginDescribeDirectoryDataAccess(DescribeDirectoryDataAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -2626,7 +2626,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual DescribeDomainControllersResponse DescribeDomainControllers(DescribeDomainControllersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainControllersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
 
@@ -2647,7 +2647,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">REST API Reference for DescribeDomainControllers Operation</seealso>
         public virtual IAsyncResult BeginDescribeDomainControllers(DescribeDomainControllersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainControllersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainControllersResponseUnmarshaller.Instance;
 
@@ -2699,7 +2699,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual DescribeEventTopicsResponse DescribeEventTopics(DescribeEventTopicsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
 
@@ -2720,7 +2720,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopics">REST API Reference for DescribeEventTopics Operation</seealso>
         public virtual IAsyncResult BeginDescribeEventTopics(DescribeEventTopicsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventTopicsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventTopicsResponseUnmarshaller.Instance;
 
@@ -2773,7 +2773,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
         public virtual DescribeHybridADUpdateResponse DescribeHybridADUpdate(DescribeHybridADUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeHybridADUpdate">REST API Reference for DescribeHybridADUpdate Operation</seealso>
         public virtual IAsyncResult BeginDescribeHybridADUpdate(DescribeHybridADUpdateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeHybridADUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeHybridADUpdateResponseUnmarshaller.Instance;
 
@@ -2845,7 +2845,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings">REST API Reference for DescribeLDAPSSettings Operation</seealso>
         public virtual DescribeLDAPSSettingsResponse DescribeLDAPSSettings(DescribeLDAPSSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLDAPSSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLDAPSSettingsResponseUnmarshaller.Instance;
 
@@ -2866,7 +2866,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeLDAPSSettings">REST API Reference for DescribeLDAPSSettings Operation</seealso>
         public virtual IAsyncResult BeginDescribeLDAPSSettings(DescribeLDAPSSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLDAPSSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLDAPSSettingsResponseUnmarshaller.Instance;
 
@@ -2920,7 +2920,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public virtual DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -2941,7 +2941,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public virtual IAsyncResult BeginDescribeRegions(DescribeRegionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRegionsResponseUnmarshaller.Instance;
 
@@ -2992,7 +2992,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
         public virtual DescribeSettingsResponse DescribeSettings(DescribeSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSettingsResponseUnmarshaller.Instance;
 
@@ -3013,7 +3013,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
         public virtual IAsyncResult BeginDescribeSettings(DescribeSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSettingsResponseUnmarshaller.Instance;
 
@@ -3064,7 +3064,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">REST API Reference for DescribeSharedDirectories Operation</seealso>
         public virtual DescribeSharedDirectoriesResponse DescribeSharedDirectories(DescribeSharedDirectoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
 
@@ -3085,7 +3085,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">REST API Reference for DescribeSharedDirectories Operation</seealso>
         public virtual IAsyncResult BeginDescribeSharedDirectories(DescribeSharedDirectoriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSharedDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSharedDirectoriesResponseUnmarshaller.Instance;
 
@@ -3145,7 +3145,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3166,7 +3166,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3223,7 +3223,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual DescribeTrustsResponse DescribeTrusts(DescribeTrustsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
 
@@ -3244,7 +3244,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrusts">REST API Reference for DescribeTrusts Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrusts(DescribeTrustsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustsResponseUnmarshaller.Instance;
 
@@ -3295,7 +3295,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory">REST API Reference for DescribeUpdateDirectory Operation</seealso>
         public virtual DescribeUpdateDirectoryResponse DescribeUpdateDirectory(DescribeUpdateDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateDirectoryResponseUnmarshaller.Instance;
 
@@ -3316,7 +3316,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory">REST API Reference for DescribeUpdateDirectory Operation</seealso>
         public virtual IAsyncResult BeginDescribeUpdateDirectory(DescribeUpdateDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateDirectoryResponseUnmarshaller.Instance;
 
@@ -3382,7 +3382,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">REST API Reference for DisableCAEnrollmentPolicy Operation</seealso>
         public virtual DisableCAEnrollmentPolicyResponse DisableCAEnrollmentPolicy(DisableCAEnrollmentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -3403,7 +3403,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableCAEnrollmentPolicy">REST API Reference for DisableCAEnrollmentPolicy Operation</seealso>
         public virtual IAsyncResult BeginDisableCAEnrollmentPolicy(DisableCAEnrollmentPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -3454,7 +3454,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
         public virtual DisableClientAuthenticationResponse DisableClientAuthentication(DisableClientAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableClientAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableClientAuthenticationResponseUnmarshaller.Instance;
 
@@ -3475,7 +3475,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
         public virtual IAsyncResult BeginDisableClientAuthentication(DisableClientAuthenticationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableClientAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableClientAuthenticationResponseUnmarshaller.Instance;
 
@@ -3531,7 +3531,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">REST API Reference for DisableDirectoryDataAccess Operation</seealso>
         public virtual DisableDirectoryDataAccessResponse DisableDirectoryDataAccess(DisableDirectoryDataAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -3552,7 +3552,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">REST API Reference for DisableDirectoryDataAccess Operation</seealso>
         public virtual IAsyncResult BeginDisableDirectoryDataAccess(DisableDirectoryDataAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -3606,7 +3606,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS">REST API Reference for DisableLDAPS Operation</seealso>
         public virtual DisableLDAPSResponse DisableLDAPS(DisableLDAPSRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableLDAPSRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableLDAPSResponseUnmarshaller.Instance;
 
@@ -3627,7 +3627,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS">REST API Reference for DisableLDAPS Operation</seealso>
         public virtual IAsyncResult BeginDisableLDAPS(DisableLDAPSRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableLDAPSRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableLDAPSResponseUnmarshaller.Instance;
 
@@ -3670,7 +3670,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual DisableRadiusResponse DisableRadius(DisableRadiusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRadiusResponseUnmarshaller.Instance;
 
@@ -3691,7 +3691,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadius">REST API Reference for DisableRadius Operation</seealso>
         public virtual IAsyncResult BeginDisableRadius(DisableRadiusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableRadiusResponseUnmarshaller.Instance;
 
@@ -3739,7 +3739,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual DisableSsoResponse DisableSso(DisableSsoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSsoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSsoResponseUnmarshaller.Instance;
 
@@ -3760,7 +3760,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         public virtual IAsyncResult BeginDisableSso(DisableSsoRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableSsoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableSsoResponseUnmarshaller.Instance;
 
@@ -3830,7 +3830,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">REST API Reference for EnableCAEnrollmentPolicy Operation</seealso>
         public virtual EnableCAEnrollmentPolicyResponse EnableCAEnrollmentPolicy(EnableCAEnrollmentPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -3851,7 +3851,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableCAEnrollmentPolicy">REST API Reference for EnableCAEnrollmentPolicy Operation</seealso>
         public virtual IAsyncResult BeginEnableCAEnrollmentPolicy(EnableCAEnrollmentPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableCAEnrollmentPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableCAEnrollmentPolicyResponseUnmarshaller.Instance;
 
@@ -3906,7 +3906,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
         public virtual EnableClientAuthenticationResponse EnableClientAuthentication(EnableClientAuthenticationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableClientAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableClientAuthenticationResponseUnmarshaller.Instance;
 
@@ -3927,7 +3927,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
         public virtual IAsyncResult BeginEnableClientAuthentication(EnableClientAuthenticationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableClientAuthenticationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableClientAuthenticationResponseUnmarshaller.Instance;
 
@@ -3983,7 +3983,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">REST API Reference for EnableDirectoryDataAccess Operation</seealso>
         public virtual EnableDirectoryDataAccessResponse EnableDirectoryDataAccess(EnableDirectoryDataAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -4004,7 +4004,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">REST API Reference for EnableDirectoryDataAccess Operation</seealso>
         public virtual IAsyncResult BeginEnableDirectoryDataAccess(EnableDirectoryDataAccessRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableDirectoryDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableDirectoryDataAccessResponseUnmarshaller.Instance;
 
@@ -4062,7 +4062,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS">REST API Reference for EnableLDAPS Operation</seealso>
         public virtual EnableLDAPSResponse EnableLDAPS(EnableLDAPSRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableLDAPSRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableLDAPSResponseUnmarshaller.Instance;
 
@@ -4083,7 +4083,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableLDAPS">REST API Reference for EnableLDAPS Operation</seealso>
         public virtual IAsyncResult BeginEnableLDAPS(EnableLDAPSRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableLDAPSRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableLDAPSResponseUnmarshaller.Instance;
 
@@ -4132,7 +4132,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual EnableRadiusResponse EnableRadius(EnableRadiusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRadiusResponseUnmarshaller.Instance;
 
@@ -4153,7 +4153,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableRadius">REST API Reference for EnableRadius Operation</seealso>
         public virtual IAsyncResult BeginEnableRadius(EnableRadiusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableRadiusResponseUnmarshaller.Instance;
 
@@ -4203,7 +4203,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual EnableSsoResponse EnableSso(EnableSsoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSsoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSsoResponseUnmarshaller.Instance;
 
@@ -4224,7 +4224,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSso">REST API Reference for EnableSso Operation</seealso>
         public virtual IAsyncResult BeginEnableSso(EnableSsoRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableSsoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableSsoResponseUnmarshaller.Instance;
 
@@ -4286,7 +4286,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual GetDirectoryLimitsResponse GetDirectoryLimits(GetDirectoryLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectoryLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
 
@@ -4307,7 +4307,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetDirectoryLimits">REST API Reference for GetDirectoryLimits Operation</seealso>
         public virtual IAsyncResult BeginGetDirectoryLimits(GetDirectoryLimitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDirectoryLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDirectoryLimitsResponseUnmarshaller.Instance;
 
@@ -4349,7 +4349,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual GetSnapshotLimitsResponse GetSnapshotLimits(GetSnapshotLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
@@ -4370,7 +4370,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimits">REST API Reference for GetSnapshotLimits Operation</seealso>
         public virtual IAsyncResult BeginGetSnapshotLimits(GetSnapshotLimitsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSnapshotLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSnapshotLimitsResponseUnmarshaller.Instance;
 
@@ -4420,7 +4420,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
         public virtual ListADAssessmentsResponse ListADAssessments(ListADAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
 
@@ -4441,7 +4441,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListADAssessments">REST API Reference for ListADAssessments Operation</seealso>
         public virtual IAsyncResult BeginListADAssessments(ListADAssessmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListADAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListADAssessmentsResponseUnmarshaller.Instance;
 
@@ -4493,7 +4493,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
@@ -4514,7 +4514,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public virtual IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
 
@@ -4562,7 +4562,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual ListIpRoutesResponse ListIpRoutes(ListIpRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
@@ -4583,7 +4583,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListIpRoutes">REST API Reference for ListIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginListIpRoutes(ListIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIpRoutesResponseUnmarshaller.Instance;
 
@@ -4628,7 +4628,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         public virtual ListLogSubscriptionsResponse ListLogSubscriptions(ListLogSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
 
@@ -4649,7 +4649,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">REST API Reference for ListLogSubscriptions Operation</seealso>
         public virtual IAsyncResult BeginListLogSubscriptions(ListLogSubscriptionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLogSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLogSubscriptionsResponseUnmarshaller.Instance;
 
@@ -4694,7 +4694,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaExtensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
 
@@ -4715,7 +4715,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">REST API Reference for ListSchemaExtensions Operation</seealso>
         public virtual IAsyncResult BeginListSchemaExtensions(ListSchemaExtensionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaExtensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
 
@@ -4763,7 +4763,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4784,7 +4784,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4844,7 +4844,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         public virtual RegisterCertificateResponse RegisterCertificate(RegisterCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
 
@@ -4865,7 +4865,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterCertificate">REST API Reference for RegisterCertificate Operation</seealso>
         public virtual IAsyncResult BeginRegisterCertificate(RegisterCertificateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterCertificateResponseUnmarshaller.Instance;
 
@@ -4914,7 +4914,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual RegisterEventTopicResponse RegisterEventTopic(RegisterEventTopicRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterEventTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
@@ -4935,7 +4935,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopic">REST API Reference for RegisterEventTopic Operation</seealso>
         public virtual IAsyncResult BeginRegisterEventTopic(RegisterEventTopicRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterEventTopicRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterEventTopicResponseUnmarshaller.Instance;
 
@@ -4983,7 +4983,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         public virtual RejectSharedDirectoryResponse RejectSharedDirectory(RejectSharedDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectSharedDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
 
@@ -5004,7 +5004,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory">REST API Reference for RejectSharedDirectory Operation</seealso>
         public virtual IAsyncResult BeginRejectSharedDirectory(RejectSharedDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectSharedDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectSharedDirectoryResponseUnmarshaller.Instance;
 
@@ -5052,7 +5052,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual RemoveIpRoutesResponse RemoveIpRoutes(RemoveIpRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
 
@@ -5073,7 +5073,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         public virtual IAsyncResult BeginRemoveIpRoutes(RemoveIpRoutesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveIpRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveIpRoutesResponseUnmarshaller.Instance;
 
@@ -5126,7 +5126,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
         public virtual RemoveRegionResponse RemoveRegion(RemoveRegionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
 
@@ -5147,7 +5147,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
         public virtual IAsyncResult BeginRemoveRegion(RemoveRegionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRegionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRegionResponseUnmarshaller.Instance;
 
@@ -5192,7 +5192,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -5213,7 +5213,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -5290,7 +5290,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
         public virtual ResetUserPasswordResponse ResetUserPassword(ResetUserPasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
 
@@ -5311,7 +5311,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword">REST API Reference for ResetUserPassword Operation</seealso>
         public virtual IAsyncResult BeginResetUserPassword(ResetUserPasswordRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetUserPasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetUserPasswordResponseUnmarshaller.Instance;
 
@@ -5369,7 +5369,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
@@ -5390,7 +5390,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual IAsyncResult BeginRestoreFromSnapshot(RestoreFromSnapshotRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
@@ -5478,7 +5478,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory">REST API Reference for ShareDirectory Operation</seealso>
         public virtual ShareDirectoryResponse ShareDirectory(ShareDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ShareDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
 
@@ -5499,7 +5499,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory">REST API Reference for ShareDirectory Operation</seealso>
         public virtual IAsyncResult BeginShareDirectory(ShareDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ShareDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ShareDirectoryResponseUnmarshaller.Instance;
 
@@ -5591,7 +5591,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
         public virtual StartADAssessmentResponse StartADAssessment(StartADAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
 
@@ -5612,7 +5612,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartADAssessment">REST API Reference for StartADAssessment Operation</seealso>
         public virtual IAsyncResult BeginStartADAssessment(StartADAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartADAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartADAssessmentResponseUnmarshaller.Instance;
 
@@ -5665,7 +5665,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSchemaExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
 
@@ -5686,7 +5686,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/StartSchemaExtension">REST API Reference for StartSchemaExtension Operation</seealso>
         public virtual IAsyncResult BeginStartSchemaExtension(StartSchemaExtensionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSchemaExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
 
@@ -5734,7 +5734,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         public virtual UnshareDirectoryResponse UnshareDirectory(UnshareDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnshareDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
 
@@ -5755,7 +5755,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory">REST API Reference for UnshareDirectory Operation</seealso>
         public virtual IAsyncResult BeginUnshareDirectory(UnshareDirectoryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnshareDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnshareDirectoryResponseUnmarshaller.Instance;
 
@@ -5807,7 +5807,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual UpdateConditionalForwarderResponse UpdateConditionalForwarder(UpdateConditionalForwarderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -5828,7 +5828,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateConditionalForwarder">REST API Reference for UpdateConditionalForwarder Operation</seealso>
         public virtual IAsyncResult BeginUpdateConditionalForwarder(UpdateConditionalForwarderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConditionalForwarderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConditionalForwarderResponseUnmarshaller.Instance;
 
@@ -5890,7 +5890,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup">REST API Reference for UpdateDirectorySetup Operation</seealso>
         public virtual UpdateDirectorySetupResponse UpdateDirectorySetup(UpdateDirectorySetupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectorySetupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectorySetupResponseUnmarshaller.Instance;
 
@@ -5911,7 +5911,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup">REST API Reference for UpdateDirectorySetup Operation</seealso>
         public virtual IAsyncResult BeginUpdateDirectorySetup(UpdateDirectorySetupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDirectorySetupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDirectorySetupResponseUnmarshaller.Instance;
 
@@ -5998,7 +5998,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
         public virtual UpdateHybridADResponse UpdateHybridAD(UpdateHybridADRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
 
@@ -6019,7 +6019,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateHybridAD">REST API Reference for UpdateHybridAD Operation</seealso>
         public virtual IAsyncResult BeginUpdateHybridAD(UpdateHybridADRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHybridADRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHybridADResponseUnmarshaller.Instance;
 
@@ -6078,7 +6078,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual UpdateNumberOfDomainControllersResponse UpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
 
@@ -6099,7 +6099,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers">REST API Reference for UpdateNumberOfDomainControllers Operation</seealso>
         public virtual IAsyncResult BeginUpdateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNumberOfDomainControllersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNumberOfDomainControllersResponseUnmarshaller.Instance;
 
@@ -6145,7 +6145,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual UpdateRadiusResponse UpdateRadius(UpdateRadiusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
@@ -6166,7 +6166,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         public virtual IAsyncResult BeginUpdateRadius(UpdateRadiusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRadiusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRadiusResponseUnmarshaller.Instance;
 
@@ -6223,7 +6223,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
         public virtual UpdateSettingsResponse UpdateSettings(UpdateSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
 
@@ -6244,7 +6244,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateSettings(UpdateSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
 
@@ -6290,7 +6290,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         public virtual UpdateTrustResponse UpdateTrust(UpdateTrustRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustResponseUnmarshaller.Instance;
 
@@ -6311,7 +6311,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">REST API Reference for UpdateTrust Operation</seealso>
         public virtual IAsyncResult BeginUpdateTrust(UpdateTrustRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrustResponseUnmarshaller.Instance;
 
@@ -6366,7 +6366,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual VerifyTrustResponse VerifyTrust(VerifyTrustRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyTrustResponseUnmarshaller.Instance;
 
@@ -6387,7 +6387,7 @@ namespace Amazon.DirectoryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">REST API Reference for VerifyTrust Operation</seealso>
         public virtual IAsyncResult BeginVerifyTrust(VerifyTrustRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyTrustRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyTrustResponseUnmarshaller.Instance;
 

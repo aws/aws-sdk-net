@@ -274,7 +274,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual CreateChallengeResponse CreateChallenge(CreateChallengeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChallengeResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateChallenge">REST API Reference for CreateChallenge Operation</seealso>
         public virtual Task<CreateChallengeResponse> CreateChallengeAsync(CreateChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChallengeResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -407,7 +407,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual DeleteChallengeResponse DeleteChallenge(DeleteChallengeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChallengeResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteChallenge">REST API Reference for DeleteChallenge Operation</seealso>
         public virtual Task<DeleteChallengeResponse> DeleteChallengeAsync(DeleteChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChallengeResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -528,7 +528,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -541,7 +541,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual GetChallengeMetadataResponse GetChallengeMetadata(GetChallengeMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengeMetadata">REST API Reference for GetChallengeMetadata Operation</seealso>
         public virtual Task<GetChallengeMetadataResponse> GetChallengeMetadataAsync(GetChallengeMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -597,7 +597,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual GetChallengePasswordResponse GetChallengePassword(GetChallengePasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengePasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengePasswordResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengePassword">REST API Reference for GetChallengePassword Operation</seealso>
         public virtual Task<GetChallengePasswordResponse> GetChallengePasswordAsync(GetChallengePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengePasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengePasswordResponseUnmarshaller.Instance;
 
@@ -653,7 +653,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual GetConnectorResponse GetConnector(GetConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
         public virtual Task<GetConnectorResponse> GetConnectorAsync(GetConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual ListChallengeMetadataResponse ListChallengeMetadata(ListChallengeMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -754,7 +754,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListChallengeMetadata">REST API Reference for ListChallengeMetadata Operation</seealso>
         public virtual Task<ListChallengeMetadataResponse> ListChallengeMetadataAsync(ListChallengeMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -806,7 +806,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -819,7 +819,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -922,7 +922,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -935,7 +935,7 @@ namespace Amazon.PcaConnectorScep
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -978,7 +978,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

@@ -438,7 +438,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateConfigurationProfileResponse CreateConfigurationProfile(CreateConfigurationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">REST API Reference for CreateConfigurationProfile Operation</seealso>
         public virtual Task<CreateConfigurationProfileResponse> CreateConfigurationProfileAsync(CreateConfigurationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateDeploymentStrategyResponse CreateDeploymentStrategy(CreateDeploymentStrategyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -691,7 +691,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateDeploymentStrategy">REST API Reference for CreateDeploymentStrategy Operation</seealso>
         public virtual Task<CreateDeploymentStrategyResponse> CreateDeploymentStrategyAsync(CreateDeploymentStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -704,7 +704,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -768,7 +768,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -781,7 +781,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateExtensionResponse CreateExtension(CreateExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtensionResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
         public virtual Task<CreateExtensionResponse> CreateExtensionAsync(CreateExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtensionResponseUnmarshaller.Instance;
 
@@ -885,7 +885,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateExtensionAssociationResponse CreateExtensionAssociation(CreateExtensionAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
         public virtual Task<CreateExtensionAssociationResponse> CreateExtensionAssociationAsync(CreateExtensionAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.AppConfig
 
         internal virtual CreateHostedConfigurationVersionResponse CreateHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion">REST API Reference for CreateHostedConfigurationVersion Operation</seealso>
         public virtual Task<CreateHostedConfigurationVersionResponse> CreateHostedConfigurationVersionAsync(CreateHostedConfigurationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1046,7 +1046,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteConfigurationProfileResponse DeleteConfigurationProfile(DeleteConfigurationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteConfigurationProfile">REST API Reference for DeleteConfigurationProfile Operation</seealso>
         public virtual Task<DeleteConfigurationProfileResponse> DeleteConfigurationProfileAsync(DeleteConfigurationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -1143,7 +1143,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteDeploymentStrategyResponse DeleteDeploymentStrategy(DeleteDeploymentStrategyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteDeploymentStrategy">REST API Reference for DeleteDeploymentStrategy Operation</seealso>
         public virtual Task<DeleteDeploymentStrategyResponse> DeleteDeploymentStrategyAsync(DeleteDeploymentStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1227,7 +1227,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1240,7 +1240,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteExtensionResponse DeleteExtension(DeleteExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExtensionResponseUnmarshaller.Instance;
 
@@ -1271,7 +1271,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
         public virtual Task<DeleteExtensionResponse> DeleteExtensionAsync(DeleteExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExtensionResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteExtensionAssociationResponse DeleteExtensionAssociation(DeleteExtensionAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
         public virtual Task<DeleteExtensionAssociationResponse> DeleteExtensionAssociationAsync(DeleteExtensionAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -1328,7 +1328,7 @@ namespace Amazon.AppConfig
 
         internal virtual DeleteHostedConfigurationVersionResponse DeleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion">REST API Reference for DeleteHostedConfigurationVersion Operation</seealso>
         public virtual Task<DeleteHostedConfigurationVersionResponse> DeleteHostedConfigurationVersionAsync(DeleteHostedConfigurationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1371,7 +1371,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -1441,7 +1441,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -1455,7 +1455,7 @@ namespace Amazon.AppConfig
         [Obsolete("This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
         internal virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -1503,7 +1503,7 @@ namespace Amazon.AppConfig
         [Obsolete("This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession.")]
         public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
 
@@ -1516,7 +1516,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetConfigurationProfileResponse GetConfigurationProfile(GetConfigurationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -1546,7 +1546,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfigurationProfile">REST API Reference for GetConfigurationProfile Operation</seealso>
         public virtual Task<GetConfigurationProfileResponse> GetConfigurationProfileAsync(GetConfigurationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -1589,7 +1589,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public virtual Task<GetDeploymentResponse> GetDeploymentAsync(GetDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentResponseUnmarshaller.Instance;
 
@@ -1602,7 +1602,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetDeploymentStrategyResponse GetDeploymentStrategy(GetDeploymentStrategyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetDeploymentStrategy">REST API Reference for GetDeploymentStrategy Operation</seealso>
         public virtual Task<GetDeploymentStrategyResponse> GetDeploymentStrategyAsync(GetDeploymentStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -1649,7 +1649,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetExtensionResponse GetExtension(GetExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExtensionResponseUnmarshaller.Instance;
 
@@ -1726,7 +1726,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
         public virtual Task<GetExtensionResponse> GetExtensionAsync(GetExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExtensionResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetExtensionAssociationResponse GetExtensionAssociation(GetExtensionAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
         public virtual Task<GetExtensionAssociationResponse> GetExtensionAssociationAsync(GetExtensionAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -1784,7 +1784,7 @@ namespace Amazon.AppConfig
 
         internal virtual GetHostedConfigurationVersionResponse GetHostedConfigurationVersion(GetHostedConfigurationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion">REST API Reference for GetHostedConfigurationVersion Operation</seealso>
         public virtual Task<GetHostedConfigurationVersionResponse> GetHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostedConfigurationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostedConfigurationVersionResponseUnmarshaller.Instance;
 
@@ -1827,7 +1827,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1854,7 +1854,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1867,7 +1867,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListConfigurationProfilesResponse ListConfigurationProfiles(ListConfigurationProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationProfilesResponseUnmarshaller.Instance;
 
@@ -1897,7 +1897,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListConfigurationProfiles">REST API Reference for ListConfigurationProfiles Operation</seealso>
         public virtual Task<ListConfigurationProfilesResponse> ListConfigurationProfilesAsync(ListConfigurationProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConfigurationProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConfigurationProfilesResponseUnmarshaller.Instance;
 
@@ -1910,7 +1910,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public virtual Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
@@ -1953,7 +1953,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListDeploymentStrategiesResponse ListDeploymentStrategies(ListDeploymentStrategiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentStrategiesResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListDeploymentStrategies">REST API Reference for ListDeploymentStrategies Operation</seealso>
         public virtual Task<ListDeploymentStrategiesResponse> ListDeploymentStrategiesAsync(ListDeploymentStrategiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeploymentStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeploymentStrategiesResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2023,7 +2023,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -2036,7 +2036,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListExtensionAssociationsResponse ListExtensionAssociations(ListExtensionAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensionAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensionAssociationsResponseUnmarshaller.Instance;
 
@@ -2065,7 +2065,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
         public virtual Task<ListExtensionAssociationsResponse> ListExtensionAssociationsAsync(ListExtensionAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensionAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensionAssociationsResponseUnmarshaller.Instance;
 
@@ -2078,7 +2078,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListExtensionsResponse ListExtensions(ListExtensionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensionsResponseUnmarshaller.Instance;
 
@@ -2107,7 +2107,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
         public virtual Task<ListExtensionsResponse> ListExtensionsAsync(ListExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExtensionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExtensionsResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListHostedConfigurationVersionsResponse ListHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedConfigurationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedConfigurationVersionsResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">REST API Reference for ListHostedConfigurationVersions Operation</seealso>
         public virtual Task<ListHostedConfigurationVersionsResponse> ListHostedConfigurationVersionsAsync(ListHostedConfigurationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostedConfigurationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostedConfigurationVersionsResponseUnmarshaller.Instance;
 
@@ -2163,7 +2163,7 @@ namespace Amazon.AppConfig
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2193,7 +2193,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2206,7 +2206,7 @@ namespace Amazon.AppConfig
 
         internal virtual StartDeploymentResponse StartDeployment(StartDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeploymentResponseUnmarshaller.Instance;
 
@@ -2240,7 +2240,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
         public virtual Task<StartDeploymentResponse> StartDeploymentAsync(StartDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeploymentResponseUnmarshaller.Instance;
 
@@ -2253,7 +2253,7 @@ namespace Amazon.AppConfig
 
         internal virtual StopDeploymentResponse StopDeployment(StopDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDeploymentResponseUnmarshaller.Instance;
 
@@ -2287,7 +2287,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopDeployment">REST API Reference for StopDeployment Operation</seealso>
         public virtual Task<StopDeploymentResponse> StopDeploymentAsync(StopDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDeploymentResponseUnmarshaller.Instance;
 
@@ -2300,7 +2300,7 @@ namespace Amazon.AppConfig
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2345,7 +2345,7 @@ namespace Amazon.AppConfig
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2375,7 +2375,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2388,7 +2388,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2415,7 +2415,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2428,7 +2428,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -2458,7 +2458,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -2471,7 +2471,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateConfigurationProfileResponse UpdateConfigurationProfile(UpdateConfigurationProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -2501,7 +2501,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateConfigurationProfile">REST API Reference for UpdateConfigurationProfile Operation</seealso>
         public virtual Task<UpdateConfigurationProfileResponse> UpdateConfigurationProfileAsync(UpdateConfigurationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConfigurationProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConfigurationProfileResponseUnmarshaller.Instance;
 
@@ -2514,7 +2514,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateDeploymentStrategyResponse UpdateDeploymentStrategy(UpdateDeploymentStrategyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -2544,7 +2544,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateDeploymentStrategy">REST API Reference for UpdateDeploymentStrategy Operation</seealso>
         public virtual Task<UpdateDeploymentStrategyResponse> UpdateDeploymentStrategyAsync(UpdateDeploymentStrategyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDeploymentStrategyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDeploymentStrategyResponseUnmarshaller.Instance;
 
@@ -2557,7 +2557,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -2587,7 +2587,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateEnvironment">REST API Reference for UpdateEnvironment Operation</seealso>
         public virtual Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEnvironmentResponseUnmarshaller.Instance;
 
@@ -2600,7 +2600,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateExtensionResponse UpdateExtension(UpdateExtensionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExtensionResponseUnmarshaller.Instance;
 
@@ -2635,7 +2635,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
         public virtual Task<UpdateExtensionResponse> UpdateExtensionAsync(UpdateExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExtensionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExtensionResponseUnmarshaller.Instance;
 
@@ -2648,7 +2648,7 @@ namespace Amazon.AppConfig
 
         internal virtual UpdateExtensionAssociationResponse UpdateExtensionAssociation(UpdateExtensionAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -2680,7 +2680,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
         public virtual Task<UpdateExtensionAssociationResponse> UpdateExtensionAssociationAsync(UpdateExtensionAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateExtensionAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateExtensionAssociationResponseUnmarshaller.Instance;
 
@@ -2693,7 +2693,7 @@ namespace Amazon.AppConfig
 
         internal virtual ValidateConfigurationResponse ValidateConfiguration(ValidateConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateConfigurationResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.AppConfig
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ValidateConfiguration">REST API Reference for ValidateConfiguration Operation</seealso>
         public virtual Task<ValidateConfigurationResponse> ValidateConfigurationAsync(ValidateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateConfigurationResponseUnmarshaller.Instance;
 

@@ -295,7 +295,7 @@ namespace Amazon.ForecastQueryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryForecast">REST API Reference for QueryForecast Operation</seealso>
         public virtual QueryForecastResponse QueryForecast(QueryForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryForecastResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.ForecastQueryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryForecast">REST API Reference for QueryForecast Operation</seealso>
         public virtual IAsyncResult BeginQueryForecast(QueryForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryForecastResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.ForecastQueryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
         public virtual QueryWhatIfForecastResponse QueryWhatIfForecast(QueryWhatIfForecastRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryWhatIfForecastResponseUnmarshaller.Instance;
 
@@ -385,7 +385,7 @@ namespace Amazon.ForecastQueryService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/QueryWhatIfForecast">REST API Reference for QueryWhatIfForecast Operation</seealso>
         public virtual IAsyncResult BeginQueryWhatIfForecast(QueryWhatIfForecastRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryWhatIfForecastRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryWhatIfForecastResponseUnmarshaller.Instance;
 

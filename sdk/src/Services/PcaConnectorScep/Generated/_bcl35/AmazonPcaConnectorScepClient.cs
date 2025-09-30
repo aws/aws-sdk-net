@@ -321,7 +321,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateChallenge">REST API Reference for CreateChallenge Operation</seealso>
         public virtual CreateChallengeResponse CreateChallenge(CreateChallengeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChallengeResponseUnmarshaller.Instance;
 
@@ -342,7 +342,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateChallenge">REST API Reference for CreateChallenge Operation</seealso>
         public virtual IAsyncResult BeginCreateChallenge(CreateChallengeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChallengeResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual IAsyncResult BeginCreateConnector(CreateConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -489,7 +489,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteChallenge">REST API Reference for DeleteChallenge Operation</seealso>
         public virtual DeleteChallengeResponse DeleteChallenge(DeleteChallengeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChallengeResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteChallenge">REST API Reference for DeleteChallenge Operation</seealso>
         public virtual IAsyncResult BeginDeleteChallenge(DeleteChallengeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChallengeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChallengeResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnector(DeleteConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -646,7 +646,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengeMetadata">REST API Reference for GetChallengeMetadata Operation</seealso>
         public virtual GetChallengeMetadataResponse GetChallengeMetadata(GetChallengeMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengeMetadata">REST API Reference for GetChallengeMetadata Operation</seealso>
         public virtual IAsyncResult BeginGetChallengeMetadata(GetChallengeMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengePassword">REST API Reference for GetChallengePassword Operation</seealso>
         public virtual GetChallengePasswordResponse GetChallengePassword(GetChallengePasswordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengePasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengePasswordResponseUnmarshaller.Instance;
 
@@ -743,7 +743,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetChallengePassword">REST API Reference for GetChallengePassword Operation</seealso>
         public virtual IAsyncResult BeginGetChallengePassword(GetChallengePasswordRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChallengePasswordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChallengePasswordResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
         public virtual GetConnectorResponse GetConnector(GetConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/GetConnector">REST API Reference for GetConnector Operation</seealso>
         public virtual IAsyncResult BeginGetConnector(GetConnectorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
 
@@ -876,7 +876,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListChallengeMetadata">REST API Reference for ListChallengeMetadata Operation</seealso>
         public virtual ListChallengeMetadataResponse ListChallengeMetadata(ListChallengeMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -897,7 +897,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListChallengeMetadata">REST API Reference for ListChallengeMetadata Operation</seealso>
         public virtual IAsyncResult BeginListChallengeMetadata(ListChallengeMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChallengeMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChallengeMetadataResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual IAsyncResult BeginListConnectors(ListConnectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -1028,7 +1028,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1049,7 +1049,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1180,7 +1180,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1201,7 +1201,7 @@ namespace Amazon.PcaConnectorScep
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pca-connector-scep-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

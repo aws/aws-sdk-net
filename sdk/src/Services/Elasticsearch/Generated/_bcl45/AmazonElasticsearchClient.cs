@@ -306,7 +306,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
         public virtual AcceptInboundCrossClusterSearchConnectionResponse AcceptInboundCrossClusterSearchConnection(AcceptInboundCrossClusterSearchConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AcceptInboundCrossClusterSearchConnection">REST API Reference for AcceptInboundCrossClusterSearchConnection Operation</seealso>
         public virtual Task<AcceptInboundCrossClusterSearchConnectionResponse> AcceptInboundCrossClusterSearchConnectionAsync(AcceptInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
             
@@ -376,7 +376,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
             
@@ -455,7 +455,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual AssociatePackageResponse AssociatePackage(AssociatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AssociatePackage">REST API Reference for AssociatePackage Operation</seealso>
         public virtual Task<AssociatePackageResponse> AssociatePackageAsync(AssociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociatePackageResponseUnmarshaller.Instance;
             
@@ -541,7 +541,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
         public virtual AuthorizeVpcEndpointAccessResponse AuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -584,7 +584,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
         public virtual Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -623,7 +623,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
         public virtual CancelDomainConfigChangeResponse CancelDomainConfigChange(CancelDomainConfigChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDomainConfigChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDomainConfigChangeResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelDomainConfigChange">REST API Reference for CancelDomainConfigChange Operation</seealso>
         public virtual Task<CancelDomainConfigChangeResponse> CancelDomainConfigChangeAsync(CancelDomainConfigChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDomainConfigChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDomainConfigChangeResponseUnmarshaller.Instance;
             
@@ -698,7 +698,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         public virtual CancelElasticsearchServiceSoftwareUpdateResponse CancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">REST API Reference for CancelElasticsearchServiceSoftwareUpdate Operation</seealso>
         public virtual Task<CancelElasticsearchServiceSoftwareUpdateResponse> CancelElasticsearchServiceSoftwareUpdateAsync(CancelElasticsearchServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
             
@@ -783,7 +783,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         public virtual CreateElasticsearchDomainResponse CreateElasticsearchDomain(CreateElasticsearchDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
 
@@ -831,7 +831,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">REST API Reference for CreateElasticsearchDomain Operation</seealso>
         public virtual Task<CreateElasticsearchDomainResponse> CreateElasticsearchDomainAsync(CreateElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateElasticsearchDomainResponseUnmarshaller.Instance;
             
@@ -869,7 +869,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
         public virtual CreateOutboundCrossClusterSearchConnectionResponse CreateOutboundCrossClusterSearchConnection(CreateOutboundCrossClusterSearchConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
 
@@ -906,7 +906,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateOutboundCrossClusterSearchConnection">REST API Reference for CreateOutboundCrossClusterSearchConnection Operation</seealso>
         public virtual Task<CreateOutboundCrossClusterSearchConnectionResponse> CreateOutboundCrossClusterSearchConnectionAsync(CreateOutboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
             
@@ -953,7 +953,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
 
@@ -999,7 +999,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         public virtual Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
             
@@ -1042,7 +1042,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -1084,7 +1084,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
             
@@ -1120,7 +1120,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         public virtual DeleteElasticsearchDomainResponse DeleteElasticsearchDomain(DeleteElasticsearchDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
 
@@ -1155,7 +1155,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchDomain">REST API Reference for DeleteElasticsearchDomain Operation</seealso>
         public virtual Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(DeleteElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteElasticsearchDomainResponseUnmarshaller.Instance;
             
@@ -1190,7 +1190,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         public virtual DeleteElasticsearchServiceRoleResponse DeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
 
@@ -1224,7 +1224,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">REST API Reference for DeleteElasticsearchServiceRole Operation</seealso>
         public virtual Task<DeleteElasticsearchServiceRoleResponse> DeleteElasticsearchServiceRoleAsync(DeleteElasticsearchServiceRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteElasticsearchServiceRoleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteElasticsearchServiceRoleResponseUnmarshaller.Instance;
             
@@ -1254,7 +1254,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
         public virtual DeleteInboundCrossClusterSearchConnectionResponse DeleteInboundCrossClusterSearchConnection(DeleteInboundCrossClusterSearchConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
 
@@ -1283,7 +1283,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteInboundCrossClusterSearchConnection">REST API Reference for DeleteInboundCrossClusterSearchConnection Operation</seealso>
         public virtual Task<DeleteInboundCrossClusterSearchConnectionResponse> DeleteInboundCrossClusterSearchConnectionAsync(DeleteInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
             
@@ -1313,7 +1313,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
         public virtual DeleteOutboundCrossClusterSearchConnectionResponse DeleteOutboundCrossClusterSearchConnection(DeleteOutboundCrossClusterSearchConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
 
@@ -1342,7 +1342,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteOutboundCrossClusterSearchConnection">REST API Reference for DeleteOutboundCrossClusterSearchConnection Operation</seealso>
         public virtual Task<DeleteOutboundCrossClusterSearchConnectionResponse> DeleteOutboundCrossClusterSearchConnectionAsync(DeleteOutboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOutboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOutboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
             
@@ -1385,7 +1385,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
 
@@ -1427,7 +1427,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         public virtual Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
             
@@ -1463,7 +1463,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
 
@@ -1498,7 +1498,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
             
@@ -1534,7 +1534,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual DescribeDomainAutoTunesResponse DescribeDomainAutoTunes(DescribeDomainAutoTunesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainAutoTunes">REST API Reference for DescribeDomainAutoTunes Operation</seealso>
         public virtual Task<DescribeDomainAutoTunesResponse> DescribeDomainAutoTunesAsync(DescribeDomainAutoTunesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainAutoTunesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainAutoTunesResponseUnmarshaller.Instance;
             
@@ -1605,7 +1605,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
         public virtual DescribeDomainChangeProgressResponse DescribeDomainChangeProgress(DescribeDomainChangeProgressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeDomainChangeProgress">REST API Reference for DescribeDomainChangeProgress Operation</seealso>
         public virtual Task<DescribeDomainChangeProgressResponse> DescribeDomainChangeProgressAsync(DescribeDomainChangeProgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDomainChangeProgressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDomainChangeProgressResponseUnmarshaller.Instance;
             
@@ -1676,7 +1676,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         public virtual DescribeElasticsearchDomainResponse DescribeElasticsearchDomain(DescribeElasticsearchDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomain">REST API Reference for DescribeElasticsearchDomain Operation</seealso>
         public virtual Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(DescribeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainResponseUnmarshaller.Instance;
             
@@ -1747,7 +1747,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         public virtual DescribeElasticsearchDomainConfigResponse DescribeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomainConfig">REST API Reference for DescribeElasticsearchDomainConfig Operation</seealso>
         public virtual Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(DescribeElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainConfigResponseUnmarshaller.Instance;
             
@@ -1814,7 +1814,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         public virtual DescribeElasticsearchDomainsResponse DescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
 
@@ -1845,7 +1845,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchDomains">REST API Reference for DescribeElasticsearchDomains Operation</seealso>
         public virtual Task<DescribeElasticsearchDomainsResponse> DescribeElasticsearchDomainsAsync(DescribeElasticsearchDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchDomainsResponseUnmarshaller.Instance;
             
@@ -1890,7 +1890,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         public virtual DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
 
@@ -1934,7 +1934,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeElasticsearchInstanceTypeLimits">REST API Reference for DescribeElasticsearchInstanceTypeLimits Operation</seealso>
         public virtual Task<DescribeElasticsearchInstanceTypeLimitsResponse> DescribeElasticsearchInstanceTypeLimitsAsync(DescribeElasticsearchInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeElasticsearchInstanceTypeLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
             
@@ -1963,7 +1963,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
         public virtual DescribeInboundCrossClusterSearchConnectionsResponse DescribeInboundCrossClusterSearchConnections(DescribeInboundCrossClusterSearchConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
 
@@ -1991,7 +1991,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeInboundCrossClusterSearchConnections">REST API Reference for DescribeInboundCrossClusterSearchConnections Operation</seealso>
         public virtual Task<DescribeInboundCrossClusterSearchConnectionsResponse> DescribeInboundCrossClusterSearchConnectionsAsync(DescribeInboundCrossClusterSearchConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
             
@@ -2020,7 +2020,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
         public virtual DescribeOutboundCrossClusterSearchConnectionsResponse DescribeOutboundCrossClusterSearchConnections(DescribeOutboundCrossClusterSearchConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
 
@@ -2048,7 +2048,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeOutboundCrossClusterSearchConnections">REST API Reference for DescribeOutboundCrossClusterSearchConnections Operation</seealso>
         public virtual Task<DescribeOutboundCrossClusterSearchConnectionsResponse> DescribeOutboundCrossClusterSearchConnectionsAsync(DescribeOutboundCrossClusterSearchConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOutboundCrossClusterSearchConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOutboundCrossClusterSearchConnectionsResponseUnmarshaller.Instance;
             
@@ -2088,7 +2088,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual DescribePackagesResponse DescribePackages(DescribePackagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribePackages">REST API Reference for DescribePackages Operation</seealso>
         public virtual Task<DescribePackagesResponse> DescribePackagesAsync(DescribePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePackagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePackagesResponseUnmarshaller.Instance;
             
@@ -2163,7 +2163,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         public virtual DescribeReservedElasticsearchInstanceOfferingsResponse DescribeReservedElasticsearchInstanceOfferings(DescribeReservedElasticsearchInstanceOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferings">REST API Reference for DescribeReservedElasticsearchInstanceOfferings Operation</seealso>
         public virtual Task<DescribeReservedElasticsearchInstanceOfferingsResponse> DescribeReservedElasticsearchInstanceOfferingsAsync(DescribeReservedElasticsearchInstanceOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedElasticsearchInstanceOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedElasticsearchInstanceOfferingsResponseUnmarshaller.Instance;
             
@@ -2234,7 +2234,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         public virtual DescribeReservedElasticsearchInstancesResponse DescribeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         public virtual Task<DescribeReservedElasticsearchInstancesResponse> DescribeReservedElasticsearchInstancesAsync(DescribeReservedElasticsearchInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedElasticsearchInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedElasticsearchInstancesResponseUnmarshaller.Instance;
             
@@ -2304,7 +2304,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -2338,7 +2338,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public virtual Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
             
@@ -2381,7 +2381,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
 
@@ -2423,7 +2423,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DissociatePackage">REST API Reference for DissociatePackage Operation</seealso>
         public virtual Task<DissociatePackageResponse> DissociatePackageAsync(DissociatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociatePackageResponseUnmarshaller.Instance;
             
@@ -2464,7 +2464,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         public virtual GetCompatibleElasticsearchVersionsResponse GetCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
 
@@ -2504,7 +2504,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetCompatibleElasticsearchVersions">REST API Reference for GetCompatibleElasticsearchVersions Operation</seealso>
         public virtual Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(GetCompatibleElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCompatibleElasticsearchVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCompatibleElasticsearchVersionsResponseUnmarshaller.Instance;
             
@@ -2544,7 +2544,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual GetPackageVersionHistoryResponse GetPackageVersionHistory(GetPackageVersionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
 
@@ -2583,7 +2583,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetPackageVersionHistory">REST API Reference for GetPackageVersionHistory Operation</seealso>
         public virtual Task<GetPackageVersionHistoryResponse> GetPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPackageVersionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPackageVersionHistoryResponseUnmarshaller.Instance;
             
@@ -2623,7 +2623,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual GetUpgradeHistoryResponse GetUpgradeHistory(GetUpgradeHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
 
@@ -2662,7 +2662,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeHistory">REST API Reference for GetUpgradeHistory Operation</seealso>
         public virtual Task<GetUpgradeHistoryResponse> GetUpgradeHistoryAsync(GetUpgradeHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeHistoryResponseUnmarshaller.Instance;
             
@@ -2702,7 +2702,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual GetUpgradeStatusResponse GetUpgradeStatus(GetUpgradeStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
 
@@ -2741,7 +2741,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/GetUpgradeStatus">REST API Reference for GetUpgradeStatus Operation</seealso>
         public virtual Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(GetUpgradeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUpgradeStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUpgradeStatusResponseUnmarshaller.Instance;
             
@@ -2768,7 +2768,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainNames">REST API Reference for ListDomainNames Operation</seealso>
         public virtual Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainNamesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
             
@@ -2833,7 +2833,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual ListDomainsForPackageResponse ListDomainsForPackage(ListDomainsForPackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
 
@@ -2871,7 +2871,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListDomainsForPackage">REST API Reference for ListDomainsForPackage Operation</seealso>
         public virtual Task<ListDomainsForPackageResponse> ListDomainsForPackageAsync(ListDomainsForPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsForPackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
             
@@ -2906,7 +2906,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         public virtual ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
 
@@ -2940,7 +2940,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes">REST API Reference for ListElasticsearchInstanceTypes Operation</seealso>
         public virtual Task<ListElasticsearchInstanceTypesResponse> ListElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListElasticsearchInstanceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
             
@@ -2975,7 +2975,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         public virtual ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
 
@@ -3009,7 +3009,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions">REST API Reference for ListElasticsearchVersions Operation</seealso>
         public virtual Task<ListElasticsearchVersionsResponse> ListElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListElasticsearchVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
             
@@ -3048,7 +3048,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual ListPackagesForDomainResponse ListPackagesForDomain(ListPackagesForDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
 
@@ -3086,7 +3086,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListPackagesForDomain">REST API Reference for ListPackagesForDomain Operation</seealso>
         public virtual Task<ListPackagesForDomainResponse> ListPackagesForDomainAsync(ListPackagesForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPackagesForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPackagesForDomainResponseUnmarshaller.Instance;
             
@@ -3121,7 +3121,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -3155,7 +3155,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
             
@@ -3192,7 +3192,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         public virtual ListVpcEndpointAccessResponse ListVpcEndpointAccess(ListVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -3228,7 +3228,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         public virtual Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -3261,7 +3261,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -3293,7 +3293,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
             
@@ -3330,7 +3330,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         public virtual ListVpcEndpointsForDomainResponse ListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
 
@@ -3366,7 +3366,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         public virtual Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
             
@@ -3410,7 +3410,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         public virtual PurchaseReservedElasticsearchInstanceOfferingResponse PurchaseReservedElasticsearchInstanceOffering(PurchaseReservedElasticsearchInstanceOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
 
@@ -3453,7 +3453,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOffering">REST API Reference for PurchaseReservedElasticsearchInstanceOffering Operation</seealso>
         public virtual Task<PurchaseReservedElasticsearchInstanceOfferingResponse> PurchaseReservedElasticsearchInstanceOfferingAsync(PurchaseReservedElasticsearchInstanceOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedElasticsearchInstanceOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedElasticsearchInstanceOfferingResponseUnmarshaller.Instance;
             
@@ -3483,7 +3483,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
         public virtual RejectInboundCrossClusterSearchConnectionResponse RejectInboundCrossClusterSearchConnection(RejectInboundCrossClusterSearchConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
 
@@ -3512,7 +3512,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RejectInboundCrossClusterSearchConnection">REST API Reference for RejectInboundCrossClusterSearchConnection Operation</seealso>
         public virtual Task<RejectInboundCrossClusterSearchConnectionResponse> RejectInboundCrossClusterSearchConnectionAsync(RejectInboundCrossClusterSearchConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectInboundCrossClusterSearchConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectInboundCrossClusterSearchConnectionResponseUnmarshaller.Instance;
             
@@ -3543,7 +3543,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -3573,7 +3573,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
             
@@ -3613,7 +3613,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
         public virtual RevokeVpcEndpointAccessResponse RevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
 
@@ -3652,7 +3652,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
         public virtual Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
             
@@ -3687,7 +3687,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         public virtual StartElasticsearchServiceSoftwareUpdateResponse StartElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
 
@@ -3721,7 +3721,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">REST API Reference for StartElasticsearchServiceSoftwareUpdate Operation</seealso>
         public virtual Task<StartElasticsearchServiceSoftwareUpdateResponse> StartElasticsearchServiceSoftwareUpdateAsync(StartElasticsearchServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartElasticsearchServiceSoftwareUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartElasticsearchServiceSoftwareUpdateResponseUnmarshaller.Instance;
             
@@ -3765,7 +3765,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         public virtual UpdateElasticsearchDomainConfigResponse UpdateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
 
@@ -3808,7 +3808,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateElasticsearchDomainConfig">REST API Reference for UpdateElasticsearchDomainConfig Operation</seealso>
         public virtual Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(UpdateElasticsearchDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateElasticsearchDomainConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateElasticsearchDomainConfigResponseUnmarshaller.Instance;
             
@@ -3851,7 +3851,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
 
@@ -3893,7 +3893,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         public virtual Task<UpdatePackageResponse> UpdatePackageAsync(UpdatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
             
@@ -3936,7 +3936,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -3978,7 +3978,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
             
@@ -4022,7 +4022,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         public virtual UpgradeElasticsearchDomainResponse UpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
 
@@ -4065,7 +4065,7 @@ namespace Amazon.Elasticsearch
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeElasticsearchDomain">REST API Reference for UpgradeElasticsearchDomain Operation</seealso>
         public virtual Task<UpgradeElasticsearchDomainResponse> UpgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeElasticsearchDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeElasticsearchDomainResponseUnmarshaller.Instance;
             

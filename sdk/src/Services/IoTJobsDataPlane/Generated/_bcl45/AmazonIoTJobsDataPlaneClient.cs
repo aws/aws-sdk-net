@@ -159,7 +159,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         public virtual DescribeJobExecutionResponse DescribeJobExecution(DescribeJobExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
 
@@ -203,7 +203,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">REST API Reference for DescribeJobExecution Operation</seealso>
         public virtual Task<DescribeJobExecutionResponse> DescribeJobExecutionAsync(DescribeJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobExecutionResponseUnmarshaller.Instance;
             
@@ -245,7 +245,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">REST API Reference for GetPendingJobExecutions Operation</seealso>
         public virtual GetPendingJobExecutionsResponse GetPendingJobExecutions(GetPendingJobExecutionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPendingJobExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPendingJobExecutionsResponseUnmarshaller.Instance;
 
@@ -286,7 +286,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">REST API Reference for GetPendingJobExecutions Operation</seealso>
         public virtual Task<GetPendingJobExecutionsResponse> GetPendingJobExecutionsAsync(GetPendingJobExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPendingJobExecutionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPendingJobExecutionsResponseUnmarshaller.Instance;
             
@@ -326,7 +326,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
         public virtual StartCommandExecutionResponse StartCommandExecution(StartCommandExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
 
@@ -365,7 +365,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">REST API Reference for StartCommandExecution Operation</seealso>
         public virtual Task<StartCommandExecutionResponse> StartCommandExecutionAsync(StartCommandExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCommandExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCommandExecutionResponseUnmarshaller.Instance;
             
@@ -408,7 +408,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">REST API Reference for StartNextPendingJobExecution Operation</seealso>
         public virtual StartNextPendingJobExecutionResponse StartNextPendingJobExecution(StartNextPendingJobExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNextPendingJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNextPendingJobExecutionResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">REST API Reference for StartNextPendingJobExecution Operation</seealso>
         public virtual Task<StartNextPendingJobExecutionResponse> StartNextPendingJobExecutionAsync(StartNextPendingJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartNextPendingJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartNextPendingJobExecutionResponseUnmarshaller.Instance;
             
@@ -498,7 +498,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">REST API Reference for UpdateJobExecution Operation</seealso>
         public virtual UpdateJobExecutionResponse UpdateJobExecution(UpdateJobExecutionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobExecutionResponseUnmarshaller.Instance;
 
@@ -545,7 +545,7 @@ namespace Amazon.IoTJobsDataPlane
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">REST API Reference for UpdateJobExecution Operation</seealso>
         public virtual Task<UpdateJobExecutionResponse> UpdateJobExecutionAsync(UpdateJobExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobExecutionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobExecutionResponseUnmarshaller.Instance;
             

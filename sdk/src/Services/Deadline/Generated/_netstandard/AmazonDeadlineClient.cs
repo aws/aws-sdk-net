@@ -283,7 +283,7 @@ namespace Amazon.Deadline
 
         internal virtual AssociateMemberToFarmResponse AssociateMemberToFarm(AssociateMemberToFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFarmResponseUnmarshaller.Instance;
 
@@ -324,7 +324,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFarm">REST API Reference for AssociateMemberToFarm Operation</seealso>
         public virtual Task<AssociateMemberToFarmResponse> AssociateMemberToFarmAsync(AssociateMemberToFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFarmResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.Deadline
 
         internal virtual AssociateMemberToFleetResponse AssociateMemberToFleet(AssociateMemberToFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFleetResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToFleet">REST API Reference for AssociateMemberToFleet Operation</seealso>
         public virtual Task<AssociateMemberToFleetResponse> AssociateMemberToFleetAsync(AssociateMemberToFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToFleetResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.Deadline
 
         internal virtual AssociateMemberToJobResponse AssociateMemberToJob(AssociateMemberToJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToJobResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToJob">REST API Reference for AssociateMemberToJob Operation</seealso>
         public virtual Task<AssociateMemberToJobResponse> AssociateMemberToJobAsync(AssociateMemberToJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToJobResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.Deadline
 
         internal virtual AssociateMemberToQueueResponse AssociateMemberToQueue(AssociateMemberToQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToQueueResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToQueue">REST API Reference for AssociateMemberToQueue Operation</seealso>
         public virtual Task<AssociateMemberToQueueResponse> AssociateMemberToQueueAsync(AssociateMemberToQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMemberToQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMemberToQueueResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.Deadline
 
         internal virtual AssumeFleetRoleForReadResponse AssumeFleetRoleForRead(AssumeFleetRoleForReadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForReadResponseUnmarshaller.Instance;
 
@@ -537,7 +537,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForRead">REST API Reference for AssumeFleetRoleForRead Operation</seealso>
         public virtual Task<AssumeFleetRoleForReadResponse> AssumeFleetRoleForReadAsync(AssumeFleetRoleForReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForReadResponseUnmarshaller.Instance;
 
@@ -550,7 +550,7 @@ namespace Amazon.Deadline
 
         internal virtual AssumeFleetRoleForWorkerResponse AssumeFleetRoleForWorker(AssumeFleetRoleForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -591,7 +591,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeFleetRoleForWorker">REST API Reference for AssumeFleetRoleForWorker Operation</seealso>
         public virtual Task<AssumeFleetRoleForWorkerResponse> AssumeFleetRoleForWorkerAsync(AssumeFleetRoleForWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeFleetRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeFleetRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.Deadline
 
         internal virtual AssumeQueueRoleForReadResponse AssumeQueueRoleForRead(AssumeQueueRoleForReadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForReadResponseUnmarshaller.Instance;
 
@@ -642,7 +642,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForRead">REST API Reference for AssumeQueueRoleForRead Operation</seealso>
         public virtual Task<AssumeQueueRoleForReadResponse> AssumeQueueRoleForReadAsync(AssumeQueueRoleForReadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForReadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForReadResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.Deadline
 
         internal virtual AssumeQueueRoleForUserResponse AssumeQueueRoleForUser(AssumeQueueRoleForUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForUserResponseUnmarshaller.Instance;
 
@@ -692,7 +692,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForUser">REST API Reference for AssumeQueueRoleForUser Operation</seealso>
         public virtual Task<AssumeQueueRoleForUserResponse> AssumeQueueRoleForUserAsync(AssumeQueueRoleForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForUserResponseUnmarshaller.Instance;
 
@@ -705,7 +705,7 @@ namespace Amazon.Deadline
 
         internal virtual AssumeQueueRoleForWorkerResponse AssumeQueueRoleForWorker(AssumeQueueRoleForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssumeQueueRoleForWorker">REST API Reference for AssumeQueueRoleForWorker Operation</seealso>
         public virtual Task<AssumeQueueRoleForWorkerResponse> AssumeQueueRoleForWorkerAsync(AssumeQueueRoleForWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssumeQueueRoleForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssumeQueueRoleForWorkerResponseUnmarshaller.Instance;
 
@@ -759,7 +759,7 @@ namespace Amazon.Deadline
 
         internal virtual BatchGetJobEntityResponse BatchGetJobEntity(BatchGetJobEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobEntityResponseUnmarshaller.Instance;
 
@@ -796,7 +796,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJobEntity">REST API Reference for BatchGetJobEntity Operation</seealso>
         public virtual Task<BatchGetJobEntityResponse> BatchGetJobEntityAsync(BatchGetJobEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobEntityResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.Deadline
 
         internal virtual CopyJobTemplateResponse CopyJobTemplate(CopyJobTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyJobTemplateResponseUnmarshaller.Instance;
 
@@ -846,7 +846,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CopyJobTemplate">REST API Reference for CopyJobTemplate Operation</seealso>
         public virtual Task<CopyJobTemplateResponse> CopyJobTemplateAsync(CopyJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyJobTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyJobTemplateResponseUnmarshaller.Instance;
 
@@ -859,7 +859,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateBudgetResponse CreateBudget(CreateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
@@ -900,7 +900,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBudgetResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateFarmResponse CreateFarm(CreateFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFarmResponseUnmarshaller.Instance;
 
@@ -957,7 +957,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFarm">REST API Reference for CreateFarm Operation</seealso>
         public virtual Task<CreateFarmResponse> CreateFarmAsync(CreateFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFarmResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -1013,7 +1013,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -1026,7 +1026,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1069,7 +1069,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -1082,7 +1082,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateLicenseEndpointResponse CreateLicenseEndpoint(CreateLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLicenseEndpoint">REST API Reference for CreateLicenseEndpoint Operation</seealso>
         public virtual Task<CreateLicenseEndpointResponse> CreateLicenseEndpointAsync(CreateLicenseEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateLimitResponse CreateLimit(CreateLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLimitResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateLimit">REST API Reference for CreateLimit Operation</seealso>
         public virtual Task<CreateLimitResponse> CreateLimitAsync(CreateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLimitResponseUnmarshaller.Instance;
 
@@ -1201,7 +1201,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateMonitorResponse CreateMonitor(CreateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateMonitor">REST API Reference for CreateMonitor Operation</seealso>
         public virtual Task<CreateMonitorResponse> CreateMonitorAsync(CreateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMonitorResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -1296,7 +1296,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -1309,7 +1309,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateQueueEnvironmentResponse CreateQueueEnvironment(CreateQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -1350,7 +1350,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueEnvironment">REST API Reference for CreateQueueEnvironment Operation</seealso>
         public virtual Task<CreateQueueEnvironmentResponse> CreateQueueEnvironmentAsync(CreateQueueEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateQueueFleetAssociationResponse CreateQueueFleetAssociation(CreateQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueFleetAssociation">REST API Reference for CreateQueueFleetAssociation Operation</seealso>
         public virtual Task<CreateQueueFleetAssociationResponse> CreateQueueFleetAssociationAsync(CreateQueueFleetAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateQueueLimitAssociationResponse CreateQueueLimitAssociation(CreateQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -1453,7 +1453,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueLimitAssociation">REST API Reference for CreateQueueLimitAssociation Operation</seealso>
         public virtual Task<CreateQueueLimitAssociationResponse> CreateQueueLimitAssociationAsync(CreateQueueLimitAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -1466,7 +1466,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateStorageProfileResponse CreateStorageProfile(CreateStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageProfileResponseUnmarshaller.Instance;
 
@@ -1508,7 +1508,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateStorageProfile">REST API Reference for CreateStorageProfile Operation</seealso>
         public virtual Task<CreateStorageProfileResponse> CreateStorageProfileAsync(CreateStorageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageProfileResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.Deadline
 
         internal virtual CreateWorkerResponse CreateWorker(CreateWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateWorker">REST API Reference for CreateWorker Operation</seealso>
         public virtual Task<CreateWorkerResponse> CreateWorkerAsync(CreateWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkerResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteBudgetResponse DeleteBudget(DeleteBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
@@ -1625,7 +1625,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBudgetResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteFarmResponse DeleteFarm(DeleteFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFarmResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFarm">REST API Reference for DeleteFarm Operation</seealso>
         public virtual Task<DeleteFarmResponse> DeleteFarmAsync(DeleteFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFarmResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -1729,7 +1729,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteLicenseEndpointResponse DeleteLicenseEndpoint(DeleteLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLicenseEndpoint">REST API Reference for DeleteLicenseEndpoint Operation</seealso>
         public virtual Task<DeleteLicenseEndpointResponse> DeleteLicenseEndpointAsync(DeleteLicenseEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteLimitResponse DeleteLimit(DeleteLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLimitResponseUnmarshaller.Instance;
 
@@ -1831,7 +1831,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteLimit">REST API Reference for DeleteLimit Operation</seealso>
         public virtual Task<DeleteLimitResponse> DeleteLimitAsync(DeleteLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLimitResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteMeteredProductResponse DeleteMeteredProduct(DeleteMeteredProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeteredProductResponseUnmarshaller.Instance;
 
@@ -1881,7 +1881,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMeteredProduct">REST API Reference for DeleteMeteredProduct Operation</seealso>
         public virtual Task<DeleteMeteredProductResponse> DeleteMeteredProductAsync(DeleteMeteredProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeteredProductResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteMonitorResponse DeleteMonitor(DeleteMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -1932,7 +1932,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteMonitor">REST API Reference for DeleteMonitor Operation</seealso>
         public virtual Task<DeleteMonitorResponse> DeleteMonitorAsync(DeleteMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMonitorResponseUnmarshaller.Instance;
 
@@ -1945,7 +1945,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -2006,7 +2006,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteQueueEnvironmentResponse DeleteQueueEnvironment(DeleteQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2040,7 +2040,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueEnvironment">REST API Reference for DeleteQueueEnvironment Operation</seealso>
         public virtual Task<DeleteQueueEnvironmentResponse> DeleteQueueEnvironmentAsync(DeleteQueueEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteQueueFleetAssociationResponse DeleteQueueFleetAssociation(DeleteQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueFleetAssociation">REST API Reference for DeleteQueueFleetAssociation Operation</seealso>
         public virtual Task<DeleteQueueFleetAssociationResponse> DeleteQueueFleetAssociationAsync(DeleteQueueFleetAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2107,7 +2107,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteQueueLimitAssociationResponse DeleteQueueLimitAssociation(DeleteQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -2151,7 +2151,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteQueueLimitAssociation">REST API Reference for DeleteQueueLimitAssociation Operation</seealso>
         public virtual Task<DeleteQueueLimitAssociationResponse> DeleteQueueLimitAssociationAsync(DeleteQueueLimitAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteStorageProfileResponse DeleteStorageProfile(DeleteStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageProfileResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteStorageProfile">REST API Reference for DeleteStorageProfile Operation</seealso>
         public virtual Task<DeleteStorageProfileResponse> DeleteStorageProfileAsync(DeleteStorageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageProfileResponseUnmarshaller.Instance;
 
@@ -2211,7 +2211,7 @@ namespace Amazon.Deadline
 
         internal virtual DeleteWorkerResponse DeleteWorker(DeleteWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerResponseUnmarshaller.Instance;
 
@@ -2252,7 +2252,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteWorker">REST API Reference for DeleteWorker Operation</seealso>
         public virtual Task<DeleteWorkerResponse> DeleteWorkerAsync(DeleteWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkerResponseUnmarshaller.Instance;
 
@@ -2265,7 +2265,7 @@ namespace Amazon.Deadline
 
         internal virtual DisassociateMemberFromFarmResponse DisassociateMemberFromFarm(DisassociateMemberFromFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFarmResponseUnmarshaller.Instance;
 
@@ -2302,7 +2302,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFarm">REST API Reference for DisassociateMemberFromFarm Operation</seealso>
         public virtual Task<DisassociateMemberFromFarmResponse> DisassociateMemberFromFarmAsync(DisassociateMemberFromFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFarmResponseUnmarshaller.Instance;
 
@@ -2315,7 +2315,7 @@ namespace Amazon.Deadline
 
         internal virtual DisassociateMemberFromFleetResponse DisassociateMemberFromFleet(DisassociateMemberFromFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFleetResponseUnmarshaller.Instance;
 
@@ -2356,7 +2356,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromFleet">REST API Reference for DisassociateMemberFromFleet Operation</seealso>
         public virtual Task<DisassociateMemberFromFleetResponse> DisassociateMemberFromFleetAsync(DisassociateMemberFromFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromFleetResponseUnmarshaller.Instance;
 
@@ -2369,7 +2369,7 @@ namespace Amazon.Deadline
 
         internal virtual DisassociateMemberFromJobResponse DisassociateMemberFromJob(DisassociateMemberFromJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromJobResponseUnmarshaller.Instance;
 
@@ -2406,7 +2406,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromJob">REST API Reference for DisassociateMemberFromJob Operation</seealso>
         public virtual Task<DisassociateMemberFromJobResponse> DisassociateMemberFromJobAsync(DisassociateMemberFromJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromJobResponseUnmarshaller.Instance;
 
@@ -2419,7 +2419,7 @@ namespace Amazon.Deadline
 
         internal virtual DisassociateMemberFromQueueResponse DisassociateMemberFromQueue(DisassociateMemberFromQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromQueueResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DisassociateMemberFromQueue">REST API Reference for DisassociateMemberFromQueue Operation</seealso>
         public virtual Task<DisassociateMemberFromQueueResponse> DisassociateMemberFromQueueAsync(DisassociateMemberFromQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMemberFromQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMemberFromQueueResponseUnmarshaller.Instance;
 
@@ -2473,7 +2473,7 @@ namespace Amazon.Deadline
 
         internal virtual GetBudgetResponse GetBudget(GetBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBudgetResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetBudget">REST API Reference for GetBudget Operation</seealso>
         public virtual Task<GetBudgetResponse> GetBudgetAsync(GetBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBudgetResponseUnmarshaller.Instance;
 
@@ -2523,7 +2523,7 @@ namespace Amazon.Deadline
 
         internal virtual GetFarmResponse GetFarm(GetFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFarmResponseUnmarshaller.Instance;
 
@@ -2560,7 +2560,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFarm">REST API Reference for GetFarm Operation</seealso>
         public virtual Task<GetFarmResponse> GetFarmAsync(GetFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFarmResponseUnmarshaller.Instance;
 
@@ -2573,7 +2573,7 @@ namespace Amazon.Deadline
 
         internal virtual GetFleetResponse GetFleet(GetFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFleet">REST API Reference for GetFleet Operation</seealso>
         public virtual Task<GetFleetResponse> GetFleetAsync(GetFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -2623,7 +2623,7 @@ namespace Amazon.Deadline
 
         internal virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -2673,7 +2673,7 @@ namespace Amazon.Deadline
 
         internal virtual GetLicenseEndpointResponse GetLicenseEndpoint(GetLicenseEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -2710,7 +2710,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLicenseEndpoint">REST API Reference for GetLicenseEndpoint Operation</seealso>
         public virtual Task<GetLicenseEndpointResponse> GetLicenseEndpointAsync(GetLicenseEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLicenseEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLicenseEndpointResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.Deadline
 
         internal virtual GetLimitResponse GetLimit(GetLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLimitResponseUnmarshaller.Instance;
 
@@ -2760,7 +2760,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetLimit">REST API Reference for GetLimit Operation</seealso>
         public virtual Task<GetLimitResponse> GetLimitAsync(GetLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLimitResponseUnmarshaller.Instance;
 
@@ -2773,7 +2773,7 @@ namespace Amazon.Deadline
 
         internal virtual GetMonitorResponse GetMonitor(GetMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -2810,7 +2810,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitor">REST API Reference for GetMonitor Operation</seealso>
         public virtual Task<GetMonitorResponse> GetMonitorAsync(GetMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMonitorResponseUnmarshaller.Instance;
 
@@ -2823,7 +2823,7 @@ namespace Amazon.Deadline
 
         internal virtual GetQueueResponse GetQueue(GetQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -2860,7 +2860,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueue">REST API Reference for GetQueue Operation</seealso>
         public virtual Task<GetQueueResponse> GetQueueAsync(GetQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueResponseUnmarshaller.Instance;
 
@@ -2873,7 +2873,7 @@ namespace Amazon.Deadline
 
         internal virtual GetQueueEnvironmentResponse GetQueueEnvironment(GetQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2910,7 +2910,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueEnvironment">REST API Reference for GetQueueEnvironment Operation</seealso>
         public virtual Task<GetQueueEnvironmentResponse> GetQueueEnvironmentAsync(GetQueueEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -2923,7 +2923,7 @@ namespace Amazon.Deadline
 
         internal virtual GetQueueFleetAssociationResponse GetQueueFleetAssociation(GetQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2960,7 +2960,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueFleetAssociation">REST API Reference for GetQueueFleetAssociation Operation</seealso>
         public virtual Task<GetQueueFleetAssociationResponse> GetQueueFleetAssociationAsync(GetQueueFleetAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -2973,7 +2973,7 @@ namespace Amazon.Deadline
 
         internal virtual GetQueueLimitAssociationResponse GetQueueLimitAssociation(GetQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -3010,7 +3010,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetQueueLimitAssociation">REST API Reference for GetQueueLimitAssociation Operation</seealso>
         public virtual Task<GetQueueLimitAssociationResponse> GetQueueLimitAssociationAsync(GetQueueLimitAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -3023,7 +3023,7 @@ namespace Amazon.Deadline
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -3073,7 +3073,7 @@ namespace Amazon.Deadline
 
         internal virtual GetSessionActionResponse GetSessionAction(GetSessionActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionActionResponseUnmarshaller.Instance;
 
@@ -3110,7 +3110,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionAction">REST API Reference for GetSessionAction Operation</seealso>
         public virtual Task<GetSessionActionResponse> GetSessionActionAsync(GetSessionActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionActionResponseUnmarshaller.Instance;
 
@@ -3123,7 +3123,7 @@ namespace Amazon.Deadline
 
         internal virtual GetSessionsStatisticsAggregationResponse GetSessionsStatisticsAggregation(GetSessionsStatisticsAggregationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -3163,7 +3163,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionsStatisticsAggregation">REST API Reference for GetSessionsStatisticsAggregation Operation</seealso>
         public virtual Task<GetSessionsStatisticsAggregationResponse> GetSessionsStatisticsAggregationAsync(GetSessionsStatisticsAggregationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -3176,7 +3176,7 @@ namespace Amazon.Deadline
 
         internal virtual GetStepResponse GetStep(GetStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStepResponseUnmarshaller.Instance;
 
@@ -3213,7 +3213,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStep">REST API Reference for GetStep Operation</seealso>
         public virtual Task<GetStepResponse> GetStepAsync(GetStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStepResponseUnmarshaller.Instance;
 
@@ -3226,7 +3226,7 @@ namespace Amazon.Deadline
 
         internal virtual GetStorageProfileResponse GetStorageProfile(GetStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileResponseUnmarshaller.Instance;
 
@@ -3263,7 +3263,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfile">REST API Reference for GetStorageProfile Operation</seealso>
         public virtual Task<GetStorageProfileResponse> GetStorageProfileAsync(GetStorageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileResponseUnmarshaller.Instance;
 
@@ -3276,7 +3276,7 @@ namespace Amazon.Deadline
 
         internal virtual GetStorageProfileForQueueResponse GetStorageProfileForQueue(GetStorageProfileForQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileForQueueResponseUnmarshaller.Instance;
 
@@ -3313,7 +3313,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetStorageProfileForQueue">REST API Reference for GetStorageProfileForQueue Operation</seealso>
         public virtual Task<GetStorageProfileForQueueResponse> GetStorageProfileForQueueAsync(GetStorageProfileForQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageProfileForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageProfileForQueueResponseUnmarshaller.Instance;
 
@@ -3326,7 +3326,7 @@ namespace Amazon.Deadline
 
         internal virtual GetTaskResponse GetTask(GetTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
 
@@ -3363,7 +3363,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetTask">REST API Reference for GetTask Operation</seealso>
         public virtual Task<GetTaskResponse> GetTaskAsync(GetTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
 
@@ -3376,7 +3376,7 @@ namespace Amazon.Deadline
 
         internal virtual GetWorkerResponse GetWorker(GetWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkerResponseUnmarshaller.Instance;
 
@@ -3413,7 +3413,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetWorker">REST API Reference for GetWorker Operation</seealso>
         public virtual Task<GetWorkerResponse> GetWorkerAsync(GetWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkerResponseUnmarshaller.Instance;
 
@@ -3426,7 +3426,7 @@ namespace Amazon.Deadline
 
         internal virtual ListAvailableMeteredProductsResponse ListAvailableMeteredProducts(ListAvailableMeteredProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableMeteredProductsResponseUnmarshaller.Instance;
 
@@ -3453,7 +3453,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListAvailableMeteredProducts">REST API Reference for ListAvailableMeteredProducts Operation</seealso>
         public virtual Task<ListAvailableMeteredProductsResponse> ListAvailableMeteredProductsAsync(ListAvailableMeteredProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableMeteredProductsResponseUnmarshaller.Instance;
 
@@ -3466,7 +3466,7 @@ namespace Amazon.Deadline
 
         internal virtual ListBudgetsResponse ListBudgets(ListBudgetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBudgetsResponseUnmarshaller.Instance;
 
@@ -3503,7 +3503,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListBudgets">REST API Reference for ListBudgets Operation</seealso>
         public virtual Task<ListBudgetsResponse> ListBudgetsAsync(ListBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBudgetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBudgetsResponseUnmarshaller.Instance;
 
@@ -3516,7 +3516,7 @@ namespace Amazon.Deadline
 
         internal virtual ListFarmMembersResponse ListFarmMembers(ListFarmMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmMembersResponseUnmarshaller.Instance;
 
@@ -3553,7 +3553,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarmMembers">REST API Reference for ListFarmMembers Operation</seealso>
         public virtual Task<ListFarmMembersResponse> ListFarmMembersAsync(ListFarmMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmMembersResponseUnmarshaller.Instance;
 
@@ -3566,7 +3566,7 @@ namespace Amazon.Deadline
 
         internal virtual ListFarmsResponse ListFarms(ListFarmsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmsResponseUnmarshaller.Instance;
 
@@ -3600,7 +3600,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarms">REST API Reference for ListFarms Operation</seealso>
         public virtual Task<ListFarmsResponse> ListFarmsAsync(ListFarmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFarmsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFarmsResponseUnmarshaller.Instance;
 
@@ -3613,7 +3613,7 @@ namespace Amazon.Deadline
 
         internal virtual ListFleetMembersResponse ListFleetMembers(ListFleetMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetMembersResponseUnmarshaller.Instance;
 
@@ -3650,7 +3650,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleetMembers">REST API Reference for ListFleetMembers Operation</seealso>
         public virtual Task<ListFleetMembersResponse> ListFleetMembersAsync(ListFleetMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetMembersResponseUnmarshaller.Instance;
 
@@ -3663,7 +3663,7 @@ namespace Amazon.Deadline
 
         internal virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -3700,7 +3700,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -3713,7 +3713,7 @@ namespace Amazon.Deadline
 
         internal virtual ListJobMembersResponse ListJobMembers(ListJobMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobMembersResponseUnmarshaller.Instance;
 
@@ -3750,7 +3750,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobMembers">REST API Reference for ListJobMembers Operation</seealso>
         public virtual Task<ListJobMembersResponse> ListJobMembersAsync(ListJobMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobMembersResponseUnmarshaller.Instance;
 
@@ -3763,7 +3763,7 @@ namespace Amazon.Deadline
 
         internal virtual ListJobParameterDefinitionsResponse ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
 
@@ -3800,7 +3800,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
         public virtual Task<ListJobParameterDefinitionsResponse> ListJobParameterDefinitionsAsync(ListJobParameterDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
 
@@ -3813,7 +3813,7 @@ namespace Amazon.Deadline
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -3850,7 +3850,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -3863,7 +3863,7 @@ namespace Amazon.Deadline
 
         internal virtual ListLicenseEndpointsResponse ListLicenseEndpoints(ListLicenseEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLicenseEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLicenseEndpointsResponseUnmarshaller.Instance;
 
@@ -3900,7 +3900,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLicenseEndpoints">REST API Reference for ListLicenseEndpoints Operation</seealso>
         public virtual Task<ListLicenseEndpointsResponse> ListLicenseEndpointsAsync(ListLicenseEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLicenseEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLicenseEndpointsResponseUnmarshaller.Instance;
 
@@ -3913,7 +3913,7 @@ namespace Amazon.Deadline
 
         internal virtual ListLimitsResponse ListLimits(ListLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLimitsResponseUnmarshaller.Instance;
 
@@ -3950,7 +3950,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListLimits">REST API Reference for ListLimits Operation</seealso>
         public virtual Task<ListLimitsResponse> ListLimitsAsync(ListLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLimitsResponseUnmarshaller.Instance;
 
@@ -3963,7 +3963,7 @@ namespace Amazon.Deadline
 
         internal virtual ListMeteredProductsResponse ListMeteredProducts(ListMeteredProductsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeteredProductsResponseUnmarshaller.Instance;
 
@@ -4000,7 +4000,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMeteredProducts">REST API Reference for ListMeteredProducts Operation</seealso>
         public virtual Task<ListMeteredProductsResponse> ListMeteredProductsAsync(ListMeteredProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeteredProductsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeteredProductsResponseUnmarshaller.Instance;
 
@@ -4013,7 +4013,7 @@ namespace Amazon.Deadline
 
         internal virtual ListMonitorsResponse ListMonitors(ListMonitorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -4047,7 +4047,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMonitors">REST API Reference for ListMonitors Operation</seealso>
         public virtual Task<ListMonitorsResponse> ListMonitorsAsync(ListMonitorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMonitorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMonitorsResponseUnmarshaller.Instance;
 
@@ -4060,7 +4060,7 @@ namespace Amazon.Deadline
 
         internal virtual ListQueueEnvironmentsResponse ListQueueEnvironments(ListQueueEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueEnvironmentsResponseUnmarshaller.Instance;
 
@@ -4097,7 +4097,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueEnvironments">REST API Reference for ListQueueEnvironments Operation</seealso>
         public virtual Task<ListQueueEnvironmentsResponse> ListQueueEnvironmentsAsync(ListQueueEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueEnvironmentsResponseUnmarshaller.Instance;
 
@@ -4110,7 +4110,7 @@ namespace Amazon.Deadline
 
         internal virtual ListQueueFleetAssociationsResponse ListQueueFleetAssociations(ListQueueFleetAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueFleetAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueFleetAssociationsResponseUnmarshaller.Instance;
 
@@ -4143,7 +4143,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociations">REST API Reference for ListQueueFleetAssociations Operation</seealso>
         public virtual Task<ListQueueFleetAssociationsResponse> ListQueueFleetAssociationsAsync(ListQueueFleetAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueFleetAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueFleetAssociationsResponseUnmarshaller.Instance;
 
@@ -4156,7 +4156,7 @@ namespace Amazon.Deadline
 
         internal virtual ListQueueLimitAssociationsResponse ListQueueLimitAssociations(ListQueueLimitAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueLimitAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueLimitAssociationsResponseUnmarshaller.Instance;
 
@@ -4189,7 +4189,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueLimitAssociations">REST API Reference for ListQueueLimitAssociations Operation</seealso>
         public virtual Task<ListQueueLimitAssociationsResponse> ListQueueLimitAssociationsAsync(ListQueueLimitAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueLimitAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueLimitAssociationsResponseUnmarshaller.Instance;
 
@@ -4202,7 +4202,7 @@ namespace Amazon.Deadline
 
         internal virtual ListQueueMembersResponse ListQueueMembers(ListQueueMembersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueMembersResponseUnmarshaller.Instance;
 
@@ -4239,7 +4239,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueMembers">REST API Reference for ListQueueMembers Operation</seealso>
         public virtual Task<ListQueueMembersResponse> ListQueueMembersAsync(ListQueueMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueMembersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueMembersResponseUnmarshaller.Instance;
 
@@ -4252,7 +4252,7 @@ namespace Amazon.Deadline
 
         internal virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -4289,7 +4289,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -4302,7 +4302,7 @@ namespace Amazon.Deadline
 
         internal virtual ListSessionActionsResponse ListSessionActions(ListSessionActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionActionsResponseUnmarshaller.Instance;
 
@@ -4339,7 +4339,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionActions">REST API Reference for ListSessionActions Operation</seealso>
         public virtual Task<ListSessionActionsResponse> ListSessionActionsAsync(ListSessionActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionActionsResponseUnmarshaller.Instance;
 
@@ -4352,7 +4352,7 @@ namespace Amazon.Deadline
 
         internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -4389,7 +4389,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -4402,7 +4402,7 @@ namespace Amazon.Deadline
 
         internal virtual ListSessionsForWorkerResponse ListSessionsForWorker(ListSessionsForWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsForWorkerResponseUnmarshaller.Instance;
 
@@ -4439,7 +4439,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSessionsForWorker">REST API Reference for ListSessionsForWorker Operation</seealso>
         public virtual Task<ListSessionsForWorkerResponse> ListSessionsForWorkerAsync(ListSessionsForWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsForWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsForWorkerResponseUnmarshaller.Instance;
 
@@ -4452,7 +4452,7 @@ namespace Amazon.Deadline
 
         internal virtual ListStepConsumersResponse ListStepConsumers(ListStepConsumersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepConsumersResponseUnmarshaller.Instance;
 
@@ -4489,7 +4489,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepConsumers">REST API Reference for ListStepConsumers Operation</seealso>
         public virtual Task<ListStepConsumersResponse> ListStepConsumersAsync(ListStepConsumersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepConsumersResponseUnmarshaller.Instance;
 
@@ -4502,7 +4502,7 @@ namespace Amazon.Deadline
 
         internal virtual ListStepDependenciesResponse ListStepDependencies(ListStepDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepDependenciesResponseUnmarshaller.Instance;
 
@@ -4539,7 +4539,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStepDependencies">REST API Reference for ListStepDependencies Operation</seealso>
         public virtual Task<ListStepDependenciesResponse> ListStepDependenciesAsync(ListStepDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepDependenciesResponseUnmarshaller.Instance;
 
@@ -4552,7 +4552,7 @@ namespace Amazon.Deadline
 
         internal virtual ListStepsResponse ListSteps(ListStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
@@ -4589,7 +4589,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public virtual Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStepsResponseUnmarshaller.Instance;
 
@@ -4602,7 +4602,7 @@ namespace Amazon.Deadline
 
         internal virtual ListStorageProfilesResponse ListStorageProfiles(ListStorageProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesResponseUnmarshaller.Instance;
 
@@ -4639,7 +4639,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfiles">REST API Reference for ListStorageProfiles Operation</seealso>
         public virtual Task<ListStorageProfilesResponse> ListStorageProfilesAsync(ListStorageProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesResponseUnmarshaller.Instance;
 
@@ -4652,7 +4652,7 @@ namespace Amazon.Deadline
 
         internal virtual ListStorageProfilesForQueueResponse ListStorageProfilesForQueue(ListStorageProfilesForQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesForQueueResponseUnmarshaller.Instance;
 
@@ -4689,7 +4689,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListStorageProfilesForQueue">REST API Reference for ListStorageProfilesForQueue Operation</seealso>
         public virtual Task<ListStorageProfilesForQueueResponse> ListStorageProfilesForQueueAsync(ListStorageProfilesForQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageProfilesForQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageProfilesForQueueResponseUnmarshaller.Instance;
 
@@ -4702,7 +4702,7 @@ namespace Amazon.Deadline
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4739,7 +4739,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4752,7 +4752,7 @@ namespace Amazon.Deadline
 
         internal virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -4789,7 +4789,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -4802,7 +4802,7 @@ namespace Amazon.Deadline
 
         internal virtual ListWorkersResponse ListWorkers(ListWorkersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkersResponseUnmarshaller.Instance;
 
@@ -4839,7 +4839,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListWorkers">REST API Reference for ListWorkers Operation</seealso>
         public virtual Task<ListWorkersResponse> ListWorkersAsync(ListWorkersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkersResponseUnmarshaller.Instance;
 
@@ -4852,7 +4852,7 @@ namespace Amazon.Deadline
 
         internal virtual PutMeteredProductResponse PutMeteredProduct(PutMeteredProductRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMeteredProductResponseUnmarshaller.Instance;
 
@@ -4889,7 +4889,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/PutMeteredProduct">REST API Reference for PutMeteredProduct Operation</seealso>
         public virtual Task<PutMeteredProductResponse> PutMeteredProductAsync(PutMeteredProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMeteredProductRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMeteredProductResponseUnmarshaller.Instance;
 
@@ -4902,7 +4902,7 @@ namespace Amazon.Deadline
 
         internal virtual SearchJobsResponse SearchJobs(SearchJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
 
@@ -4939,7 +4939,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchJobs">REST API Reference for SearchJobs Operation</seealso>
         public virtual Task<SearchJobsResponse> SearchJobsAsync(SearchJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchJobsResponseUnmarshaller.Instance;
 
@@ -4952,7 +4952,7 @@ namespace Amazon.Deadline
 
         internal virtual SearchStepsResponse SearchSteps(SearchStepsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchStepsResponseUnmarshaller.Instance;
 
@@ -4989,7 +4989,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchSteps">REST API Reference for SearchSteps Operation</seealso>
         public virtual Task<SearchStepsResponse> SearchStepsAsync(SearchStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchStepsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchStepsResponseUnmarshaller.Instance;
 
@@ -5002,7 +5002,7 @@ namespace Amazon.Deadline
 
         internal virtual SearchTasksResponse SearchTasks(SearchTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTasksResponseUnmarshaller.Instance;
 
@@ -5039,7 +5039,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchTasks">REST API Reference for SearchTasks Operation</seealso>
         public virtual Task<SearchTasksResponse> SearchTasksAsync(SearchTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTasksResponseUnmarshaller.Instance;
 
@@ -5052,7 +5052,7 @@ namespace Amazon.Deadline
 
         internal virtual SearchWorkersResponse SearchWorkers(SearchWorkersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchWorkersResponseUnmarshaller.Instance;
 
@@ -5089,7 +5089,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchWorkers">REST API Reference for SearchWorkers Operation</seealso>
         public virtual Task<SearchWorkersResponse> SearchWorkersAsync(SearchWorkersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchWorkersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchWorkersResponseUnmarshaller.Instance;
 
@@ -5102,7 +5102,7 @@ namespace Amazon.Deadline
 
         internal virtual StartSessionsStatisticsAggregationResponse StartSessionsStatisticsAggregation(StartSessionsStatisticsAggregationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -5144,7 +5144,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/StartSessionsStatisticsAggregation">REST API Reference for StartSessionsStatisticsAggregation Operation</seealso>
         public virtual Task<StartSessionsStatisticsAggregationResponse> StartSessionsStatisticsAggregationAsync(StartSessionsStatisticsAggregationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSessionsStatisticsAggregationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSessionsStatisticsAggregationResponseUnmarshaller.Instance;
 
@@ -5157,7 +5157,7 @@ namespace Amazon.Deadline
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5198,7 +5198,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5211,7 +5211,7 @@ namespace Amazon.Deadline
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5252,7 +5252,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5265,7 +5265,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateBudgetResponse UpdateBudget(UpdateBudgetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
@@ -5302,7 +5302,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBudgetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBudgetResponseUnmarshaller.Instance;
 
@@ -5315,7 +5315,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateFarmResponse UpdateFarm(UpdateFarmRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFarmResponseUnmarshaller.Instance;
 
@@ -5352,7 +5352,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFarm">REST API Reference for UpdateFarm Operation</seealso>
         public virtual Task<UpdateFarmResponse> UpdateFarmAsync(UpdateFarmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFarmRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFarmResponseUnmarshaller.Instance;
 
@@ -5365,7 +5365,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -5406,7 +5406,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -5419,7 +5419,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -5472,7 +5472,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -5485,7 +5485,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateLimitResponse UpdateLimit(UpdateLimitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLimitResponseUnmarshaller.Instance;
 
@@ -5522,7 +5522,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateLimit">REST API Reference for UpdateLimit Operation</seealso>
         public virtual Task<UpdateLimitResponse> UpdateLimitAsync(UpdateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLimitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLimitResponseUnmarshaller.Instance;
 
@@ -5535,7 +5535,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateMonitorResponse UpdateMonitor(UpdateMonitorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -5573,7 +5573,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitor">REST API Reference for UpdateMonitor Operation</seealso>
         public virtual Task<UpdateMonitorResponse> UpdateMonitorAsync(UpdateMonitorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMonitorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
 
@@ -5586,7 +5586,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateQueueResponse UpdateQueue(UpdateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -5623,7 +5623,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueue">REST API Reference for UpdateQueue Operation</seealso>
         public virtual Task<UpdateQueueResponse> UpdateQueueAsync(UpdateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueResponseUnmarshaller.Instance;
 
@@ -5636,7 +5636,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateQueueEnvironmentResponse UpdateQueueEnvironment(UpdateQueueEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -5673,7 +5673,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueEnvironment">REST API Reference for UpdateQueueEnvironment Operation</seealso>
         public virtual Task<UpdateQueueEnvironmentResponse> UpdateQueueEnvironmentAsync(UpdateQueueEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueEnvironmentResponseUnmarshaller.Instance;
 
@@ -5686,7 +5686,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateQueueFleetAssociationResponse UpdateQueueFleetAssociation(UpdateQueueFleetAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -5723,7 +5723,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueFleetAssociation">REST API Reference for UpdateQueueFleetAssociation Operation</seealso>
         public virtual Task<UpdateQueueFleetAssociationResponse> UpdateQueueFleetAssociationAsync(UpdateQueueFleetAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueFleetAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueFleetAssociationResponseUnmarshaller.Instance;
 
@@ -5736,7 +5736,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateQueueLimitAssociationResponse UpdateQueueLimitAssociation(UpdateQueueLimitAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -5775,7 +5775,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateQueueLimitAssociation">REST API Reference for UpdateQueueLimitAssociation Operation</seealso>
         public virtual Task<UpdateQueueLimitAssociationResponse> UpdateQueueLimitAssociationAsync(UpdateQueueLimitAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateQueueLimitAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateQueueLimitAssociationResponseUnmarshaller.Instance;
 
@@ -5788,7 +5788,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateSessionResponse UpdateSession(UpdateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -5829,7 +5829,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateSession">REST API Reference for UpdateSession Operation</seealso>
         public virtual Task<UpdateSessionResponse> UpdateSessionAsync(UpdateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSessionResponseUnmarshaller.Instance;
 
@@ -5842,7 +5842,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateStepResponse UpdateStep(UpdateStepRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStepResponseUnmarshaller.Instance;
 
@@ -5883,7 +5883,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStep">REST API Reference for UpdateStep Operation</seealso>
         public virtual Task<UpdateStepResponse> UpdateStepAsync(UpdateStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStepRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStepResponseUnmarshaller.Instance;
 
@@ -5896,7 +5896,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateStorageProfileResponse UpdateStorageProfile(UpdateStorageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageProfileResponseUnmarshaller.Instance;
 
@@ -5933,7 +5933,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateStorageProfile">REST API Reference for UpdateStorageProfile Operation</seealso>
         public virtual Task<UpdateStorageProfileResponse> UpdateStorageProfileAsync(UpdateStorageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageProfileResponseUnmarshaller.Instance;
 
@@ -5946,7 +5946,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateTaskResponse UpdateTask(UpdateTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
@@ -5987,7 +5987,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         public virtual Task<UpdateTaskResponse> UpdateTaskAsync(UpdateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskResponseUnmarshaller.Instance;
 
@@ -6000,7 +6000,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateWorkerResponse UpdateWorker(UpdateWorkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerResponseUnmarshaller.Instance;
 
@@ -6041,7 +6041,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorker">REST API Reference for UpdateWorker Operation</seealso>
         public virtual Task<UpdateWorkerResponse> UpdateWorkerAsync(UpdateWorkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerResponseUnmarshaller.Instance;
 
@@ -6054,7 +6054,7 @@ namespace Amazon.Deadline
 
         internal virtual UpdateWorkerScheduleResponse UpdateWorkerSchedule(UpdateWorkerScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerScheduleResponseUnmarshaller.Instance;
 
@@ -6095,7 +6095,7 @@ namespace Amazon.Deadline
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateWorkerSchedule">REST API Reference for UpdateWorkerSchedule Operation</seealso>
         public virtual Task<UpdateWorkerScheduleResponse> UpdateWorkerScheduleAsync(UpdateWorkerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkerScheduleResponseUnmarshaller.Instance;
 

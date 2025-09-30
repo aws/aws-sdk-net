@@ -287,7 +287,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CloneBackend">REST API Reference for CloneBackend Operation</seealso>
         public virtual CloneBackendResponse CloneBackend(CloneBackendRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloneBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloneBackendResponseUnmarshaller.Instance;
 
@@ -308,7 +308,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CloneBackend">REST API Reference for CloneBackend Operation</seealso>
         public virtual IAsyncResult BeginCloneBackend(CloneBackendRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloneBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloneBackendResponseUnmarshaller.Instance;
 
@@ -354,7 +354,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackend">REST API Reference for CreateBackend Operation</seealso>
         public virtual CreateBackendResponse CreateBackend(CreateBackendRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackend">REST API Reference for CreateBackend Operation</seealso>
         public virtual IAsyncResult BeginCreateBackend(CreateBackendRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAPI">REST API Reference for CreateBackendAPI Operation</seealso>
         public virtual CreateBackendAPIResponse CreateBackendAPI(CreateBackendAPIRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendAPIResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAPI">REST API Reference for CreateBackendAPI Operation</seealso>
         public virtual IAsyncResult BeginCreateBackendAPI(CreateBackendAPIRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendAPIResponseUnmarshaller.Instance;
 
@@ -486,7 +486,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuth">REST API Reference for CreateBackendAuth Operation</seealso>
         public virtual CreateBackendAuthResponse CreateBackendAuth(CreateBackendAuthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendAuthResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuth">REST API Reference for CreateBackendAuth Operation</seealso>
         public virtual IAsyncResult BeginCreateBackendAuth(CreateBackendAuthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendAuthResponseUnmarshaller.Instance;
 
@@ -552,7 +552,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfig">REST API Reference for CreateBackendConfig Operation</seealso>
         public virtual CreateBackendConfigResponse CreateBackendConfig(CreateBackendConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendConfigResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendConfig">REST API Reference for CreateBackendConfig Operation</seealso>
         public virtual IAsyncResult BeginCreateBackendConfig(CreateBackendConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendConfigResponseUnmarshaller.Instance;
 
@@ -618,7 +618,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
         public virtual CreateBackendStorageResponse CreateBackendStorage(CreateBackendStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
 
@@ -639,7 +639,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorage">REST API Reference for CreateBackendStorage Operation</seealso>
         public virtual IAsyncResult BeginCreateBackendStorage(CreateBackendStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBackendStorageResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual IAsyncResult BeginCreateToken(CreateTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">REST API Reference for DeleteBackend Operation</seealso>
         public virtual DeleteBackendResponse DeleteBackend(DeleteBackendRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackend">REST API Reference for DeleteBackend Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackend(DeleteBackendRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAPI">REST API Reference for DeleteBackendAPI Operation</seealso>
         public virtual DeleteBackendAPIResponse DeleteBackendAPI(DeleteBackendAPIRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendAPIResponseUnmarshaller.Instance;
 
@@ -838,7 +838,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAPI">REST API Reference for DeleteBackendAPI Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackendAPI(DeleteBackendAPIRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendAPIResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAuth">REST API Reference for DeleteBackendAuth Operation</seealso>
         public virtual DeleteBackendAuthResponse DeleteBackendAuth(DeleteBackendAuthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendAuthResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendAuth">REST API Reference for DeleteBackendAuth Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackendAuth(DeleteBackendAuthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendAuthResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
         public virtual DeleteBackendStorageResponse DeleteBackendStorage(DeleteBackendStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
 
@@ -970,7 +970,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteBackendStorage">REST API Reference for DeleteBackendStorage Operation</seealso>
         public virtual IAsyncResult BeginDeleteBackendStorage(DeleteBackendStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBackendStorageResponseUnmarshaller.Instance;
 
@@ -1015,7 +1015,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
         public virtual DeleteTokenResponse DeleteToken(DeleteTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTokenResponseUnmarshaller.Instance;
 
@@ -1036,7 +1036,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
         public virtual IAsyncResult BeginDeleteToken(DeleteTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTokenResponseUnmarshaller.Instance;
 
@@ -1081,7 +1081,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GenerateBackendAPIModels">REST API Reference for GenerateBackendAPIModels Operation</seealso>
         public virtual GenerateBackendAPIModelsResponse GenerateBackendAPIModels(GenerateBackendAPIModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateBackendAPIModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateBackendAPIModelsResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GenerateBackendAPIModels">REST API Reference for GenerateBackendAPIModels Operation</seealso>
         public virtual IAsyncResult BeginGenerateBackendAPIModels(GenerateBackendAPIModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateBackendAPIModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateBackendAPIModelsResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">REST API Reference for GetBackend Operation</seealso>
         public virtual GetBackendResponse GetBackend(GetBackendRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackend">REST API Reference for GetBackend Operation</seealso>
         public virtual IAsyncResult BeginGetBackend(GetBackendRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">REST API Reference for GetBackendAPI Operation</seealso>
         public virtual GetBackendAPIResponse GetBackendAPI(GetBackendAPIRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAPIResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPI">REST API Reference for GetBackendAPI Operation</seealso>
         public virtual IAsyncResult BeginGetBackendAPI(GetBackendAPIRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAPIResponseUnmarshaller.Instance;
 
@@ -1279,7 +1279,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">REST API Reference for GetBackendAPIModels Operation</seealso>
         public virtual GetBackendAPIModelsResponse GetBackendAPIModels(GetBackendAPIModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAPIModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAPIModelsResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAPIModels">REST API Reference for GetBackendAPIModels Operation</seealso>
         public virtual IAsyncResult BeginGetBackendAPIModels(GetBackendAPIModelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAPIModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAPIModelsResponseUnmarshaller.Instance;
 
@@ -1345,7 +1345,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">REST API Reference for GetBackendAuth Operation</seealso>
         public virtual GetBackendAuthResponse GetBackendAuth(GetBackendAuthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAuthResponseUnmarshaller.Instance;
 
@@ -1366,7 +1366,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">REST API Reference for GetBackendAuth Operation</seealso>
         public virtual IAsyncResult BeginGetBackendAuth(GetBackendAuthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendAuthResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendJob">REST API Reference for GetBackendJob Operation</seealso>
         public virtual GetBackendJobResponse GetBackendJob(GetBackendJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendJobResponseUnmarshaller.Instance;
 
@@ -1432,7 +1432,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendJob">REST API Reference for GetBackendJob Operation</seealso>
         public virtual IAsyncResult BeginGetBackendJob(GetBackendJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendJobResponseUnmarshaller.Instance;
 
@@ -1477,7 +1477,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
         public virtual GetBackendStorageResponse GetBackendStorage(GetBackendStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
 
@@ -1498,7 +1498,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendStorage">REST API Reference for GetBackendStorage Operation</seealso>
         public virtual IAsyncResult BeginGetBackendStorage(GetBackendStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBackendStorageResponseUnmarshaller.Instance;
 
@@ -1543,7 +1543,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">REST API Reference for GetToken Operation</seealso>
         public virtual GetTokenResponse GetToken(GetTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenResponseUnmarshaller.Instance;
 
@@ -1564,7 +1564,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetToken">REST API Reference for GetToken Operation</seealso>
         public virtual IAsyncResult BeginGetToken(GetTokenRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTokenResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
         public virtual ImportBackendAuthResponse ImportBackendAuth(ImportBackendAuthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportBackendAuthResponseUnmarshaller.Instance;
 
@@ -1630,7 +1630,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">REST API Reference for ImportBackendAuth Operation</seealso>
         public virtual IAsyncResult BeginImportBackendAuth(ImportBackendAuthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportBackendAuthResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
         public virtual ImportBackendStorageResponse ImportBackendStorage(ImportBackendStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
 
@@ -1696,7 +1696,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendStorage">REST API Reference for ImportBackendStorage Operation</seealso>
         public virtual IAsyncResult BeginImportBackendStorage(ImportBackendStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportBackendStorageResponseUnmarshaller.Instance;
 
@@ -1741,7 +1741,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">REST API Reference for ListBackendJobs Operation</seealso>
         public virtual ListBackendJobsResponse ListBackendJobs(ListBackendJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackendJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackendJobsResponseUnmarshaller.Instance;
 
@@ -1762,7 +1762,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">REST API Reference for ListBackendJobs Operation</seealso>
         public virtual IAsyncResult BeginListBackendJobs(ListBackendJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBackendJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBackendJobsResponseUnmarshaller.Instance;
 
@@ -1807,7 +1807,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
         public virtual ListS3BucketsResponse ListS3Buckets(ListS3BucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
 
@@ -1828,7 +1828,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListS3Buckets">REST API Reference for ListS3Buckets Operation</seealso>
         public virtual IAsyncResult BeginListS3Buckets(ListS3BucketsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListS3BucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListS3BucketsResponseUnmarshaller.Instance;
 
@@ -1873,7 +1873,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveAllBackends">REST API Reference for RemoveAllBackends Operation</seealso>
         public virtual RemoveAllBackendsResponse RemoveAllBackends(RemoveAllBackendsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAllBackendsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAllBackendsResponseUnmarshaller.Instance;
 
@@ -1894,7 +1894,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveAllBackends">REST API Reference for RemoveAllBackends Operation</seealso>
         public virtual IAsyncResult BeginRemoveAllBackends(RemoveAllBackendsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveAllBackendsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveAllBackendsResponseUnmarshaller.Instance;
 
@@ -1939,7 +1939,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">REST API Reference for RemoveBackendConfig Operation</seealso>
         public virtual RemoveBackendConfigResponse RemoveBackendConfig(RemoveBackendConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBackendConfigResponseUnmarshaller.Instance;
 
@@ -1960,7 +1960,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">REST API Reference for RemoveBackendConfig Operation</seealso>
         public virtual IAsyncResult BeginRemoveBackendConfig(RemoveBackendConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBackendConfigResponseUnmarshaller.Instance;
 
@@ -2005,7 +2005,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAPI">REST API Reference for UpdateBackendAPI Operation</seealso>
         public virtual UpdateBackendAPIResponse UpdateBackendAPI(UpdateBackendAPIRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendAPIResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAPI">REST API Reference for UpdateBackendAPI Operation</seealso>
         public virtual IAsyncResult BeginUpdateBackendAPI(UpdateBackendAPIRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendAPIRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendAPIResponseUnmarshaller.Instance;
 
@@ -2071,7 +2071,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuth">REST API Reference for UpdateBackendAuth Operation</seealso>
         public virtual UpdateBackendAuthResponse UpdateBackendAuth(UpdateBackendAuthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendAuthResponseUnmarshaller.Instance;
 
@@ -2092,7 +2092,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuth">REST API Reference for UpdateBackendAuth Operation</seealso>
         public virtual IAsyncResult BeginUpdateBackendAuth(UpdateBackendAuthRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendAuthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendAuthResponseUnmarshaller.Instance;
 
@@ -2137,7 +2137,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">REST API Reference for UpdateBackendConfig Operation</seealso>
         public virtual UpdateBackendConfigResponse UpdateBackendConfig(UpdateBackendConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendConfigResponseUnmarshaller.Instance;
 
@@ -2158,7 +2158,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">REST API Reference for UpdateBackendConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateBackendConfig(UpdateBackendConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendConfigResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJob">REST API Reference for UpdateBackendJob Operation</seealso>
         public virtual UpdateBackendJobResponse UpdateBackendJob(UpdateBackendJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendJobResponseUnmarshaller.Instance;
 
@@ -2224,7 +2224,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJob">REST API Reference for UpdateBackendJob Operation</seealso>
         public virtual IAsyncResult BeginUpdateBackendJob(UpdateBackendJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendJobResponseUnmarshaller.Instance;
 
@@ -2269,7 +2269,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
         public virtual UpdateBackendStorageResponse UpdateBackendStorage(UpdateBackendStorageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
 
@@ -2290,7 +2290,7 @@ namespace Amazon.AmplifyBackend
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendStorage">REST API Reference for UpdateBackendStorage Operation</seealso>
         public virtual IAsyncResult BeginUpdateBackendStorage(UpdateBackendStorageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBackendStorageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBackendStorageResponseUnmarshaller.Instance;
 

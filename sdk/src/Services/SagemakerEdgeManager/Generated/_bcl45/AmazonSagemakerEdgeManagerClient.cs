@@ -264,7 +264,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
@@ -288,7 +288,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
         public virtual Task<GetDeploymentsResponse> GetDeploymentsAsync(GetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
             
@@ -313,7 +313,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">REST API Reference for GetDeviceRegistration Operation</seealso>
         public virtual GetDeviceRegistrationResponse GetDeviceRegistration(GetDeviceRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceRegistrationResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">REST API Reference for GetDeviceRegistration Operation</seealso>
         public virtual Task<GetDeviceRegistrationResponse> GetDeviceRegistrationAsync(GetDeviceRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceRegistrationResponseUnmarshaller.Instance;
             
@@ -362,7 +362,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">REST API Reference for SendHeartbeat Operation</seealso>
         public virtual SendHeartbeatResponse SendHeartbeat(SendHeartbeatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendHeartbeatResponseUnmarshaller.Instance;
 
@@ -386,7 +386,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">REST API Reference for SendHeartbeat Operation</seealso>
         public virtual Task<SendHeartbeatResponse> SendHeartbeatAsync(SendHeartbeatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendHeartbeatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendHeartbeatResponseUnmarshaller.Instance;
             

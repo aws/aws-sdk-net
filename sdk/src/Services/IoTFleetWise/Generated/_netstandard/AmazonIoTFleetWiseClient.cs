@@ -291,7 +291,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual AssociateVehicleFleetResponse AssociateVehicleFleet(AssociateVehicleFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVehicleFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVehicleFleetResponseUnmarshaller.Instance;
 
@@ -330,7 +330,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/AssociateVehicleFleet">REST API Reference for AssociateVehicleFleet Operation</seealso>
         public virtual Task<AssociateVehicleFleetResponse> AssociateVehicleFleetAsync(AssociateVehicleFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateVehicleFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateVehicleFleetResponseUnmarshaller.Instance;
 
@@ -343,7 +343,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual BatchCreateVehicleResponse BatchCreateVehicle(BatchCreateVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateVehicleResponseUnmarshaller.Instance;
 
@@ -391,7 +391,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/BatchCreateVehicle">REST API Reference for BatchCreateVehicle Operation</seealso>
         public virtual Task<BatchCreateVehicleResponse> BatchCreateVehicleAsync(BatchCreateVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateVehicleResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual BatchUpdateVehicleResponse BatchUpdateVehicle(BatchUpdateVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateVehicleResponseUnmarshaller.Instance;
 
@@ -452,7 +452,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/BatchUpdateVehicle">REST API Reference for BatchUpdateVehicle Operation</seealso>
         public virtual Task<BatchUpdateVehicleResponse> BatchUpdateVehicleAsync(BatchUpdateVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateVehicleResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateCampaign">REST API Reference for CreateCampaign Operation</seealso>
         public virtual Task<CreateCampaignResponse> CreateCampaignAsync(CreateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCampaignResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateDecoderManifestResponse CreateDecoderManifest(CreateDecoderManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDecoderManifestResponseUnmarshaller.Instance;
 
@@ -606,7 +606,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateDecoderManifest">REST API Reference for CreateDecoderManifest Operation</seealso>
         public virtual Task<CreateDecoderManifestResponse> CreateDecoderManifestAsync(CreateDecoderManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDecoderManifestResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateFleetResponse CreateFleet(CreateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         public virtual Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFleetResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateModelManifestResponse CreateModelManifest(CreateModelManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelManifestResponseUnmarshaller.Instance;
 
@@ -739,7 +739,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateModelManifest">REST API Reference for CreateModelManifest Operation</seealso>
         public virtual Task<CreateModelManifestResponse> CreateModelManifestAsync(CreateModelManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelManifestResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateSignalCatalogResponse CreateSignalCatalog(CreateSignalCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalCatalogResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateSignalCatalog">REST API Reference for CreateSignalCatalog Operation</seealso>
         public virtual Task<CreateSignalCatalogResponse> CreateSignalCatalogAsync(CreateSignalCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalCatalogResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateStateTemplateResponse CreateStateTemplate(CreateStateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStateTemplateResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateStateTemplate">REST API Reference for CreateStateTemplate Operation</seealso>
         public virtual Task<CreateStateTemplateResponse> CreateStateTemplateAsync(CreateStateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStateTemplateResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual CreateVehicleResponse CreateVehicle(CreateVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVehicleResponseUnmarshaller.Instance;
 
@@ -939,7 +939,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateVehicle">REST API Reference for CreateVehicle Operation</seealso>
         public virtual Task<CreateVehicleResponse> CreateVehicleAsync(CreateVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVehicleResponseUnmarshaller.Instance;
 
@@ -952,7 +952,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteCampaign">REST API Reference for DeleteCampaign Operation</seealso>
         public virtual Task<DeleteCampaignResponse> DeleteCampaignAsync(DeleteCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCampaignResponseUnmarshaller.Instance;
 
@@ -1002,7 +1002,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteDecoderManifestResponse DeleteDecoderManifest(DeleteDecoderManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1040,7 +1040,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteDecoderManifest">REST API Reference for DeleteDecoderManifest Operation</seealso>
         public virtual Task<DeleteDecoderManifestResponse> DeleteDecoderManifestAsync(DeleteDecoderManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1053,7 +1053,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteFleetResponse DeleteFleet(DeleteFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -1088,7 +1088,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         public virtual Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFleetResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteModelManifestResponse DeleteModelManifest(DeleteModelManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelManifestResponseUnmarshaller.Instance;
 
@@ -1138,7 +1138,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteModelManifest">REST API Reference for DeleteModelManifest Operation</seealso>
         public virtual Task<DeleteModelManifestResponse> DeleteModelManifestAsync(DeleteModelManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelManifestResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteSignalCatalogResponse DeleteSignalCatalog(DeleteSignalCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalCatalogResponseUnmarshaller.Instance;
 
@@ -1188,7 +1188,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteSignalCatalog">REST API Reference for DeleteSignalCatalog Operation</seealso>
         public virtual Task<DeleteSignalCatalogResponse> DeleteSignalCatalogAsync(DeleteSignalCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalCatalogResponseUnmarshaller.Instance;
 
@@ -1201,7 +1201,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteStateTemplateResponse DeleteStateTemplate(DeleteStateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStateTemplateResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteStateTemplate">REST API Reference for DeleteStateTemplate Operation</seealso>
         public virtual Task<DeleteStateTemplateResponse> DeleteStateTemplateAsync(DeleteStateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStateTemplateResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DeleteVehicleResponse DeleteVehicle(DeleteVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVehicleResponseUnmarshaller.Instance;
 
@@ -1280,7 +1280,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteVehicle">REST API Reference for DeleteVehicle Operation</seealso>
         public virtual Task<DeleteVehicleResponse> DeleteVehicleAsync(DeleteVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVehicleResponseUnmarshaller.Instance;
 
@@ -1293,7 +1293,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual DisassociateVehicleFleetResponse DisassociateVehicleFleet(DisassociateVehicleFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVehicleFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVehicleFleetResponseUnmarshaller.Instance;
 
@@ -1330,7 +1330,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DisassociateVehicleFleet">REST API Reference for DisassociateVehicleFleet Operation</seealso>
         public virtual Task<DisassociateVehicleFleetResponse> DisassociateVehicleFleetAsync(DisassociateVehicleFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateVehicleFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateVehicleFleetResponseUnmarshaller.Instance;
 
@@ -1343,7 +1343,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetCampaign">REST API Reference for GetCampaign Operation</seealso>
         public virtual Task<GetCampaignResponse> GetCampaignAsync(GetCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCampaignResponseUnmarshaller.Instance;
 
@@ -1401,7 +1401,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetDecoderManifestResponse GetDecoderManifest(GetDecoderManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1437,7 +1437,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetDecoderManifest">REST API Reference for GetDecoderManifest Operation</seealso>
         public virtual Task<GetDecoderManifestResponse> GetDecoderManifestAsync(GetDecoderManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetEncryptionConfigurationResponse GetEncryptionConfiguration(GetEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -1487,7 +1487,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">REST API Reference for GetEncryptionConfiguration Operation</seealso>
         public virtual Task<GetEncryptionConfigurationResponse> GetEncryptionConfigurationAsync(GetEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -1500,7 +1500,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetFleetResponse GetFleet(GetFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetFleet">REST API Reference for GetFleet Operation</seealso>
         public virtual Task<GetFleetResponse> GetFleetAsync(GetFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFleetResponseUnmarshaller.Instance;
 
@@ -1549,7 +1549,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetLoggingOptionsResponse GetLoggingOptions(GetLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetLoggingOptions">REST API Reference for GetLoggingOptions Operation</seealso>
         public virtual Task<GetLoggingOptionsResponse> GetLoggingOptionsAsync(GetLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -1592,7 +1592,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetModelManifestResponse GetModelManifest(GetModelManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelManifestResponseUnmarshaller.Instance;
 
@@ -1628,7 +1628,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetModelManifest">REST API Reference for GetModelManifest Operation</seealso>
         public virtual Task<GetModelManifestResponse> GetModelManifestAsync(GetModelManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelManifestResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetRegisterAccountStatusResponse GetRegisterAccountStatus(GetRegisterAccountStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegisterAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegisterAccountStatusResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetRegisterAccountStatus">REST API Reference for GetRegisterAccountStatus Operation</seealso>
         public virtual Task<GetRegisterAccountStatusResponse> GetRegisterAccountStatusAsync(GetRegisterAccountStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegisterAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegisterAccountStatusResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetSignalCatalogResponse GetSignalCatalog(GetSignalCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalCatalogResponseUnmarshaller.Instance;
 
@@ -1739,7 +1739,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetSignalCatalog">REST API Reference for GetSignalCatalog Operation</seealso>
         public virtual Task<GetSignalCatalogResponse> GetSignalCatalogAsync(GetSignalCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalCatalogResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetStateTemplateResponse GetStateTemplate(GetStateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStateTemplateResponseUnmarshaller.Instance;
 
@@ -1797,7 +1797,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetStateTemplate">REST API Reference for GetStateTemplate Operation</seealso>
         public virtual Task<GetStateTemplateResponse> GetStateTemplateAsync(GetStateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStateTemplateResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetVehicleResponse GetVehicle(GetVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVehicleResponseUnmarshaller.Instance;
 
@@ -1846,7 +1846,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetVehicle">REST API Reference for GetVehicle Operation</seealso>
         public virtual Task<GetVehicleResponse> GetVehicleAsync(GetVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVehicleResponseUnmarshaller.Instance;
 
@@ -1859,7 +1859,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual GetVehicleStatusResponse GetVehicleStatus(GetVehicleStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVehicleStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVehicleStatusResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetVehicleStatus">REST API Reference for GetVehicleStatus Operation</seealso>
         public virtual Task<GetVehicleStatusResponse> GetVehicleStatusAsync(GetVehicleStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetVehicleStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetVehicleStatusResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ImportDecoderManifestResponse ImportDecoderManifest(ImportDecoderManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1963,7 +1963,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ImportDecoderManifest">REST API Reference for ImportDecoderManifest Operation</seealso>
         public virtual Task<ImportDecoderManifestResponse> ImportDecoderManifestAsync(ImportDecoderManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportDecoderManifestResponseUnmarshaller.Instance;
 
@@ -1976,7 +1976,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ImportSignalCatalogResponse ImportSignalCatalog(ImportSignalCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSignalCatalogResponseUnmarshaller.Instance;
 
@@ -2023,7 +2023,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ImportSignalCatalog">REST API Reference for ImportSignalCatalog Operation</seealso>
         public virtual Task<ImportSignalCatalogResponse> ImportSignalCatalogAsync(ImportSignalCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportSignalCatalogResponseUnmarshaller.Instance;
 
@@ -2036,7 +2036,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListCampaignsResponse ListCampaigns(ListCampaignsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -2076,7 +2076,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListCampaigns">REST API Reference for ListCampaigns Operation</seealso>
         public virtual Task<ListCampaignsResponse> ListCampaignsAsync(ListCampaignsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCampaignsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCampaignsResponseUnmarshaller.Instance;
 
@@ -2089,7 +2089,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListDecoderManifestNetworkInterfacesResponse ListDecoderManifestNetworkInterfaces(ListDecoderManifestNetworkInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -2132,7 +2132,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListDecoderManifestNetworkInterfaces">REST API Reference for ListDecoderManifestNetworkInterfaces Operation</seealso>
         public virtual Task<ListDecoderManifestNetworkInterfacesResponse> ListDecoderManifestNetworkInterfacesAsync(ListDecoderManifestNetworkInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestNetworkInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestNetworkInterfacesResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListDecoderManifestsResponse ListDecoderManifests(ListDecoderManifestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestsResponseUnmarshaller.Instance;
 
@@ -2185,7 +2185,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListDecoderManifests">REST API Reference for ListDecoderManifests Operation</seealso>
         public virtual Task<ListDecoderManifestsResponse> ListDecoderManifestsAsync(ListDecoderManifestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestsResponseUnmarshaller.Instance;
 
@@ -2198,7 +2198,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListDecoderManifestSignalsResponse ListDecoderManifestSignals(ListDecoderManifestSignalsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestSignalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestSignalsResponseUnmarshaller.Instance;
 
@@ -2241,7 +2241,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListDecoderManifestSignals">REST API Reference for ListDecoderManifestSignals Operation</seealso>
         public virtual Task<ListDecoderManifestSignalsResponse> ListDecoderManifestSignalsAsync(ListDecoderManifestSignalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDecoderManifestSignalsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDecoderManifestSignalsResponseUnmarshaller.Instance;
 
@@ -2254,7 +2254,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListFleetsResponse ListFleets(ListFleetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListFleets">REST API Reference for ListFleets Operation</seealso>
         public virtual Task<ListFleetsResponse> ListFleetsAsync(ListFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListFleetsForVehicleResponse ListFleetsForVehicle(ListFleetsForVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsForVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsForVehicleResponseUnmarshaller.Instance;
 
@@ -2353,7 +2353,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListFleetsForVehicle">REST API Reference for ListFleetsForVehicle Operation</seealso>
         public virtual Task<ListFleetsForVehicleResponse> ListFleetsForVehicleAsync(ListFleetsForVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFleetsForVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFleetsForVehicleResponseUnmarshaller.Instance;
 
@@ -2366,7 +2366,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListModelManifestNodesResponse ListModelManifestNodes(ListModelManifestNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelManifestNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelManifestNodesResponseUnmarshaller.Instance;
 
@@ -2412,7 +2412,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListModelManifestNodes">REST API Reference for ListModelManifestNodes Operation</seealso>
         public virtual Task<ListModelManifestNodesResponse> ListModelManifestNodesAsync(ListModelManifestNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelManifestNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelManifestNodesResponseUnmarshaller.Instance;
 
@@ -2425,7 +2425,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListModelManifestsResponse ListModelManifests(ListModelManifestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelManifestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelManifestsResponseUnmarshaller.Instance;
 
@@ -2465,7 +2465,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListModelManifests">REST API Reference for ListModelManifests Operation</seealso>
         public virtual Task<ListModelManifestsResponse> ListModelManifestsAsync(ListModelManifestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelManifestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelManifestsResponseUnmarshaller.Instance;
 
@@ -2478,7 +2478,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListSignalCatalogNodesResponse ListSignalCatalogNodes(ListSignalCatalogNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalCatalogNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalCatalogNodesResponseUnmarshaller.Instance;
 
@@ -2524,7 +2524,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListSignalCatalogNodes">REST API Reference for ListSignalCatalogNodes Operation</seealso>
         public virtual Task<ListSignalCatalogNodesResponse> ListSignalCatalogNodesAsync(ListSignalCatalogNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalCatalogNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalCatalogNodesResponseUnmarshaller.Instance;
 
@@ -2537,7 +2537,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListSignalCatalogsResponse ListSignalCatalogs(ListSignalCatalogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalCatalogsResponseUnmarshaller.Instance;
 
@@ -2581,7 +2581,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListSignalCatalogs">REST API Reference for ListSignalCatalogs Operation</seealso>
         public virtual Task<ListSignalCatalogsResponse> ListSignalCatalogsAsync(ListSignalCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalCatalogsResponseUnmarshaller.Instance;
 
@@ -2594,7 +2594,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListStateTemplatesResponse ListStateTemplates(ListStateTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStateTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStateTemplatesResponseUnmarshaller.Instance;
 
@@ -2636,7 +2636,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListStateTemplates">REST API Reference for ListStateTemplates Operation</seealso>
         public virtual Task<ListStateTemplatesResponse> ListStateTemplatesAsync(ListStateTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStateTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStateTemplatesResponseUnmarshaller.Instance;
 
@@ -2649,7 +2649,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2685,7 +2685,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2698,7 +2698,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListVehiclesResponse ListVehicles(ListVehiclesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVehiclesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVehiclesResponseUnmarshaller.Instance;
 
@@ -2738,7 +2738,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListVehicles">REST API Reference for ListVehicles Operation</seealso>
         public virtual Task<ListVehiclesResponse> ListVehiclesAsync(ListVehiclesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVehiclesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVehiclesResponseUnmarshaller.Instance;
 
@@ -2751,7 +2751,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual ListVehiclesInFleetResponse ListVehiclesInFleet(ListVehiclesInFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVehiclesInFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVehiclesInFleetResponseUnmarshaller.Instance;
 
@@ -2794,7 +2794,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListVehiclesInFleet">REST API Reference for ListVehiclesInFleet Operation</seealso>
         public virtual Task<ListVehiclesInFleetResponse> ListVehiclesInFleetAsync(ListVehiclesInFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVehiclesInFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVehiclesInFleetResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual PutEncryptionConfigurationResponse PutEncryptionConfiguration(PutEncryptionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -2850,7 +2850,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">REST API Reference for PutEncryptionConfiguration Operation</seealso>
         public virtual Task<PutEncryptionConfigurationResponse> PutEncryptionConfigurationAsync(PutEncryptionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEncryptionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEncryptionConfigurationResponseUnmarshaller.Instance;
 
@@ -2863,7 +2863,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual PutLoggingOptionsResponse PutLoggingOptions(PutLoggingOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -2903,7 +2903,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutLoggingOptions">REST API Reference for PutLoggingOptions Operation</seealso>
         public virtual Task<PutLoggingOptionsResponse> PutLoggingOptionsAsync(PutLoggingOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutLoggingOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutLoggingOptionsResponseUnmarshaller.Instance;
 
@@ -2916,7 +2916,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual RegisterAccountResponse RegisterAccount(RegisterAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAccountResponseUnmarshaller.Instance;
 
@@ -2994,7 +2994,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/RegisterAccount">REST API Reference for RegisterAccount Operation</seealso>
         public virtual Task<RegisterAccountResponse> RegisterAccountAsync(RegisterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAccountResponseUnmarshaller.Instance;
 
@@ -3007,7 +3007,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3044,7 +3044,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3057,7 +3057,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3093,7 +3093,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3106,7 +3106,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
@@ -3146,7 +3146,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         public virtual Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCampaignRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCampaignResponseUnmarshaller.Instance;
 
@@ -3159,7 +3159,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateDecoderManifestResponse UpdateDecoderManifest(UpdateDecoderManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDecoderManifestResponseUnmarshaller.Instance;
 
@@ -3212,7 +3212,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateDecoderManifest">REST API Reference for UpdateDecoderManifest Operation</seealso>
         public virtual Task<UpdateDecoderManifestResponse> UpdateDecoderManifestAsync(UpdateDecoderManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDecoderManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDecoderManifestResponseUnmarshaller.Instance;
 
@@ -3225,7 +3225,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateFleetResponse UpdateFleet(UpdateFleetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -3265,7 +3265,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         public virtual Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFleetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFleetResponseUnmarshaller.Instance;
 
@@ -3278,7 +3278,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateModelManifestResponse UpdateModelManifest(UpdateModelManifestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelManifestResponseUnmarshaller.Instance;
 
@@ -3322,7 +3322,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateModelManifest">REST API Reference for UpdateModelManifest Operation</seealso>
         public virtual Task<UpdateModelManifestResponse> UpdateModelManifestAsync(UpdateModelManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateModelManifestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateModelManifestResponseUnmarshaller.Instance;
 
@@ -3335,7 +3335,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateSignalCatalogResponse UpdateSignalCatalog(UpdateSignalCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSignalCatalogResponseUnmarshaller.Instance;
 
@@ -3385,7 +3385,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateSignalCatalog">REST API Reference for UpdateSignalCatalog Operation</seealso>
         public virtual Task<UpdateSignalCatalogResponse> UpdateSignalCatalogAsync(UpdateSignalCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSignalCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSignalCatalogResponseUnmarshaller.Instance;
 
@@ -3398,7 +3398,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateStateTemplateResponse UpdateStateTemplate(UpdateStateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStateTemplateResponseUnmarshaller.Instance;
 
@@ -3449,7 +3449,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateStateTemplate">REST API Reference for UpdateStateTemplate Operation</seealso>
         public virtual Task<UpdateStateTemplateResponse> UpdateStateTemplateAsync(UpdateStateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStateTemplateResponseUnmarshaller.Instance;
 
@@ -3462,7 +3462,7 @@ namespace Amazon.IoTFleetWise
 
         internal virtual UpdateVehicleResponse UpdateVehicle(UpdateVehicleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVehicleResponseUnmarshaller.Instance;
 
@@ -3514,7 +3514,7 @@ namespace Amazon.IoTFleetWise
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateVehicle">REST API Reference for UpdateVehicle Operation</seealso>
         public virtual Task<UpdateVehicleResponse> UpdateVehicleAsync(UpdateVehicleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVehicleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVehicleResponseUnmarshaller.Instance;
 

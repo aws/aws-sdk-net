@@ -258,7 +258,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual CreateSavingsPlanResponse CreateSavingsPlan(CreateSavingsPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSavingsPlanResponseUnmarshaller.Instance;
 
@@ -291,7 +291,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/CreateSavingsPlan">REST API Reference for CreateSavingsPlan Operation</seealso>
         public virtual Task<CreateSavingsPlanResponse> CreateSavingsPlanAsync(CreateSavingsPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSavingsPlanResponseUnmarshaller.Instance;
 
@@ -304,7 +304,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual DeleteQueuedSavingsPlanResponse DeleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan">REST API Reference for DeleteQueuedSavingsPlan Operation</seealso>
         public virtual Task<DeleteQueuedSavingsPlanResponse> DeleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedSavingsPlanResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual DescribeSavingsPlanRatesResponse DescribeSavingsPlanRates(DescribeSavingsPlanRatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlanRatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlanRatesResponseUnmarshaller.Instance;
 
@@ -377,7 +377,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlanRates">REST API Reference for DescribeSavingsPlanRates Operation</seealso>
         public virtual Task<DescribeSavingsPlanRatesResponse> DescribeSavingsPlanRatesAsync(DescribeSavingsPlanRatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlanRatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlanRatesResponseUnmarshaller.Instance;
 
@@ -390,7 +390,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual DescribeSavingsPlansResponse DescribeSavingsPlans(DescribeSavingsPlansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlans">REST API Reference for DescribeSavingsPlans Operation</seealso>
         public virtual Task<DescribeSavingsPlansResponse> DescribeSavingsPlansAsync(DescribeSavingsPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansResponseUnmarshaller.Instance;
 
@@ -430,7 +430,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual DescribeSavingsPlansOfferingRatesResponse DescribeSavingsPlansOfferingRates(DescribeSavingsPlansOfferingRatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansOfferingRatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansOfferingRatesResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferingRates">REST API Reference for DescribeSavingsPlansOfferingRates Operation</seealso>
         public virtual Task<DescribeSavingsPlansOfferingRatesResponse> DescribeSavingsPlansOfferingRatesAsync(DescribeSavingsPlansOfferingRatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansOfferingRatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansOfferingRatesResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual DescribeSavingsPlansOfferingsResponse DescribeSavingsPlansOfferings(DescribeSavingsPlansOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansOfferingsResponseUnmarshaller.Instance;
 
@@ -497,7 +497,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferings">REST API Reference for DescribeSavingsPlansOfferings Operation</seealso>
         public virtual Task<DescribeSavingsPlansOfferingsResponse> DescribeSavingsPlansOfferingsAsync(DescribeSavingsPlansOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSavingsPlansOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSavingsPlansOfferingsResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual ReturnSavingsPlanResponse ReturnSavingsPlan(ReturnSavingsPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReturnSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReturnSavingsPlanResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">REST API Reference for ReturnSavingsPlan Operation</seealso>
         public virtual Task<ReturnSavingsPlanResponse> ReturnSavingsPlanAsync(ReturnSavingsPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReturnSavingsPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReturnSavingsPlanResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.SavingsPlans
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -675,7 +675,7 @@ namespace Amazon.SavingsPlans
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 

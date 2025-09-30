@@ -306,7 +306,7 @@ namespace Amazon.AppRunner
 
         internal virtual AssociateCustomDomainResponse AssociateCustomDomain(AssociateCustomDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCustomDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCustomDomainResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/AssociateCustomDomain">REST API Reference for AssociateCustomDomain Operation</seealso>
         public virtual Task<AssociateCustomDomainResponse> AssociateCustomDomainAsync(AssociateCustomDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateCustomDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateCustomDomainResponseUnmarshaller.Instance;
 
@@ -362,7 +362,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateAutoScalingConfigurationResponse CreateAutoScalingConfiguration(CreateAutoScalingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -423,7 +423,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateAutoScalingConfiguration">REST API Reference for CreateAutoScalingConfiguration Operation</seealso>
         public virtual Task<CreateAutoScalingConfigurationResponse> CreateAutoScalingConfigurationAsync(CreateAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -436,7 +436,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -483,7 +483,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -496,7 +496,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateObservabilityConfigurationResponse CreateObservabilityConfiguration(CreateObservabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -554,7 +554,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateObservabilityConfiguration">REST API Reference for CreateObservabilityConfiguration Operation</seealso>
         public virtual Task<CreateObservabilityConfigurationResponse> CreateObservabilityConfigurationAsync(CreateObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -567,7 +567,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -613,7 +613,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateVpcConnectorResponse CreateVpcConnector(CreateVpcConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcConnectorResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcConnector">REST API Reference for CreateVpcConnector Operation</seealso>
         public virtual Task<CreateVpcConnectorResponse> CreateVpcConnectorAsync(CreateVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcConnectorResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.AppRunner
 
         internal virtual CreateVpcIngressConnectionResponse CreateVpcIngressConnection(CreateVpcIngressConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
         public virtual Task<CreateVpcIngressConnectionResponse> CreateVpcIngressConnectionAsync(CreateVpcIngressConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteAutoScalingConfigurationResponse DeleteAutoScalingConfiguration(DeleteAutoScalingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -769,7 +769,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteAutoScalingConfiguration">REST API Reference for DeleteAutoScalingConfiguration Operation</seealso>
         public virtual Task<DeleteAutoScalingConfigurationResponse> DeleteAutoScalingConfigurationAsync(DeleteAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -816,7 +816,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -829,7 +829,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteObservabilityConfigurationResponse DeleteObservabilityConfiguration(DeleteObservabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -863,7 +863,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteObservabilityConfiguration">REST API Reference for DeleteObservabilityConfiguration Operation</seealso>
         public virtual Task<DeleteObservabilityConfigurationResponse> DeleteObservabilityConfigurationAsync(DeleteObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -876,7 +876,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -923,7 +923,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -936,7 +936,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteVpcConnectorResponse DeleteVpcConnector(DeleteVpcConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcConnectorResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
         public virtual Task<DeleteVpcConnectorResponse> DeleteVpcConnectorAsync(DeleteVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcConnectorResponseUnmarshaller.Instance;
 
@@ -982,7 +982,7 @@ namespace Amazon.AppRunner
 
         internal virtual DeleteVpcIngressConnectionResponse DeleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
         public virtual Task<DeleteVpcIngressConnectionResponse> DeleteVpcIngressConnectionAsync(DeleteVpcIngressConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeAutoScalingConfigurationResponse DescribeAutoScalingConfiguration(DescribeAutoScalingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -1082,7 +1082,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeAutoScalingConfiguration">REST API Reference for DescribeAutoScalingConfiguration Operation</seealso>
         public virtual Task<DescribeAutoScalingConfigurationResponse> DescribeAutoScalingConfigurationAsync(DescribeAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeCustomDomainsResponse DescribeCustomDomains(DescribeCustomDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomDomainsResponseUnmarshaller.Instance;
 
@@ -1128,7 +1128,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeCustomDomains">REST API Reference for DescribeCustomDomains Operation</seealso>
         public virtual Task<DescribeCustomDomainsResponse> DescribeCustomDomainsAsync(DescribeCustomDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCustomDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCustomDomainsResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeObservabilityConfigurationResponse DescribeObservabilityConfiguration(DescribeObservabilityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeObservabilityConfiguration">REST API Reference for DescribeObservabilityConfiguration Operation</seealso>
         public virtual Task<DescribeObservabilityConfigurationResponse> DescribeObservabilityConfigurationAsync(DescribeObservabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeObservabilityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeObservabilityConfigurationResponseUnmarshaller.Instance;
 
@@ -1186,7 +1186,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeServiceResponse DescribeService(DescribeServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeService">REST API Reference for DescribeService Operation</seealso>
         public virtual Task<DescribeServiceResponse> DescribeServiceAsync(DescribeServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeVpcConnectorResponse DescribeVpcConnector(DescribeVpcConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcConnectorResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
         public virtual Task<DescribeVpcConnectorResponse> DescribeVpcConnectorAsync(DescribeVpcConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcConnectorResponseUnmarshaller.Instance;
 
@@ -1276,7 +1276,7 @@ namespace Amazon.AppRunner
 
         internal virtual DescribeVpcIngressConnectionResponse DescribeVpcIngressConnection(DescribeVpcIngressConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -1308,7 +1308,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
         public virtual Task<DescribeVpcIngressConnectionResponse> DescribeVpcIngressConnectionAsync(DescribeVpcIngressConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -1321,7 +1321,7 @@ namespace Amazon.AppRunner
 
         internal virtual DisassociateCustomDomainResponse DisassociateCustomDomain(DisassociateCustomDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCustomDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCustomDomainResponseUnmarshaller.Instance;
 
@@ -1365,7 +1365,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DisassociateCustomDomain">REST API Reference for DisassociateCustomDomain Operation</seealso>
         public virtual Task<DisassociateCustomDomainResponse> DisassociateCustomDomainAsync(DisassociateCustomDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateCustomDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateCustomDomainResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListAutoScalingConfigurationsResponse ListAutoScalingConfigurations(ListAutoScalingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutoScalingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutoScalingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListAutoScalingConfigurations">REST API Reference for ListAutoScalingConfigurations Operation</seealso>
         public virtual Task<ListAutoScalingConfigurationsResponse> ListAutoScalingConfigurationsAsync(ListAutoScalingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutoScalingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutoScalingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -1457,7 +1457,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual Task<ListConnectionsResponse> ListConnectionsAsync(ListConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -1470,7 +1470,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListObservabilityConfigurationsResponse ListObservabilityConfigurations(ListObservabilityConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObservabilityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObservabilityConfigurationsResponseUnmarshaller.Instance;
 
@@ -1507,7 +1507,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListObservabilityConfigurations">REST API Reference for ListObservabilityConfigurations Operation</seealso>
         public virtual Task<ListObservabilityConfigurationsResponse> ListObservabilityConfigurationsAsync(ListObservabilityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListObservabilityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListObservabilityConfigurationsResponseUnmarshaller.Instance;
 
@@ -1520,7 +1520,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
@@ -1558,7 +1558,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOperationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOperationsResponseUnmarshaller.Instance;
 
@@ -1571,7 +1571,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -1599,7 +1599,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -1612,7 +1612,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListServicesForAutoScalingConfigurationResponse ListServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesForAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesForAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -1644,7 +1644,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration">REST API Reference for ListServicesForAutoScalingConfiguration Operation</seealso>
         public virtual Task<ListServicesForAutoScalingConfigurationResponse> ListServicesForAutoScalingConfigurationAsync(ListServicesForAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesForAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesForAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -1657,7 +1657,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1693,7 +1693,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListVpcConnectorsResponse ListVpcConnectors(ListVpcConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcConnectorsResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcConnectors">REST API Reference for ListVpcConnectors Operation</seealso>
         public virtual Task<ListVpcConnectorsResponse> ListVpcConnectorsAsync(ListVpcConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcConnectorsResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.AppRunner
 
         internal virtual ListVpcIngressConnectionsResponse ListVpcIngressConnections(ListVpcIngressConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcIngressConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcIngressConnectionsResponseUnmarshaller.Instance;
 
@@ -1775,7 +1775,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
         public virtual Task<ListVpcIngressConnectionsResponse> ListVpcIngressConnectionsAsync(ListVpcIngressConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcIngressConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcIngressConnectionsResponseUnmarshaller.Instance;
 
@@ -1788,7 +1788,7 @@ namespace Amazon.AppRunner
 
         internal virtual PauseServiceResponse PauseService(PauseServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseServiceResponseUnmarshaller.Instance;
 
@@ -1830,7 +1830,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/PauseService">REST API Reference for PauseService Operation</seealso>
         public virtual Task<PauseServiceResponse> PauseServiceAsync(PauseServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseServiceResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.AppRunner
 
         internal virtual ResumeServiceResponse ResumeService(ResumeServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeServiceResponseUnmarshaller.Instance;
 
@@ -1885,7 +1885,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ResumeService">REST API Reference for ResumeService Operation</seealso>
         public virtual Task<ResumeServiceResponse> ResumeServiceAsync(ResumeServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeServiceResponseUnmarshaller.Instance;
 
@@ -1898,7 +1898,7 @@ namespace Amazon.AppRunner
 
         internal virtual StartDeploymentResponse StartDeployment(StartDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeploymentResponseUnmarshaller.Instance;
 
@@ -1944,7 +1944,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/StartDeployment">REST API Reference for StartDeployment Operation</seealso>
         public virtual Task<StartDeploymentResponse> StartDeploymentAsync(StartDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDeploymentResponseUnmarshaller.Instance;
 
@@ -1957,7 +1957,7 @@ namespace Amazon.AppRunner
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2006,7 +2006,7 @@ namespace Amazon.AppRunner
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2054,7 +2054,7 @@ namespace Amazon.AppRunner
 
         internal virtual UpdateDefaultAutoScalingConfigurationResponse UpdateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -2087,7 +2087,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration">REST API Reference for UpdateDefaultAutoScalingConfiguration Operation</seealso>
         public virtual Task<UpdateDefaultAutoScalingConfigurationResponse> UpdateDefaultAutoScalingConfigurationAsync(UpdateDefaultAutoScalingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDefaultAutoScalingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDefaultAutoScalingConfigurationResponseUnmarshaller.Instance;
 
@@ -2100,7 +2100,7 @@ namespace Amazon.AppRunner
 
         internal virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -2150,7 +2150,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -2163,7 +2163,7 @@ namespace Amazon.AppRunner
 
         internal virtual UpdateVpcIngressConnectionResponse UpdateVpcIngressConnection(UpdateVpcIngressConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcIngressConnectionResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.AppRunner
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
         public virtual Task<UpdateVpcIngressConnectionResponse> UpdateVpcIngressConnectionAsync(UpdateVpcIngressConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcIngressConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcIngressConnectionResponseUnmarshaller.Instance;
 

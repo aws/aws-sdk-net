@@ -336,7 +336,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssociateAssessmentReportEvidenceFolder">REST API Reference for AssociateAssessmentReportEvidenceFolder Operation</seealso>
         public virtual AssociateAssessmentReportEvidenceFolderResponse AssociateAssessmentReportEvidenceFolder(AssociateAssessmentReportEvidenceFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssessmentReportEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssessmentReportEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -357,7 +357,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssociateAssessmentReportEvidenceFolder">REST API Reference for AssociateAssessmentReportEvidenceFolder Operation</seealso>
         public virtual IAsyncResult BeginAssociateAssessmentReportEvidenceFolder(AssociateAssessmentReportEvidenceFolderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAssessmentReportEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAssessmentReportEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchAssociateAssessmentReportEvidence">REST API Reference for BatchAssociateAssessmentReportEvidence Operation</seealso>
         public virtual BatchAssociateAssessmentReportEvidenceResponse BatchAssociateAssessmentReportEvidence(BatchAssociateAssessmentReportEvidenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateAssessmentReportEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateAssessmentReportEvidenceResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchAssociateAssessmentReportEvidence">REST API Reference for BatchAssociateAssessmentReportEvidence Operation</seealso>
         public virtual IAsyncResult BeginBatchAssociateAssessmentReportEvidence(BatchAssociateAssessmentReportEvidenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchAssociateAssessmentReportEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchAssociateAssessmentReportEvidenceResponseUnmarshaller.Instance;
 
@@ -472,7 +472,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchCreateDelegationByAssessment">REST API Reference for BatchCreateDelegationByAssessment Operation</seealso>
         public virtual BatchCreateDelegationByAssessmentResponse BatchCreateDelegationByAssessment(BatchCreateDelegationByAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateDelegationByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateDelegationByAssessmentResponseUnmarshaller.Instance;
 
@@ -493,7 +493,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchCreateDelegationByAssessment">REST API Reference for BatchCreateDelegationByAssessment Operation</seealso>
         public virtual IAsyncResult BeginBatchCreateDelegationByAssessment(BatchCreateDelegationByAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateDelegationByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateDelegationByAssessmentResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDeleteDelegationByAssessment">REST API Reference for BatchDeleteDelegationByAssessment Operation</seealso>
         public virtual BatchDeleteDelegationByAssessmentResponse BatchDeleteDelegationByAssessment(BatchDeleteDelegationByAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDelegationByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDelegationByAssessmentResponseUnmarshaller.Instance;
 
@@ -561,7 +561,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDeleteDelegationByAssessment">REST API Reference for BatchDeleteDelegationByAssessment Operation</seealso>
         public virtual IAsyncResult BeginBatchDeleteDelegationByAssessment(BatchDeleteDelegationByAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDelegationByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDelegationByAssessmentResponseUnmarshaller.Instance;
 
@@ -608,7 +608,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDisassociateAssessmentReportEvidence">REST API Reference for BatchDisassociateAssessmentReportEvidence Operation</seealso>
         public virtual BatchDisassociateAssessmentReportEvidenceResponse BatchDisassociateAssessmentReportEvidence(BatchDisassociateAssessmentReportEvidenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateAssessmentReportEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateAssessmentReportEvidenceResponseUnmarshaller.Instance;
 
@@ -629,7 +629,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchDisassociateAssessmentReportEvidence">REST API Reference for BatchDisassociateAssessmentReportEvidence Operation</seealso>
         public virtual IAsyncResult BeginBatchDisassociateAssessmentReportEvidence(BatchDisassociateAssessmentReportEvidenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDisassociateAssessmentReportEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDisassociateAssessmentReportEvidenceResponseUnmarshaller.Instance;
 
@@ -713,7 +713,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl">REST API Reference for BatchImportEvidenceToAssessmentControl Operation</seealso>
         public virtual BatchImportEvidenceToAssessmentControlResponse BatchImportEvidenceToAssessmentControl(BatchImportEvidenceToAssessmentControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchImportEvidenceToAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchImportEvidenceToAssessmentControlResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/BatchImportEvidenceToAssessmentControl">REST API Reference for BatchImportEvidenceToAssessmentControl Operation</seealso>
         public virtual IAsyncResult BeginBatchImportEvidenceToAssessmentControl(BatchImportEvidenceToAssessmentControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchImportEvidenceToAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchImportEvidenceToAssessmentControlResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessment">REST API Reference for CreateAssessment Operation</seealso>
         public virtual CreateAssessmentResponse CreateAssessment(CreateAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessment">REST API Reference for CreateAssessment Operation</seealso>
         public virtual IAsyncResult BeginCreateAssessment(CreateAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentResponseUnmarshaller.Instance;
 
@@ -866,7 +866,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFramework">REST API Reference for CreateAssessmentFramework Operation</seealso>
         public virtual CreateAssessmentFrameworkResponse CreateAssessmentFramework(CreateAssessmentFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -887,7 +887,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentFramework">REST API Reference for CreateAssessmentFramework Operation</seealso>
         public virtual IAsyncResult BeginCreateAssessmentFramework(CreateAssessmentFrameworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentReport">REST API Reference for CreateAssessmentReport Operation</seealso>
         public virtual CreateAssessmentReportResponse CreateAssessmentReport(CreateAssessmentReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentReportResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateAssessmentReport">REST API Reference for CreateAssessmentReport Operation</seealso>
         public virtual IAsyncResult BeginCreateAssessmentReport(CreateAssessmentReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAssessmentReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAssessmentReportResponseUnmarshaller.Instance;
 
@@ -1009,7 +1009,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControl">REST API Reference for CreateControl Operation</seealso>
         public virtual CreateControlResponse CreateControl(CreateControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateControlResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateControl">REST API Reference for CreateControl Operation</seealso>
         public virtual IAsyncResult BeginCreateControl(CreateControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateControlResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessment">REST API Reference for DeleteAssessment Operation</seealso>
         public virtual DeleteAssessmentResponse DeleteAssessment(DeleteAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessment">REST API Reference for DeleteAssessment Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessment(DeleteAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFramework">REST API Reference for DeleteAssessmentFramework Operation</seealso>
         public virtual DeleteAssessmentFrameworkResponse DeleteAssessmentFramework(DeleteAssessmentFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -1166,7 +1166,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFramework">REST API Reference for DeleteAssessmentFramework Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentFramework(DeleteAssessmentFrameworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -1213,7 +1213,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFrameworkShare">REST API Reference for DeleteAssessmentFrameworkShare Operation</seealso>
         public virtual DeleteAssessmentFrameworkShareResponse DeleteAssessmentFrameworkShare(DeleteAssessmentFrameworkShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -1234,7 +1234,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentFrameworkShare">REST API Reference for DeleteAssessmentFrameworkShare Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentFrameworkShare(DeleteAssessmentFrameworkShareRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -1314,7 +1314,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">REST API Reference for DeleteAssessmentReport Operation</seealso>
         public virtual DeleteAssessmentReportResponse DeleteAssessmentReport(DeleteAssessmentReportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentReportResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteAssessmentReport">REST API Reference for DeleteAssessmentReport Operation</seealso>
         public virtual IAsyncResult BeginDeleteAssessmentReport(DeleteAssessmentReportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAssessmentReportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAssessmentReportResponseUnmarshaller.Instance;
 
@@ -1391,7 +1391,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteControl">REST API Reference for DeleteControl Operation</seealso>
         public virtual DeleteControlResponse DeleteControl(DeleteControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteControlResponseUnmarshaller.Instance;
 
@@ -1412,7 +1412,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeleteControl">REST API Reference for DeleteControl Operation</seealso>
         public virtual IAsyncResult BeginDeleteControl(DeleteControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteControlResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterAccount">REST API Reference for DeregisterAccount Operation</seealso>
         public virtual DeregisterAccountResponse DeregisterAccount(DeregisterAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAccountResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterAccount">REST API Reference for DeregisterAccount Operation</seealso>
         public virtual IAsyncResult BeginDeregisterAccount(DeregisterAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAccountResponseUnmarshaller.Instance;
 
@@ -1622,7 +1622,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">REST API Reference for DeregisterOrganizationAdminAccount Operation</seealso>
         public virtual DeregisterOrganizationAdminAccountResponse DeregisterOrganizationAdminAccount(DeregisterOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1643,7 +1643,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DeregisterOrganizationAdminAccount">REST API Reference for DeregisterOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginDeregisterOrganizationAdminAccount(DeregisterOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -1690,7 +1690,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DisassociateAssessmentReportEvidenceFolder">REST API Reference for DisassociateAssessmentReportEvidenceFolder Operation</seealso>
         public virtual DisassociateAssessmentReportEvidenceFolderResponse DisassociateAssessmentReportEvidenceFolder(DisassociateAssessmentReportEvidenceFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssessmentReportEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssessmentReportEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DisassociateAssessmentReportEvidenceFolder">REST API Reference for DisassociateAssessmentReportEvidenceFolder Operation</seealso>
         public virtual IAsyncResult BeginDisassociateAssessmentReportEvidenceFolder(DisassociateAssessmentReportEvidenceFolderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAssessmentReportEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAssessmentReportEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -1748,7 +1748,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">REST API Reference for GetAccountStatus Operation</seealso>
         public virtual GetAccountStatusResponse GetAccountStatus(GetAccountStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountStatusResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAccountStatus">REST API Reference for GetAccountStatus Operation</seealso>
         public virtual IAsyncResult BeginGetAccountStatus(GetAccountStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountStatusResponseUnmarshaller.Instance;
 
@@ -1816,7 +1816,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">REST API Reference for GetAssessment Operation</seealso>
         public virtual GetAssessmentResponse GetAssessment(GetAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessment">REST API Reference for GetAssessment Operation</seealso>
         public virtual IAsyncResult BeginGetAssessment(GetAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentResponseUnmarshaller.Instance;
 
@@ -1884,7 +1884,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">REST API Reference for GetAssessmentFramework Operation</seealso>
         public virtual GetAssessmentFrameworkResponse GetAssessmentFramework(GetAssessmentFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentFramework">REST API Reference for GetAssessmentFramework Operation</seealso>
         public virtual IAsyncResult BeginGetAssessmentFramework(GetAssessmentFrameworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -1952,7 +1952,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentReportUrl">REST API Reference for GetAssessmentReportUrl Operation</seealso>
         public virtual GetAssessmentReportUrlResponse GetAssessmentReportUrl(GetAssessmentReportUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentReportUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentReportUrlResponseUnmarshaller.Instance;
 
@@ -1973,7 +1973,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetAssessmentReportUrl">REST API Reference for GetAssessmentReportUrl Operation</seealso>
         public virtual IAsyncResult BeginGetAssessmentReportUrl(GetAssessmentReportUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentReportUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentReportUrlResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetChangeLogs">REST API Reference for GetChangeLogs Operation</seealso>
         public virtual GetChangeLogsResponse GetChangeLogs(GetChangeLogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeLogsResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetChangeLogs">REST API Reference for GetChangeLogs Operation</seealso>
         public virtual IAsyncResult BeginGetChangeLogs(GetChangeLogsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChangeLogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChangeLogsResponseUnmarshaller.Instance;
 
@@ -2088,7 +2088,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetControl">REST API Reference for GetControl Operation</seealso>
         public virtual GetControlResponse GetControl(GetControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
 
@@ -2109,7 +2109,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetControl">REST API Reference for GetControl Operation</seealso>
         public virtual IAsyncResult BeginGetControl(GetControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetControlResponseUnmarshaller.Instance;
 
@@ -2153,7 +2153,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">REST API Reference for GetDelegations Operation</seealso>
         public virtual GetDelegationsResponse GetDelegations(GetDelegationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDelegationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDelegationsResponseUnmarshaller.Instance;
 
@@ -2174,7 +2174,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetDelegations">REST API Reference for GetDelegations Operation</seealso>
         public virtual IAsyncResult BeginGetDelegations(GetDelegationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDelegationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDelegationsResponseUnmarshaller.Instance;
 
@@ -2221,7 +2221,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidence">REST API Reference for GetEvidence Operation</seealso>
         public virtual GetEvidenceResponse GetEvidence(GetEvidenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidence">REST API Reference for GetEvidence Operation</seealso>
         public virtual IAsyncResult BeginGetEvidence(GetEvidenceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceResponseUnmarshaller.Instance;
 
@@ -2289,7 +2289,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceByEvidenceFolder">REST API Reference for GetEvidenceByEvidenceFolder Operation</seealso>
         public virtual GetEvidenceByEvidenceFolderResponse GetEvidenceByEvidenceFolder(GetEvidenceByEvidenceFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceByEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceByEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -2310,7 +2310,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceByEvidenceFolder">REST API Reference for GetEvidenceByEvidenceFolder Operation</seealso>
         public virtual IAsyncResult BeginGetEvidenceByEvidenceFolder(GetEvidenceByEvidenceFolderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceByEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceByEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -2382,7 +2382,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
         public virtual GetEvidenceFileUploadUrlResponse GetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
         public virtual IAsyncResult BeginGetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
 
@@ -2450,7 +2450,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFolder">REST API Reference for GetEvidenceFolder Operation</seealso>
         public virtual GetEvidenceFolderResponse GetEvidenceFolder(GetEvidenceFolderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -2471,7 +2471,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFolder">REST API Reference for GetEvidenceFolder Operation</seealso>
         public virtual IAsyncResult BeginGetEvidenceFolder(GetEvidenceFolderRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFolderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFolderResponseUnmarshaller.Instance;
 
@@ -2518,7 +2518,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessment">REST API Reference for GetEvidenceFoldersByAssessment Operation</seealso>
         public virtual GetEvidenceFoldersByAssessmentResponse GetEvidenceFoldersByAssessment(GetEvidenceFoldersByAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFoldersByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFoldersByAssessmentResponseUnmarshaller.Instance;
 
@@ -2539,7 +2539,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessment">REST API Reference for GetEvidenceFoldersByAssessment Operation</seealso>
         public virtual IAsyncResult BeginGetEvidenceFoldersByAssessment(GetEvidenceFoldersByAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFoldersByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFoldersByAssessmentResponseUnmarshaller.Instance;
 
@@ -2587,7 +2587,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessmentControl">REST API Reference for GetEvidenceFoldersByAssessmentControl Operation</seealso>
         public virtual GetEvidenceFoldersByAssessmentControlResponse GetEvidenceFoldersByAssessmentControl(GetEvidenceFoldersByAssessmentControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFoldersByAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFoldersByAssessmentControlResponseUnmarshaller.Instance;
 
@@ -2608,7 +2608,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFoldersByAssessmentControl">REST API Reference for GetEvidenceFoldersByAssessmentControl Operation</seealso>
         public virtual IAsyncResult BeginGetEvidenceFoldersByAssessmentControl(GetEvidenceFoldersByAssessmentControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvidenceFoldersByAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvidenceFoldersByAssessmentControlResponseUnmarshaller.Instance;
 
@@ -2649,7 +2649,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
         public virtual GetInsightsResponse GetInsights(GetInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightsResponseUnmarshaller.Instance;
 
@@ -2670,7 +2670,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsights">REST API Reference for GetInsights Operation</seealso>
         public virtual IAsyncResult BeginGetInsights(GetInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightsResponseUnmarshaller.Instance;
 
@@ -2717,7 +2717,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
         public virtual GetInsightsByAssessmentResponse GetInsightsByAssessment(GetInsightsByAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightsByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightsByAssessmentResponseUnmarshaller.Instance;
 
@@ -2738,7 +2738,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetInsightsByAssessment">REST API Reference for GetInsightsByAssessment Operation</seealso>
         public virtual IAsyncResult BeginGetInsightsByAssessment(GetInsightsByAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightsByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightsByAssessmentResponseUnmarshaller.Instance;
 
@@ -2786,7 +2786,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">REST API Reference for GetOrganizationAdminAccount Operation</seealso>
         public virtual GetOrganizationAdminAccountResponse GetOrganizationAdminAccount(GetOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -2807,7 +2807,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetOrganizationAdminAccount">REST API Reference for GetOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginGetOrganizationAdminAccount(GetOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -2868,7 +2868,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">REST API Reference for GetServicesInScope Operation</seealso>
         public virtual GetServicesInScopeResponse GetServicesInScope(GetServicesInScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServicesInScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServicesInScopeResponseUnmarshaller.Instance;
 
@@ -2889,7 +2889,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetServicesInScope">REST API Reference for GetServicesInScope Operation</seealso>
         public virtual IAsyncResult BeginGetServicesInScope(GetServicesInScopeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServicesInScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServicesInScopeResponseUnmarshaller.Instance;
 
@@ -2930,7 +2930,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">REST API Reference for GetSettings Operation</seealso>
         public virtual GetSettingsResponse GetSettings(GetSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSettingsResponseUnmarshaller.Instance;
 
@@ -2951,7 +2951,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetSettings">REST API Reference for GetSettings Operation</seealso>
         public virtual IAsyncResult BeginGetSettings(GetSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSettingsResponseUnmarshaller.Instance;
 
@@ -3008,7 +3008,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
         public virtual ListAssessmentControlInsightsByControlDomainResponse ListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentControlInsightsByControlDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentControlInsightsByControlDomainResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentControlInsightsByControlDomain">REST API Reference for ListAssessmentControlInsightsByControlDomain Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentControlInsightsByControlDomain(ListAssessmentControlInsightsByControlDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentControlInsightsByControlDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentControlInsightsByControlDomainResponseUnmarshaller.Instance;
 
@@ -3074,7 +3074,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworks">REST API Reference for ListAssessmentFrameworks Operation</seealso>
         public virtual ListAssessmentFrameworksResponse ListAssessmentFrameworks(ListAssessmentFrameworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentFrameworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentFrameworksResponseUnmarshaller.Instance;
 
@@ -3095,7 +3095,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworks">REST API Reference for ListAssessmentFrameworks Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentFrameworks(ListAssessmentFrameworksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentFrameworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentFrameworksResponseUnmarshaller.Instance;
 
@@ -3140,7 +3140,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworkShareRequests">REST API Reference for ListAssessmentFrameworkShareRequests Operation</seealso>
         public virtual ListAssessmentFrameworkShareRequestsResponse ListAssessmentFrameworkShareRequests(ListAssessmentFrameworkShareRequestsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentFrameworkShareRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentFrameworkShareRequestsResponseUnmarshaller.Instance;
 
@@ -3161,7 +3161,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentFrameworkShareRequests">REST API Reference for ListAssessmentFrameworkShareRequests Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentFrameworkShareRequests(ListAssessmentFrameworkShareRequestsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentFrameworkShareRequestsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentFrameworkShareRequestsResponseUnmarshaller.Instance;
 
@@ -3205,7 +3205,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentReports">REST API Reference for ListAssessmentReports Operation</seealso>
         public virtual ListAssessmentReportsResponse ListAssessmentReports(ListAssessmentReportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentReportsResponseUnmarshaller.Instance;
 
@@ -3226,7 +3226,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessmentReports">REST API Reference for ListAssessmentReports Operation</seealso>
         public virtual IAsyncResult BeginListAssessmentReports(ListAssessmentReportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentReportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentReportsResponseUnmarshaller.Instance;
 
@@ -3270,7 +3270,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
         public virtual ListAssessmentsResponse ListAssessments(ListAssessmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentsResponseUnmarshaller.Instance;
 
@@ -3291,7 +3291,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
         public virtual IAsyncResult BeginListAssessments(ListAssessmentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssessmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssessmentsResponseUnmarshaller.Instance;
 
@@ -3354,7 +3354,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
         public virtual ListControlDomainInsightsResponse ListControlDomainInsights(ListControlDomainInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlDomainInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlDomainInsightsResponseUnmarshaller.Instance;
 
@@ -3375,7 +3375,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsights">REST API Reference for ListControlDomainInsights Operation</seealso>
         public virtual IAsyncResult BeginListControlDomainInsights(ListControlDomainInsightsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlDomainInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlDomainInsightsResponseUnmarshaller.Instance;
 
@@ -3437,7 +3437,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
         public virtual ListControlDomainInsightsByAssessmentResponse ListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlDomainInsightsByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlDomainInsightsByAssessmentResponseUnmarshaller.Instance;
 
@@ -3458,7 +3458,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlDomainInsightsByAssessment">REST API Reference for ListControlDomainInsightsByAssessment Operation</seealso>
         public virtual IAsyncResult BeginListControlDomainInsightsByAssessment(ListControlDomainInsightsByAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlDomainInsightsByAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlDomainInsightsByAssessmentResponseUnmarshaller.Instance;
 
@@ -3515,7 +3515,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
         public virtual ListControlInsightsByControlDomainResponse ListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlInsightsByControlDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlInsightsByControlDomainResponseUnmarshaller.Instance;
 
@@ -3536,7 +3536,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControlInsightsByControlDomain">REST API Reference for ListControlInsightsByControlDomain Operation</seealso>
         public virtual IAsyncResult BeginListControlInsightsByControlDomain(ListControlInsightsByControlDomainRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlInsightsByControlDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlInsightsByControlDomainResponseUnmarshaller.Instance;
 
@@ -3580,7 +3580,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControls">REST API Reference for ListControls Operation</seealso>
         public virtual ListControlsResponse ListControls(ListControlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
 
@@ -3601,7 +3601,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListControls">REST API Reference for ListControls Operation</seealso>
         public virtual IAsyncResult BeginListControls(ListControlsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListControlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListControlsResponseUnmarshaller.Instance;
 
@@ -3645,7 +3645,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListKeywordsForDataSource">REST API Reference for ListKeywordsForDataSource Operation</seealso>
         public virtual ListKeywordsForDataSourceResponse ListKeywordsForDataSource(ListKeywordsForDataSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeywordsForDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeywordsForDataSourceResponseUnmarshaller.Instance;
 
@@ -3666,7 +3666,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListKeywordsForDataSource">REST API Reference for ListKeywordsForDataSource Operation</seealso>
         public virtual IAsyncResult BeginListKeywordsForDataSource(ListKeywordsForDataSourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeywordsForDataSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeywordsForDataSourceResponseUnmarshaller.Instance;
 
@@ -3710,7 +3710,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
         public virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -3731,7 +3731,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
         public virtual IAsyncResult BeginListNotifications(ListNotificationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
 
@@ -3774,7 +3774,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3795,7 +3795,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -3845,7 +3845,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">REST API Reference for RegisterAccount Operation</seealso>
         public virtual RegisterAccountResponse RegisterAccount(RegisterAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAccountResponseUnmarshaller.Instance;
 
@@ -3866,7 +3866,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterAccount">REST API Reference for RegisterAccount Operation</seealso>
         public virtual IAsyncResult BeginRegisterAccount(RegisterAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAccountResponseUnmarshaller.Instance;
 
@@ -3917,7 +3917,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">REST API Reference for RegisterOrganizationAdminAccount Operation</seealso>
         public virtual RegisterOrganizationAdminAccountResponse RegisterOrganizationAdminAccount(RegisterOrganizationAdminAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -3938,7 +3938,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/RegisterOrganizationAdminAccount">REST API Reference for RegisterOrganizationAdminAccount Operation</seealso>
         public virtual IAsyncResult BeginRegisterOrganizationAdminAccount(RegisterOrganizationAdminAccountRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterOrganizationAdminAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterOrganizationAdminAccountResponseUnmarshaller.Instance;
 
@@ -4042,7 +4042,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/StartAssessmentFrameworkShare">REST API Reference for StartAssessmentFrameworkShare Operation</seealso>
         public virtual StartAssessmentFrameworkShareResponse StartAssessmentFrameworkShare(StartAssessmentFrameworkShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -4063,7 +4063,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/StartAssessmentFrameworkShare">REST API Reference for StartAssessmentFrameworkShare Operation</seealso>
         public virtual IAsyncResult BeginStartAssessmentFrameworkShare(StartAssessmentFrameworkShareRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -4106,7 +4106,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4127,7 +4127,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4170,7 +4170,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4191,7 +4191,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4248,7 +4248,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessment">REST API Reference for UpdateAssessment Operation</seealso>
         public virtual UpdateAssessmentResponse UpdateAssessment(UpdateAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentResponseUnmarshaller.Instance;
 
@@ -4269,7 +4269,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessment">REST API Reference for UpdateAssessment Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessment(UpdateAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentResponseUnmarshaller.Instance;
 
@@ -4316,7 +4316,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControl">REST API Reference for UpdateAssessmentControl Operation</seealso>
         public virtual UpdateAssessmentControlResponse UpdateAssessmentControl(UpdateAssessmentControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentControlResponseUnmarshaller.Instance;
 
@@ -4337,7 +4337,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControl">REST API Reference for UpdateAssessmentControl Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentControl(UpdateAssessmentControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentControlResponseUnmarshaller.Instance;
 
@@ -4384,7 +4384,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControlSetStatus">REST API Reference for UpdateAssessmentControlSetStatus Operation</seealso>
         public virtual UpdateAssessmentControlSetStatusResponse UpdateAssessmentControlSetStatus(UpdateAssessmentControlSetStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentControlSetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentControlSetStatusResponseUnmarshaller.Instance;
 
@@ -4405,7 +4405,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentControlSetStatus">REST API Reference for UpdateAssessmentControlSetStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentControlSetStatus(UpdateAssessmentControlSetStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentControlSetStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentControlSetStatusResponseUnmarshaller.Instance;
 
@@ -4459,7 +4459,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFramework">REST API Reference for UpdateAssessmentFramework Operation</seealso>
         public virtual UpdateAssessmentFrameworkResponse UpdateAssessmentFramework(UpdateAssessmentFrameworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -4480,7 +4480,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFramework">REST API Reference for UpdateAssessmentFramework Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentFramework(UpdateAssessmentFrameworkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentFrameworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentFrameworkResponseUnmarshaller.Instance;
 
@@ -4534,7 +4534,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare">REST API Reference for UpdateAssessmentFrameworkShare Operation</seealso>
         public virtual UpdateAssessmentFrameworkShareResponse UpdateAssessmentFrameworkShare(UpdateAssessmentFrameworkShareRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -4555,7 +4555,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentFrameworkShare">REST API Reference for UpdateAssessmentFrameworkShare Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentFrameworkShare(UpdateAssessmentFrameworkShareRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentFrameworkShareRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentFrameworkShareResponseUnmarshaller.Instance;
 
@@ -4609,7 +4609,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentStatus">REST API Reference for UpdateAssessmentStatus Operation</seealso>
         public virtual UpdateAssessmentStatusResponse UpdateAssessmentStatus(UpdateAssessmentStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentStatusResponseUnmarshaller.Instance;
 
@@ -4630,7 +4630,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateAssessmentStatus">REST API Reference for UpdateAssessmentStatus Operation</seealso>
         public virtual IAsyncResult BeginUpdateAssessmentStatus(UpdateAssessmentStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAssessmentStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAssessmentStatusResponseUnmarshaller.Instance;
 
@@ -4677,7 +4677,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateControl">REST API Reference for UpdateControl Operation</seealso>
         public virtual UpdateControlResponse UpdateControl(UpdateControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateControlResponseUnmarshaller.Instance;
 
@@ -4698,7 +4698,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateControl">REST API Reference for UpdateControl Operation</seealso>
         public virtual IAsyncResult BeginUpdateControl(UpdateControlRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateControlResponseUnmarshaller.Instance;
 
@@ -4742,7 +4742,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
         public virtual UpdateSettingsResponse UpdateSettings(UpdateSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
 
@@ -4763,7 +4763,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
         public virtual IAsyncResult BeginUpdateSettings(UpdateSettingsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
 
@@ -4810,7 +4810,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ValidateAssessmentReportIntegrity">REST API Reference for ValidateAssessmentReportIntegrity Operation</seealso>
         public virtual ValidateAssessmentReportIntegrityResponse ValidateAssessmentReportIntegrity(ValidateAssessmentReportIntegrityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateAssessmentReportIntegrityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateAssessmentReportIntegrityResponseUnmarshaller.Instance;
 
@@ -4831,7 +4831,7 @@ namespace Amazon.AuditManager
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ValidateAssessmentReportIntegrity">REST API Reference for ValidateAssessmentReportIntegrity Operation</seealso>
         public virtual IAsyncResult BeginValidateAssessmentReportIntegrity(ValidateAssessmentReportIntegrityRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ValidateAssessmentReportIntegrityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ValidateAssessmentReportIntegrityResponseUnmarshaller.Instance;
 

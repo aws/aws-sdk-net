@@ -383,7 +383,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -404,7 +404,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual IAsyncResult BeginCreateConnection(CreateConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">REST API Reference for CreateHost Operation</seealso>
         public virtual CreateHostResponse CreateHost(CreateHostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostResponseUnmarshaller.Instance;
 
@@ -471,7 +471,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">REST API Reference for CreateHost Operation</seealso>
         public virtual IAsyncResult BeginCreateHost(CreateHostRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHostResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
         public virtual CreateRepositoryLinkResponse CreateRepositoryLink(CreateRepositoryLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink">REST API Reference for CreateRepositoryLink Operation</seealso>
         public virtual IAsyncResult BeginCreateRepositoryLink(CreateRepositoryLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -605,7 +605,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
         public virtual CreateSyncConfigurationResponse CreateSyncConfiguration(CreateSyncConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -626,7 +626,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration">REST API Reference for CreateSyncConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateSyncConfiguration(CreateSyncConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -662,7 +662,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -683,7 +683,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual IAsyncResult BeginDeleteConnection(DeleteConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -730,7 +730,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">REST API Reference for DeleteHost Operation</seealso>
         public virtual DeleteHostResponse DeleteHost(DeleteHostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">REST API Reference for DeleteHost Operation</seealso>
         public virtual IAsyncResult BeginDeleteHost(DeleteHostRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteHostResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
         public virtual DeleteRepositoryLinkResponse DeleteRepositoryLink(DeleteRepositoryLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink">REST API Reference for DeleteRepositoryLink Operation</seealso>
         public virtual IAsyncResult BeginDeleteRepositoryLink(DeleteRepositoryLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -882,7 +882,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
         public virtual DeleteSyncConfigurationResponse DeleteSyncConfiguration(DeleteSyncConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -903,7 +903,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration">REST API Reference for DeleteSyncConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteSyncConfiguration(DeleteSyncConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual IAsyncResult BeginGetConnection(GetConnectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -1003,7 +1003,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
         public virtual GetHostResponse GetHost(GetHostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostResponseUnmarshaller.Instance;
 
@@ -1024,7 +1024,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
         public virtual IAsyncResult BeginGetHost(GetHostRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHostResponseUnmarshaller.Instance;
 
@@ -1077,7 +1077,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
         public virtual GetRepositoryLinkResponse GetRepositoryLink(GetRepositoryLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink">REST API Reference for GetRepositoryLink Operation</seealso>
         public virtual IAsyncResult BeginGetRepositoryLink(GetRepositoryLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -1147,7 +1147,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
         public virtual GetRepositorySyncStatusResponse GetRepositorySyncStatus(GetRepositorySyncStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus">REST API Reference for GetRepositorySyncStatus Operation</seealso>
         public virtual IAsyncResult BeginGetRepositorySyncStatus(GetRepositorySyncStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRepositorySyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRepositorySyncStatusResponseUnmarshaller.Instance;
 
@@ -1217,7 +1217,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
         public virtual GetResourceSyncStatusResponse GetResourceSyncStatus(GetResourceSyncStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSyncStatusResponseUnmarshaller.Instance;
 
@@ -1238,7 +1238,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus">REST API Reference for GetResourceSyncStatus Operation</seealso>
         public virtual IAsyncResult BeginGetResourceSyncStatus(GetResourceSyncStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceSyncStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceSyncStatusResponseUnmarshaller.Instance;
 
@@ -1286,7 +1286,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
         public virtual GetSyncBlockerSummaryResponse GetSyncBlockerSummary(GetSyncBlockerSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncBlockerSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncBlockerSummaryResponseUnmarshaller.Instance;
 
@@ -1307,7 +1307,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary">REST API Reference for GetSyncBlockerSummary Operation</seealso>
         public virtual IAsyncResult BeginGetSyncBlockerSummary(GetSyncBlockerSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncBlockerSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncBlockerSummaryResponseUnmarshaller.Instance;
 
@@ -1357,7 +1357,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
         public virtual GetSyncConfigurationResponse GetSyncConfiguration(GetSyncConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration">REST API Reference for GetSyncConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetSyncConfiguration(GetSyncConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -1414,7 +1414,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual ListConnectionsResponse ListConnections(ListConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -1435,7 +1435,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">REST API Reference for ListConnections Operation</seealso>
         public virtual IAsyncResult BeginListConnections(ListConnectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionsResponseUnmarshaller.Instance;
 
@@ -1468,7 +1468,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
         public virtual ListHostsResponse ListHosts(ListHostsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostsResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">REST API Reference for ListHosts Operation</seealso>
         public virtual IAsyncResult BeginListHosts(ListHostsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHostsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHostsResponseUnmarshaller.Instance;
 
@@ -1541,7 +1541,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
         public virtual ListRepositoryLinksResponse ListRepositoryLinks(ListRepositoryLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryLinksResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks">REST API Reference for ListRepositoryLinks Operation</seealso>
         public virtual IAsyncResult BeginListRepositoryLinks(ListRepositoryLinksRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositoryLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositoryLinksResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
         public virtual ListRepositorySyncDefinitionsResponse ListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
 
@@ -1631,7 +1631,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions">REST API Reference for ListRepositorySyncDefinitions Operation</seealso>
         public virtual IAsyncResult BeginListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRepositorySyncDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRepositorySyncDefinitionsResponseUnmarshaller.Instance;
 
@@ -1679,7 +1679,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
         public virtual ListSyncConfigurationsResponse ListSyncConfigurations(ListSyncConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncConfigurationsResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations">REST API Reference for ListSyncConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListSyncConfigurations(ListSyncConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncConfigurationsResponseUnmarshaller.Instance;
 
@@ -1736,7 +1736,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1757,7 +1757,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1797,7 +1797,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1818,7 +1818,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1854,7 +1854,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1875,7 +1875,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1920,7 +1920,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">REST API Reference for UpdateHost Operation</seealso>
         public virtual UpdateHostResponse UpdateHost(UpdateHostRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostResponseUnmarshaller.Instance;
 
@@ -1941,7 +1941,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">REST API Reference for UpdateHost Operation</seealso>
         public virtual IAsyncResult BeginUpdateHost(UpdateHostRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateHostRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateHostResponseUnmarshaller.Instance;
 
@@ -1997,7 +1997,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
         public virtual UpdateRepositoryLinkResponse UpdateRepositoryLink(UpdateRepositoryLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -2018,7 +2018,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink">REST API Reference for UpdateRepositoryLink Operation</seealso>
         public virtual IAsyncResult BeginUpdateRepositoryLink(UpdateRepositoryLinkRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRepositoryLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRepositoryLinkResponseUnmarshaller.Instance;
 
@@ -2073,7 +2073,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
         public virtual UpdateSyncBlockerResponse UpdateSyncBlocker(UpdateSyncBlockerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSyncBlockerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSyncBlockerResponseUnmarshaller.Instance;
 
@@ -2094,7 +2094,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker">REST API Reference for UpdateSyncBlocker Operation</seealso>
         public virtual IAsyncResult BeginUpdateSyncBlocker(UpdateSyncBlockerRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSyncBlockerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSyncBlockerResponseUnmarshaller.Instance;
 
@@ -2149,7 +2149,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
         public virtual UpdateSyncConfigurationResponse UpdateSyncConfiguration(UpdateSyncConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSyncConfigurationResponseUnmarshaller.Instance;
 
@@ -2170,7 +2170,7 @@ namespace Amazon.CodeStarconnections
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration">REST API Reference for UpdateSyncConfiguration Operation</seealso>
         public virtual IAsyncResult BeginUpdateSyncConfiguration(UpdateSyncConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSyncConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSyncConfigurationResponseUnmarshaller.Instance;
 

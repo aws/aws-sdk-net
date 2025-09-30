@@ -285,7 +285,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ConfigureLogsForChannelResponse ConfigureLogsForChannel(ConfigureLogsForChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
 
@@ -306,7 +306,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
         public virtual Task<ConfigureLogsForChannelResponse> ConfigureLogsForChannelAsync(ConfigureLogsForChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
 
@@ -319,7 +319,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ConfigureLogsForPlaybackConfigurationResponse ConfigureLogsForPlaybackConfiguration(ConfigureLogsForPlaybackConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsForPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsForPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">REST API Reference for ConfigureLogsForPlaybackConfiguration Operation</seealso>
         public virtual Task<ConfigureLogsForPlaybackConfigurationResponse> ConfigureLogsForPlaybackConfigurationAsync(ConfigureLogsForPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConfigureLogsForPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConfigureLogsForPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreateLiveSourceResponse CreateLiveSource(CreateLiveSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLiveSourceResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">REST API Reference for CreateLiveSource Operation</seealso>
         public virtual Task<CreateLiveSourceResponse> CreateLiveSourceAsync(CreateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLiveSourceResponseUnmarshaller.Instance;
 
@@ -422,7 +422,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreatePrefetchScheduleResponse CreatePrefetchSchedule(CreatePrefetchScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">REST API Reference for CreatePrefetchSchedule Operation</seealso>
         public virtual Task<CreatePrefetchScheduleResponse> CreatePrefetchScheduleAsync(CreatePrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -459,7 +459,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreateProgramResponse CreateProgram(CreateProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProgramResponseUnmarshaller.Instance;
 
@@ -481,7 +481,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">REST API Reference for CreateProgram Operation</seealso>
         public virtual Task<CreateProgramResponse> CreateProgramAsync(CreateProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProgramResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreateSourceLocationResponse CreateSourceLocation(CreateSourceLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceLocationResponseUnmarshaller.Instance;
 
@@ -517,7 +517,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">REST API Reference for CreateSourceLocation Operation</seealso>
         public virtual Task<CreateSourceLocationResponse> CreateSourceLocationAsync(CreateSourceLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSourceLocationResponseUnmarshaller.Instance;
 
@@ -530,7 +530,7 @@ namespace Amazon.MediaTailor
 
         internal virtual CreateVodSourceResponse CreateVodSource(CreateVodSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVodSourceResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">REST API Reference for CreateVodSource Operation</seealso>
         public virtual Task<CreateVodSourceResponse> CreateVodSourceAsync(CreateVodSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVodSourceResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteChannelPolicyResponse DeleteChannelPolicy(DeleteChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
 
@@ -620,7 +620,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
         public virtual Task<DeleteChannelPolicyResponse> DeleteChannelPolicyAsync(DeleteChannelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
 
@@ -633,7 +633,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteLiveSourceResponse DeleteLiveSource(DeleteLiveSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLiveSourceResponseUnmarshaller.Instance;
 
@@ -654,7 +654,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">REST API Reference for DeleteLiveSource Operation</seealso>
         public virtual Task<DeleteLiveSourceResponse> DeleteLiveSourceAsync(DeleteLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLiveSourceResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeletePlaybackConfigurationResponse DeletePlaybackConfiguration(DeletePlaybackConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -690,7 +690,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
         public virtual Task<DeletePlaybackConfigurationResponse> DeletePlaybackConfigurationAsync(DeletePlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -703,7 +703,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeletePrefetchScheduleResponse DeletePrefetchSchedule(DeletePrefetchScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -727,7 +727,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">REST API Reference for DeletePrefetchSchedule Operation</seealso>
         public virtual Task<DeletePrefetchScheduleResponse> DeletePrefetchScheduleAsync(DeletePrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteProgramResponse DeleteProgram(DeleteProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProgramResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">REST API Reference for DeleteProgram Operation</seealso>
         public virtual Task<DeleteProgramResponse> DeleteProgramAsync(DeleteProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProgramResponseUnmarshaller.Instance;
 
@@ -775,7 +775,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteSourceLocationResponse DeleteSourceLocation(DeleteSourceLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceLocationResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">REST API Reference for DeleteSourceLocation Operation</seealso>
         public virtual Task<DeleteSourceLocationResponse> DeleteSourceLocationAsync(DeleteSourceLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceLocationResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DeleteVodSourceResponse DeleteVodSource(DeleteVodSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVodSourceResponseUnmarshaller.Instance;
 
@@ -832,7 +832,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">REST API Reference for DeleteVodSource Operation</seealso>
         public virtual Task<DeleteVodSourceResponse> DeleteVodSourceAsync(DeleteVodSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVodSourceResponseUnmarshaller.Instance;
 
@@ -845,7 +845,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -867,7 +867,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -880,7 +880,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DescribeLiveSourceResponse DescribeLiveSource(DescribeLiveSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLiveSourceResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">REST API Reference for DescribeLiveSource Operation</seealso>
         public virtual Task<DescribeLiveSourceResponse> DescribeLiveSourceAsync(DescribeLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLiveSourceResponseUnmarshaller.Instance;
 
@@ -914,7 +914,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DescribeProgramResponse DescribeProgram(DescribeProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProgramResponseUnmarshaller.Instance;
 
@@ -936,7 +936,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">REST API Reference for DescribeProgram Operation</seealso>
         public virtual Task<DescribeProgramResponse> DescribeProgramAsync(DescribeProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProgramResponseUnmarshaller.Instance;
 
@@ -949,7 +949,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DescribeSourceLocationResponse DescribeSourceLocation(DescribeSourceLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceLocationResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">REST API Reference for DescribeSourceLocation Operation</seealso>
         public virtual Task<DescribeSourceLocationResponse> DescribeSourceLocationAsync(DescribeSourceLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceLocationResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.MediaTailor
 
         internal virtual DescribeVodSourceResponse DescribeVodSource(DescribeVodSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVodSourceResponseUnmarshaller.Instance;
 
@@ -1007,7 +1007,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">REST API Reference for DescribeVodSource Operation</seealso>
         public virtual Task<DescribeVodSourceResponse> DescribeVodSourceAsync(DescribeVodSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVodSourceResponseUnmarshaller.Instance;
 
@@ -1020,7 +1020,7 @@ namespace Amazon.MediaTailor
 
         internal virtual GetChannelPolicyResponse GetChannelPolicy(GetChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
         public virtual Task<GetChannelPolicyResponse> GetChannelPolicyAsync(GetChannelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1055,7 +1055,7 @@ namespace Amazon.MediaTailor
 
         internal virtual GetChannelScheduleResponse GetChannelSchedule(GetChannelScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelScheduleResponseUnmarshaller.Instance;
 
@@ -1076,7 +1076,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule">REST API Reference for GetChannelSchedule Operation</seealso>
         public virtual Task<GetChannelScheduleResponse> GetChannelScheduleAsync(GetChannelScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelScheduleResponseUnmarshaller.Instance;
 
@@ -1089,7 +1089,7 @@ namespace Amazon.MediaTailor
 
         internal virtual GetPlaybackConfigurationResponse GetPlaybackConfiguration(GetPlaybackConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
         public virtual Task<GetPlaybackConfigurationResponse> GetPlaybackConfigurationAsync(GetPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.MediaTailor
 
         internal virtual GetPrefetchScheduleResponse GetPrefetchSchedule(GetPrefetchScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -1149,7 +1149,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">REST API Reference for GetPrefetchSchedule Operation</seealso>
         public virtual Task<GetPrefetchScheduleResponse> GetPrefetchScheduleAsync(GetPrefetchScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPrefetchScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPrefetchScheduleResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListAlertsResponse ListAlerts(ListAlertsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">REST API Reference for ListAlerts Operation</seealso>
         public virtual Task<ListAlertsResponse> ListAlertsAsync(ListAlertsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAlertsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAlertsResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1218,7 +1218,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1231,7 +1231,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListLiveSourcesResponse ListLiveSources(ListLiveSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLiveSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLiveSourcesResponseUnmarshaller.Instance;
 
@@ -1253,7 +1253,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">REST API Reference for ListLiveSources Operation</seealso>
         public virtual Task<ListLiveSourcesResponse> ListLiveSourcesAsync(ListLiveSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLiveSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLiveSourcesResponseUnmarshaller.Instance;
 
@@ -1266,7 +1266,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListPlaybackConfigurationsResponse ListPlaybackConfigurations(ListPlaybackConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
 
@@ -1289,7 +1289,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
         public virtual Task<ListPlaybackConfigurationsResponse> ListPlaybackConfigurationsAsync(ListPlaybackConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackConfigurationsResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListPrefetchSchedulesResponse ListPrefetchSchedules(ListPrefetchSchedulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
 
@@ -1323,7 +1323,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">REST API Reference for ListPrefetchSchedules Operation</seealso>
         public virtual Task<ListPrefetchSchedulesResponse> ListPrefetchSchedulesAsync(ListPrefetchSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPrefetchSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPrefetchSchedulesResponseUnmarshaller.Instance;
 
@@ -1336,7 +1336,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListSourceLocationsResponse ListSourceLocations(ListSourceLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceLocationsResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">REST API Reference for ListSourceLocations Operation</seealso>
         public virtual Task<ListSourceLocationsResponse> ListSourceLocationsAsync(ListSourceLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceLocationsResponseUnmarshaller.Instance;
 
@@ -1371,7 +1371,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1398,7 +1398,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1411,7 +1411,7 @@ namespace Amazon.MediaTailor
 
         internal virtual ListVodSourcesResponse ListVodSources(ListVodSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVodSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVodSourcesResponseUnmarshaller.Instance;
 
@@ -1433,7 +1433,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">REST API Reference for ListVodSources Operation</seealso>
         public virtual Task<ListVodSourcesResponse> ListVodSourcesAsync(ListVodSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVodSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVodSourcesResponseUnmarshaller.Instance;
 
@@ -1446,7 +1446,7 @@ namespace Amazon.MediaTailor
 
         internal virtual PutChannelPolicyResponse PutChannelPolicy(PutChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1468,7 +1468,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
         public virtual Task<PutChannelPolicyResponse> PutChannelPolicyAsync(PutChannelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1481,7 +1481,7 @@ namespace Amazon.MediaTailor
 
         internal virtual PutPlaybackConfigurationResponse PutPlaybackConfiguration(PutPlaybackConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -1504,7 +1504,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
         public virtual Task<PutPlaybackConfigurationResponse> PutPlaybackConfigurationAsync(PutPlaybackConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPlaybackConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPlaybackConfigurationResponseUnmarshaller.Instance;
 
@@ -1517,7 +1517,7 @@ namespace Amazon.MediaTailor
 
         internal virtual StartChannelResponse StartChannel(StartChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">REST API Reference for StartChannel Operation</seealso>
         public virtual Task<StartChannelResponse> StartChannelAsync(StartChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartChannelResponseUnmarshaller.Instance;
 
@@ -1552,7 +1552,7 @@ namespace Amazon.MediaTailor
 
         internal virtual StopChannelResponse StopChannel(StopChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
@@ -1574,7 +1574,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">REST API Reference for StopChannel Operation</seealso>
         public virtual Task<StopChannelResponse> StopChannelAsync(StopChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopChannelResponseUnmarshaller.Instance;
 
@@ -1587,7 +1587,7 @@ namespace Amazon.MediaTailor
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1614,7 +1614,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1627,7 +1627,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1651,7 +1651,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -1686,7 +1686,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -1699,7 +1699,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UpdateLiveSourceResponse UpdateLiveSource(UpdateLiveSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
 
@@ -1720,7 +1720,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">REST API Reference for UpdateLiveSource Operation</seealso>
         public virtual Task<UpdateLiveSourceResponse> UpdateLiveSourceAsync(UpdateLiveSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLiveSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
 
@@ -1733,7 +1733,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UpdateProgramResponse UpdateProgram(UpdateProgramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProgramResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
         public virtual Task<UpdateProgramResponse> UpdateProgramAsync(UpdateProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProgramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProgramResponseUnmarshaller.Instance;
 
@@ -1767,7 +1767,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UpdateSourceLocationResponse UpdateSourceLocation(UpdateSourceLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceLocationResponseUnmarshaller.Instance;
 
@@ -1790,7 +1790,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">REST API Reference for UpdateSourceLocation Operation</seealso>
         public virtual Task<UpdateSourceLocationResponse> UpdateSourceLocationAsync(UpdateSourceLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceLocationResponseUnmarshaller.Instance;
 
@@ -1803,7 +1803,7 @@ namespace Amazon.MediaTailor
 
         internal virtual UpdateVodSourceResponse UpdateVodSource(UpdateVodSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVodSourceResponseUnmarshaller.Instance;
 
@@ -1824,7 +1824,7 @@ namespace Amazon.MediaTailor
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">REST API Reference for UpdateVodSource Operation</seealso>
         public virtual Task<UpdateVodSourceResponse> UpdateVodSourceAsync(UpdateVodSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVodSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVodSourceResponseUnmarshaller.Instance;
 

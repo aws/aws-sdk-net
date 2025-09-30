@@ -299,7 +299,7 @@ namespace Amazon.MarketplaceAgreement
 
         internal virtual DescribeAgreementResponse DescribeAgreement(DescribeAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
         public virtual Task<DescribeAgreementResponse> DescribeAgreementAsync(DescribeAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.MarketplaceAgreement
 
         internal virtual GetAgreementTermsResponse GetAgreementTerms(GetAgreementTermsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgreementTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgreementTermsResponseUnmarshaller.Instance;
 
@@ -414,7 +414,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementTerms">REST API Reference for GetAgreementTerms Operation</seealso>
         public virtual Task<GetAgreementTermsResponse> GetAgreementTermsAsync(GetAgreementTermsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAgreementTermsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAgreementTermsResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.MarketplaceAgreement
 
         internal virtual SearchAgreementsResponse SearchAgreements(SearchAgreementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgreementsResponseUnmarshaller.Instance;
 
@@ -535,7 +535,7 @@ namespace Amazon.MarketplaceAgreement
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SearchAgreements">REST API Reference for SearchAgreements Operation</seealso>
         public virtual Task<SearchAgreementsResponse> SearchAgreementsAsync(SearchAgreementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchAgreementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchAgreementsResponseUnmarshaller.Instance;
 

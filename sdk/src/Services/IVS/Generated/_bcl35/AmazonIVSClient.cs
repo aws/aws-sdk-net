@@ -445,7 +445,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetChannel">REST API Reference for BatchGetChannel Operation</seealso>
         public virtual BatchGetChannelResponse BatchGetChannel(BatchGetChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetChannelResponseUnmarshaller.Instance;
 
@@ -466,7 +466,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetChannel">REST API Reference for BatchGetChannel Operation</seealso>
         public virtual IAsyncResult BeginBatchGetChannel(BatchGetChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetChannelResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetStreamKey">REST API Reference for BatchGetStreamKey Operation</seealso>
         public virtual BatchGetStreamKeyResponse BatchGetStreamKey(BatchGetStreamKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetStreamKeyResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetStreamKey">REST API Reference for BatchGetStreamKey Operation</seealso>
         public virtual IAsyncResult BeginBatchGetStreamKey(BatchGetStreamKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetStreamKeyResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
         public virtual BatchStartViewerSessionRevocationResponse BatchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartViewerSessionRevocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartViewerSessionRevocationResponseUnmarshaller.Instance;
 
@@ -587,7 +587,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
         public virtual IAsyncResult BeginBatchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStartViewerSessionRevocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStartViewerSessionRevocationResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -656,7 +656,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -705,7 +705,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
         public virtual CreatePlaybackRestrictionPolicyResponse CreatePlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -726,7 +726,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">REST API Reference for CreatePlaybackRestrictionPolicy Operation</seealso>
         public virtual IAsyncResult BeginCreatePlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">REST API Reference for CreateRecordingConfiguration Operation</seealso>
         public virtual CreateRecordingConfigurationResponse CreateRecordingConfiguration(CreateRecordingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -814,7 +814,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateRecordingConfiguration">REST API Reference for CreateRecordingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginCreateRecordingConfiguration(CreateRecordingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateStreamKey">REST API Reference for CreateStreamKey Operation</seealso>
         public virtual CreateStreamKeyResponse CreateStreamKey(CreateStreamKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamKeyResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateStreamKey">REST API Reference for CreateStreamKey Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamKey(CreateStreamKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamKeyResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -1016,7 +1016,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">REST API Reference for DeletePlaybackKeyPair Operation</seealso>
         public virtual DeletePlaybackKeyPairResponse DeletePlaybackKeyPair(DeletePlaybackKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1037,7 +1037,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair">REST API Reference for DeletePlaybackKeyPair Operation</seealso>
         public virtual IAsyncResult BeginDeletePlaybackKeyPair(DeletePlaybackKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1085,7 +1085,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
         public virtual DeletePlaybackRestrictionPolicyResponse DeletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy">REST API Reference for DeletePlaybackRestrictionPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteRecordingConfiguration">REST API Reference for DeleteRecordingConfiguration Operation</seealso>
         public virtual DeleteRecordingConfigurationResponse DeleteRecordingConfiguration(DeleteRecordingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteRecordingConfiguration">REST API Reference for DeleteRecordingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginDeleteRecordingConfiguration(DeleteRecordingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -1228,7 +1228,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">REST API Reference for DeleteStreamKey Operation</seealso>
         public virtual DeleteStreamKeyResponse DeleteStreamKey(DeleteStreamKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamKeyResponseUnmarshaller.Instance;
 
@@ -1249,7 +1249,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">REST API Reference for DeleteStreamKey Operation</seealso>
         public virtual IAsyncResult BeginDeleteStreamKey(DeleteStreamKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamKeyResponseUnmarshaller.Instance;
 
@@ -1291,7 +1291,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual GetChannelResponse GetChannel(GetChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual IAsyncResult BeginGetChannel(GetChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">REST API Reference for GetPlaybackKeyPair Operation</seealso>
         public virtual GetPlaybackKeyPairResponse GetPlaybackKeyPair(GetPlaybackKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair">REST API Reference for GetPlaybackKeyPair Operation</seealso>
         public virtual IAsyncResult BeginGetPlaybackKeyPair(GetPlaybackKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1424,7 +1424,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
         public virtual GetPlaybackRestrictionPolicyResponse GetPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -1445,7 +1445,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy">REST API Reference for GetPlaybackRestrictionPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -1490,7 +1490,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetRecordingConfiguration">REST API Reference for GetRecordingConfiguration Operation</seealso>
         public virtual GetRecordingConfigurationResponse GetRecordingConfiguration(GetRecordingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetRecordingConfiguration">REST API Reference for GetRecordingConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetRecordingConfiguration(GetRecordingConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecordingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecordingConfigurationResponseUnmarshaller.Instance;
 
@@ -1556,7 +1556,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStream">REST API Reference for GetStream Operation</seealso>
         public virtual GetStreamResponse GetStream(GetStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStream">REST API Reference for GetStream Operation</seealso>
         public virtual IAsyncResult BeginGetStream(GetStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
 
@@ -1619,7 +1619,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamKey">REST API Reference for GetStreamKey Operation</seealso>
         public virtual GetStreamKeyResponse GetStreamKey(GetStreamKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamKeyResponseUnmarshaller.Instance;
 
@@ -1640,7 +1640,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamKey">REST API Reference for GetStreamKey Operation</seealso>
         public virtual IAsyncResult BeginGetStreamKey(GetStreamKeyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamKeyResponseUnmarshaller.Instance;
 
@@ -1682,7 +1682,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">REST API Reference for GetStreamSession Operation</seealso>
         public virtual GetStreamSessionResponse GetStreamSession(GetStreamSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamSessionResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetStreamSession">REST API Reference for GetStreamSession Operation</seealso>
         public virtual IAsyncResult BeginGetStreamSession(GetStreamSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStreamSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStreamSessionResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">REST API Reference for ImportPlaybackKeyPair Operation</seealso>
         public virtual ImportPlaybackKeyPairResponse ImportPlaybackKeyPair(ImportPlaybackKeyPairRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1775,7 +1775,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">REST API Reference for ImportPlaybackKeyPair Operation</seealso>
         public virtual IAsyncResult BeginImportPlaybackKeyPair(ImportPlaybackKeyPairRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportPlaybackKeyPairRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportPlaybackKeyPairResponseUnmarshaller.Instance;
 
@@ -1820,7 +1820,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1881,7 +1881,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">REST API Reference for ListPlaybackKeyPairs Operation</seealso>
         public virtual ListPlaybackKeyPairsResponse ListPlaybackKeyPairs(ListPlaybackKeyPairsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackKeyPairsResponseUnmarshaller.Instance;
 
@@ -1902,7 +1902,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs">REST API Reference for ListPlaybackKeyPairs Operation</seealso>
         public virtual IAsyncResult BeginListPlaybackKeyPairs(ListPlaybackKeyPairsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackKeyPairsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackKeyPairsResponseUnmarshaller.Instance;
 
@@ -1947,7 +1947,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
         public virtual ListPlaybackRestrictionPoliciesResponse ListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackRestrictionPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackRestrictionPoliciesResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies">REST API Reference for ListPlaybackRestrictionPolicies Operation</seealso>
         public virtual IAsyncResult BeginListPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaybackRestrictionPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaybackRestrictionPoliciesResponseUnmarshaller.Instance;
 
@@ -2011,7 +2011,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">REST API Reference for ListRecordingConfigurations Operation</seealso>
         public virtual ListRecordingConfigurationsResponse ListRecordingConfigurations(ListRecordingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecordingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecordingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListRecordingConfigurations">REST API Reference for ListRecordingConfigurations Operation</seealso>
         public virtual IAsyncResult BeginListRecordingConfigurations(ListRecordingConfigurationsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecordingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecordingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2074,7 +2074,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">REST API Reference for ListStreamKeys Operation</seealso>
         public virtual ListStreamKeysResponse ListStreamKeys(ListStreamKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamKeysResponseUnmarshaller.Instance;
 
@@ -2095,7 +2095,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamKeys">REST API Reference for ListStreamKeys Operation</seealso>
         public virtual IAsyncResult BeginListStreamKeys(ListStreamKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamKeysResponseUnmarshaller.Instance;
 
@@ -2135,7 +2135,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -2156,7 +2156,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -2199,7 +2199,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">REST API Reference for ListStreamSessions Operation</seealso>
         public virtual ListStreamSessionsResponse ListStreamSessions(ListStreamSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsResponseUnmarshaller.Instance;
 
@@ -2220,7 +2220,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListStreamSessions">REST API Reference for ListStreamSessions Operation</seealso>
         public virtual IAsyncResult BeginListStreamSessions(ListStreamSessionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamSessionsResponseUnmarshaller.Instance;
 
@@ -2262,7 +2262,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2283,7 +2283,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2335,7 +2335,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">REST API Reference for PutMetadata Operation</seealso>
         public virtual PutMetadataResponse PutMetadata(PutMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetadataResponseUnmarshaller.Instance;
 
@@ -2356,7 +2356,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PutMetadata">REST API Reference for PutMetadata Operation</seealso>
         public virtual IAsyncResult BeginPutMetadata(PutMetadataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMetadataResponseUnmarshaller.Instance;
 
@@ -2411,7 +2411,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
         public virtual StartViewerSessionRevocationResponse StartViewerSessionRevocation(StartViewerSessionRevocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartViewerSessionRevocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartViewerSessionRevocationResponseUnmarshaller.Instance;
 
@@ -2432,7 +2432,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">REST API Reference for StartViewerSessionRevocation Operation</seealso>
         public virtual IAsyncResult BeginStartViewerSessionRevocation(StartViewerSessionRevocationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartViewerSessionRevocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartViewerSessionRevocationResponseUnmarshaller.Instance;
 
@@ -2489,7 +2489,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">REST API Reference for StopStream Operation</seealso>
         public virtual StopStreamResponse StopStream(StopStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StopStream">REST API Reference for StopStream Operation</seealso>
         public virtual IAsyncResult BeginStopStream(StopStreamRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamResponseUnmarshaller.Instance;
 
@@ -2552,7 +2552,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2573,7 +2573,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2615,7 +2615,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2636,7 +2636,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2686,7 +2686,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -2707,7 +2707,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -2755,7 +2755,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
         public virtual UpdatePlaybackRestrictionPolicyResponse UpdatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 
@@ -2776,7 +2776,7 @@ namespace Amazon.IVS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy">REST API Reference for UpdatePlaybackRestrictionPolicy Operation</seealso>
         public virtual IAsyncResult BeginUpdatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlaybackRestrictionPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlaybackRestrictionPolicyResponseUnmarshaller.Instance;
 

@@ -338,7 +338,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
         public virtual AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
 
@@ -380,7 +380,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
         public virtual Task<AddListenerCertificatesResponse> AddListenerCertificatesAsync(AddListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddListenerCertificatesResponseUnmarshaller.Instance;
             
@@ -430,7 +430,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -479,7 +479,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
             
@@ -512,7 +512,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
         public virtual AddTrustStoreRevocationsResponse AddTrustStoreRevocations(AddTrustStoreRevocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTrustStoreRevocationsResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations">REST API Reference for AddTrustStoreRevocations Operation</seealso>
         public virtual Task<AddTrustStoreRevocationsResponse> AddTrustStoreRevocationsAsync(AddTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTrustStoreRevocationsResponseUnmarshaller.Instance;
             
@@ -654,7 +654,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual CreateListenerResponse CreateListener(CreateListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public virtual Task<CreateListenerResponse> CreateListenerAsync(CreateListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateListenerResponseUnmarshaller.Instance;
             
@@ -849,7 +849,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public virtual Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLoadBalancerResponseUnmarshaller.Instance;
             
@@ -1015,7 +1015,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
 
@@ -1095,7 +1095,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
             
@@ -1154,7 +1154,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public virtual CreateTargetGroupResponse CreateTargetGroup(CreateTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetGroupResponseUnmarshaller.Instance;
 
@@ -1212,7 +1212,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public virtual Task<CreateTargetGroupResponse> CreateTargetGroupAsync(CreateTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTargetGroupResponseUnmarshaller.Instance;
             
@@ -1258,7 +1258,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
         public virtual CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
         public virtual Task<CreateTrustStoreResponse> CreateTrustStoreAsync(CreateTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
             
@@ -1336,7 +1336,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
 
@@ -1368,7 +1368,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public virtual Task<DeleteListenerResponse> DeleteListenerAsync(DeleteListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteListenerResponseUnmarshaller.Instance;
             
@@ -1411,7 +1411,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
 
@@ -1453,7 +1453,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public virtual Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLoadBalancerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLoadBalancerResponseUnmarshaller.Instance;
             
@@ -1485,7 +1485,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
@@ -1516,7 +1516,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
             
@@ -1546,7 +1546,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteSharedTrustStoreAssociation">REST API Reference for DeleteSharedTrustStoreAssociation Operation</seealso>
         public virtual DeleteSharedTrustStoreAssociationResponse DeleteSharedTrustStoreAssociation(DeleteSharedTrustStoreAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSharedTrustStoreAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSharedTrustStoreAssociationResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteSharedTrustStoreAssociation">REST API Reference for DeleteSharedTrustStoreAssociation Operation</seealso>
         public virtual Task<DeleteSharedTrustStoreAssociationResponse> DeleteSharedTrustStoreAssociationAsync(DeleteSharedTrustStoreAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSharedTrustStoreAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSharedTrustStoreAssociationResponseUnmarshaller.Instance;
             
@@ -1607,7 +1607,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public virtual DeleteTargetGroupResponse DeleteTargetGroup(DeleteTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetGroupResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public virtual Task<DeleteTargetGroupResponse> DeleteTargetGroupAsync(DeleteTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTargetGroupResponseUnmarshaller.Instance;
             
@@ -1665,7 +1665,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
         public virtual DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
 
@@ -1691,7 +1691,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
         public virtual Task<DeleteTrustStoreResponse> DeleteTrustStoreAsync(DeleteTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
             
@@ -1751,7 +1751,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public virtual DeregisterTargetsResponse DeregisterTargets(DeregisterTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTargetsResponseUnmarshaller.Instance;
 
@@ -1810,7 +1810,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public virtual Task<DeregisterTargetsResponse> DeregisterTargetsAsync(DeregisterTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTargetsResponseUnmarshaller.Instance;
             
@@ -1853,7 +1853,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
 
@@ -1895,7 +1895,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         public virtual Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountLimitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
             
@@ -1919,7 +1919,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
         public virtual DescribeCapacityReservationResponse DescribeCapacityReservation(DescribeCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationResponseUnmarshaller.Instance;
 
@@ -1942,7 +1942,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
         public virtual Task<DescribeCapacityReservationResponse> DescribeCapacityReservationAsync(DescribeCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityReservationResponseUnmarshaller.Instance;
             
@@ -1966,7 +1966,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
         public virtual DescribeListenerAttributesResponse DescribeListenerAttributes(DescribeListenerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerAttributesResponseUnmarshaller.Instance;
 
@@ -1989,7 +1989,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
         public virtual Task<DescribeListenerAttributesResponse> DescribeListenerAttributesAsync(DescribeListenerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerAttributesResponseUnmarshaller.Instance;
             
@@ -2027,7 +2027,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
         public virtual DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
 
@@ -2064,7 +2064,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates">REST API Reference for DescribeListenerCertificates Operation</seealso>
         public virtual Task<DescribeListenerCertificatesResponse> DescribeListenerCertificatesAsync(DescribeListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenerCertificatesResponseUnmarshaller.Instance;
             
@@ -2096,7 +2096,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         public virtual DescribeListenersResponse DescribeListeners(DescribeListenersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenersResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         public virtual Task<DescribeListenersResponse> DescribeListenersAsync(DescribeListenersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeListenersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeListenersResponseUnmarshaller.Instance;
             
@@ -2173,7 +2173,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public virtual DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -2218,7 +2218,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public virtual Task<DescribeLoadBalancerAttributesResponse> DescribeLoadBalancerAttributesAsync(DescribeLoadBalancerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancerAttributesResponseUnmarshaller.Instance;
             
@@ -2242,7 +2242,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
@@ -2265,7 +2265,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public virtual Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLoadBalancersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
             
@@ -2296,7 +2296,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         public virtual DescribeRulesResponse DescribeRules(DescribeRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRulesResponseUnmarshaller.Instance;
 
@@ -2326,7 +2326,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         public virtual Task<DescribeRulesResponse> DescribeRulesAsync(DescribeRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRulesResponseUnmarshaller.Instance;
             
@@ -2357,7 +2357,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">REST API Reference for DescribeSSLPolicies Operation</seealso>
         public virtual DescribeSSLPoliciesResponse DescribeSSLPolicies(DescribeSSLPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSSLPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSSLPoliciesResponseUnmarshaller.Instance;
 
@@ -2387,7 +2387,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">REST API Reference for DescribeSSLPolicies Operation</seealso>
         public virtual Task<DescribeSSLPoliciesResponse> DescribeSSLPoliciesAsync(DescribeSSLPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSSLPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSSLPoliciesResponseUnmarshaller.Instance;
             
@@ -2425,7 +2425,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -2462,7 +2462,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
             
@@ -2507,7 +2507,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">REST API Reference for DescribeTargetGroupAttributes Operation</seealso>
         public virtual DescribeTargetGroupAttributesResponse DescribeTargetGroupAttributes(DescribeTargetGroupAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetGroupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetGroupAttributesResponseUnmarshaller.Instance;
 
@@ -2551,7 +2551,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">REST API Reference for DescribeTargetGroupAttributes Operation</seealso>
         public virtual Task<DescribeTargetGroupAttributesResponse> DescribeTargetGroupAttributesAsync(DescribeTargetGroupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetGroupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetGroupAttributesResponseUnmarshaller.Instance;
             
@@ -2581,7 +2581,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">REST API Reference for DescribeTargetGroups Operation</seealso>
         public virtual DescribeTargetGroupsResponse DescribeTargetGroups(DescribeTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetGroupsResponseUnmarshaller.Instance;
 
@@ -2610,7 +2610,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">REST API Reference for DescribeTargetGroups Operation</seealso>
         public virtual Task<DescribeTargetGroupsResponse> DescribeTargetGroupsAsync(DescribeTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetGroupsResponseUnmarshaller.Instance;
             
@@ -2641,7 +2641,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">REST API Reference for DescribeTargetHealth Operation</seealso>
         public virtual DescribeTargetHealthResponse DescribeTargetHealth(DescribeTargetHealthRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetHealthResponseUnmarshaller.Instance;
 
@@ -2671,7 +2671,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">REST API Reference for DescribeTargetHealth Operation</seealso>
         public virtual Task<DescribeTargetHealthResponse> DescribeTargetHealthAsync(DescribeTargetHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTargetHealthRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTargetHealthResponseUnmarshaller.Instance;
             
@@ -2695,7 +2695,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
         public virtual DescribeTrustStoreAssociationsResponse DescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoreAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance;
 
@@ -2718,7 +2718,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations">REST API Reference for DescribeTrustStoreAssociations Operation</seealso>
         public virtual Task<DescribeTrustStoreAssociationsResponse> DescribeTrustStoreAssociationsAsync(DescribeTrustStoreAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoreAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoreAssociationsResponseUnmarshaller.Instance;
             
@@ -2745,7 +2745,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
         public virtual DescribeTrustStoreRevocationsResponse DescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance;
 
@@ -2771,7 +2771,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations">REST API Reference for DescribeTrustStoreRevocations Operation</seealso>
         public virtual Task<DescribeTrustStoreRevocationsResponse> DescribeTrustStoreRevocationsAsync(DescribeTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoreRevocationsResponseUnmarshaller.Instance;
             
@@ -2795,7 +2795,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
         public virtual DescribeTrustStoresResponse DescribeTrustStores(DescribeTrustStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoresResponseUnmarshaller.Instance;
 
@@ -2818,7 +2818,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores">REST API Reference for DescribeTrustStores Operation</seealso>
         public virtual Task<DescribeTrustStoresResponse> DescribeTrustStoresAsync(DescribeTrustStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrustStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrustStoresResponseUnmarshaller.Instance;
             
@@ -2842,7 +2842,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2865,7 +2865,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -2894,7 +2894,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
         public virtual GetTrustStoreCaCertificatesBundleResponse GetTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustStoreCaCertificatesBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance;
 
@@ -2922,7 +2922,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle">REST API Reference for GetTrustStoreCaCertificatesBundle Operation</seealso>
         public virtual Task<GetTrustStoreCaCertificatesBundleResponse> GetTrustStoreCaCertificatesBundleAsync(GetTrustStoreCaCertificatesBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustStoreCaCertificatesBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustStoreCaCertificatesBundleResponseUnmarshaller.Instance;
             
@@ -2954,7 +2954,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
         public virtual GetTrustStoreRevocationContentResponse GetTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustStoreRevocationContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustStoreRevocationContentResponseUnmarshaller.Instance;
 
@@ -2985,7 +2985,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
         public virtual Task<GetTrustStoreRevocationContentResponse> GetTrustStoreRevocationContentAsync(GetTrustStoreRevocationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrustStoreRevocationContentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrustStoreRevocationContentResponseUnmarshaller.Instance;
             
@@ -3036,7 +3036,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         public virtual ModifyCapacityReservationResponse ModifyCapacityReservation(ModifyCapacityReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
 
@@ -3086,7 +3086,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         public virtual Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCapacityReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCapacityReservationResponseUnmarshaller.Instance;
             
@@ -3110,7 +3110,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
         public virtual ModifyIpPoolsResponse ModifyIpPools(ModifyIpPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
 
@@ -3133,7 +3133,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyIpPools">REST API Reference for ModifyIpPools Operation</seealso>
         public virtual Task<ModifyIpPoolsResponse> ModifyIpPoolsAsync(ModifyIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIpPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIpPoolsResponseUnmarshaller.Instance;
             
@@ -3229,7 +3229,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         public virtual ModifyListenerResponse ModifyListener(ModifyListenerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyListenerResponseUnmarshaller.Instance;
 
@@ -3324,7 +3324,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         public virtual Task<ModifyListenerResponse> ModifyListenerAsync(ModifyListenerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyListenerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyListenerResponseUnmarshaller.Instance;
             
@@ -3351,7 +3351,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
         public virtual ModifyListenerAttributesResponse ModifyListenerAttributes(ModifyListenerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyListenerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyListenerAttributesResponseUnmarshaller.Instance;
 
@@ -3377,7 +3377,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
         public virtual Task<ModifyListenerAttributesResponse> ModifyListenerAttributesAsync(ModifyListenerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyListenerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyListenerAttributesResponseUnmarshaller.Instance;
             
@@ -3411,7 +3411,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public virtual ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public virtual Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyLoadBalancerAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
             
@@ -3509,7 +3509,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         public virtual ModifyRuleResponse ModifyRule(ModifyRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRuleResponseUnmarshaller.Instance;
 
@@ -3573,7 +3573,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         public virtual Task<ModifyRuleResponse> ModifyRuleAsync(ModifyRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyRuleResponseUnmarshaller.Instance;
             
@@ -3601,7 +3601,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">REST API Reference for ModifyTargetGroup Operation</seealso>
         public virtual ModifyTargetGroupResponse ModifyTargetGroup(ModifyTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTargetGroupResponseUnmarshaller.Instance;
 
@@ -3628,7 +3628,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">REST API Reference for ModifyTargetGroup Operation</seealso>
         public virtual Task<ModifyTargetGroupResponse> ModifyTargetGroupAsync(ModifyTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTargetGroupResponseUnmarshaller.Instance;
             
@@ -3655,7 +3655,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">REST API Reference for ModifyTargetGroupAttributes Operation</seealso>
         public virtual ModifyTargetGroupAttributesResponse ModifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTargetGroupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTargetGroupAttributesResponseUnmarshaller.Instance;
 
@@ -3681,7 +3681,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">REST API Reference for ModifyTargetGroupAttributes Operation</seealso>
         public virtual Task<ModifyTargetGroupAttributesResponse> ModifyTargetGroupAttributesAsync(ModifyTargetGroupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTargetGroupAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTargetGroupAttributesResponseUnmarshaller.Instance;
             
@@ -3711,7 +3711,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
         public virtual ModifyTrustStoreResponse ModifyTrustStore(ModifyTrustStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrustStoreResponseUnmarshaller.Instance;
 
@@ -3740,7 +3740,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore">REST API Reference for ModifyTrustStore Operation</seealso>
         public virtual Task<ModifyTrustStoreResponse> ModifyTrustStoreAsync(ModifyTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTrustStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTrustStoreResponseUnmarshaller.Instance;
             
@@ -3808,7 +3808,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public virtual RegisterTargetsResponse RegisterTargets(RegisterTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
 
@@ -3875,7 +3875,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public virtual Task<RegisterTargetsResponse> RegisterTargetsAsync(RegisterTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTargetsResponseUnmarshaller.Instance;
             
@@ -3903,7 +3903,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
         public virtual RemoveListenerCertificatesResponse RemoveListenerCertificates(RemoveListenerCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
 
@@ -3930,7 +3930,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates">REST API Reference for RemoveListenerCertificates Operation</seealso>
         public virtual Task<RemoveListenerCertificatesResponse> RemoveListenerCertificatesAsync(RemoveListenerCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveListenerCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveListenerCertificatesResponseUnmarshaller.Instance;
             
@@ -3971,7 +3971,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -4011,7 +4011,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
             
@@ -4038,7 +4038,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
         public virtual RemoveTrustStoreRevocationsResponse RemoveTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance;
 
@@ -4064,7 +4064,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations">REST API Reference for RemoveTrustStoreRevocations Operation</seealso>
         public virtual Task<RemoveTrustStoreRevocationsResponse> RemoveTrustStoreRevocationsAsync(RemoveTrustStoreRevocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTrustStoreRevocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTrustStoreRevocationsResponseUnmarshaller.Instance;
             
@@ -4094,7 +4094,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
         public virtual SetIpAddressTypeResponse SetIpAddressType(SetIpAddressTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIpAddressTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
 
@@ -4123,7 +4123,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
         public virtual Task<SetIpAddressTypeResponse> SetIpAddressTypeAsync(SetIpAddressTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetIpAddressTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
             
@@ -4159,7 +4159,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">REST API Reference for SetRulePriorities Operation</seealso>
         public virtual SetRulePrioritiesResponse SetRulePriorities(SetRulePrioritiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetRulePrioritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetRulePrioritiesResponseUnmarshaller.Instance;
 
@@ -4194,7 +4194,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">REST API Reference for SetRulePriorities Operation</seealso>
         public virtual Task<SetRulePrioritiesResponse> SetRulePrioritiesAsync(SetRulePrioritiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetRulePrioritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetRulePrioritiesResponseUnmarshaller.Instance;
             
@@ -4236,7 +4236,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">REST API Reference for SetSecurityGroups Operation</seealso>
         public virtual SetSecurityGroupsResponse SetSecurityGroups(SetSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -4277,7 +4277,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">REST API Reference for SetSecurityGroups Operation</seealso>
         public virtual Task<SetSecurityGroupsResponse> SetSecurityGroupsAsync(SetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSecurityGroupsResponseUnmarshaller.Instance;
             
@@ -4328,7 +4328,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">REST API Reference for SetSubnets Operation</seealso>
         public virtual SetSubnetsResponse SetSubnets(SetSubnetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSubnetsResponseUnmarshaller.Instance;
 
@@ -4378,7 +4378,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">REST API Reference for SetSubnets Operation</seealso>
         public virtual Task<SetSubnetsResponse> SetSubnetsAsync(SetSubnetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetSubnetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetSubnetsResponseUnmarshaller.Instance;
             

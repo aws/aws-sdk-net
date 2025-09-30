@@ -298,7 +298,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -392,7 +392,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         public virtual Task<CopyClusterSnapshotResponse> CopyClusterSnapshotAsync(CopyClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -405,7 +405,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -444,7 +444,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -499,7 +499,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         public virtual Task<CreateClusterSnapshotResponse> CreateClusterSnapshotAsync(CreateClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -551,7 +551,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         public virtual Task<DeleteClusterSnapshotResponse> DeleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual GetClusterResponse GetCluster(GetClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetCluster">REST API Reference for GetCluster Operation</seealso>
         public virtual Task<GetClusterResponse> GetClusterAsync(GetClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterResponseUnmarshaller.Instance;
 
@@ -665,7 +665,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual GetClusterSnapshotResponse GetClusterSnapshot(GetClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -701,7 +701,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetClusterSnapshot">REST API Reference for GetClusterSnapshot Operation</seealso>
         public virtual Task<GetClusterSnapshotResponse> GetClusterSnapshotAsync(GetClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -714,7 +714,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual GetPendingMaintenanceActionResponse GetPendingMaintenanceAction(GetPendingMaintenanceActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -753,7 +753,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetPendingMaintenanceAction">REST API Reference for GetPendingMaintenanceAction Operation</seealso>
         public virtual Task<GetPendingMaintenanceActionResponse> GetPendingMaintenanceActionAsync(GetPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -799,7 +799,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual ListClusterSnapshotsResponse ListClusterSnapshots(ListClusterSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -845,7 +845,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusterSnapshots">REST API Reference for ListClusterSnapshots Operation</seealso>
         public virtual Task<ListClusterSnapshotsResponse> ListClusterSnapshotsAsync(ListClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -858,7 +858,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual ListPendingMaintenanceActionsResponse ListPendingMaintenanceActions(ListPendingMaintenanceActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListPendingMaintenanceActions">REST API Reference for ListPendingMaintenanceActions Operation</seealso>
         public virtual Task<ListPendingMaintenanceActionsResponse> ListPendingMaintenanceActionsAsync(ListPendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -937,7 +937,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual RestoreClusterFromSnapshotResponse RestoreClusterFromSnapshot(RestoreClusterFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/RestoreClusterFromSnapshot">REST API Reference for RestoreClusterFromSnapshot Operation</seealso>
         public virtual Task<RestoreClusterFromSnapshotResponse> RestoreClusterFromSnapshotAsync(RestoreClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -1005,7 +1005,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual StartClusterResponse StartCluster(StartClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartClusterResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StartCluster">REST API Reference for StartCluster Operation</seealso>
         public virtual Task<StartClusterResponse> StartClusterAsync(StartClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartClusterResponseUnmarshaller.Instance;
 
@@ -1054,7 +1054,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual StopClusterResponse StopCluster(StopClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopClusterResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/StopCluster">REST API Reference for StopCluster Operation</seealso>
         public virtual Task<StopClusterResponse> StopClusterAsync(StopClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopClusterResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1137,7 +1137,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1150,7 +1150,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1183,7 +1183,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.DocDBElastic
 
         internal virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -1236,7 +1236,7 @@ namespace Amazon.DocDBElastic
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 

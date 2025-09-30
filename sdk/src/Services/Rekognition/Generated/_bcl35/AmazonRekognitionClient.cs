@@ -727,7 +727,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AssociateFaces">REST API Reference for AssociateFaces Operation</seealso>
         public virtual AssociateFacesResponse AssociateFaces(AssociateFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFacesResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AssociateFaces">REST API Reference for AssociateFaces Operation</seealso>
         public virtual IAsyncResult BeginAssociateFaces(AssociateFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateFacesResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         public virtual CompareFacesResponse CompareFaces(CompareFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompareFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
@@ -910,7 +910,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CompareFaces">REST API Reference for CompareFaces Operation</seealso>
         public virtual IAsyncResult BeginCompareFaces(CompareFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompareFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompareFacesResponseUnmarshaller.Instance;
 
@@ -1023,7 +1023,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
         public virtual CopyProjectVersionResponse CopyProjectVersion(CopyProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
 
@@ -1044,7 +1044,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
         public virtual IAsyncResult BeginCopyProjectVersion(CopyProjectVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
 
@@ -1125,7 +1125,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
@@ -1146,7 +1146,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual IAsyncResult BeginCreateCollection(CreateCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
@@ -1254,7 +1254,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1275,7 +1275,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual IAsyncResult BeginCreateDataset(CreateDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
         public virtual CreateFaceLivenessSessionResponse CreateFaceLivenessSession(CreateFaceLivenessSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
 
@@ -1362,7 +1362,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
         public virtual IAsyncResult BeginCreateFaceLivenessSession(CreateFaceLivenessSessionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
 
@@ -1427,7 +1427,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -1448,7 +1448,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -1556,7 +1556,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
         public virtual CreateProjectVersionResponse CreateProjectVersion(CreateProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">REST API Reference for CreateProjectVersion Operation</seealso>
         public virtual IAsyncResult BeginCreateProjectVersion(CreateProjectVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectVersionResponseUnmarshaller.Instance;
 
@@ -1682,7 +1682,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
         public virtual CreateStreamProcessorResponse CreateStreamProcessor(CreateStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -1703,7 +1703,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">REST API Reference for CreateStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginCreateStreamProcessor(CreateStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -1779,7 +1779,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1800,7 +1800,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
@@ -1882,7 +1882,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual IAsyncResult BeginDeleteCollection(DeleteCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
@@ -1965,7 +1965,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -1986,7 +1986,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual IAsyncResult BeginDeleteDataset(DeleteDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -2046,7 +2046,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         public virtual DeleteFacesResponse DeleteFaces(DeleteFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
@@ -2067,7 +2067,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteFaces">REST API Reference for DeleteFaces Operation</seealso>
         public virtual IAsyncResult BeginDeleteFaces(DeleteFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFacesResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -2159,7 +2159,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -2232,7 +2232,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
         public virtual DeleteProjectPolicyResponse DeleteProjectPolicy(DeleteProjectPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
 
@@ -2253,7 +2253,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteProjectPolicy(DeleteProjectPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
 
@@ -2323,7 +2323,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">REST API Reference for DeleteProjectVersion Operation</seealso>
         public virtual DeleteProjectVersionResponse DeleteProjectVersion(DeleteProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectVersionResponseUnmarshaller.Instance;
 
@@ -2344,7 +2344,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">REST API Reference for DeleteProjectVersion Operation</seealso>
         public virtual IAsyncResult BeginDeleteProjectVersion(DeleteProjectVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectVersionResponseUnmarshaller.Instance;
 
@@ -2403,7 +2403,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
         public virtual DeleteStreamProcessorResponse DeleteStreamProcessor(DeleteStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2424,7 +2424,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteStreamProcessor">REST API Reference for DeleteStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginDeleteStreamProcessor(DeleteStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2489,7 +2489,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2510,7 +2510,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2571,7 +2571,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
         public virtual DescribeCollectionResponse DescribeCollection(DescribeCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
 
@@ -2592,7 +2592,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeCollection">REST API Reference for DescribeCollection Operation</seealso>
         public virtual IAsyncResult BeginDescribeCollection(DescribeCollectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCollectionResponseUnmarshaller.Instance;
 
@@ -2659,7 +2659,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -2680,7 +2680,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual IAsyncResult BeginDescribeDataset(DescribeDatasetRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -2739,7 +2739,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
         public virtual DescribeProjectsResponse DescribeProjects(DescribeProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
 
@@ -2760,7 +2760,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">REST API Reference for DescribeProjects Operation</seealso>
         public virtual IAsyncResult BeginDescribeProjects(DescribeProjectsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectsResponseUnmarshaller.Instance;
 
@@ -2824,7 +2824,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
         public virtual DescribeProjectVersionsResponse DescribeProjectVersions(DescribeProjectVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
 
@@ -2845,7 +2845,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">REST API Reference for DescribeProjectVersions Operation</seealso>
         public virtual IAsyncResult BeginDescribeProjectVersions(DescribeProjectVersionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectVersionsResponseUnmarshaller.Instance;
 
@@ -2900,7 +2900,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
         public virtual DescribeStreamProcessorResponse DescribeStreamProcessor(DescribeStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
@@ -2921,7 +2921,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeStreamProcessor">REST API Reference for DescribeStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginDescribeStreamProcessor(DescribeStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamProcessorResponseUnmarshaller.Instance;
 
@@ -3055,7 +3055,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
         public virtual DetectCustomLabelsResponse DetectCustomLabels(DetectCustomLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
 
@@ -3076,7 +3076,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">REST API Reference for DetectCustomLabels Operation</seealso>
         public virtual IAsyncResult BeginDetectCustomLabels(DetectCustomLabelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectCustomLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectCustomLabelsResponseUnmarshaller.Instance;
 
@@ -3168,7 +3168,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         public virtual DetectFacesResponse DetectFaces(DetectFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
@@ -3189,7 +3189,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">REST API Reference for DetectFaces Operation</seealso>
         public virtual IAsyncResult BeginDetectFaces(DetectFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectFacesResponseUnmarshaller.Instance;
 
@@ -3417,7 +3417,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         public virtual DetectLabelsResponse DetectLabels(DetectLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
@@ -3438,7 +3438,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">REST API Reference for DetectLabels Operation</seealso>
         public virtual IAsyncResult BeginDetectLabels(DetectLabelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectLabelsResponseUnmarshaller.Instance;
 
@@ -3534,7 +3534,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         public virtual DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectModerationLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
@@ -3555,7 +3555,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectModerationLabels">REST API Reference for DetectModerationLabels Operation</seealso>
         public virtual IAsyncResult BeginDetectModerationLabels(DetectModerationLabelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectModerationLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
 
@@ -3675,7 +3675,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
         public virtual DetectProtectiveEquipmentResponse DetectProtectiveEquipment(DetectProtectiveEquipmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProtectiveEquipmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProtectiveEquipmentResponseUnmarshaller.Instance;
 
@@ -3696,7 +3696,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectProtectiveEquipment">REST API Reference for DetectProtectiveEquipment Operation</seealso>
         public virtual IAsyncResult BeginDetectProtectiveEquipment(DetectProtectiveEquipmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectProtectiveEquipmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectProtectiveEquipmentResponseUnmarshaller.Instance;
 
@@ -3800,7 +3800,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
         public virtual DetectTextResponse DetectText(DetectTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectTextResponseUnmarshaller.Instance;
 
@@ -3821,7 +3821,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectText">REST API Reference for DetectText Operation</seealso>
         public virtual IAsyncResult BeginDetectText(DetectTextRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DetectTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DetectTextResponseUnmarshaller.Instance;
 
@@ -3889,7 +3889,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DisassociateFaces">REST API Reference for DisassociateFaces Operation</seealso>
         public virtual DisassociateFacesResponse DisassociateFaces(DisassociateFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFacesResponseUnmarshaller.Instance;
 
@@ -3910,7 +3910,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DisassociateFaces">REST API Reference for DisassociateFaces Operation</seealso>
         public virtual IAsyncResult BeginDisassociateFaces(DisassociateFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateFacesResponseUnmarshaller.Instance;
 
@@ -3996,7 +3996,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">REST API Reference for DistributeDatasetEntries Operation</seealso>
         public virtual DistributeDatasetEntriesResponse DistributeDatasetEntries(DistributeDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -4017,7 +4017,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DistributeDatasetEntries">REST API Reference for DistributeDatasetEntries Operation</seealso>
         public virtual IAsyncResult BeginDistributeDatasetEntries(DistributeDatasetEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DistributeDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DistributeDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -4083,7 +4083,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
         public virtual GetCelebrityInfoResponse GetCelebrityInfo(GetCelebrityInfoRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
@@ -4104,7 +4104,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityInfo">REST API Reference for GetCelebrityInfo Operation</seealso>
         public virtual IAsyncResult BeginGetCelebrityInfo(GetCelebrityInfoRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityInfoRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityInfoResponseUnmarshaller.Instance;
 
@@ -4225,7 +4225,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
         public virtual GetCelebrityRecognitionResponse GetCelebrityRecognition(GetCelebrityRecognitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -4246,7 +4246,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetCelebrityRecognition">REST API Reference for GetCelebrityRecognition Operation</seealso>
         public virtual IAsyncResult BeginGetCelebrityRecognition(GetCelebrityRecognitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -4349,7 +4349,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
         public virtual GetContentModerationResponse GetContentModeration(GetContentModerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
@@ -4370,7 +4370,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">REST API Reference for GetContentModeration Operation</seealso>
         public virtual IAsyncResult BeginGetContentModeration(GetContentModerationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetContentModerationResponseUnmarshaller.Instance;
 
@@ -4456,7 +4456,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
         public virtual GetFaceDetectionResponse GetFaceDetection(GetFaceDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
@@ -4477,7 +4477,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">REST API Reference for GetFaceDetection Operation</seealso>
         public virtual IAsyncResult BeginGetFaceDetection(GetFaceDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceDetectionResponseUnmarshaller.Instance;
 
@@ -4541,7 +4541,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
         public virtual GetFaceLivenessSessionResultsResponse GetFaceLivenessSessionResults(GetFaceLivenessSessionResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
 
@@ -4562,7 +4562,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
         public virtual IAsyncResult BeginGetFaceLivenessSessionResults(GetFaceLivenessSessionResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
 
@@ -4658,7 +4658,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
         public virtual GetFaceSearchResponse GetFaceSearch(GetFaceSearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
@@ -4679,7 +4679,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceSearch">REST API Reference for GetFaceSearch Operation</seealso>
         public virtual IAsyncResult BeginGetFaceSearch(GetFaceSearchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFaceSearchResponseUnmarshaller.Instance;
 
@@ -4834,7 +4834,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
         public virtual GetLabelDetectionResponse GetLabelDetection(GetLabelDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
@@ -4855,7 +4855,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">REST API Reference for GetLabelDetection Operation</seealso>
         public virtual IAsyncResult BeginGetLabelDetection(GetLabelDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLabelDetectionResponseUnmarshaller.Instance;
 
@@ -4909,7 +4909,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
         public virtual GetMediaAnalysisJobResponse GetMediaAnalysisJob(GetMediaAnalysisJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -4930,7 +4930,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetMediaAnalysisJob">REST API Reference for GetMediaAnalysisJob Operation</seealso>
         public virtual IAsyncResult BeginGetMediaAnalysisJob(GetMediaAnalysisJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -5041,7 +5041,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
         public virtual GetPersonTrackingResponse GetPersonTracking(GetPersonTrackingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
@@ -5062,7 +5062,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetPersonTracking">REST API Reference for GetPersonTracking Operation</seealso>
         public virtual IAsyncResult BeginGetPersonTracking(GetPersonTrackingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPersonTrackingResponseUnmarshaller.Instance;
 
@@ -5159,7 +5159,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
         public virtual GetSegmentDetectionResponse GetSegmentDetection(GetSegmentDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -5180,7 +5180,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetSegmentDetection">REST API Reference for GetSegmentDetection Operation</seealso>
         public virtual IAsyncResult BeginGetSegmentDetection(GetSegmentDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -5269,7 +5269,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">REST API Reference for GetTextDetection Operation</seealso>
         public virtual GetTextDetectionResponse GetTextDetection(GetTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTextDetectionResponseUnmarshaller.Instance;
 
@@ -5290,7 +5290,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">REST API Reference for GetTextDetection Operation</seealso>
         public virtual IAsyncResult BeginGetTextDetection(GetTextDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTextDetectionResponseUnmarshaller.Instance;
 
@@ -5504,7 +5504,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         public virtual IndexFacesResponse IndexFaces(IndexFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
@@ -5525,7 +5525,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/IndexFaces">REST API Reference for IndexFaces Operation</seealso>
         public virtual IAsyncResult BeginIndexFaces(IndexFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IndexFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IndexFacesResponseUnmarshaller.Instance;
 
@@ -5593,7 +5593,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
@@ -5614,7 +5614,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual IAsyncResult BeginListCollections(ListCollectionsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
@@ -5704,7 +5704,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">REST API Reference for ListDatasetEntries Operation</seealso>
         public virtual ListDatasetEntriesResponse ListDatasetEntries(ListDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -5725,7 +5725,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetEntries">REST API Reference for ListDatasetEntries Operation</seealso>
         public virtual IAsyncResult BeginListDatasetEntries(ListDatasetEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -5803,7 +5803,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">REST API Reference for ListDatasetLabels Operation</seealso>
         public virtual ListDatasetLabelsResponse ListDatasetLabels(ListDatasetLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
 
@@ -5824,7 +5824,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListDatasetLabels">REST API Reference for ListDatasetLabels Operation</seealso>
         public virtual IAsyncResult BeginListDatasetLabels(ListDatasetLabelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetLabelsResponseUnmarshaller.Instance;
 
@@ -5888,7 +5888,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         public virtual ListFacesResponse ListFaces(ListFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFacesResponseUnmarshaller.Instance;
 
@@ -5909,7 +5909,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListFaces">REST API Reference for ListFaces Operation</seealso>
         public virtual IAsyncResult BeginListFaces(ListFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFacesResponseUnmarshaller.Instance;
 
@@ -5963,7 +5963,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
         public virtual ListMediaAnalysisJobsResponse ListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaAnalysisJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaAnalysisJobsResponseUnmarshaller.Instance;
 
@@ -5984,7 +5984,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListMediaAnalysisJobs">REST API Reference for ListMediaAnalysisJobs Operation</seealso>
         public virtual IAsyncResult BeginListMediaAnalysisJobs(ListMediaAnalysisJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMediaAnalysisJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMediaAnalysisJobsResponseUnmarshaller.Instance;
 
@@ -6057,7 +6057,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
         public virtual ListProjectPoliciesResponse ListProjectPolicies(ListProjectPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
 
@@ -6078,7 +6078,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
         public virtual IAsyncResult BeginListProjectPolicies(ListProjectPoliciesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
 
@@ -6131,7 +6131,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
         public virtual ListStreamProcessorsResponse ListStreamProcessors(ListStreamProcessorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamProcessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
@@ -6152,7 +6152,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">REST API Reference for ListStreamProcessors Operation</seealso>
         public virtual IAsyncResult BeginListStreamProcessors(ListStreamProcessorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamProcessorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamProcessorsResponseUnmarshaller.Instance;
 
@@ -6212,7 +6212,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6233,7 +6233,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6293,7 +6293,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -6314,7 +6314,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
@@ -6425,7 +6425,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
         public virtual PutProjectPolicyResponse PutProjectPolicy(PutProjectPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
 
@@ -6446,7 +6446,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutProjectPolicy(PutProjectPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
 
@@ -6548,7 +6548,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
         public virtual RecognizeCelebritiesResponse RecognizeCelebrities(RecognizeCelebritiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
@@ -6569,7 +6569,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/RecognizeCelebrities">REST API Reference for RecognizeCelebrities Operation</seealso>
         public virtual IAsyncResult BeginRecognizeCelebrities(RecognizeCelebritiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RecognizeCelebritiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RecognizeCelebritiesResponseUnmarshaller.Instance;
 
@@ -6649,7 +6649,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         public virtual SearchFacesResponse SearchFaces(SearchFacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
@@ -6670,7 +6670,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">REST API Reference for SearchFaces Operation</seealso>
         public virtual IAsyncResult BeginSearchFaces(SearchFacesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesResponseUnmarshaller.Instance;
 
@@ -6794,7 +6794,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         public virtual SearchFacesByImageResponse SearchFacesByImage(SearchFacesByImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
@@ -6815,7 +6815,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">REST API Reference for SearchFacesByImage Operation</seealso>
         public virtual IAsyncResult BeginSearchFacesByImage(SearchFacesByImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchFacesByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchFacesByImageResponseUnmarshaller.Instance;
 
@@ -6872,7 +6872,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual SearchUsersResponse SearchUsers(SearchUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -6893,7 +6893,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
         public virtual IAsyncResult BeginSearchUsers(SearchUsersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersResponseUnmarshaller.Instance;
 
@@ -6972,7 +6972,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsersByImage">REST API Reference for SearchUsersByImage Operation</seealso>
         public virtual SearchUsersByImageResponse SearchUsersByImage(SearchUsersByImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersByImageResponseUnmarshaller.Instance;
 
@@ -6993,7 +6993,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsersByImage">REST API Reference for SearchUsersByImage Operation</seealso>
         public virtual IAsyncResult BeginSearchUsersByImage(SearchUsersByImageRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchUsersByImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchUsersByImageResponseUnmarshaller.Instance;
 
@@ -7079,7 +7079,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
         public virtual StartCelebrityRecognitionResponse StartCelebrityRecognition(StartCelebrityRecognitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -7100,7 +7100,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartCelebrityRecognition">REST API Reference for StartCelebrityRecognition Operation</seealso>
         public virtual IAsyncResult BeginStartCelebrityRecognition(StartCelebrityRecognitionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCelebrityRecognitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCelebrityRecognitionResponseUnmarshaller.Instance;
 
@@ -7189,7 +7189,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
         public virtual StartContentModerationResponse StartContentModeration(StartContentModerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
@@ -7210,7 +7210,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartContentModeration">REST API Reference for StartContentModeration Operation</seealso>
         public virtual IAsyncResult BeginStartContentModeration(StartContentModerationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartContentModerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartContentModerationResponseUnmarshaller.Instance;
 
@@ -7294,7 +7294,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
         public virtual StartFaceDetectionResponse StartFaceDetection(StartFaceDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
@@ -7315,7 +7315,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceDetection">REST API Reference for StartFaceDetection Operation</seealso>
         public virtual IAsyncResult BeginStartFaceDetection(StartFaceDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceDetectionResponseUnmarshaller.Instance;
 
@@ -7400,7 +7400,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
         public virtual StartFaceSearchResponse StartFaceSearch(StartFaceSearchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
@@ -7421,7 +7421,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartFaceSearch">REST API Reference for StartFaceSearch Operation</seealso>
         public virtual IAsyncResult BeginStartFaceSearch(StartFaceSearchRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFaceSearchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFaceSearchResponseUnmarshaller.Instance;
 
@@ -7528,7 +7528,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         public virtual StartLabelDetectionResponse StartLabelDetection(StartLabelDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
@@ -7549,7 +7549,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartLabelDetection">REST API Reference for StartLabelDetection Operation</seealso>
         public virtual IAsyncResult BeginStartLabelDetection(StartLabelDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLabelDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLabelDetectionResponseUnmarshaller.Instance;
 
@@ -7624,7 +7624,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
         public virtual StartMediaAnalysisJobResponse StartMediaAnalysisJob(StartMediaAnalysisJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -7645,7 +7645,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartMediaAnalysisJob">REST API Reference for StartMediaAnalysisJob Operation</seealso>
         public virtual IAsyncResult BeginStartMediaAnalysisJob(StartMediaAnalysisJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMediaAnalysisJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMediaAnalysisJobResponseUnmarshaller.Instance;
 
@@ -7738,7 +7738,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
         public virtual StartPersonTrackingResponse StartPersonTracking(StartPersonTrackingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
@@ -7759,7 +7759,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">REST API Reference for StartPersonTracking Operation</seealso>
         public virtual IAsyncResult BeginStartPersonTracking(StartPersonTrackingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartPersonTrackingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartPersonTrackingResponseUnmarshaller.Instance;
 
@@ -7843,7 +7843,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
         public virtual StartProjectVersionResponse StartProjectVersion(StartProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
 
@@ -7864,7 +7864,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">REST API Reference for StartProjectVersion Operation</seealso>
         public virtual IAsyncResult BeginStartProjectVersion(StartProjectVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectVersionResponseUnmarshaller.Instance;
 
@@ -7960,7 +7960,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
         public virtual StartSegmentDetectionResponse StartSegmentDetection(StartSegmentDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -7981,7 +7981,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartSegmentDetection">REST API Reference for StartSegmentDetection Operation</seealso>
         public virtual IAsyncResult BeginStartSegmentDetection(StartSegmentDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSegmentDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSegmentDetectionResponseUnmarshaller.Instance;
 
@@ -8046,7 +8046,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
         public virtual StartStreamProcessorResponse StartStreamProcessor(StartStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
@@ -8067,7 +8067,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartStreamProcessor">REST API Reference for StartStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginStartStreamProcessor(StartStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamProcessorResponseUnmarshaller.Instance;
 
@@ -8150,7 +8150,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">REST API Reference for StartTextDetection Operation</seealso>
         public virtual StartTextDetectionResponse StartTextDetection(StartTextDetectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextDetectionResponseUnmarshaller.Instance;
 
@@ -8171,7 +8171,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">REST API Reference for StartTextDetection Operation</seealso>
         public virtual IAsyncResult BeginStartTextDetection(StartTextDetectionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTextDetectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTextDetectionResponseUnmarshaller.Instance;
 
@@ -8241,7 +8241,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
         public virtual StopProjectVersionResponse StopProjectVersion(StopProjectVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
 
@@ -8262,7 +8262,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">REST API Reference for StopProjectVersion Operation</seealso>
         public virtual IAsyncResult BeginStopProjectVersion(StopProjectVersionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopProjectVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopProjectVersionResponseUnmarshaller.Instance;
 
@@ -8318,7 +8318,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
         public virtual StopStreamProcessorResponse StopStreamProcessor(StopStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
@@ -8339,7 +8339,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">REST API Reference for StopStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginStopStreamProcessor(StopStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopStreamProcessorResponseUnmarshaller.Instance;
 
@@ -8404,7 +8404,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8425,7 +8425,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -8485,7 +8485,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8506,7 +8506,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -8613,7 +8613,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">REST API Reference for UpdateDatasetEntries Operation</seealso>
         public virtual UpdateDatasetEntriesResponse UpdateDatasetEntries(UpdateDatasetEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -8634,7 +8634,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateDatasetEntries">REST API Reference for UpdateDatasetEntries Operation</seealso>
         public virtual IAsyncResult BeginUpdateDatasetEntries(UpdateDatasetEntriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetEntriesResponseUnmarshaller.Instance;
 
@@ -8691,7 +8691,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">REST API Reference for UpdateStreamProcessor Operation</seealso>
         public virtual UpdateStreamProcessorResponse UpdateStreamProcessor(UpdateStreamProcessorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamProcessorResponseUnmarshaller.Instance;
 
@@ -8712,7 +8712,7 @@ namespace Amazon.Rekognition
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UpdateStreamProcessor">REST API Reference for UpdateStreamProcessor Operation</seealso>
         public virtual IAsyncResult BeginUpdateStreamProcessor(UpdateStreamProcessorRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamProcessorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamProcessorResponseUnmarshaller.Instance;
 

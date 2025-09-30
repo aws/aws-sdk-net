@@ -294,7 +294,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetApplicationComponentDetails">REST API Reference for GetApplicationComponentDetails Operation</seealso>
         public virtual GetApplicationComponentDetailsResponse GetApplicationComponentDetails(GetApplicationComponentDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationComponentDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationComponentDetailsResponseUnmarshaller.Instance;
 
@@ -315,7 +315,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetApplicationComponentDetails">REST API Reference for GetApplicationComponentDetails Operation</seealso>
         public virtual IAsyncResult BeginGetApplicationComponentDetails(GetApplicationComponentDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationComponentDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationComponentDetailsResponseUnmarshaller.Instance;
 
@@ -358,7 +358,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetApplicationComponentStrategies">REST API Reference for GetApplicationComponentStrategies Operation</seealso>
         public virtual GetApplicationComponentStrategiesResponse GetApplicationComponentStrategies(GetApplicationComponentStrategiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationComponentStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationComponentStrategiesResponseUnmarshaller.Instance;
 
@@ -379,7 +379,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetApplicationComponentStrategies">REST API Reference for GetApplicationComponentStrategies Operation</seealso>
         public virtual IAsyncResult BeginGetApplicationComponentStrategies(GetApplicationComponentStrategiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationComponentStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationComponentStrategiesResponseUnmarshaller.Instance;
 
@@ -425,7 +425,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetAssessment">REST API Reference for GetAssessment Operation</seealso>
         public virtual GetAssessmentResponse GetAssessment(GetAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentResponseUnmarshaller.Instance;
 
@@ -446,7 +446,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetAssessment">REST API Reference for GetAssessment Operation</seealso>
         public virtual IAsyncResult BeginGetAssessment(GetAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAssessmentResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetImportFileTask">REST API Reference for GetImportFileTask Operation</seealso>
         public virtual GetImportFileTaskResponse GetImportFileTask(GetImportFileTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportFileTaskResponseUnmarshaller.Instance;
 
@@ -516,7 +516,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetImportFileTask">REST API Reference for GetImportFileTask Operation</seealso>
         public virtual IAsyncResult BeginGetImportFileTask(GetImportFileTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportFileTaskResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
         public virtual GetLatestAssessmentIdResponse GetLatestAssessmentId(GetLatestAssessmentIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">REST API Reference for GetLatestAssessmentId Operation</seealso>
         public virtual IAsyncResult BeginGetLatestAssessmentId(GetLatestAssessmentIdRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLatestAssessmentIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLatestAssessmentIdResponseUnmarshaller.Instance;
 
@@ -629,7 +629,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetPortfolioPreferences">REST API Reference for GetPortfolioPreferences Operation</seealso>
         public virtual GetPortfolioPreferencesResponse GetPortfolioPreferences(GetPortfolioPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPortfolioPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPortfolioPreferencesResponseUnmarshaller.Instance;
 
@@ -650,7 +650,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetPortfolioPreferences">REST API Reference for GetPortfolioPreferences Operation</seealso>
         public virtual IAsyncResult BeginGetPortfolioPreferences(GetPortfolioPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPortfolioPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPortfolioPreferencesResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetPortfolioSummary">REST API Reference for GetPortfolioSummary Operation</seealso>
         public virtual GetPortfolioSummaryResponse GetPortfolioSummary(GetPortfolioSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPortfolioSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPortfolioSummaryResponseUnmarshaller.Instance;
 
@@ -715,7 +715,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetPortfolioSummary">REST API Reference for GetPortfolioSummary Operation</seealso>
         public virtual IAsyncResult BeginGetPortfolioSummary(GetPortfolioSummaryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPortfolioSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPortfolioSummaryResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetRecommendationReportDetails">REST API Reference for GetRecommendationReportDetails Operation</seealso>
         public virtual GetRecommendationReportDetailsResponse GetRecommendationReportDetails(GetRecommendationReportDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationReportDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationReportDetailsResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetRecommendationReportDetails">REST API Reference for GetRecommendationReportDetails Operation</seealso>
         public virtual IAsyncResult BeginGetRecommendationReportDetails(GetRecommendationReportDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRecommendationReportDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRecommendationReportDetailsResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetServerDetails">REST API Reference for GetServerDetails Operation</seealso>
         public virtual GetServerDetailsResponse GetServerDetails(GetServerDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServerDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServerDetailsResponseUnmarshaller.Instance;
 
@@ -855,7 +855,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetServerDetails">REST API Reference for GetServerDetails Operation</seealso>
         public virtual IAsyncResult BeginGetServerDetails(GetServerDetailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServerDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServerDetailsResponseUnmarshaller.Instance;
 
@@ -904,7 +904,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetServerStrategies">REST API Reference for GetServerStrategies Operation</seealso>
         public virtual GetServerStrategiesResponse GetServerStrategies(GetServerStrategiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServerStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServerStrategiesResponseUnmarshaller.Instance;
 
@@ -925,7 +925,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetServerStrategies">REST API Reference for GetServerStrategies Operation</seealso>
         public virtual IAsyncResult BeginGetServerStrategies(GetServerStrategiesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServerStrategiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServerStrategiesResponseUnmarshaller.Instance;
 
@@ -972,7 +972,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
         public virtual ListAnalyzableServersResponse ListAnalyzableServers(ListAnalyzableServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzableServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzableServersResponseUnmarshaller.Instance;
 
@@ -993,7 +993,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">REST API Reference for ListAnalyzableServers Operation</seealso>
         public virtual IAsyncResult BeginListAnalyzableServers(ListAnalyzableServersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAnalyzableServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAnalyzableServersResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListApplicationComponents">REST API Reference for ListApplicationComponents Operation</seealso>
         public virtual ListApplicationComponentsResponse ListApplicationComponents(ListApplicationComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationComponentsResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListApplicationComponents">REST API Reference for ListApplicationComponents Operation</seealso>
         public virtual IAsyncResult BeginListApplicationComponents(ListApplicationComponentsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationComponentsResponseUnmarshaller.Instance;
 
@@ -1106,7 +1106,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListCollectors">REST API Reference for ListCollectors Operation</seealso>
         public virtual ListCollectorsResponse ListCollectors(ListCollectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectorsResponseUnmarshaller.Instance;
 
@@ -1127,7 +1127,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListCollectors">REST API Reference for ListCollectors Operation</seealso>
         public virtual IAsyncResult BeginListCollectors(ListCollectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectorsResponseUnmarshaller.Instance;
 
@@ -1173,7 +1173,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListImportFileTask">REST API Reference for ListImportFileTask Operation</seealso>
         public virtual ListImportFileTaskResponse ListImportFileTask(ListImportFileTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportFileTaskResponseUnmarshaller.Instance;
 
@@ -1194,7 +1194,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListImportFileTask">REST API Reference for ListImportFileTask Operation</seealso>
         public virtual IAsyncResult BeginListImportFileTask(ListImportFileTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportFileTaskResponseUnmarshaller.Instance;
 
@@ -1240,7 +1240,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListServers">REST API Reference for ListServers Operation</seealso>
         public virtual ListServersResponse ListServers(ListServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
@@ -1261,7 +1261,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListServers">REST API Reference for ListServers Operation</seealso>
         public virtual IAsyncResult BeginListServers(ListServersRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServersResponseUnmarshaller.Instance;
 
@@ -1311,7 +1311,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/PutPortfolioPreferences">REST API Reference for PutPortfolioPreferences Operation</seealso>
         public virtual PutPortfolioPreferencesResponse PutPortfolioPreferences(PutPortfolioPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPortfolioPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPortfolioPreferencesResponseUnmarshaller.Instance;
 
@@ -1332,7 +1332,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/PutPortfolioPreferences">REST API Reference for PutPortfolioPreferences Operation</seealso>
         public virtual IAsyncResult BeginPutPortfolioPreferences(PutPortfolioPreferencesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPortfolioPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPortfolioPreferencesResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartAssessment">REST API Reference for StartAssessment Operation</seealso>
         public virtual StartAssessmentResponse StartAssessment(StartAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssessmentResponseUnmarshaller.Instance;
 
@@ -1400,7 +1400,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartAssessment">REST API Reference for StartAssessment Operation</seealso>
         public virtual IAsyncResult BeginStartAssessment(StartAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartAssessmentResponseUnmarshaller.Instance;
 
@@ -1450,7 +1450,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartImportFileTask">REST API Reference for StartImportFileTask Operation</seealso>
         public virtual StartImportFileTaskResponse StartImportFileTask(StartImportFileTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportFileTaskResponseUnmarshaller.Instance;
 
@@ -1471,7 +1471,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartImportFileTask">REST API Reference for StartImportFileTask Operation</seealso>
         public virtual IAsyncResult BeginStartImportFileTask(StartImportFileTaskRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportFileTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportFileTaskResponseUnmarshaller.Instance;
 
@@ -1521,7 +1521,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartRecommendationReportGeneration">REST API Reference for StartRecommendationReportGeneration Operation</seealso>
         public virtual StartRecommendationReportGenerationResponse StartRecommendationReportGeneration(StartRecommendationReportGenerationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommendationReportGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommendationReportGenerationResponseUnmarshaller.Instance;
 
@@ -1542,7 +1542,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StartRecommendationReportGeneration">REST API Reference for StartRecommendationReportGeneration Operation</seealso>
         public virtual IAsyncResult BeginStartRecommendationReportGeneration(StartRecommendationReportGenerationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartRecommendationReportGenerationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartRecommendationReportGenerationResponseUnmarshaller.Instance;
 
@@ -1588,7 +1588,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StopAssessment">REST API Reference for StopAssessment Operation</seealso>
         public virtual StopAssessmentResponse StopAssessment(StopAssessmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAssessmentResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/StopAssessment">REST API Reference for StopAssessment Operation</seealso>
         public virtual IAsyncResult BeginStopAssessment(StopAssessmentRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopAssessmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopAssessmentResponseUnmarshaller.Instance;
 
@@ -1654,7 +1654,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/UpdateApplicationComponentConfig">REST API Reference for UpdateApplicationComponentConfig Operation</seealso>
         public virtual UpdateApplicationComponentConfigResponse UpdateApplicationComponentConfig(UpdateApplicationComponentConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationComponentConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationComponentConfigResponseUnmarshaller.Instance;
 
@@ -1675,7 +1675,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/UpdateApplicationComponentConfig">REST API Reference for UpdateApplicationComponentConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateApplicationComponentConfig(UpdateApplicationComponentConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationComponentConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationComponentConfigResponseUnmarshaller.Instance;
 
@@ -1720,7 +1720,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/UpdateServerConfig">REST API Reference for UpdateServerConfig Operation</seealso>
         public virtual UpdateServerConfigResponse UpdateServerConfig(UpdateServerConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServerConfigResponseUnmarshaller.Instance;
 
@@ -1741,7 +1741,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/UpdateServerConfig">REST API Reference for UpdateServerConfig Operation</seealso>
         public virtual IAsyncResult BeginUpdateServerConfig(UpdateServerConfigRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServerConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServerConfigResponseUnmarshaller.Instance;
 

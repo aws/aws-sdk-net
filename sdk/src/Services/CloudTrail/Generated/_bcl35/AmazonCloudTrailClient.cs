@@ -414,7 +414,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual AddTagsResponse AddTags(AddTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public virtual IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
         public virtual CancelQueryResponse CancelQuery(CancelQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
 
@@ -529,7 +529,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CancelQuery">REST API Reference for CancelQuery Operation</seealso>
         public virtual IAsyncResult BeginCancelQuery(CancelQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelQueryResponseUnmarshaller.Instance;
 
@@ -604,7 +604,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -625,7 +625,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -736,7 +736,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual CreateDashboardResponse CreateDashboard(CreateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -757,7 +757,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateDashboard">REST API Reference for CreateDashboard Operation</seealso>
         public virtual IAsyncResult BeginCreateDashboard(CreateDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDashboardResponseUnmarshaller.Instance;
 
@@ -907,7 +907,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore">REST API Reference for CreateEventDataStore Operation</seealso>
         public virtual CreateEventDataStoreResponse CreateEventDataStore(CreateEventDataStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventDataStoreResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore">REST API Reference for CreateEventDataStore Operation</seealso>
         public virtual IAsyncResult BeginCreateEventDataStore(CreateEventDataStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventDataStoreResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public virtual CreateTrailResponse CreateTrail(CreateTrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrailResponseUnmarshaller.Instance;
 
@@ -1140,7 +1140,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public virtual IAsyncResult BeginCreateTrail(CreateTrailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrailResponseUnmarshaller.Instance;
 
@@ -1185,7 +1185,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -1206,7 +1206,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual DeleteDashboardResponse DeleteDashboard(DeleteDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">REST API Reference for DeleteDashboard Operation</seealso>
         public virtual IAsyncResult BeginDeleteDashboard(DeleteDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDashboardResponseUnmarshaller.Instance;
 
@@ -1378,7 +1378,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore">REST API Reference for DeleteEventDataStore Operation</seealso>
         public virtual DeleteEventDataStoreResponse DeleteEventDataStore(DeleteEventDataStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventDataStoreResponseUnmarshaller.Instance;
 
@@ -1399,7 +1399,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteEventDataStore">REST API Reference for DeleteEventDataStore Operation</seealso>
         public virtual IAsyncResult BeginDeleteEventDataStore(DeleteEventDataStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventDataStoreResponseUnmarshaller.Instance;
 
@@ -1474,7 +1474,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1495,7 +1495,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1620,7 +1620,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public virtual DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrailResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public virtual IAsyncResult BeginDeleteTrail(DeleteTrailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrailResponseUnmarshaller.Instance;
 
@@ -1724,7 +1724,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">REST API Reference for DeregisterOrganizationDelegatedAdmin Operation</seealso>
         public virtual DeregisterOrganizationDelegatedAdminResponse DeregisterOrganizationDelegatedAdmin(DeregisterOrganizationDelegatedAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterOrganizationDelegatedAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
 
@@ -1745,7 +1745,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">REST API Reference for DeregisterOrganizationDelegatedAdmin Operation</seealso>
         public virtual IAsyncResult BeginDeregisterOrganizationDelegatedAdmin(DeregisterOrganizationDelegatedAdminRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterOrganizationDelegatedAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
 
@@ -1814,7 +1814,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">REST API Reference for DescribeQuery Operation</seealso>
         public virtual DescribeQueryResponse DescribeQuery(DescribeQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryResponseUnmarshaller.Instance;
 
@@ -1835,7 +1835,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">REST API Reference for DescribeQuery Operation</seealso>
         public virtual IAsyncResult BeginDescribeQuery(DescribeQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeQueryResponseUnmarshaller.Instance;
 
@@ -2005,7 +2005,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public virtual DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
 
@@ -2026,7 +2026,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public virtual IAsyncResult BeginDescribeTrails(DescribeTrailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrailsResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">REST API Reference for DisableFederation Operation</seealso>
         public virtual DisableFederationResponse DisableFederation(DisableFederationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFederationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFederationResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DisableFederation">REST API Reference for DisableFederation Operation</seealso>
         public virtual IAsyncResult BeginDisableFederation(DisableFederationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableFederationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableFederationResponseUnmarshaller.Instance;
 
@@ -2265,7 +2265,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation">REST API Reference for EnableFederation Operation</seealso>
         public virtual EnableFederationResponse EnableFederation(EnableFederationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFederationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFederationResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EnableFederation">REST API Reference for EnableFederation Operation</seealso>
         public virtual IAsyncResult BeginEnableFederation(EnableFederationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableFederationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableFederationResponseUnmarshaller.Instance;
 
@@ -2373,7 +2373,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
         public virtual GenerateQueryResponse GenerateQuery(GenerateQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateQueryResponseUnmarshaller.Instance;
 
@@ -2394,7 +2394,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
         public virtual IAsyncResult BeginGenerateQuery(GenerateQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateQueryResponseUnmarshaller.Instance;
 
@@ -2439,7 +2439,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual GetChannelResponse GetChannel(GetChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual IAsyncResult BeginGetChannel(GetChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -2499,7 +2499,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual GetDashboardResponse GetDashboard(GetDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
@@ -2520,7 +2520,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">REST API Reference for GetDashboard Operation</seealso>
         public virtual IAsyncResult BeginGetDashboard(GetDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDashboardResponseUnmarshaller.Instance;
 
@@ -2609,7 +2609,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">REST API Reference for GetEventConfiguration Operation</seealso>
         public virtual GetEventConfigurationResponse GetEventConfiguration(GetEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventConfigurationResponseUnmarshaller.Instance;
 
@@ -2630,7 +2630,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventConfiguration">REST API Reference for GetEventConfiguration Operation</seealso>
         public virtual IAsyncResult BeginGetEventConfiguration(GetEventConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventConfigurationResponseUnmarshaller.Instance;
 
@@ -2684,7 +2684,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">REST API Reference for GetEventDataStore Operation</seealso>
         public virtual GetEventDataStoreResponse GetEventDataStore(GetEventDataStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventDataStoreResponseUnmarshaller.Instance;
 
@@ -2705,7 +2705,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">REST API Reference for GetEventDataStore Operation</seealso>
         public virtual IAsyncResult BeginGetEventDataStore(GetEventDataStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventDataStoreResponseUnmarshaller.Instance;
 
@@ -2845,7 +2845,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public virtual GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
 
@@ -2866,7 +2866,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public virtual IAsyncResult BeginGetEventSelectors(GetEventSelectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
 
@@ -2911,7 +2911,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">REST API Reference for GetImport Operation</seealso>
         public virtual GetImportResponse GetImport(GetImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportResponseUnmarshaller.Instance;
 
@@ -2932,7 +2932,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">REST API Reference for GetImport Operation</seealso>
         public virtual IAsyncResult BeginGetImport(GetImportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">REST API Reference for GetInsightSelectors Operation</seealso>
         public virtual GetInsightSelectorsResponse GetInsightSelectors(GetInsightSelectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightSelectorsResponseUnmarshaller.Instance;
 
@@ -3081,7 +3081,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">REST API Reference for GetInsightSelectors Operation</seealso>
         public virtual IAsyncResult BeginGetInsightSelectors(GetInsightSelectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInsightSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInsightSelectorsResponseUnmarshaller.Instance;
 
@@ -3159,7 +3159,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -3180,7 +3180,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual IAsyncResult BeginGetQueryResults(GetQueryResultsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueryResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
 
@@ -3249,7 +3249,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3270,7 +3270,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3364,7 +3364,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail">REST API Reference for GetTrail Operation</seealso>
         public virtual GetTrailResponse GetTrail(GetTrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrailResponseUnmarshaller.Instance;
 
@@ -3385,7 +3385,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail">REST API Reference for GetTrail Operation</seealso>
         public virtual IAsyncResult BeginGetTrail(GetTrailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrailResponseUnmarshaller.Instance;
 
@@ -3482,7 +3482,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public virtual GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrailStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
 
@@ -3503,7 +3503,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public virtual IAsyncResult BeginGetTrailStatus(GetTrailStatusRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTrailStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
 
@@ -3546,7 +3546,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -3567,7 +3567,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -3603,7 +3603,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual ListDashboardsResponse ListDashboards(ListDashboardsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -3624,7 +3624,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">REST API Reference for ListDashboards Operation</seealso>
         public virtual IAsyncResult BeginListDashboards(ListDashboardsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDashboardsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDashboardsResponseUnmarshaller.Instance;
 
@@ -3674,7 +3674,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">REST API Reference for ListEventDataStores Operation</seealso>
         public virtual ListEventDataStoresResponse ListEventDataStores(ListEventDataStoresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventDataStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventDataStoresResponseUnmarshaller.Instance;
 
@@ -3695,7 +3695,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores">REST API Reference for ListEventDataStores Operation</seealso>
         public virtual IAsyncResult BeginListEventDataStores(ListEventDataStoresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventDataStoresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventDataStoresResponseUnmarshaller.Instance;
 
@@ -3741,7 +3741,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">REST API Reference for ListImportFailures Operation</seealso>
         public virtual ListImportFailuresResponse ListImportFailures(ListImportFailuresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportFailuresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportFailuresResponseUnmarshaller.Instance;
 
@@ -3762,7 +3762,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">REST API Reference for ListImportFailures Operation</seealso>
         public virtual IAsyncResult BeginListImportFailures(ListImportFailuresRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportFailuresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportFailuresResponseUnmarshaller.Instance;
 
@@ -3813,7 +3813,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -3834,7 +3834,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -3906,7 +3906,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">REST API Reference for ListInsightsMetricData Operation</seealso>
         public virtual ListInsightsMetricDataResponse ListInsightsMetricData(ListInsightsMetricDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsMetricDataResponseUnmarshaller.Instance;
 
@@ -3927,7 +3927,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListInsightsMetricData">REST API Reference for ListInsightsMetricData Operation</seealso>
         public virtual IAsyncResult BeginListInsightsMetricData(ListInsightsMetricDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsMetricDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsMetricDataResponseUnmarshaller.Instance;
 
@@ -3984,7 +3984,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -4005,7 +4005,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public virtual IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPublicKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPublicKeysResponseUnmarshaller.Instance;
 
@@ -4082,7 +4082,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">REST API Reference for ListQueries Operation</seealso>
         public virtual ListQueriesResponse ListQueries(ListQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueriesResponseUnmarshaller.Instance;
 
@@ -4103,7 +4103,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries">REST API Reference for ListQueries Operation</seealso>
         public virtual IAsyncResult BeginListQueries(ListQueriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueriesResponseUnmarshaller.Instance;
 
@@ -4221,7 +4221,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual ListTagsResponse ListTags(ListTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -4242,7 +4242,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
@@ -4281,7 +4281,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails">REST API Reference for ListTrails Operation</seealso>
         public virtual ListTrailsResponse ListTrails(ListTrailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrailsResponseUnmarshaller.Instance;
 
@@ -4302,7 +4302,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTrails">REST API Reference for ListTrails Operation</seealso>
         public virtual IAsyncResult BeginListTrails(ListTrailsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrailsResponseUnmarshaller.Instance;
 
@@ -4432,7 +4432,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public virtual LookupEventsResponse LookupEvents(LookupEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LookupEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LookupEventsResponseUnmarshaller.Instance;
 
@@ -4453,7 +4453,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public virtual IAsyncResult BeginLookupEvents(LookupEventsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = LookupEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = LookupEventsResponseUnmarshaller.Instance;
 
@@ -4570,7 +4570,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">REST API Reference for PutEventConfiguration Operation</seealso>
         public virtual PutEventConfigurationResponse PutEventConfiguration(PutEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventConfigurationResponseUnmarshaller.Instance;
 
@@ -4591,7 +4591,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventConfiguration">REST API Reference for PutEventConfiguration Operation</seealso>
         public virtual IAsyncResult BeginPutEventConfiguration(PutEventConfigurationRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventConfigurationResponseUnmarshaller.Instance;
 
@@ -4843,7 +4843,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public virtual PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
 
@@ -4864,7 +4864,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public virtual IAsyncResult BeginPutEventSelectors(PutEventSelectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutEventSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
 
@@ -5054,7 +5054,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">REST API Reference for PutInsightSelectors Operation</seealso>
         public virtual PutInsightSelectorsResponse PutInsightSelectors(PutInsightSelectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightSelectorsResponseUnmarshaller.Instance;
 
@@ -5075,7 +5075,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">REST API Reference for PutInsightSelectors Operation</seealso>
         public virtual IAsyncResult BeginPutInsightSelectors(PutInsightSelectorsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutInsightSelectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutInsightSelectorsResponseUnmarshaller.Instance;
 
@@ -5152,7 +5152,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -5173,7 +5173,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -5269,7 +5269,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">REST API Reference for RegisterOrganizationDelegatedAdmin Operation</seealso>
         public virtual RegisterOrganizationDelegatedAdminResponse RegisterOrganizationDelegatedAdmin(RegisterOrganizationDelegatedAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterOrganizationDelegatedAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
 
@@ -5290,7 +5290,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">REST API Reference for RegisterOrganizationDelegatedAdmin Operation</seealso>
         public virtual IAsyncResult BeginRegisterOrganizationDelegatedAdmin(RegisterOrganizationDelegatedAdminRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterOrganizationDelegatedAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
 
@@ -5424,7 +5424,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -5445,7 +5445,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public virtual IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsResponseUnmarshaller.Instance;
 
@@ -5536,7 +5536,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RestoreEventDataStore">REST API Reference for RestoreEventDataStore Operation</seealso>
         public virtual RestoreEventDataStoreResponse RestoreEventDataStore(RestoreEventDataStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreEventDataStoreResponseUnmarshaller.Instance;
 
@@ -5557,7 +5557,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RestoreEventDataStore">REST API Reference for RestoreEventDataStore Operation</seealso>
         public virtual IAsyncResult BeginRestoreEventDataStore(RestoreEventDataStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreEventDataStoreResponseUnmarshaller.Instance;
 
@@ -5600,7 +5600,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">REST API Reference for SearchSampleQueries Operation</seealso>
         public virtual SearchSampleQueriesResponse SearchSampleQueries(SearchSampleQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSampleQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSampleQueriesResponseUnmarshaller.Instance;
 
@@ -5621,7 +5621,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SearchSampleQueries">REST API Reference for SearchSampleQueries Operation</seealso>
         public virtual IAsyncResult BeginSearchSampleQueries(SearchSampleQueriesRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchSampleQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchSampleQueriesResponseUnmarshaller.Instance;
 
@@ -5682,7 +5682,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartDashboardRefresh">REST API Reference for StartDashboardRefresh Operation</seealso>
         public virtual StartDashboardRefreshResponse StartDashboardRefresh(StartDashboardRefreshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardRefreshResponseUnmarshaller.Instance;
 
@@ -5703,7 +5703,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartDashboardRefresh">REST API Reference for StartDashboardRefresh Operation</seealso>
         public virtual IAsyncResult BeginStartDashboardRefresh(StartDashboardRefreshRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDashboardRefreshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDashboardRefreshResponseUnmarshaller.Instance;
 
@@ -5784,7 +5784,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">REST API Reference for StartEventDataStoreIngestion Operation</seealso>
         public virtual StartEventDataStoreIngestionResponse StartEventDataStoreIngestion(StartEventDataStoreIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEventDataStoreIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEventDataStoreIngestionResponseUnmarshaller.Instance;
 
@@ -5805,7 +5805,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">REST API Reference for StartEventDataStoreIngestion Operation</seealso>
         public virtual IAsyncResult BeginStartEventDataStoreIngestion(StartEventDataStoreIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEventDataStoreIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEventDataStoreIngestionResponseUnmarshaller.Instance;
 
@@ -5912,7 +5912,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">REST API Reference for StartImport Operation</seealso>
         public virtual StartImportResponse StartImport(StartImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
 
@@ -5933,7 +5933,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">REST API Reference for StartImport Operation</seealso>
         public virtual IAsyncResult BeginStartImport(StartImportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
 
@@ -6060,7 +6060,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public virtual StartLoggingResponse StartLogging(StartLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLoggingResponseUnmarshaller.Instance;
 
@@ -6081,7 +6081,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public virtual IAsyncResult BeginStartLogging(StartLoggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLoggingResponseUnmarshaller.Instance;
 
@@ -6180,7 +6180,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">REST API Reference for StartQuery Operation</seealso>
         public virtual StartQueryResponse StartQuery(StartQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryResponseUnmarshaller.Instance;
 
@@ -6201,7 +6201,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">REST API Reference for StartQuery Operation</seealso>
         public virtual IAsyncResult BeginStartQuery(StartQueryRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartQueryResponseUnmarshaller.Instance;
 
@@ -6282,7 +6282,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">REST API Reference for StopEventDataStoreIngestion Operation</seealso>
         public virtual StopEventDataStoreIngestionResponse StopEventDataStoreIngestion(StopEventDataStoreIngestionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEventDataStoreIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEventDataStoreIngestionResponseUnmarshaller.Instance;
 
@@ -6303,7 +6303,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">REST API Reference for StopEventDataStoreIngestion Operation</seealso>
         public virtual IAsyncResult BeginStopEventDataStoreIngestion(StopEventDataStoreIngestionRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEventDataStoreIngestionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEventDataStoreIngestionResponseUnmarshaller.Instance;
 
@@ -6348,7 +6348,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">REST API Reference for StopImport Operation</seealso>
         public virtual StopImportResponse StopImport(StopImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopImportResponseUnmarshaller.Instance;
 
@@ -6369,7 +6369,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">REST API Reference for StopImport Operation</seealso>
         public virtual IAsyncResult BeginStopImport(StopImportRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopImportResponseUnmarshaller.Instance;
 
@@ -6498,7 +6498,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public virtual StopLoggingResponse StopLogging(StopLoggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopLoggingResponseUnmarshaller.Instance;
 
@@ -6519,7 +6519,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public virtual IAsyncResult BeginStopLogging(StopLoggingRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopLoggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopLoggingResponseUnmarshaller.Instance;
 
@@ -6584,7 +6584,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -6605,7 +6605,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -6697,7 +6697,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual UpdateDashboardResponse UpdateDashboard(UpdateDashboardRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -6718,7 +6718,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateDashboard">REST API Reference for UpdateDashboard Operation</seealso>
         public virtual IAsyncResult BeginUpdateDashboard(UpdateDashboardRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDashboardRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDashboardResponseUnmarshaller.Instance;
 
@@ -6907,7 +6907,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateEventDataStore">REST API Reference for UpdateEventDataStore Operation</seealso>
         public virtual UpdateEventDataStoreResponse UpdateEventDataStore(UpdateEventDataStoreRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventDataStoreResponseUnmarshaller.Instance;
 
@@ -6928,7 +6928,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateEventDataStore">REST API Reference for UpdateEventDataStore Operation</seealso>
         public virtual IAsyncResult BeginUpdateEventDataStore(UpdateEventDataStoreRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventDataStoreRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventDataStoreResponseUnmarshaller.Instance;
 
@@ -7176,7 +7176,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public virtual UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrailResponseUnmarshaller.Instance;
 
@@ -7197,7 +7197,7 @@ namespace Amazon.CloudTrail
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public virtual IAsyncResult BeginUpdateTrail(UpdateTrailRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrailResponseUnmarshaller.Instance;
 

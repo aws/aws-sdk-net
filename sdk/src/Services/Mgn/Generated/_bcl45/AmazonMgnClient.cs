@@ -289,7 +289,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
         public virtual ArchiveApplicationResponse ArchiveApplication(ArchiveApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication">REST API Reference for ArchiveApplication Operation</seealso>
         public virtual Task<ArchiveApplicationResponse> ArchiveApplicationAsync(ArchiveApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ArchiveApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ArchiveApplicationResponseUnmarshaller.Instance;
             
@@ -356,7 +356,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
         public virtual ArchiveWaveResponse ArchiveWave(ArchiveWaveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
 
@@ -389,7 +389,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave">REST API Reference for ArchiveWave Operation</seealso>
         public virtual Task<ArchiveWaveResponse> ArchiveWaveAsync(ArchiveWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ArchiveWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ArchiveWaveResponseUnmarshaller.Instance;
             
@@ -423,7 +423,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
         public virtual AssociateApplicationsResponse AssociateApplications(AssociateApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
 
@@ -456,7 +456,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications">REST API Reference for AssociateApplications Operation</seealso>
         public virtual Task<AssociateApplicationsResponse> AssociateApplicationsAsync(AssociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateApplicationsResponseUnmarshaller.Instance;
             
@@ -490,7 +490,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
         public virtual AssociateSourceServersResponse AssociateSourceServers(AssociateSourceServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers">REST API Reference for AssociateSourceServers Operation</seealso>
         public virtual Task<AssociateSourceServersResponse> AssociateSourceServersAsync(AssociateSourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateSourceServersResponseUnmarshaller.Instance;
             
@@ -560,7 +560,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ChangeServerLifeCycleState">REST API Reference for ChangeServerLifeCycleState Operation</seealso>
         public virtual ChangeServerLifeCycleStateResponse ChangeServerLifeCycleState(ChangeServerLifeCycleStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeServerLifeCycleStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeServerLifeCycleStateResponseUnmarshaller.Instance;
 
@@ -596,7 +596,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ChangeServerLifeCycleState">REST API Reference for ChangeServerLifeCycleState Operation</seealso>
         public virtual Task<ChangeServerLifeCycleStateResponse> ChangeServerLifeCycleStateAsync(ChangeServerLifeCycleStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeServerLifeCycleStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeServerLifeCycleStateResponseUnmarshaller.Instance;
             
@@ -627,7 +627,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -657,7 +657,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -684,7 +684,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
         public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
             
@@ -740,7 +740,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
         public virtual CreateLaunchConfigurationTemplateResponse CreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -769,7 +769,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
         public virtual Task<CreateLaunchConfigurationTemplateResponse> CreateLaunchConfigurationTemplateAsync(CreateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -799,7 +799,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateReplicationConfigurationTemplate">REST API Reference for CreateReplicationConfigurationTemplate Operation</seealso>
         public virtual CreateReplicationConfigurationTemplateResponse CreateReplicationConfigurationTemplate(CreateReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -828,7 +828,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateReplicationConfigurationTemplate">REST API Reference for CreateReplicationConfigurationTemplate Operation</seealso>
         public virtual Task<CreateReplicationConfigurationTemplateResponse> CreateReplicationConfigurationTemplateAsync(CreateReplicationConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -859,7 +859,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
         public virtual CreateWaveResponse CreateWave(CreateWaveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave">REST API Reference for CreateWave Operation</seealso>
         public virtual Task<CreateWaveResponse> CreateWaveAsync(CreateWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWaveResponseUnmarshaller.Instance;
             
@@ -920,7 +920,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -980,7 +980,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
 
@@ -1009,7 +1009,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
         public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
             
@@ -1040,7 +1040,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -1070,7 +1070,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
             
@@ -1101,7 +1101,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
         public virtual DeleteLaunchConfigurationTemplateResponse DeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -1131,7 +1131,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
         public virtual Task<DeleteLaunchConfigurationTemplateResponse> DeleteLaunchConfigurationTemplateAsync(DeleteLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -1162,7 +1162,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         public virtual DeleteReplicationConfigurationTemplateResponse DeleteReplicationConfigurationTemplate(DeleteReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -1192,7 +1192,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteReplicationConfigurationTemplate">REST API Reference for DeleteReplicationConfigurationTemplate Operation</seealso>
         public virtual Task<DeleteReplicationConfigurationTemplateResponse> DeleteReplicationConfigurationTemplateAsync(DeleteReplicationConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -1223,7 +1223,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteSourceServer">REST API Reference for DeleteSourceServer Operation</seealso>
         public virtual DeleteSourceServerResponse DeleteSourceServer(DeleteSourceServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceServerResponseUnmarshaller.Instance;
 
@@ -1253,7 +1253,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteSourceServer">REST API Reference for DeleteSourceServer Operation</seealso>
         public virtual Task<DeleteSourceServerResponse> DeleteSourceServerAsync(DeleteSourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSourceServerResponseUnmarshaller.Instance;
             
@@ -1283,7 +1283,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">REST API Reference for DeleteVcenterClient Operation</seealso>
         public virtual DeleteVcenterClientResponse DeleteVcenterClient(DeleteVcenterClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVcenterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVcenterClientResponseUnmarshaller.Instance;
 
@@ -1312,7 +1312,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteVcenterClient">REST API Reference for DeleteVcenterClient Operation</seealso>
         public virtual Task<DeleteVcenterClientResponse> DeleteVcenterClientAsync(DeleteVcenterClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVcenterClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVcenterClientResponseUnmarshaller.Instance;
             
@@ -1343,7 +1343,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
         public virtual DeleteWaveResponse DeleteWave(DeleteWaveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave">REST API Reference for DeleteWave Operation</seealso>
         public virtual Task<DeleteWaveResponse> DeleteWaveAsync(DeleteWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWaveResponseUnmarshaller.Instance;
             
@@ -1400,7 +1400,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">REST API Reference for DescribeJobLogItems Operation</seealso>
         public virtual DescribeJobLogItemsResponse DescribeJobLogItems(DescribeJobLogItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobLogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobLogItemsResponseUnmarshaller.Instance;
 
@@ -1426,7 +1426,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobLogItems">REST API Reference for DescribeJobLogItems Operation</seealso>
         public virtual Task<DescribeJobLogItemsResponse> DescribeJobLogItemsAsync(DescribeJobLogItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobLogItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobLogItemsResponseUnmarshaller.Instance;
             
@@ -1458,7 +1458,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
 
@@ -1489,7 +1489,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public virtual Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
             
@@ -1520,7 +1520,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
         public virtual DescribeLaunchConfigurationTemplatesResponse DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1550,7 +1550,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
         public virtual Task<DescribeLaunchConfigurationTemplatesResponse> DescribeLaunchConfigurationTemplatesAsync(DescribeLaunchConfigurationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
             
@@ -1580,7 +1580,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeReplicationConfigurationTemplates">REST API Reference for DescribeReplicationConfigurationTemplates Operation</seealso>
         public virtual DescribeReplicationConfigurationTemplatesResponse DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigurationTemplatesResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeReplicationConfigurationTemplates">REST API Reference for DescribeReplicationConfigurationTemplates Operation</seealso>
         public virtual Task<DescribeReplicationConfigurationTemplatesResponse> DescribeReplicationConfigurationTemplatesAsync(DescribeReplicationConfigurationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationConfigurationTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationConfigurationTemplatesResponseUnmarshaller.Instance;
             
@@ -1636,7 +1636,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeSourceServers">REST API Reference for DescribeSourceServers Operation</seealso>
         public virtual DescribeSourceServersResponse DescribeSourceServers(DescribeSourceServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceServersResponseUnmarshaller.Instance;
 
@@ -1662,7 +1662,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeSourceServers">REST API Reference for DescribeSourceServers Operation</seealso>
         public virtual Task<DescribeSourceServersResponse> DescribeSourceServersAsync(DescribeSourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceServersResponseUnmarshaller.Instance;
             
@@ -1692,7 +1692,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">REST API Reference for DescribeVcenterClients Operation</seealso>
         public virtual DescribeVcenterClientsResponse DescribeVcenterClients(DescribeVcenterClientsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVcenterClientsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVcenterClientsResponseUnmarshaller.Instance;
 
@@ -1721,7 +1721,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeVcenterClients">REST API Reference for DescribeVcenterClients Operation</seealso>
         public virtual Task<DescribeVcenterClientsResponse> DescribeVcenterClientsAsync(DescribeVcenterClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVcenterClientsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVcenterClientsResponseUnmarshaller.Instance;
             
@@ -1752,7 +1752,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
         public virtual DisassociateApplicationsResponse DisassociateApplications(DisassociateApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
 
@@ -1782,7 +1782,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications">REST API Reference for DisassociateApplications Operation</seealso>
         public virtual Task<DisassociateApplicationsResponse> DisassociateApplicationsAsync(DisassociateApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateApplicationsResponseUnmarshaller.Instance;
             
@@ -1813,7 +1813,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
         public virtual DisassociateSourceServersResponse DisassociateSourceServers(DisassociateSourceServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
 
@@ -1843,7 +1843,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers">REST API Reference for DisassociateSourceServers Operation</seealso>
         public virtual Task<DisassociateSourceServersResponse> DisassociateSourceServersAsync(DisassociateSourceServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateSourceServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateSourceServersResponseUnmarshaller.Instance;
             
@@ -1884,7 +1884,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">REST API Reference for DisconnectFromService Operation</seealso>
         public virtual DisconnectFromServiceResponse DisconnectFromService(DisconnectFromServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectFromServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectFromServiceResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">REST API Reference for DisconnectFromService Operation</seealso>
         public virtual Task<DisconnectFromServiceResponse> DisconnectFromServiceAsync(DisconnectFromServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisconnectFromServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisconnectFromServiceResponseUnmarshaller.Instance;
             
@@ -1966,7 +1966,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">REST API Reference for FinalizeCutover Operation</seealso>
         public virtual FinalizeCutoverResponse FinalizeCutover(FinalizeCutoverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FinalizeCutoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FinalizeCutoverResponseUnmarshaller.Instance;
 
@@ -2007,7 +2007,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">REST API Reference for FinalizeCutover Operation</seealso>
         public virtual Task<FinalizeCutoverResponse> FinalizeCutoverAsync(FinalizeCutoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FinalizeCutoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FinalizeCutoverResponseUnmarshaller.Instance;
             
@@ -2034,7 +2034,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         public virtual GetLaunchConfigurationResponse GetLaunchConfiguration(GetLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -2060,7 +2060,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetLaunchConfiguration">REST API Reference for GetLaunchConfiguration Operation</seealso>
         public virtual Task<GetLaunchConfigurationResponse> GetLaunchConfigurationAsync(GetLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLaunchConfigurationResponseUnmarshaller.Instance;
             
@@ -2087,7 +2087,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetReplicationConfiguration">REST API Reference for GetReplicationConfiguration Operation</seealso>
         public virtual GetReplicationConfigurationResponse GetReplicationConfiguration(GetReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -2113,7 +2113,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetReplicationConfiguration">REST API Reference for GetReplicationConfiguration Operation</seealso>
         public virtual Task<GetReplicationConfigurationResponse> GetReplicationConfigurationAsync(GetReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetReplicationConfigurationResponseUnmarshaller.Instance;
             
@@ -2140,7 +2140,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual InitializeServiceResponse InitializeService(InitializeServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
 
@@ -2166,7 +2166,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual Task<InitializeServiceResponse> InitializeServiceAsync(InitializeServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
             
@@ -2190,7 +2190,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -2213,7 +2213,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -2240,7 +2240,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
 
@@ -2266,7 +2266,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
         public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
             
@@ -2293,7 +2293,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
         public virtual ListExportErrorsResponse ListExportErrors(ListExportErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
 
@@ -2319,7 +2319,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
         public virtual Task<ListExportErrorsResponse> ListExportErrorsAsync(ListExportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
             
@@ -2343,7 +2343,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
 
@@ -2366,7 +2366,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
             
@@ -2393,7 +2393,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
         public virtual ListImportErrorsResponse ListImportErrors(ListImportErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
 
@@ -2419,7 +2419,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
         public virtual Task<ListImportErrorsResponse> ListImportErrorsAsync(ListImportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
             
@@ -2446,7 +2446,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual ListImportsResponse ListImports(ListImportsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
 
@@ -2472,7 +2472,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
         public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
             
@@ -2499,7 +2499,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
         public virtual ListManagedAccountsResponse ListManagedAccounts(ListManagedAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
 
@@ -2525,7 +2525,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts">REST API Reference for ListManagedAccounts Operation</seealso>
         public virtual Task<ListManagedAccountsResponse> ListManagedAccountsAsync(ListManagedAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListManagedAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
             
@@ -2552,7 +2552,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
         public virtual ListSourceServerActionsResponse ListSourceServerActions(ListSourceServerActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
 
@@ -2578,7 +2578,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions">REST API Reference for ListSourceServerActions Operation</seealso>
         public virtual Task<ListSourceServerActionsResponse> ListSourceServerActionsAsync(ListSourceServerActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSourceServerActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSourceServerActionsResponseUnmarshaller.Instance;
             
@@ -2615,7 +2615,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2651,7 +2651,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2678,7 +2678,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
         public virtual ListTemplateActionsResponse ListTemplateActions(ListTemplateActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
 
@@ -2704,7 +2704,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions">REST API Reference for ListTemplateActions Operation</seealso>
         public virtual Task<ListTemplateActionsResponse> ListTemplateActionsAsync(ListTemplateActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplateActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplateActionsResponseUnmarshaller.Instance;
             
@@ -2728,7 +2728,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
         public virtual ListWavesResponse ListWaves(ListWavesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
 
@@ -2751,7 +2751,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves">REST API Reference for ListWaves Operation</seealso>
         public virtual Task<ListWavesResponse> ListWavesAsync(ListWavesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWavesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWavesResponseUnmarshaller.Instance;
             
@@ -2784,7 +2784,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">REST API Reference for MarkAsArchived Operation</seealso>
         public virtual MarkAsArchivedResponse MarkAsArchived(MarkAsArchivedRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MarkAsArchivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MarkAsArchivedResponseUnmarshaller.Instance;
 
@@ -2816,7 +2816,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/MarkAsArchived">REST API Reference for MarkAsArchived Operation</seealso>
         public virtual Task<MarkAsArchivedResponse> MarkAsArchivedAsync(MarkAsArchivedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MarkAsArchivedRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MarkAsArchivedResponseUnmarshaller.Instance;
             
@@ -2853,7 +2853,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
         public virtual PauseReplicationResponse PauseReplication(PauseReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
 
@@ -2889,7 +2889,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication">REST API Reference for PauseReplication Operation</seealso>
         public virtual Task<PauseReplicationResponse> PauseReplicationAsync(PauseReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PauseReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PauseReplicationResponseUnmarshaller.Instance;
             
@@ -2923,7 +2923,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
         public virtual PutSourceServerActionResponse PutSourceServerAction(PutSourceServerActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
 
@@ -2956,7 +2956,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction">REST API Reference for PutSourceServerAction Operation</seealso>
         public virtual Task<PutSourceServerActionResponse> PutSourceServerActionAsync(PutSourceServerActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSourceServerActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSourceServerActionResponseUnmarshaller.Instance;
             
@@ -2990,7 +2990,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
         public virtual PutTemplateActionResponse PutTemplateAction(PutTemplateActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
 
@@ -3023,7 +3023,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction">REST API Reference for PutTemplateAction Operation</seealso>
         public virtual Task<PutTemplateActionResponse> PutTemplateActionAsync(PutTemplateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutTemplateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutTemplateActionResponseUnmarshaller.Instance;
             
@@ -3053,7 +3053,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
         public virtual RemoveSourceServerActionResponse RemoveSourceServerAction(RemoveSourceServerActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
 
@@ -3082,7 +3082,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction">REST API Reference for RemoveSourceServerAction Operation</seealso>
         public virtual Task<RemoveSourceServerActionResponse> RemoveSourceServerActionAsync(RemoveSourceServerActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceServerActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceServerActionResponseUnmarshaller.Instance;
             
@@ -3112,7 +3112,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
         public virtual RemoveTemplateActionResponse RemoveTemplateAction(RemoveTemplateActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
 
@@ -3141,7 +3141,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction">REST API Reference for RemoveTemplateAction Operation</seealso>
         public virtual Task<RemoveTemplateActionResponse> RemoveTemplateActionAsync(RemoveTemplateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTemplateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTemplateActionResponseUnmarshaller.Instance;
             
@@ -3178,7 +3178,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
         public virtual ResumeReplicationResponse ResumeReplication(ResumeReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
 
@@ -3214,7 +3214,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication">REST API Reference for ResumeReplication Operation</seealso>
         public virtual Task<ResumeReplicationResponse> ResumeReplicationAsync(ResumeReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeReplicationResponseUnmarshaller.Instance;
             
@@ -3247,7 +3247,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RetryDataReplication">REST API Reference for RetryDataReplication Operation</seealso>
         public virtual RetryDataReplicationResponse RetryDataReplication(RetryDataReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryDataReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryDataReplicationResponseUnmarshaller.Instance;
 
@@ -3279,7 +3279,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RetryDataReplication">REST API Reference for RetryDataReplication Operation</seealso>
         public virtual Task<RetryDataReplicationResponse> RetryDataReplicationAsync(RetryDataReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetryDataReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetryDataReplicationResponseUnmarshaller.Instance;
             
@@ -3312,7 +3312,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartCutover">REST API Reference for StartCutover Operation</seealso>
         public virtual StartCutoverResponse StartCutover(StartCutoverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCutoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCutoverResponseUnmarshaller.Instance;
 
@@ -3344,7 +3344,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartCutover">REST API Reference for StartCutover Operation</seealso>
         public virtual Task<StartCutoverResponse> StartCutoverAsync(StartCutoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCutoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCutoverResponseUnmarshaller.Instance;
             
@@ -3374,7 +3374,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
         public virtual StartExportResponse StartExport(StartExportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
 
@@ -3403,7 +3403,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
         public virtual Task<StartExportResponse> StartExportAsync(StartExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
             
@@ -3440,7 +3440,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
         public virtual StartImportResponse StartImport(StartImportRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
 
@@ -3476,7 +3476,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
         public virtual Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
             
@@ -3513,7 +3513,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
         public virtual StartReplicationResponse StartReplication(StartReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
 
@@ -3549,7 +3549,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">REST API Reference for StartReplication Operation</seealso>
         public virtual Task<StartReplicationResponse> StartReplicationAsync(StartReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartReplicationResponseUnmarshaller.Instance;
             
@@ -3582,7 +3582,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartTest">REST API Reference for StartTest Operation</seealso>
         public virtual StartTestResponse StartTest(StartTestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTestResponseUnmarshaller.Instance;
 
@@ -3614,7 +3614,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartTest">REST API Reference for StartTest Operation</seealso>
         public virtual Task<StartTestResponse> StartTestAsync(StartTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTestResponseUnmarshaller.Instance;
             
@@ -3651,7 +3651,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
         public virtual StopReplicationResponse StopReplication(StopReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
 
@@ -3687,7 +3687,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication">REST API Reference for StopReplication Operation</seealso>
         public virtual Task<StopReplicationResponse> StopReplicationAsync(StopReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopReplicationResponseUnmarshaller.Instance;
             
@@ -3727,7 +3727,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3766,7 +3766,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3799,7 +3799,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/TerminateTargetInstances">REST API Reference for TerminateTargetInstances Operation</seealso>
         public virtual TerminateTargetInstancesResponse TerminateTargetInstances(TerminateTargetInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateTargetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateTargetInstancesResponseUnmarshaller.Instance;
 
@@ -3831,7 +3831,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/TerminateTargetInstances">REST API Reference for TerminateTargetInstances Operation</seealso>
         public virtual Task<TerminateTargetInstancesResponse> TerminateTargetInstancesAsync(TerminateTargetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateTargetInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateTargetInstancesResponseUnmarshaller.Instance;
             
@@ -3861,7 +3861,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
         public virtual UnarchiveApplicationResponse UnarchiveApplication(UnarchiveApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
 
@@ -3890,7 +3890,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication">REST API Reference for UnarchiveApplication Operation</seealso>
         public virtual Task<UnarchiveApplicationResponse> UnarchiveApplicationAsync(UnarchiveApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnarchiveApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnarchiveApplicationResponseUnmarshaller.Instance;
             
@@ -3920,7 +3920,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
         public virtual UnarchiveWaveResponse UnarchiveWave(UnarchiveWaveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
 
@@ -3949,7 +3949,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave">REST API Reference for UnarchiveWave Operation</seealso>
         public virtual Task<UnarchiveWaveResponse> UnarchiveWaveAsync(UnarchiveWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnarchiveWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnarchiveWaveResponseUnmarshaller.Instance;
             
@@ -3987,7 +3987,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4024,7 +4024,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4055,7 +4055,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -4085,7 +4085,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
@@ -4115,7 +4115,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
 
@@ -4144,7 +4144,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
         public virtual Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
             
@@ -4184,7 +4184,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfiguration">REST API Reference for UpdateLaunchConfiguration Operation</seealso>
         public virtual UpdateLaunchConfigurationResponse UpdateLaunchConfiguration(UpdateLaunchConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationResponseUnmarshaller.Instance;
 
@@ -4223,7 +4223,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfiguration">REST API Reference for UpdateLaunchConfiguration Operation</seealso>
         public virtual Task<UpdateLaunchConfigurationResponse> UpdateLaunchConfigurationAsync(UpdateLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationResponseUnmarshaller.Instance;
             
@@ -4256,7 +4256,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
         public virtual UpdateLaunchConfigurationTemplateResponse UpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -4288,7 +4288,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
         public virtual Task<UpdateLaunchConfigurationTemplateResponse> UpdateLaunchConfigurationTemplateAsync(UpdateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -4325,7 +4325,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfiguration">REST API Reference for UpdateReplicationConfiguration Operation</seealso>
         public virtual UpdateReplicationConfigurationResponse UpdateReplicationConfiguration(UpdateReplicationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationResponseUnmarshaller.Instance;
 
@@ -4361,7 +4361,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfiguration">REST API Reference for UpdateReplicationConfiguration Operation</seealso>
         public virtual Task<UpdateReplicationConfigurationResponse> UpdateReplicationConfigurationAsync(UpdateReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationResponseUnmarshaller.Instance;
             
@@ -4394,7 +4394,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfigurationTemplate">REST API Reference for UpdateReplicationConfigurationTemplate Operation</seealso>
         public virtual UpdateReplicationConfigurationTemplateResponse UpdateReplicationConfigurationTemplate(UpdateReplicationConfigurationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
 
@@ -4426,7 +4426,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfigurationTemplate">REST API Reference for UpdateReplicationConfigurationTemplate Operation</seealso>
         public virtual Task<UpdateReplicationConfigurationTemplateResponse> UpdateReplicationConfigurationTemplateAsync(UpdateReplicationConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateReplicationConfigurationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateReplicationConfigurationTemplateResponseUnmarshaller.Instance;
             
@@ -4457,7 +4457,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">REST API Reference for UpdateSourceServer Operation</seealso>
         public virtual UpdateSourceServerResponse UpdateSourceServer(UpdateSourceServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceServerResponseUnmarshaller.Instance;
 
@@ -4487,7 +4487,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer">REST API Reference for UpdateSourceServer Operation</seealso>
         public virtual Task<UpdateSourceServerResponse> UpdateSourceServerAsync(UpdateSourceServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceServerResponseUnmarshaller.Instance;
             
@@ -4522,7 +4522,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">REST API Reference for UpdateSourceServerReplicationType Operation</seealso>
         public virtual UpdateSourceServerReplicationTypeResponse UpdateSourceServerReplicationType(UpdateSourceServerReplicationTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceServerReplicationTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceServerReplicationTypeResponseUnmarshaller.Instance;
 
@@ -4556,7 +4556,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">REST API Reference for UpdateSourceServerReplicationType Operation</seealso>
         public virtual Task<UpdateSourceServerReplicationTypeResponse> UpdateSourceServerReplicationTypeAsync(UpdateSourceServerReplicationTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceServerReplicationTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceServerReplicationTypeResponseUnmarshaller.Instance;
             
@@ -4587,7 +4587,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
         public virtual UpdateWaveResponse UpdateWave(UpdateWaveRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
 
@@ -4617,7 +4617,7 @@ namespace Amazon.Mgn
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave">REST API Reference for UpdateWave Operation</seealso>
         public virtual Task<UpdateWaveResponse> UpdateWaveAsync(UpdateWaveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWaveRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWaveResponseUnmarshaller.Instance;
             

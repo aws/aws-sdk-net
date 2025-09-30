@@ -276,7 +276,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual BatchPutPropertyValuesResponse BatchPutPropertyValues(BatchPutPropertyValuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutPropertyValuesResponseUnmarshaller.Instance;
 
@@ -309,7 +309,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyValues">REST API Reference for BatchPutPropertyValues Operation</seealso>
         public virtual Task<BatchPutPropertyValuesResponse> BatchPutPropertyValuesAsync(BatchPutPropertyValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutPropertyValuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutPropertyValuesResponseUnmarshaller.Instance;
 
@@ -322,7 +322,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CancelMetadataTransferJobResponse CancelMetadataTransferJob(CancelMetadataTransferJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -361,7 +361,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob">REST API Reference for CancelMetadataTransferJob Operation</seealso>
         public virtual Task<CancelMetadataTransferJobResponse> CancelMetadataTransferJobAsync(CancelMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateComponentTypeResponse CreateComponentType(CreateComponentTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentTypeResponseUnmarshaller.Instance;
 
@@ -413,7 +413,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateComponentType">REST API Reference for CreateComponentType Operation</seealso>
         public virtual Task<CreateComponentTypeResponse> CreateComponentTypeAsync(CreateComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateComponentTypeResponseUnmarshaller.Instance;
 
@@ -426,7 +426,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateEntityResponse CreateEntity(CreateEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEntityResponseUnmarshaller.Instance;
 
@@ -465,7 +465,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateEntity">REST API Reference for CreateEntity Operation</seealso>
         public virtual Task<CreateEntityResponse> CreateEntityAsync(CreateEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEntityResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateMetadataTransferJobResponse CreateMetadataTransferJob(CreateMetadataTransferJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob">REST API Reference for CreateMetadataTransferJob Operation</seealso>
         public virtual Task<CreateMetadataTransferJobResponse> CreateMetadataTransferJobAsync(CreateMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -533,7 +533,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateSceneResponse CreateScene(CreateSceneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSceneResponseUnmarshaller.Instance;
 
@@ -572,7 +572,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateScene">REST API Reference for CreateScene Operation</seealso>
         public virtual Task<CreateSceneResponse> CreateSceneAsync(CreateSceneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSceneResponseUnmarshaller.Instance;
 
@@ -585,7 +585,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateSyncJobResponse CreateSyncJob(CreateSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob">REST API Reference for CreateSyncJob Operation</seealso>
         public virtual Task<CreateSyncJobResponse> CreateSyncJobAsync(CreateSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSyncJobResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -676,7 +676,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
         public virtual Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
 
@@ -689,7 +689,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual DeleteComponentTypeResponse DeleteComponentType(DeleteComponentTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentTypeResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteComponentType">REST API Reference for DeleteComponentType Operation</seealso>
         public virtual Task<DeleteComponentTypeResponse> DeleteComponentTypeAsync(DeleteComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteComponentTypeResponseUnmarshaller.Instance;
 
@@ -738,7 +738,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual DeleteEntityResponse DeleteEntity(DeleteEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEntityResponseUnmarshaller.Instance;
 
@@ -774,7 +774,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteEntity">REST API Reference for DeleteEntity Operation</seealso>
         public virtual Task<DeleteEntityResponse> DeleteEntityAsync(DeleteEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEntityResponseUnmarshaller.Instance;
 
@@ -787,7 +787,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual DeleteSceneResponse DeleteScene(DeleteSceneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSceneResponseUnmarshaller.Instance;
 
@@ -823,7 +823,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteScene">REST API Reference for DeleteScene Operation</seealso>
         public virtual Task<DeleteSceneResponse> DeleteSceneAsync(DeleteSceneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSceneResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual DeleteSyncJobResponse DeleteSyncJob(DeleteSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
 
@@ -875,7 +875,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob">REST API Reference for DeleteSyncJob Operation</seealso>
         public virtual Task<DeleteSyncJobResponse> DeleteSyncJobAsync(DeleteSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSyncJobResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -924,7 +924,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
         public virtual Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(DeleteWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
 
@@ -937,7 +937,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -985,7 +985,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -998,7 +998,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetComponentTypeResponse GetComponentType(GetComponentTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentTypeResponseUnmarshaller.Instance;
 
@@ -1034,7 +1034,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">REST API Reference for GetComponentType Operation</seealso>
         public virtual Task<GetComponentTypeResponse> GetComponentTypeAsync(GetComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetComponentTypeResponseUnmarshaller.Instance;
 
@@ -1047,7 +1047,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetEntityResponse GetEntity(GetEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityResponseUnmarshaller.Instance;
 
@@ -1083,7 +1083,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetEntity">REST API Reference for GetEntity Operation</seealso>
         public virtual Task<GetEntityResponse> GetEntityAsync(GetEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetMetadataTransferJobResponse GetMetadataTransferJob(GetMetadataTransferJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -1132,7 +1132,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob">REST API Reference for GetMetadataTransferJob Operation</seealso>
         public virtual Task<GetMetadataTransferJobResponse> GetMetadataTransferJobAsync(GetMetadataTransferJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetadataTransferJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetadataTransferJobResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetPricingPlanResponse GetPricingPlan(GetPricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
         public virtual Task<GetPricingPlanResponse> GetPricingPlanAsync(GetPricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
 
@@ -1191,7 +1191,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetPropertyValueResponse GetPropertyValue(GetPropertyValueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertyValueResponseUnmarshaller.Instance;
 
@@ -1239,7 +1239,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValue">REST API Reference for GetPropertyValue Operation</seealso>
         public virtual Task<GetPropertyValueResponse> GetPropertyValueAsync(GetPropertyValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertyValueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertyValueResponseUnmarshaller.Instance;
 
@@ -1252,7 +1252,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetPropertyValueHistoryResponse GetPropertyValueHistory(GetPropertyValueHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -1302,7 +1302,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPropertyValueHistory">REST API Reference for GetPropertyValueHistory Operation</seealso>
         public virtual Task<GetPropertyValueHistoryResponse> GetPropertyValueHistoryAsync(GetPropertyValueHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertyValueHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertyValueHistoryResponseUnmarshaller.Instance;
 
@@ -1315,7 +1315,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetSceneResponse GetScene(GetSceneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSceneResponseUnmarshaller.Instance;
 
@@ -1351,7 +1351,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetScene">REST API Reference for GetScene Operation</seealso>
         public virtual Task<GetSceneResponse> GetSceneAsync(GetSceneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSceneResponseUnmarshaller.Instance;
 
@@ -1364,7 +1364,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetSyncJobResponse GetSyncJob(GetSyncJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
 
@@ -1403,7 +1403,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob">REST API Reference for GetSyncJob Operation</seealso>
         public virtual Task<GetSyncJobResponse> GetSyncJobAsync(GetSyncJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSyncJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSyncJobResponseUnmarshaller.Instance;
 
@@ -1416,7 +1416,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual GetWorkspaceResponse GetWorkspace(GetWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkspaceResponseUnmarshaller.Instance;
 
@@ -1452,7 +1452,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetWorkspace">REST API Reference for GetWorkspace Operation</seealso>
         public virtual Task<GetWorkspaceResponse> GetWorkspaceAsync(GetWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkspaceResponseUnmarshaller.Instance;
 
@@ -1465,7 +1465,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListComponentsResponse ListComponents(ListComponentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -1501,7 +1501,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents">REST API Reference for ListComponents Operation</seealso>
         public virtual Task<ListComponentsResponse> ListComponentsAsync(ListComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentsResponseUnmarshaller.Instance;
 
@@ -1514,7 +1514,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListComponentTypesResponse ListComponentTypes(ListComponentTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentTypesResponseUnmarshaller.Instance;
 
@@ -1547,7 +1547,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypes">REST API Reference for ListComponentTypes Operation</seealso>
         public virtual Task<ListComponentTypesResponse> ListComponentTypesAsync(ListComponentTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListComponentTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListComponentTypesResponseUnmarshaller.Instance;
 
@@ -1560,7 +1560,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListEntitiesResponse ListEntities(ListEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
@@ -1593,7 +1593,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListEntities">REST API Reference for ListEntities Operation</seealso>
         public virtual Task<ListEntitiesResponse> ListEntitiesAsync(ListEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
@@ -1606,7 +1606,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListMetadataTransferJobsResponse ListMetadataTransferJobs(ListMetadataTransferJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
 
@@ -1639,7 +1639,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs">REST API Reference for ListMetadataTransferJobs Operation</seealso>
         public virtual Task<ListMetadataTransferJobsResponse> ListMetadataTransferJobsAsync(ListMetadataTransferJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMetadataTransferJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMetadataTransferJobsResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListPropertiesResponse ListProperties(ListPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties">REST API Reference for ListProperties Operation</seealso>
         public virtual Task<ListPropertiesResponse> ListPropertiesAsync(ListPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPropertiesResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListScenesResponse ListScenes(ListScenesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScenesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScenesResponseUnmarshaller.Instance;
 
@@ -1734,7 +1734,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListScenes">REST API Reference for ListScenes Operation</seealso>
         public virtual Task<ListScenesResponse> ListScenesAsync(ListScenesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListScenesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListScenesResponseUnmarshaller.Instance;
 
@@ -1747,7 +1747,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListSyncJobsResponse ListSyncJobs(ListSyncJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs">REST API Reference for ListSyncJobs Operation</seealso>
         public virtual Task<ListSyncJobsResponse> ListSyncJobsAsync(ListSyncJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncJobsResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListSyncResourcesResponse ListSyncResources(ListSyncResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources">REST API Reference for ListSyncResources Operation</seealso>
         public virtual Task<ListSyncResourcesResponse> ListSyncResourcesAsync(ListSyncResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSyncResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSyncResourcesResponseUnmarshaller.Instance;
 
@@ -1845,7 +1845,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1872,7 +1872,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1885,7 +1885,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1918,7 +1918,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
         public virtual Task<ListWorkspacesResponse> ListWorkspacesAsync(ListWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
 
@@ -1931,7 +1931,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1961,7 +1961,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1974,7 +1974,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2001,7 +2001,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2014,7 +2014,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UpdateComponentTypeResponse UpdateComponentType(UpdateComponentTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentTypeResponseUnmarshaller.Instance;
 
@@ -2053,7 +2053,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateComponentType">REST API Reference for UpdateComponentType Operation</seealso>
         public virtual Task<UpdateComponentTypeResponse> UpdateComponentTypeAsync(UpdateComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateComponentTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateComponentTypeResponseUnmarshaller.Instance;
 
@@ -2066,7 +2066,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UpdateEntityResponse UpdateEntity(UpdateEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEntityResponseUnmarshaller.Instance;
 
@@ -2108,7 +2108,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateEntity">REST API Reference for UpdateEntity Operation</seealso>
         public virtual Task<UpdateEntityResponse> UpdateEntityAsync(UpdateEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEntityResponseUnmarshaller.Instance;
 
@@ -2121,7 +2121,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
 
@@ -2154,7 +2154,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
         public virtual Task<UpdatePricingPlanResponse> UpdatePricingPlanAsync(UpdatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
 
@@ -2167,7 +2167,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UpdateSceneResponse UpdateScene(UpdateSceneRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSceneResponseUnmarshaller.Instance;
 
@@ -2203,7 +2203,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateScene">REST API Reference for UpdateScene Operation</seealso>
         public virtual Task<UpdateSceneResponse> UpdateSceneAsync(UpdateSceneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSceneRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSceneResponseUnmarshaller.Instance;
 
@@ -2216,7 +2216,7 @@ namespace Amazon.IoTTwinMaker
 
         internal virtual UpdateWorkspaceResponse UpdateWorkspace(UpdateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceResponseUnmarshaller.Instance;
 
@@ -2255,7 +2255,7 @@ namespace Amazon.IoTTwinMaker
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateWorkspace">REST API Reference for UpdateWorkspace Operation</seealso>
         public virtual Task<UpdateWorkspaceResponse> UpdateWorkspaceAsync(UpdateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceResponseUnmarshaller.Instance;
 

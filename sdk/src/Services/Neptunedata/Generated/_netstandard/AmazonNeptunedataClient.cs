@@ -263,7 +263,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelGremlinQueryResponse CancelGremlinQuery(CancelGremlinQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelGremlinQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelGremlinQueryResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelGremlinQuery">REST API Reference for CancelGremlinQuery Operation</seealso>
         public virtual Task<CancelGremlinQueryResponse> CancelGremlinQueryAsync(CancelGremlinQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelGremlinQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelGremlinQueryResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelLoaderJobResponse CancelLoaderJob(CancelLoaderJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLoaderJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLoaderJobResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelLoaderJob">REST API Reference for CancelLoaderJob Operation</seealso>
         public virtual Task<CancelLoaderJobResponse> CancelLoaderJobAsync(CancelLoaderJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelLoaderJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelLoaderJobResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelMLDataProcessingJobResponse CancelMLDataProcessingJob(CancelMLDataProcessingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -494,7 +494,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLDataProcessingJob">REST API Reference for CancelMLDataProcessingJob Operation</seealso>
         public virtual Task<CancelMLDataProcessingJobResponse> CancelMLDataProcessingJobAsync(CancelMLDataProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -507,7 +507,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelMLModelTrainingJobResponse CancelMLModelTrainingJob(CancelMLModelTrainingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLModelTrainingJob">REST API Reference for CancelMLModelTrainingJob Operation</seealso>
         public virtual Task<CancelMLModelTrainingJobResponse> CancelMLModelTrainingJobAsync(CancelMLModelTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelMLModelTransformJobResponse CancelMLModelTransformJob(CancelMLModelTransformJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLModelTransformJobResponseUnmarshaller.Instance;
 
@@ -646,7 +646,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLModelTransformJob">REST API Reference for CancelMLModelTransformJob Operation</seealso>
         public virtual Task<CancelMLModelTransformJobResponse> CancelMLModelTransformJobAsync(CancelMLModelTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLModelTransformJobResponseUnmarshaller.Instance;
 
@@ -659,7 +659,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CancelOpenCypherQueryResponse CancelOpenCypherQuery(CancelOpenCypherQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelOpenCypherQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelOpenCypherQueryResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelOpenCypherQuery">REST API Reference for CancelOpenCypherQuery Operation</seealso>
         public virtual Task<CancelOpenCypherQueryResponse> CancelOpenCypherQueryAsync(CancelOpenCypherQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelOpenCypherQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelOpenCypherQueryResponseUnmarshaller.Instance;
 
@@ -748,7 +748,7 @@ namespace Amazon.Neptunedata
 
         internal virtual CreateMLEndpointResponse CreateMLEndpoint(CreateMLEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLEndpointResponseUnmarshaller.Instance;
 
@@ -812,7 +812,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CreateMLEndpoint">REST API Reference for CreateMLEndpoint Operation</seealso>
         public virtual Task<CreateMLEndpointResponse> CreateMLEndpointAsync(CreateMLEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLEndpointResponseUnmarshaller.Instance;
 
@@ -825,7 +825,7 @@ namespace Amazon.Neptunedata
 
         internal virtual DeleteMLEndpointResponse DeleteMLEndpoint(DeleteMLEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLEndpointResponseUnmarshaller.Instance;
 
@@ -888,7 +888,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeleteMLEndpoint">REST API Reference for DeleteMLEndpoint Operation</seealso>
         public virtual Task<DeleteMLEndpointResponse> DeleteMLEndpointAsync(DeleteMLEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLEndpointResponseUnmarshaller.Instance;
 
@@ -901,7 +901,7 @@ namespace Amazon.Neptunedata
 
         internal virtual DeletePropertygraphStatisticsResponse DeletePropertygraphStatistics(DeletePropertygraphStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -969,7 +969,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeletePropertygraphStatistics">REST API Reference for DeletePropertygraphStatistics Operation</seealso>
         public virtual Task<DeletePropertygraphStatisticsResponse> DeletePropertygraphStatisticsAsync(DeletePropertygraphStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -982,7 +982,7 @@ namespace Amazon.Neptunedata
 
         internal virtual DeleteSparqlStatisticsResponse DeleteSparqlStatistics(DeleteSparqlStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -1050,7 +1050,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeleteSparqlStatistics">REST API Reference for DeleteSparqlStatistics Operation</seealso>
         public virtual Task<DeleteSparqlStatisticsResponse> DeleteSparqlStatisticsAsync(DeleteSparqlStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteFastResetResponse ExecuteFastReset(ExecuteFastResetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteFastResetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteFastResetResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteFastReset">REST API Reference for ExecuteFastReset Operation</seealso>
         public virtual Task<ExecuteFastResetResponse> ExecuteFastResetAsync(ExecuteFastResetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteFastResetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteFastResetResponseUnmarshaller.Instance;
 
@@ -1154,7 +1154,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteGremlinExplainQueryResponse ExecuteGremlinExplainQuery(ExecuteGremlinExplainQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinExplainQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinExplainQueryResponseUnmarshaller.Instance;
 
@@ -1282,7 +1282,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinExplainQuery">REST API Reference for ExecuteGremlinExplainQuery Operation</seealso>
         public virtual Task<ExecuteGremlinExplainQueryResponse> ExecuteGremlinExplainQueryAsync(ExecuteGremlinExplainQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinExplainQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinExplainQueryResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteGremlinProfileQueryResponse ExecuteGremlinProfileQuery(ExecuteGremlinProfileQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinProfileQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinProfileQueryResponseUnmarshaller.Instance;
 
@@ -1397,7 +1397,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinProfileQuery">REST API Reference for ExecuteGremlinProfileQuery Operation</seealso>
         public virtual Task<ExecuteGremlinProfileQueryResponse> ExecuteGremlinProfileQueryAsync(ExecuteGremlinProfileQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinProfileQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinProfileQueryResponseUnmarshaller.Instance;
 
@@ -1410,7 +1410,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteGremlinQueryResponse ExecuteGremlinQuery(ExecuteGremlinQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinQueryResponseUnmarshaller.Instance;
 
@@ -1529,7 +1529,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinQuery">REST API Reference for ExecuteGremlinQuery Operation</seealso>
         public virtual Task<ExecuteGremlinQueryResponse> ExecuteGremlinQueryAsync(ExecuteGremlinQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteGremlinQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteGremlinQueryResponseUnmarshaller.Instance;
 
@@ -1542,7 +1542,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteOpenCypherExplainQueryResponse ExecuteOpenCypherExplainQuery(ExecuteOpenCypherExplainQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteOpenCypherExplainQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteOpenCypherExplainQueryResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteOpenCypherExplainQuery">REST API Reference for ExecuteOpenCypherExplainQuery Operation</seealso>
         public virtual Task<ExecuteOpenCypherExplainQueryResponse> ExecuteOpenCypherExplainQueryAsync(ExecuteOpenCypherExplainQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteOpenCypherExplainQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteOpenCypherExplainQueryResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ExecuteOpenCypherQueryResponse ExecuteOpenCypherQuery(ExecuteOpenCypherQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteOpenCypherQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteOpenCypherQueryResponseUnmarshaller.Instance;
 
@@ -1791,7 +1791,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteOpenCypherQuery">REST API Reference for ExecuteOpenCypherQuery Operation</seealso>
         public virtual Task<ExecuteOpenCypherQueryResponse> ExecuteOpenCypherQueryAsync(ExecuteOpenCypherQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteOpenCypherQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteOpenCypherQueryResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetEngineStatusResponse GetEngineStatus(GetEngineStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngineStatusResponseUnmarshaller.Instance;
 
@@ -1857,7 +1857,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetEngineStatus">REST API Reference for GetEngineStatus Operation</seealso>
         public virtual Task<GetEngineStatusResponse> GetEngineStatusAsync(GetEngineStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEngineStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEngineStatusResponseUnmarshaller.Instance;
 
@@ -1870,7 +1870,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetGremlinQueryStatusResponse GetGremlinQueryStatus(GetGremlinQueryStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGremlinQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGremlinQueryStatusResponseUnmarshaller.Instance;
 
@@ -1955,7 +1955,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetGremlinQueryStatus">REST API Reference for GetGremlinQueryStatus Operation</seealso>
         public virtual Task<GetGremlinQueryStatusResponse> GetGremlinQueryStatusAsync(GetGremlinQueryStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGremlinQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGremlinQueryStatusResponseUnmarshaller.Instance;
 
@@ -1968,7 +1968,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetLoaderJobStatusResponse GetLoaderJobStatus(GetLoaderJobStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoaderJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoaderJobStatusResponseUnmarshaller.Instance;
 
@@ -2042,7 +2042,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetLoaderJobStatus">REST API Reference for GetLoaderJobStatus Operation</seealso>
         public virtual Task<GetLoaderJobStatusResponse> GetLoaderJobStatusAsync(GetLoaderJobStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLoaderJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLoaderJobStatusResponseUnmarshaller.Instance;
 
@@ -2055,7 +2055,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetMLDataProcessingJobResponse GetMLDataProcessingJob(GetMLDataProcessingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -2118,7 +2118,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLDataProcessingJob">REST API Reference for GetMLDataProcessingJob Operation</seealso>
         public virtual Task<GetMLDataProcessingJobResponse> GetMLDataProcessingJobAsync(GetMLDataProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -2131,7 +2131,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetMLEndpointResponse GetMLEndpoint(GetMLEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLEndpointResponseUnmarshaller.Instance;
 
@@ -2194,7 +2194,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLEndpoint">REST API Reference for GetMLEndpoint Operation</seealso>
         public virtual Task<GetMLEndpointResponse> GetMLEndpointAsync(GetMLEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLEndpointResponseUnmarshaller.Instance;
 
@@ -2207,7 +2207,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetMLModelTrainingJobResponse GetMLModelTrainingJob(GetMLModelTrainingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -2270,7 +2270,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLModelTrainingJob">REST API Reference for GetMLModelTrainingJob Operation</seealso>
         public virtual Task<GetMLModelTrainingJobResponse> GetMLModelTrainingJobAsync(GetMLModelTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -2283,7 +2283,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetMLModelTransformJobResponse GetMLModelTransformJob(GetMLModelTransformJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLModelTransformJobResponseUnmarshaller.Instance;
 
@@ -2346,7 +2346,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLModelTransformJob">REST API Reference for GetMLModelTransformJob Operation</seealso>
         public virtual Task<GetMLModelTransformJobResponse> GetMLModelTransformJobAsync(GetMLModelTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLModelTransformJobResponseUnmarshaller.Instance;
 
@@ -2359,7 +2359,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetOpenCypherQueryStatusResponse GetOpenCypherQueryStatus(GetOpenCypherQueryStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpenCypherQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpenCypherQueryStatusResponseUnmarshaller.Instance;
 
@@ -2447,7 +2447,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetOpenCypherQueryStatus">REST API Reference for GetOpenCypherQueryStatus Operation</seealso>
         public virtual Task<GetOpenCypherQueryStatusResponse> GetOpenCypherQueryStatusAsync(GetOpenCypherQueryStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOpenCypherQueryStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOpenCypherQueryStatusResponseUnmarshaller.Instance;
 
@@ -2460,7 +2460,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetPropertygraphStatisticsResponse GetPropertygraphStatistics(GetPropertygraphStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -2528,7 +2528,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphStatistics">REST API Reference for GetPropertygraphStatistics Operation</seealso>
         public virtual Task<GetPropertygraphStatisticsResponse> GetPropertygraphStatisticsAsync(GetPropertygraphStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -2541,7 +2541,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetPropertygraphStreamResponse GetPropertygraphStream(GetPropertygraphStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphStreamResponseUnmarshaller.Instance;
 
@@ -2651,7 +2651,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphStream">REST API Reference for GetPropertygraphStream Operation</seealso>
         public virtual Task<GetPropertygraphStreamResponse> GetPropertygraphStreamAsync(GetPropertygraphStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphStreamResponseUnmarshaller.Instance;
 
@@ -2664,7 +2664,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetPropertygraphSummaryResponse GetPropertygraphSummary(GetPropertygraphSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphSummaryResponseUnmarshaller.Instance;
 
@@ -2732,7 +2732,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphSummary">REST API Reference for GetPropertygraphSummary Operation</seealso>
         public virtual Task<GetPropertygraphSummaryResponse> GetPropertygraphSummaryAsync(GetPropertygraphSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPropertygraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPropertygraphSummaryResponseUnmarshaller.Instance;
 
@@ -2745,7 +2745,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetRDFGraphSummaryResponse GetRDFGraphSummary(GetRDFGraphSummaryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDFGraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDFGraphSummaryResponseUnmarshaller.Instance;
 
@@ -2813,7 +2813,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetRDFGraphSummary">REST API Reference for GetRDFGraphSummary Operation</seealso>
         public virtual Task<GetRDFGraphSummaryResponse> GetRDFGraphSummaryAsync(GetRDFGraphSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRDFGraphSummaryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRDFGraphSummaryResponseUnmarshaller.Instance;
 
@@ -2826,7 +2826,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetSparqlStatisticsResponse GetSparqlStatistics(GetSparqlStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -2886,7 +2886,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetSparqlStatistics">REST API Reference for GetSparqlStatistics Operation</seealso>
         public virtual Task<GetSparqlStatisticsResponse> GetSparqlStatisticsAsync(GetSparqlStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -2899,7 +2899,7 @@ namespace Amazon.Neptunedata
 
         internal virtual GetSparqlStreamResponse GetSparqlStream(GetSparqlStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSparqlStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSparqlStreamResponseUnmarshaller.Instance;
 
@@ -2990,7 +2990,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetSparqlStream">REST API Reference for GetSparqlStream Operation</seealso>
         public virtual Task<GetSparqlStreamResponse> GetSparqlStreamAsync(GetSparqlStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSparqlStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSparqlStreamResponseUnmarshaller.Instance;
 
@@ -3003,7 +3003,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListGremlinQueriesResponse ListGremlinQueries(ListGremlinQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGremlinQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGremlinQueriesResponseUnmarshaller.Instance;
 
@@ -3089,7 +3089,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListGremlinQueries">REST API Reference for ListGremlinQueries Operation</seealso>
         public virtual Task<ListGremlinQueriesResponse> ListGremlinQueriesAsync(ListGremlinQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGremlinQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGremlinQueriesResponseUnmarshaller.Instance;
 
@@ -3102,7 +3102,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListLoaderJobsResponse ListLoaderJobs(ListLoaderJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoaderJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoaderJobsResponseUnmarshaller.Instance;
 
@@ -3167,7 +3167,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListLoaderJobs">REST API Reference for ListLoaderJobs Operation</seealso>
         public virtual Task<ListLoaderJobsResponse> ListLoaderJobsAsync(ListLoaderJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLoaderJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLoaderJobsResponseUnmarshaller.Instance;
 
@@ -3180,7 +3180,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListMLDataProcessingJobsResponse ListMLDataProcessingJobs(ListMLDataProcessingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLDataProcessingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLDataProcessingJobsResponseUnmarshaller.Instance;
 
@@ -3243,7 +3243,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLDataProcessingJobs">REST API Reference for ListMLDataProcessingJobs Operation</seealso>
         public virtual Task<ListMLDataProcessingJobsResponse> ListMLDataProcessingJobsAsync(ListMLDataProcessingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLDataProcessingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLDataProcessingJobsResponseUnmarshaller.Instance;
 
@@ -3256,7 +3256,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListMLEndpointsResponse ListMLEndpoints(ListMLEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLEndpointsResponseUnmarshaller.Instance;
 
@@ -3319,7 +3319,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLEndpoints">REST API Reference for ListMLEndpoints Operation</seealso>
         public virtual Task<ListMLEndpointsResponse> ListMLEndpointsAsync(ListMLEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLEndpointsResponseUnmarshaller.Instance;
 
@@ -3332,7 +3332,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListMLModelTrainingJobsResponse ListMLModelTrainingJobs(ListMLModelTrainingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLModelTrainingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLModelTrainingJobsResponseUnmarshaller.Instance;
 
@@ -3395,7 +3395,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLModelTrainingJobs">REST API Reference for ListMLModelTrainingJobs Operation</seealso>
         public virtual Task<ListMLModelTrainingJobsResponse> ListMLModelTrainingJobsAsync(ListMLModelTrainingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLModelTrainingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLModelTrainingJobsResponseUnmarshaller.Instance;
 
@@ -3408,7 +3408,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListMLModelTransformJobsResponse ListMLModelTransformJobs(ListMLModelTransformJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLModelTransformJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLModelTransformJobsResponseUnmarshaller.Instance;
 
@@ -3471,7 +3471,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLModelTransformJobs">REST API Reference for ListMLModelTransformJobs Operation</seealso>
         public virtual Task<ListMLModelTransformJobsResponse> ListMLModelTransformJobsAsync(ListMLModelTransformJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLModelTransformJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLModelTransformJobsResponseUnmarshaller.Instance;
 
@@ -3484,7 +3484,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ListOpenCypherQueriesResponse ListOpenCypherQueries(ListOpenCypherQueriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpenCypherQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpenCypherQueriesResponseUnmarshaller.Instance;
 
@@ -3573,7 +3573,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListOpenCypherQueries">REST API Reference for ListOpenCypherQueries Operation</seealso>
         public virtual Task<ListOpenCypherQueriesResponse> ListOpenCypherQueriesAsync(ListOpenCypherQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOpenCypherQueriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOpenCypherQueriesResponseUnmarshaller.Instance;
 
@@ -3586,7 +3586,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ManagePropertygraphStatisticsResponse ManagePropertygraphStatistics(ManagePropertygraphStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ManagePropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ManagePropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -3654,7 +3654,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ManagePropertygraphStatistics">REST API Reference for ManagePropertygraphStatistics Operation</seealso>
         public virtual Task<ManagePropertygraphStatisticsResponse> ManagePropertygraphStatisticsAsync(ManagePropertygraphStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ManagePropertygraphStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ManagePropertygraphStatisticsResponseUnmarshaller.Instance;
 
@@ -3667,7 +3667,7 @@ namespace Amazon.Neptunedata
 
         internal virtual ManageSparqlStatisticsResponse ManageSparqlStatistics(ManageSparqlStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ManageSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ManageSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -3735,7 +3735,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ManageSparqlStatistics">REST API Reference for ManageSparqlStatistics Operation</seealso>
         public virtual Task<ManageSparqlStatisticsResponse> ManageSparqlStatisticsAsync(ManageSparqlStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ManageSparqlStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ManageSparqlStatisticsResponseUnmarshaller.Instance;
 
@@ -3748,7 +3748,7 @@ namespace Amazon.Neptunedata
 
         internal virtual StartLoaderJobResponse StartLoaderJob(StartLoaderJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLoaderJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLoaderJobResponseUnmarshaller.Instance;
 
@@ -3821,7 +3821,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartLoaderJob">REST API Reference for StartLoaderJob Operation</seealso>
         public virtual Task<StartLoaderJobResponse> StartLoaderJobAsync(StartLoaderJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartLoaderJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartLoaderJobResponseUnmarshaller.Instance;
 
@@ -3834,7 +3834,7 @@ namespace Amazon.Neptunedata
 
         internal virtual StartMLDataProcessingJobResponse StartMLDataProcessingJob(StartMLDataProcessingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -3898,7 +3898,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLDataProcessingJob">REST API Reference for StartMLDataProcessingJob Operation</seealso>
         public virtual Task<StartMLDataProcessingJobResponse> StartMLDataProcessingJobAsync(StartMLDataProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLDataProcessingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLDataProcessingJobResponseUnmarshaller.Instance;
 
@@ -3911,7 +3911,7 @@ namespace Amazon.Neptunedata
 
         internal virtual StartMLModelTrainingJobResponse StartMLModelTrainingJob(StartMLModelTrainingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -3974,7 +3974,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLModelTrainingJob">REST API Reference for StartMLModelTrainingJob Operation</seealso>
         public virtual Task<StartMLModelTrainingJobResponse> StartMLModelTrainingJobAsync(StartMLModelTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLModelTrainingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLModelTrainingJobResponseUnmarshaller.Instance;
 
@@ -3987,7 +3987,7 @@ namespace Amazon.Neptunedata
 
         internal virtual StartMLModelTransformJobResponse StartMLModelTransformJob(StartMLModelTransformJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLModelTransformJobResponseUnmarshaller.Instance;
 
@@ -4050,7 +4050,7 @@ namespace Amazon.Neptunedata
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLModelTransformJob">REST API Reference for StartMLModelTransformJob Operation</seealso>
         public virtual Task<StartMLModelTransformJobResponse> StartMLModelTransformJobAsync(StartMLModelTransformJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLModelTransformJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLModelTransformJobResponseUnmarshaller.Instance;
 

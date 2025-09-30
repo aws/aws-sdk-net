@@ -353,7 +353,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/DecryptData">REST API Reference for DecryptData Operation</seealso>
         public virtual DecryptDataResponse DecryptData(DecryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptDataResponseUnmarshaller.Instance;
 
@@ -374,7 +374,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/DecryptData">REST API Reference for DecryptData Operation</seealso>
         public virtual IAsyncResult BeginDecryptData(DecryptDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptDataResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/EncryptData">REST API Reference for EncryptData Operation</seealso>
         public virtual EncryptDataResponse EncryptData(EncryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptDataResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/EncryptData">REST API Reference for EncryptData Operation</seealso>
         public virtual IAsyncResult BeginEncryptData(EncryptDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptDataResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateCardValidationData">REST API Reference for GenerateCardValidationData Operation</seealso>
         public virtual GenerateCardValidationDataResponse GenerateCardValidationData(GenerateCardValidationDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateCardValidationDataResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateCardValidationData">REST API Reference for GenerateCardValidationData Operation</seealso>
         public virtual IAsyncResult BeginGenerateCardValidationData(GenerateCardValidationDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateCardValidationDataResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual GenerateMacResponse GenerateMac(GenerateMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
 
@@ -746,7 +746,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual IAsyncResult BeginGenerateMac(GenerateMacRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
 
@@ -849,7 +849,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMacEmvPinChange">REST API Reference for GenerateMacEmvPinChange Operation</seealso>
         public virtual GenerateMacEmvPinChangeResponse GenerateMacEmvPinChange(GenerateMacEmvPinChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacEmvPinChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacEmvPinChangeResponseUnmarshaller.Instance;
 
@@ -870,7 +870,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMacEmvPinChange">REST API Reference for GenerateMacEmvPinChange Operation</seealso>
         public virtual IAsyncResult BeginGenerateMacEmvPinChange(GenerateMacEmvPinChangeRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacEmvPinChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacEmvPinChangeResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData">REST API Reference for GeneratePinData Operation</seealso>
         public virtual GeneratePinDataResponse GeneratePinData(GeneratePinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeneratePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeneratePinDataResponseUnmarshaller.Instance;
 
@@ -988,7 +988,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData">REST API Reference for GeneratePinData Operation</seealso>
         public virtual IAsyncResult BeginGeneratePinData(GeneratePinDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeneratePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeneratePinDataResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/ReEncryptData">REST API Reference for ReEncryptData Operation</seealso>
         public virtual ReEncryptDataResponse ReEncryptData(ReEncryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptDataResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/ReEncryptData">REST API Reference for ReEncryptData Operation</seealso>
         public virtual IAsyncResult BeginReEncryptData(ReEncryptDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptDataResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">REST API Reference for TranslatePinData Operation</seealso>
         public virtual TranslatePinDataResponse TranslatePinData(TranslatePinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslatePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslatePinDataResponseUnmarshaller.Instance;
 
@@ -1264,7 +1264,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">REST API Reference for TranslatePinData Operation</seealso>
         public virtual IAsyncResult BeginTranslatePinData(TranslatePinDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslatePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslatePinDataResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyAuthRequestCryptogram">REST API Reference for VerifyAuthRequestCryptogram Operation</seealso>
         public virtual VerifyAuthRequestCryptogramResponse VerifyAuthRequestCryptogram(VerifyAuthRequestCryptogramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyAuthRequestCryptogramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyAuthRequestCryptogramResponseUnmarshaller.Instance;
 
@@ -1379,7 +1379,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyAuthRequestCryptogram">REST API Reference for VerifyAuthRequestCryptogram Operation</seealso>
         public virtual IAsyncResult BeginVerifyAuthRequestCryptogram(VerifyAuthRequestCryptogramRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyAuthRequestCryptogramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyAuthRequestCryptogramResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyCardValidationData">REST API Reference for VerifyCardValidationData Operation</seealso>
         public virtual VerifyCardValidationDataResponse VerifyCardValidationData(VerifyCardValidationDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyCardValidationDataResponseUnmarshaller.Instance;
 
@@ -1494,7 +1494,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyCardValidationData">REST API Reference for VerifyCardValidationData Operation</seealso>
         public virtual IAsyncResult BeginVerifyCardValidationData(VerifyCardValidationDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyCardValidationDataResponseUnmarshaller.Instance;
 
@@ -1575,7 +1575,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual VerifyMacResponse VerifyMac(VerifyMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
 
@@ -1596,7 +1596,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual IAsyncResult BeginVerifyMac(VerifyMacRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyPinData">REST API Reference for VerifyPinData Operation</seealso>
         public virtual VerifyPinDataResponse VerifyPinData(VerifyPinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyPinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyPinDataResponseUnmarshaller.Instance;
 
@@ -1704,7 +1704,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyPinData">REST API Reference for VerifyPinData Operation</seealso>
         public virtual IAsyncResult BeginVerifyPinData(VerifyPinDataRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyPinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyPinDataResponseUnmarshaller.Instance;
 

@@ -322,7 +322,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">REST API Reference for CreateSignalingChannel Operation</seealso>
         public virtual CreateSignalingChannelResponse CreateSignalingChannel(CreateSignalingChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalingChannelResponseUnmarshaller.Instance;
 
@@ -388,7 +388,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel">REST API Reference for CreateSignalingChannel Operation</seealso>
         public virtual Task<CreateSignalingChannelResponse> CreateSignalingChannelAsync(CreateSignalingChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSignalingChannelResponseUnmarshaller.Instance;
             
@@ -471,7 +471,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
             
@@ -606,7 +606,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration">REST API Reference for DeleteEdgeConfiguration Operation</seealso>
         public virtual DeleteEdgeConfigurationResponse DeleteEdgeConfiguration(DeleteEdgeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEdgeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEdgeConfigurationResponseUnmarshaller.Instance;
 
@@ -658,7 +658,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration">REST API Reference for DeleteEdgeConfiguration Operation</seealso>
         public virtual Task<DeleteEdgeConfigurationResponse> DeleteEdgeConfigurationAsync(DeleteEdgeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEdgeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEdgeConfigurationResponseUnmarshaller.Instance;
             
@@ -722,7 +722,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel">REST API Reference for DeleteSignalingChannel Operation</seealso>
         public virtual DeleteSignalingChannelResponse DeleteSignalingChannel(DeleteSignalingChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalingChannelResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel">REST API Reference for DeleteSignalingChannel Operation</seealso>
         public virtual Task<DeleteSignalingChannelResponse> DeleteSignalingChannelAsync(DeleteSignalingChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSignalingChannelResponseUnmarshaller.Instance;
             
@@ -868,7 +868,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
@@ -950,7 +950,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
             
@@ -991,7 +991,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
         public virtual DescribeEdgeConfigurationResponse DescribeEdgeConfiguration(DescribeEdgeConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
 
@@ -1031,7 +1031,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">REST API Reference for DescribeEdgeConfiguration Operation</seealso>
         public virtual Task<DescribeEdgeConfigurationResponse> DescribeEdgeConfigurationAsync(DescribeEdgeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEdgeConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEdgeConfigurationResponseUnmarshaller.Instance;
             
@@ -1065,7 +1065,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
         public virtual DescribeImageGenerationConfigurationResponse DescribeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
 
@@ -1098,7 +1098,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">REST API Reference for DescribeImageGenerationConfiguration Operation</seealso>
         public virtual Task<DescribeImageGenerationConfigurationResponse> DescribeImageGenerationConfigurationAsync(DescribeImageGenerationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageGenerationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageGenerationConfigurationResponseUnmarshaller.Instance;
             
@@ -1133,7 +1133,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">REST API Reference for DescribeMappedResourceConfiguration Operation</seealso>
         public virtual DescribeMappedResourceConfigurationResponse DescribeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMappedResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMappedResourceConfigurationResponseUnmarshaller.Instance;
 
@@ -1167,7 +1167,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">REST API Reference for DescribeMappedResourceConfiguration Operation</seealso>
         public virtual Task<DescribeMappedResourceConfigurationResponse> DescribeMappedResourceConfigurationAsync(DescribeMappedResourceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMappedResourceConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMappedResourceConfigurationResponseUnmarshaller.Instance;
             
@@ -1202,7 +1202,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">REST API Reference for DescribeMediaStorageConfiguration Operation</seealso>
         public virtual DescribeMediaStorageConfigurationResponse DescribeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMediaStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMediaStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -1236,7 +1236,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">REST API Reference for DescribeMediaStorageConfiguration Operation</seealso>
         public virtual Task<DescribeMediaStorageConfigurationResponse> DescribeMediaStorageConfigurationAsync(DescribeMediaStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMediaStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMediaStorageConfigurationResponseUnmarshaller.Instance;
             
@@ -1270,7 +1270,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
         public virtual DescribeNotificationConfigurationResponse DescribeNotificationConfiguration(DescribeNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -1303,7 +1303,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeNotificationConfiguration">REST API Reference for DescribeNotificationConfiguration Operation</seealso>
         public virtual Task<DescribeNotificationConfigurationResponse> DescribeNotificationConfigurationAsync(DescribeNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNotificationConfigurationResponseUnmarshaller.Instance;
             
@@ -1339,7 +1339,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">REST API Reference for DescribeSignalingChannel Operation</seealso>
         public virtual DescribeSignalingChannelResponse DescribeSignalingChannel(DescribeSignalingChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSignalingChannelResponseUnmarshaller.Instance;
 
@@ -1374,7 +1374,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">REST API Reference for DescribeSignalingChannel Operation</seealso>
         public virtual Task<DescribeSignalingChannelResponse> DescribeSignalingChannelAsync(DescribeSignalingChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSignalingChannelResponseUnmarshaller.Instance;
             
@@ -1409,7 +1409,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
 
@@ -1443,7 +1443,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public virtual Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeStreamResponseUnmarshaller.Instance;
             
@@ -1490,7 +1490,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual GetDataEndpointResponse GetDataEndpoint(GetDataEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
 
@@ -1536,7 +1536,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetDataEndpoint">REST API Reference for GetDataEndpoint Operation</seealso>
         public virtual Task<GetDataEndpointResponse> GetDataEndpointAsync(GetDataEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataEndpointResponseUnmarshaller.Instance;
             
@@ -1610,7 +1610,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">REST API Reference for GetSignalingChannelEndpoint Operation</seealso>
         public virtual GetSignalingChannelEndpointResponse GetSignalingChannelEndpoint(GetSignalingChannelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalingChannelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalingChannelEndpointResponseUnmarshaller.Instance;
 
@@ -1683,7 +1683,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">REST API Reference for GetSignalingChannelEndpoint Operation</seealso>
         public virtual Task<GetSignalingChannelEndpointResponse> GetSignalingChannelEndpointAsync(GetSignalingChannelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSignalingChannelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSignalingChannelEndpointResponseUnmarshaller.Instance;
             
@@ -1719,7 +1719,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations">REST API Reference for ListEdgeAgentConfigurations Operation</seealso>
         public virtual ListEdgeAgentConfigurationsResponse ListEdgeAgentConfigurations(ListEdgeAgentConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEdgeAgentConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEdgeAgentConfigurationsResponseUnmarshaller.Instance;
 
@@ -1754,7 +1754,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations">REST API Reference for ListEdgeAgentConfigurations Operation</seealso>
         public virtual Task<ListEdgeAgentConfigurationsResponse> ListEdgeAgentConfigurationsAsync(ListEdgeAgentConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEdgeAgentConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEdgeAgentConfigurationsResponseUnmarshaller.Instance;
             
@@ -1787,7 +1787,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListSignalingChannels">REST API Reference for ListSignalingChannels Operation</seealso>
         public virtual ListSignalingChannelsResponse ListSignalingChannels(ListSignalingChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalingChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalingChannelsResponseUnmarshaller.Instance;
 
@@ -1819,7 +1819,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListSignalingChannels">REST API Reference for ListSignalingChannels Operation</seealso>
         public virtual Task<ListSignalingChannelsResponse> ListSignalingChannelsAsync(ListSignalingChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSignalingChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSignalingChannelsResponseUnmarshaller.Instance;
             
@@ -1848,7 +1848,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
 
@@ -1876,7 +1876,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
             
@@ -1910,7 +1910,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1943,7 +1943,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1986,7 +1986,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
 
@@ -2028,7 +2028,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public virtual Task<ListTagsForStreamResponse> ListTagsForStreamAsync(ListTagsForStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForStreamResponseUnmarshaller.Instance;
             
@@ -2110,7 +2110,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
         public virtual StartEdgeConfigurationUpdateResponse StartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
 
@@ -2191,7 +2191,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">REST API Reference for StartEdgeConfigurationUpdate Operation</seealso>
         public virtual Task<StartEdgeConfigurationUpdateResponse> StartEdgeConfigurationUpdateAsync(StartEdgeConfigurationUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartEdgeConfigurationUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartEdgeConfigurationUpdateResponseUnmarshaller.Instance;
             
@@ -2234,7 +2234,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2276,7 +2276,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2335,7 +2335,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual TagStreamResponse TagStream(TagStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagStreamResponseUnmarshaller.Instance;
 
@@ -2393,7 +2393,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagStream">REST API Reference for TagStream Operation</seealso>
         public virtual Task<TagStreamResponse> TagStreamAsync(TagStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagStreamResponseUnmarshaller.Instance;
             
@@ -2429,7 +2429,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2464,7 +2464,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2508,7 +2508,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual UntagStreamResponse UntagStream(UntagStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagStreamResponseUnmarshaller.Instance;
 
@@ -2551,7 +2551,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagStream">REST API Reference for UntagStream Operation</seealso>
         public virtual Task<UntagStreamResponse> UntagStreamAsync(UntagStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagStreamResponseUnmarshaller.Instance;
             
@@ -2640,7 +2640,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual UpdateDataRetentionResponse UpdateDataRetention(UpdateDataRetentionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
 
@@ -2728,7 +2728,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateDataRetention">REST API Reference for UpdateDataRetention Operation</seealso>
         public virtual Task<UpdateDataRetentionResponse> UpdateDataRetentionAsync(UpdateDataRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataRetentionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataRetentionResponseUnmarshaller.Instance;
             
@@ -2788,7 +2788,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
         public virtual UpdateImageGenerationConfigurationResponse UpdateImageGenerationConfiguration(UpdateImageGenerationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
 
@@ -2847,7 +2847,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateImageGenerationConfiguration">REST API Reference for UpdateImageGenerationConfiguration Operation</seealso>
         public virtual Task<UpdateImageGenerationConfigurationResponse> UpdateImageGenerationConfigurationAsync(UpdateImageGenerationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateImageGenerationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateImageGenerationConfigurationResponseUnmarshaller.Instance;
             
@@ -2928,7 +2928,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">REST API Reference for UpdateMediaStorageConfiguration Operation</seealso>
         public virtual UpdateMediaStorageConfigurationResponse UpdateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaStorageConfigurationResponseUnmarshaller.Instance;
 
@@ -3008,7 +3008,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">REST API Reference for UpdateMediaStorageConfiguration Operation</seealso>
         public virtual Task<UpdateMediaStorageConfigurationResponse> UpdateMediaStorageConfigurationAsync(UpdateMediaStorageConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMediaStorageConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMediaStorageConfigurationResponseUnmarshaller.Instance;
             
@@ -3068,7 +3068,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
         public virtual UpdateNotificationConfigurationResponse UpdateNotificationConfiguration(UpdateNotificationConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
 
@@ -3127,7 +3127,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateNotificationConfiguration">REST API Reference for UpdateNotificationConfiguration Operation</seealso>
         public virtual Task<UpdateNotificationConfigurationResponse> UpdateNotificationConfigurationAsync(UpdateNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNotificationConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNotificationConfigurationResponseUnmarshaller.Instance;
             
@@ -3197,7 +3197,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">REST API Reference for UpdateSignalingChannel Operation</seealso>
         public virtual UpdateSignalingChannelResponse UpdateSignalingChannel(UpdateSignalingChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSignalingChannelResponseUnmarshaller.Instance;
 
@@ -3266,7 +3266,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">REST API Reference for UpdateSignalingChannel Operation</seealso>
         public virtual Task<UpdateSignalingChannelResponse> UpdateSignalingChannelAsync(UpdateSignalingChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSignalingChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSignalingChannelResponseUnmarshaller.Instance;
             
@@ -3344,7 +3344,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual UpdateStreamResponse UpdateStream(UpdateStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
 
@@ -3421,7 +3421,7 @@ namespace Amazon.KinesisVideo
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateStream">REST API Reference for UpdateStream Operation</seealso>
         public virtual Task<UpdateStreamResponse> UpdateStreamAsync(UpdateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStreamResponseUnmarshaller.Instance;
             

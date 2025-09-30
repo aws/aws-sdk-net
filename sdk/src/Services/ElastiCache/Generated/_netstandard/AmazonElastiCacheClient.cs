@@ -289,7 +289,7 @@ namespace Amazon.ElastiCache
 
         internal virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -383,7 +383,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.ElastiCache
 
         internal virtual AuthorizeCacheSecurityGroupIngressResponse AuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeCacheSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">REST API Reference for AuthorizeCacheSecurityGroupIngress Operation</seealso>
         public virtual Task<AuthorizeCacheSecurityGroupIngressResponse> AuthorizeCacheSecurityGroupIngressAsync(AuthorizeCacheSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeCacheSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -456,7 +456,7 @@ namespace Amazon.ElastiCache
 
         internal virtual BatchApplyUpdateActionResponse BatchApplyUpdateAction(BatchApplyUpdateActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchApplyUpdateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchApplyUpdateActionResponseUnmarshaller.Instance;
 
@@ -485,7 +485,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">REST API Reference for BatchApplyUpdateAction Operation</seealso>
         public virtual Task<BatchApplyUpdateActionResponse> BatchApplyUpdateActionAsync(BatchApplyUpdateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchApplyUpdateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchApplyUpdateActionResponseUnmarshaller.Instance;
 
@@ -498,7 +498,7 @@ namespace Amazon.ElastiCache
 
         internal virtual BatchStopUpdateActionResponse BatchStopUpdateAction(BatchStopUpdateActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopUpdateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopUpdateActionResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchStopUpdateAction">REST API Reference for BatchStopUpdateAction Operation</seealso>
         public virtual Task<BatchStopUpdateActionResponse> BatchStopUpdateActionAsync(BatchStopUpdateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopUpdateActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopUpdateActionResponseUnmarshaller.Instance;
 
@@ -540,7 +540,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CompleteMigrationResponse CompleteMigration(CompleteMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">REST API Reference for CompleteMigration Operation</seealso>
         public virtual Task<CompleteMigrationResponse> CompleteMigrationAsync(CompleteMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CompleteMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CompleteMigrationResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CopyServerlessCacheSnapshotResponse CopyServerlessCacheSnapshot(CopyServerlessCacheSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -635,7 +635,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">REST API Reference for CopyServerlessCacheSnapshot Operation</seealso>
         public virtual Task<CopyServerlessCacheSnapshotResponse> CopyServerlessCacheSnapshotAsync(CopyServerlessCacheSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public virtual Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopySnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopySnapshotResponseUnmarshaller.Instance;
 
@@ -811,7 +811,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
         public virtual Task<CreateCacheClusterResponse> CreateCacheClusterAsync(CreateCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheClusterResponseUnmarshaller.Instance;
 
@@ -902,7 +902,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateCacheParameterGroupResponse CreateCacheParameterGroup(CreateCacheParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
         public virtual Task<CreateCacheParameterGroupResponse> CreateCacheParameterGroupAsync(CreateCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -978,7 +978,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateCacheSecurityGroupResponse CreateCacheSecurityGroup(CreateCacheSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1025,7 +1025,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
         public virtual Task<CreateCacheSecurityGroupResponse> CreateCacheSecurityGroupAsync(CreateCacheSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1038,7 +1038,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public virtual Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -1104,7 +1104,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateGlobalReplicationGroupResponse CreateGlobalReplicationGroup(CreateGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1155,7 +1155,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">REST API Reference for CreateGlobalReplicationGroup Operation</seealso>
         public virtual Task<CreateGlobalReplicationGroupResponse> CreateGlobalReplicationGroupAsync(CreateGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1168,7 +1168,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1306,7 +1306,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         public virtual Task<CreateReplicationGroupResponse> CreateReplicationGroupAsync(CreateReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1319,7 +1319,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateServerlessCacheResponse CreateServerlessCache(CreateServerlessCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerlessCacheResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache">REST API Reference for CreateServerlessCache Operation</seealso>
         public virtual Task<CreateServerlessCacheResponse> CreateServerlessCacheAsync(CreateServerlessCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerlessCacheResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateServerlessCacheSnapshotResponse CreateServerlessCacheSnapshot(CreateServerlessCacheSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -1438,7 +1438,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">REST API Reference for CreateServerlessCacheSnapshot Operation</seealso>
         public virtual Task<CreateServerlessCacheSnapshotResponse> CreateServerlessCacheSnapshotAsync(CreateServerlessCacheSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -1451,7 +1451,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1525,7 +1525,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
 
@@ -1538,7 +1538,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
         public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
 
@@ -1597,7 +1597,7 @@ namespace Amazon.ElastiCache
 
         internal virtual CreateUserGroupResponse CreateUserGroup(CreateUserGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
 
@@ -1646,7 +1646,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
         public virtual Task<CreateUserGroupResponse> CreateUserGroupAsync(CreateUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
 
@@ -1659,7 +1659,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DecreaseNodeGroupsInGlobalReplicationGroupResponse DecreaseNodeGroupsInGlobalReplicationGroup(DecreaseNodeGroupsInGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for DecreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
         public virtual Task<DecreaseNodeGroupsInGlobalReplicationGroupResponse> DecreaseNodeGroupsInGlobalReplicationGroupAsync(DecreaseNodeGroupsInGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -1705,7 +1705,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DecreaseReplicaCountResponse DecreaseReplicaCount(DecreaseReplicaCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseReplicaCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
 
@@ -1770,7 +1770,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseReplicaCount">REST API Reference for DecreaseReplicaCount Operation</seealso>
         public virtual Task<DecreaseReplicaCountResponse> DecreaseReplicaCountAsync(DecreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecreaseReplicaCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecreaseReplicaCountResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
 
@@ -1877,7 +1877,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">REST API Reference for DeleteCacheCluster Operation</seealso>
         public virtual Task<DeleteCacheClusterResponse> DeleteCacheClusterAsync(DeleteCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheClusterResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteCacheParameterGroupResponse DeleteCacheParameterGroup(DeleteCacheParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -1927,7 +1927,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">REST API Reference for DeleteCacheParameterGroup Operation</seealso>
         public virtual Task<DeleteCacheParameterGroupResponse> DeleteCacheParameterGroupAsync(DeleteCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteCacheSecurityGroupResponse DeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1980,7 +1980,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">REST API Reference for DeleteCacheSecurityGroup Operation</seealso>
         public virtual Task<DeleteCacheSecurityGroupResponse> DeleteCacheSecurityGroupAsync(DeleteCacheSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheSecurityGroupResponseUnmarshaller.Instance;
 
@@ -1993,7 +1993,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteCacheSubnetGroupResponse DeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2027,7 +2027,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
         public virtual Task<DeleteCacheSubnetGroupResponse> DeleteCacheSubnetGroupAsync(DeleteCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2040,7 +2040,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteGlobalReplicationGroupResponse DeleteGlobalReplicationGroup(DeleteGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -2093,7 +2093,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">REST API Reference for DeleteGlobalReplicationGroup Operation</seealso>
         public virtual Task<DeleteGlobalReplicationGroupResponse> DeleteGlobalReplicationGroupAsync(DeleteGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -2106,7 +2106,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
 
@@ -2182,7 +2182,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">REST API Reference for DeleteReplicationGroup Operation</seealso>
         public virtual Task<DeleteReplicationGroupResponse> DeleteReplicationGroupAsync(DeleteReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteReplicationGroupResponseUnmarshaller.Instance;
 
@@ -2195,7 +2195,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteServerlessCacheResponse DeleteServerlessCache(DeleteServerlessCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerlessCacheResponseUnmarshaller.Instance;
 
@@ -2245,7 +2245,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache">REST API Reference for DeleteServerlessCache Operation</seealso>
         public virtual Task<DeleteServerlessCacheResponse> DeleteServerlessCacheAsync(DeleteServerlessCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerlessCacheResponseUnmarshaller.Instance;
 
@@ -2258,7 +2258,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteServerlessCacheSnapshotResponse DeleteServerlessCacheSnapshot(DeleteServerlessCacheSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -2294,7 +2294,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">REST API Reference for DeleteServerlessCacheSnapshot Operation</seealso>
         public virtual Task<DeleteServerlessCacheSnapshotResponse> DeleteServerlessCacheSnapshotAsync(DeleteServerlessCacheSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -2307,7 +2307,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -2348,7 +2348,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2400,7 +2400,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
@@ -2413,7 +2413,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DeleteUserGroupResponse DeleteUserGroup(DeleteUserGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
 
@@ -2449,7 +2449,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
         public virtual Task<DeleteUserGroupResponse> DeleteUserGroupAsync(DeleteUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
 
@@ -2466,7 +2466,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeCacheClustersResponse DescribeCacheClusters(DescribeCacheClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
 
@@ -2582,7 +2582,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
         public virtual Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(DescribeCacheClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheClustersResponseUnmarshaller.Instance;
 
@@ -2599,7 +2599,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeCacheEngineVersionsResponse DescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2635,7 +2635,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
         public virtual Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(DescribeCacheEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheEngineVersionsResponseUnmarshaller.Instance;
 
@@ -2652,7 +2652,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeCacheParameterGroupsResponse DescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
 
@@ -2710,7 +2710,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
         public virtual Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(DescribeCacheParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheParameterGroupsResponseUnmarshaller.Instance;
 
@@ -2723,7 +2723,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeCacheParametersResponse DescribeCacheParameters(DescribeCacheParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
 
@@ -2754,7 +2754,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">REST API Reference for DescribeCacheParameters Operation</seealso>
         public virtual Task<DescribeCacheParametersResponse> DescribeCacheParametersAsync(DescribeCacheParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheParametersResponseUnmarshaller.Instance;
 
@@ -2771,7 +2771,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeCacheSecurityGroupsResponse DescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -2831,7 +2831,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
         public virtual Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(DescribeCacheSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -2848,7 +2848,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeCacheSubnetGroupsResponse DescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -2894,7 +2894,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
         public virtual Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(DescribeCacheSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCacheSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCacheSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -2907,7 +2907,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -2935,7 +2935,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -2952,7 +2952,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -3016,7 +3016,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeGlobalReplicationGroupsResponse DescribeGlobalReplicationGroups(DescribeGlobalReplicationGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalReplicationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalReplicationGroupsResponseUnmarshaller.Instance;
 
@@ -3060,7 +3060,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeGlobalReplicationGroups">REST API Reference for DescribeGlobalReplicationGroups Operation</seealso>
         public virtual Task<DescribeGlobalReplicationGroupsResponse> DescribeGlobalReplicationGroupsAsync(DescribeGlobalReplicationGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalReplicationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalReplicationGroupsResponseUnmarshaller.Instance;
 
@@ -3077,7 +3077,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
 
@@ -3145,7 +3145,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
         public virtual Task<DescribeReplicationGroupsResponse> DescribeReplicationGroupsAsync(DescribeReplicationGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReplicationGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReplicationGroupsResponseUnmarshaller.Instance;
 
@@ -3162,7 +3162,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeReservedCacheNodesResponse DescribeReservedCacheNodes(DescribeReservedCacheNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedCacheNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
 
@@ -3218,7 +3218,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
         public virtual Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(DescribeReservedCacheNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedCacheNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedCacheNodesResponseUnmarshaller.Instance;
 
@@ -3235,7 +3235,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedCacheNodesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
 
@@ -3289,7 +3289,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
         public virtual Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(DescribeReservedCacheNodesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedCacheNodesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedCacheNodesOfferingsResponseUnmarshaller.Instance;
 
@@ -3302,7 +3302,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeServerlessCachesResponse DescribeServerlessCaches(DescribeServerlessCachesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerlessCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerlessCachesResponseUnmarshaller.Instance;
 
@@ -3334,7 +3334,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches">REST API Reference for DescribeServerlessCaches Operation</seealso>
         public virtual Task<DescribeServerlessCachesResponse> DescribeServerlessCachesAsync(DescribeServerlessCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerlessCachesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerlessCachesResponseUnmarshaller.Instance;
 
@@ -3347,7 +3347,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeServerlessCacheSnapshotsResponse DescribeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerlessCacheSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerlessCacheSnapshotsResponseUnmarshaller.Instance;
 
@@ -3384,7 +3384,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">REST API Reference for DescribeServerlessCacheSnapshots Operation</seealso>
         public virtual Task<DescribeServerlessCacheSnapshotsResponse> DescribeServerlessCacheSnapshotsAsync(DescribeServerlessCacheSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServerlessCacheSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServerlessCacheSnapshotsResponseUnmarshaller.Instance;
 
@@ -3397,7 +3397,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeServiceUpdatesResponse DescribeServiceUpdates(DescribeServiceUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceUpdatesResponseUnmarshaller.Instance;
 
@@ -3427,7 +3427,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates">REST API Reference for DescribeServiceUpdates Operation</seealso>
         public virtual Task<DescribeServiceUpdatesResponse> DescribeServiceUpdatesAsync(DescribeServiceUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceUpdatesResponseUnmarshaller.Instance;
 
@@ -3444,7 +3444,7 @@ namespace Amazon.ElastiCache
         }
         internal virtual DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3520,7 +3520,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public virtual Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSnapshotsResponseUnmarshaller.Instance;
 
@@ -3533,7 +3533,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeUpdateActionsResponse DescribeUpdateActions(DescribeUpdateActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateActionsResponseUnmarshaller.Instance;
 
@@ -3560,7 +3560,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions">REST API Reference for DescribeUpdateActions Operation</seealso>
         public virtual Task<DescribeUpdateActionsResponse> DescribeUpdateActionsAsync(DescribeUpdateActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateActionsResponseUnmarshaller.Instance;
 
@@ -3573,7 +3573,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeUserGroupsResponse DescribeUserGroups(DescribeUserGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
 
@@ -3603,7 +3603,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
         public virtual Task<DescribeUserGroupsResponse> DescribeUserGroupsAsync(DescribeUserGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
 
@@ -3616,7 +3616,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
@@ -3646,7 +3646,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
         public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
 
@@ -3659,7 +3659,7 @@ namespace Amazon.ElastiCache
 
         internal virtual DisassociateGlobalReplicationGroupResponse DisassociateGlobalReplicationGroup(DisassociateGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3694,7 +3694,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DisassociateGlobalReplicationGroup">REST API Reference for DisassociateGlobalReplicationGroup Operation</seealso>
         public virtual Task<DisassociateGlobalReplicationGroupResponse> DisassociateGlobalReplicationGroupAsync(DisassociateGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3707,7 +3707,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ExportServerlessCacheSnapshotResponse ExportServerlessCacheSnapshot(ExportServerlessCacheSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -3743,7 +3743,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">REST API Reference for ExportServerlessCacheSnapshot Operation</seealso>
         public virtual Task<ExportServerlessCacheSnapshotResponse> ExportServerlessCacheSnapshotAsync(ExportServerlessCacheSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExportServerlessCacheSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExportServerlessCacheSnapshotResponseUnmarshaller.Instance;
 
@@ -3756,7 +3756,7 @@ namespace Amazon.ElastiCache
 
         internal virtual FailoverGlobalReplicationGroupResponse FailoverGlobalReplicationGroup(FailoverGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3790,7 +3790,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">REST API Reference for FailoverGlobalReplicationGroup Operation</seealso>
         public virtual Task<FailoverGlobalReplicationGroupResponse> FailoverGlobalReplicationGroupAsync(FailoverGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3803,7 +3803,7 @@ namespace Amazon.ElastiCache
 
         internal virtual IncreaseNodeGroupsInGlobalReplicationGroupResponse IncreaseNodeGroupsInGlobalReplicationGroup(IncreaseNodeGroupsInGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3833,7 +3833,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseNodeGroupsInGlobalReplicationGroup">REST API Reference for IncreaseNodeGroupsInGlobalReplicationGroup Operation</seealso>
         public virtual Task<IncreaseNodeGroupsInGlobalReplicationGroupResponse> IncreaseNodeGroupsInGlobalReplicationGroupAsync(IncreaseNodeGroupsInGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseNodeGroupsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -3846,7 +3846,7 @@ namespace Amazon.ElastiCache
 
         internal virtual IncreaseReplicaCountResponse IncreaseReplicaCount(IncreaseReplicaCountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseReplicaCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
 
@@ -3911,7 +3911,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseReplicaCount">REST API Reference for IncreaseReplicaCount Operation</seealso>
         public virtual Task<IncreaseReplicaCountResponse> IncreaseReplicaCountAsync(IncreaseReplicaCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IncreaseReplicaCountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IncreaseReplicaCountResponseUnmarshaller.Instance;
 
@@ -3924,7 +3924,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ListAllowedNodeTypeModificationsResponse ListAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedNodeTypeModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
 
@@ -3965,7 +3965,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">REST API Reference for ListAllowedNodeTypeModifications Operation</seealso>
         public virtual Task<ListAllowedNodeTypeModificationsResponse> ListAllowedNodeTypeModificationsAsync(ListAllowedNodeTypeModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAllowedNodeTypeModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAllowedNodeTypeModificationsResponseUnmarshaller.Instance;
 
@@ -3978,7 +3978,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4063,7 +4063,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4076,7 +4076,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyCacheClusterResponse ModifyCacheCluster(ModifyCacheClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
 
@@ -4137,7 +4137,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">REST API Reference for ModifyCacheCluster Operation</seealso>
         public virtual Task<ModifyCacheClusterResponse> ModifyCacheClusterAsync(ModifyCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheClusterResponseUnmarshaller.Instance;
 
@@ -4150,7 +4150,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyCacheParameterGroupResponse ModifyCacheParameterGroup(ModifyCacheParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -4189,7 +4189,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">REST API Reference for ModifyCacheParameterGroup Operation</seealso>
         public virtual Task<ModifyCacheParameterGroupResponse> ModifyCacheParameterGroupAsync(ModifyCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -4202,7 +4202,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -4242,7 +4242,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         public virtual Task<ModifyCacheSubnetGroupResponse> ModifyCacheSubnetGroupAsync(ModifyCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCacheSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCacheSubnetGroupResponseUnmarshaller.Instance;
 
@@ -4255,7 +4255,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyGlobalReplicationGroupResponse ModifyGlobalReplicationGroup(ModifyGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4285,7 +4285,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyGlobalReplicationGroup">REST API Reference for ModifyGlobalReplicationGroup Operation</seealso>
         public virtual Task<ModifyGlobalReplicationGroupResponse> ModifyGlobalReplicationGroupAsync(ModifyGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4298,7 +4298,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4390,7 +4390,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         public virtual Task<ModifyReplicationGroupResponse> ModifyReplicationGroupAsync(ModifyReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4403,7 +4403,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyReplicationGroupShardConfigurationResponse ModifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationGroupShardConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationGroupShardConfigurationResponseUnmarshaller.Instance;
 
@@ -4459,7 +4459,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupShardConfiguration">REST API Reference for ModifyReplicationGroupShardConfiguration Operation</seealso>
         public virtual Task<ModifyReplicationGroupShardConfigurationResponse> ModifyReplicationGroupShardConfigurationAsync(ModifyReplicationGroupShardConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyReplicationGroupShardConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyReplicationGroupShardConfigurationResponseUnmarshaller.Instance;
 
@@ -4472,7 +4472,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyServerlessCacheResponse ModifyServerlessCache(ModifyServerlessCacheRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyServerlessCacheResponseUnmarshaller.Instance;
 
@@ -4517,7 +4517,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache">REST API Reference for ModifyServerlessCache Operation</seealso>
         public virtual Task<ModifyServerlessCacheResponse> ModifyServerlessCacheAsync(ModifyServerlessCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyServerlessCacheRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyServerlessCacheResponseUnmarshaller.Instance;
 
@@ -4530,7 +4530,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyUserResponse ModifyUser(ModifyUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
 
@@ -4566,7 +4566,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
         public virtual Task<ModifyUserResponse> ModifyUserAsync(ModifyUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
 
@@ -4579,7 +4579,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ModifyUserGroupResponse ModifyUserGroup(ModifyUserGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
 
@@ -4624,7 +4624,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
         public virtual Task<ModifyUserGroupResponse> ModifyUserGroupAsync(ModifyUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
 
@@ -4637,7 +4637,7 @@ namespace Amazon.ElastiCache
 
         internal virtual PurchaseReservedCacheNodesOfferingResponse PurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedCacheNodesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
 
@@ -4680,7 +4680,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
         public virtual Task<PurchaseReservedCacheNodesOfferingResponse> PurchaseReservedCacheNodesOfferingAsync(PurchaseReservedCacheNodesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedCacheNodesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedCacheNodesOfferingResponseUnmarshaller.Instance;
 
@@ -4693,7 +4693,7 @@ namespace Amazon.ElastiCache
 
         internal virtual RebalanceSlotsInGlobalReplicationGroupResponse RebalanceSlotsInGlobalReplicationGroup(RebalanceSlotsInGlobalReplicationGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebalanceSlotsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebalanceSlotsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4723,7 +4723,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">REST API Reference for RebalanceSlotsInGlobalReplicationGroup Operation</seealso>
         public virtual Task<RebalanceSlotsInGlobalReplicationGroupResponse> RebalanceSlotsInGlobalReplicationGroupAsync(RebalanceSlotsInGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebalanceSlotsInGlobalReplicationGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebalanceSlotsInGlobalReplicationGroupResponseUnmarshaller.Instance;
 
@@ -4736,7 +4736,7 @@ namespace Amazon.ElastiCache
 
         internal virtual RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
 
@@ -4788,7 +4788,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
         public virtual Task<RebootCacheClusterResponse> RebootCacheClusterAsync(RebootCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootCacheClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootCacheClusterResponseUnmarshaller.Instance;
 
@@ -4801,7 +4801,7 @@ namespace Amazon.ElastiCache
 
         internal virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -4880,7 +4880,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -4893,7 +4893,7 @@ namespace Amazon.ElastiCache
 
         internal virtual ResetCacheParameterGroupResponse ResetCacheParameterGroup(ResetCacheParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -4934,7 +4934,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">REST API Reference for ResetCacheParameterGroup Operation</seealso>
         public virtual Task<ResetCacheParameterGroupResponse> ResetCacheParameterGroupAsync(ResetCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetCacheParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetCacheParameterGroupResponseUnmarshaller.Instance;
 
@@ -4947,7 +4947,7 @@ namespace Amazon.ElastiCache
 
         internal virtual RevokeCacheSecurityGroupIngressResponse RevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeCacheSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -4986,7 +4986,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
         public virtual Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeCacheSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -4999,7 +4999,7 @@ namespace Amazon.ElastiCache
 
         internal virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
 
@@ -5032,7 +5032,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">REST API Reference for StartMigration Operation</seealso>
         public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
 
@@ -5045,7 +5045,7 @@ namespace Amazon.ElastiCache
 
         internal virtual TestFailoverResponse TestFailover(TestFailoverRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestFailoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestFailoverResponseUnmarshaller.Instance;
 
@@ -5177,7 +5177,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
         public virtual Task<TestFailoverResponse> TestFailoverAsync(TestFailoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestFailoverRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestFailoverResponseUnmarshaller.Instance;
 
@@ -5190,7 +5190,7 @@ namespace Amazon.ElastiCache
 
         internal virtual TestMigrationResponse TestMigration(TestMigrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
 
@@ -5223,7 +5223,7 @@ namespace Amazon.ElastiCache
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">REST API Reference for TestMigration Operation</seealso>
         public virtual Task<TestMigrationResponse> TestMigrationAsync(TestMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestMigrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestMigrationResponseUnmarshaller.Instance;
 

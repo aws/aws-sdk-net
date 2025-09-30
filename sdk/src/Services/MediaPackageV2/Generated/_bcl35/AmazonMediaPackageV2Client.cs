@@ -331,7 +331,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
         public virtual CancelHarvestJobResponse CancelHarvestJob(CancelHarvestJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelHarvestJobResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
         public virtual IAsyncResult BeginCancelHarvestJob(CancelHarvestJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelHarvestJobResponseUnmarshaller.Instance;
 
@@ -417,7 +417,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -438,7 +438,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual IAsyncResult BeginCreateChannel(CreateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateChannelGroup">REST API Reference for CreateChannelGroup Operation</seealso>
         public virtual CreateChannelGroupResponse CreateChannelGroup(CreateChannelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelGroupResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateChannelGroup">REST API Reference for CreateChannelGroup Operation</seealso>
         public virtual IAsyncResult BeginCreateChannelGroup(CreateChannelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelGroupResponseUnmarshaller.Instance;
 
@@ -582,7 +582,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
         public virtual CreateHarvestJobResponse CreateHarvestJob(CreateHarvestJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
         public virtual IAsyncResult BeginCreateHarvestJob(CreateHarvestJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateOriginEndpoint">REST API Reference for CreateOriginEndpoint Operation</seealso>
         public virtual CreateOriginEndpointResponse CreateOriginEndpoint(CreateOriginEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginEndpointResponseUnmarshaller.Instance;
 
@@ -687,7 +687,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateOriginEndpoint">REST API Reference for CreateOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginCreateOriginEndpoint(CreateOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOriginEndpointResponseUnmarshaller.Instance;
 
@@ -741,7 +741,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -762,7 +762,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannel(DeleteChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannelGroup">REST API Reference for DeleteChannelGroup Operation</seealso>
         public virtual DeleteChannelGroupResponse DeleteChannelGroup(DeleteChannelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelGroupResponseUnmarshaller.Instance;
 
@@ -839,7 +839,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannelGroup">REST API Reference for DeleteChannelGroup Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannelGroup(DeleteChannelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelGroupResponseUnmarshaller.Instance;
 
@@ -892,7 +892,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
         public virtual DeleteChannelPolicyResponse DeleteChannelPolicy(DeleteChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
 
@@ -913,7 +913,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteChannelPolicy">REST API Reference for DeleteChannelPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteChannelPolicy(DeleteChannelPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelPolicyResponseUnmarshaller.Instance;
 
@@ -965,7 +965,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteOriginEndpoint">REST API Reference for DeleteOriginEndpoint Operation</seealso>
         public virtual DeleteOriginEndpointResponse DeleteOriginEndpoint(DeleteOriginEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginEndpointResponseUnmarshaller.Instance;
 
@@ -986,7 +986,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteOriginEndpoint">REST API Reference for DeleteOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginDeleteOriginEndpoint(DeleteOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginEndpointResponseUnmarshaller.Instance;
 
@@ -1039,7 +1039,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteOriginEndpointPolicy">REST API Reference for DeleteOriginEndpointPolicy Operation</seealso>
         public virtual DeleteOriginEndpointPolicyResponse DeleteOriginEndpointPolicy(DeleteOriginEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -1060,7 +1060,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/DeleteOriginEndpointPolicy">REST API Reference for DeleteOriginEndpointPolicy Operation</seealso>
         public virtual IAsyncResult BeginDeleteOriginEndpointPolicy(DeleteOriginEndpointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -1113,7 +1113,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual GetChannelResponse GetChannel(GetChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -1134,7 +1134,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannel">REST API Reference for GetChannel Operation</seealso>
         public virtual IAsyncResult BeginGetChannel(GetChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
 
@@ -1187,7 +1187,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannelGroup">REST API Reference for GetChannelGroup Operation</seealso>
         public virtual GetChannelGroupResponse GetChannelGroup(GetChannelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelGroupResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannelGroup">REST API Reference for GetChannelGroup Operation</seealso>
         public virtual IAsyncResult BeginGetChannelGroup(GetChannelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelGroupResponseUnmarshaller.Instance;
 
@@ -1263,7 +1263,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
         public virtual GetChannelPolicyResponse GetChannelPolicy(GetChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetChannelPolicy">REST API Reference for GetChannelPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetChannelPolicy(GetChannelPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
         public virtual GetHarvestJobResponse GetHarvestJob(GetHarvestJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHarvestJobResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
         public virtual IAsyncResult BeginGetHarvestJob(GetHarvestJobRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetHarvestJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetHarvestJobResponseUnmarshaller.Instance;
 
@@ -1413,7 +1413,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetOriginEndpoint">REST API Reference for GetOriginEndpoint Operation</seealso>
         public virtual GetOriginEndpointResponse GetOriginEndpoint(GetOriginEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginEndpointResponseUnmarshaller.Instance;
 
@@ -1434,7 +1434,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetOriginEndpoint">REST API Reference for GetOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginGetOriginEndpoint(GetOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginEndpointResponseUnmarshaller.Instance;
 
@@ -1488,7 +1488,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetOriginEndpointPolicy">REST API Reference for GetOriginEndpointPolicy Operation</seealso>
         public virtual GetOriginEndpointPolicyResponse GetOriginEndpointPolicy(GetOriginEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -1509,7 +1509,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetOriginEndpointPolicy">REST API Reference for GetOriginEndpointPolicy Operation</seealso>
         public virtual IAsyncResult BeginGetOriginEndpointPolicy(GetOriginEndpointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -1559,7 +1559,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannelGroups">REST API Reference for ListChannelGroups Operation</seealso>
         public virtual ListChannelGroupsResponse ListChannelGroups(ListChannelGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelGroupsResponseUnmarshaller.Instance;
 
@@ -1580,7 +1580,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannelGroups">REST API Reference for ListChannelGroups Operation</seealso>
         public virtual IAsyncResult BeginListChannelGroups(ListChannelGroupsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelGroupsResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1655,7 +1655,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -1708,7 +1708,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
         public virtual ListHarvestJobsResponse ListHarvestJobs(ListHarvestJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
 
@@ -1729,7 +1729,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
         public virtual IAsyncResult BeginListHarvestJobs(ListHarvestJobsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListOriginEndpoints">REST API Reference for ListOriginEndpoints Operation</seealso>
         public virtual ListOriginEndpointsResponse ListOriginEndpoints(ListOriginEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginEndpointsResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListOriginEndpoints">REST API Reference for ListOriginEndpoints Operation</seealso>
         public virtual IAsyncResult BeginListOriginEndpoints(ListOriginEndpointsRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOriginEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOriginEndpointsResponseUnmarshaller.Instance;
 
@@ -1840,7 +1840,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1861,7 +1861,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1919,7 +1919,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
         public virtual PutChannelPolicyResponse PutChannelPolicy(PutChannelPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutChannelPolicy(PutChannelPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
 
@@ -1997,7 +1997,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/PutOriginEndpointPolicy">REST API Reference for PutOriginEndpointPolicy Operation</seealso>
         public virtual PutOriginEndpointPolicyResponse PutOriginEndpointPolicy(PutOriginEndpointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -2018,7 +2018,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/PutOriginEndpointPolicy">REST API Reference for PutOriginEndpointPolicy Operation</seealso>
         public virtual IAsyncResult BeginPutOriginEndpointPolicy(PutOriginEndpointPolicyRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutOriginEndpointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutOriginEndpointPolicyResponseUnmarshaller.Instance;
 
@@ -2081,7 +2081,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">REST API Reference for ResetChannelState Operation</seealso>
         public virtual ResetChannelStateResponse ResetChannelState(ResetChannelStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetChannelStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetChannelStateResponseUnmarshaller.Instance;
 
@@ -2102,7 +2102,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetChannelState">REST API Reference for ResetChannelState Operation</seealso>
         public virtual IAsyncResult BeginResetChannelState(ResetChannelStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetChannelStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetChannelStateResponseUnmarshaller.Instance;
 
@@ -2168,7 +2168,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">REST API Reference for ResetOriginEndpointState Operation</seealso>
         public virtual ResetOriginEndpointStateResponse ResetOriginEndpointState(ResetOriginEndpointStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetOriginEndpointStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetOriginEndpointStateResponseUnmarshaller.Instance;
 
@@ -2189,7 +2189,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ResetOriginEndpointState">REST API Reference for ResetOriginEndpointState Operation</seealso>
         public virtual IAsyncResult BeginResetOriginEndpointState(ResetOriginEndpointStateRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetOriginEndpointStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetOriginEndpointStateResponseUnmarshaller.Instance;
 
@@ -2236,7 +2236,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2257,7 +2257,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2293,7 +2293,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2314,7 +2314,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2378,7 +2378,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -2399,7 +2399,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannel(UpdateChannelRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -2462,7 +2462,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateChannelGroup">REST API Reference for UpdateChannelGroup Operation</seealso>
         public virtual UpdateChannelGroupResponse UpdateChannelGroup(UpdateChannelGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelGroupResponseUnmarshaller.Instance;
 
@@ -2483,7 +2483,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateChannelGroup">REST API Reference for UpdateChannelGroup Operation</seealso>
         public virtual IAsyncResult BeginUpdateChannelGroup(UpdateChannelGroupRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelGroupResponseUnmarshaller.Instance;
 
@@ -2548,7 +2548,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateOriginEndpoint">REST API Reference for UpdateOriginEndpoint Operation</seealso>
         public virtual UpdateOriginEndpointResponse UpdateOriginEndpoint(UpdateOriginEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginEndpointResponseUnmarshaller.Instance;
 
@@ -2569,7 +2569,7 @@ namespace Amazon.MediaPackageV2
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/UpdateOriginEndpoint">REST API Reference for UpdateOriginEndpoint Operation</seealso>
         public virtual IAsyncResult BeginUpdateOriginEndpoint(UpdateOriginEndpointRequest request, AsyncCallback callback, object state)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOriginEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOriginEndpointResponseUnmarshaller.Instance;
 

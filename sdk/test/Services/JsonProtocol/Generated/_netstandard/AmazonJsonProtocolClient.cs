@@ -245,7 +245,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
 
@@ -267,7 +267,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
         public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
 
@@ -280,7 +280,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual DatetimeOffsetsResponse DatetimeOffsets(DatetimeOffsetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -301,7 +301,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual Task<DatetimeOffsetsResponse> DatetimeOffsetsAsync(DatetimeOffsetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual EmptyOperationResponse EmptyOperation(EmptyOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyOperationResponseUnmarshaller.Instance;
 
@@ -335,7 +335,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/EmptyOperation">REST API Reference for EmptyOperation Operation</seealso>
         public virtual Task<EmptyOperationResponse> EmptyOperationAsync(EmptyOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyOperationResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual EndpointOperationResponse EndpointOperation(EndpointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -369,7 +369,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual Task<EndpointOperationResponse> EndpointOperationAsync(EndpointOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual EndpointWithHostLabelOperationResponse EndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -403,7 +403,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual Task<EndpointWithHostLabelOperationResponse> EndpointWithHostLabelOperationAsync(EndpointWithHostLabelOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -416,7 +416,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual FractionalSecondsResponse FractionalSeconds(FractionalSecondsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -437,7 +437,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual Task<FractionalSecondsResponse> FractionalSecondsAsync(FractionalSecondsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -450,7 +450,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -488,7 +488,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual Task<GreetingWithErrorsResponse> GreetingWithErrorsAsync(GreetingWithErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -501,7 +501,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual HostWithPathOperationResponse HostWithPathOperation(HostWithPathOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/HostWithPathOperation">REST API Reference for HostWithPathOperation Operation</seealso>
         public virtual Task<HostWithPathOperationResponse> HostWithPathOperationAsync(HostWithPathOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HostWithPathOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HostWithPathOperationResponseUnmarshaller.Instance;
 
@@ -535,7 +535,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual JsonEnumsResponse JsonEnums(JsonEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonEnumsResponseUnmarshaller.Instance;
 
@@ -556,7 +556,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonEnums">REST API Reference for JsonEnums Operation</seealso>
         public virtual Task<JsonEnumsResponse> JsonEnumsAsync(JsonEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonEnumsResponseUnmarshaller.Instance;
 
@@ -569,7 +569,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual JsonIntEnumsResponse JsonIntEnums(JsonIntEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
         public virtual Task<JsonIntEnumsResponse> JsonIntEnumsAsync(JsonIntEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonIntEnumsResponseUnmarshaller.Instance;
 
@@ -603,7 +603,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual JsonUnionsResponse JsonUnions(JsonUnionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonUnionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonUnionsResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonUnions">REST API Reference for JsonUnions Operation</seealso>
         public virtual Task<JsonUnionsResponse> JsonUnionsAsync(JsonUnionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = JsonUnionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = JsonUnionsResponseUnmarshaller.Instance;
 
@@ -637,7 +637,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual KitchenSinkOperationResponse KitchenSinkOperation(KitchenSinkOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = KitchenSinkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = KitchenSinkOperationResponseUnmarshaller.Instance;
 
@@ -664,7 +664,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/KitchenSinkOperation">REST API Reference for KitchenSinkOperation Operation</seealso>
         public virtual Task<KitchenSinkOperationResponse> KitchenSinkOperationAsync(KitchenSinkOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = KitchenSinkOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = KitchenSinkOperationResponseUnmarshaller.Instance;
 
@@ -677,7 +677,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual NullOperationResponse NullOperation(NullOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/NullOperation">REST API Reference for NullOperation Operation</seealso>
         public virtual Task<NullOperationResponse> NullOperationAsync(NullOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullOperationResponseUnmarshaller.Instance;
 
@@ -711,7 +711,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual OperationWithOptionalInputOutputResponse OperationWithOptionalInputOutput(OperationWithOptionalInputOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OperationWithOptionalInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OperationWithOptionalInputOutputResponseUnmarshaller.Instance;
 
@@ -732,7 +732,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/OperationWithOptionalInputOutput">REST API Reference for OperationWithOptionalInputOutput Operation</seealso>
         public virtual Task<OperationWithOptionalInputOutputResponse> OperationWithOptionalInputOutputAsync(OperationWithOptionalInputOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OperationWithOptionalInputOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OperationWithOptionalInputOutputResponseUnmarshaller.Instance;
 
@@ -745,7 +745,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual PutAndGetInlineDocumentsResponse PutAndGetInlineDocuments(PutAndGetInlineDocumentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAndGetInlineDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAndGetInlineDocumentsResponseUnmarshaller.Instance;
 
@@ -766,7 +766,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/PutAndGetInlineDocuments">REST API Reference for PutAndGetInlineDocuments Operation</seealso>
         public virtual Task<PutAndGetInlineDocumentsResponse> PutAndGetInlineDocumentsAsync(PutAndGetInlineDocumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAndGetInlineDocumentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAndGetInlineDocumentsResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual PutWithContentEncodingResponse PutWithContentEncoding(PutWithContentEncodingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -800,7 +800,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual Task<PutWithContentEncodingResponse> PutWithContentEncodingAsync(PutWithContentEncodingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -813,7 +813,7 @@ namespace Amazon.JsonProtocol
 
         internal virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -834,7 +834,7 @@ namespace Amazon.JsonProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
